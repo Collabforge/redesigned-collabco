@@ -2,12 +2,12 @@ name = Collabco
 description = Collabco installation profile
 exclusive = TRUE
 core = 7.x
-
+api = 2
 
 
 ; Dependencies
 
-dependencies[] = collabco_core
+;dependencies[] = collabco_core
 
 
 
