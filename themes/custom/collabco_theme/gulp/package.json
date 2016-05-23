@@ -1,7 +1,7 @@
 {
-  "name": "employment_theme",
+  "name": "collabco_theme",
   "version": "1.0.0",
-  "description": "Department of Employment Theme",
+  "description": "Collabco Theme",
   "main": "index.js",
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
