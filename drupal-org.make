@@ -220,6 +220,8 @@ projects[views_slideshow][version] = "3.1"
 
 projects[vscc][version] = "1.1"
 
+projects[jcarousel][version] = "2.7"
+
 
 
 
