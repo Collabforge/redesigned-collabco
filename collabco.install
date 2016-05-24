@@ -8,7 +8,7 @@
 /**
  * Implements hook_install().
  */
-function standard_install() {
+function collabco_install() {
 // Add text formats.
   $filtered_html_format = array(
     'format' => 'filtered_html',
