@@ -100,12 +100,13 @@ drush en collabco_core -y
 
 #themes
 drush en bootstrap -y
-drush en collabco -y
+drush en collabco_theme -y
 drush en seven -y
 
 drush dis collabco_core
 drush dis mentions
 
-drush vset theme_default collabco
+drush vset theme_default collabco_theme
 drush vset admin_theme seven
-
+drush php-eval 'node_access_rebuild();'
+drush cc all
