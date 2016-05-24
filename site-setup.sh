@@ -1,11 +1,3 @@
-cd profiles/collabco
-cp patch1.patch ../../modules/user
-cd .. 
-cd ..
-cd modules/user
-patch < patch1.patch
-
-
 cd sites/default
 mkdir private 
 chmod 775 private 
