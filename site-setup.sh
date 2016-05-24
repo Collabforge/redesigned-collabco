@@ -48,7 +48,7 @@ drush en fpa -y
 drush en page_manager -y
 
 #Color
-drush en color_node -y
+#drush en color_node -y
 
 #Context
 drush en context_ui -y
@@ -62,7 +62,7 @@ drush en date_views -y
 
 drush en entityform -y
 drush en entityform_notifications -y
-drush en entityconnet -y
+drush en entityconnect -y
 
 #Views
 drush en views -y
@@ -82,10 +82,10 @@ drush en vscc -y
 
 #OG
 drush en og -y
-drush en op_invite_people -y
-drush en og_ccess -y
+drush en og_invite_people -y
+drush en og_access -y
 drush en og_context -y
-drush en or_register -y
+drush en og_register -y
 
 #Flag
 drush en rules -y
