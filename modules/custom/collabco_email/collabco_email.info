@@ -1,0 +1,5 @@
+name = Collabco Email
+description = Infrastructure for sending digest emails for content user follows.
+core = 7.x
+package = Collabco
+dependencies[] = collabco_msg

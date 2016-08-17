@@ -1,0 +1,6 @@
+name = Collabco Challenge
+description = Blocks and Views related to challenge
+core = 7.x
+package = Collabco
+; Files that contain classes or interfaces
+files[] = views/collabco_challenge_handler_filter_is_open.inc

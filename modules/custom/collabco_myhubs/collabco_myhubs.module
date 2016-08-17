@@ -1,0 +1,167 @@
+<?php
+/**
+ * @file
+ * Core funcitons for the Collabco dashboard module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function collabco_myhubs_menu() {
+  $items['myhub'] = array(
+    'title' => 'My Hub',
+    'description' => 'Collabco user dashboard',
+    'type' => MENU_NORMAL_ITEM,
+    'access callback' => 'user_access',
+    'access arguments' => array('access collabco dashboard'),
+    'page callback' => 'collabco_myhubs_blank_page',
+  );
+  $items['myhub/developing'] = array(
+    'title' => 'Developing',
+    'description' => 'Developing',
+    'access callback' => 'user_access',
+    'access arguments' => array('access collabco dashboard'),
+    'page callback' => 'collabco_myhubs_blank_page',
+  );
+  $items['myhub/following'] = array(
+    'title' => 'Following',
+    'description' => 'Following',
+    'access callback' => 'user_access',
+    'access arguments' => array('access collabco dashboard'),
+    'page callback' => 'collabco_myhubs_blank_page',
+  );
+  return $items;
+}
+
+/**
+ * Implements collabco_myhubs_blank_page().
+ */
+function collabco_myhubs_blank_page() {
+  $content['raw_markup'] = array(
+    '#type' => 'markup',
+    '#markup' => '',
+  );
+  return $content;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function collabco_myhubs_permission() {
+  return array(
+    'access collabco dashboard' => array(
+      'title' => t('Access Collabco dashboard'),
+      'description' => t('Access Collabco dashboard'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function collabco_myhubs_theme($existing, $type, $theme, $path) {
+  return array(
+    'header_myhubs_template' => array(
+      'template' => 'header-myhubs-block-template',
+      'variables' => array('complete_data' => NULL),
+    ),
+    'my_hubs_links_template' => array(
+      'template' => 'my-hub-links-template',
+      'variables' => array('complete_data' => NULL),
+    ),
+    'my_hubs_welcome_template' => array(
+      'template' => 'my-hub-welcome-template',
+      'variables' => array('complete_data' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function collabco_myhubs_block_info() {
+  $blocks = array();
+  $blocks['header_myhubs'] = array(
+    'info' => t('Collabco My Hub Header block'),
+    'region' => 'content_top',
+    'pages' => 'myhub*',
+    'visibility' => 1,
+    'status' => TRUE,
+  );
+  $blocks['myhub_links'] = array(
+    'info' => t('Collabco My Hub Links block'),
+    'region' => 'content_upper',
+    'pages' => 'myhub*',
+    'visibility' => 1,
+    'status' => TRUE,
+  );
+  $blocks['myhub_welcome'] = array(
+    'info' => t('Collabco My Hub Welcome block'),
+    'region' => 'content',
+    'pages' => 'myhub',
+    'visibility' => 1,
+    'status' => TRUE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function collabco_myhubs_block_view($delta = '') {
+  $block = array();
+  if ((!(arg(0) == 'user' && is_numeric(arg(1)) && !arg(2))) && (!arg(0) == 'myhub')) {
+    return $block;
+  }
+  $data = array();
+  global $user;
+  list($first_name, $last_name) = collabco_login_user_names(user_load($user->uid));
+
+  switch ($delta) {
+    case 'header_myhubs':
+      $data['user_name'] = $first_name;
+      $content = theme('header_myhubs_template', $data);
+      break;
+
+    case 'myhub_links':
+      $content = theme('my_hubs_links_template', $data);
+      break;
+
+    case 'myhub_welcome':
+      $data['user_name'] = $first_name;
+      $content = theme('my_hubs_welcome_template', $data);
+      break;
+  }
+  $block['content'] = $content;
+  return $block;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function template_preprocess_my_hubs_links_template(&$variables) {
+  global $user;
+  $links = array(
+    'ui-myhub-menu ui-menu-myhub-updates' => array(
+      'title' => 'Updates',
+      'href' => 'myhub',
+    ),
+    'ui-myhub-menu ui-menu-myhub-ideas' => array(
+      'title' => 'Creating',
+      'href' => 'myhub/developing',
+    ),
+    'ui-myhub-menu ui-menu-myhub-collaboration' => array(
+      'title' => 'Following',
+      'href' => 'myhub/following',
+    ),
+    'ui-myhub-menu ui-menu-myhub-profile' => array(
+      'title' => 'Profile',
+      'href' => sprintf('user/%s', $user->uid),
+    ),
+  );
+  $attributes = array('class' => array('nav', 'nav-tabs'));
+  $variables['links'] = theme('links', array(
+    'links' => $links,
+    'attributes' => $attributes,
+  ));
+}

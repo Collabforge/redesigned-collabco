@@ -1,0 +1,184 @@
+.page-challenge,
+.page-open-challenges,
+.page-closed-challenges,
+.page-archived-ideas {
+    // First Block
+  .content-top {
+    @include bg-gradient-blue-purple-op('/sites/all/themes/img/background/triangle-top-right-cut.png', '../assets/img/background/header-challenge-bg.jpg', .9);
+    background-position: top right, 0 0 , 0 0;
+    background-size: contain, auto , cover;
+    background-repeat: no-repeat, no-repeat, no repeat;
+    padding: 25px;
+
+    p { font-size: 25px; }
+
+    h2 { 
+      display: inline-block;
+      font-size: 22px;
+      padding: 0;
+
+      &:before {
+        position: relative;
+        right: 5px;
+      }
+    }
+    
+    .popover i { color: $purple; }
+    .popover p { font-size: 15px; }
+  }
+
+  .card .taxonomy-tags { @include bg-gradient-blue-purple();  } 
+
+  .card article .img-icon { @include bg-gradient-blue-purple(); color: $white; }
+
+  .main-container {
+    @include bg-gradient-white-gray();
+  }
+
+}
+
+.page-challenge {
+
+  .main-container {  padding: 0; }
+
+  .content-lower {
+    @include bg-gradient-blue-purple-op('/sites/all/themes/img/background/triangle-middle-big.png', '', .9);
+    background-position: top center, 0 0 , 0 0;
+    background-size: cover, auto , auto;
+    padding: 30px 0;
+
+    @media #{$scrn-md} {
+      background-size: contain, auto , auto;
+    }
+  }
+
+  .content-bottom {
+    @include bg-gradient-white-gray();
+    .view-header {
+      color: $purple;
+    }
+  }
+
+  .more-link {
+    margin-bottom: 30px;
+  }
+
+  .view-archieved-ideas,
+  .view-closed-challenges {
+    .view-header {  
+      padding: 30px 0 20px; 
+    }
+  }
+
+  .view-challenges, 
+  .view-latest-ideas {
+    .view-header {
+      padding: 30px 0 0;
+
+      p { 
+        margin: 15px 0;
+
+        @media #{$scrn-md} { padding: 0 80px; }
+      }
+      
+      h3, 
+      i { color: $purple; }
+
+      h3 { margin: 60px 0 20px; }
+    }
+  }
+
+  .view-latest-ideas .view-header { 
+    h3 { margin-top: 0; }
+    h3,
+    i { color: $white; } 
+  }
+
+  // Brainstorm block
+  #block-collabco-challenge-add-to-brainstorm {
+    @include title-1-block();
+    color: $purple;
+    text-align: center;
+   
+    a { 
+      @include btn-white(); 
+      text-decoration: none;
+    }
+  }
+
+  #block-system-main { padding-top: 0;}
+
+  //Breadcrumbs
+  .view-challenges {
+
+    header {
+      border-bottom: $border-dark;
+      position: relative;
+      height: 56px;
+    }
+  }
+
+  .breadcrumb-container {
+    bottom: 0;
+    position: absolute;
+  }
+
+ //Search input
+  .views-exposed-form {
+    display: inline-block;
+    float: right;
+    .views-exposed-widget { float: right; padding-right: 0; }   
+    .views-exposed-widgets { margin-bottom: .8em; }
+
+    input[type="text"].form-control {
+      background-color: $gray-light;
+      color: $purple;
+      height: 35px;
+      width: 180px;
+    }
+  }
+  
+  //CREATE CHALLENGE BUTTON
+  a.create-challenge  { 
+    @include btn-purple();
+    text-decoration: none;
+    font-size: 12px;
+    bottom: 12px;
+    padding: 6px 7px 7px;
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+
+    @media #{$scrn-md} {
+      right: 190px;
+    }
+  }
+
+.separator {
+  border-bottom: 1px solid $purple;
+  margin-bottom: 30px;
+}
+
+} // </page-challenge>
+
+//Archived IDEAS 
+.page-ideas-archived,
+.page-closed-challenges
+
+ {
+
+  .card article .img-icon { @include bg-gradient-blue-purple(); color: $white; }
+
+  .main-container {
+    @include bg-gradient-white-gray();
+  }
+  
+  .view-header {
+    color: $purple;
+  }
+
+}
+
+
+
+

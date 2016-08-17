@@ -10,19 +10,27 @@ base theme = bootstrap
 
 regions[navigation]     = 'Navigation'
 regions[header]         = 'Top Bar'
+regions[nav_actions] 	= 'Nav Actions'
+regions[nav_actions_mobile] 	= 'Nav Actions Mobile'
+regions[nav_search] 	= 'Nav Search'
 regions[content_top]    = 'Content Top'
+regions[full_width_top] = 'Full Width Top'
 regions[content_upper]  = 'Content Upper'
 regions[highlighted]    = 'Highlighted'
 regions[help]           = 'Help'
 regions[content]        = 'Content'
 regions[sidebar_first]  = 'Primary'
+regions[sidebar_second_top] = 'Secondary Top'
 regions[sidebar_second] = 'Secondary'
 regions[content_middle] = 'Content Middle'
 regions[content_lower]  = 'Content Lower'
 regions[content_bottom] = 'Content bottom'
-regions[footer]         = 'Footer'
+regions[footer-1-col]   = 'Footer First Column'
+regions[footer-2-col]   = 'Footer Second Column'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
+regions[content_bottom] = 'Content bottom'
+regions[full_width_bottom] = 'Full Width Bottom'
 
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -48,6 +56,8 @@ scripts[] = 'bootstrap/js/popover.js'
 scripts[] = 'bootstrap/js/scrollspy.js'
 scripts[] = 'bootstrap/js/tab.js'
 scripts[] = 'bootstrap/js/transition.js'
+
+scripts[] ='js/slidenav.js'
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
 settings[bootstrap_cdn] = ''

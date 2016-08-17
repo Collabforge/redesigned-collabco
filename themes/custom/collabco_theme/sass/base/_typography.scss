@@ -1,0 +1,28 @@
+
+@font-face {
+  font-family: 'covered_by_your_grace';
+  src: url('../assets/fonts/coveredbyyourgrace-webfont.eot');
+  src: url('../assets/fonts/coveredbyyourgrace-webfont.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/coveredbyyourgrace-webfont.woff2') format('woff2'), url('../assets/fonts/coveredbyyourgrace-webfont.woff') format('woff'), url('../assets/fonts/coveredbyyourgrace-webfont.ttf') format('truetype'), url('../assets/fonts/coveredbyyourgrace-webfont.svg#covered_by_your_graceregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Univers57';
+  src: url('../assets/fonts/UniversLTStd-Cn.eot'),
+       url('../assets/fonts/UniversLTStd-Cn.woff') format('woff'), url('../assets/fonts/UniversLTStd-Cn.ttf')  format('truetype'), url('../assets/fonts/UniversLTStd-Cn.svg#UniversLTStd-Cn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Univers47';
+  src: url('../assets/fonts/UniversLTStd-LightCn.eot'),
+       url('../assets/fonts/UniversLTStd-LightCn.woff') format('woff'), url('../assets/fonts/UniversLTStd-LightCn.ttf')  format('truetype'), url('../assets/fonts/UniversLTStd-LightCn.svg#UniversLTStd-LightCn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$cgrace: 'covered_by_your_grace', sans-serif;
+$univers57: 'Univers57', 'Verdana';
+$univers47: 'Univers47', 'Verdana';

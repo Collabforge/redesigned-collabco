@@ -2,24 +2,15 @@
 core = 7.x
 
 api = 2
-projects[drupal][version] = "7.43"
+projects[drupal][version] = "7.50"
 
 projects[views_bulk_operations][type] = module
 projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.3"
 
-projects[addressfield][type] = module
-projects[addressfield][subdir] = contrib
-projects[addressfield][version] = "1.2"
-
-
 projects[admin_menu][type] = module
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = "3.0-rc5"
-
-projects[advanced_help_hint][type] = module
-projects[advanced_help_hint][subdir] = contrib
-projects[advanced_help_hint][version] = "1.2"
 
 projects[backup_migrate][type] = module
 projects[backup_migrate][subdir] = contrib
@@ -37,10 +28,6 @@ projects[block_class][type] = module
 projects[block_class][subdir] = contrib
 projects[block_class][version] = "2.3"
 
-projects[block_revisions][type] = module
-projects[block_revisions][subdir] = contrib
-projects[block_revisions][version] = "1.x-dev"
-
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib
 projects[ctools][version] = "1.9"
@@ -57,61 +44,33 @@ projects[ckeditor_media][type] = module
 projects[ckeditor_media][subdir] = contrib
 projects[ckeditor_media][version] = "1.x-dev"
 
-projects[colorbox][type] = module
-projects[colorbox][subdir] = contrib
-projects[colorbox][version] = "2.10"
+projects[clamav][type] = module
+projects[clamav][subdir] = contrib
+projects[clamav][version] = "1.0-beta1"
 
-projects[colorbox_node][type] = module
-projects[colorbox_node][subdir] = contrib
-projects[colorbox_node][version] = "3.5"
+projects[comment_counter][type] = module
+projects[comment_counter][subdir] = contrib
+projects[comment_counter][version] = "1.0-alpha1"
 
-projects[comment_sort_created][type] = module
-projects[comment_sort_created][subdir] = contrib
-projects[comment_sort_created][version] = "1.0-beta1"
-
-projects[connector][type] = module
-projects[connector][subdir] = contrib
-projects[connector][version] = "1.0-beta2"
-
-projects[content_access][type] = module
-projects[content_access][subdir] = contrib
-projects[content_access][version] = "1.2-beta2"
-
-projects[context][type] = module
-projects[context][subdir] = contrib
-projects[context][version] = "3.6"
-
-projects[creative_commons][type] = module
-projects[creative_commons][subdir] = contrib
-projects[creative_commons][version] = "1.2"
-
-projects[css_injector][type] = module
-projects[css_injector][subdir] = contrib
-projects[css_injector][version] = "1.10"
+projects[comment_delete][type] = module
+projects[comment_delete][subdir] = contrib
+projects[comment_delete][version] = "1.3"
 
 projects[date][type] = module
 projects[date][subdir] = contrib
 projects[date][version] = "2.9"
 
+projects[datepicker][type] = module
+projects[datepicker][subdir] = contrib
+projects[datepicker][version] = "1.0"
+
 projects[devel][type] = module
 projects[devel][subdir] = contrib
 projects[devel][version] = "1.5"
 
-projects[diff][type] = module
-projects[diff][subdir] = contrib
-projects[diff][version] = "3.2"
-
-projects[disable_messages][type] = module
-projects[disable_messages][subdir] = contrib
-projects[disable_messages][version] = "1.1"
-
-projects[email][type] = module
-projects[email][subdir] = contrib
-projects[email][version] = "1.3"
-
-projects[email_registration][type] = module
-projects[email_registration][subdir] = contrib
-projects[email_registration][version] = "1.3"
+projects[download_file][type] = module
+projects[download_file][subdir] = contrib
+projects[download_file][version] = "1.1"
 
 projects[entity][type] = module
 projects[entity][subdir] = contrib
@@ -124,10 +83,6 @@ projects[entity2text][version] = "1.0-alpha3"
 projects[entity_rules][type] = module
 projects[entity_rules][subdir] = contrib
 projects[entity_rules][version] = "1.0-alpha4"
-
-projects[entityconnect][type] = module
-projects[entityconnect][subdir] = contrib
-projects[entityconnect][version] = "1.0-rc5"
 
 projects[entityform][type] = module
 projects[entityform][subdir] = contrib
@@ -145,37 +100,29 @@ projects[features][type] = module
 projects[features][subdir] = contrib
 projects[features][version] = "2.10"
 
-projects[features_override][type] = module
-projects[features_override][subdir] = contrib
-projects[features_override][version] = "2.0-rc3"
-
-projects[feeds][type] = module
-projects[feeds][subdir] = contrib
-projects[feeds][version] = "2.0-beta2"
-
 projects[field_collection][type] = module
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = "1.0-beta11"
 
-projects[field_collection_fieldset][type] = module
-projects[field_collection_fieldset][subdir] = contrib
-projects[field_collection_fieldset][version] = "2.6"
+projects[field_permissions][type] = module
+projects[field_permissions][subdir] = contrib
+projects[field_permissions][version] = "1.0-beta2"
 
-projects[field_group][type] = module
-projects[field_group][subdir] = contrib
-projects[field_group][version] = "1.5"
-
-projects[filefield_nginx_progress][type] = module
-projects[filefield_nginx_progress][subdir] = contrib
-projects[filefield_nginx_progress][version] = "2.3"
+projects[file_entity][type] = module
+projects[file_entity][subdir] = contrib
+projects[file_entity][version] = "2.0-beta3"
 
 projects[flag][type] = module
 projects[flag][subdir] = contrib
 projects[flag][version] = "3.7"
 
-projects[flood_control][type] = module
-projects[flood_control][subdir] = contrib
-projects[flood_control][version] = "1.0"
+projects[flag_abuse][type] = module
+projects[flag_abuse][subdir] = contrib
+projects[flag_abuse][version] = "2.0"
+
+projects[flag_clear][type] = module
+projects[flag_clear][subdir] = contrib
+projects[flag_clear][version] = "1.9"
 
 projects[fpa][type] = module
 projects[fpa][subdir] = contrib
@@ -185,129 +132,73 @@ projects[google_analytics][type] = module
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = "2.2"
 
-projects[honeypot][type] = module
-projects[honeypot][subdir] = contrib
-projects[honeypot][version] = "1.22"
+projects[http_response_headers][type] = module
+projects[http_response_headers][subdir] = contrib
+projects[http_response_headers][version] = "1.1"
 
 projects[image_url_formatter][type] = module
 projects[image_url_formatter][subdir] = contrib
 projects[image_url_formatter][version] = "1.4"
 
-projects[imce][type] = module
-projects[imce][subdir] = contrib
-projects[imce][version] = "1.10"
-
 projects[inline_entity_form][type] = module
 projects[inline_entity_form][subdir] = contrib
 projects[inline_entity_form][version] = "1.8"
-
-projects[jcarousel][type] = module
-projects[jcarousel][subdir] = contrib
-projects[jcarousel][version] = "2.7"
-
-projects[job_scheduler][type] = module
-projects[job_scheduler][subdir] = contrib
-projects[job_scheduler][version] = "2.0-alpha3"
 
 projects[jquery_update][type] = module
 projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = "2.7"
 
-projects[js_injector][type] = module
-projects[js_injector][subdir] = contrib
-projects[js_injector][version] = "2.1"
-
 projects[libraries][type] = module
 projects[libraries][subdir] = contrib
-projects[libraries][version] = "2.2"
+projects[libraries][version] = "2.3"
 
 projects[link][type] = module
 projects[link][subdir] = contrib
 projects[link][version] = "1.4"
 
-projects[list_predefined_options][type] = module
-projects[list_predefined_options][subdir] = contrib
-projects[list_predefined_options][version] = "1.0"
-
-projects[login_destination][type] = module
-projects[login_destination][subdir] = contrib
-projects[login_destination][version] = "1.4"
-
 projects[login_history][type] = module
 projects[login_history][subdir] = contrib
 projects[login_history][version] = "1.0-beta3"
 
-projects[logintoboggan][type] = module
-projects[logintoboggan][subdir] = contrib
-projects[logintoboggan][version] = "1.5"
-
-projects[mail_edit][type] = module
-projects[mail_edit][subdir] = contrib
-projects[mail_edit][version] = "1.1"
-
 projects[mailsystem][type] = module
 projects[mailsystem][subdir] = contrib
-projects[mailsystem][version] = "2.34"
+projects[mailsystem][version] = "2.34+5-dev"
+
+projects[maintenance_mode_permissions][type] = module
+projects[maintenance_mode_permissions][subdir] = contrib
+projects[maintenance_mode_permissions][version] = "1.0"
 
 projects[mandrill][type] = module
 projects[mandrill][subdir] = contrib
 projects[mandrill][version] = "1.6"
 
-projects[masquerade][type] = module
-projects[masquerade][subdir] = contrib
-projects[masquerade][version] = "1.0-rc7"
-
-projects[mass_contact][type] = module
-projects[mass_contact][subdir] = contrib
-projects[mass_contact][version] = "1.1"
+projects[media][type] = module
+projects[media][subdir] = contrib
+projects[media][version] = "2.0-beta2"
 
 projects[menu_attributes][type] = module
 projects[menu_attributes][subdir] = contrib
 projects[menu_attributes][version] = "1.0"
 
-projects[menu_token][type] = module
-projects[menu_token][subdir] = contrib
-projects[menu_token][version] = "1.0-beta7"
+projects[message][type] = module
+projects[message][subdir] = contrib
+projects[message][version] = "1.12"
 
-projects[metatag][type] = module
-projects[metatag][subdir] = contrib
-projects[metatag][version] = "1.14"
+projects[message_ui][type] = module
+projects[message_ui][subdir] = contrib
+projects[message_ui][version] = "1.4"
 
 projects[mimemail][type] = module
 projects[mimemail][subdir] = contrib
 projects[mimemail][version] = "1.0-beta4"
 
-projects[modal_forms][type] = module
-projects[modal_forms][subdir] = contrib
-projects[modal_forms][version] = "1.2"
-
 projects[module_filter][type] = module
 projects[module_filter][subdir] = contrib
 projects[module_filter][version] = "2.0"
 
-projects[mollom][type] = module
-projects[mollom][subdir] = contrib
-projects[mollom][version] = "2.15"
-
-projects[morecomments][type] = module
-projects[morecomments][subdir] = contrib
-projects[morecomments][version] = "1.0-beta3"
-
-projects[node_convert][type] = module
-projects[node_convert][subdir] = contrib
-projects[node_convert][version] = "1.2"
-
 projects[nodequeue][type] = module
 projects[nodequeue][subdir] = contrib
-projects[nodequeue][version] = "2.0"
-
-projects[oauthconnector][type] = module
-projects[oauthconnector][subdir] = contrib
-projects[oauthconnector][version] = "1.0-beta2"
-
-projects[oauth][type] = module
-projects[oauth][subdir] = contrib
-projects[oauth][version] = "3.2"
+projects[nodequeue][version] = "2.1"
 
 projects[og][type] = module
 projects[og][subdir] = contrib
@@ -317,57 +208,21 @@ projects[og_invite_people][type] = module
 projects[og_invite_people][subdir] = contrib
 projects[og_invite_people][version] = "1.0-beta2"
 
-projects[override_node_options][type] = module
-projects[override_node_options][subdir] = contrib
-projects[override_node_options][version] = "1.13"
-
 projects[pathauto][type] = module
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = "1.3"
 
-projects[pathologic][type] = module
-projects[pathologic][subdir] = contrib
-projects[pathologic][version] = "2.12"
-
-projects[phone][type] = module
-projects[phone][subdir] = contrib
-projects[phone][version] = "1.0-beta1"
-
-projects[profile2][type] = module
-projects[profile2][subdir] = contrib
-projects[profile2][version] = "1.3"
-
 projects[quicktabs][type] = module
 projects[quicktabs][subdir] = contrib
-projects[quicktabs][version] = "3.6"
+projects[quicktabs][version] = "3.6+10-dev"
 
-projects[realname][type] = module
-projects[realname][subdir] = contrib
-projects[realname][version] = "1.2"
-
-projects[recaptcha][type] = module
-projects[recaptcha][subdir] = contrib
-projects[recaptcha][version] = "1.13"
-
-projects[reg_with_pic][type] = module
-projects[reg_with_pic][subdir] = contrib
-projects[reg_with_pic][version] = "1.0"
+projects[register_preapproved][type] = module
+projects[register_preapproved][subdir] = contrib
+projects[register_preapproved][version] = "1.0"
 
 projects[rules][type] = module
 projects[rules][subdir] = contrib
 projects[rules][version] = "2.9"
-
-projects[search_config][type] = module
-projects[search_config][subdir] = contrib
-projects[search_config][version] = "1.1"
-
-projects[searchindex_wipe][type] = module
-projects[searchindex_wipe][subdir] = contrib
-projects[searchindex_wipe][version] = "1.1"
-
-projects[security_review][type] = module
-projects[security_review][subdir] = contrib
-projects[security_review][version] = "1.2"
 
 projects[stringoverrides][type] = module
 projects[stringoverrides][subdir] = contrib
@@ -377,41 +232,41 @@ projects[strongarm][type] = module
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = "2.0"
 
+projects[term_queue][type] = module
+projects[term_queue][subdir] = contrib
+projects[term_queue][version] = "1.0-rc1"
+
 projects[token][type] = module
 projects[token][subdir] = contrib
 projects[token][version] = "1.6"
 
-projects[track_field_changes][type] = module
-projects[track_field_changes][subdir] = contrib
-projects[track_field_changes][version] = "1.5"
-
-projects[user_restrictions][type] = module
-projects[user_restrictions][subdir] = contrib
-projects[user_restrictions][version] = "1.0"
+projects[translation_helpers][type] = module
+projects[translation_helpers][subdir] = contrib
+projects[translation_helpers][version] = "1.0"
 
 projects[user_stats][type] = module
 projects[user_stats][subdir] = contrib
 projects[user_stats][version] = "1.x-dev"
 
-projects[usersearchtoadmin][type] = module
-projects[usersearchtoadmin][subdir] = contrib
-projects[usersearchtoadmin][version] = "1.1"
-
-projects[uuid][type] = module
-projects[uuid][subdir] = contrib
-projects[uuid][version] = "1.0-beta1"
-
-projects[uuid_features][type] = module
-projects[uuid_features][subdir] = contrib
-projects[uuid_features][version] = "1.0-alpha4"
+projects[variable][type] = module
+projects[variable][subdir] = contrib
+projects[variable][version] = "2.5"
 
 projects[views][type] = module
 projects[views][subdir] = contrib
-projects[views][version] = "3.13"
+projects[views][version] = "3.14"
 
 projects[views_autocomplete_filters][type] = module
 projects[views_autocomplete_filters][subdir] = contrib
 projects[views_autocomplete_filters][version] = "1.2"
+
+projects[views_content_cache][type] = module
+projects[views_content_cache][subdir] = contrib
+projects[views_content_cache][version] = "3.0-alpha3"
+
+projects[views_contextual_filters_or][type] = module
+projects[views_contextual_filters_or][subdir] = contrib
+projects[views_contextual_filters_or][version] = "1.x-dev"
 
 projects[views_data_export][type] = module
 projects[views_data_export][subdir] = contrib
@@ -421,8 +276,8 @@ projects[views_field_view][type] = module
 projects[views_field_view][subdir] = contrib
 projects[views_field_view][version] = "1.2"
 
-projects[token][type] = module
-projects[token][subdir] = contrib
+projects[views_php][type] = module
+projects[views_php][subdir] = contrib
 projects[views_php][version] = "1.0-alpha3"
 
 projects[views_responsive_grid][type] = module
@@ -441,48 +296,44 @@ projects[vscc][type] = module
 projects[vscc][subdir] = contrib
 projects[vscc][version] = "1.1"
 
+projects[webform][type] = module
+projects[webform][subdir] = contrib
+projects[webform][version] = "4.13"
 
-
-
-
-
+projects[webform_rules][type] = module
+projects[webform_rules][subdir] = contrib
+projects[webform_rules][version] = "1.6"
 
 ; Themes
-
-;projects[bootstrap][type] = theme
-;projects[bootstrap][version] = 3.1-beta2
-
-
+projects[bootstrap][type] = theme
+projects[bootstrap][version] = "3.5"
 
 ; Libraries
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
+;libraries[jquery.cycle][download][type] = ""
+;libraries[jquery.cycle][download][url] = ""
+;libraries[jquery.cycle][directory_name] = "jquery.cycle"
+;libraries[jquery.cycle][type] = "library"
 
-;libraries[backbone][download][type] = get
-;libraries[backbone][download][url] = https://github.com/jashkenas/backbone/archive/1.1.2.zip
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
+;libraries[json2][download][type] = ""
+;libraries[json2][download][url] = ""
+;libraries[json2][directory_name] = "json2"
+;libraries[json2][type] = "library"
 
-;libraries[bootstrap][download][type] = get
-;libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.2.0.zip
-;libraries[bootstrap][directory_name] = bootstrap
-;libraries[bootstrap][destination] = themes/contrib/bootstrap
-;libraries[bootstrap][overwrite] = TRUE
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
+;libraries[profiler][download][type] = ""
+;libraries[profiler][download][url] = ""
+;libraries[profiler][directory_name] = "profiler"
+;libraries[profiler][type] = "library"
 
-;libraries[dindent][download][type] = get
-;libraries[dindent][download][url] = https://raw.githubusercontent.com/Decipher/dindent/master/src/Parser.php
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
+;libraries[wvega-timepicker][download][type] = ""
+;libraries[wvega-timepicker][download][url] = ""
+;libraries[wvega-timepicker][directory_name] = "wvega-timepicker"
+;libraries[wvega-timepicker][type] = "library"
 
-;libraries[mailchimp][download][type] = get
-;libraries[mailchimp][download][url] = https://bitbucket.org/mailchimp/mailchimp-api-php/get/2.0.5.zip
-
-;libraries[modernizr][download][type] = get
-;libraries[modernizr][download][url] = https://github.com/Modernizr/Modernizr/archive/v2.7.1.zip
-
-;libraries[phpsass][download][type] = git
-;libraries[phpsass][download][url] = https://github.com/Decipher/phpsass.git
-;libraries[phpsass][download][revision] = eee7cdb
-
-libraries[profiler][download][type] = get
-libraries[profiler][download][url] = http://ftp.drupal.org/files/projects/profiler-7.x-2.0-beta2.zip
-;libraries[profiler][download][revision] = 6655a1b
-; Added support for Devel generate - https://drupal.org/node/1420344#comment-5890366
-;libraries[profiler][patch][] = https://drupal.org/files/devel_generate-1420344-8.patch
-
-;libraries[underscore][download][type] = get
-;libraries[underscore][download][url] = https://github.com/jashkenas/underscore/archive/1.6.0.zip

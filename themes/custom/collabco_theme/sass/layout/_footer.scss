@@ -1,0 +1,33 @@
+.footer {
+  @include bg-gradient-green-blue();
+  border: 0;
+  color: $white;
+  margin: 0;
+  padding: 25px 0;
+  text-align: center;
+
+  img { margin-bottom: 15px; }
+  
+  .footer-1-col {
+    @media #{$scrn-md} { text-align: left; }
+  }
+
+  .footer-2-col {
+    @media #{$scrn-md} { text-align: right; }
+  }
+
+  .copyright {
+    p { 
+      font-size: 14px;
+      margin-top: 8px;
+
+
+      @media #{$scrn-md} { 
+        padding: 15px 0;
+        margin: 0;
+      }
+
+    }
+  }
+}
+

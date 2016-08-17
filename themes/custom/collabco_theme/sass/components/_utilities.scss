@@ -1,0 +1,18 @@
+//Flags
+
+.flagged {
+  color: $green-lime;
+}
+
+.green-lime {
+  color: $green-lime;
+}
+
+.gray-dark {
+  color: $gray-dark;
+}
+
+@mixin clearfix(){
+  content: " ";
+  clear: both;
+}

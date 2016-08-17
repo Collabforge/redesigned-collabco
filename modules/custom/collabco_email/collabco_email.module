@@ -1,0 +1,337 @@
+<?php
+/**
+ * @file
+ * Collabco digest email feature.
+ */
+
+/**
+ * Implements hook_variable_info().
+ */
+function collabco_email_variable_info($options) {
+  $variable['collabco_email_per_batch'] = array(
+    'title' => t('Collabco Email Weekly Digest : number per batch'),
+  );
+  return $variable;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function collabco_email_menu() {
+  return array(
+    'admin/config/collabco-email' => array(
+      'page callback' => 'collabco_email_admin_settings',
+      'access arguments' => array(TRUE),
+      'type' => MENU_NORMAL_ITEM,
+    ),
+  );
+}
+
+/**
+ * Implements hook_admin_settings().
+ */
+function collabco_email_admin_settings() {
+  $form = drupal_get_form('variable_module_form', 'collabco_email');
+  return $form;
+}
+
+/**
+ * Implements hook_help().
+ */
+function collabco_email_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#collabco_email":
+      return '<p>' . t("Used to send weekly digest mails for site users") . '</p>';
+  }
+}
+
+/**
+ * Checks if to run email digest.
+ */
+function _collabco_email_check_digest_to_run($user_id) {
+  $now = $_SERVER['REQUEST_TIME'];
+  // Later change it to 4 or 5 check again for friday based on server timing.
+  if (date('w', $now) == '5') {
+    global $conf;
+    if (isset($conf['collabco_digest_per_user_cron_last'])) {
+      $last_run_array = variable_get('collabco_digest_per_user_cron_last');
+      if (is_array($last_run_array) && array_key_exists($user_id, $last_run_array)) {
+        $last_run = $last_run_array[$user_id];
+        $datediff = abs($now - $last_run);
+        $days_in_between = floor($datediff / (60 * 60 * 24));
+        if ($days_in_between > 6) {
+          return TRUE;
+        }
+      }
+      else {
+        return TRUE;
+      }
+    }
+    else {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function collabco_email_cron() {
+
+  try {
+    $batchCount = 10;
+    if (is_numeric(variable_get('collabco_email_per_batch'))) {
+      $batchCount = intval(variable_get('collabco_email_per_batch'));
+    }
+
+    $count = 0;
+    global $conf;
+    $users = entity_load('user');
+    foreach ($users as $user) {
+      if (_collabco_email_settings_get($user) === 'collabco_weekly_digest') {
+
+        if (!in_array($user->uid, array('0', '1'))) {
+
+          if (_collabco_email_check_digest_to_run($user->uid)) {
+
+            $count++;
+
+            $gids = 0;
+            $tids = 0;
+            $user_flags = flag_get_user_flags('node', NULL, $user->uid);
+            // For First parameter of gids followed by user.
+            $following_ideas = array();
+            $following_collaborations = array();
+            if (array_key_exists('following_idea', $user_flags)) {
+              $following_ideas = array_keys($user_flags['following_idea']);
+            }
+            if (array_key_exists('follow_collaboration', $user_flags)) {
+              $following_collaborations = array_keys($user_flags['follow_collaboration']);
+            }
+            $gids_followed_by_user = array_merge($following_ideas, $following_collaborations);
+            if (!empty($gids_followed_by_user)) {
+              $gids = implode(",", $gids_followed_by_user);
+            }
+            else {
+              $gids = 0;
+            }
+            // For Second Parameter of tids followed by user.
+            $user_tid_flags = flag_get_user_flags('taxonomy_term', NULL, $user->uid);
+            $tids_followed_by_user = array();
+            if (isset($user_tid_flags['challenge_flag']) || array_key_exists('challenge_flag', $user_tid_flags)) {
+              $tids_followed_by_user = array_keys($user_tid_flags['challenge_flag']);
+            }
+            if (!empty($tids_followed_by_user)) {
+              $tids = implode(",", $tids_followed_by_user);
+            }
+            else {
+              $tids = 0;
+            }
+
+            $language = NULL;
+            $from = variable_get('site_mail');
+            $params = array();
+            $params['gids'] = $gids;
+            $params['tids'] = $tids;
+            $params['user_id'] = $user->uid;
+            if (!empty($user->field_full_name[LANGUAGE_NONE][0])) {
+              $params['!username'] = $user->field_full_name[LANGUAGE_NONE][0]['value'];
+
+            }
+
+            $now = $_SERVER['REQUEST_TIME'];
+            if (isset($conf['collabco_digest_per_user_cron_last'])) {
+              $last_run_array = variable_get('collabco_digest_per_user_cron_last');
+              if (is_array($last_run_array) && array_key_exists($user->uid, $last_run_array)) {
+                $params['cron_last_run'] = $last_run_array[$user_id];
+              }
+              else {
+                $params['cron_last_run'] = 1468821697;
+              }
+
+            }
+            else {
+              $params['cron_last_run'] = 1468821697;
+              $last_run_array = array();
+            }
+            $message = drupal_mail('collabco_email', 'collabco_digest', $user->mail, $language, $params, $from);
+
+            $last_run_array[$user->uid] = $now;
+            variable_set('collabco_digest_per_user_cron_last', $last_run_array);
+            if ($count == $batchCount) {
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  catch (Exception $e) {
+    watchdog_exception('collabco_email', $e);
+  }
+
+}
+
+/**
+ * Implements hook_mail().
+ *
+ * Called by drupal_mail(), which is invoked in the functions above.
+ */
+function collabco_email_mail($key, &$message, $params) {
+
+  require_once 'collabco_email_content.include';
+  $language = $message['language'];
+  $params['language'] = $language;
+  $message['from_name'] = variable_get('site_name', 'DoE');
+
+  $output = collabco_email_get_digest($params);
+
+  if ($output == FALSE || $params['is_content'] == FALSE) {
+
+    $message['send'] = FALSE;
+  }
+  else {
+
+    $message['subject'] = "Weekly updates from Department of Employment";
+    $message['body'][] = $output;
+  }
+
+}
+
+/**
+ * Collabco email get digest.
+ */
+function collabco_email_get_digest(&$params) {
+  $output = "";
+  $params['is_content'] = FALSE;
+
+  $query  = "SELECT message.timestamp AS message_timestamp, message.mid AS mid
+  FROM
+  {message} message
+  LEFT JOIN {comment} comment_comment ON pid = comment_comment.cid
+  LEFT JOIN {field_data_field_parent_comment_ref} field_data_field_parent_comment_ref ON message.mid = field_data_field_parent_comment_ref.entity_id AND field_data_field_parent_comment_ref.entity_type = 'message'
+  LEFT JOIN {comment} comment_field_data_field_parent_comment_ref ON field_data_field_parent_comment_ref.field_parent_comment_ref_target_id = comment_field_data_field_parent_comment_ref.cid
+  INNER JOIN {field_data_field_published} field_data_field_published ON message.mid = field_data_field_published.entity_id AND field_data_field_published.entity_type = 'message'
+  LEFT JOIN {field_data_field_node_groups_ref} field_data_field_node_groups_ref ON message.mid = field_data_field_node_groups_ref.entity_id AND field_data_field_node_groups_ref.entity_type = 'message'
+  LEFT JOIN {field_data_field_term_ref} field_data_field_term_ref ON message.mid = field_data_field_term_ref.entity_id AND field_data_field_term_ref.entity_type = 'message'
+  LEFT JOIN {field_data_field_node_ref} field_data_field_node_ref ON message.mid = field_data_field_node_ref.entity_id AND field_data_field_node_ref.entity_type = 'message'
+  WHERE (( (field_data_field_node_groups_ref.field_node_groups_ref_target_id IN (" . $params['gids'] . ") ) OR (field_data_field_term_ref.field_term_ref_tid IN (" . $params['tids'] . ") ) OR (field_data_field_node_ref.field_node_ref_target_id IN (" . $params['gids'] . ") ) OR (comment_field_data_field_parent_comment_ref.uid = " . $params['user_id'] . ") )AND(( (field_data_field_published.field_published_value = '1') AND (message.timestamp  > " . $params['cron_last_run'] . ") )))
+  ORDER BY message_timestamp DESC
+  LIMIT 20 OFFSET 0 ";
+
+  $result = db_query($query);
+
+  if ($result) {
+    if ($result->rowCount() == 0) {
+      return FALSE;
+    }
+    else {
+      $output = _collabco_email_message_text('header', $params['language'], $params);
+      $separator = _collabco_email_message_text('separator', $params['language'], $params);
+      while ($row = $result->fetchAssoc()) {
+        $msg = message_load($row['mid']);
+        $text = collabco_email_get_messsage($msg, $params);
+        if (!empty($text)) {
+          if (empty($output)) {
+            $output = $text;
+            $params['is_content'] = TRUE;
+          }
+          else {
+            $output = $output . $separator . $text;
+            $params['is_content'] = TRUE;
+          }
+        }
+      }
+      $footer = _collabco_email_message_text('footer', $params['language'], $params);
+      $output = $output . $footer;
+      return $output;
+    }
+  }
+}
+
+/**
+ * Collabco email get message.
+ */
+function collabco_email_get_messsage($message, $params) {
+  global $base_url;
+  $language = LANGUAGE_NONE;
+  $text = "";
+  $key = "";
+
+  $nid = $message->field_node_ref[$language][0]['target_id'];
+  if (!empty($nid)) {
+    $node  = node_load($nid);
+    $node_url = "$base_url/node/$nid";
+    $params['!content_link'] = "<a href='$node_url'>$node->title</a>";
+    if ($node->type == 'idea') {
+      if (!empty($node->field_challenge_value)) {
+        $tid = $node->field_challenge_value[$language][0]['tid'];
+        $term = taxonomy_term_load($tid);
+        $term_url = "$base_url/taxonomy/term/$tid";
+        $term_title = taxonomy_term_title($term);
+        $params['!term_link'] = "<a href='$term_url'>$term_title</a>";
+      }
+    }
+  }
+  switch ($message->type) {
+    case 'create_node':
+      $key = $node->type . '_created';
+      if ($node->type == 'knowledge_object' || $node->type == 'conversation') {
+        if (!empty($node->og_group_ref)) {
+          $gid = $node->og_group_ref[$language][0]['target_id'];
+          $group_node = node_load($gid);
+          $group_url = "$base_url/node/$gid";
+          $params['!group_link'] = "<a href='$group_url'>$group_node->title</a>";
+        }
+      }
+      elseif ($node->type == 'hub') {
+        $key = 'collaboration_created';
+      }
+      $text = _collabco_email_message_text($key, $params['language'], $params);
+      break;
+
+    case 'update_node':
+      $update_type = $message->field_node_update_type[$language][0]['value'];
+
+      if ($node->type == 'idea' && $update_type == 'win') {
+        $text = _collabco_email_message_text("winning_idea", $params['language'], $params);
+      }
+      elseif ($node->type == 'hub' && $update_type == 'project') {
+        $text = _collabco_email_message_text("collaboration_project", $params['language'], $params);
+      }
+      break;
+
+    case 'create_comment':
+      $cid = $message->field_comment_ref[$language][0]['target_id'];
+      if (!empty($nid) && !empty($cid)) {
+        $comment = comment_load($cid);
+
+        $author = user_load($comment->uid);
+        if (!empty($author->field_full_name[LANGUAGE_NONE][0])) {
+          $author_name = $author->field_full_name[LANGUAGE_NONE][0]['value'];
+          $author_url = "$base_url/user/$comment->uid";
+          $params['!user_link'] = "<a href='$author_url'>$author_name</a>";
+        }
+        $comment_url = "$base_url/node/$nid#comment-$cid";
+        $params['!comment_link'] = "<a href='$comment_url'>$comment->subject</a>";
+        if (!empty($message->field_parent_comment_ref)) {
+          $text = _collabco_email_message_text("comment_reply_created", $params['language'], $params);
+        }
+        else {
+          $text = _collabco_email_message_text("comment_created", $params['language'], $params);
+        }
+      }
+      break;
+
+    case 'term_ends_soon':
+      $tid = $message->field_term_ref[$language][0]['tid'];
+      $term = taxonomy_term_load($tid);
+      $term_url = "$base_url/taxonomy/term/$tid";
+      $term_title = taxonomy_term_title($term);
+      $params['!term_link'] = "<a href='$term_url'>$term_title</a>";
+      $text = _collabco_email_message_text("term_ends_soon", $params['language'], $params);
+      break;
+  }
+  return $text;
+}

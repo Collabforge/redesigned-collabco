@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Blank file comment.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function collabco_profile_theme($existing, $type, $theme, $path) {
+  return array(
+    'header_user_profile_template' => array(
+      'template' => 'header-user-profile-template',
+      'variables' => array(),
+    ),
+    'header_mobile_user_template' => array(
+      'template' => 'header-mobile-user-template',
+      'variables' => array(),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function collabco_profile_block_info() {
+  $blocks = array();
+  $blocks['header_user_profile_block'] = array(
+    'info' => t('Header User Profile Block'),
+    'region' => 'nav_actions',
+    'pages' => '*',
+    'visibility' => 0,
+    'status' => TRUE,
+  );
+
+  $blocks['header_mobile_user_block'] = array(
+    'info' => t('Header Mobile User Profile Block'),
+    'region' => 'nav_actions_mobile',
+    'pages' => '',
+    'visibility' => 0,
+    'status' => TRUE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function collabco_profile_block_view($delta = '') {
+  $block = array();
+  global $user;
+  if (!user_is_logged_in()) {
+    return $block;
+  }
+  $variables = array();
+  $user = user_load($user->uid);
+  if ($user && !empty($user->field_full_name[LANGUAGE_NONE][0])) {
+      $full_name = $user->field_full_name[LANGUAGE_NONE][0]['value'];
+  }
+  if (drupal_strlen($full_name) > 25) {
+      $variables['name'] = drupal_substr($full_name, 0, 25) .'...';
+  }else
+  {
+      $variables['name'] = $full_name;
+  } 
+
+  // $content = theme('header_user_profile_template', $variables);
+
+  switch ($delta) {
+    case 'header_user_profile_block':
+      $content = theme('header_user_profile_template', $variables);
+      break;
+
+    case 'header_mobile_user_block':
+       $content = theme('header_mobile_user_template', $variables);
+      break;
+  }
+
+  $block['content'] = $content;
+  return $block;
+
+  
+}

@@ -1,0 +1,98 @@
+<?php
+
+/**
+ * @file
+ * Collabco home module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function collabco_home_theme($existing, $type, $theme, $path) {
+  return array(
+    'header_home_template' => array(
+      'template' => 'header-home-block-template',
+      'variables' => array('complete_data' => NULL),
+    ),
+    'privacy_policy_template' => array(
+      'template' => 'privacy-policy-template',
+      'variables' => array(),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function collabco_home_block_info() {
+  $blocks = array();
+  $blocks['header_home'] = array(
+    'info' => t('Collabco Home Header block'),
+    'region' => 'content_top',
+    'pages' => '<front>',
+    'visibility' => 1,
+    'status' => TRUE,
+  );
+  $blocks['privacy'] = array(
+    'info' => t('Collabco Privacy policy block'),
+    'region' => 'footer-2-col',
+    'visibility' => 0,
+    'status' => TRUE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function collabco_home_block_view($delta = '') {
+  $block = array();
+  $data = array();
+  global $user;
+  switch ($delta) {
+    case 'header_home':
+      $user = user_load($user->uid);
+      list($first_name, $last_name) = collabco_login_user_names($user);
+      $data['user_name'] = $first_name;
+      $content = theme('header_home_template', $data);
+      break;
+    case 'privacy':
+      if (user_is_logged_in()) {
+        return $block;
+      }
+      $content = theme('privacy_policy_template', $data);
+      break;
+  }
+  $block['content'] = $content;
+  return $block;
+}
+
+/*
+function collabco_home_menu_alter(&$menu_items) {
+  $menu_items['node']['access_callback'] = TRUE;
+}
+
+function collabco_home_menu_get_item(&$router_item, &$path, &$original_map) {
+  if ($path == 'node') {
+    $router_item['access'] = TRUE;
+    $router_item['access_callback'] = 'collabco_home_access';
+  }
+}
+
+function collabco_home_access($op, $node, $account) {
+  return;
+}
+ */
+
+function collabco_home_form_search_form_alter(&$form, &$form_state, $form_id) {
+  $form['advanced']['#title'] = "Advanced Search - (click to expand)";
+}
+
+function collabco_home_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter' && isset($implementations['collabco_home'])) {
+    // Move MYMODULE to the end of the list.
+    $group = $implementations['collabco_home'];
+    unset($implementations['collabco_home']);
+    $implementations['collabco_home'] = $group;
+  }
+}

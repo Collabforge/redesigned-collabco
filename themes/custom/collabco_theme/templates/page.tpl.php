@@ -72,127 +72,215 @@
  *
  * @ingroup templates
  */
+ global $base_url;
 ?>
-<header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
-  <div class="<?php print $container_class; ?>">
-    <div class="navbar-header">
-      <?php if ($logo): ?>
-        <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
+<header id="navigation" role="banner">
+  <div class="desktop-header hidden-xs <?php print $container_class; ?>">
+    <div class="row">
+        
+        <div id="brand" class="col-sm-2">
+         <!--  <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <img src="<?php echo $base_url; ?>/sites/all/themes/img/employment/employment-logo.svg" alt="Department of Employment"/>
+          </a>
+          <p><span>Share</span> ideas. <span>Explore</span> ideas. <span>Support</span> ideas.</p> -->
+        </div>
 
-      <?php if (!empty($site_name)): ?>
-        <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-      <?php endif; ?>
-
-      <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      <?php endif; ?>
-    </div>
-
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse">
-        <nav role="navigation">
+    <?php if (!empty($primary_nav) || !empty($page['nav_actions'])): ?>
+      <nav role="navigation-primary" class="col-sm-7 primary-nav">
           <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
+              <?php print render($primary_nav); ?>
           <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
+      </nav>
+      <nav role="navigation-secondary" class="col-sm-3 secondary-nav">
+        <?php if (!empty($page['nav_search'])): ?> 
+          <div class="search">
+            <?php print render($page['nav_search']);?>
+          </div>    
+         <?php endif; ?>
+         <?php if (!empty($page['nav_actions'])): ?> 
+            <div class="nav-actions"><?php print render($page['nav_actions']);?></div>
           <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
+      </nav>    
+
     <?php endif; ?>
+    </div>
+  </div>  
+  <div class="mobile-header container-fluid visible-xs-block">
+    <div class="row ">
+      <div class="nav-mobile col-xs-3">
+        <a href="#" id='nav-hamburger' class="icon-hamburguer"></a>
+      </div>
+      <div id="brand" class="col-xs-6">
+            <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+              <img src="<?php echo $base_url; ?>/sites/all/themes/img/employment/employment-logo.svg" alt="Department of Employment"/>
+            </a>
+      </div>
+        <div class="search col-xs-3">
+          <a href="/search" class="icon-magnifier"></a>
+        </div>     
+    </div>
   </div>
+
+
 </header>
+
+<div class="overlay"></div>
+
+
+
+<nav class='slider-mobile visible-xs-block'>
+  <?php if (!empty($page['nav_actions_mobile'])): ?>
+    <div class="nav-actions-mobile">
+      <?php print render($page['nav_actions_mobile']); ?>
+    </div>
+  <?php endif; ?>
+  
+    <?php if (!empty($primary_nav)): ?>
+      <?php print render($primary_nav); ?>
+    <?php endif; ?>
+    <footer>
+      <div class="logo"><img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/employment/employment-logo-blue.svg" alt="Department of Employment"/>
+      </div>
+      <p class="copyright">© Copyright 2016. Department of Employment</p>
+    </footer>
+</nav>
+
 
 <?php if (!empty($page['content_top'])): ?>
   <div class="content-top">
+
+    <div class="<?php print $container_class; ?>">
       <?php print render($page['content_top']); ?>
+    </div>
+  </div>
+<?php endif; ?>
+
+
+<?php if (!empty($page['full_width_top'])): ?>
+  <div class="full-width-top">
+      <?php print render($page['full_width_top']); ?>
   </div>
 <?php endif; ?>
 
 <?php if (!empty($page['content_upper'])): ?>
-  <div class="content-upper <?php print $container_class; ?>">
+  <div class="content-upper">
+    <div class="<?php print $container_class; ?>">
       <?php print render($page['content_upper']); ?>
+    </div>  
   </div>
 <?php endif; ?>
 
-<div class="main-container <?php print $container_class; ?>">
+<?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
 
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
-
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
-
-  <div class="row">
-
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
-    <section<?php print $content_column_class; ?>>
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+<div class="main-container">
+  <div class="<?php print $container_class; ?>">
+    <header role="banner" id="page-header">
+      <?php if (!empty($site_slogan)): ?>
+        <p class="lead"><?php print $site_slogan; ?></p>
       <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-    </section>
 
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
+      <?php print render($page['header']); ?>
+    </header> <!-- /#page-header -->
 
-  </div>
+    <div class="row">
+
+      <?php if (!empty($page['sidebar_first'])): ?>
+        <aside class="col-sm-4" role="complementary">
+          <?php print render($page['sidebar_first']); ?>
+        </aside>  <!-- /#sidebar-first -->
+      <?php endif; ?>
+
+      <section <?php print $content_column_class; ?>>
+        <?php if (!empty($page['highlighted'])): ?>
+          <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+        <?php endif; ?>
+
+
+        <?php print render($title_prefix); ?>
+        <?php print render($title_suffix); ?>
+
+
+        <?php print $messages; ?>
+        <?php if (!empty($tabs)): ?>
+          <?php print render($tabs); ?>
+        <?php endif; ?>
+        <?php if (!empty($page['help'])): ?>
+          <?php print render($page['help']); ?>
+        <?php endif; ?>
+        <?php if (!empty($action_links)): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
+        <?php  if (!drupal_is_front_page()) {
+                  print render($page['content']);
+                }?>
+        </section>
+      <?php if (!empty($page['sidebar_second_top'])): ?>
+        <aside class="col-sm-4 col-sm-offset-1 sidebar-1" role="complementary">
+          <?php print render($page['sidebar_second_top']); ?>
+        </aside>  <!-- /#sidebar-second-top -->
+      <?php endif; ?>
+      <?php if (!empty($page['sidebar_second'])): ?>
+        <aside class="col-sm-4 col-sm-offset-1 sidebar-2" role="complementary">
+          <?php print render($page['sidebar_second']); ?>
+        </aside>  <!-- /#sidebar-second -->
+      <?php endif; ?>
+
+    </div>
+  </div>  
+
 </div>
 
 <?php if (!empty($page['content_middle'])): ?>
-  <div class="content-middle <?php print $container_class; ?>">
+  <div class="content-middle">
+    <div class="<?php print $container_class; ?>">
       <?php print render($page['content_middle']); ?>
+    </div> 
+  </div>
+<?php endif; ?>
+
+
+<?php if (!empty($page['content_lower'])): ?>
+  <div class="content-lower">
+    <div class=" <?php print $container_class; ?>">
+      <?php print render($page['content_lower']); ?>
+    </div>  
   </div>
 <?php endif; ?>
 
 <?php if (!empty($page['content_bottom'])): ?>
-  <div class="content-bottom <?php print $container_class; ?>">
+  <div class="content-bottom">
+    <div class=" <?php print $container_class; ?>">
       <?php print render($page['content_bottom']); ?>
+    </div>  
+  </div>
+<?php endif; ?>
+
+<?php if (!empty($page['full_width_bottom'])): ?>
+  <div class="full-width-bottom">
+      <?php print render($page['full_width_bottom']); ?>
   </div>
 <?php endif; ?>
 
 
 
-<?php if (!empty($page['footer'])): ?>
-  <footer class="footer <?php print $container_class; ?>">
-    <?php print render($page['footer']); ?>
-  </footer>
+<?php if (!empty($page['footer-1-col']) || !empty($page['footer-2-col'])): ?>
+<footer class="footer">
+  <div class="<?php print $container_class; ?>">
+    <div class="row">
+      <?php if (!empty($page['footer-1-col'])): ?>
+        <div class="col-sm-6 footer-1-col">
+          <?php print render($page['footer-1-col']); ?>
+        </div>
+      <?php endif; ?>
+      <?php if (!empty($page['footer-2-col'])): ?>
+        <div class="col-sm-6 footer-2-col copyright">
+          <?php print render($page['footer-2-col']); ?>
+        </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</footer>    
 <?php endif; ?>
+
+
+<?php drupal_add_js($base_url.'/profiles/collabco/themes/custom/collabco_theme/js/script.js', array('type' => 'file', 'scope' => 'footer')); ?>

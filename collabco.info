@@ -1,14 +1,154 @@
 name = Collabco
-description = Collabco installation profile
+project = collabco
+description = Collabco installation profile for govIMS
 exclusive = TRUE
 core = 7.x
 api = 2
 
-
 ; Dependencies
 
-;dependencies[] = collabco_core
+files[] = collabco.profile
 
+; Core
+
+dependencies[] = block
+dependencies[] = contact
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dblog
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = search
+dependencies[] = syslog
+dependencies[] = shortcut
+dependencies[] = field
+dependencies[] = field_ui
+dependencies[] = text
+dependencies[] = translation
+dependencies[] = file
+dependencies[] = image
+dependencies[] = list
+dependencies[] = rdf
+dependencies[] = update
+
+; Contrib
+
+dependencies[] = views_bulk_operations
+dependencies[] = admin_menu
+dependencies[] = backup_migrate
+dependencies[] = better_exposed_filters
+dependencies[] = better_formats
+dependencies[] = block_class
+dependencies[] = ctools
+dependencies[] = captcha
+dependencies[] = ckeditor
+dependencies[] = ckeditor_media
+dependencies[] = clamav
+dependencies[] = comment_counter
+dependencies[] = comment_delete
+dependencies[] = date
+dependencies[] = datepicker
+dependencies[] = devel
+dependencies[] = download_file
+dependencies[] = entity
+dependencies[] = entity2text
+dependencies[] = entity_rules
+dependencies[] = entityform
+dependencies[] = entityreference
+dependencies[] = features_extra
+dependencies[] = features
+dependencies[] = field_collection
+dependencies[] = field_permissions
+dependencies[] = file_entity
+dependencies[] = flag
+dependencies[] = flag_abuse
+dependencies[] = flag_clear
+dependencies[] = fpa
+dependencies[] = google_analytics
+dependencies[] = http_response_headers
+dependencies[] = image_url_formatter
+dependencies[] = inline_entity_form
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = link
+dependencies[] = login_history
+dependencies[]= mailsystem
+
+dependencies[] = maintenance_mode_permissions
+dependencies[] = mandrill
+dependencies[] = media
+dependencies[] = menu_attributes
+dependencies[] = message
+dependencies[] = message_ui
+dependencies[] = mimemail
+dependencies[] = module_filter
+dependencies[] = nodequeue
+dependencies[] = og
+dependencies[] = og_invite_people
+dependencies[] = pathauto
+dependencies[] = quicktabs
+
+dependencies[] = register_preapproved
+dependencies[] = rules
+dependencies[] = stringoverrides
+dependencies[] = strongarm
+dependencies[] = term_queue
+dependencies[] = token
+dependencies[] = translation_helpers
+dependencies[] = user_stats
+dependencies[] = variable
+dependencies[] = views
+dependencies[] = views_autocomplete_filters
+dependencies[] = views_content_cache
+dependencies[] = views_contextual_filters_or
+dependencies[] = views_data_export
+dependencies[] = views_field_view
+dependencies[] = views_php
+dependencies[] = views_responsive_grid
+dependencies[] = views_send
+dependencies[] = views_slideshow
+dependencies[] = vscc
+dependencies[] = webform
+dependencies[] = webform_rules
+
+; Custom
+
+;dependencies[] = govims_disable_defaultcontent
+
+; Content types
+
+dependencies[] = collabco_appearance_feature
+dependencies[] = basic_page_feature
+dependencies[] = collabco_core_feature
+dependencies[] = collabco_challenge_feature
+dependencies[] = collabco_ideas_feature
+dependencies[] = collabco_collaboration_feature
+dependencies[] = collabco_myhub_feature
+dependencies[] = collabco_views_feature
+dependencies[] = collabco_message_feature
+
+; collabco
+
+dependencies[] = collabco_challenge
+dependencies[] = collabco_collaboration
+dependencies[] = collabco_email
+dependencies[] = collabco_group
+dependencies[] = collabco_home
+dependencies[] = collabco_idea
+dependencies[] = collabco_login
+dependencies[] = collabco_msg
+dependencies[] = collabco_myhubs
+dependencies[] = collabco_profile
+dependencies[] = collabco_search
+dependencies[] = collabco_settings
+dependencies[] = collabco_views
 
 
 ; Profiler - Variables

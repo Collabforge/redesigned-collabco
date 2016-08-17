@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file collabco_search.module
+ *
+ * User Search by Full Name and email fields.
+ */
+
+/**
+ * Implements hook_search_info().
+ */
+function collabco_search_search_info() {
+  return array(
+    'title' => 'Members',
+    'path' => 'user-full',
+  );
+}
+
+/**
+ * Implements hook_search_execute().
+ */
+function collabco_search_search_execute($keys = NULL, $conditions = NULL) {
+  $find = array();
+  // Escape for LIKE matching.
+  $keys = db_like($keys);
+  // Replace wildcards with MySQL/PostgreSQL wildcards.
+  $keys = preg_replace('!\*+!', '%', $keys);
+  $query = db_select('users')->extend('PagerDefault');
+  $query->fields('users', array('uid'));
+
+  // Need to join users.uid on field_data_field_full_name.entity_id
+  // and look for field_full_name_value, rather than users.name
+  $query->join('field_data_field_full_name', 'ffn', 'users.uid = ffn.entity_id');
+  $query->fields('ffn', array('field_full_name_value'));
+
+  $is_privileged = user_access('administer users');
+
+  if ($is_privileged) {
+    // Privileged users can also search in the otherwise private email field,
+    // and they don't need to be restricted to only active users.
+    $query->fields('users', array('mail'));
+
+    $query->condition(db_or()->
+      condition('field_full_name_value', '%' . $keys . '%', 'LIKE')->
+      condition('mail', '%' . $keys . '%', 'LIKE'));
+  }
+  else {
+    // Regular users can only search via usernames, and we do not show them
+    // blocked accounts.
+    $query->condition('field_full_name_value', '%' . $keys . '%', 'LIKE')
+      ->condition('status', 1);
+  }
+  $uids = $query
+    ->limit(15)
+    ->execute()
+    ->fetchCol();
+
+  $accounts = user_load_multiple($uids);
+
+  $results = array();
+  foreach ($accounts as $account) {
+    if (empty($account->field_full_name[LANGUAGE_NONE])) {
+      $full_name = format_username($account);
+    }
+    else {
+      $full_name = trim($account->field_full_name[LANGUAGE_NONE][0]['value']);
+    }
+    $result = array(
+      'title' => $full_name,
+      'link' => url('user/' . $account->uid, array('absolute' => TRUE)),
+    );
+    if ($is_privileged) {
+      $result['title'] .= ' (' . $account->mail . ')';
+    }
+    $results[$account->uid] = $result;
+  }
+
+  return $results;
+}

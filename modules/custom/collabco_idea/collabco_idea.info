@@ -1,0 +1,6 @@
+name = Collabco Idea
+description = Blocks, Views etc. dealing with the Idea content type
+dependencies[] = views
+stylesheets[all][] = collabco_idea.css
+core = 7.x
+package = Collabco
