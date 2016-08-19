@@ -115,11 +115,6 @@ function _govims_set_default_themes() {
 }
 
 
-
-
-
-/
-
 /**
  * Set default menu items.
  */
