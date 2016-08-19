@@ -162,7 +162,7 @@ projects[login_history][version] = "1.0-beta3"
 
 projects[mailsystem][type] = module
 projects[mailsystem][subdir] = contrib
-projects[mailsystem][version] = "2.34+5-dev"
+projects[mailsystem][version] = "2.x-dev"
 
 projects[maintenance_mode_permissions][type] = module
 projects[maintenance_mode_permissions][subdir] = contrib
