@@ -29,8 +29,7 @@ define('GOVIMS_DEFAULT_ADMIN_THEME', 'seven');
  */
 function collabco_install() {
 
-  // Ensure the beans feature is reverted.
-  $revert = array('collabco_appearance_feature','basic_page_feature','collabco_core_feature','collabco_challenge_feature','collabco_ideas_feature','collabco_collaboration_feature','collabco_myhub_feature','collabco_views_feature','collabco_message_feature');
+   $revert = array('collabco_appearance_feature','basic_page_feature','collabco_core_feature','collabco_challenge_feature','collabco_ideas_feature','collabco_collaboration_feature','collabco_myhub_feature','collabco_views_feature','collabco_message_feature');
   _govims_features_revert($revert);
 
   // Configure default text formats and basic permissions.
@@ -52,7 +51,7 @@ function collabco_install() {
   // _govcms_twitter_block();
 
   // Set some default variable values.
-  _govims_default_variables();
+  //_govims_default_variables();
 
   // // Enable full image display mode.
   // _govcms_install_full_image_display();
@@ -97,11 +96,12 @@ function _govims_set_default_themes() {
   // The install_state data is discarded after the last core install task, so
   // we set install_profile specifically to ensure that drupal_get_profile()
   // returns the correct profile name and finds the profile themes.
+  theme_enable(array('bootstrap'));
   $enable = array(
     'theme_default' => GOVIMS_DEFAULT_THEME,
     'admin_theme' => GOVIMS_DEFAULT_ADMIN_THEME,
     'install_profile' => 'collabco',
-  );
+   );
   theme_enable($enable);
 
   foreach ($enable as $var => $theme) {
@@ -111,7 +111,8 @@ function _govims_set_default_themes() {
   }
 
   // Disable the default Bartik & default admin theme.
-  theme_disable(array('bartik', GOVIMS_DEFAULT_ADMIN_THEME));
+ 
+  theme_disable(array('bartik'));
 }
 
 
@@ -126,6 +127,12 @@ function _govims_set_menu() {
     'link_path' => '<front>',
     'menu_name' => 'main-menu',
     'weight' => -50,
+  );
+  $item = array(
+    'link_title' => st('Collaboration'),
+    'link_path' => 'collaborate',
+    'menu_name' => 'main-menu',
+    'weight' => 50,
   );
   menu_link_save($item);
 

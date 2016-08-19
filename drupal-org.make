@@ -304,6 +304,10 @@ projects[webform_rules][type] = module
 projects[webform_rules][subdir] = contrib
 projects[webform_rules][version] = "1.6"
 
+projects[defaultcontent][type] = module
+projects[defaultcontent][subdir] = contrib
+projects[defaultcontent][type] = "1.0-alpha9"
+
 ; Themes
 projects[bootstrap][type] = theme
 projects[bootstrap][version] = "3.5"
