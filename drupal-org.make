@@ -214,7 +214,7 @@ projects[pathauto][version] = "1.3"
 
 projects[quicktabs][type] = module
 projects[quicktabs][subdir] = contrib
-projects[quicktabs][version] = "3.6+10-dev"
+projects[quicktabs][version] = "3.x-dev"
 
 projects[register_preapproved][type] = module
 projects[register_preapproved][subdir] = contrib
