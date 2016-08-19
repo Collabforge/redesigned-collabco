@@ -34,10 +34,10 @@ function collabco_install() {
   _govims_features_revert($revert);
 
   // Configure default text formats and basic permissions.
-  _govims_default_formats_and_permissions();
+ // _govims_default_formats_and_permissions();
 
   // Configure basic roles.
-  _govims_create_basic_roles_perms();
+ // _govims_create_basic_roles_perms();
 
   // Set default front-end and admin themes.
   _govims_set_default_themes();
