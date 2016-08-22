@@ -60,7 +60,9 @@ function collabco_msg_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_user_presave().
  */
 function collabco_msg_user_presave(&$edit, $account, $category) {
-   $edit['data']['collabco_email_setting'] = $edit['collabco_email_setting'];
+  if (key_exists('collabco_email_setting', $edit)) {
+     $edit['data']['collabco_email_setting'] = $edit['collabco_email_setting'];
+  }
 }
 
 

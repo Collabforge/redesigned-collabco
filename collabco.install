@@ -45,7 +45,7 @@ function collabco_install() {
   // _govcms_date_formats();
 
   // // Setup some default blocks.
-  // _govcms_default_blocks();
+   _govims_default_blocks();
 
   // // Set up twitter block.
   // _govcms_twitter_block();
@@ -96,8 +96,7 @@ function _govims_set_default_themes() {
   // The install_state data is discarded after the last core install task, so
   // we set install_profile specifically to ensure that drupal_get_profile()
   // returns the correct profile name and finds the profile themes.
-  theme_enable(array('bootstrap'));
-  $enable = array(
+   $enable = array(
     'theme_default' => GOVIMS_DEFAULT_THEME,
     'admin_theme' => GOVIMS_DEFAULT_ADMIN_THEME,
     'install_profile' => 'collabco',
@@ -139,6 +138,9 @@ function _govims_set_menu() {
   menu_rebuild();
 }
 
+
+
+
 /**
  * Reverts a list of features.
  */
@@ -159,6 +161,62 @@ function _govims_features_revert($modules) {
       features_revert(array($module => array($component)));
     }
   }
+}
+
+
+/**
+ * Setup some default blocks.
+ */
+function _govims_default_blocks() {
+  // Get all the govCMS supported themes.
+  $themes = govims_supported_themes();
+
+  // Set default system block in primary theme.
+  collabco_core_insert_block('system', 'main', $themes, 'content', -12);
+  collabco_core_insert_block('system', 'help', $themes, 'content', -14);
+  collabco_core_insert_block('superfish', '1', $themes, 'navigation');
+  collabco_core_insert_block('menu', 'menu-footer-sub-menu', $themes, 'footer', 3);
+
+  // Set govCMS blocks.
+  collabco_core_insert_block('collabco_home', 'header_home', $themes, 'content_top',1,BLOCK_VISIBILITY_LISTED,'<front>');
+  
+  // Open challenges block
+  collabco_core_insert_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_upper', 14,BLOCK_VISIBILITY_LISTED,'<front>');
+
+  // Set some blocks in the admin theme.
+  collabco_core_insert_block('system', 'main', GOVCMS_DEFAULT_ADMIN_THEME, 'content');
+  collabco_core_insert_block('system', 'help', GOVCMS_DEFAULT_ADMIN_THEME, 'help');
+ 
+}
+
+/**
+ * Implements hook_install_tasks().
+ */
+function collabco_install_tasks($install_state) {
+  $task = array();
+
+  $govims_example_content_batch = variable_get('collabco_example_content_batch', FALSE);
+
+  $task['collabco_install_additional_options'] = array(
+    'display_name' => st('Additional options'),
+    'display' => TRUE,
+    'type' => 'form',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+  );
+  $task['collabco_example_content_install'] = array(
+    'display_name' => st('Example content'),
+    'display' => FALSE,
+    'type' => 'batch',
+    'run' => $govims_example_content_batch ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
+  );
+  $task['collabco_cleanup'] = array(
+    'display_name' => st('Finish'),
+    'display' => FALSE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+  );
+
+  return $task;
 }
 
 
@@ -213,6 +271,171 @@ function collabco_finished() {
   return $output;
 }
 
+/**
+ * Form callback for additional options install task.
+ */
+function collabco_install_additional_options() {
+
+  set_time_limit(0);
+
+  $form = array();
+  drupal_set_title('Additional options');
+
+  $form['default_content'] = array(
+    '#type' => 'fieldset',
+    '#title' => st('Example content'),
+  );
+
+  $form['default_content']['install'] = array(
+    '#type' => 'checkbox',
+    '#title' => st('Install example content'),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => st('Continue'),
+  );
+
+  return $form;
+}
+
+
+/**
+ * Submit handler.
+ *
+ * @ingroup forms
+ */
+function collabco_install_additional_options_submit(&$form, &$form_state) {
+
+  // If user selects to install default content. Set var.
+  if ($form_state['values']['install']) {
+    variable_set('collabco_example_content_batch', TRUE);
+  }
+
+  return FALSE;
+}
+
+/**
+ * Returns modules and functions to install default/example content.
+ */
+function collabco_default_content() {
+  return array(
+    0 => array(
+      'title' => st('Default Challenges'),
+      'type' => 'function',
+      'key' => '_govims_default_challenges',
+    ),
+    1 => array(
+      'title' => st('Ideas'),
+      'type' => 'module',
+      'key' => 'collabco_content_event',
+    ),
+  );
+
+}
+
+/**
+ *  Function to add default challenge terms to Challenge Taxonomy.
+ *  Add then to open_challenges term_queue
+ */
+function _govims_default_challenges() {
+    
+// List of terms for insert.
+  $terms = array(
+    t('Brainstorm'),
+    t('Name this site'),
+   );
+
+  $vocabs = taxonomy_vocabulary_get_names();
+  if (empty($vocabs['challenge'])) {
+    return;
+  }
+  // Save taxonomy terms.
+  $vid = $vocabs['challenge']->vid;
+  $tids = array();
+
+  foreach ($terms as $name) {
+    $term = new stdClass();
+    $term->name = $name;
+    $term->vid = $vid;
+    $term->vocabulary_machine_name = 'challenge';
+    taxonomy_term_save($term);
+    $tids[] = $term->tid;
+  }
+
+  // Save the tids.
+  variable_set('govims_challenges_saved', $tids);
+}
+
+
+/**
+ * Sets the Batch API array for batch processing.
+ */
+function collabco_example_content_install() {
+
+  $operations = array();
+
+  $steps = govcms_default_content();
+  foreach ($steps as $content) {
+    $operations[] = array(
+      'collabco_example_content_install_batch',
+      array(
+        $content['type'],
+        $content['key'],
+        $content['title'],
+        isset($content['message']) ? $content['message'] : '',
+      ),
+    );
+  }
+
+  $batch = array(
+    'operations' => $operations,
+    'title' => st('Processing example content'),
+    'init_message' => st('Initializing'),
+    'error_message' => st('Error'),
+    'finished' => 'govcms_example_content_install_finished',
+  );
+
+  return $batch;
+}
+
+/**
+ * Either enable module or run function for Example content batch install.
+ *
+ * @param string $type
+ *   Type of content either 'module' or 'function'.
+ * @param string $key
+ *   Name of module or function to enable/run.
+ * @param string $name
+ *   Title/name of the module or function.
+ * @param string $message
+ *   Optional message to be output with function.
+ * @param array $context
+ *   Batch context data.
+ */
+function collabco_example_content_install_batch($type, $key, $name, $message, &$context) {
+  if ($type == 'module') {
+    module_enable(array($key), FALSE);
+    $context['results'][] = $key;
+    $context['message'] = st('Enabled %module content.', array('%module' => $name));
+  }
+  elseif ($type == 'function') {
+    call_user_func($key);
+    $context['results'][] = $key;
+    if ($message) {
+      $context['message'] = $message;
+    }
+  }
+}
+
+/**
+ * Performs any cleanup and output on completion of example content batch.
+ */
+function collabco_example_content_install_finished($context) {
+
+  drupal_set_message('Example content installed.');
+  
+}
 
 
 /**

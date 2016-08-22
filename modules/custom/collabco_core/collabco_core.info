@@ -1,0 +1,4 @@
+name = Collabco Core
+description = Core module for Collabco package
+core = 7.x
+package = Collabco
