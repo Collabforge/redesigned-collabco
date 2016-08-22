@@ -817,7 +817,7 @@ function collabco_core_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mandrill_api_key';
-  $strongarm->value = 'Et3D8bzpFJDqb9g7zdo_jA';
+  $strongarm->value = '';
   $export['mandrill_api_key'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -845,7 +845,7 @@ function collabco_core_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mandrill_from_name';
-  $strongarm->value = 'Department of Employment';
+  $strongarm->value = 'govIMS';
   $export['mandrill_from_name'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -922,7 +922,7 @@ function collabco_core_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mimemail_key';
-  $strongarm->value = 'xXyASeIcbDMiJbOuhAazJZqZauY9ZjyP8n7AEHq7emM';
+  $strongarm->value = '';
   $export['mimemail_key'] = $strongarm;
 
   $strongarm = new stdClass();

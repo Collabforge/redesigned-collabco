@@ -50,6 +50,7 @@ function collabco_profile_block_info() {
 function collabco_profile_block_view($delta = '') {
   $block = array();
   global $user;
+  $full_name ="";
   if (!user_is_logged_in()) {
     return $block;
   }

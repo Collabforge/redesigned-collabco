@@ -410,7 +410,7 @@ function collabco_msg_mail_followers($email_key, $subject, $entities_followed = 
 
 function _collabco_msg_flesh_out_params($subject, &$params) {
   global $base_url;
-
+  $user_name ="";
   if (isset($subject->tid)) {
     // Subject is a axonomy term
     $term_url = "$base_url/taxonomy/term/$subject->tid";

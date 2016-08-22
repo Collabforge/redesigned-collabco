@@ -50,9 +50,7 @@ function collabco_install() {
   // _govcms_install_full_image_display();
 
   // Set default menu items.
-  _govims_set_menu();
-
-  // // Setup login destination.
+   // // Setup login destination.
   // _govcms_setup_login_destination();
 
   // // Set defaults for the contact form.
@@ -107,34 +105,6 @@ function _govims_set_default_themes() {
   theme_disable(array('bartik'));
 }
 
-
-/**
- * Set default menu items.
- */
-function _govims_set_menu() {
-
-  // Create a Home link in the main menu.
-  $item = array(
-    'link_title' => st('Home'),
-    'link_path' => '<front>',
-    'menu_name' => 'main-menu',
-    'weight' => -50,
-  );
-  menu_link_save($item);
-  $item = array(
-    'link_title' => st('Collaboration'),
-    'link_path' => 'collaborate',
-    'menu_name' => 'main-menu',
-    'weight' => 100,
-  );
-  menu_link_save($item);
-
-  menu_rebuild();
-}
-
-
-
-
 /**
  * Reverts a list of features.
  */
@@ -180,6 +150,10 @@ function _govims_default_blocks() {
   
   //Challenge page 
   collabco_core_update_block('collabco_challenge', 'header_challenge', $themes, 'content_top', 0);
+    
+  //individual Challenge page
+  collabco_core_update_block('views', 'challenge_page_header-block', $themes, 'content_top', 0);
+  
   collabco_core_update_block('views', 'latest_ideas-block', $themes, 'content_lower', 14);
   
   //ideas belonging to a challenge
@@ -369,7 +343,10 @@ function _govims_default_challenges() {
   if (empty($vocabs['challenge'])) {
     return;
   }
-  // Save taxonomy terms.
+ $queue = term_queue_load('open_challenges'); 
+ term_queue_save($queue);
+ $queue = term_queue_load('open_challenges'); 
+// Save taxonomy terms.
   $vid = $vocabs['challenge']->vid;
   $tids = array();
 
@@ -379,6 +356,9 @@ function _govims_default_challenges() {
     $term->vid = $vid;
     $term->vocabulary_machine_name = 'challenge';
     taxonomy_term_save($term);
+    if (!empty($queue['qid'])) {
+       term_queue_add_term($queue['qid'],$term->tid);
+    }
     $tids[] = $term->tid;
   }
 
