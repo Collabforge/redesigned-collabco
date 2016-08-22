@@ -135,7 +135,6 @@ dependencies[] = collabco_challenge_feature
 dependencies[] = collabco_ideas_feature
 dependencies[] = collabco_collaboration_feature
 dependencies[] = collabco_myhub_feature
-dependencies[] = collabco_views_feature
 dependencies[] = collabco_message_feature
 
 ; collabco
@@ -153,6 +152,8 @@ dependencies[] = collabco_profile
 dependencies[] = collabco_search
 dependencies[] = collabco_settings
 dependencies[] = collabco_views
+
+dependencies[] = collabco_views_feature
 
 
 ; Profiler - Variables

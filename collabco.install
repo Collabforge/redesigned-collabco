@@ -1,14 +1,7 @@
 <?php
 
 /**
- * @file
- * The install file for the govCMS distribution.
- *
- * The original foundation for the govCMS distribution is aGov; the Drupal distribution created by PreviousNext to provide a core set of elements, functionality and features that can be used to develop government websites
- *
- * @copyright Copyright(c) 2015 Commonwealth of Australia as represented by Department of Finance
- * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
- * @author Department of Finance
+ * Collabco installation 
  **/
 
 /**
@@ -72,7 +65,7 @@ function collabco_install() {
   // module_enable(array('govcms_password_policy'));
 
   // Clean up after install.
-  govims_cleanup();
+  collabco_cleanup();
 }
 
 /**
@@ -176,8 +169,10 @@ function _govims_default_blocks() {
   collabco_core_insert_block('system', 'main', $themes, 'content', -12);
   collabco_core_insert_block('system', 'help', $themes, 'content', -14);
 
-  // Set govCMS blocks.
+  // Set home page blocks
   collabco_core_update_block('collabco_home', 'header_home', $themes, 'content_top', 0);
+  collabco_core_update_block('collabco_profile', 'header_user_profile_block', $themes, 'nav_actions', 0);
+  collabco_core_update_block('search', 'form', $themes, 'nav_search', 0);
     
   // Open challenges block on home page
   collabco_core_update_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_upper', 14);
@@ -185,10 +180,21 @@ function _govims_default_blocks() {
   
   //Challenge page 
   collabco_core_update_block('collabco_challenge', 'header_challenge', $themes, 'content_top', 0);
+  collabco_core_update_block('views', 'latest_ideas-block', $themes, 'content_lower', 14);
+  
+  //ideas belonging to a challenge
+  collabco_core_update_block('views', '8057de6ae37fa6fb676e14c306088c3f', $themes, 'content_middle', 0);
   
   //myhub page
   collabco_core_update_block('collabco_myhubs', 'header_myhubs', $themes, 'content_top', -40);
   collabco_core_update_block('collabco_myhubs', 'myhub_links', $themes, 'content_upper', -41);
+  
+  //myhub updates
+  collabco_core_update_block('views', '2b14d775fef07b47e68c4e559319dd47', $themes, 'content', 14);
+  
+  collabco_core_update_block('quicktabs', 'my_hub_ideas', $themes, 'content', 14);
+  
+  collabco_core_update_block('quicktabs', 'my_hub_collaborations', $themes, 'content', 14);
   
   
   //Idea page
