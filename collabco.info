@@ -127,6 +127,7 @@ dependencies[] = webform_rules
 
 ; Content types
 
+dependencies[] = collabco_core
 dependencies[] = collabco_appearance_feature
 dependencies[] = basic_page_feature
 dependencies[] = collabco_core_feature

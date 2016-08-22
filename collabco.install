@@ -127,11 +127,12 @@ function _govims_set_menu() {
     'menu_name' => 'main-menu',
     'weight' => -50,
   );
+  menu_link_save($item);
   $item = array(
     'link_title' => st('Collaboration'),
     'link_path' => 'collaborate',
     'menu_name' => 'main-menu',
-    'weight' => 50,
+    'weight' => 100,
   );
   menu_link_save($item);
 
@@ -174,18 +175,30 @@ function _govims_default_blocks() {
   // Set default system block in primary theme.
   collabco_core_insert_block('system', 'main', $themes, 'content', -12);
   collabco_core_insert_block('system', 'help', $themes, 'content', -14);
-  collabco_core_insert_block('superfish', '1', $themes, 'navigation');
-  collabco_core_insert_block('menu', 'menu-footer-sub-menu', $themes, 'footer', 3);
 
   // Set govCMS blocks.
-  collabco_core_insert_block('collabco_home', 'header_home', $themes, 'content_top',1,BLOCK_VISIBILITY_LISTED,'<front>');
+  collabco_core_update_block('collabco_home', 'header_home', $themes, 'content_top', 0);
+    
+  // Open challenges block on home page
+  collabco_core_update_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_upper', 14);
   
-  // Open challenges block
-  collabco_core_insert_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_upper', 14,BLOCK_VISIBILITY_LISTED,'<front>');
+  
+  //Challenge page 
+  collabco_core_update_block('collabco_challenge', 'header_challenge', $themes, 'content_top', 0);
+  
+  //myhub page
+  collabco_core_update_block('collabco_myhubs', 'header_myhubs', $themes, 'content_top', -40);
+  collabco_core_update_block('collabco_myhubs', 'myhub_links', $themes, 'content_upper', -41);
+  
+  
+  //Idea page
+  collabco_core_update_block('collabco_idea', 'single_idea_header', $themes, 'content_top', -40);
+  collabco_core_update_block('collabco_idea', 'single_idea_breadcrumb', $themes, 'content_upper', -41);
 
   // Set some blocks in the admin theme.
   collabco_core_insert_block('system', 'main', GOVCMS_DEFAULT_ADMIN_THEME, 'content');
   collabco_core_insert_block('system', 'help', GOVCMS_DEFAULT_ADMIN_THEME, 'help');
+  
  
 }
 
@@ -328,7 +341,7 @@ function collabco_default_content() {
     1 => array(
       'title' => st('Ideas'),
       'type' => 'module',
-      'key' => 'collabco_content_event',
+      'key' => 'collabco_content_idea',
     ),
   );
 
@@ -375,7 +388,7 @@ function collabco_example_content_install() {
 
   $operations = array();
 
-  $steps = govcms_default_content();
+  $steps = collabco_default_content();
   foreach ($steps as $content) {
     $operations[] = array(
       'collabco_example_content_install_batch',
@@ -393,7 +406,7 @@ function collabco_example_content_install() {
     'title' => st('Processing example content'),
     'init_message' => st('Initializing'),
     'error_message' => st('Error'),
-    'finished' => 'govcms_example_content_install_finished',
+    'finished' => 'collabco_example_content_install_finished',
   );
 
   return $batch;
@@ -446,7 +459,7 @@ function collabco_cleanup() {
   //govcms_rebuild_sitemap();
 
   // Rebuild default config (permissions).
-  defaultconfig_rebuild_all();
+  //defaultconfig_rebuild_all();
 
   // Required by view_unpublished module.
   node_access_rebuild();
