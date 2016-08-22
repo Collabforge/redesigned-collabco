@@ -64,6 +64,10 @@ projects[datepicker][type] = module
 projects[datepicker][subdir] = contrib
 projects[datepicker][version] = "1.0"
 
+projects[defaultcontent][type] = module
+projects[defaultcontent][subdir] = contrib
+projects[defaultcontent][version] = "1.0-alpha9"
+
 projects[devel][type] = module
 projects[devel][subdir] = contrib
 projects[devel][version] = "1.5"
@@ -304,9 +308,7 @@ projects[webform_rules][type] = module
 projects[webform_rules][subdir] = contrib
 projects[webform_rules][version] = "1.6"
 
-projects[defaultcontent][type] = module
-projects[defaultcontent][subdir] = contrib
-projects[defaultcontent][type] = "1.0-alpha9"
+
 
 ; Themes
 projects[bootstrap][type] = theme
