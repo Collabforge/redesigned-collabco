@@ -44,7 +44,7 @@ function collabco_core_feature_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-44cc33472dd9db1a4a41dd297f5a1e55'] = array(

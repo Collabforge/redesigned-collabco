@@ -304,7 +304,8 @@ function collabco_default_content() {
       'type' => 'module',
       'key' => 'collabco_content_collaboration',
     ),
- );
+    
+  );
 
 }
 
@@ -324,9 +325,16 @@ function _govims_default_challenges() {
   if (empty($vocabs['challenge'])) {
     return;
   }
- $queue = term_queue_load('open_challenges'); 
+ 
+ $queue =array(
+ 'machine_name' => 'open_challenges',
+ 'title' => 'Open challenges',
+ 'description' =>'Open challenges queue',
+ 'vid_machine_name' => 'challenge',
+ );
+
  term_queue_save($queue);
- $queue = term_queue_load('open_challenges'); 
+ $queue = term_queue_load('open_challenges');
 // Save taxonomy terms.
   $vid = $vocabs['challenge']->vid;
   $tids = array();
@@ -337,9 +345,7 @@ function _govims_default_challenges() {
     $term->vid = $vid;
     $term->vocabulary_machine_name = 'challenge';
     taxonomy_term_save($term);
-    if (!empty($queue['qid'])) {
-       term_queue_add_term($queue['qid'],$term->tid);
-    }
+    term_queue_add_term($queue->qid,$term->tid);
     $tids[] = $term->tid;
   }
 
