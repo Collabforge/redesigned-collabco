@@ -1,6 +1,8 @@
 name = Collabco
-project = collabco
-description = Collabco installation profile for govIMS
+project = govims
+description = A distribution for Ideas Management System
+package = govIMS Profile
+distribution_name = govIMS
 exclusive = TRUE
 core = 7.x
 api = 2

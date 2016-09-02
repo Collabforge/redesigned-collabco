@@ -30,6 +30,8 @@ function collabco_install() {
   
   // // Setup some default blocks.
    _govims_default_blocks();
+   
+   _govims_setup_user(); 
  
   // Clean up after install.
   collabco_cleanup();
@@ -44,7 +46,25 @@ function govims_supported_themes() {
   );
 }
 
+function _govims_setup_user() {
 
+  $theme_path = drupal_get_path('theme', variable_get('theme_default', NULL));
+  $source_file = $theme_path."/assets/img/avatar-blank.jpg";
+  $destination_file = "/sites/default/files/pictures/avatar-blank.jpg";  
+  print($source_file);
+  print($destination_file);
+  copy($source_file, $destination_file);
+  
+  // Setting up the full name for User 1
+   $account = user_load(1);
+   $full_name = array();
+   $full_name[LANGUAGE_NONE][0][value] = "Admin User";
+  
+   $edit = array(
+   'field_full_name' => $full_name,
+   );
+   user_save($account, $edit);
+}
 
 /**
  * Set default themes.
@@ -116,6 +136,9 @@ function _govims_default_blocks() {
   // Open challenges block on home page
   collabco_core_update_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_upper', 14);
   
+  //footer 
+  collabco_core_update_block('collabco_home', 'footer', $themes, 'footer-1-col', 1);
+  collabco_core_update_block('collabco_home', 'privacy', $themes, 'footer-2-col', 1);
   
   //Challenge page 
   collabco_core_update_block('collabco_challenge', 'header_challenge', $themes, 'content_top', 0);
@@ -206,6 +229,8 @@ function collabco_install_tasks_alter(&$tasks, $install_state) {
  * Overrides the core install_finished.
  */
 function collabco_finished() {
+  $theme_path = drupal_get_path('theme', 'collabco_theme'); 
+  
   drupal_set_title(st('@drupal installation complete', array('@drupal' => drupal_install_profile_distribution_name())), PASS_THROUGH);
   $messages = drupal_set_message();
   $output = '<p>' . st('Congratulations, you installed @drupal!', array('@drupal' => drupal_install_profile_distribution_name())) . '</p>';
@@ -304,9 +329,50 @@ function collabco_default_content() {
       'type' => 'module',
       'key' => 'collabco_content_collaboration',
     ),
-    
+   3 => array(
+     'title' => st('Featured Collaborations'),
+     'type' => 'function',
+     'key' => '_govims_featured_collaborations',
+   ), 
   );
 
+}
+
+/**
+ * Function to create featured_collaborations nodequeue
+ * Add some collaborations
+ */
+function _govims_featured_collaborations() {
+    
+    if (!nodequeue_load_queue_by_name('featured_collaborations')) {
+    $nodequeue = new stdClass();
+    $nodequeue->api_version = 2;
+    $nodequeue->name = 'featured_collaborations';
+    $nodequeue->title = 'Featured Collaborations';
+    $nodequeue->link = 'Add to Featured Collaborations queue';
+    $nodequeue->link_remove = 'Remove from Featured Collaborations queue';
+    $nodequeue->owner = 'nodequeue';
+    $nodequeue->show_in_ui = 1;
+    $nodequeue->show_in_tab = 1;
+    $nodequeue->show_in_links = 1;
+    $nodequeue->reference = '0';
+    $nodequeue->reverse = 1;
+    $nodequeue->i18n = 0;
+    $nodequeue->roles = array(
+      0 => '3',
+    );
+    nodequeue_save($nodequeue);
+    $nids = db_select('node', 'n')
+    ->fields('n', array('nid'))
+    ->condition('n.type', 'hub')
+    ->execute()
+    ->fetchCol();
+    
+    print($nids);
+    foreach ($nids as $nid) {
+      nodequeue_queue_add('featured_collaborations',$nid);
+    }
+   }
 }
 
 /**

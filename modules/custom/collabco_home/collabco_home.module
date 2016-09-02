@@ -18,6 +18,10 @@ function collabco_home_theme($existing, $type, $theme, $path) {
       'template' => 'privacy-policy-template',
       'variables' => array(),
     ),
+    'footer_template' => array(
+      'template' => 'footer-template',
+      'variables' => array(),
+    ),
   );
 }
 
@@ -39,6 +43,12 @@ function collabco_home_block_info() {
     'visibility' => 0,
     'status' => TRUE,
   );
+  $blocks['footer'] = array(
+    'info' => t('Collabco footer block'),
+    'region' => 'footer-1-col',
+    'visibility' => 0,
+    'status' => TRUE,
+  );
   return $blocks;
 }
 
@@ -56,10 +66,10 @@ function collabco_home_block_view($delta = '') {
       $data['user_name'] = $first_name;
       $content = theme('header_home_template', $data);
       break;
+    case 'footer':
+      $content = theme('footer_template', $data);
+      break;
     case 'privacy':
-      if (user_is_logged_in()) {
-        return $block;
-      }
       $content = theme('privacy_policy_template', $data);
       break;
   }
