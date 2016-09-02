@@ -312,7 +312,7 @@ projects[webform_rules][version] = "1.6"
 
 ; Themes
 projects[bootstrap][type] = theme
-projects[bootstrap][version] = “3.6”
+projects[bootstrap][version] = "3.6"
 
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
