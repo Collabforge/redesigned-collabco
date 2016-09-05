@@ -51,12 +51,10 @@ function _govims_setup_user() {
   $theme_path = drupal_get_path('theme', variable_get('theme_default', NULL));
   $source_file = $theme_path."/assets/img/avatar-blank.jpg";
   $destination_file = "sites/default/files/pictures/avatar-blank.jpg";  
-  print($source_file);
-  print($destination_file);
+  
   mkdir(dirname($destination_file), 0777, true);
   $result = copy($source_file, $destination_file);
-  print($result);
-  
+    
   // Setting up the full name for User 1
    $account = user_load(1);
    $full_name = array();
@@ -381,7 +379,7 @@ function _govims_featured_collaborations() {
     ->execute()
     ->fetchCol();
     
-    print($nids);
+    
     foreach ($nids as $nid) {
       nodequeue_queue_add('featured_collaborations',$nid);
     }
