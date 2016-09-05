@@ -165,7 +165,7 @@ function _govims_default_blocks() {
   collabco_core_update_block('quicktabs', 'my_hub_collaborations', $themes, 'content', 14);
   
    //Idea page
-  collabco_core_update_block('collabco_idea', 'single_idea_header', $themes, 'content_top', -40);
+  collabco_core_update_block('collabco_idea', 'single_idea_header', $themes, 'full_width_top', -40);
   collabco_core_update_block('collabco_idea', 'single_idea_breadcrumb', $themes, 'content_upper', -41);
   
   //collaboration 
@@ -353,8 +353,8 @@ function _govims_featured_collaborations() {
     $nodequeue->title = 'Featured Collaborations';
     $nodequeue->subqueue_title = '';
     $nodequeue->size =0;
-    $nodequeue->link = 'Add to Featured Collaborations queue';
-    $nodequeue->link_remove = 'Remove from Featured Collaborations queue';
+    $nodequeue->link = 'Add to Featured Collaborations';
+    $nodequeue->link_remove = 'Remove from Featured Collaborations';
     $nodequeue->owner = 'nodequeue';
     $nodequeue->show_in_ui = 1;
     $nodequeue->show_in_tab = 1;
