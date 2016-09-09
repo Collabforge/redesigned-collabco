@@ -19,7 +19,6 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    * context constructor through behat.yml.
    */
   public function __construct() {
-
   }
     /**
      * @Given I logout 
