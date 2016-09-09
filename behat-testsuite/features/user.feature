@@ -10,6 +10,8 @@ Feature: User
 
 @smoke @javascript
   Scenario: A user visits home while logged in
-    Given I am logged in as a user with the "authenticated user" role
-    And I am on "/"
-    Then I should see a "nav" field with id "navigation-primary"
+    Given I am on "/"
+    And I enter "webmaster@collabcoapp.com" for "edit-name"
+    And I enter "1 to 1 million!" for "edit-pass"
+    When I press the "Log in" button
+    Then I should see the link "Content"

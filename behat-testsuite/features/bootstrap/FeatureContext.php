@@ -36,7 +36,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
         $element = $this->assertSession()->elementExists('css',  '#' . $arg2);
     }
 
-
+    
     public function drupalCreateUser($name, $roles_string) {
     $roles = array();
     foreach (explode(',', $roles_string) as $role) {
