@@ -20,14 +20,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    */
   public function __construct() {
   }
-    /**
-     * @Given I logout 
-     */
-    public function iLogout()
-    {
-        //$element = $this->assertSession()->elementExists('css', '#user-login');
-    }
-
+  
     /**
      * @Then I should see a :arg1 field with id :arg2
      */
