@@ -1,1 +1,0 @@
-<div>Footer comes here</div>

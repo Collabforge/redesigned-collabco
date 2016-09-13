@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the collabco_ideas_feature feature.
- */
-
-include_once 'collabco_ideas_feature.features.inc';

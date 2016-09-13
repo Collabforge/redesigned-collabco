@@ -1,6 +1,0 @@
-name = Collabco Collaboration
-description = blocks, views related to Collaboration
-core = 7.x
-dependencies[] = views
-stylesheets[all][] = collabco_collaboration.css
-package = Collabco
