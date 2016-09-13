@@ -1,0 +1,110 @@
+<?php
+/**
+ * @file
+ * Collabco email content.
+ */
+
+/**
+ * Returns Message Text, as selected by the supplied message type key.
+ */
+function _collabco_email_message_text($key, $language = NULL, $t_vars = array()) {
+
+  $langcode = isset($language) ? $language->language : NULL;
+
+  switch ($key) {
+    case 'header':
+
+      $text = t("Hello !username,
+
+Here are the updates from content you follow.", $t_vars, array('langcode' => $langcode));
+      break;
+
+    case 'separator':
+      $text = '
+
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+       ';
+      break;
+
+    case 'knowledge_object_created':
+
+      $text = t("A new document is created in !group_link.
+
+Click here to view this document: !content_link", $t_vars, array('langcode' => $langcode));
+
+      break;
+
+    case 'conversation_created':
+
+      $text = t("A new discussion is created in !group_link.
+
+Click here to view this discussion: !content_link", $t_vars, array('langcode' => $langcode));
+
+      break;
+
+    case 'idea_created':
+
+      $text = t("A new idea is created in !term_link.
+
+Click here to view this idea: !content_link", $t_vars, array('langcode' => $langcode));
+
+      break;
+
+    case 'collaboration_created':
+
+      $text = t("An idea has been promoted to a Co-Lab, in a Challenge you follow.
+
+Click here to view this Co-Lab: !content_link", $t_vars, array('langcode' => $langcode));
+
+      break;
+
+    case 'winning_idea':
+
+      $text = t("!content_link is the winning idea in the challenge !term_link.", $t_vars, array('langcode' => $langcode));
+
+      break;
+
+    case 'collaboration_project':
+
+      $text = t("!content_link has become a Project", $t_vars, array('langcode' => $langcode));
+
+      break;
+
+    case 'comment_created':
+      $text = t("!user_link added a comment to !content_link.
+
+Click here to view the comment: !comment_link",
+        $t_vars, array('langcode' => $langcode));
+      break;
+
+    case 'comment_reply_created':
+      $text = t("!user_link replied to a comment on !content_link.
+
+Click here to view the comment !comment_link",
+        $t_vars, array('langcode' => $langcode));
+      break;
+
+    case 'term_ends_soon':
+      $text = t("!term_link is ending soon.",
+        $t_vars, array('langcode' => $langcode));
+      break;
+
+    case 'footer':
+      $text = t("\n\n\n-- The Innovation Team at [site:name]
+
+
+If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'.",
+        $t_vars, array('langcode' => $langcode));
+      break;
+
+    default:
+      drupal_set_message(t('%key is not a valid email key. check the key passed.', array('%key' => $key)), 'error');
+      return '';
+  }
+
+  // We do not sanitize the token replacement, since the output of this
+  // replacement is intended for an e-mail, not a web browser.
+  $options = array('language' => $language, 'sanitize' => FALSE);
+  return token_replace($text, $t_vars, $options);
+}

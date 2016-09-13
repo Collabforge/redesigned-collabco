@@ -1,0 +1,67 @@
+
+.sidebar-2 .host-document h2 { margin-top: 0; }
+
+.documents {
+  border: $border-dark;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: all ease .15s;
+
+  &:hover { background-color: $gray-light; }
+
+  .download {
+    a {
+      color: $gray-dark;
+      display: block;
+      font-size: 35px;
+      height: 100%;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    a:hover { color: $purple-pink; }
+  }
+  
+  .description {
+    a { 
+      color: $purple-pink;
+      font-size: 22px; 
+      text-decoration: none; 
+    }
+
+    p { margin-top: 5px; }
+
+    a:hover { text-decoration: underline; }
+  }
+}
+
+.sidebar-2 {
+  h2 { color: $purple-pink; }
+}
+
+
+//Document Page View
+.page-node-add-knowledge-object { 
+  .main-container { padding: 30px 0; }
+}
+
+
+.node-knowledge-object {
+  
+  .user-picture {
+    display: inline-block;
+    margin: 0;
+  }
+
+  header, 
+  > div { 
+    margin: 15px 0; 
+  }
+
+  .field-label { float: left; }
+
+}
+
+.node-type-knowledge-object {
+  .main-container { padding: 0 0 30px; }
+}

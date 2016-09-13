@@ -1,0 +1,69 @@
+// PAGE SEARCH
+
+.page-search {
+  
+  h2 { color: $green-dark; }
+
+  a { 
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+
+  ol {
+    list-style-type: none; 
+    padding: 0; 
+  }
+
+  li.search-result { border-bottom: $border-dark; }
+
+  input[type=text] {
+    color: $green-dark;
+  }
+  
+  .input-group-btn { display: none; }
+
+  .main-container { padding: 20px 0 30px; }
+
+  
+  //Advanced Search
+  .panel { border-radius: 0; }
+
+  .panel-default > .panel-heading  {
+    @include bg-gradient-green-blue();
+    color: $white;
+  }
+
+  .control-label { font-weight: normal; }
+  .form-submit { 
+    display: inline-block;
+    margin: 10px 0;  
+  }
+
+  .form-type-checkboxes {
+    margin: 10px 0;
+  }
+
+  .pagination > .active > span,
+  .pagination > .active > span:hover  { 
+    @include bg-gradient-green-blue();
+  }
+
+  .page-search .pagination > li.active > span {
+    color: $white;
+  }
+
+  .pagination > li > a, 
+  .pagination > li > a:focus,
+  .pagination > li > a {
+    color: $green-dark;
+  }
+
+}
+
+.page-search-node .nav-tabs { margin-top: 15px; }
+.page-search-user .nav-tabs { margin-top: 0; }
+
+
+
+
+

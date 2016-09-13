@@ -1,0 +1,125 @@
+
+%btn-custom {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: all ease .3s;
+}
+
+@mixin btn-white() { 
+  @extend %btn-custom;
+  border: 1px solid $green-dark;
+  color: $green-dark;
+
+  &:hover {
+    background-color: $green-dark;
+    color: $white;
+  }
+}
+
+@mixin btn-purple() { 
+  @extend %btn-custom;
+  border: 1px solid $purple;
+  color: $purple;
+
+  &:hover {
+    background-color: $purple;
+    color: $white;
+  }
+}
+
+@mixin btn-orange() { 
+  @extend %btn-custom;
+  border: 1px solid $orange;
+  color: $orange;
+  
+  &:hover {
+    background-color: $orange;
+    color: $white;
+    
+  }
+}
+
+@mixin btn-purple() { 
+  @extend %btn-custom;
+  border: 1px solid $purple;
+  color: $purple;
+  
+  &:hover {
+    background-color: $purple;
+    color: $white;
+    
+  }
+}
+
+@mixin btn-green() { 
+  @extend %btn-custom;
+  background-color: $white;
+  border: 1px solid $green-dark;
+  color: $green-dark;
+
+  &:hover {
+    background-color: $green-dark;
+    color: $white;
+  }
+
+}
+
+.btn-green {
+  @include btn-green();
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-purple {
+  @include btn-purple();
+  display: inline-block;
+  margin-top: 50px;
+  text-decoration: none;
+}
+
+.create-idea-btn {
+  display: inline-block;
+}
+
+.btn-white { 
+  @include btn-white();
+  display: inline-block;
+  text-decoration: none;
+}
+
+.status .open {
+  background-color: $green-lime;
+  color: $white;
+  padding: 4px;
+}
+
+.more-link {
+  margin-bottom: 20px;
+  text-align: center;
+  
+  a {
+    @include btn-white();
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+.button.browse,
+.button.edit {
+  @include btn-white();
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button.edit { padding: 8px 15px 7px; }
+
+#edit-delete,
+#edit-submit--3,
+#edit-cancel { 
+  height: 41px;
+  line-height: 20px;
+  display: inline-block;
+}
+

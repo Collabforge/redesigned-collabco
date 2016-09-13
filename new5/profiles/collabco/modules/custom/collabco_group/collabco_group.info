@@ -1,0 +1,5 @@
+name = Collabco Group
+description = Collabco Group functionality
+core = 7.x
+dependencies[] = og
+package = Collabco

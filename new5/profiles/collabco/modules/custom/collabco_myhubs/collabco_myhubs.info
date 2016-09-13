@@ -1,0 +1,4 @@
+name = Collabco My hubs
+description = The user dashboard for Collabco sites
+core = 7.x
+package = Collabco

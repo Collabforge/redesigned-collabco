@@ -1,0 +1,30 @@
+// Base colors are defined on bootstrap's variables.
+// Here are custom colors
+
+// Colors
+
+$blue: #1e3d6b;
+$green-lime: #72bf44;
+$green-dark: #00746a;
+$green-dark-op-6: rgba(0, 116, 106, .6);
+$orange: #e2771b;
+$purple: #57468b;
+$purple-op-9: rgba(109,88,174,.9); 
+$purple-pink: #882263;
+$pink: #d0025a;
+$red: #cf0058;
+$white: #fff;
+$black: #000;
+
+
+$gray-base: #000;
+$gray-darker: #4a4a4a;
+$gray-dark: #757575;
+$gray-plank: #a3a3a3;
+$gray-chromium: #ccc;
+$gray: #d7d7d7;
+$gray-light: #f3f3f3;
+$gray-comment: #f5f4f7;
+$gray-lighter: lighten($gray-base, 93.5%) !default; 
+
+$green-dark-op-9: rgba(53, 145, 137, .9);

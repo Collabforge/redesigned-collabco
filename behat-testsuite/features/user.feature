@@ -8,7 +8,7 @@ Feature: User
     And I am an anonymous user
     Then I should see a "form" field with id "edit-name"
 
-@smoke @javascript
+@smoke @javascript 
   Scenario: A user visits home while logged in as admin and sees Content link
     Given I am on "/"
     And I enter "webmaster@collabcoapp.com" for "edit-name"
@@ -17,11 +17,9 @@ Feature: User
     Then I should see the link "Content"
 
 @smoke @javascript
-  Scenario: A user visits home while logged in as authenticated user and can edit his profile
+  Scenario: A user visits home while logged in as authenticated user and can see "Open challenges"
     Given I am on "/"
-    And I enter "reshma_n8@yahoo.com" for "edit-name"
+    And I enter "standarduser@collabforge.com" for "edit-name"
     And I enter "test123" for "edit-pass"
     When I press the "Log in" button
-    Then I should see the heading "OPEN CHALLENGES"    
-
-
+    Then I should see the heading "OPEN CHALLENGES" 

@@ -1,0 +1,33 @@
+/**
+ * Variable Overrides.
+ *
+ * Modify this file to override the Bootstrap Framework variables. You can copy
+ * these variables directly from ../bootstrap/sass/variables.sass to this file.
+ */
+
+// Set the proper directory for the Bootstrap Glyphicon font.
+$icon-font-path: '../bootstrap/fonts/';
+
+// Border
+
+$border-nav: 1px solid $gray-light;
+
+$border-dark: 1px solid $gray-chromium;
+
+$border-blue: 1px solid $blue;
+
+
+// Typography 
+
+$font-family-sans-serif:  $univers57,"Comic Sans" !default;
+
+
+// Media Queries
+
+$scrn-small: "only screen and (max-width : $screen-sm)";
+
+$scrn-md: "only screen and (min-width : $screen-sm)";
+
+$scrn-md-max: "only screen and (max-width : $screen-md)";
+
+$scrn-md-min: "only screen and (min-width : $screen-md)";

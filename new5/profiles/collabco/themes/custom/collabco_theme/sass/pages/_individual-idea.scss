@@ -1,0 +1,71 @@
+.node-type-idea{
+  .main-container { padding: 37px 0; }
+
+  //Full width Top HEADER
+  .full-width-top{
+    @include bg-gradient-blue-purple-op('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
+    @include content-top();
+    background-position: top right, 0 0 , 0 40%;
+    background-size: contain, auto, cover;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #block-collabco-idea-single-idea-header { position: static; }
+
+  section {
+    p { line-height: 21px; }
+    .field-name-body { margin-bottom: 85px; }
+  }
+
+  .breadcrumb-container {
+    border-bottom: $border-dark;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }  
+  
+  .sidebar-2 .nav-tabs {
+    margin-bottom: 0;
+  }
+
+  .sidebar-2 h2 { 
+    color: $purple; 
+    margin-top: 20px;
+  }
+	
+}
+.page-idea-supporters{
+  .content-top {
+    @include bg-gradient-blue-purple-op('/sites/all/themes/img/background/triangle-top-right-cut.png','../assets/img/background/header-individual-challenge-bg.jpg',.9);
+    background-size: contain, auto, cover;
+    background-position: top right, 0 0, 0 0;
+    padding: 15px 0;
+  }
+}
+
+// Edit node Idea
+.page-node-edit.node-type-hub {
+  .tabs-left .nav {
+    li a[href="#edit-options"]{
+      border-width: 1px 0 1px 1px;
+      border-style: solid;
+      border-color: $orange;
+      border-radius: 0;
+      color: $orange;
+      cursor: pointer;
+      
+      .summary { color: $orange; }
+
+    }
+
+    li .tooltip {
+      width: 200px;
+    }
+
+  }  
+}
+
+
+
+
