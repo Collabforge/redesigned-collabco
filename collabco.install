@@ -220,8 +220,8 @@ function collabco_install_tasks_alter(&$tasks, $install_state) {
   $tasks['collabco_finished'] = $tasks['install_finished'];
   unset($tasks['install_finished']);
 
-  // //_govcms_set_theme(GOVIMS_INSTALL_DEFAULT_THEME);
-  // drupal_add_css('profiles/govcms/css/install.css');
+  //_govcms_set_theme(GOVIMS_INSTALL_DEFAULT_THEME);
+   drupal_add_css('profiles/collabco/css/install.css');
   // drupal_add_js('profiles/govcms/js/install.js');
 }
 
