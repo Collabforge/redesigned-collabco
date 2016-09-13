@@ -140,15 +140,13 @@ legend a:hover {color:#fff;}
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
 }
-
+.messages.error {
+    display: none;
+}
+.messages.warning {
+   display: none; 
+}
 .form-item-account-pass-pass2 {
   margin-top: 0.8em;
 }
 
-.form-item-govcms-register-confirm {
-  margin-bottom: 0;
-}
-
-#govcms-install-register-fields {
-  padding-top: .4em;
-}
