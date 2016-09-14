@@ -125,7 +125,7 @@ dependencies[] = webform_rules
 
 ; Custom
 
-;dependencies[] = govims_disable_defaultcontent
+dependencies[] = collabco_disable_defaultcontent
 
 ; Content types
 
