@@ -9,41 +9,7 @@
  */
 function collabco_content_collaboration_content_defaults() {
   $content = array();
-
-  $content['Test_collab'] = (object) array(
-    'exported_path' => 'discussions/test-discussion-1',
-    'title' => 'Test discussion',
-    'status' => 1,
-    'promote' => 0,
-    'sticky' => 0,
-    'type' => 'conversation',
-    'language' => 'en',
-    'created' => 1471926098,
-    'comment' => 2,
-    'translate' => 0,
-    'machine_name' => 'Test_collab',
-    'body' => array(
-      'und' => array(
-        0 => array(
-          'value' => '<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here,</p>
-',
-          'summary' => '',
-          'format' => 'filtered_html',
-          'safe_value' => '<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here,</p>
-',
-          'safe_summary' => '',
-        ),
-      ),
-    ),
-    'field_file_ref' => array(
-      'und' => array(
-        0 => array(
-          'target_id' => 177,
-        ),
-      ),
-    ),
-  );
-
+  
   $content['Test_discussion'] = (object) array(
     'exported_path' => 'discussions/test-discussion-1',
     'title' => 'Test discussion',

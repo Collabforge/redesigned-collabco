@@ -48,7 +48,7 @@ function collabco_disable_defaultcontent_admin_form() {
 function collabco_disable_defaultcontent_disable_modules($form, &$form_state) {
   return confirm_form(
     $form,
-    'Disable govCMS default content?',
+    'Disable govIMS default content?',
     '',
     'Once you disable default content it cannot be re-enabled.'
   );
@@ -77,10 +77,7 @@ function collabco_disable_defaultcontent_disable_modules_submit($form, &$form_st
       // Clean up the variables.
       variable_del('govims_challenges_saved');
 
-      // Delete About us bean on homepage.
-      $bean = bean_load_delta('about-us');
-      bean_delete($bean);
-    }
+     }
   }
 
   drupal_flush_all_caches();
