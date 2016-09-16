@@ -222,7 +222,7 @@ function collabco_install_tasks_alter(&$tasks, $install_state) {
 
   _collabco_set_theme('collabco_theme');
    drupal_add_css('profiles/collabco/css/install.css');
-  // drupal_add_js('profiles/govcms/js/install.js');
+   drupal_add_js('profiles/collabco/js/jquery-3.1.0.min.js');
 }
 
 /**
