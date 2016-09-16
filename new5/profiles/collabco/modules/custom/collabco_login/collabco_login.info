@@ -1,0 +1,4 @@
+name = Collabco Login
+description = Enforces email address for username. Displays full username field as username.
+core = 7.x
+package = Collabco

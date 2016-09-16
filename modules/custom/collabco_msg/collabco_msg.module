@@ -60,9 +60,9 @@ function collabco_msg_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_user_presave().
  */
 function collabco_msg_user_presave(&$edit, $account, $category) {
-  if (key_exists('collabco_email_setting', $edit)) {
-     $edit['data']['collabco_email_setting'] = $edit['collabco_email_setting'];
-  }
+    if (!empty($edit['collabco_email_setting'])) {
+        $edit['data']['collabco_email_setting'] = $edit['collabco_email_setting'];
+    }
 }
 
 
@@ -410,7 +410,7 @@ function collabco_msg_mail_followers($email_key, $subject, $entities_followed = 
 
 function _collabco_msg_flesh_out_params($subject, &$params) {
   global $base_url;
-  $user_name ="";
+
   if (isset($subject->tid)) {
     // Subject is a axonomy term
     $term_url = "$base_url/taxonomy/term/$subject->tid";
@@ -434,10 +434,7 @@ function _collabco_msg_flesh_out_params($subject, &$params) {
   if (isset($subject->cid)) {
     // We're dealing with a comment
     $comment = $subject;
-    $comment_url = isset($comment->pid)
-      ? "$base_url/comment/$comment->pid"
-      : "$base_url/comment/$comment->cid";
-    // Not sure if using pid instead of cid will make a difference in rendering
+    $comment_url = "$base_url/comment/$comment->cid";
     $params['!comment_link'] = "<a href='$comment_url'>$comment->subject</a>";
   }
 }
@@ -453,7 +450,6 @@ function _collabco_msg_flesh_out_params($subject, &$params) {
  */
 function collabco_msg_mail($key, &$message, $params) {
   require_once 'collabco_msg_emails.include';
-
   $t_vars = $params;
   $language = $message['language'];
   $message['from_name'] = variable_get('site_name', 'DoE');

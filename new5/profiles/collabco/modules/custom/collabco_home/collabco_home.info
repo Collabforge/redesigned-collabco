@@ -1,0 +1,4 @@
+name = Collabco Home
+description = blocks and views related to home page
+core = 7.x
+package = Collabco

@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ * Information around regions.
+ *
+ * Region definitions. Use these:
+ * - regions[navigation]     = 'Navigation'
+ * - regions[header]         = 'Top Bar'
+ * - regions[nav_actions]  = 'Nav Actions'
+ * - regions[nav_user_profile] = 'Header User Profile'
+ * - regions[content_top]    = 'Content Top'
+ * - regions[content_upper]  = 'Content Upper'
+ * - regions[highlighted]    = 'Highlighted'
+ * - regions[help]           = 'Help'
+ * - regions[content]        = 'Content'
+ * - regions[sidebar_first]  = 'Primary'
+ * - regions[sidebar_second] = 'Secondary'
+ * - regions[content_middle] = 'Content Middle'
+ * - regions[content_lower]  = 'Content Lower'
+ * - regions[content_bottom] = 'Content bottom'
+ * - regions[footer-1-col]   = 'Footer First Column'
+ * - regions[footer-2-col]   = 'Footer Second Column'
+ * - regions[page_top]       = 'Page top'
+ * - regions[page_bottom]    = 'Page bottom'
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function collabco_blocks_block_info() {
+  $blocks = array();
+  $blocks['block_one'] = array(
+    'info' => t('My Custom Block One'),
+    'status' => TRUE,
+    'region' => 'content',
+  );
+  $blocks['block_two'] = array(
+    'info' => t('My Custom Block Two'),
+    'region' => 'content',
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * Prepares the contents of the block.
+ */
+function collabco_blocks_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'block_one':
+      $variables = array();
+      $block['content'] = theme('collabco_blocks_custom', array());
+      break;
+
+    case 'block_two':
+      $variables = array();
+      $block['content'] = theme('blocktwo', $variables);
+      break;
+
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Alter the block configuration to write directly to template file.
+ */
+function collabco_blocks_form_block_admin_configure_alter(&$form, &$form_state, $form_id) {
+  // If block configure.
+  $file = DRUPAL_ROOT . '/' . drupal_get_path('module', 'collabco_blocks') . "/blockone.tpl.php";
+  $form['collabco_blocks_custom'] = array(
+    '#type' => 'textarea',
+    '#default_value' => file_get_contents($file),
+    '#title' => t('Content'),
+    '#description' => t('This is written directly to the file system.'),
+    '#weight' => -1,
+  );
+  $form['actions']['submit']['#submit'][] = 'custom_collabco_blocks_write_submit';
+}
+
+/**
+ * Custom funciton custom_collabco_blocks_write_submit.
+ */
+function custom_collabco_blocks_write_submit($form, $form_state) {
+  $file = DRUPAL_ROOT . '/' . drupal_get_path('module', 'collabco_blocks') . "/blockone.tpl.php";
+  $content = $form['collabco_blocks_custom']['#value'];
+  file_put_contents($file, $content, LOCK_EX);
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * Prepares the contents of the block.
+ */
+function collabco_blocks_theme() {
+  return array(
+    'collabco_blocks_custom' => array(
+      'variables' => array(),
+      'template' => 'blockone',
+    ),
+  );
+}

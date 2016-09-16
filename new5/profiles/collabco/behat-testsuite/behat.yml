@@ -1,0 +1,26 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://localhost:8082
+      default_session: selenium2
+      browser_name: 'chrome'
+      selenium2: 
+        capabilities: { "browser": "chrome"}
+
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal' 
+      drush:
+        alias: 'local'
+      drupal: 
+        drupal_root: '/Applications/MEMP/nginx/html/doe-new' 
+      region_map:
+        footer: "#footer-1-col"

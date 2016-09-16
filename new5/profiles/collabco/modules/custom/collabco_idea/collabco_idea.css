@@ -1,0 +1,20 @@
+/* Suppress the nodes on the /taxonomy/term/% pages */
+.page-taxonomy-term article,
+.page-taxonomy-term #block-system-main > section {
+  display: none;
+}
+
+#block-collabco-idea-likes > h2 {
+  display: none;
+}
+
+.block-top-bar > div,
+.stats > .stat > div,
+.label-and-value > div {
+  display: inline-block;
+}
+
+.stat .label,
+.label-and-value .label {
+  color: black;
+}

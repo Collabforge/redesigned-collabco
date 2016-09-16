@@ -1,0 +1,119 @@
+//SLIDESHOW
+
+//FULLWIDTH FIX
+.views_slideshow_slide,
+.views_slideshow_cycle_main .views_slideshow_slide,
+#views_slideshow_cycle_teaser_section_latest_ideas-block {
+  min-width: 100% !important;
+}
+#views_slideshow_cycle_teaser_section_your_contrib-your_contrib {
+  min-width: 100% !important;
+}
+
+//Hide Default Control Text
+
+.vscc-controls .vscc_controls_previous,
+.vscc-controls .vscc_controls_next {
+  a {
+    line-height: 0; 
+    font-size: 0;
+    color: transparent; 
+    display: inline-block;
+    height: 24px;
+    width: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+
+  img { display: none; }
+}
+
+.views-slideshow-cycle-main-frame-row { 
+
+}
+
+
+.vscc-controls .vscc_controls_previous a {
+  background-image: url('/sites/all/themes/img/icons/slideshow-previous.png');
+}
+
+.vscc-controls .vscc_controls_next a {
+  background-image: url('/sites/all/themes/img/icons/slideshow-next.png');
+}
+
+// Latest Ideas SlideShow
+.view-latest-ideas,
+.view-your-contrib {
+  position: relative;
+  .view-content {
+    position: relative;
+  }
+}
+
+.vscc-controls {
+  text-align: center;
+}
+
+.vscc-controls .vscc_controls_previous,
+.vscc-controls .vscc_controls_next {
+  margin: 0 10px;
+}
+
+.vscc-controls .vscc_controls_previous {  
+
+  @media #{$scrn-md} {
+    position: absolute;
+    top: 74px;
+    left: -26px;
+    margin: 0;
+  }
+}
+
+.vscc-controls .vscc_controls_next {
+  margin: 0;
+
+  @media #{$scrn-md} {
+    position: absolute;
+    top: 74px;
+    right: -26px;
+    margin: 0;
+  }
+}   
+
+.slideshow {
+  &.card { 
+    float: left;
+    width: 20%;
+  }
+}
+
+
+//Challenge slideshow latest ideas
+.views-slideshow-cycle-main-frame {
+  display: inline-block;
+}  
+
+.view-latest-ideas.view-display-id-block,
+.view-your-contrib.view-display-id-your_contrib {
+    display: none;
+    @media #{$scrn-md} { display: block; }
+}
+
+
+  
+.view-latest-ideas.view-display-id-latest_ideas_mobile_block,
+.view-your-contrib.view-display-id-mobile_block  {
+    display: block;
+    @media #{$scrn-md} {display: none; }
+
+    .card {
+      width: calc(100%/2);
+
+    }
+}
+
+#views_slideshow_cycle_teaser_section_your_contrib-mobile_block,
+#views_slideshow_cycle_teaser_section_latest_ideas-latest_ideas_mobile_block {
+    width: 100%;
+}

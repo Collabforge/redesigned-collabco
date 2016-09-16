@@ -1,0 +1,541 @@
+<?php
+/**
+ * @file
+ * Collabco message feature.
+ */
+
+function _collabco_email_settings_default() {
+  return 'collabco_weekly_digest';
+}
+
+function _collabco_email_settings_get($account=null) {
+  if (!isset($account)) {
+    global $user;
+    $account = user_load($user->uid);
+  }
+  if (isset($account->data['collabco_email_setting'])){
+    $data = $account->data['collabco_email_setting'];
+    return $data;
+  }
+  return _collabco_email_settings_default();
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function collabco_msg_form_alter(&$form, &$form_state, $form_id) {
+  if (!in_array($form_id, array('user_register_form', 'user_profile_form'))) {
+     return;
+  }
+  if ($form['#user_category'] != 'account') {
+     return;
+  }
+  $account = $form['#user'];
+  $form['collabco_user_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Email Notification settings'),
+    '#weight' => 5,
+    '#collapsible' => TRUE,
+    '#access' => TRUE,
+  );
+
+  # the options to display in our form radio buttons
+  $options = array(
+    'collabco_in_site' => t('In-site notifications only (no-email)'),
+    'collabco_weekly_digest' => t('Receive email digest (7 days) for content I follow'), 
+    'collabco_immediate' => t('Receive immediate email notifications for content I follow'),
+  );
+
+  $default_value = _collabco_email_settings_get();
+
+  $form['collabco_user_settings']['collabco_email_setting'] = array(
+      '#type' => 'radios',
+      '#options' => $options,
+      '#default_value' => $default_value,
+      '#access' => TRUE,
+  );
+}
+
+/**
+ * Implements hook_user_presave().
+ */
+function collabco_msg_user_presave(&$edit, $account, $category) {
+  if (key_exists('collabco_email_setting', $edit)) {
+     $edit['data']['collabco_email_setting'] = $edit['collabco_email_setting'];
+  }
+}
+
+
+/**
+ * Implements hook_node_insert().
+ */
+function collabco_msg_node_insert($node) {
+
+  if (!in_array($node->type, array('idea', 'hub', 'conversation', 'knowledge_object'))) {
+    return;
+  }
+  $langcode = LANGUAGE_NONE;
+
+  $email_key = $node->type . '_created';
+  $params = array();
+  // For Ideas...
+  if ($node->type === 'idea') {
+    $message = message_create('create_node', array('uid' => $node->uid));
+    $wrapper = entity_metadata_wrapper('message', $message);
+    $wrapper->field_node_ref->set($node);
+    if (!empty($node->field_challenge_value) && is_numeric($node->field_challenge_value[$langcode][0]['tid'])) {
+      $term = taxonomy_term_load($node->field_challenge_value[$langcode][0]['tid']);
+      $wrapper->field_term_ref->set($term);
+      $entities_followed = array($term);
+    }
+    $wrapper->field_published->set($node->status);
+    $wrapper->save();
+  }
+  // For Collaborations...
+  if ($node->type === 'hub') {
+    $entities_followed = array();
+    $message = message_create('create_node', array('uid' => $node->uid));
+    $wrapper = entity_metadata_wrapper('message', $message);
+    $wrapper->field_node_ref->set($node);
+    // Every collaboration has reference back to the Idea it was promoted from.
+    // This forms the "follow" context.
+    if (!empty($node->field_idea[$langcode][0])) {
+      $idea_nid = reset($node->field_idea[$langcode][0]); // 'target_id'
+      if ($idea_node = node_load($idea_nid)) {
+        $wrapper->field_node_groups_ref->set($idea_node);
+        $entities_followed[] = $idea_node;
+      }
+    }
+
+    
+    if (!empty($node->field_challenge_value) && is_numeric($node->field_challenge_value[$langcode][0]['tid'])) {
+      $term = taxonomy_term_load($node->field_challenge_value[$langcode][0]['tid']);
+      $wrapper->field_term_ref->set($term);
+      $entities_followed[] = $term;
+    }
+    $wrapper->field_published->set($node->status);
+    $wrapper->save();
+
+    $email_key = 'collaboration_created';
+  }
+  // For Discussions and Files...
+  elseif (in_array($node->type, array('conversation', 'knowledge_object'))) {
+    list(,, $bundle) = entity_extract_ids('node', $node);
+    if (!og_is_group_content_type('node', $bundle)) {
+      return;
+    }
+
+    $wrapper = entity_metadata_wrapper('node', $node);
+    if (!$wrapper->{'og_membership__' . OG_STATE_ACTIVE}->value()) {
+      // Node isn't associated, or doesn't have an active association with
+      // any group.
+      return;
+    }
+
+    $nids = array();
+    foreach ($wrapper->{'og_membership__' . OG_STATE_ACTIVE}->value() as $og_membership) {
+      if ($og_membership->group_type != 'node') {
+        // For simplicity we operate only on membership with node groups.
+        continue;
+      }
+      $nids[] = $og_membership->gid;
+    }
+
+    if (!$nids) {
+      return;
+    }
+
+    // Assuming there is only one group assigned.
+    $group_node = node_load($nids[0]);
+    $message = message_create('create_node', array('uid' => $node->uid));
+
+    $wrapper = entity_metadata_wrapper('message', $message);
+    $wrapper->field_node_ref->set($node);
+    $wrapper->field_node_groups_ref->set($group_node);
+    $wrapper->field_published->set($node->status);
+    $wrapper->save();
+
+    $entities_followed = array($group_node);
+  }
+  collabco_msg_mail_followers($email_key, $node, $entities_followed, $params);
+}
+
+/**
+ * Implements hook_comment_insert().
+ */
+function collabco_msg_comment_insert($comment) {
+  $account = user_load($comment->uid);
+  $node = node_load($comment->nid);
+  
+  $message = message_create('create_comment', array(), $account);
+  // Save reference to the node in the node reference field, and the
+  // "publish" state (i.e. if the node is published or unpublished).
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $wrapper->field_node_ref->set($node);
+  $wrapper->field_comment_ref->set($comment);
+  if (!empty($comment->pid)) {
+    $parent_comment =  comment_load($comment->pid);
+    $wrapper ->field_parent_comment_ref->set($parent_comment);
+  }
+
+  // The message should be published only if the node and the comment are
+  // both published.
+  $published = $node->status && $comment->status;
+  $wrapper->field_published->set($published);
+  $wrapper->save();
+
+  // Note pid is the parent comment's cid.
+  $email_key = empty($comment->pid) ? 'comment_created' : 'comment_reply_created';
+  $entities_followed = array($node);
+  $params = array();
+  collabco_msg_mail_followers($email_key, $comment, $entities_followed, $params);
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function collabco_msg_node_update($node) {
+  // Deal with change of published status, if necessary.
+  collabco_msg_update_message_status('node', $node);
+    
+  $langcode = LANGUAGE_NONE;
+  $params = array();
+
+ if ($node->type == 'idea') { 
+  // Check if the new Idea's State (win) were added. 
+  $old_state = array();
+  $new_state = array();
+  if (isset($node->original->field_idea_state)) {
+    $old_idea_state = $node->original->field_idea_state[LANGUAGE_NONE];
+    if (is_array($old_idea_state)){
+      foreach ($old_idea_state as $key => $value) {
+        $old_state[]= $value['value'];
+      }
+    }
+  }
+  if (isset($node->field_idea_state)) {
+    $new_idea_state = $node->field_idea_state[LANGUAGE_NONE];
+    if (is_array($new_idea_state)){
+      foreach ($new_idea_state as $key => $value) {
+        $new_state[] = $value['value']; 
+      }
+    }
+  }  
+  $required_states = array();
+  foreach ($new_state as $value){
+     if ((!in_array($value,$old_state)) && in_array($value, array('win'))) {
+        $required_states[] = $value;
+     }
+  }
+  foreach($required_states as $idea_state) {
+    $message = message_create('update_node', array('uid' => $node->uid));
+    $wrapper = entity_metadata_wrapper('message', $message);
+    $wrapper->field_node_ref->set($node);
+    if (!empty($node->field_challenge_value) && is_numeric($node->field_challenge_value[$langcode][0]['tid'])) {
+      $term = taxonomy_term_load($node->field_challenge_value[$langcode][0]['tid']);
+      $wrapper->field_term_ref->set($term);
+    }
+    $wrapper->field_node_update_type->set($idea_state);
+    $wrapper->field_published->set($node->status);
+    $wrapper->save();
+
+    $entities_followed = array($node);
+    if ($idea_state == 'win') {
+      // Notify followers of the Idea node AND followers of the Challenge term.
+      if (isset($term)) {
+        $entities_followed[] = $term;
+      }
+      collabco_msg_mail_followers('idea_state_updated_to_win', $node, $entities_followed, $params);
+    }
+  }
+ }
+  elseif ($node->type == 'hub' && ($node->field_turn_into_project != $node->original->field_turn_into_project)
+    && !empty($node->field_turn_into_project[$langcode][0]['value'])) {
+    $message = message_create('update_node', array('uid' => $node->uid));
+    $wrapper = entity_metadata_wrapper('message', $message);
+    $wrapper->field_node_ref->set($node);
+    $wrapper->field_node_update_type->set('project');
+    $wrapper->field_published->set($node->status);
+    $wrapper->save();
+
+    $entities_followed = array($node);
+    collabco_msg_mail_followers('collaboration_converted_to_project', $node, $entities_followed, $params);
+  }
+}
+
+/**
+ * Implements hook_comment_update().
+ */
+function collabco_msg_comment_update($comment) {
+  // Deal with change of published status, if necessary
+  collabco_msg_update_message_status('comment', $comment);
+}
+
+/**
+ * Update the "published" field in the message entity, when it changes in the
+ * related entity.
+ *
+ * @param string $entity_type
+ *   The entity type (node or comment).
+ * @param object $entity
+ *   The entity object.
+ */
+function collabco_msg_update_message_status($entity_type, $entity) {
+  if ($entity->status == $entity->original->status) {
+    // Status didn't change.
+    return;
+  }
+  list($id) = entity_extract_ids($entity_type, $entity);
+  $field_name = 'field_' . $entity_type . '_ref';
+
+  $query = new EntityFieldQuery();
+  $result = $query
+    ->entityCondition('entity_type', 'message')
+    ->fieldCondition($field_name, 'target_id', $id, '=')
+    ->execute();
+
+  if (empty($result['message'])) {
+    return;
+  }
+
+  foreach (array_keys($result['message']) as $mid) {
+    $wrapper = entity_metadata_wrapper('message', $mid);
+    // If comment status changed, we still need to check the node as-well.
+    if ($entity_type == 'comment') {
+      $node = node_load($entity->nid);
+      $status = intval($entity->status && $node->status);
+    }
+    else {
+      // The entity is the node.
+      $status = $entity->status;
+    }
+    if ($wrapper->field_published->value() != $status) {
+      // Status changed, so update the message entity.
+      $wrapper->field_published->set($status);
+      $wrapper->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Checks on all Challenge terms whether they end soon (in 2 days).
+ * If they do a Message is created, if not created already.
+ * An email is sent too, to all users following the Challenge.
+ */
+function collabco_msg_cron() {
+  global $user;
+  $vocabulary = taxonomy_vocabulary_machine_name_load('challenge');
+  if ($vocabulary) {
+    $terms = taxonomy_get_tree($vocabulary->vid);
+    if (!empty($terms)) {
+      foreach ($terms as $term) {
+        // Pass in tid to force loading of complete term, not just base props.
+        $days_left = collabco_challenge_days_left($term->tid);
+        if ($days_left > 0 && $days_left <= 2.0 && $term->tid!=3) {
+          $message = collabco_msg_get_message('term_ends_soon', $term->tid);
+          if (!$message) {
+            $message = message_create('term_ends_soon', array('uid' => 1));
+            $wrapper = entity_metadata_wrapper('message', $message);
+            $wrapper->field_term_ref->set($term);
+            $wrapper->field_published->set(TRUE);
+            $wrapper->save();
+            $entities_followed = array($term);
+            $params = array();
+            collabco_msg_mail_followers('challenge_ends_soon', $term, $entities_followed, $params);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Find a Message of the supplied type and id.
+ * 
+ * @param string $message_type, 'node_create', 'node_update', 'comment_create',
+ *   'term_ends_soon'
+ * @param int $id, in case of 'term_ends_soon' this is the tid
+ */
+function collabco_msg_get_message($message_type, $id) {
+  $conditions = array(
+    'type' => $message_type,
+  );
+  $messages = message_load_multiple(FALSE, $conditions);
+  if (!empty($messages)) {
+    foreach ($messages as $message) {
+      if ($message_type == 'term_ends_soon') {
+        $tid = message_get_property_values($message, 'field_term_ref');
+        if ($tid[LANGUAGE_NONE][0]['tid'] == $id) {
+           return $message;
+        }
+      }
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Send an email to interested users about a just created or changed entiry.
+ *
+ * The entity may be a node, comment or term.
+ *
+ * @param string $email_key, represents the text to be sent, see collabco_msg_emails.include
+ * @param object $subject, an entity that must contain
+ *   for a comment: cid, pid (parent cid), nid, uid, subject
+ *   for a node   : nid, uid, title
+ *   for a term   : tid, name
+ * @param array $entities_followed, associated nodes or taxonomy term objects
+ *   followed; if a user follows one of these, then a notification regarding
+ *   the subject is sent
+ * @param array $params, passed to drupal_mail, may be empty
+ */
+function collabco_msg_mail_followers($email_key, $subject, $entities_followed = array(), &$params = array()) {
+
+  $language = NULL;
+  $from = variable_get('site_mail');
+
+  if (empty($entities_followed)) {
+    $entities_followed = array($subject);
+  }
+  _collabco_msg_flesh_out_params($subject, $params);
+
+  foreach (collabco_msg_users_that_follow($entities_followed) as $addressee) {
+    $params['!username'] = $addressee->name;
+    // This will call collabco_msg_mail() to peronalise the $message
+    $message = drupal_mail('collabco_msg', $email_key, $addressee->mail, $language, $params, $from);
+  }
+}
+
+function _collabco_msg_flesh_out_params($subject, &$params) {
+  global $base_url;
+  $user_name ="";
+  if (isset($subject->tid)) {
+    // Subject is a axonomy term
+    $term_url = "$base_url/taxonomy/term/$subject->tid";
+    $params['!term_link'] = "<a href='$term_url'>$subject->name</a>";
+    return;
+  }
+
+  // Subject is a Node or Comment
+  $user_url ="$base_url/user/$subject->uid";
+  $account = user_load($subject->uid);
+  if (!empty($account->field_full_name[LANGUAGE_NONE][0])) {
+    $user_name = $account->field_full_name[LANGUAGE_NONE][0]['value'];
+  }
+  $params['!user_link'] = "<a href='$user_url'>$user_name</a>";
+
+  $nid = $subject->nid;
+  $node_url = "$base_url/node/$nid";
+  $node = isset($subject->cid) ? node_load($nid) : $subject;
+  $params['!content_link'] = "<a href='$node_url'>$node->title</a>";
+
+  if (isset($subject->cid)) {
+    // We're dealing with a comment
+    $comment = $subject;
+    $comment_url = isset($comment->pid)
+      ? "$base_url/comment/$comment->pid"
+      : "$base_url/comment/$comment->cid";
+    // Not sure if using pid instead of cid will make a difference in rendering
+    $params['!comment_link'] = "<a href='$comment_url'>$comment->subject</a>";
+  }
+}
+
+/**
+ * Implements hook_mail().
+ *
+ * Called by drupal_mail(), which is invoked in the functions above.
+ *
+ * @param string $key, identifies the message
+ * @param array $message, to flesh out 'subject' and 'body'
+ * @param array $params, used to pass replacement tokens to subject and body
+ */
+function collabco_msg_mail($key, &$message, $params) {
+  require_once 'collabco_msg_emails.include';
+
+  $t_vars = $params;
+  $language = $message['language'];
+  $message['from_name'] = variable_get('site_name', 'DoE');
+  $message['subject'] .= _collabco_msg_mail_text($key . '_subject', $language, $t_vars);
+  $message['body'][]   = _collabco_msg_mail_text($key . '_body', $language, $t_vars);
+}
+/**
+ * Return all users that follow the supplied entity.
+ *
+ * Follow means: have the associated flag set.
+ *
+ * @param object $entities, array of nodes or taxonomy terms, normally one 1
+ *
+ * @return array of user objects
+ */
+function collabco_msg_users_that_follow($entities) {
+  $follow_data = array();
+  foreach ($entities as $entity) {
+    $follow = new stdClass();
+
+    // Check for Challenge term flag
+    if (isset($entity->vid) && $entity->vid == 2) { // 'challenge'
+      $follow->entity_type = 'taxonomy_term';
+      $follow->entity_id = $entity->tid;
+      $follow->flag_name = 'challenge_flag';
+      $follow_data[] = $follow;
+    }
+    // Check for node flag
+    elseif (isset($entity->type)) {
+      $follow->entity_id = $entity->nid;
+      $follow->entity_type = 'node';
+      if ($entity->type === 'idea') {
+        $follow->flag_name = 'following_idea';
+        $follow_data[] = $follow;
+      }
+      elseif ($entity->type === 'hub') {
+        $follow->flag_name = 'follow_collaboration';
+        $follow_data[] = $follow;
+      }
+    }
+  }
+  if (empty($follow_data)) {
+    return array();
+  }
+  // Retrieve data for the followed Challenge, Idea or Collaboration
+  $flag_data = array();
+  foreach ($follow_data as $follow) {
+    $flag_data = array_merge($flag_data, flag_get_flag_flagging_data($follow->flag_name));
+  }
+
+  if (empty($flag_data)) {
+    return array();
+  }
+
+  // Find full names and email addresses of all the users that used the flag(s).
+  $addressees = array();
+  foreach ($flag_data as $flag) {
+
+    // Add this user to the email list if followed and not already in the list.
+    if (_collabco_msg_followed($follow_data, $flag->entity_type, $flag->entity_id) && empty($addressees[$flag->uid])) {
+
+      $account = user_load($flag->uid); 
+      if (!empty($account->mail) && _collabco_email_settings_get($account) == 'collabco_immediate') {
+        $addressee = new stdClass();
+        $addressee->mail = $account->mail;
+        if (!empty($account->field_full_name[LANGUAGE_NONE][0])) {
+          $addressee->name = $account->field_full_name[LANGUAGE_NONE][0]['value'];
+        }
+        $addressees[$flag->uid] = $addressee;
+      }
+    }
+  }
+  return $addressees;
+}
+
+function _collabco_msg_followed($follow_data, $entity_type, $entity_id) {
+  foreach ($follow_data as $follow) {
+    if ($follow->entity_id == $entity_id && $follow->entity_type == $entity_type) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+

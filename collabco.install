@@ -220,9 +220,19 @@ function collabco_install_tasks_alter(&$tasks, $install_state) {
   $tasks['collabco_finished'] = $tasks['install_finished'];
   unset($tasks['install_finished']);
 
-  //_govcms_set_theme(GOVIMS_INSTALL_DEFAULT_THEME);
+  _collabco_set_theme('collabco_theme');
    drupal_add_css('profiles/collabco/css/install.css');
   // drupal_add_js('profiles/govcms/js/install.js');
+}
+
+/**
+ * Implements hook_form_FORMID_alter().
+ *
+ * For user_profile_form
+ */
+function collabco_form_alter(&$form, &$form_state) {
+   print_r($form);
+  _collabco_login_form_alterations($form, $form_state);
 }
 
 /**

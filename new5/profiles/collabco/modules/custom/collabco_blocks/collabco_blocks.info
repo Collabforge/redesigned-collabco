@@ -1,0 +1,3 @@
+name = Collabco Blocks
+description = defines blocks into template files
+core = 7.x

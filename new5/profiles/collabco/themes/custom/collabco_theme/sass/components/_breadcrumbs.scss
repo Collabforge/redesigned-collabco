@@ -1,0 +1,26 @@
+// Breadcrumbs
+
+.breadcrumb-container {
+  color: $blue;
+  overflow: hidden;
+
+  a {
+    color: $green-dark;
+    text-decoration: none;
+    &:hover { color: $blue; }
+  }
+
+  .breadcrumb {
+    background: transparent;
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: .8em;
+    padding: 0;
+  }
+
+  .breadcrumb > li + li:before {
+    color: $orange;
+  }
+}
+
+

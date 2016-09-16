@@ -1,0 +1,5 @@
+name = Collabco Messages
+description = Infrastructure for sending & logging messages in response to events, like a comment being added, a post being "liked" etc.
+core = 7.x
+package = Collabco
+dependencies[] = message

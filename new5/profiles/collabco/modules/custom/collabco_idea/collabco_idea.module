@@ -1,0 +1,609 @@
+<?php
+
+/**
+ * @file
+ * Information around regions.
+ */
+
+/**
+ * Implements hook_init().
+ */
+function collabco_idea_init() {
+  // Normally this has a value of 10. We really want to set this to zero, so
+  // that the /taxonomy/term/% page does not unnecessarily retrieve nodes that
+  // we do not want to display.
+  // However setting 'default_nodes_main' to zero crashes the SQL query in
+  // taxonomy_select_nodes().
+  // So setting it to 1, the lowest acceptable number, and then combining it
+  // with collabco_idea.css which has a section like this:
+  //
+  //  (.page-taxonomy-term article {
+  //  display:none;
+  //  })
+  variable_set('default_nodes_main', 1);
+}
+
+/**
+ * Implementation of hook_og_membership_update()
+ * Just for backward compatibility.
+ * @TODO should be removed for a fresh product.
+ */
+function collabco_idea_og_membership_update(OgMembership $og_membership) {
+  // Group Type must be node and enity type must be user.
+  if ($og_membership->group_type != 'node' || $og_membership->entity_type != 'user') {
+    return;
+  }
+  $gid = $og_membership->gid;
+  $uid = $og_membership->etid;
+  _collabco_idea_og_membership_update($gid, $uid);
+}
+
+/**
+ * Implementation of hook_og_membership_insert()
+ */
+function collabco_idea_og_membership_insert(OgMembership $og_membership) {
+  // Group Type must be node and enity type must be user.
+  if ($og_membership->group_type != 'node' || $og_membership->entity_type != 'user') {
+    return;
+  }
+  $gid = $og_membership->gid;
+  $uid = $og_membership->etid;
+  _collabco_idea_og_membership_update($gid, $uid);
+
+}
+
+function _collabco_idea_og_membership_update($gid, $uid) {
+  $node = node_load($gid);
+  if ($node->uid == $uid) {
+    _collabco_idea_role_admin_grant($gid, $uid);
+  }
+}
+
+function _collabco_idea_role_admin_grant($gid, $uid) {
+  $rid = _collabco_idea_get_rid_by_role_name($gid, OG_ADMINISTRATOR_ROLE);
+  og_role_grant('node', $gid, $uid, $rid);
+}
+
+/**
+ * @param $gid Gr
+ *  Group id
+ * @param $role_name
+ * The role name; you could also use standard OG role names:
+ * - OG_ADMINISTRATOR_ROLE
+ * - OG_AUTHENTICATED_ROLE
+ * - OG_ANONYMOUS_ROLE
+ * * @return role id for a specified role
+ */
+function _collabco_idea_get_rid_by_role_name($gid, $role_name) {
+  $node = node_load($gid);
+  $roles = og_roles('node', $node->type, $gid);
+  foreach ($roles as $_rid=>$_rname) {
+    if ($_rname == $role_name) {
+      return $_rid;
+    }
+  }
+  return;
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function collabco_idea_node_insert($node) {
+  // Automatically follow the idea the user has created.
+  if ($node->type == 'idea') {
+    $flag = flag_get_flag('following_idea');
+    $flag->flag('flag', $node->nid, user_load($node->uid), TRUE);
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function collabco_idea_block_info() {
+  $blocks = array();
+  $blocks['collaborations'] = array(
+    'info' => t('Co - lab'),
+    'region' => 'sidebar_second',
+    'pages' => 'node/*',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 2,
+  );
+  $blocks['likes'] = array(
+    'info' => t('Like this idea?'),
+    'region' => 'sidebar_second',
+    'pages' => 'node/*',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 1,
+  );
+  $blocks['single_idea_header'] = array(
+    'info' => t('Single Idea Individual page header'),
+    'region' => 'full_width_top',
+    'pages' => 'idea/*',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 3,
+  );
+  $blocks['single_idea_breadcrumb'] = array(
+    'info' => t('Single Idea Individual page Breadcrumb'),
+    'region' => 'content_upper',
+    'pages' => 'idea/*',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 5,
+  );
+  $blocks['team'] = array(
+    'info' => t('Team'),
+    'region' => 'sidebar_second',
+    'pages' => 'node/*',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 7,
+  );
+  $blocks['tags'] = array(
+    'info' => t('Idea tags'),
+    'region' => 'sidebar_second',
+    'pages' => 'node/*',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 10,
+  );
+  $blocks['promote'] = array(
+    'info' => t('Promote idea'),
+    'region' => 'sidebar_second_top',
+    'pages' => 'node/*',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 15,
+  );
+  $blocks['single_idea_actions'] = array(
+    'info' => t('Single Idea page - Actions block'),
+    'region' => 'sidebar_second',
+    'pages' => 'node/*',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 1,
+  );
+  $blocks['header_archived_ideas'] = array(
+  'info' => t('Archived Ideas page header'),
+  'region' => 'content_top',
+  'pages' => 'ideas_archived',
+  'visibility' => 1,
+  'status' => TRUE,
+  'weight' => 3,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * Prepares the contents of the block.
+ */
+function collabco_idea_block_view($delta = '') {
+  $block = array();
+
+  // Only show any of these blocks.
+  if (!($node = collabco_idea_is_idea_node())) {
+    return $block;
+  }
+  global $base_url;
+  $nid = $node->nid;
+  $variables = array();
+
+  switch ($delta) {
+    case 'likes':
+      $counts = flag_get_counts('node', $nid);
+      $uid = $node->uid;
+      $node_author = user_load($uid);
+      $user_flags = flag_get_user_flags('node',$node->nid);
+        $follow_flag  = FALSE;
+        $support_flag = FALSE;
+        if (array_key_exists('following_idea', $user_flags)){
+          $follow_flag = TRUE;
+        }
+        if (array_key_exists('support_idea', $user_flags)){
+          $support_flag = TRUE;
+        }
+      $variables = array(
+        'nid' => $nid,
+        'idea_title' => $node->title,
+        'top_bar1' => 'IC',
+        'top_bar2' => $node->title,
+        'title'   => t('Like this idea?'),
+        'support' => empty($counts['support_idea']) ? 0 : $counts['support_idea'],
+        'follow'  => empty($counts['following_idea']) ? 0 : $counts['following_idea'],
+        'share_link'   => url(drupal_get_path_alias('node/' . $node->nid), array('absolute' => TRUE)),
+        'mail'    => $node_author->mail,
+        'support_flag' => $support_flag,
+        'follow_flag' => $follow_flag,
+      );
+      $block['subject'] = $variables['title'];
+      $block['content'] = theme('likes_block', $variables);
+      break;
+
+    case 'single_idea_header':
+      $counts = flag_get_counts('node', $nid);
+
+      if (!empty($node->field_featured_picture[LANGUAGE_NONE])) {
+        $image = reset($node->field_featured_picture[LANGUAGE_NONE]);
+      //$url = image_style_url('', $image['uri']);
+        $wrapper = file_stream_wrapper_get_instance_by_uri($image['uri']);
+        $url = $wrapper->getExternalUrl();
+      }
+      $variables = array(
+        'nid' => $nid,
+        'title' => '<none>',
+        'image' => empty($url) ? '' : $url,
+        'idea' => $node->title,
+        'short' => truncate_utf8($node->field_tag_line[LANGUAGE_NONE][0]['value'], 400, TRUE, TRUE),
+        'support' => empty($counts['support_idea']) ? 0 : $counts['support_idea'],
+        'comments' => $node->comment_count,
+        'follow' => empty($counts['following_idea']) ? 0 : $counts['following_idea'],
+      );
+      $block['subject'] = $variables['title'];
+      $block['content'] = theme('single_idea_header_block', $variables);
+      break;
+
+    case 'single_idea_breadcrumb':
+      $termid = $node->field_challenge_value[LANGUAGE_NONE][0]['tid'];
+      $termname = $node->field_challenge_value[LANGUAGE_NONE][0]['taxonomy_term']->name;
+      $termlink = l($termname, 'taxonomy/term/' . $termid);
+      $variables = array(
+        'challenge' => $termlink,
+        'idea'   => $node->title,
+      );
+      $block['subject'] = '<none>';
+      $block['content'] = theme('single_idea_breadcrumb_block', $variables);
+      break;
+
+    case 'tags':
+      $block['subject'] = t('Idea tags');
+      $display = array('label' => 'hidden');
+      $block['content'] = field_view_field('node', $node, 'field_tags', $display);
+      break;
+
+    case 'team':
+      $variables['nid'] = $node->nid;
+      $block['subject'] = t('The team');
+      $block['content'] = theme('team_block', $variables);
+      break;
+
+    case 'promote':
+      $links = array();
+      $show_promote_link = TRUE;
+      if (isset($node->field_idea_state)) {
+        $idea_state = $node->field_idea_state[LANGUAGE_NONE];
+         if (is_array($idea_state)){
+          foreach ($idea_state as $key => $value) {
+            if ($value['value'] == 'promoted') {
+              $show_promote_link = FALSE;
+            }
+          }
+        }
+      }
+      if (user_access('administer group') or og_user_access('node', $node->nid, 'administer group')) {
+          $links[] = array(
+            'href' => sprintf('node/%d/edit', $node->nid)
+            , 'title' => 'Edit this idea'
+           ,'attributes' => array('class' => array('icon-pencil'))
+           ,
+          );
+      }
+      if ($show_promote_link) {
+        global $user;
+        if(user_access('administer') || (is_array($user->roles) && in_array('Moderator', $user->roles))) {        
+            $links[] = array(
+            'href' => sprintf('node/%d/promote-to-collaboration', $node->nid)
+            , 'title' => 'Promote to Co-lab'
+            ,'attributes' => array('class' => array('icon-beaker', 'promote-to-collaboration'))
+            ,
+          );
+        }
+      }
+       
+      
+      $attributes = array('class' => array('btn', 'btn-actions'));
+      if (count($links)>0){
+        $output = theme('links', array(
+          'links' => $links,
+          'attributes' => $attributes,
+          ));
+         $block['content'] = $output;
+      }
+      break;
+    case 'collaborations' : 
+        if (arg(2) == NULL) {
+          $variables['nid'] = $node->nid;
+          $block['content'] = theme('collaborations_block', $variables);
+        }
+    break; 
+    case 'single_idea_actions':
+      if (arg(2) == NULL) {
+        $variables['nid'] = $node->nid;
+        $block['content'] = theme('single_idea_actions_template', $variables);
+      }
+      break;
+
+      case 'header_archived_ideas':
+        $block['content'] = theme('header_archived_ideas', $variables);
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Tests if node is an idea.
+ */
+function collabco_idea_is_idea_node() {
+  if (arg(0) !== 'node') {
+    return;
+  }
+  $node = node_load(arg(1));
+  return ($node && $node->type === 'idea') ? $node : FALSE;
+}
+
+/**
+ * Returns HTML for the team block.
+ *
+ * @ingroup themeable
+ */
+function theme_team_block($variables = array()) {
+  // Execute the View that returns name, title and picture of all members
+  // belonging to this Idea (group).
+  $gid = $variables['nid'];
+  $output = views_embed_view('team_belonging_to_idea', 'default', $variables['nid']);
+  if (user_access('administer group') || og_user_access('node', $gid, 'add user')) {
+     $add_member_url = "node/$gid/add/member";    
+    $link_output = "<div class='add-team-member'>" . l("Add a Team Member",$add_member_url) . "</div>";
+    $output = $output . $link_output;
+  }
+  
+  return $output;
+}
+
+/**
+ * Returns HTML for the Collaborations block.
+ *
+ * @ingroup themeable
+ */
+function theme_collaborations_block($variables = array()) {
+  // Execute the View that returns title of all collaborations belonging to this idea.
+  $output = views_embed_view('collaborations_of_an_idea', 'default', $variables['nid']);
+  return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function collabco_idea_theme() {
+  return array(
+    'likes_block' => array(
+      'variables' => array(),
+      'template' => 'idea_likes_block',
+    ),
+    'single_idea_header_block' => array(
+      'variables' => array(),
+      'template' => 'single_idea_header_block',
+    ),
+    'single_idea_breadcrumb_block' => array(
+      'variables' => array(),
+      'template' => 'single-idea-breadcrumb-block',
+    ),
+    'team_block' => array(
+      'variables' => array(),
+    ),
+    'single_idea_actions_template' => array(
+      'variables' => array(),
+    ),
+     'header_archived_ideas' => array(
+      'variables' => array(),
+      'template' => 'header_archived_ideas',
+    ),
+    'collaborations_block' => array(
+      'variables' => array(),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function collabco_idea_menu() {
+  $menu_items['node/%node/promote-to-collaboration'] = array(
+    'title' => 'Promote to Co-Lab',
+    'page callback' => 'collabco_idea_promote_to_collaboration',
+    'page arguments' => array(1),
+    'access callback' => 'node_access',
+    'access arguments' => array('update', 1),
+  );
+  return $menu_items;
+}
+
+/**
+ * Replicates/transforms Idea node to a new Collaboration node and returns it.
+ *
+ * Param object $node, normally of type idea.
+ *
+ * The author of the new entity is the owner/author of the node passed in.
+ * At a minimum, the node object must have the following properties set:
+ *   - title
+ *   - nid.
+ */
+function collabco_idea_promote_to_collaboration($node) {
+  global $user;
+
+  // Use entity_metadata_wrapper around source and destination nodes to make
+  // getting and setting of fields easier.
+  $source = entity_metadata_wrapper('node', $node);
+
+  $basic_properties = array(
+    // Do NOT preset nid, vid, created, changed of the new entity
+    // 'hub' type aka Collaboration.
+    'type' => 'hub',
+    'language' => isset($node->language) ? $node->language : LANGUAGE_NONE,
+    'title' => $node->title,
+    'uid' => isset($node->uid) ? $node->uid : $user->uid,
+    'status' => NODE_NOT_PUBLISHED,
+    'comment' => COMMENT_NODE_OPEN,
+    'promote' => NODE_NOT_PROMOTED,
+    'sticky' => NODE_NOT_STICKY,
+  );
+  $destination = entity_metadata_wrapper('node', entity_create('node', $basic_properties));
+
+  // Short description.
+  if ($short_description = $source->field_tag_line->raw()) {
+    $destination->field_tag_line->set($short_description);
+  }
+  // Long description (body and summary).
+  if ($body = $source->body->raw()) {
+    $destination->body->set($body);
+  }
+  // Image.
+  if ($image = $source->field_featured_picture->raw()) {
+    $destination->field_featured_hub_image->set($image);
+  }
+  // Free tags.
+  if ($tags = $source->field_tags->raw()) {
+    $destination->field_tags->set($tags);
+  }
+  // Organic Group.
+  if ($group = $source->group_group->raw()) {
+    $destination->group_group->set($group);
+  }
+
+  // Setting the value of an entity reference field requires passing the nid.
+  $destination->field_idea->set(intval($node->nid));
+
+  // Save the wrapper and with it the entity.
+  $destination->save();
+  // Or ->value()?
+  $new_nid = $destination->nid->raw();
+
+  // Flag table contains static data: flag names and options
+  // flagging table contains dynamic data: nodes flagged, by whom and when
+  // Need to copy the Follow/Support Idea flaggings to Follow/Support
+  // Collaboration for all entries that have this nid.
+  // 1) Retrieve a list of all flaggins on this Idea node
+  // 2) For each flagging, change the fid of the Idea flag to the corresponding
+  // Collaboration flag
+  // 3) Insert the new flaggings thus created in the the Flaggings table.
+  // 4) Similarly copy the flag counts.
+  $fields = array('fid', 'entity_type', 'entity_id', 'uid', 'sid', 'timestamp');
+  $flaggings = db_select('flagging', 'fl')->fields('fl', $fields)
+  // Only for this node.
+    ->condition('entity_id', $node->nid)
+    ->condition('entity_type', 'node')
+    ->execute()->fetchAll(PDO::FETCH_CLASS);
+
+  foreach ($flaggings as $flagging) {
+    // Follow Idea.
+    if ($flagging->fid == 6) {
+      // Follow Collaboration.
+      $flagging->fid = 8;
+    }
+    // Support Idea.
+    elseif ($flagging->fid == 7) {
+      // Follow Collaboration.
+      $flagging->fid = 5;
+    }
+    $flagging->entity_id = $new_nid;
+
+    try {
+      // Insert into flagging table, using the new nid and converted fid.
+      drupal_write_record('flagging', $flagging);
+    }
+    catch (PDOException $e) {
+      drupal_set_message($e->getMessage());
+    }
+  }
+
+  $fields = array('fid', 'entity_type', 'entity_id', 'count', 'last_updated');
+  $flag_counts = db_select('flag_counts', 'fc')->fields('fc', $fields)
+    // Only for this node.
+    ->condition('entity_id', $node->nid)
+    ->condition('entity_type', 'node')
+    ->execute()->fetchAll(PDO::FETCH_CLASS);
+
+  foreach ($flag_counts as $flag_count) {
+    // Follow Idea.
+    if ($flag_count->fid == 6) {
+      // Follow Collaboration.
+      $flag_count->fid = 8;
+    }
+    // Support Idea.
+    elseif ($flag_count->fid == 7) {
+      // Follow Collaboration.
+      $flag_count->fid = 5;
+    }
+    $flag_count->entity_id = $new_nid;
+    try {
+      // Insert into flag counts table, using the new nid and converted fid.
+      drupal_write_record('flag_counts', $flag_count);
+    }
+    catch (PDOException $e) {
+      drupal_set_message($e->getMessage());
+    }
+  }
+  // Update the Idea state to Promoted
+  if (isset($node->field_idea_state)) {
+    $promote_value = array('value' =>'promoted');
+    $node->field_idea_state[LANGUAGE_NONE][] = $promote_value;
+    node_save($node);
+  }
+
+  $path = "node/$new_nid/edit";
+
+  drupal_set_message(t('The idea %title was promoted to the <strong>Co-Lab</strong> shown below. Please check all fields and make corrections where necessary. Then press <strong>Save</strong>.', array(
+    '%title' => $node->title,
+  )));
+
+  unset($_GET['destination']);
+  drupal_goto($path);
+}
+
+/**
+ * Theme Implementation of single_collab_actions_template.
+ */
+function theme_single_idea_actions_template(&$variables) {
+  $gid = $variables['nid'];
+  $links = array();
+  
+  $links[] = array(
+      'href' => sprintf('idea-supporters/%d', $gid)
+      , 'title' => 'View Idea Supporters'
+      , 'classes' => array()
+      ,
+    );
+  $attributes = array('class' => array('nav', 'nav-tabs'));
+  $variables['links'] = $links;
+  $output = theme('links', array(
+    'links' => $links,
+    'attributes' => $attributes,
+  ));
+  return $output;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function collabco_idea_form_idea_node_form_alter(&$form, &$form_state) {
+  $tid = intval(arg(3));
+  if (!empty($tid)) {
+    $lang = LANGUAGE_NONE;
+    $form['field_challenge_value'][$lang]['#default_value'][] = arg(3);
+  }
+ // $form['field_challenge_value']['#access'] = FALSE;
+  array_unshift($form['#submit'], 'collabco_idea_form_idea_node_form_submit');
+}
+
+/**
+ * Implements submit handler for converation node form.
+ */
+function collabco_idea_form_idea_node_form_submit($form, &$form_state) {
+  $tid = intval(arg(3));
+  if (!empty($tid)) {
+    $form_state['values']['field_challenge_value'][LANGUAGE_NONE][0]['target_id'] = $tid;
+  }
+}
