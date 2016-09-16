@@ -98,7 +98,7 @@ dependencies[] = og_invite_people
 dependencies[] = pathauto
 dependencies[] = quicktabs
 
-;dependencies[] = register_preapproved
+dependencies[] = register_preapproved
 dependencies[] = rules
 dependencies[] = stringoverrides
 dependencies[] = strongarm

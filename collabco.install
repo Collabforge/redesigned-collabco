@@ -228,12 +228,9 @@ function collabco_install_tasks_alter(&$tasks, $install_state) {
 /**
  * Implements hook_form_FORMID_alter().
  *
- * For user_profile_form
+ * For install_configure_form
  */
-function collabco_form_alter(&$form, &$form_state) {
-   print("<pre>");
-   print_r($form);
-   print("<pre>");
+function collabco_form_install_configure_form_alter(&$form, &$form_state) {
   _collabco_login_form_alterations($form, $form_state);
 }
 
