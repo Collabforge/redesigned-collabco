@@ -1,3 +1,0 @@
-name = Collabco Search
-description = An extra tab on the /search page to find users by their Full Name field. For administrators the email field is also searched.
-core = 7.x

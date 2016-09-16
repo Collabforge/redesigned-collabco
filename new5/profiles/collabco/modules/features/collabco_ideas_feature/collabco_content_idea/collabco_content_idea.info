@@ -1,9 +1,0 @@
-name = collabco_content_idea
-description = Contents ideas example content
-core = 7.x
-package = collabco content
-dependencies[] = defaultcontent
-features[content][] = new_idea
-features[content][] = test_idea
-features[features_api][] = api:2
-features_exclude[dependencies][defaultcontent] = defaultcontent

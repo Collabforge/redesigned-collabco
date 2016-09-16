@@ -1,5 +1,0 @@
-name = Collabco Settings
-description = Settings for Collabco
-core = 7.x
-package = Collabco
-dependencies[] = collabco_collaboration
