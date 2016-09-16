@@ -1041,7 +1041,7 @@ function collabco_core_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'register_preapproved_restrict';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['register_preapproved_restrict'] = $strongarm;
 
   $strongarm = new stdClass();

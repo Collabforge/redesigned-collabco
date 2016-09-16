@@ -85,22 +85,42 @@ function collabco_login_username($variables) {
 }
 
 function collabco_login_mail_validate(&$form, &$form_state) {
-  if ($error = user_validate_mail($form_state['values']['name'])) {
+  $name ="";
+  if (empty($form_state['values']['name'])) {
+      if (!empty($form_state['values']['account']['name'])){
+         $name =  $form_state['values']['account']['name'];
+      }
+  } else {
+       $name = $form_state['values']['name'];
+  }
+  
+  if ($error = user_validate_mail($name)) {
     //drupal_set_message(t('Please use valid email address as your username.'), 'warning');
     form_set_error('name', $error);
   }
   else {
-    $form_state['values']['mail'] = $form_state['values']['name'];
+      if (isset($form_state['values']['mail'])){
+         $form_state['values']['mail'] =$name; 
+      }else if (isset($form_state['values']['account']['mail'])) {
+        $form_state['values']['account']['mail'] = $name;
+      }
   }
 }
 
 function _collabco_login_form_alterations(&$form, &$form_state) {
+    
+    
   if (empty($form['account'])) {
-    $section = &$form;
+      if (!empty($form['admin_account']['account'])){
+          $section = &$form['admin_account']['account'];
+      }else {
+          $section = &$form;
+      }
   }
   else {
     $section = &$form['account'];
   }
+    
   $section['name']['#title'] = t('E-mail address');
   $section['name']['#description'] = t('Make sure to enter a valid email address, as it will be used for system notifications, like password reset instructions.');
   $section['name']['#element_validate'][] = 'collabco_login_mail_validate';
@@ -110,8 +130,9 @@ function _collabco_login_form_alterations(&$form, &$form_state) {
   // Suppress Mail field
   $section['mail']['#required'] = FALSE;
   $section['mail']['#access'] = FALSE;
-
+ 
   $form['#submit'][] = 'collabco_login_form_user_profile_form_submit';
+  
 }
 
 /**

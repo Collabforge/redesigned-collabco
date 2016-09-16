@@ -231,7 +231,9 @@ function collabco_install_tasks_alter(&$tasks, $install_state) {
  * For user_profile_form
  */
 function collabco_form_alter(&$form, &$form_state) {
+   print("<pre>");
    print_r($form);
+   print("<pre>");
   _collabco_login_form_alterations($form, $form_state);
 }
 
