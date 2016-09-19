@@ -111,7 +111,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_featured_picture']['field'] = 'field_featured_picture';
   $handler->display->display_options['fields']['field_featured_picture']['label'] = '';
   $handler->display->display_options['fields']['field_featured_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_picture']['settings'] = array(
     'image_style' => 'medium',
@@ -206,7 +206,7 @@ function collabco_views_feature_views_default_views() {
     t('Support Idea'),
     t('.'),
     t(','),
-    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>'),
+    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>'),
     t('Block'),
     t('more'),
     t('<br>
@@ -575,7 +575,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_challenge_image']['element_type'] = '0';
   $handler->display->display_options['fields']['field_challenge_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_challenge_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_challenge_image']['empty'] = '<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_challenge_image']['empty'] = '<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>';
   $handler->display->display_options['fields']['field_challenge_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_challenge_image']['settings'] = array(
     'image_style' => 'challenge',
@@ -703,7 +703,7 @@ function collabco_views_feature_views_default_views() {
     t('flag'),
     t('.'),
     t(','),
-    t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>'),
+    t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>'),
     t('no_sponser'),
     t('Page'),
     t('more'),
@@ -777,7 +777,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_challenge_image']['field'] = 'field_challenge_image';
   $handler->display->display_options['fields']['field_challenge_image']['label'] = '';
   $handler->display->display_options['fields']['field_challenge_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_challenge_image']['empty'] = '<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_challenge_image']['empty'] = '<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>';
   $handler->display->display_options['fields']['field_challenge_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_challenge_image']['settings'] = array(
     'image_style' => 'medium',
@@ -819,7 +819,7 @@ function collabco_views_feature_views_default_views() {
     t('counter'),
     t('.'),
     t(','),
-    t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>'),
+    t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>'),
     t('Block'),
   );
   $export['challenges_you_follow'] = $view;
@@ -902,7 +902,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_challenge_image']['element_type'] = '0';
   $handler->display->display_options['fields']['field_challenge_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_challenge_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_challenge_image']['empty'] = '<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_challenge_image']['empty'] = '<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>';
   $handler->display->display_options['fields']['field_challenge_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_challenge_image']['settings'] = array(
     'image_style' => 'challenge',
@@ -1020,7 +1020,7 @@ function collabco_views_feature_views_default_views() {
     t('flag'),
     t('.'),
     t(','),
-    t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>'),
+    t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>'),
     t('block'),
     t('more'),
     t('Page'),
@@ -1121,7 +1121,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_featured_hub_image']['field'] = 'field_featured_hub_image';
   $handler->display->display_options['fields']['field_featured_hub_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_hub_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img src="/sites/all/themes/img/placeholder/placeholder-card-large.jpg"></a>';
+  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg"></a>';
   $handler->display->display_options['fields']['field_featured_hub_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_hub_image']['settings'] = array(
     'image_style' => 'challenge',
@@ -1316,7 +1316,7 @@ function collabco_views_feature_views_default_views() {
     t('Follow Collaboration'),
     t('Support Collaboration'),
     t('queue'),
-    t('<a href="/node/[nid]"><img src="/sites/all/themes/img/placeholder/placeholder-card-large.jpg"></a>'),
+    t('<a href="/node/[nid]"><img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg"></a>'),
     t('.'),
     t(','),
     t('Collaborations featured'),
@@ -1480,7 +1480,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_featured_hub_image']['field'] = 'field_featured_hub_image';
   $handler->display->display_options['fields']['field_featured_hub_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_hub_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img src="/sites/all/themes/img/placeholder/placeholder-card-large.jpg"></a>';
+  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg"></a>';
   $handler->display->display_options['fields']['field_featured_hub_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_hub_image']['settings'] = array(
     'image_style' => 'challenge',
@@ -1606,7 +1606,7 @@ function collabco_views_feature_views_default_views() {
 <p>You can follow their progress on the intranet. You can also explore here to see how the idea grew over time.</p>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
-    t('<a href="/node/[nid]"><img src="/sites/all/themes/img/placeholder/placeholder-card-large.jpg"></a>'),
+    t('<a href="/node/[nid]"><img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg"></a>'),
     t('.'),
     t(','),
     t('Collaborations turned into project'),
@@ -1730,7 +1730,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_featured_hub_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_hub_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_featured_hub_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href=\'/node/[nid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href=\'/node/[nid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_hub_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_hub_image']['settings'] = array(
     'image_style' => 'medium',
@@ -1808,7 +1808,7 @@ function collabco_views_feature_views_default_views() {
     t('Support Collaboration'),
     t('.'),
     t(','),
-    t('<a href=\'/node/[nid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>'),
+    t('<a href=\'/node/[nid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>'),
     t('Block'),
   );
   $export['collaborations_you_follow'] = $view;
@@ -2179,7 +2179,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_challenge_image']['element_type'] = '0';
   $handler->display->display_options['fields']['field_challenge_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_challenge_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_challenge_image']['empty'] = '<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_challenge_image']['empty'] = '<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>';
   $handler->display->display_options['fields']['field_challenge_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_challenge_image']['settings'] = array(
     'image_style' => 'challenge',
@@ -2299,7 +2299,7 @@ function collabco_views_feature_views_default_views() {
     t('Support Challenge'),
     t('.'),
     t(','),
-    t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>'),
+    t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>'),
     t('block'),
     t('View All'),
     t('Page'),
@@ -2397,7 +2397,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_featured_picture']['label'] = '';
   $handler->display->display_options['fields']['field_featured_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_featured_picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_picture']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_featured_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_picture']['settings'] = array(
@@ -2595,7 +2595,7 @@ function collabco_views_feature_views_default_views() {
     t('last »'),
     t('follow counter'),
     t('support counter'),
-    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>'),
+    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>'),
     t('.'),
     t(','),
     t('All'),
@@ -2722,7 +2722,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_featured_picture']['label'] = '';
   $handler->display->display_options['fields']['field_featured_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_featured_picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_picture']['settings'] = array(
     'image_style' => 'medium',
@@ -2808,7 +2808,7 @@ function collabco_views_feature_views_default_views() {
     t('Support Idea'),
     t('.'),
     t(','),
-    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>'),
+    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>'),
     t('Block'),
   );
   $export['ideas_you_follow'] = $view;
@@ -3156,7 +3156,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_featured_picture']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['field_featured_picture']['label'] = '';
   $handler->display->display_options['fields']['field_featured_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_picture']['settings'] = array(
     'image_style' => '',
@@ -3262,7 +3262,7 @@ function collabco_views_feature_views_default_views() {
 '),
     t('Follow Idea'),
     t('Support Idea'),
-    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>'),
+    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>'),
     t('Your ideas latest'),
   );
   $export['ideas_yours_follow'] = $view;
@@ -3605,7 +3605,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['fields']['field_featured_picture']['field'] = 'field_featured_picture';
   $handler->display->display_options['fields']['field_featured_picture']['label'] = '';
   $handler->display->display_options['fields']['field_featured_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_picture']['settings'] = array(
     'image_style' => 'small-card-view',
@@ -3733,7 +3733,7 @@ function collabco_views_feature_views_default_views() {
     t('Support Idea'),
     t('.'),
     t(','),
-    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>'),
+    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>'),
     t('Block'),
     t('Mobile Block'),
   );
@@ -4771,7 +4771,7 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['fields']['field_featured_hub_image']['field'] = 'field_featured_hub_image';
   $handler->display->display_options['fields']['field_featured_hub_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_hub_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<img src="/sites/all/themes/img/placeholder/placeholder-card-large.jpg">';
+  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg">';
   $handler->display->display_options['fields']['field_featured_hub_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_hub_image']['settings'] = array(
     'image_style' => 'challenge',
@@ -4886,7 +4886,7 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['fields']['field_featured_hub_image']['field'] = 'field_featured_hub_image';
   $handler->display->display_options['fields']['field_featured_hub_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_hub_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img src="/sites/all/themes/img/placeholder/placeholder-card-large.jpg"></a>';
+  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg"></a>';
   $handler->display->display_options['fields']['field_featured_hub_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_hub_image']['settings'] = array(
     'image_style' => 'challenge',
@@ -4983,12 +4983,12 @@ if (!empty($gids_followed_by_user)){
 <p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
-    t('<img src="/sites/all/themes/img/placeholder/placeholder-card-large.jpg">'),
+    t('<img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg">'),
     t('.'),
     t(','),
     t('Parked Collaborations'),
     t('more'),
-    t('<a href="/node/[nid]"><img src="/sites/all/themes/img/placeholder/placeholder-card-large.jpg"></a>'),
+    t('<a href="/node/[nid]"><img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg"></a>'),
     t('Page'),
   );
   $export['parked_collaborations'] = $view;
@@ -6342,7 +6342,7 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['fields']['field_featured_hub_image']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['field_featured_hub_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_hub_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_hub_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_hub_image']['settings'] = array(
     'image_style' => '',
@@ -6456,7 +6456,7 @@ if (!empty($gids_followed_by_user)){
 </div>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
-    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-full.jpg\' ></a>'),
+    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-full.jpg\' ></a>'),
   );
   $export['your_collaborations'] = $view;
 
@@ -6701,7 +6701,7 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['fields']['field_featured_hub_image']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['field_featured_hub_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_hub_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_hub_image']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_hub_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_hub_image']['settings'] = array(
     'image_style' => 'small-card-view',
@@ -6714,7 +6714,7 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['fields']['field_featured_picture']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['field_featured_picture']['label'] = '';
   $handler->display->display_options['fields']['field_featured_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>';
+  $handler->display->display_options['fields']['field_featured_picture']['empty'] = '<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>';
   $handler->display->display_options['fields']['field_featured_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_picture']['settings'] = array(
     'image_style' => 'small-card-view',
@@ -6885,7 +6885,7 @@ if (!empty($gids_followed_by_user)){
     t('Follow Collaboration'),
     t('.'),
     t(','),
-    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/sites/all/themes/img/placeholder/placeholder-card-large.jpg\' ></a>'),
+    t('<a href="/node/[nid]"><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>'),
     t('All'),
     t('Your Contributions'),
     t('Mobile Block'),
