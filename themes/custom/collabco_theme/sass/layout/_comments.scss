@@ -3,9 +3,8 @@
 .comment-wrapper {
 
   .title { 
-    border-bottom: 1px solid $gray;
-    font-family: $univers57;
-    font-size: 18px;
+    border-bottom: 1px solid $gray-lighter;
+    font-size: pxtoem(18px);
     line-height: 1;
     margin-bottom: 20px;
     padding-bottom: 16px;
@@ -67,7 +66,7 @@
   }
 
 
-  @media #{$scrn-md} { 
+  @media #{$scrn-sm-min} { 
     margin-left: 63px;
     max-width: 472px;
   }
@@ -126,7 +125,7 @@
 
   .comment-form,
   .comment-by-node-author {
-    @media #{$scrn-md} {
+    @media #{$scrn-sm-min} {
       margin: 0 auto; 
       max-width: 536px; 
     }
@@ -134,7 +133,7 @@
 
   .main-container {
     padding: 20px 0;
-    @media #{$scrn-md} { padding: 30px; }
+    @media #{$scrn-sm-min} { padding: 30px; }
   }
 }
 

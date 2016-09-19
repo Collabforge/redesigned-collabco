@@ -62,7 +62,7 @@
 
 .vscc-controls .vscc_controls_previous {  
 
-  @media #{$scrn-md} {
+  @media #{$scrn-sm-min} {
     position: absolute;
     top: 74px;
     left: -26px;
@@ -73,7 +73,7 @@
 .vscc-controls .vscc_controls_next {
   margin: 0;
 
-  @media #{$scrn-md} {
+  @media #{$scrn-sm-min} {
     position: absolute;
     top: 74px;
     right: -26px;
@@ -97,7 +97,7 @@
 .view-latest-ideas.view-display-id-block,
 .view-your-contrib.view-display-id-your_contrib {
     display: none;
-    @media #{$scrn-md} { display: block; }
+    @media #{$scrn-sm-min} { display: block; }
 }
 
 
@@ -105,7 +105,7 @@
 .view-latest-ideas.view-display-id-latest_ideas_mobile_block,
 .view-your-contrib.view-display-id-mobile_block  {
     display: block;
-    @media #{$scrn-md} {display: none; }
+    @media #{$scrn-sm-min} {display: none; }
 
     .card {
       width: calc(100%/2);

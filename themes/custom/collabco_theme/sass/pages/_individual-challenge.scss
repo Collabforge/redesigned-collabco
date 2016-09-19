@@ -3,7 +3,7 @@
 
 // Header Block  
   .full-width-top{
-    @include bg-gradient-blue-purple-op('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
+    @include bg-gradient-blue-purple('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
@@ -122,11 +122,11 @@ header.challenge-status {
   .breadcrumb-container {
     display: inline-block;
 
-    @media #{$scrn-md} { float: left; }
+    @media #{$scrn-sm-min} { float: left; }
 
   }
   .status { 
-    @media #{$scrn-md} { float: right; }
+    @media #{$scrn-sm-min} { float: right; }
   }
 }
 
@@ -144,7 +144,7 @@ header.challenge-status {
       margin: 0 15px;
       padding: 16px 0;
       
-      @media #{$scrn-md} { 
+      @media #{$scrn-sm-min} { 
         border: 0;
         margin: 0;
         padding: 46px 15px 0;
@@ -156,7 +156,7 @@ header.challenge-status {
 
   .view-filters {
     text-align: left;
-    @media #{$scrn-md} { 
+    @media #{$scrn-sm-min} { 
       text-align: right;
     }
   }
@@ -168,7 +168,7 @@ header.challenge-status {
 #views-exposed-form-ideas-belonging-to-challenge-ideas-of-a-challenge {
   display: inline-block;
 
-  @media #{$scrn-md} {
+  @media #{$scrn-sm-min} {
     bottom: 16px;
   }  
 

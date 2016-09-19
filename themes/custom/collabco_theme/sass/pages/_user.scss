@@ -3,13 +3,13 @@
   &.not-logged-in {
     .nav-tabs > li{
       float: none;
-      @media #{$scrn-md} { float: left; }
+      @media #{$scrn-sm-min} { float: left; }
     }
   }
 
   // Header
   .content-top {
-    @include bg-gradient-pink-orange-op('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
+    @include bg-gradient-pink-orange('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto ,auto;
     padding: 60px 0; 
@@ -49,6 +49,7 @@
       font-size: 18px;
     }
   }
+  
   h2.block-title {
     color: $orange;
     font-size: 18px;
@@ -66,9 +67,10 @@
       font-size: 18px;
       padding: 18px 0;
       text-transform: uppercase;
-      font-family: $univers57;
+      font-family: $lato;
       border-bottom: $border-dark;
     }
+
     .info > div, .bio > div {
       position: relative;
       background-color: $white;
@@ -79,7 +81,7 @@
     .info > div  { height: auto; }
     .bio > div { min-height: 147px; }
 
-    @media #{$scrn-md} {
+    @media #{$scrn-sm-min} {
       .info, .bio { 
         padding-right: 0;
         padding-left: 0;
@@ -123,7 +125,6 @@
 
 
 //User Badges
-
 .user-badges { 
   text-align: center;
   margin-top: 20px;
@@ -171,7 +172,7 @@
     top: 85px;
     color: $white;
     text-transform: capitalize;
-    font-family: $univers47;
+    font-family: $lato;
     font-size: 18px;
     line-height: 21px;
     text-decoration: none;

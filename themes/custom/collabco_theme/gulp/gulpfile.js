@@ -2,8 +2,9 @@ var gulp        = require('gulp'),
     browserSync = require('browser-sync'),
     sass        = require('gulp-sass'),
     prefix      = require('gulp-autoprefixer'),
-    shell       = require('gulp-shell');
-    sourcemaps  = require('gulp-sourcemaps');
+    shell       = require('gulp-shell'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    cleanCSS = require('gulp-clean-css');
 
 /**
  * @task sass
@@ -18,6 +19,20 @@ gulp.task('sass', function () {
   .pipe(browserSync.reload({stream:true})) // reload the stream
 });
 
+
+/**
+ * @task sass
+ * Compile files from scss
+ */
+gulp.task('sass-production', function () {
+  return gulp.src('../sass/style.scss') // the source .scss file
+  .pipe(sass()) // pass the file through gulp-sass
+  .on('error', printError)
+  .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // pass the file through autoprefixer
+  .pipe(cleanCSS({compatibility: 'ie8'}))
+  .pipe(gulp.dest('../css')) // output .css file to css folder
+  .pipe(browserSync.reload({stream:true})) // reload the stream
+});
 
 /**
  * @task clearcache
@@ -46,8 +61,8 @@ gulp.task('browser-sync', function() {
         //browserSync.init(null, { proxy: "drupalresearch.dev" });
       browserSync.init({
       	open: 'external',
-      	host: 'employment.dev',
-      	proxy: 'employment.dev',
+      	host: 'govims.dev',
+      	proxy: 'govims.dev',
       	port: 8080 // for work mamp
       });
 });
@@ -63,14 +78,13 @@ gulp.task('watch', function () {
 });
 
 
+gulp.task('prod', ['sass-production']);
 
 /**
  * Default task, running just `gulp` will 
  * compile Sass files, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
-
-
 
 function printError (error) {
 

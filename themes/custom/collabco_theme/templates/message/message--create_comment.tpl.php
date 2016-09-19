@@ -44,11 +44,11 @@
    	$comment = comment_load($cid);
    	$short_desc = truncate_utf8($comment->comment_body[$language][0]['value'], 100, TRUE, TRUE);
   	$comment_id = 'comment-'.$cid;
-  	$author = user_load($comment->uid);
+   	$author = user_load($comment->uid);
 	  $picture = theme('user_picture', array('account' => $author));
   	$author_name = theme('username', array('account' => $author));
-  	$comment_link = l("view comment", $node_alias,array('fragment'=>$comment_id,));
-
+  	$comment_link = l("view comment", $node_alias,  array(
+          'attributes' => array('read-more'),'fragment' => $comment_id));        
     if (!empty($message->field_parent_comment_ref)) // reply to the comment 
     {
 		  $header_text =  $author_name . " replied to comment on " . $node_link;
@@ -65,7 +65,7 @@
     print "<div class='col-sm-8 content'>";
           echo "<p class='resume'>" . $header_text . "</p>";  
           echo "<p class='desc'>\"" . $short_desc ."...\"</p>";
-          echo "<a class='read-more' href='" .$node_alias  ."'>view comment</a>";
+          echo $comment_link;
           echo "<p class='time-elapsed'>" . $time_ago . "</p>";
         print "</div>"; 
         print "<div class='col-sm-3 author clearfix'>";
@@ -81,9 +81,6 @@
 
 ?>
 
-
-
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
    <div class="separator-updates"></div>
-
- </div>
+</div>

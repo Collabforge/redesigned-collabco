@@ -1,0 +1,118 @@
+// Full Width Card
+.full-width-card {
+  margin-bottom: 20px;
+
+  @media #{$scrn-sm-min} {
+     margin-bottom: 40px;
+  }
+
+  .border-box { border: $border-dark; }
+  
+  .feat-img,
+  .content, 
+  aside { 
+    background-color: $white; 
+
+    @media #{$scrn-sm-min} {
+       height: 150px;
+    }
+  }
+
+  .feat-img {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    height: 150px;
+
+    i {
+      color: $white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 20px; 
+      padding: 6px 8px 2px;
+    }
+
+  }  
+
+  &.collaboration .picture i {
+    font-size: 25px;
+    padding: 2px 6px 0 5px;
+  }
+
+  .content {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+
+    a {
+      text-decoration: none;
+      font-size: 30px;
+      color: $gray-darker;
+      display: block;
+      margin-bottom: 15px;
+      font-family: $lato;
+      line-height: .98;
+
+      &:hover { text-decoration: underline; }
+    }
+
+  }
+
+  aside {
+    border: $border-dark;
+    border-width: 1px 0 0;
+    padding: 0;
+
+    @media #{$scrn-sm-min} { 
+      padding: 0;
+      border-width: 0 0 0 1px;
+    }
+
+    a { 
+      color: $gray-dark;
+      text-decoration: none;
+    }
+
+    > div {
+      border-bottom: $border-dark;
+      cursor: pointer;
+      height: 33%;
+      height: calc(100% / 3);
+      padding: 15px 0;
+      text-align: center;
+      text-transform: uppercase;
+
+      &:last-child { border-bottom: 0; }
+
+      a[class^="icon-"] {
+        position: relative;
+        top: 2px;
+
+        &:hover { text-decoration: none; }
+      }
+
+    }
+
+    .support a { right: 0; }
+    .follow a { right: 1px; }
+    .comment a { right: 2px;  }
+  }
+
+  &.challenge {
+    aside > div { 
+      height: 50%; 
+      padding: 28px 0;
+    }
+  }
+  
+  &.idea .feat-img i,
+  &.challenge .feat-img i {
+    @include bg-gradient-blue-purple();
+  }
+
+  &.collaboration .feat-img i {
+    @include bg-gradient-purple-pink();
+  }
+}  

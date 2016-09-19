@@ -56,7 +56,7 @@
 .node-type-conversation { 
   
   .full-width-top {
-    @media #{$scrn-md} { padding: 60px; }
+    @media #{$scrn-sm-min} { padding: 60px; }
   }
 
   .main-container { padding: 0 0 30px; }

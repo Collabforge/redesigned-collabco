@@ -2,51 +2,52 @@
   color: $white;
   position: relative;
   text-align: center;
-  i { font-size: 20px; }
+
+  i { font-size: pxtoem(20px); }
 
   h2 { 
-    font-family: $univers47;
-    font-size: 48px;
-    margin-top: 10px;
+    font-size: pxtoem(48px);
+    margin-top: pxtoem(10px);
   }
 
-  p { font-size: 18px; line-height: 25px; }
+  p { 
+    font-size: pxtoem(18px); 
+    line-height: pxtoem(25px);
+  }
 
   .stats {
     display: inline-block;
     position: absolute;
     right: 20px;
     top: 20px;
+  }
 
-    .stat { 
-      float: left; 
-      margin-right: 23px;
-      &:last-child { margin: 0; }
-    }
-
-    .stat:before {
+  .stat { 
+    float: left; 
+    margin-right: 23px;
+    
+    &:last-child { margin: 0; }
+    
+    &:before {
       position: relative;
       height: 16px;
       top: 3px;
       right: 5px;
       width: 16px;
     }  
-  }
+  }  
 
-  @media #{$scrn-md} {  
+  @media #{$scrn-sm-min} {  
     h2 { padding: 0 120px; }
     p { padding: 0 135px; }
   } 
 }
 
-.content-top {
-  @include content-top();
-}
+.content-top { @include content-top(); }
 
 .full-width-top {
-  @media #{$scrn-md} {  
+  @media #{$scrn-sm-min} {  
     h2 { padding: 0 120px; }
-
     p { padding: 0 135px; }
   } 
 }
@@ -56,8 +57,9 @@
   padding: 80px 0;
 
   i { font-size: 40px; }
+  
   h2 {
-    font-family: $cgrace;
+    font-family: $lato;
     font-size: 36px;
     font-weight: normal;
     margin: 10px 0 20px; 
@@ -65,7 +67,7 @@
   }
 
   p {
-    font-family: $univers47; 
+    font-family: $lato; 
     font-size: 18px; 
     margin-bottom: 50px;
   }

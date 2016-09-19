@@ -2,7 +2,7 @@
 .page-user {
   // Header
   .content-top {
-    @include bg-gradient-pink-orange-op('/sites/all/themes/img/background/triangle-top-right-cut.png', '../assets/img/background/header-myhub-bg.jpg', .9);
+    @include bg-gradient-pink-orange('', '', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto ,cover;
     padding: 28px 0; 
@@ -60,7 +60,7 @@
 
   h2 { 
     margin-top: 0;
-    font-family: $cgrace;
+    font-family: $lato;
     text-transform: uppercase;
   }
 

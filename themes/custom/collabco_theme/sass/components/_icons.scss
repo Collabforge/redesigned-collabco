@@ -1,3 +1,8 @@
+//
+// Custom icons
+// --------------------------------------------------
+
+
 @charset "UTF-8";
 
 @font-face {
@@ -583,7 +588,7 @@
 
 /* Menu Nav Icons */
 
-@media #{$scrn-md} {
+@media #{$scrn-sm-min} {
   .icon-menu-pos {
     position: absolute;
     left: 0;

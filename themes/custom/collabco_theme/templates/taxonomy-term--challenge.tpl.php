@@ -65,7 +65,7 @@
   </div>
 </header>
 </div>
-</div>
+
 <div class="row">
   <div  id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> col-sm-8">
 
@@ -73,9 +73,6 @@
       <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
     <?php endif; ?>
     <div class="content">
-
-
-
     <?php
        print render($content['name']);
        print render($content['description']); ?>
@@ -87,7 +84,7 @@
     <div class="create-idea-btn">
       <p>Have an idea? Create it now.</p>
 
-      <a href="/node/add/idea/<?php print $term->tid; ?>">Create an idea</a>
+      <a class="btn" href="/node/add/idea/<?php print $term->tid; ?>">Create an idea</a>
     </div>
     <?php }
       if ($label == 'Closed') { ?>
@@ -130,7 +127,7 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
             </div>
           </div>
           <div class="follow stat clearfix">
-            <div class='<?php echo $follow_count_classes ?>'><?php print $follow ?></div>
+            <div class='<?php echo $zfollow_count_classes ?>'><?php print $follow ?></div>
             <div class="stat-label event sidebar-link clearfix">
               <?php print flag_create_link('challenge_flag', $term->tid); ?>
              <a href="#" class='<?php echo $follow_classes ?>'></a>
@@ -143,12 +140,10 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
         $user = user_load($term->field_sponser[LANGUAGE_NONE][0]['target_id']); ?>
         <h2>challenge sponsor</h2>
         <div class="team">
-        <?php $picture = theme('user_picture', array('account' => $user));
-        echo $picture; ?>
-
-
-        <a class="username" href="#"><?php echo theme('username', array('account' => $user)); ?></a>
-          </div>
+          <?php $picture = theme('user_picture', array('account' => $user));
+          echo $picture; ?>
+          <a class="username" href="#"><?php echo theme('username', array('account' => $user)); ?></a>
+        </div>
         <?php } ?>
 
   </div>

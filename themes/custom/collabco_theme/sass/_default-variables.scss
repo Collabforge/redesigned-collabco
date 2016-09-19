@@ -1,0 +1,66 @@
+/**
+ * Default Variables.
+ *
+ * Modify this file to provide default Bootstrap Framework variables. The
+ * Bootstrap Framework will not override any variables defined here because it
+ * uses the `!default` flag which will only set their default if not already
+ * defined here.
+ *
+ * You can copy existing variables directly from the following file:
+ * ./THEMENAME/bootstrap/assets/stylesheets/_variables.scss
+ */
+
+// Set the proper directory for the Bootstrap Glyphicon font.
+$icon-font-path: '../assets/fonts/bootstrap/';
+
+//** Global text color on `<body>`.
+$text-color: $gray-dark;
+
+// Typography 
+$font-family-sans-serif:  $lato;
+$font-size-base: 14px;
+
+
+//Heading sizes
+$font-size-h1: pxtoem(54px);
+$font-size-h2: pxtoem(36px);
+$font-size-h3: pxtoem(30px);
+$font-size-h4: pxtoem(24px);
+$font-size-h5: pxtoem(18px);
+$font-size-h6: pxtoem($font-size-base);
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     10px;
+$padding-base-horizontal:   15px;
+
+//Border Radius
+$border-radius-base:        0;
+$border-radius-large:       0;
+$border-radius-small:       0;
+
+
+//Form
+$input-border-focus:  $purple;
+
+// Border
+
+$border-nav: 1px solid $gray-light;
+
+$border-dark: 1px solid $gray-chromium;
+
+$border-blue: 1px solid $blue;
+
+
+
+// Media Queries
+
+$scrn-sm-max: "only screen and (max-width : $screen-sm)";
+
+$scrn-sm-min: "only screen and (min-width : $screen-sm)";
+
+$scrn-md-max: "only screen and (max-width : $screen-md)";
+
+$scrn-md-min: "only screen and (min-width : $screen-md)";

@@ -1,4 +1,4 @@
-(function ($) {	
+(function ($) { 
 
   "use strict";
   var win = $(window);
@@ -22,7 +22,7 @@
   //CARDS
  // Cockade animations for card   
 
- 	$('.cockade').hover(function() {
+  $('.cockade').hover(function() {
      $(this).next().stop().animate(
          { "max-width": "100%", "padding": "5px 6px 5px 40px" }
         ,'fast');
@@ -51,6 +51,13 @@
 
   });
 
+  //Add hover on card footer/aside
+  $('.card-large-link, .card-full-link, .small-card-link, .sidebar-2 .stat-label, .sidebar-2 .nav li ').hover(function() {
+     $(this).find('a , .value').css('color', '#72bf44');
+  }, function() {
+    $(this).find('a , .value').css('color', 'inherit');
+  });
+
   //Move secondary tab page on search below advanced search.
   $('.page-search .nav-tabs').insertAfter('#search-form');
 
@@ -63,11 +70,51 @@
   //Change Background and add image to Header on invidual collaborate, challenge and ideas
   $('.full-width-top .container').updateBackgroundHeader();
 
-  // Trigger support/follow event when click on icon
+  //Trigger support/follow event when click on icon
    $('.event a[class^="icon-"], .event a[class*=" icon-"]').click(function(event) {
       event.preventDefault()
       $(this).parent().find('.flag-wrapper a').trigger('click');
   });
+
+// Trigger to fire event on div on follow event
+ $(".follow.event").click(function(){
+     event.preventDefault()
+    $(this).find('.flag-wrapper a').trigger('click');    
+}); 
+  $(".support.event").click(function(){
+     event.preventDefault()
+    $(this).find('.flag-wrapper a').trigger('click');    
+}); 
+ $(".ideas-challenge").click(function(){
+     event.preventDefault();
+     var ideas_url = $(this).find('.ideas-link').attr('href');
+     window.location.href = ideas_url;
+}); 
+$('.comment').filter('.small-card-link,.card-large-link,.card-full-link').click(function(){    
+      event.preventDefault();
+      var comment_url = $(this).find('.icon-dialogue').attr('href');
+      window.location.href = comment_url;
+ }); 
+
+//On individual challenge, idea and collaboration pages
+$(".stat-label.share-box").click(function(){
+    event.preventDefault();
+    var share_link = $(this).find('.share-link').attr('href'); 
+    window.location.href = share_link;
+ });
+$(".stat.clearfix.mail").click(function(){
+    event.preventDefault();
+    var request_link = $(this).find('.request-link').attr('href'); 
+    window.location.href = request_link;
+ });
+$(".stat-label.event.sidebar-link").click(function(){
+    event.preventDefault()
+    $(this).find('.flag-wrapper a').trigger('click'); 
+ }); 
+
+
+
+
 
   /* FLAG Support/Follow Response */
   doc.bind('flagGlobalAfterLinkUpdate', function(event, data) {
@@ -198,7 +245,6 @@ function centerLargeCards() {
 
   });
 }
-
 
 // Resize card on winresize and under 768px for tablet/phones
 function resizeCard() {

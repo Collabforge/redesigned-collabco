@@ -24,6 +24,7 @@ $support_count_classes = $support_flag?'value flagged':'value';
 
  ?>
 <div class="col-xs-12 col-sm-6 col-md-4 card large ideas total-items-<?php echo $total_items; ?>">
+  
   <article>
     <div class="feat-img">
       <div class="img-icon icon-diamond"></div>

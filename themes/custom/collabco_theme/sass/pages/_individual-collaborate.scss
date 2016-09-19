@@ -31,7 +31,7 @@
 .node-type-conversation,
 .node-type-knowledge-object {
   .full-width-top{
-    @include bg-gradient-purple-pink-op('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
+    @include bg-gradient-purple-pink('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
@@ -64,10 +64,10 @@
       margin-top: 0;
       margin-bottom: 15px;
 
-      @media #{$scrn-md} { margin-bottom: 0; }
+      @media #{$scrn-sm-min} { margin-bottom: 0; }
     }  
     
-    @media #{$scrn-md} {
+    @media #{$scrn-sm-min} {
       float: right;
       display: inline-block;
     }  
@@ -77,7 +77,7 @@
     display: inline-block;
     bottom: 0;
     
-    @media #{$scrn-md} {
+    @media #{$scrn-sm-min} {
       position: absolute;
     }
 

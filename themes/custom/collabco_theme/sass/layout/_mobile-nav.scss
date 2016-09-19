@@ -1,5 +1,5 @@
 // Mobile Nav
-@media #{$scrn-small} {
+@media #{$scrn-sm-max} {
   header#navigation {
     a { 
       color: $green-dark;
@@ -159,7 +159,7 @@ nav.slider-mobile {
 
 
 .overlay {
-  @include bg-gradient-green-blue-op('','',.9);
+  @include bg-gradient-green-blue('','',.9);
   display: none;
   position: fixed;
   top: 0;

@@ -1,32 +1,23 @@
 .sidebar-2 {
-  margin-bottom: 15px;
-  margin-top: 15px;
 
-  @media #{$scrn-md} {
+  @media #{$scrn-sm-min} {
     margin-bottom: 30px;
     margin-top: 0;
   }
 
-
-
   .region-sidebar-second {  
-    background-color: $gray-light;
+    background-color: $gray-lighter;
     border: $border-dark;
     padding: 35px 25px;
   }
 
   h2 {
-    border-bottom: 1px solid $gray-dark;
-    color: $purple;
+    border-bottom: 1px solid $gray-chromium;
     display: block;
-    font-size: 18px;
+    font-size: pxtoem(18px);
     margin-top: 15px;
     padding-bottom: 7px;
     text-transform: uppercase;
-
-    &:first-child {
-      // margin-top: 0;
-    }
   }
 
   .sidebar-stats { display: block; }
@@ -86,11 +77,6 @@
     text-transform: uppercase;
   }
 
-
-  #block-collabco-idea-collaborations a { 
-
-  }
-
   .stat {
     margin: 10px 0;
 
@@ -98,7 +84,7 @@
       display: block;
       float: left;
       height: 100%;
-   }
+    }
     
     .value {
       border-right: 1px solid $gray-plank;
@@ -119,6 +105,7 @@
         text-decoration: underline;
       } 
     }
+
     .stat-label > a,
     > a {
       display: inline-block;
@@ -158,6 +145,13 @@
     }
 
   } // </.stat>
+
+
+  .stat-label,
+  .nav-tabs li {
+    cursor: pointer;
+  }
+
 
   .team {
   
@@ -206,14 +200,14 @@
 #block-collabco-idea-promote,
 #block-collabco-collaboration-edit-collaboration {
   
-  .btn-actions{
+  .btn-actions {
     list-style-type: none;
     padding: 6px 20px;
     text-align: left;
     margin-top: 20px;
     width: 100%;
     
-    @media #{$scrn-md} { margin-top: 0 }
+    @media #{$scrn-sm-min} { margin-top: 0; }
 
     li {
       margin-bottom: 6px;
@@ -238,7 +232,7 @@
 
     li a.icon-beaker { padding: 8px 20px; }
 
-    li a.icon-beaker:before{ 
+    li a.icon-beaker:before { 
       font-size: 18px;
       margin-right: 6px;
       right: 2px;

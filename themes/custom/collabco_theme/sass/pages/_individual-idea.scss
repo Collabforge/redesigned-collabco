@@ -3,7 +3,7 @@
 
   //Full width Top HEADER
   .full-width-top{
-    @include bg-gradient-blue-purple-op('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
+    @include bg-gradient-blue-purple('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
@@ -37,7 +37,7 @@
 }
 .page-idea-supporters{
   .content-top {
-    @include bg-gradient-blue-purple-op('/sites/all/themes/img/background/triangle-top-right-cut.png','../assets/img/background/header-individual-challenge-bg.jpg',.9);
+    @include bg-gradient-blue-purple('/sites/all/themes/img/background/triangle-top-right-cut.png','../assets/img/background/header-individual-challenge-bg.jpg',.9);
     background-size: contain, auto, cover;
     background-position: top right, 0 0, 0 0;
     padding: 15px 0;

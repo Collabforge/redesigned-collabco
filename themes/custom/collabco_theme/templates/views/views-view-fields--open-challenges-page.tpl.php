@@ -25,6 +25,7 @@
  *
  * @ingroup views_templates
  */
+
  $days_left = -1;
 ?>
 

@@ -1,0 +1,9 @@
+//
+// Helper functions
+// --------------------------------------------------
+
+$browser-context: $font-size-base;  // Default
+
+@function pxtoem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}

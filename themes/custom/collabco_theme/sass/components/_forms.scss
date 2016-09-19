@@ -1,19 +1,13 @@
+//
+// Forms
+// --------------------------------------------------
+
 .form-control {
   border-color: $gray-chromium;
   border-style: solid;
   border-width: 1px;
-  display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
   color: $gray-dark;
-  background-color: $white;
-  background-image: none;
-  border-radius: 0;
-  box-shadow: none;
-  transition: border-color ease-in-out 0.15s;
+  transition: border-color ease-in-out .15s;
 
   &::placeholder {
     color: $gray-dark;
@@ -21,14 +15,13 @@
   }
 
   &:hover {
-    border-bottom: 1px solid $green-lime;
+    border-color: purple;
     &::placeholder { color: $gray-dark; }
   }
 
+  &:hover,
   &:focus {
-    border-color: $gray-chromium;
-    border-bottom: 3px solid $green-lime;
-    box-shadow: none;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(74, 56, 88, 0.6);
   }
 
   &.form-file { display: inline-block; }
@@ -58,7 +51,7 @@
 
 .comment-form #edit-author, 
 .field-widget-text-textarea {
-  @media #{$scrn-md} {
+  @media #{$scrn-sm-min} {
     max-width: 536px;
   }
 }
@@ -68,11 +61,8 @@ input[type="password"].form-control {
   border-radius: 0;
   height: 65px;
   transition: border-color ease .3s, border-width .1s ease;
-  width: 380px;
  
-  @media #{$scrn-small} {
-    width: 100%;
-  }
+  @media #{$scrn-sm-max} { width: 100%; }
 }
 
 button[type="submit"] { 
@@ -80,19 +70,12 @@ button[type="submit"] {
 
   &.btn-danger {
     @include btn-orange();
-    font-size: 15px;
-    height: 37px;
-    line-height: 1;
   }  
 }
 
-button {
-  .glyphicon { font-size: 12px; }    
-}
+button .glyphicon { font-size: pxtoem(12px); }    
 
-.help-block {
-  color: $gray-dark;
-}
+.help-block { color: $gray-dark; }
 
 //Tabs Drupal options
 .vertical-tabs-list {
@@ -214,21 +197,21 @@ button {
   #edit-upload-upload .form-file {
     padding: 0;
 
-    @media #{$scrn-md} {  
+    @media #{$scrn-sm-min} {  
       padding: 2px;
     }
 
   }
 
   #media-tab-upload {
-    padding: 10px 10px 0px 10px;
+    padding: 10px 10px 0;
   }
 
   #edit-upload-upload-button { 
     display: inline-block;
     margin-bottom: 10px;
 
-    @media #{$scrn-md} {  
+    @media #{$scrn-sm-min} {  
       margin-left: 10px;
       margin-bottom: 0;
     }
@@ -246,7 +229,7 @@ button {
     color: $blue;
     border: $border-dark;
 
-    @media #{$scrn-md} {  width: 70%; }
+    @media #{$scrn-sm-min} {  width: 70%; }
   }
   
   .input-group-btn {
@@ -269,7 +252,7 @@ button {
     padding: 8px 16px;
     font-size: 12px;
 
-    @media #{$scrn-md} { display: inline-block; }
+    @media #{$scrn-sm-min} { display: inline-block; }
 
   }
 
@@ -285,7 +268,6 @@ button {
 
   .views-exposed-form .views-exposed-widget .btn {
     margin-top: 0;
-    padding: 0;
     padding: 4px 7px;
   }
 

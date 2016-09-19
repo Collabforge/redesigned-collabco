@@ -1,19 +1,15 @@
 .footer {
-  @include bg-gradient-green-blue();
-  border: 0;
-  color: $white;
-  margin: 0;
+  border-top: $purple solid 5px;
   padding: 25px 0;
   text-align: center;
-
-  img { margin-bottom: 15px; }
+  margin-top: 0;
   
   .footer-1-col {
-    @media #{$scrn-md} { text-align: left; }
+    @media #{$scrn-sm-min} { text-align: left; }
   }
 
   .footer-2-col {
-    @media #{$scrn-md} { text-align: right; }
+    @media #{$scrn-sm-min} { text-align: right; }
   }
 
   .copyright {
@@ -22,7 +18,7 @@
       margin-top: 8px;
 
 
-      @media #{$scrn-md} { 
+      @media #{$scrn-sm-min} { 
         padding: 15px 0;
         margin: 0;
       }

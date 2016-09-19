@@ -2,19 +2,31 @@
 
 @import 'base/typography';
 @import 'base/colors';
-@import 'bootstrap';
+
+
+// Default variables.
+@import 'default-variables';
+
+// Bootstrap Framework.
+@import '../assets/stylesheets/bootstrap';
+
+//Theme functions
+@import 'components/functions';
 
 // Base-theme overrides.
 @import 'overrides';
 
+
+
+
 @import 'components/mixins';
-@import 'components/animations';
 @import 'components/icons';
 @import 'components/background';
 @import 'components/blocks';
 @import 'components/buttons';
 @import 'components/forms';
 @import 'components/cards';
+@import 'components/full-width-card';
 @import 'components/views';
 @import 'components/breadcrumbs';
 @import 'components/slideshow';
@@ -29,6 +41,7 @@
 @import 'layout/footer';
 @import 'layout/comments';
 @import 'layout/sidebar';
+@import 'layout/myhub-nav';
 @import 'pages/home';
 @import 'pages/user';
 @import 'pages/challenge';

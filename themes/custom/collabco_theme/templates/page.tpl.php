@@ -77,21 +77,14 @@
 <header id="navigation" role="banner">
   <div class="desktop-header hidden-xs <?php print $container_class; ?>">
     <div class="row">
-        
-        <div id="brand" class="col-sm-2">
-         <!--  <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <img src="<?php echo $base_url; ?>/sites/all/themes/img/employment/employment-logo.svg" alt="Department of Employment"/>
-          </a>
-          <p><span>Share</span> ideas. <span>Explore</span> ideas. <span>Support</span> ideas.</p> -->
-        </div>
-
+      
     <?php if (!empty($primary_nav) || !empty($page['nav_actions'])): ?>
-      <nav role="navigation-primary" class="col-sm-7 primary-nav">
+      <nav role="navigation-primary" class="col-sm-9 col-md-7 primary-nav">
           <?php if (!empty($primary_nav)): ?>
               <?php print render($primary_nav); ?>
           <?php endif; ?>
       </nav>
-      <nav role="navigation-secondary" class="col-sm-3 secondary-nav">
+      <nav role="navigation-secondary" class="col-sm-3 col-md-offset-2 secondary-nav">
         <?php if (!empty($page['nav_search'])): ?> 
           <div class="search">
             <?php print render($page['nav_search']);?>
@@ -112,7 +105,7 @@
       </div>
       <div id="brand" class="col-xs-6">
             <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-              <img src="<?php echo $base_url; ?>/sites/all/themes/img/employment/employment-logo.svg" alt="Department of Employment"/>
+              <img src="<?php echo $base_url; ?>/sites/all/themes/img/logo.svg" alt="Collabco"/>
             </a>
       </div>
         <div class="search col-xs-3">
@@ -139,9 +132,9 @@
       <?php print render($primary_nav); ?>
     <?php endif; ?>
     <footer>
-      <div class="logo"><img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/employment/employment-logo-blue.svg" alt="Department of Employment"/>
+      <div class="logo"><img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.svg" alt="Collabco"/>
       </div>
-      <p class="copyright">© Copyright 2016. Department of Employment</p>
+      <p class="copyright">© Copyright 2016. Collabco</p>
     </footer>
 </nav>
 

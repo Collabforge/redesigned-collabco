@@ -68,6 +68,6 @@ $total_items = count( $view->result );
       <span class="flag-wrapper"><?php echo $term_link ?></span>
       </div>
     </footer>
-    
   </article>
+  
 </div>  

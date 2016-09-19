@@ -164,7 +164,7 @@ if (!empty($nid)) {
 		break;
 
 		case 'hub' : // for collaboration
-		 
+		 $short_desc = truncate_utf8($node->field_tag_line['und'][0]['value'], 200, TRUE, TRUE);	
          $icon_class = "collaboration icon-compress";
 		 print "<div class='card-updates row' >";
          print "<div class='col-sm-1 icon'>";

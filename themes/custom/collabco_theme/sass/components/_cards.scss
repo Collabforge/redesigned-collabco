@@ -1,62 +1,14 @@
-/* Large Card, Small Card, Full Width Card */
-
-
-// Large Card
-
+//
+// Large Card, Small Card, Full Width and Update Card classes
+// --------------------------------------------------
 
 .card {
   margin-bottom: 30px;
-
-  .taxonomy-tags {
-    border-bottom: 1px solid $white;
-    display: inline-block;
-    height: 34px;
-    overflow: hidden;
-    vertical-align: bottom;
-
-    > div { 
-      border-right: 1px solid $white;
-      color: $white;
-      float: left;
-      font-size: 12px;
-      height: 100%;
-      padding: 8px 10px 0;
-    }
-
-    > div:last-child { border: 0; }
-
-    .icon { 
-      font-size: 20px; 
-      padding: 8px;
-
-    }
-  }
 
   img {
     height: auto;
     width: 100%;
   }
-
-  &.large .img-icon { 
-    font-size: 20px; 
-    left: 0;
-    padding: 6px 8px 0;
-    position: absolute;
-    top: 0;   
-  }
-
-  &.large.collaborations .img-icon {
-    font-size: 25px;
-    padding: 2px 6px 0px 5px;
-  }
-
-  &.large.challenges {
-    footer > div { 
-      width: 50%;
-    } 
-  }
-
-
 
 // Article
   article {
@@ -70,12 +22,16 @@
       overflow: hidden;
     }
 
+    .img-icon {
+      font-size: pxtoem(20px);
+    }
+
     .remaining-days {
       background-color: $red;
       bottom: 0;
       color: $white;
       display: inline-block;
-      font-size: 12px;
+      font-size: pxtoem(12px);
       padding: 8px;
       position: absolute;
       right: 0;
@@ -101,7 +57,7 @@
     .title a { 
       color: $gray-darker;
       display: inline-block;
-      font-family: $univers47;
+      font-family: $lato;
       font-size: 30px;
       line-height: 1;
       margin-bottom: 20px;
@@ -157,7 +113,7 @@
     .tag {
       color: $white;
       display: inline-block;
-      font-family: univers57;
+      font-family: $lato;
       font-size: 12px;
       padding: 5px 0;
       position: absolute;
@@ -190,6 +146,7 @@
       padding: 15px 0;
       text-align: center;
       width: 33%;
+      cursor: pointer;
     }
 
     > div:last-child { border: 0; }
@@ -212,8 +169,7 @@
     }
 
     a[class^="icon-"] {
-      font-size: 14px;
-      font-size: 16px;
+      font-size: pxtoem(16px);
       position: relative;
       right: 4px;
       top: 3px;
@@ -221,21 +177,50 @@
 
     .flag-wrapper { display: block; }
   } // End of footer
+  
+  // Open challenges card
+  &.challenges .img-icon { 
+    @include bg-gradient-blue-purple(); 
+    color: $white;
+  }
+
 
 } // </card>
 
 
-//Only one card center element
-.card.large.total-items-1 {
-  margin-left: auto;
-  margin-right: auto;
-  float: none;
-}
+//Large Card
+.card.large {
+  
+  .img-icon { 
+    padding: 6px 8px 4px;  
+    position: absolute;
+  }
 
-//Center 2 cards elements
-.card.large.total-items-2:first-child {
-  @media #{$scrn-md-min} { margin-left: 16.66667%; }
-}
+  &.collaborations .img-icon {
+    font-size: 25px;
+    padding: 2px 6px 0 5px;
+  }
+
+  &.challenges {
+    footer > div { 
+      width: 50%;
+    } 
+  }
+
+  //Only one card center element
+  &.total-items-1 {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
+
+  //Center 2 cards elements
+  &.total-items-2:first-child {
+    @media #{$scrn-md-min} { margin-left: 16.66667%; }
+  }
+
+}  //</.large.card>
+
 
 //SMALL CARD
 
@@ -246,197 +231,56 @@
    background-repeat: no-repeat;
    background-size: cover;
    height: 97px;
-   position: relative; 
-   overflow: hidden;
  }
-
-  img {
-    height: auto;
-    width: 100%;
-  }
 
   .img-icon {
-    bottom: 0;
     color: $white;
     font-size: 20px; 
-    height: 34px;
-    left: 0;
-    padding: 8px;
+    padding: 6px 8px;
     position: absolute;
-    width: 36px;
+    bottom: 0;
   }
-
- icon.purple { @include bg-gradient-blue-purple(); }
   
- .content {
-   overflow: hidden;
-   padding: 22px 13px 12px 15px;
-   height: 106px;
+  .content {
+    overflow: hidden;
+    padding: 22px 13px 12px 15px;
+    height: 106px;
 
-  .title { display: block; }
+    .title a { 
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
 
-  .title a { 
-    font-size: 18px;
-    margin-bottom: 4px;
+    p { 
+      font-size: 13px; 
+      line-height: 16px;
+      padding-top: 4px;
+    }
   }
-
-   p { 
-     font-size: 13px; 
-     line-height: 16px;
-     padding-top: 4px;
-   }
- }
   
  footer {
+  
    > div { padding: 10px; }
+
+   //Icon position
    a:before {
       font-size: 16px;
       position: relative;
       right: -3px;
       top: 2px;
     }
- }
- 
-.flag-throbber, .flag {
-  display: none;
-}
-
- @media (min-width: $screen-sm-min) {  width: 217px; }
-} // </small>  
-
-
-// Full Width Card
-.full-width-card {
-  margin-bottom: 20px;
-
-  @media #{$scrn-md} {
-     margin-bottom: 40px;
   }
 
-  .border-box { border: $border-dark; }
+  //Hide footer text and throbber
+  .flag-throbber, .flag { display: none; }
   
-  .feat-img,
-  .content, 
-  aside { 
-    background-color: $white; 
-    @media #{$scrn-md} {
-       height: 150px;
-    }
-  }
+  @media (min-width: $screen-sm-min) {  width: 217px; }
+
+} // </.small.card>  
 
 
-  .feat-img {
-    position: relative;
-    padding: 0;
-    overflow: hidden;
-    height: 150px;
-
-    i {
-      color: $white;
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 20px; 
-      padding: 6px 8px 0;
-    }
-
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-  }  
-
-  &.collaboration .picture i  {
-    font-size: 25px;
-    padding: 2px 6px 0px 5px;
-  }
-
-  .content {
-    padding-top: 24px;
-    padding-bottom: 24px;
-    position: relative;
-    overflow: hidden;
-
-    a {
-      text-decoration: none;
-      font-size: 30px;
-      color: $gray-darker;
-      display: block;
-      margin-bottom: 15px;
-      font-family: $univers47;
-      line-height: .98;
-
-      &:hover { text-decoration: underline; }
-    }
-
-    p {
-      line-height: 21px;
-    }
-
-  }
-
-  aside {
-    border: $border-dark;
-    border-width: 1px 0 0;
-    padding: 0;
-    @media #{$scrn-md} { 
-      padding: 0;
-      border-width: 0 0 0 1px;
-    }
-
-    a { 
-      color: $gray-dark;
-      text-decoration: none;
-    }
-    a:hover, a.flagged {color: $green-lime;}
-
-    > div {
-      border-bottom: $border-dark;
-      height: 33%;
-      height: calc(100% / 3);
-      padding: 15px 0;
-      text-align: center;
-      text-transform: uppercase;
-
-      &:last-child { border-bottom: 0; }
-
-      a[class^="icon-"] {
-        position: relative;
-        top: 2px;
-        &:hover {
-          text-decoration: none;
-        }
-      }
-
-    }
-
-    .support a { right: 0; }
-    .follow a { right: 1px; }
-    .comment a { right: 2px;  }
-  }
-
-  &.challenge {
-    aside > div { 
-      height: 50%; 
-      padding: 28px 0;
-    }
-  }
-  
-  &.idea .feat-img i,
-  &.challenge .feat-img i {
-    @include bg-gradient-blue-purple();
-  }
-
-  &.collaboration .feat-img i {
-    @include bg-gradient-purple-pink();
-  }
-}  
-
-
-// MY HUB --> CARD UPDATES
-
+// MY HUB --> UPDATES
 .separator-updates {
   background-color: $gray-dark;
   height: 1px;
@@ -444,14 +288,16 @@
   width: 50%;
 }
 
+
+//CARD UPDATES on My Hub
 .card-updates {
   margin: 40px 0;
-  font-family: $univers47;
+  font-family: $lato;
 
   .icon { 
     text-align: left;
 
-    @media #{$scrn-md} { 
+    @media #{$scrn-sm-min} { 
       padding: 0;
       text-align: right;
     }
@@ -462,24 +308,25 @@
     font-size: 40px;
   }
   
-  a { color: $green-dark; }
+  a { color: $pink; }
 
   .content {
     padding-top: 10px;
     padding-bottom: 10px;
+
     .title {
       margin: 5px 0 0;
-      font-family: $univers47;
+      font-family: $lato;
       font-size: 18px;
       
       a { 
         color: $gray-darker;
         text-decoration: none;
+
         &:hover { text-decoration: underline; }
       }
     }
   }
-
 
   .resume {
     color: $purple;
@@ -504,6 +351,7 @@
     padding: 12px 0;
 
     .user-picture { float: left; }
+
     .img-responsive { 
       height: 48px;
       width: 48px;
@@ -517,7 +365,6 @@
     }
   }
   
-
   .picture, 
   .info {
     margin-top: 10px;
@@ -530,9 +377,12 @@
     overflow: hidden;
     width: 185px;
 
-    @media #{$scrn-md} { float: left; }
+    @media #{$scrn-sm-min} { float: left; }
 
-    img { width: 100%; }
+    img { 
+      min-height: 100%;
+      width: 100%;
+    }
 
     i {
       color: $white;
@@ -540,7 +390,7 @@
       bottom: 0;
       left: 0;
       font-size: 20px; 
-      padding: 6px 8px 0;
+      padding: 6px 8px 2px;
 
       &.idea { @include bg-gradient-blue-purple(); }
 
@@ -551,11 +401,10 @@
     }
   }
 
-
   .info { 
     width: auto;
     
-    @media #{$scrn-md} {
+    @media #{$scrn-sm-min} {
       margin-left: 200px;
     }
   
