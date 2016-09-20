@@ -65,10 +65,10 @@
         </aside>  <!-- /#sidebar-first -->
       <?php endif; ?>
 
-      <div id="main" class="column"><div id="main-squeeze">
+      <div id="main" class="col-sm-7 column"><div id="main-squeeze">
 
         <div id="content">
-          <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?>Helllooooooo</h1><?php endif; ?>
+          <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
           <?php if (!empty($messages)): print $messages; endif; ?>
           <div id="content-content" class="clearfix">
             <?php print $content; ?>
