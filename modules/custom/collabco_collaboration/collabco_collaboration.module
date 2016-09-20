@@ -138,13 +138,13 @@ function _collabco_collabortaion_mail_text($key, $language = NULL, $t_vars = arr
 
   switch ($key) {
     case 'collabco_inactivity_subject':
-       $text = t('Co-labs with no activity for last 30 days at [site:name]', $t_vars, array('langcode' => $langcode));
+       $text = t('Collaborations with no activity for last 30 days at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
 
     case 'collabco_inactivity_body':
       $text = t("Hello !username,
 
-The below Co-labs have had no activity for the last 30 days.
+The below Collaborations have had no activity for the last 30 days.
 
 !collab_text
 
@@ -156,13 +156,13 @@ The below Co-labs have had no activity for the last 30 days.
       break;
 
     case 'collabco_archived_subject':
-      $text = t('Co-labs archived with no activity for last 90 days at [site:name]', $t_vars, array('langcode' => $langcode));
+      $text = t('Collaborations archived with no activity for last 90 days at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
 
     case 'collabco_archived_body':
       $text = t("Hello !username,
 
-The below Co-labs are now archived due to no activity for the last 90 days.
+The below Collaborations are now archived due to no activity for the last 90 days.
 
 !collab_text
 

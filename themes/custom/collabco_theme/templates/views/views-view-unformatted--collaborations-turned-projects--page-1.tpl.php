@@ -16,7 +16,7 @@
     <ol class="breadcrumb">
       <li><a href="/">Home</a></li>
       <li><a href="/collaborate">Collaborate</a></li>
-      <li>Co-Labs Turned Projects</li>
+      <li>Collaborations Turned Projects</li>
     </ol>
   </div>
 

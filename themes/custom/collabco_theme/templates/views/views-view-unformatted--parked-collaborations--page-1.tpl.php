@@ -20,7 +20,7 @@
     <ol class="breadcrumb">
       <li><a href="/">Home</a></li>
       <li><a href="/collaborate">Collaborate</a></li>
-      <li>Parked Co-Labs</li>
+      <li>Parked Collaborations</li>
     </ol>
   </div>
 

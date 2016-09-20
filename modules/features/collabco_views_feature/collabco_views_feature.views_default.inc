@@ -1039,7 +1039,7 @@ function collabco_views_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Co-Labs';
+  $handler->display->display_options['title'] = 'Collaborations';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'View All';
@@ -1063,12 +1063,12 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<div class="breadcrumb-container">
 <ol class="breadcrumb" style="background-color:#FCFCFC; float:left;">
   <li><a href="/">Home</a></li>
-  <li>Co-Labs</li>
+  <li>Collaborations</li>
 </ol>
 </div>
 <i class="icon-beaker"></i>
 <p>Have the skills and resources to develop these idea into projects? Share them here!</p>
-<h3>Featured Co-Labs</h3>';
+<h3>Featured Collaborations</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -1286,7 +1286,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['path'] = 'featured-collaborations';
   $translatables['collaborations_main_view'] = array(
     t('Master'),
-    t('Co-Labs'),
+    t('Collaborations'),
     t('View All'),
     t('Apply'),
     t('Reset'),
@@ -1303,12 +1303,12 @@ function collabco_views_feature_views_default_views() {
     t('<div class="breadcrumb-container">
 <ol class="breadcrumb" style="background-color:#FCFCFC; float:left;">
   <li><a href="/">Home</a></li>
-  <li>Co-Labs</li>
+  <li>Collaborations</li>
 </ol>
 </div>
 <i class="icon-beaker"></i>
 <p>Have the skills and resources to develop these idea into projects? Share them here!</p>
-<h3>Featured Co-Labs</h3>'),
+<h3>Featured Collaborations</h3>'),
     t('<div class="more-link">
   <a href="/featured-collaborations">
     View All  </a>
@@ -1418,7 +1418,7 @@ function collabco_views_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Co-Labs';
+  $handler->display->display_options['title'] = 'Collaborations';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -1442,8 +1442,8 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-todolist-check"></i>
-<h3>Co-Labs Turned Projects</h3>
-<p>These clever idea creators have made a real difference to our work environment. Their Co-Labs have been approved to become projects! </p>
+<h3>Collaborations Turned Projects</h3>
+<p>These clever idea creators have made a real difference to our work environment. Their Collaborations have been approved to become projects! </p>
 <p>You can follow their progress on the intranet. You can also explore here to see how the idea grew over time.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Flags: follow_collaboration counter */
@@ -1586,7 +1586,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['path'] = 'collaborations-turned-projects';
   $translatables['collaborations_turned_projects'] = array(
     t('Master'),
-    t('Co-Labs'),
+    t('Collaborations'),
     t('View All'),
     t('Apply'),
     t('Reset'),
@@ -1601,8 +1601,8 @@ function collabco_views_feature_views_default_views() {
     t('next ›'),
     t('last »'),
     t('<i class="icon-todolist-check"></i>
-<h3>Co-Labs Turned Projects</h3>
-<p>These clever idea creators have made a real difference to our work environment. Their Co-Labs have been approved to become projects! </p>
+<h3>Collaborations Turned Projects</h3>
+<p>These clever idea creators have made a real difference to our work environment. Their Collaborations have been approved to become projects! </p>
 <p>You can follow their progress on the intranet. You can also explore here to see how the idea grew over time.</p>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
@@ -4043,7 +4043,7 @@ print $count;
 ?></p>
 </td>
 <td>
-<h4>Total # Co-lab Supports:</h4>
+<h4>Total # Collaborations Supports:</h4>
 <p><?php
 $results = db_select(\'flag_counts\', \'t\')->fields(\'t\')->condition(\'fid\',5,\'=\')->execute()->fetchAll();
 $count = 0;
@@ -4714,7 +4714,7 @@ if (!empty($gids_followed_by_user)){
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Co-Labs';
+  $handler->display->display_options['title'] = 'Collaborations';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -4739,8 +4739,8 @@ if (!empty($gids_followed_by_user)){
 <div class="separator"></div>
 <br>
 <i class="icon-music-stop"></i>
-<h3>Parked Co-Labs</h3>
-<p>While all Co-Labs come from great ideas, unfortunately not all ideas are ripe to advance into Co-Labs at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
+<h3>Parked Collaborations</h3>
+<p>While all Collaborations come from great ideas, unfortunately not all ideas are ripe to advance into Collaborations at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
 <p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Flags: follow_collaboration counter */
@@ -4960,7 +4960,7 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['path'] = 'parked-collaborations';
   $translatables['parked_collaborations'] = array(
     t('Master'),
-    t('Co-Labs'),
+    t('Collaborations'),
     t('View All'),
     t('Apply'),
     t('Reset'),
@@ -4978,8 +4978,8 @@ if (!empty($gids_followed_by_user)){
 <div class="separator"></div>
 <br>
 <i class="icon-music-stop"></i>
-<h3>Parked Co-Labs</h3>
-<p>While all Co-Labs come from great ideas, unfortunately not all ideas are ripe to advance into Co-Labs at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
+<h3>Parked Collaborations</h3>
+<p>While all Collaborations come from great ideas, unfortunately not all ideas are ripe to advance into Collaborations at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
 <p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
@@ -5151,7 +5151,7 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['filters']['field_idea_state_value']['expose']['identifier'] = 'field_idea_state_value';
   $handler->display->display_options['block_description'] = 'Idea badges';
 
-  /* Display: Co-lab badge */
+  /* Display: Collaborations badge */
   $handler = $view->new_display('block', 'Co-lab badge', 'collab_badges');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;

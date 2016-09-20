@@ -29,7 +29,7 @@ function collabco_ideas_feature_quicktabs_default_quicktabs() {
     1 => array(
       'bid' => 'views_delta_31a0bc6da485d9ab564657bb2d9e1023',
       'hide_title' => 1,
-      'title' => 'Co-Labs',
+      'title' => 'Collaborations',
       'weight' => '-99',
       'type' => 'block',
     ),
@@ -40,7 +40,7 @@ function collabco_ideas_feature_quicktabs_default_quicktabs() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Co-Labs');
+  t('Collaborations');
   t('Ideas');
   t('My hub - Developing');
 

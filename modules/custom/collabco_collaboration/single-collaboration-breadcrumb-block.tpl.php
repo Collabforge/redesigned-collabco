@@ -21,7 +21,7 @@ if (!empty($group_content_title)) {
 <div class="breadcrumb-container">
   <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
-    <li><a href="/collaborate">Co-Labs</a></li>
+    <li><a href="/collaborate">Collaborations</a></li>
     <li><?php echo $collaborate ?></li>
     <?php if (!empty($group_content_title)) { ?>
     <li><a href="/node/<?php echo $nid . "/" . $group_bc_type; ?>"><?php echo $group_bc_type; ?></a></li>

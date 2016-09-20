@@ -83,7 +83,7 @@
           </div>
           <div class="col-sm-3">
             <i class="icon-beaker"></i>
-            <p>Read about and support <a href="/collaborate">Co-Labs</a> that are happening.</p>
+            <p>Read about and support <a href="/collaborate">Collaborations</a> that are happening.</p>
           </div>
 
         </div>
