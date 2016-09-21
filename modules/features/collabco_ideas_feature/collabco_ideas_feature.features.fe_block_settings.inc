@@ -480,7 +480,7 @@ function collabco_ideas_feature_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-af1a856ad23ecaccfd1929ab5b2d5c15'] = array(
@@ -515,7 +515,7 @@ function collabco_ideas_feature_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-archieved_ideas-block'] = array(

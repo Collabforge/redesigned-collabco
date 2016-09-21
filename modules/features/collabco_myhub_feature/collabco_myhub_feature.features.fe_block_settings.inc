@@ -147,5 +147,40 @@ users/*',
     'visibility' => 1,
   );
 
+  $export['views-2b14d775fef07b47e68c4e559319dd47'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => '2b14d775fef07b47e68c4e559319dd47',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'myhub',
+    'roles' => array(
+      'authenticated user' => 2,
+    ),
+    'themes' => array(
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'collabco_theme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'collabco_theme',
+        'weight' => -36,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   return $export;
 }
