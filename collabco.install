@@ -14,7 +14,6 @@ define('GOVIMS_DEFAULT_THEME', 'collabco_theme');
  */
 define('GOVIMS_DEFAULT_ADMIN_THEME', 'seven');
 
-
 /**
  * Implements hook_install().
  *
@@ -229,15 +228,6 @@ function collabco_install_tasks_alter(&$tasks, $install_state) {
    drupal_add_css('profiles/collabco/css/install.css');
    drupal_add_js('profiles/collabco/js/jquery-3.1.0.min.js');
    
-}
-
-/**
- * Implements hook_form_FORMID_alter().
- *
- * For install_configure_form
- */
-function collabco_form_install_configure_form_alter(&$form, &$form_state) {
-  _collabco_login_form_alterations($form, $form_state);
 }
 
 /**
@@ -550,8 +540,8 @@ function collabco_cleanup() {
  * process and forces enable the maintenance theme too early in the request
  * for us to modify it in a clean way.
  *
- * This function was helpfully taken from Commerce Kickstart.
- */
+ * 
+ *  */
 function _collabco_set_theme($target_theme) {
   if ($GLOBALS['theme'] != $target_theme) {
     unset($GLOBALS['theme']);
