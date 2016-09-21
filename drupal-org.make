@@ -292,6 +292,14 @@ projects[vscc][type] = module
 projects[vscc][subdir] = contrib
 projects[vscc][version] = "1.1"
 
+projects[webform][type] = module
+projects[webform][subdir] = contrib
+projects[webform][version] = "4.13"
+
+projects[webform_rules][type] = module
+projects[webform_rules][subdir] = contrib
+projects[webform_rules][version] = "1.6"
+
 ; Themes
 projects[bootstrap][type] = theme
 projects[bootstrap][version] = "3.6"

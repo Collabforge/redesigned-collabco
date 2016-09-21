@@ -65,6 +65,7 @@ dependencies[] = translation
 dependencies[] = user
 dependencies[] = user_stats
 dependencies[] = views
+dependencies[] = webform
 dependencies[] = webform_rules
 features[ctools][] = strongarm:strongarm:1
 features[fe_block_settings][] = views-2b14d775fef07b47e68c4e559319dd47
