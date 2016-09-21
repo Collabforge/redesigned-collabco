@@ -210,12 +210,17 @@ function collabco_install_tasks($install_state) {
 
   return $task;
 }
-
+// local callback function
+function _govims_locale_selection(&$install_state){
+    $install_state['parameters']['locale'] = 'en';
+}
 
 /**
  * Implements hook_install_tasks_alter().
  */
 function collabco_install_tasks_alter(&$tasks, $install_state) {
+
+  $tasks['install_select_locale']['function'] = '_govims_locale_selection';
 
   $tasks['collabco_finished'] = $tasks['install_finished'];
   unset($tasks['install_finished']);
@@ -223,6 +228,7 @@ function collabco_install_tasks_alter(&$tasks, $install_state) {
   _collabco_set_theme('collabco_theme');
    drupal_add_css('profiles/collabco/css/install.css');
    drupal_add_js('profiles/collabco/js/jquery-3.1.0.min.js');
+   
 }
 
 /**
