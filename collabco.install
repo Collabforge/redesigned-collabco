@@ -143,7 +143,7 @@ function _govims_default_blocks() {
   collabco_core_update_block('collabco_challenge', 'header_challenge', $themes, 'content_top', 0);
     
   //individual Challenge page
-  collabco_core_update_block('views', 'challenge_page_header-block', $themes, 'content_top', 0);
+  collabco_core_update_block('views', 'challenge_page_header-block', $themes, 'full_width_top', 0);
   
   collabco_core_update_block('views', 'latest_ideas-block', $themes, 'content_lower', 14);
   
