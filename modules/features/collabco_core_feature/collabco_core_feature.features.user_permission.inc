@@ -258,14 +258,7 @@ function collabco_core_feature_user_default_permissions() {
     'module' => 'features',
   );
 
-  // Exported permission: 'administer field collections'.
-  $permissions['administer field collections'] = array(
-    'name' => 'administer field collections',
-    'roles' => array(),
-    'module' => 'field_collection',
-  );
-
-  // Exported permission: 'administer field permissions'.
+   // Exported permission: 'administer field permissions'.
   $permissions['administer field permissions'] = array(
     'name' => 'administer field permissions',
     'roles' => array(),
@@ -311,15 +304,6 @@ function collabco_core_feature_user_default_permissions() {
     'module' => 'flag',
   );
 
-  // Exported permission: 'administer forums'.
-  $permissions['administer forums'] = array(
-    'name' => 'administer forums',
-    'roles' => array(
-      'Moderator' => 'Moderator',
-    ),
-    'module' => 'forum',
-  );
-
   // Exported permission: 'administer google analytics'.
   $permissions['administer google analytics'] = array(
     'name' => 'administer google analytics',
@@ -334,13 +318,6 @@ function collabco_core_feature_user_default_permissions() {
       'Moderator' => 'Moderator',
     ),
     'module' => 'og',
-  );
-
-  // Exported permission: 'administer http response headers'.
-  $permissions['administer http response headers'] = array(
-    'name' => 'administer http response headers',
-    'roles' => array(),
-    'module' => 'http_response_headers',
   );
 
   // Exported permission: 'administer image styles'.
@@ -844,63 +821,7 @@ function collabco_core_feature_user_default_permissions() {
     ),
     'module' => 'node',
   );
-
-  // Exported permission: 'delete terms in areas_of_participant_expertise'.
-  $permissions['delete terms in areas_of_participant_expertise'] = array(
-    'name' => 'delete terms in areas_of_participant_expertise',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in forums'.
-  $permissions['delete terms in forums'] = array(
-    'name' => 'delete terms in forums',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in implementation_area'.
-  $permissions['delete terms in implementation_area'] = array(
-    'name' => 'delete terms in implementation_area',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in post'.
-  $permissions['delete terms in post'] = array(
-    'name' => 'delete terms in post',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in strategic_priority'.
-  $permissions['delete terms in strategic_priority'] = array(
-    'name' => 'delete terms in strategic_priority',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in tags'.
-  $permissions['delete terms in tags'] = array(
-    'name' => 'delete terms in tags',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'display drupal links'.
-  $permissions['display drupal links'] = array(
-    'name' => 'display drupal links',
-    'roles' => array(),
-    'module' => 'admin_menu',
-  );
-
-  // Exported permission: 'download any audio files'.
-  $permissions['download any audio files'] = array(
-    'name' => 'download any audio files',
-    'roles' => array(),
-    'module' => 'file_entity',
-  );
-
+  
   // Exported permission: 'download any image files'.
   $permissions['download any image files'] = array(
     'name' => 'download any image files',
@@ -1293,13 +1214,6 @@ function collabco_core_feature_user_default_permissions() {
   // Exported permission: 'show format selection for entityform'.
   $permissions['show format selection for entityform'] = array(
     'name' => 'show format selection for entityform',
-    'roles' => array(),
-    'module' => 'better_formats',
-  );
-
-  // Exported permission: 'show format selection for field_collection_item'.
-  $permissions['show format selection for field_collection_item'] = array(
-    'name' => 'show format selection for field_collection_item',
     'roles' => array(),
     'module' => 'better_formats',
   );

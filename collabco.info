@@ -67,7 +67,6 @@ dependencies[] = entityform
 dependencies[] = entityreference
 dependencies[] = features
 ;dependencies[] = features_extra
-dependencies[] = field_collection
 dependencies[] = field_permissions
 dependencies[] = file_entity
 dependencies[] = flag
@@ -75,7 +74,6 @@ dependencies[] = flag_abuse
 dependencies[] = flag_clear
 dependencies[] = fpa
 ;dependencies[] = google_analytics
-dependencies[] = http_response_headers
 dependencies[] = image_url_formatter
 dependencies[] = inline_entity_form
 dependencies[] = jquery_update
@@ -120,8 +118,6 @@ dependencies[] = views_slideshow
 dependencies[] = views_ui
 dependencies[] = views_slideshow_cycle
 dependencies[] = vscc
-dependencies[] = webform
-dependencies[] = webform_rules
 
 ; Custom
 

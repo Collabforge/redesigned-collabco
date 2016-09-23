@@ -104,10 +104,6 @@ projects[features][type] = module
 projects[features][subdir] = contrib
 projects[features][version] = "2.10"
 
-projects[field_collection][type] = module
-projects[field_collection][subdir] = contrib
-projects[field_collection][version] = "1.0-beta11"
-
 projects[field_permissions][type] = module
 projects[field_permissions][subdir] = contrib
 projects[field_permissions][version] = "1.0-beta2"
@@ -135,10 +131,6 @@ projects[fpa][version] = "2.6"
 projects[google_analytics][type] = module
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = "2.2"
-
-projects[http_response_headers][type] = module
-projects[http_response_headers][subdir] = contrib
-projects[http_response_headers][version] = "1.1"
 
 projects[image_url_formatter][type] = module
 projects[image_url_formatter][subdir] = contrib
@@ -307,8 +299,6 @@ projects[webform][version] = "4.13"
 projects[webform_rules][type] = module
 projects[webform_rules][subdir] = contrib
 projects[webform_rules][version] = "1.6"
-
-
 
 ; Themes
 projects[bootstrap][type] = theme

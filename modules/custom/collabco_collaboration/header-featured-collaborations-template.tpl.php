@@ -8,7 +8,7 @@
 
 
 <i class="icon-beaker"></i>
-<h2>Featured Co-Labs</h2>
+<h2>Featured Collaborations</h2>
 
 <p>Not all ideas remain ideas. Those that find the right formula gain support and get noticed! Ideas ready to take the next leap will enter the ‘develop’ cycle in the innovation process. Once an idea is selected, it will go through cycles of User testing > Iteration and Refinement > Rapid prototyping. </p>
 

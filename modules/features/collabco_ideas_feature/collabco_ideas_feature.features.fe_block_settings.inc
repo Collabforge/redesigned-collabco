@@ -548,7 +548,7 @@ function collabco_ideas_feature_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-collaborations_of_an_idea-block'] = array(
