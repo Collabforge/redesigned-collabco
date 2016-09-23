@@ -191,8 +191,8 @@ function _govims_default_blocks() {
   collabco_core_update_block('collabco_collaboration', 'challenge', $themes, 'sidebar_second',-10);
   
   // Set some blocks in the admin theme.
-  collabco_core_insert_block('system', 'main', GOVIMS_DEFAULT_ADMIN_THEME, 'content');
-  collabco_core_insert_block('system', 'help', GOVIMS_DEFAULT_ADMIN_THEME, 'help');
+ // collabco_core_insert_block('system', 'main', GOVIMS_DEFAULT_ADMIN_THEME, 'content');
+  //collabco_core_insert_block('system', 'help', GOVIMS_DEFAULT_ADMIN_THEME, 'help');
   
  
 }
