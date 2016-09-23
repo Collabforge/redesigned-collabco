@@ -397,15 +397,21 @@ function _govims_featured_collaborations() {
      );
     nodequeue_save($nodequeue);
   }
-    $nids = db_select('node', 'n')
+    
+ $query = db_select('node', 'n');
+ $query->join('field_data_field_parked_collaboration', 'pc', 'pc.entity_id = n.nid');
+ $query->join('field_data_field_turn_into_project', 'tp', 'tp.entity_id = n.nid');
+ $result = $query
     ->fields('n', array('nid'))
-    ->condition('n.type', 'hub')
-    ->execute()
-    ->fetchCol();
-   
-    foreach ($nids as $nid) {
-      nodequeue_queue_add('featured_collaborations',intval($nid));
-    }
+    ->condition('n.type', 'hub', '=')
+    ->condition('field_parked_collaboration_value','1','<>')
+    ->condition('field_turn_into_project_value','1','<>')
+    ->execute()->fetchAll();
+  foreach ($result as $record) {
+    nodequeue_queue_add('featured_collaborations',intval($record->nid));
+  }
+  
+    
 }
 
 /**

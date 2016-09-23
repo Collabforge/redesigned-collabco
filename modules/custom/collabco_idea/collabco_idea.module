@@ -273,7 +273,7 @@ function collabco_idea_block_view($delta = '') {
     case 'promote':
       $links = array();
       $show_promote_link = TRUE;
-      if (isset($node->field_idea_state)) {
+      if (isset($node->field_idea_state[LANGUAGE_NONE])) {
         $idea_state = $node->field_idea_state[LANGUAGE_NONE];
          if (is_array($idea_state)){
           foreach ($idea_state as $key => $value) {
