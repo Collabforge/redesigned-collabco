@@ -21,7 +21,7 @@ define('GOVIMS_DEFAULT_ADMIN_THEME', 'seven');
  */
 function collabco_install() {
 
-   $revert = array('collabco_appearance_feature','basic_page_feature','collabco_core_feature','collabco_challenge_feature','collabco_ideas_feature','collabco_collaboration_feature','collabco_myhub_feature','collabco_views_feature','collabco_message_feature');
+  $revert = array('collabco_appearance_feature','basic_page_feature','collabco_core_feature','collabco_challenge_feature','collabco_ideas_feature','collabco_collaboration_feature','collabco_myhub_feature','collabco_views_feature','collabco_message_feature');
   _govims_features_revert($revert);
 
    // Set default front-end and admin themes.
@@ -37,7 +37,7 @@ function collabco_install() {
 }
 
 /**
- * Returns a list of the themes that govCMS supports.
+ * Returns a list of the themes that govIMS supports.
  */
 function govims_supported_themes() {
   return array(
@@ -151,8 +151,12 @@ function _govims_default_blocks() {
   
   collabco_core_update_block('views', 'latest_ideas-block', $themes, 'content_lower', 14);
   
+  //winning ideas belonging to a challenge
+  collabco_core_update_block('views', 'af1a856ad23ecaccfd1929ab5b2d5c15', $themes, 'content_middle', 0);
+  
+
   //ideas belonging to a challenge
-  collabco_core_update_block('views', '8057de6ae37fa6fb676e14c306088c3f', $themes, 'content_middle', 0);
+  collabco_core_update_block('views', '8057de6ae37fa6fb676e14c306088c3f', $themes, 'content_middle', 10);
   
   //myhub page
   collabco_core_update_block('collabco_myhubs', 'header_myhubs', $themes, 'content_top', -40);
@@ -168,6 +172,10 @@ function _govims_default_blocks() {
    //Idea page
   collabco_core_update_block('collabco_idea', 'single_idea_header', $themes, 'full_width_top', -40);
   collabco_core_update_block('collabco_idea', 'single_idea_breadcrumb', $themes, 'content_upper', -41);
+  collabco_core_update_block('collabco_idea', 'promote', $themes, 'sidebar_second_top', 0);
+  collabco_core_update_block('collabco_idea', 'collaborations', $themes, 'sidebar_second', 10);
+  
+
   
   //collaboration 
   collabco_core_update_block('collabco_collaboration', 'header_collaboration', $themes, 'content_top', 0);
@@ -179,10 +187,12 @@ function _govims_default_blocks() {
   //collaboration individual page
   collabco_core_update_block('collabco_collaboration', 'single_collaboration_header', $themes, 'full_width_top', 0);
   collabco_core_update_block('collabco_collaboration', 'single_collaboration_breadcrumb', $themes, 'content_upper', 0);
+  collabco_core_update_block('collabco_collaboration', 'edit_collaboration', $themes, 'sidebar_second_top', 0);
+  collabco_core_update_block('collabco_collaboration', 'challenge', $themes, 'sidebar_second',-10);
   
   // Set some blocks in the admin theme.
-  collabco_core_insert_block('system', 'main', GOVCMS_DEFAULT_ADMIN_THEME, 'content');
-  collabco_core_insert_block('system', 'help', GOVCMS_DEFAULT_ADMIN_THEME, 'help');
+  collabco_core_insert_block('system', 'main', GOVIMS_DEFAULT_ADMIN_THEME, 'content');
+  collabco_core_insert_block('system', 'help', GOVIMS_DEFAULT_ADMIN_THEME, 'help');
   
  
 }
@@ -392,12 +402,10 @@ function _govims_featured_collaborations() {
     ->condition('n.type', 'hub')
     ->execute()
     ->fetchCol();
-    
-    
+   
     foreach ($nids as $nid) {
-      nodequeue_queue_add('featured_collaborations',$nid);
+      nodequeue_queue_add('featured_collaborations',intval($nid));
     }
-     nodequeue_queue_add('featured_collaborations',4);
 }
 
 /**
@@ -519,24 +527,10 @@ function collabco_example_content_install_finished($context) {
  */
 function collabco_cleanup() {
 
-  //govcms_rebuild_sitemap();
-
-  // Rebuild default config (permissions).
-  //defaultconfig_rebuild_all();
-
-  // Required by view_unpublished module.
+    // Required by view_unpublished module.
   node_access_rebuild();
 
   cache_clear_all();
-
-  // // @todo Image styles not being applied to beans on install.
-  // features_revert(array('govcms_beans' => array('field')));
-
-  // // @todo Wysiwyg profiles not being applied on install.
-  // features_revert(array('govcms_editing' => array('wysiwyg')));
-
-  // Enable OpenAccess buttons.
-  //govcms_enable_openaccess_buttons();
 
 }
 
