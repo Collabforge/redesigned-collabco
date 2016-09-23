@@ -12,7 +12,7 @@ function collabco_challenge_feature_taxonomy_default_vocabularies() {
     'challenge' => array(
       'name' => 'Challenge',
       'machine_name' => 'challenge',
-      'description' => 'Used for DFAT 2.0',
+      'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,

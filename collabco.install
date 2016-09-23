@@ -141,7 +141,11 @@ function _govims_default_blocks() {
   
   //Challenge page 
   collabco_core_update_block('collabco_challenge', 'header_challenge', $themes, 'content_top', 0);
-    
+  collabco_core_update_block('collabco_challenge', 'add_to_brainstorm', $themes, 'content_middle', 0);
+  collabco_core_update_block('views', 'closed_challenges-block', $themes, 'content_bottom', 0);
+  collabco_core_update_block('views', 'archieved_ideas-block', $themes, 'content_bottom', 10);
+ 
+   
   //individual Challenge page
   collabco_core_update_block('views', 'challenge_page_header-block', $themes, 'full_width_top', 0);
   
@@ -168,7 +172,10 @@ function _govims_default_blocks() {
   //collaboration 
   collabco_core_update_block('collabco_collaboration', 'header_collaboration', $themes, 'content_top', 0);
   collabco_core_update_block('collabco_collaboration', 'how_to_start_collaborate', $themes, 'content_lower', 0);
+  collabco_core_update_block('views', '258f84be4390f5316a10e6602678fbf9', $themes, 'content_bottom', 0);
+  collabco_core_update_block('views', 'a574482833f737364236dac3d79883d5', $themes, 'content_bottom', 10);
   
+
   //collaboration individual page
   collabco_core_update_block('collabco_collaboration', 'single_collaboration_header', $themes, 'full_width_top', 0);
   collabco_core_update_block('collabco_collaboration', 'single_collaboration_breadcrumb', $themes, 'content_upper', 0);
