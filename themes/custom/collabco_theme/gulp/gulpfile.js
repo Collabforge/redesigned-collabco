@@ -61,8 +61,8 @@ gulp.task('browser-sync', function() {
         //browserSync.init(null, { proxy: "drupalresearch.dev" });
       browserSync.init({
       	open: 'external',
-      	host: 'govims.dev',
-      	proxy: 'govims.dev',
+      	host: 'govims-test.dev',
+      	proxy: 'govims-test.dev',
       	port: 8080 // for work mamp
       });
 });
