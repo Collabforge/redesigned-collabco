@@ -102,8 +102,6 @@ a { font-weight: bold; }
   margin: 0 0 10px;
 }
 
-
-
 .messages {
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -117,5 +115,11 @@ a { font-weight: bold; }
 }
 .form-item-account-pass-pass2 {
   margin-top: 0.8em;
+}
+
+.panel-default > .panel-heading {
+  color: #4A3858 !important;
+  border-color: transparent !important;
+  font-weight: bold;
 }
 
