@@ -36,6 +36,12 @@ a { font-weight: bold; }
   margin-bottom: 10px;
 }
 
+#logo-title img {
+  width: 50px;
+  height: auto;
+  margin: 0 10px 10px 10px;
+}
+
 #name-and-slogan,
 #site-name { display: inline-block;  }
 
@@ -122,4 +128,20 @@ a { font-weight: bold; }
   border-color: transparent !important;
   font-weight: bold;
 }
+
+
+//Button visit new site
+
+.button {
+  border-color: #4A3858;
+  color: #4A3858
+}
+
+.button:hover {
+  background-color: #4A3858;
+  color: #fff;
+}
+
+
+
 
