@@ -426,11 +426,14 @@ function _govims_default_challenges() {
     t('Name this site'),
    );
 
+  $term_images = array('challenge_one.jpg','challenge_two.jpg');
+  $term_short_desc = array("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor aliquam velit eu blandit. Suspendisse volutpat imperdiet tellus at pulvinar.","Aliquam vel purus sapien. Ut interdum malesuada nisi elementum congue. Nunc et dui eros. Maecenas augue purus, sollicitudin tincidunt diam ac, vulputate rutrum ipsum.");
+  $term_detailed_desc = array("Sed tincidunt fermentum justo non sollicitudin. Cras eget sem vitae magna ultricies accumsan sollicitudin ut eros. Donec vehicula pharetra condimentum. Donec maximus, felis sed sodales tempor, ligula turpis pellentesque mi, eget suscipit sem purus sit amet purus. Suspendisse potenti. Etiam scelerisque convallis posuere. Aenean hendrerit ornare varius. Etiam nec enim in purus pretium condimentum ac et lacus. Maecenas ac tempor turpis. Nunc a ullamcorper metus. Duis tristique, nisi at tincidunt egestas, nisi mi condimentum erat, sed dapibus quam lectus non lorem.","In eu placerat quam. Phasellus ultricies suscipit finibus. Sed convallis lobortis enim nec scelerisque. Fusce sit amet rhoncus nisl. Quisque ullamcorper bibendum mauris, sed aliquam enim sollicitudin non. Etiam vel tristique velit. Donec non volutpat tortor. In efficitur luctus tristique. Quisque consectetur massa libero, at laoreet ex pharetra ut. Sed eget tempus mauris, vel consectetur magna. Aenean nisi quam, consequat porta fringilla a, commodo ut erat. Aliquam porta dui quis risus gravida, non laoreet nibh vulputate.
+    ");
   $vocabs = taxonomy_vocabulary_get_names();
   if (empty($vocabs['challenge'])) {
     return;
   }
- 
  $queue =array(
  'machine_name' => 'open_challenges',
  'title' => 'Open challenges',
@@ -443,12 +446,45 @@ function _govims_default_challenges() {
 // Save taxonomy terms.
   $vid = $vocabs['challenge']->vid;
   $tids = array();
-
+  $i=0;
   foreach ($terms as $name) {
     $term = new stdClass();
     $term->name = $name;
-    $term->vid = $vid;    
+    $term->vid = $vid;  
+    $term->field_tag_line =  $term_short_desc[$i]; 
+    $term->description = $term_detailed_desc[$i];
+    
     $term->vocabulary_machine_name = 'challenge';
+
+    $theme_path = drupal_get_path('theme', variable_get('theme_default', NULL));
+    $source_file = $theme_path."/assets/img/challenge/".$term_images[$i];
+    $destination_file = "sites/default/files/pictures/".$term_images[$i];  
+  
+    //mkdir(dirname($destination_file), 0777, true);
+    $result = copy($source_file, $destination_file);
+    
+  	$file_path = 'sites/default/files/pictures/'.$term_images[$i];
+	$dir = dirname($file_path); 
+	$file_name = basename($file_path);
+	$match = file_scan_directory($dir,  '/' . $file_name . '/', $options = array(), $depth = 0);
+
+	if (!empty($match)) {
+	     
+	  $file = reset($match); //if there is only one file
+	  $uri = $file->uri; 
+	  $file->uid = 1;
+	  $file->status = FILE_STATUS_PERMANENT;
+	  $file = file_save($file);
+	  // Update the term with the new field data.
+	  $term->field_challenge_image = array(
+        LANGUAGE_NONE => array(
+          array(
+            'fid' => $file->fid,
+          ),
+        ),
+      );
+	}
+    $i++;
     taxonomy_term_save($term);
     term_queue_add_term($queue->qid,$term->tid);
     $tids[] = $term->tid;
