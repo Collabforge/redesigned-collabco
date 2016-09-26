@@ -2,9 +2,8 @@
 @media #{$scrn-sm-max} {
   header#navigation {
     a { 
-      color: $green-dark;
+      color: $white;
       text-decoration: none;
-      &::hover { color: $blue; }
     }
   
     .row { height: 85px; }
@@ -31,9 +30,9 @@
     text-transform: uppercase;
 
     a {
-      color: $green-dark; 
+      color: $white; 
       text-decoration: none; 
-      &:hover { color: $blue; }
+      
       &:before {
         font-size: 20px;
         position: relative;
@@ -52,6 +51,7 @@
 **/
 
 
+//User Info
 nav.slider-mobile {
   position: fixed;
   background-color: $white;
@@ -69,7 +69,7 @@ nav.slider-mobile {
     padding: 10px;
 
     a { 
-      color: $white; 
+      color: $purple; 
       text-decoration: none;
     }
 
@@ -110,25 +110,23 @@ nav.slider-mobile {
 
   ul.nav { 
     margin: 0;
+
     li { 
       display: block;
       border-bottom: $border-dark;
-      &.active { background-color: $gray-light; }
-
+      &.active { background-color: $gray-lighter; }
 
       a { 
-        color: $green-dark;
+        color: $purple;
         display: inline-block;
         padding: 27px 21px 21px;
         text-transform: uppercase;
         text-decoration: none;
         width: 100%;
 
-        &.active {
-          color: $blue;
         }
-      }
     }
+  
   } // </.nav>
 
 
@@ -154,7 +152,7 @@ nav.slider-mobile {
 .node-type-knowledge-object nav.slider-mobile li a[href="/collaborate"],
 .node-type-hub nav.slider-mobile li a[href="/collaborate"] {
   
-  background-color: $gray-light;
+  background-color: $gray-lighter;
 }
 
 
@@ -169,7 +167,3 @@ nav.slider-mobile {
   z-index: 9998;
   opacity: 0;
 }
-
-
-
-
