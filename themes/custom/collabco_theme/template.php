@@ -4,6 +4,18 @@
  * The primary PHP file for this theme.
  */
 
+
+/**
+ * Implements hook_preprocess_maintenance_page().
+ */
+function collabco_theme_preprocess_maintenance_page(&$variables) {
+  $t_function = get_t();
+  if (drupal_installation_attempted()) {
+    $variables['site_name'] = $t_function('govIMS');   
+  }
+}
+
+
 /**
  *  Remove labels and add HTML5 placeholder attribute to
  *  User login, New account, New password, comments form.
