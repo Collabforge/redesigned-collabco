@@ -10,11 +10,11 @@
 <!-- Support, Follow and Comments icons in top-right -->
 <div class="stats clearfix">
     <!-- Supports -->
-    <div class="stat icon-svg-heart-white"><?php  echo $support; ?></div>
+    <div class="stat icon-heart"><?php  echo $support; ?></div>
     <!-- Follow -->
-    <div class="stat icon-svg-eye-white"><?php echo $follow; ?></div>
+    <div class="stat icon-eye"><?php echo $follow; ?></div>
     <!-- Comments -->
-    <div class="stat icon-svg-dialogue-white"><?php  echo $comments; ?></div>
+    <div class="stat icon-dialogue"><?php  echo $comments; ?></div>
 </div>
 
 <!-- Main block region -->
