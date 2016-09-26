@@ -28,27 +28,6 @@
 }
 
 
-.panel-collapse {
-  input[type="text"].form-control ,
-  input[type="password"].form-control {
-    border-left: $border-dark;
-    border-right: $border-dark;
-    border-top: $border-dark;  
-  }
-}
-
-.resizable-textarea textarea {
-  border: $border-dark;
-  border-radius: 0;
-
-  &:hover,
-  &:focus {
-    border-left: $border-dark;
-    border-right: $border-dark;
-    border-top: $border-dark;
-  }
-}
-
 .comment-form #edit-author, 
 .field-widget-text-textarea {
   @media #{$scrn-sm-min} {
@@ -58,8 +37,6 @@
 
 input[type="text"].form-control ,
 input[type="password"].form-control {
-  border-radius: 0;
-  height: 65px;
   transition: border-color ease .3s, border-width .1s ease;
  
   @media #{$scrn-sm-max} { width: 100%; }
