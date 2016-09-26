@@ -134,12 +134,12 @@ a { font-weight: bold; }
 
 .button {
   border-color: #4A3858;
-  color: #4A3858
+  color: #4A3858 !important;
 }
 
 .button:hover {
   background-color: #4A3858;
-  color: #fff;
+  color: #fff !important;
 }
 
 
