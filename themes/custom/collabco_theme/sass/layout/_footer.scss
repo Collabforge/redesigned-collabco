@@ -1,6 +1,6 @@
 .footer {
   border-top: $purple solid 5px;
-  padding: 25px 0;
+  padding: 15px 0;
   text-align: center;
   margin-top: 0;
   
@@ -12,6 +12,11 @@
     @media #{$scrn-sm-min} { text-align: right; }
   }
 
+  .hosted-logo {
+    width: 150px;
+    height: auto;
+  }
+
   .copyright {
     p { 
       font-size: 14px;
@@ -19,11 +24,13 @@
 
 
       @media #{$scrn-sm-min} { 
-        padding: 15px 0;
+        padding: 20px 0;
         margin: 0;
       }
 
     }
   }
+
+  .privacy { text-align: left; }
 }
 

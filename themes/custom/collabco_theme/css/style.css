@@ -8452,7 +8452,7 @@ nav.slider-mobile {
 
 .footer {
   border-top: #4a3858 solid 5px;
-  padding: 25px 0;
+  padding: 15px 0;
   text-align: center;
   margin-top: 0; }
   @media only screen and (min-width: 768px) {
@@ -8461,13 +8461,18 @@ nav.slider-mobile {
   @media only screen and (min-width: 768px) {
     .footer .footer-2-col {
       text-align: right; } }
+  .footer .hosted-logo {
+    width: 150px;
+    height: auto; }
   .footer .copyright p {
     font-size: 14px;
     margin-top: 8px; }
     @media only screen and (min-width: 768px) {
       .footer .copyright p {
-        padding: 15px 0;
+        padding: 20px 0;
         margin: 0; } }
+  .footer .privacy {
+    text-align: left; }
 
 .comment-wrapper .title {
   border-bottom: 1px solid #eeeeee;

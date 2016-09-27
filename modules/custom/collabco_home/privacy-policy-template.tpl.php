@@ -1,19 +1,8 @@
-<style>
-.pp {
-color:white;
-}
-a.pp:hover {
-color:white;
-}
-.privacy {
-  color: #757575;
-  text-align :justify;
-}
-.privacy p {
-  padding: 5px 0 !important;
-}
-</style>
-<a href="#" class="pp" data-toggle="modal" data-target="#myModal">Privacy Policy</a> | <a href="https://collabco.zendesk.com/hc/en-us/requests/new" class="pp">Report a Bug or Issue</a>
+<div class="copyright">
+  <p>All content in this site is licensed under a Creative Commons BY-SA license unless otherwise noted. <a href="#" class="pp" data-toggle="modal" data-target="#myModal">Privacy Policy</a> | <a href="https://collabco.zendesk.com/hc/en-us/requests/new" class="pp">Report a Bug or Issue.</a> </p>
+</div>
+
+
 <div class="privacy">
   <!-- Trigger the modal with a button -->
   
