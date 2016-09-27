@@ -59,6 +59,7 @@ scripts[] = 'assets/javascripts/bootstrap/transition.js'
 
 ; Disable the CDN provider so compiled source files can be used.
 settings[bootstrap_cdn] = ''
+settings[bootstrap_breadcrumb] = 0
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Custom Script
