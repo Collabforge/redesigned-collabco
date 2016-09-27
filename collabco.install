@@ -468,7 +468,7 @@ function _govims_default_challenges() {
 
 	if (!empty($match)) {
 	  $file = reset($match); //if there is only one file
-	  $uri = 'public://'.$file_name; 
+	  $file->uri = 'public://'.$file_name; 
 	  $file->uid = 1;
 	  $file->status = FILE_STATUS_PERMANENT;
 
