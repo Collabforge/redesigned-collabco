@@ -10227,7 +10227,7 @@ nav.slider-mobile {
   padding: 0 0 30px; }
 
 .page-search h2 {
-  color: #00746a; }
+  color: #4a3858; }
 
 .page-search a {
   text-decoration: none; }
@@ -10242,7 +10242,7 @@ nav.slider-mobile {
   border-bottom: 1px solid #ccc; }
 
 .page-search input[type=text] {
-  color: #00746a; }
+  color: #4a3858; }
 
 .page-search .input-group-btn {
   display: none; }
@@ -10255,12 +10255,7 @@ nav.slider-mobile {
           border-radius: 0; }
 
 .page-search .panel-default > .panel-heading {
-  background-image: url(""), -webkit-linear-gradient(315deg, #359189 0%, #1e3d6b 100%), url("");
-  background-image: url(""), linear-gradient(135deg, #359189 0%, #1e3d6b 100%), url("");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
-  color: #fff; }
+  color: #4a3858; }
 
 .page-search .control-label {
   font-weight: normal; }
@@ -10286,7 +10281,7 @@ nav.slider-mobile {
 .page-search .pagination > li > a,
 .page-search .pagination > li > a:focus,
 .page-search .pagination > li > a {
-  color: #00746a; }
+  color: #4a3858; }
 
 .page-search-node .nav-tabs {
   margin-top: 15px; }

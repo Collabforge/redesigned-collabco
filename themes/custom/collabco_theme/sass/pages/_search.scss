@@ -2,7 +2,7 @@
 
 .page-search {
   
-  h2 { color: $green-dark; }
+  h2 { color: $purple; }
 
   a { 
     text-decoration: none;
@@ -17,7 +17,7 @@
   li.search-result { border-bottom: $border-dark; }
 
   input[type=text] {
-    color: $green-dark;
+    color: $purple;
   }
   
   .input-group-btn { display: none; }
@@ -29,8 +29,7 @@
   .panel { border-radius: 0; }
 
   .panel-default > .panel-heading  {
-    @include bg-gradient-green-blue();
-    color: $white;
+    color: $purple;
   }
 
   .control-label { font-weight: normal; }
@@ -55,7 +54,7 @@
   .pagination > li > a, 
   .pagination > li > a:focus,
   .pagination > li > a {
-    color: $green-dark;
+    color: $purple;
   }
 
 }
