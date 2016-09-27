@@ -459,7 +459,7 @@ function _govims_default_challenges() {
 
     $theme_path = drupal_get_path('theme', variable_get('theme_default', NULL));
     $source_file = $theme_path."/assets/img/challenge/".$term_images[$i];
-    $destination_file = "sites/default/files/".$term_images[$i];  
+    $destination_file = variable_get('file_public_path', conf_path() . '/files')."/".$term_images[$i];  
   
     $result = copy($source_file, $destination_file);
 	$dir = dirname($destination_file); 
@@ -468,7 +468,7 @@ function _govims_default_challenges() {
 
 	if (!empty($match)) {
 	  $file = reset($match); //if there is only one file
-	  $uri = "public://".$file_name; 
+	  $uri = 'public://'.$file_name; 
 	  $file->uid = 1;
 	  $file->status = FILE_STATUS_PERMANENT;
 
