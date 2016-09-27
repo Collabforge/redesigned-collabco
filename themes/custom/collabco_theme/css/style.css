@@ -8034,10 +8034,10 @@ button .glyphicon {
   display: none; }
 
 .vscc-controls .vscc_controls_previous a {
-  background-image: url("/sites/all/themes/img/icons/slideshow-previous.png"); }
+  background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/icons/slideshow-previous.png"); }
 
 .vscc-controls .vscc_controls_next a {
-  background-image: url("/sites/all/themes/img/icons/slideshow-next.png"); }
+  background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/icons/slideshow-next.png"); }
 
 .view-latest-ideas,
 .view-your-contrib {
