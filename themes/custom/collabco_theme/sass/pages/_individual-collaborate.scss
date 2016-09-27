@@ -31,11 +31,11 @@
 .node-type-conversation,
 .node-type-knowledge-object {
   .full-width-top{
-    @include bg-gradient-purple-pink('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
+    @include bg-gradient-purple-pink('', '', .9);
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
-    padding: 60px;
+    padding: 50px;
     position: relative;
     overflow: hidden;
     

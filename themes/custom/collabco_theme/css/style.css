@@ -7195,8 +7195,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .content-top i {
     font-size: 1.42857em; }
   .content-top h2 {
-    font-size: 3.42857em;
-    margin-top: 0.71429em; }
+    font-size: 3.42857em; }
   .content-top p {
     font-size: 1.28571em;
     line-height: 1.78571em; }
@@ -9666,8 +9665,8 @@ nav.slider-mobile {
   text-decoration: none; }
 
 .page-taxonomy-term .full-width-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
+  background: url(""), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -9676,14 +9675,13 @@ nav.slider-mobile {
   text-align: center;
   background-position: top right, 0 0 , 0 40%;
   background-size: contain, auto, cover;
-  padding: 60px;
+  padding: 50px;
   position: relative;
   overflow: hidden; }
   .page-taxonomy-term .full-width-top i {
     font-size: 1.42857em; }
   .page-taxonomy-term .full-width-top h2 {
-    font-size: 3.42857em;
-    margin-top: 0.71429em; }
+    font-size: 3.42857em; }
   .page-taxonomy-term .full-width-top p {
     font-size: 1.28571em;
     line-height: 1.78571em; }
@@ -9856,8 +9854,8 @@ nav.slider-mobile {
   padding: 37px 0; }
 
 .node-type-idea .full-width-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
+  background: url(""), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -9866,14 +9864,13 @@ nav.slider-mobile {
   text-align: center;
   background-position: top right, 0 0 , 0 40%;
   background-size: contain, auto, cover;
-  padding: 60px;
+  padding: 50px;
   position: relative;
   overflow: hidden; }
   .node-type-idea .full-width-top i {
     font-size: 1.42857em; }
   .node-type-idea .full-width-top h2 {
-    font-size: 3.42857em;
-    margin-top: 0.71429em; }
+    font-size: 3.42857em; }
   .node-type-idea .full-width-top p {
     font-size: 1.28571em;
     line-height: 1.78571em; }
@@ -9921,8 +9918,8 @@ nav.slider-mobile {
   margin-top: 20px; }
 
 .page-idea-supporters .content-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("../assets/img/background/header-individual-challenge-bg.jpg");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("../assets/img/background/header-individual-challenge-bg.jpg");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("../assets/img/background/header-individual-challenge-bg.jpg");
+  background: url(""), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("../assets/img/background/header-individual-challenge-bg.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -9972,8 +9969,8 @@ nav.slider-mobile {
 .page-node-documents .full-width-top,
 .node-type-conversation .full-width-top,
 .node-type-knowledge-object .full-width-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("");
+  background: url(""), linear-gradient(135deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -9982,7 +9979,7 @@ nav.slider-mobile {
   text-align: center;
   background-position: top right, 0 0 , 0 40%;
   background-size: contain, auto, cover;
-  padding: 60px;
+  padding: 50px;
   position: relative;
   overflow: hidden; }
   .node-type-hub .full-width-top i,
@@ -9996,8 +9993,7 @@ nav.slider-mobile {
   .page-node-documents .full-width-top h2,
   .node-type-conversation .full-width-top h2,
   .node-type-knowledge-object .full-width-top h2 {
-    font-size: 3.42857em;
-    margin-top: 0.71429em; }
+    font-size: 3.42857em; }
   .node-type-hub .full-width-top p,
   .page-node-discussions .full-width-top p,
   .page-node-documents .full-width-top p,
