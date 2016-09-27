@@ -451,10 +451,13 @@ function _govims_default_challenges() {
     $term = new stdClass();
     $term->name = $name;
     $term->vid = $vid;  
-   // $term->field_tag_line[LANGUAGE_NONE][0][value] = $term_short_desc[$i]; 
+    $short_desc = array();
+    $short_desc[LANGUAGE_NONE][0][value] = $term_short_desc[$i];
+    $term->field_tag_line = $short_desc; 
     $term->description = $term_detailed_desc[$i];
-   //	$term->field_start_date[LANGUAGE_NONE][0][value][date] = "26/09/2016";
-   //	$term->field_start_date[LANGUAGE_NONE][0][value][time] = "16:45";
+    $start_date = array();
+    $start_date[LANGUAGE_NONE][0][value]= $_SERVER['REQUEST_TIME']; 
+    $term->field_start_date = $start_date;
     $term->vocabulary_machine_name = 'challenge';
 
     $theme_path = drupal_get_path('theme', variable_get('theme_default', NULL));
