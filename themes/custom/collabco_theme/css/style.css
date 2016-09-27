@@ -8466,7 +8466,8 @@ nav.slider-mobile {
     height: auto; }
   .footer .copyright p {
     font-size: 14px;
-    margin-top: 8px; }
+    margin-top: 8px;
+    text-align: left; }
     @media only screen and (min-width: 768px) {
       .footer .copyright p {
         padding: 20px 0;
