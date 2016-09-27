@@ -62,7 +62,7 @@
   #block-collabco-idea-promote a,
   #block-collabco-idea-collaborations a,
   .item { 
-    padding: 14px 12px 9px;
+    padding: 13px 12px 9px;
   }
     
   .stat,
@@ -88,7 +88,7 @@
     
     .value {
       border-right: 1px solid $gray-plank;
-      padding: 14px 0 10px;
+      padding: 12px 0;
       text-align: center;    
       width: 20%;
     }
@@ -112,7 +112,7 @@
     }
 
     .stat-label {
-      padding: 14px 12px 6px;
+      padding: 12px 12px 8px;
       width: 80%;
 
       .flag-wrapper, p { 
@@ -129,7 +129,7 @@
       a[class^="icon-"],
       a[class*=" icon-"] { 
         position: relative;
-        top: -1px;
+        top: 1px;
         float: right;
         font-size: 18px;
         padding: 0;

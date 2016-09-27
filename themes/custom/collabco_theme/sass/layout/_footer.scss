@@ -23,13 +23,13 @@
       margin-top: 8px;
       text-align: left;
 
-
       @media #{$scrn-sm-min} { 
         padding: 20px 0;
         margin: 0;
       }
-
     }
+
+    a { color: $pink; }
   }
 
   .privacy { text-align: left; }
