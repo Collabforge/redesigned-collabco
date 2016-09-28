@@ -11,6 +11,6 @@
 <h2>How can I start a Collaboration?</h2>
 <i class="icon-beaker"></i>
 <p>If you have an idea that has support, it may be able to enter the development cycle of the innovation process.
-  If you'd like to host a Co-Lab page talk to the Innovation Partnership team today.</p>
+  If you'd like to host a Collaboration page talk to the IMS management team today.</p>
 
-<a href ="mailto:InnovationPartnerships@employment.gov.au">Contact us to get started</a>
+<a href ="mailto:contact@collabforge.com">Contact us to get started</a>

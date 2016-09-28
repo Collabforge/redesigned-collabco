@@ -25,104 +25,64 @@ function collabco_content_basic_page_content_defaults() {
     'body' => array(
       'und' => array(
         0 => array(
-          'value' => '<p>The Ideas Management System (IMS) is a virtual, interactive, collaboration tool that allows staff to share and manage ideas across the Department – online or from a mobile phone or tablet. The IMS supports the Department’s strategic direction of delivery and forward looking.</p>
+          'value' => '<p>The Ideas Management System (IMS) is a virtual, interactive, collaboration tool that allows people to share and manage ideas across the organisation – online or from a mobile phone or tablet. The IMS supports the organisation’s strategic direction of delivery and forward looking.</p>
 
-<p>With user centred design, new technologies and innovative ways of working, collaboration is more important than ever! We want to maintain our strengths as a Department, while leveraging opportunities to improve on the value we provide.</p>
+<p>With user centred design, new technologies and innovative ways of working, collaboration is more important than ever! We want to maintain our strengths as an organisation, while leveraging opportunities to improve on the value we provide.</p>
 
-<p><br />
-The IMS will help us do this.</p>
+<p>The IMS will help us do this.</p>
 
-<p>The site</p>
+<h3>The site</h3>
 
-<p>The key functions of the IMS are the <a href="https://doe.collabcoapp.com/challenge">‘Challenges’</a> and <a href="https://doe.collabcoapp.com/collaborate">‘Collaboration’</a> spaces. A Challenge is set as a call to action to solve a problem. Ideas are then created by staff to meet the Challenge’s needs.</p>
+The key functions of the IMS are the "Challenges" and "Collaboration" spaces. A Challenge is set as a call to action to solve a problem. Ideas are then created by people to meet the Challenge’s needs.
 
-<p><br />
-A Collaboration is where successful ideas enter the ‘develop’ cycle of the Department’s innovation process for further development and possible implementation.</p>
-
-<p>&nbsp;</p>
+A Collaboration is where successful ideas enter the ‘develop’ cycle of the organisation’s innovation process for further development and possible implementation.
 
 <h3>Features</h3>
 
-<table border="1" cellpadding="0" cellspacing="0" class="features">
-	<tbody>
-		<tr>
-			<td style="width:616px">
-			<p><strong>Share, support and collaborate with others in the Department</strong></p>
+<ul>
+<li><strong>Share, support and collaborate with others in the organisation</strong>
+Share your knowledge, support and follow others, and work together on Challenges or Brainstorms. Extend the conversation by sharing ideas with colleagues.
+Tap into knowledge across the organisation
+</li>
+<li>Visit My Hub or explore to stay on top of what matters to you. Find and build on the ideas of others to help refine and develop them, and solve our big Challenges in the organisation.
+Connect and engage.</li>
 
-			<p>Share your knowledge, support and follow others, and work together on Challenges or Brainstorms. Extend the conversation by sharing ideas with colleagues.</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="width:616px">
-			<p><strong>Tap into knowledge across the Department </strong></p>
+<li>Participate in an open, collaborative space with people and groups across the Department. This is a central place for ideas, brainstorming, collaboration and more. Involve yourself while you’re in the office or on the go on a mobile phone or tablet.
+Idea collaboration</li>
 
-			<p>Visit <a href="https://doe.collabcoapp.com/myhub">MyHub</a> or explore to stay on top of what matters to you. Find and build on the ideas of others to help refine and develop them, and solve our big <a href="https://doe.collabcoapp.com/challenge">Challenges</a> in the Department.</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="width:616px">
-			<p><strong>Connect and engage </strong></p>
-
-			<p>Participate in an open, collaborative space with people and groups across the Department. This is a central place for ideas, brainstorming, collaboration and more. Involve yourself while you’re in the office or on the go on a mobile phone or tablet.</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="width:616px">
-			<p><strong>Idea collaboration</strong></p>
-
-			<p>Collaborate and work with others from across the Department on projects, initiatives, and events. Get involved to see if an idea has the right potential to become a project, or follow an idea as it is developed.</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-',
+<li>Collaborate and work with others from across the organisation on projects, initiatives, and events. Get involved to see if an idea has the right potential to become a project, or follow an idea as it is developed.
+</li>
+</ul>',
           'summary' => '',
           'format' => 'full_html',
-          'safe_value' => '<p>The Ideas Management System (IMS) is a virtual, interactive, collaboration tool that allows staff to share and manage ideas across the Department – online or from a mobile phone or tablet. The IMS supports the Department’s strategic direction of delivery and forward looking.</p>
-<p>With user centred design, new technologies and innovative ways of working, collaboration is more important than ever! We want to maintain our strengths as a Department, while leveraging opportunities to improve on the value we provide.</p>
-<p>
-The IMS will help us do this.</p>
-<p>The site</p>
-<p>The key functions of the IMS are the <a href="https://doe.collabcoapp.com/challenge">‘Challenges’</a> and <a href="https://doe.collabcoapp.com/collaborate">‘Collaboration’</a> spaces. A Challenge is set as a call to action to solve a problem. Ideas are then created by staff to meet the Challenge’s needs.</p>
-<p>
-A Collaboration is where successful ideas enter the ‘develop’ cycle of the Department’s innovation process for further development and possible implementation.</p>
-<p>&nbsp;</p>
+          'safe_value' => '<p>The Ideas Management System (IMS) is a virtual, interactive, collaboration tool that allows people to share and manage ideas across the organisation – online or from a mobile phone or tablet. The IMS supports the organisation’s strategic direction of delivery and forward looking.</p>
+
+<p>With user centred design, new technologies and innovative ways of working, collaboration is more important than ever! We want to maintain our strengths as an organisation, while leveraging opportunities to improve on the value we provide.</p>
+
+<p>The IMS will help us do this.</p>
+
+<h3>The site</h3>
+
+The key functions of the IMS are the "Challenges" and "Collaboration" spaces. A Challenge is set as a call to action to solve a problem. Ideas are then created by people to meet the Challenge’s needs.
+
+A Collaboration is where successful ideas enter the ‘develop’ cycle of the organisation’s innovation process for further development and possible implementation.
+
 <h3>Features</h3>
-<table border="1" cellpadding="0" cellspacing="0" class="features">
-<tbody>
-<tr>
-<td style="width:616px">
-<p><strong>Share, support and collaborate with others in the Department</strong></p>
-<p>Share your knowledge, support and follow others, and work together on Challenges or Brainstorms. Extend the conversation by sharing ideas with colleagues.</p>
-</td>
-</tr>
-<tr>
-<td style="width:616px">
-<p><strong>Tap into knowledge across the Department </strong></p>
-<p>Visit <a href="https://doe.collabcoapp.com/myhub">MyHub</a> or explore to stay on top of what matters to you. Find and build on the ideas of others to help refine and develop them, and solve our big <a href="https://doe.collabcoapp.com/challenge">Challenges</a> in the Department.</p>
-</td>
-</tr>
-<tr>
-<td style="width:616px">
-<p><strong>Connect and engage </strong></p>
-<p>Participate in an open, collaborative space with people and groups across the Department. This is a central place for ideas, brainstorming, collaboration and more. Involve yourself while you’re in the office or on the go on a mobile phone or tablet.</p>
-</td>
-</tr>
-<tr>
-<td style="width:616px">
-<p><strong>Idea collaboration</strong></p>
-<p>Collaborate and work with others from across the Department on projects, initiatives, and events. Get involved to see if an idea has the right potential to become a project, or follow an idea as it is developed.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-',
+
+<ul>
+<li><strong>Share, support and collaborate with others in the organisation</strong>
+Share your knowledge, support and follow others, and work together on Challenges or Brainstorms. Extend the conversation by sharing ideas with colleagues.
+Tap into knowledge across the organisation
+</li>
+<li>Visit My Hub or explore to stay on top of what matters to you. Find and build on the ideas of others to help refine and develop them, and solve our big Challenges in the organisation.
+Connect and engage.</li>
+
+<li>Participate in an open, collaborative space with people and groups across the Department. This is a central place for ideas, brainstorming, collaboration and more. Involve yourself while you’re in the office or on the go on a mobile phone or tablet.
+Idea collaboration</li>
+
+<li>Collaborate and work with others from across the organisation on projects, initiatives, and events. Get involved to see if an idea has the right potential to become a project, or follow an idea as it is developed.
+</li>
+</ul>',
           'safe_summary' => '',
         ),
       ),

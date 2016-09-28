@@ -693,7 +693,7 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-flag"></i>
-<p>This is where you can view the current Challenges set by our Executive, which address specific issues in our Department.</p>
+<p>This is where you can view the current Challenges set by the team, which address specific issues in our organisation.</p>
 
 <h3>Open Challenges</h3>'),
     t('<a href="/open-challenges" class="btn-green" >View all</a>

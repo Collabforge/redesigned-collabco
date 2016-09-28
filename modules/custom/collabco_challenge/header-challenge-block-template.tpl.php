@@ -10,6 +10,6 @@
 <i class='icon-flag'></i>" >
 <h2 class="icon-flag">Challenges<span class="hidden-xs pop"></span></h2>
 
-<p>Help solve our Department's big issues.</p>
+<p>Help solve our organisations's big issues.</p>
 
 </div>

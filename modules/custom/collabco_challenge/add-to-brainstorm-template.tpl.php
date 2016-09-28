@@ -11,6 +11,6 @@
 <i class="icon-stormy"></i>
 <h2>Square peg, round hole?</h2>
 
-<p>Is your idea not fitting in a challenge? Add it to Employment Brainstorm</p>
+<p>Is your idea not fitting in a challenge? Add it to default Brainstorm challenge!</p>
 
 <a href="/challenge/brainstorm" title="Add to Brainstorm">Add to Brainstorm</a>
