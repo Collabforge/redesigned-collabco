@@ -983,13 +983,6 @@ function collabco_core_feature_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'edit terms in forums'.
-  $permissions['edit terms in forums'] = array(
-    'name' => 'edit terms in forums',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit terms in implementation_area'.
   $permissions['edit terms in implementation_area'] = array(
     'name' => 'edit terms in implementation_area',
@@ -1069,16 +1062,7 @@ function collabco_core_feature_user_default_permissions() {
     'module' => 'flag',
   );
 
-  // Exported permission: 'flag follow'.
-  $permissions['flag follow'] = array(
-    'name' => 'flag follow',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'flag',
-  );
-
-  // Exported permission: 'flush caches'.
+    // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
     'roles' => array(),
@@ -1389,15 +1373,6 @@ function collabco_core_feature_user_default_permissions() {
   $permissions['unflag abuse_whitelist_user'] = array(
     'name' => 'unflag abuse_whitelist_user',
     'roles' => array(),
-    'module' => 'flag',
-  );
-
-  // Exported permission: 'unflag follow'.
-  $permissions['unflag follow'] = array(
-    'name' => 'unflag follow',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
     'module' => 'flag',
   );
 
