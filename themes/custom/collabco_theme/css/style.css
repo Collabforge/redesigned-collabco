@@ -7227,65 +7227,19 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .full-width-top p {
     padding: 0 135px; } }
 
-.btn-green, .btn-purple, .btn-white, .button.browse,
-.button.edit, .page-media-browser #edit-next, .page-media-browser .fake-submit, #edit-cancel, .front .content-upper .more-link a, .page-challenge a.create-challenge, .add-resource {
+.page-challenge a.create-challenge {
   background-color: transparent;
   text-transform: uppercase;
   -webkit-transition: all ease .3s;
   transition: all ease .3s; }
 
-.btn-green {
-  background-color: #fff;
-  border: 1px solid #00746a;
-  color: #00746a;
-  display: inline-block;
-  text-decoration: none; }
-  .btn-green:hover {
-    background-color: #00746a;
-    color: #fff; }
-
-.btn-purple {
-  border: 1px solid #4a3858;
-  color: #4a3858;
-  display: inline-block;
-  margin-top: 50px;
-  text-decoration: none; }
-  .btn-purple:hover {
-    background-color: #4a3858;
-    color: #fff; }
-
 .create-idea-btn {
   display: inline-block; }
-
-.btn-white {
-  border: 1px solid #00746a;
-  color: #00746a;
-  display: inline-block;
-  text-decoration: none; }
-  .btn-white:hover {
-    background-color: #00746a;
-    color: #fff; }
 
 .status .open {
   background-color: #72bf44;
   color: #fff;
   padding: 4px; }
-
-.button.browse,
-.button.edit {
-  border: 1px solid #00746a;
-  color: #00746a; }
-  .button.browse:hover,
-  .button.edit:hover {
-    background-color: #00746a;
-    color: #fff; }
-
-#edit-delete,
-#edit-submit--3,
-#edit-cancel {
-  height: 41px;
-  line-height: 20px;
-  display: inline-block; }
 
 .button {
   display: inline-block;
@@ -7333,6 +7287,9 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-decoration: none;
   -webkit-transition: background-color .3s ease-in, color .4s ease-in;
   transition: background-color .3s ease-in, color .4s ease-in; }
+  .btn.active {
+    background-color: #00746a;
+    color: #fff; }
   .btn.bg-white {
     background-color: #fff; }
 
@@ -7427,11 +7384,7 @@ button .glyphicon {
 .media-wrapper {
   max-width: 100%; }
   .media-wrapper .ui-widget-header {
-    background-image: url(""), -webkit-linear-gradient(315deg, #359189 0%, #1e3d6b 100%), url("");
-    background-image: url(""), linear-gradient(135deg, #359189 0%, #1e3d6b 100%), url("");
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    background: #4a3858;
     -webkit-border-radius: 0;
             border-radius: 0;
     color: #fff; }
@@ -7514,28 +7467,17 @@ button .glyphicon {
     padding: 8px;
     font-size: 12px; }
   .page-media-browser #edit-next {
-    background-color: #fff;
-    border: 1px solid #00746a;
-    color: #00746a;
     display: block;
     padding: 8px 16px;
     font-size: 12px; }
-    .page-media-browser #edit-next:hover {
-      background-color: #00746a;
-      color: #fff; }
     @media only screen and (min-width: 768px) {
       .page-media-browser #edit-next {
         display: inline-block; } }
   .page-media-browser input[type="text"].form-control {
     height: auto; }
   .page-media-browser .fake-submit {
-    border: 1px solid #00746a;
-    color: #00746a;
     text-decoration: none;
     display: inline-block; }
-    .page-media-browser .fake-submit:hover {
-      background-color: #00746a;
-      color: #fff; }
   .page-media-browser .views-exposed-form .views-exposed-widget .btn {
     margin-top: 0;
     padding: 4px 7px; }
@@ -8577,12 +8519,7 @@ nav.slider-mobile {
   display: none; }
 
 #edit-cancel {
-  border: 1px solid #00746a;
-  color: #00746a;
   text-decoration: none; }
-  #edit-cancel:hover {
-    background-color: #00746a;
-    color: #fff; }
 
 @media only screen and (min-width: 768px) {
   .sidebar-2 {
@@ -8943,20 +8880,15 @@ nav.slider-mobile {
   .front .content-upper .view-header {
     padding-bottom: 10px;
     padding-top: 0; }
-  .front .content-upper .more-link a {
-    border: 1px solid #4a3858;
-    color: #4a3858;
-    color: #fff;
-    border-color: #fff; }
-    .front .content-upper .more-link a:hover {
-      background-color: #4a3858;
-      color: #fff; }
 
 .page-user.not-logged-in .nav-tabs > li {
   float: none; }
   @media only screen and (min-width: 768px) {
     .page-user.not-logged-in .nav-tabs > li {
       float: left; } }
+
+.page-user.not-logged-in input {
+  max-width: 400px; }
 
 .page-user .content-top {
   background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
@@ -9020,7 +8952,7 @@ nav.slider-mobile {
 .page-user .profile-other .info > div, .page-user .profile-other .bio > div {
   position: relative;
   background-color: #fff;
-  border-bottom: 3px solid #72bf44;
+  border-bottom: 3px solid #00746a;
   margin: 17px; }
 
 .page-user .profile-other .info > div {
@@ -9502,13 +9434,8 @@ nav.slider-mobile {
   margin: 10px 0; }
 
 .add-resource {
-  border: 1px solid #00746a;
-  color: #00746a;
   font-size: 12px;
   text-decoration: none; }
-  .add-resource:hover {
-    background-color: #00746a;
-    color: #fff; }
   .add-resource:before {
     font-size: 14px;
     position: relative;

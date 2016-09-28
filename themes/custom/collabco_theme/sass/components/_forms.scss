@@ -94,7 +94,7 @@ button .glyphicon { font-size: pxtoem(12px); }
 .media-wrapper { 
   max-width: 100%;
   .ui-widget-header {
-    @include bg-gradient-green-blue();
+    background: $purple;
     border-radius: 0;
     color: $white;
   }
@@ -217,7 +217,6 @@ button .glyphicon { font-size: pxtoem(12px); }
   }
 
   #edit-next {
-    @include btn-green();
     display: block;
     padding: 8px 16px;
     font-size: 12px;
@@ -231,7 +230,6 @@ button .glyphicon { font-size: pxtoem(12px); }
   }
 
   .fake-submit {
-    @include btn-white();
     text-decoration: none;
     display: inline-block;
   }

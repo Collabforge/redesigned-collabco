@@ -5,16 +5,16 @@
   transition: all ease .3s;
 }
 
-@mixin btn-white() { 
-  @extend %btn-custom;
-  border: 1px solid $green-dark;
-  color: $green-dark;
+// @mixin btn-white() { 
+//   @extend %btn-custom;
+//   border: 1px solid $green-dark;
+//   color: $green-dark;
 
-  &:hover {
-    background-color: $green-dark;
-    color: $white;
-  }
-}
+//   &:hover {
+//     background-color: $green-dark;
+//     color: $white;
+//   }
+// }
 
 @mixin btn-purple() { 
   @extend %btn-custom;
@@ -27,63 +27,63 @@
   }
 }
 
-@mixin btn-orange() { 
-  @extend %btn-custom;
-  border: 1px solid $orange;
-  color: $orange;
+// @mixin btn-orange() { 
+//   @extend %btn-custom;
+//   border: 1px solid $orange;
+//   color: $orange;
   
-  &:hover {
-    background-color: $orange;
-    color: $white;
+//   &:hover {
+//     background-color: $orange;
+//     color: $white;
     
-  }
-}
+//   }
+// }
 
-@mixin btn-purple() { 
-  @extend %btn-custom;
-  border: 1px solid $purple;
-  color: $purple;
+// @mixin btn-purple() { 
+//   @extend %btn-custom;
+//   border: 1px solid $purple;
+//   color: $purple;
   
-  &:hover {
-    background-color: $purple;
-    color: $white;
+//   &:hover {
+//     background-color: $purple;
+//     color: $white;
     
-  }
-}
+//   }
+// }
 
-@mixin btn-green() { 
-  @extend %btn-custom;
-  background-color: $white;
-  border: 1px solid $green-dark;
-  color: $green-dark;
+// @mixin btn-green() { 
+//   @extend %btn-custom;
+//   background-color: $white;
+//   border: 1px solid $green-dark;
+//   color: $green-dark;
 
-  &:hover {
-    background-color: $green-dark;
-    color: $white;
-  }
+//   &:hover {
+//     background-color: $green-dark;
+//     color: $white;
+//   }
 
-}
+// }
 
-.btn-green {
-  @include btn-green();
-  display: inline-block;
-  text-decoration: none;
-}
+// .btn-green {
+//   @include btn-green();
+//   display: inline-block;
+//   text-decoration: none;
+// }
 
-.btn-purple {
-  @include btn-purple();
-  display: inline-block;
-  margin-top: 50px;
-  text-decoration: none;
-}
+// .btn-purple {
+//   @include btn-purple();
+//   display: inline-block;
+//   margin-top: 50px;
+//   text-decoration: none;
+// }
 
 .create-idea-btn { display: inline-block; }
 
-.btn-white { 
-  @include btn-white();
-  display: inline-block;
-  text-decoration: none;
-}
+// .btn-white { 
+//   @include btn-white();
+//   display: inline-block;
+//   text-decoration: none;
+// }
 
 .status .open {
   background-color: $green-lime;
@@ -92,19 +92,19 @@
 }
 
 
-.button.browse,
-.button.edit {
-  @include btn-white();
-}
+// .button.browse,
+// .button.edit {
+//   @include btn-white();
+// }
 
 
-#edit-delete,
-#edit-submit--3,
-#edit-cancel { 
-  height: 41px;
-  line-height: 20px;
-  display: inline-block;
-}
+// #edit-delete,
+// #edit-submit--3,
+// #edit-cancel { 
+//   height: 41px;
+//   line-height: 20px;
+//   display: inline-block;
+// }
 
 // Default values from bootsrap for button drupal class 
 @mixin button-default() {
@@ -166,6 +166,11 @@
   text-transform: uppercase; 
   text-decoration: none; 
   transition: background-color .3s ease-in, color .4s ease-in;
+
+  &.active {
+    background-color: $btn-default-color;
+    color: $white;
+  }
 
   &.bg-white { background-color: $white; }
 }

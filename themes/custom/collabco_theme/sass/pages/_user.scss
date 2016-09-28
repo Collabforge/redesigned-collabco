@@ -5,6 +5,8 @@
       float: none;
       @media #{$scrn-sm-min} { float: left; }
     }
+
+    input { max-width: 400px; }
   }
 
   // Header
@@ -74,7 +76,7 @@
     .info > div, .bio > div {
       position: relative;
       background-color: $white;
-      border-bottom: 3px solid $green-lime;
+      border-bottom: 3px solid $green-dark;
       margin: 17px;
     }
       
