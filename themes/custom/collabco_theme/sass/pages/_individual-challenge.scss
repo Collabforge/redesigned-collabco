@@ -96,11 +96,8 @@
 .create-idea-btn {
   margin-bottom: 10px;
 
-  p { color: $purple; margin-bottom: 10px;}
-  a { 
-    @include btn-white(); 
-    text-decoration: none; 
-    display: inline-block; }
+  p { color: $purple; margin-bottom: 10px; }
+
 }
 
 h2.comment-form { color:$purple-pink; }

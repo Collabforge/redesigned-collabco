@@ -44,7 +44,7 @@ function collabco_theme_form_alter(&$form, &$form_state, $form_id) {
       $form['actions']['cancel'] = array(
         '#markup' => l(t('Cancel'), $destination, array(
           'attributes' => array(
-            'class' => array('btn-green')),
+            'class' => array('btn btn-default')),
         'fragment' => $comment_id)),
         '#weight' => 100,
       );
@@ -90,7 +90,7 @@ function collabco_theme_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['cancel'] = array(
         '#markup' => l(t('Cancel'), $destination, array(
           'attributes' => array(
-            'class' => array('btn-white')),
+            'class' => array('btn btn-default')),
         'fragment' => isset($comment_id) ? $comment_id : NULL)),
         '#weight' => 100,
       );

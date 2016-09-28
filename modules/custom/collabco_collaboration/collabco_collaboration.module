@@ -560,7 +560,7 @@ function collabco_collaboration_block_view($delta = '') {
       if (arg(2) == NULL && $node->type == 'hub') {
         if (user_access('administer group') or og_user_access('node', $nid, 'administer group')) {
           $edit_collab_url = "/node/$nid/edit";
-          $output = "<div><ul class='btn btn-actions'><li>" . l(t("Edit the Co-lab"), $edit_collab_url, array('attributes' => array('class' => 'icon-pencil'))) . "</li></ul></div>";
+          $output = "<div><ul class='btn btn-actions'><li>" . l(t("Edit the Co-lab"), $edit_collab_url, array('attributes' => array('class' => 'btn btn-default icon-pencil'))) . "</li></ul></div>";
           $block['content'] = $output;
         }
       }
@@ -736,7 +736,8 @@ function theme_collaboration_team_block($variables = array()) {
   $output = views_embed_view('team_belonging_to_collaboration', 'default', $variables['nid']);
   if (user_access('administer group') || og_user_access('node', $gid, 'add user')) {
     $add_member_url = "node/$gid/add/member";
-    $link_output = "<div class='add-team-member'>" . l(t("Add a Team Member"), $add_member_url) . "</div>";
+    $link_output = "<div class='add-team-member'>" . l(t("Add a Team Member"), $add_member_url, array('attributes' => array('class' => 'btn btn-default'))) . "</div>";
+
     $output = $output . $link_output;
   }
   return $output;

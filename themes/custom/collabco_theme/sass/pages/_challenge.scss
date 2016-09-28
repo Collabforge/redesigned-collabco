@@ -98,11 +98,6 @@
     @include title-1-block();
     color: $purple;
     text-align: center;
-   
-    a { 
-      @include btn-white(); 
-      text-decoration: none;
-    }
   }
 
   #block-system-main { padding-top: 0; }

@@ -91,16 +91,6 @@
   padding: 4px;
 }
 
-.more-link {
-  margin-bottom: 20px;
-  text-align: center;
-  
-  a {
-    @include btn-white();
-    display: inline-block;
-    text-decoration: none;
-  }
-}
 
 .button.browse,
 .button.edit {
@@ -170,3 +160,17 @@
 
 
 
+//Bootstrap buttons override
+
+.btn { 
+  text-transform: uppercase; 
+  text-decoration: none; 
+  transition: background-color .3s ease-in, color .4s ease-in;
+
+  &.bg-white { background-color: $white; }
+}
+
+.btn-default:hover {
+  color: $white;
+  background-color: $brand-success;
+}

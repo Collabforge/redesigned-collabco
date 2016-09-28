@@ -13,4 +13,5 @@
 <p>If you have an idea that has support, it may be able to enter the development cycle of the innovation process.
   If you'd like to host a Collaboration page talk to the IMS management team today.</p>
 
-<a href ="mailto:contact@collabforge.com">Contact us to get started</a>
+<a class="btn btn-default bg-white" href ="mailto:contact@collabforge.com">Contact us to get started</a>
+

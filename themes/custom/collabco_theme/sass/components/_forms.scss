@@ -42,13 +42,6 @@ input[type="password"].form-control {
   @media #{$scrn-sm-max} { width: 100%; }
 }
 
-button[type="submit"] { 
-  @include btn-white();
-
-  &.btn-danger {
-    @include btn-orange();
-  }  
-}
 
 button .glyphicon { font-size: pxtoem(12px); }    
 

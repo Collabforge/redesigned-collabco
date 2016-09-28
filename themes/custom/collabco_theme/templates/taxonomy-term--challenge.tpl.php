@@ -84,7 +84,7 @@
     <div class="create-idea-btn">
       <p>Have an idea? Create it now.</p>
 
-      <a class="btn" href="/node/add/idea/<?php print $term->tid; ?>">Create an idea</a>
+      <a class="btn btn-default" href="/node/add/idea/<?php print $term->tid; ?>">Create an idea</a>
     </div>
     <?php }
       if ($label == 'Closed') { ?>

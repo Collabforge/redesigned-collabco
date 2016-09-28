@@ -108,12 +108,7 @@
       display: block;
       font-size: 50px;
     }
-
-    a { 
-      @include btn-green(); 
-      display: inline-block;
-      text-decoration: none;
-    }
+    
   }
 
   .separator {

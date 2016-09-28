@@ -20,6 +20,9 @@ $text-color: $gray-dark;
 $font-family-sans-serif:  $lato;
 $font-size-base: 14px;
 
+//Branding
+$brand-success: $green-dark;
+
 
 //Heading sizes
 $font-size-h1: pxtoem(54px);
@@ -52,6 +55,43 @@ $border-nav: 1px solid $gray-light;
 $border-dark: 1px solid $gray-chromium;
 
 $border-blue: 1px solid $blue;
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-weight:                normal !default;
+
+$btn-default-color:              $brand-success;
+$btn-default-bg:                 transparent;
+$btn-default-border:             darken($brand-success, 5%);
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+$btn-success-color:              #fff !default;
+$btn-success-bg:                 $brand-success !default;
+$btn-success-border:             darken($btn-success-bg, 5%);
+
+$btn-info-color:                 #fff !default;
+$btn-info-bg:                    $brand-info !default;
+$btn-info-border:                darken($btn-info-bg, 5%) !default;
+
+$btn-warning-color:              #fff !default;
+$btn-warning-bg:                 $brand-warning !default;
+$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color:               #fff !default;
+$btn-danger-bg:                  $brand-danger !default;
+$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
+
+$btn-link-disabled-color:        $gray-light !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:  40px;
+$btn-border-radius-large: 40px;
+$btn-border-radius-small: 40px;
 
 
 

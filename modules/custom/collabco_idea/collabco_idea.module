@@ -287,7 +287,7 @@ function collabco_idea_block_view($delta = '') {
           $links[] = array(
             'href' => sprintf('node/%d/edit', $node->nid)
             , 'title' => 'Edit this idea'
-           ,'attributes' => array('class' => array('icon-pencil'))
+           ,'attributes' => array('class' => array('btn btn-default icon-pencil'))
            ,
           );
       }
@@ -297,7 +297,7 @@ function collabco_idea_block_view($delta = '') {
             $links[] = array(
             'href' => sprintf('node/%d/promote-to-collaboration', $node->nid)
             , 'title' => 'Promote to Co-lab'
-            ,'attributes' => array('class' => array('icon-beaker', 'promote-to-collaboration'))
+            ,'attributes' => array('class' => array('btn btn-default icon-beaker', 'promote-to-collaboration'))
             ,
           );
         }
@@ -356,7 +356,7 @@ function theme_team_block($variables = array()) {
   $output = views_embed_view('team_belonging_to_idea', 'default', $variables['nid']);
   if (user_access('administer group') || og_user_access('node', $gid, 'add user')) {
      $add_member_url = "node/$gid/add/member";    
-    $link_output = "<div class='add-team-member'>" . l("Add a Team Member",$add_member_url) . "</div>";
+    $link_output = "<div class='add-team-member'>" . l("Add a Team Member",$add_member_url,array('attributes' => array('class' => 'btn btn-default'))) . "</div>";
     $output = $output . $link_output;
   }
   

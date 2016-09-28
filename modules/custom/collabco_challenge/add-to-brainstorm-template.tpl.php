@@ -13,4 +13,4 @@
 
 <p>Is your idea not fitting in a challenge? Add it to default Brainstorm challenge!</p>
 
-<a href="/challenge/brainstorm" title="Add to Brainstorm">Add to Brainstorm</a>
+<a class="btn btn-default" href="/challenge/brainstorm" title="Add to Brainstorm">Add to Brainstorm</a>
