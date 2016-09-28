@@ -877,7 +877,7 @@ function collabco_core_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_default_module';
-  $strongarm->value = 'collabco_search';
+  $strongarm->value = 'node';
   $export['search_default_module'] = $strongarm;
 
   $strongarm = new stdClass();
