@@ -817,7 +817,7 @@ function collabco_core_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mandrill_api_key';
-  $strongarm->value = '';
+  $strongarm->value = 'Et3D8bzpFJDqb9g7zdo_jA';
   $export['mandrill_api_key'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1158,7 +1158,7 @@ function collabco_core_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass();
