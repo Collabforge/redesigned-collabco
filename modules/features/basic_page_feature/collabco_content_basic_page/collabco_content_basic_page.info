@@ -1,0 +1,9 @@
+name = collabco_content_basic_page
+description = Contains basic page example content
+core = 7.x
+package = collabco content
+dependencies[] = defaultcontent
+features[content][] = about
+features[content][] = help
+features[features_api][] = api:2
+features_exclude[dependencies][defaultcontent] = defaultcontent

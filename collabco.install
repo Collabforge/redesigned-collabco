@@ -358,8 +358,12 @@ function collabco_default_content() {
      'type' => 'function',
      'key' => '_govims_featured_collaborations',
    ), 
+   4 => array(
+     'title' => st('Default Basic pages'),
+     'type' => 'module',
+     'key' => 'collabco_content_basic_page',
+   ), 
   );
-
 }
 
 /**
