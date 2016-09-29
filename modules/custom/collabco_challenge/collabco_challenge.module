@@ -234,7 +234,7 @@ function collaboco_challenge_winning_ideas($term_or_tid) {
  */
 function collabco_challenge_is_brainstorm($term_or_tid) {
   $tid = is_numeric($term_or_tid) ? $term_or_tid : $term_or_tid->tid;
-  return $tid == 3;
+  return $tid == 1;
 }
 
 /**
