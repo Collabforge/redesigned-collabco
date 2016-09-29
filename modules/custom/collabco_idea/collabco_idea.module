@@ -589,6 +589,7 @@ function theme_single_idea_actions_template(&$variables) {
  * Implements hook_form_FORM_ID_alter().
  */
 function collabco_idea_form_idea_node_form_alter(&$form, &$form_state) {
+  $form['field_tag_line'][LANGUAGE_NONE]['0']['value']['#attributes']['placeholder'] = t('This is key information about your idea which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your idea to read more.');
   $tid = intval(arg(3));
   if (!empty($tid)) {
     $lang = LANGUAGE_NONE;
