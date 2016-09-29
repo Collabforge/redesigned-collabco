@@ -341,7 +341,7 @@ projects[bootstrap][version] = "3.6"
 ;libraries[wvega-timepicker][directory_name] = "wvega-timepicker"
 ;libraries[wvega-timepicker][type] = "library"
 
-libraries[colorbox][download][type] = "git"
+libraries[colorbox][download][type] = "get"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
 libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][type] = "library"
