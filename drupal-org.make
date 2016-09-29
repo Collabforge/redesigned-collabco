@@ -48,6 +48,14 @@ projects[clamav][type] = module
 projects[clamav][subdir] = contrib
 projects[clamav][version] = "1.0-beta1"
 
+projects[colorbox][type] = module
+projects[colorbox][subdir] = contrib
+projects[colorbox][version] = "2.12"
+
+projects[colorbox_node][type] = module
+projects[colorbox_node][subdir] = contrib
+projects[colorbox_node][version] = "3.5"
+
 projects[comment_counter][type] = module
 projects[comment_counter][subdir] = contrib
 projects[comment_counter][version] = "1.0-alpha1"
@@ -333,3 +341,7 @@ projects[bootstrap][version] = "3.6"
 ;libraries[wvega-timepicker][directory_name] = "wvega-timepicker"
 ;libraries[wvega-timepicker][type] = "library"
 
+libraries[colorbox][download][type] = "git"
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
+libraries[colorbox][directory_name] = "colorbox"
+libraries[colorbox][type] = "library"
