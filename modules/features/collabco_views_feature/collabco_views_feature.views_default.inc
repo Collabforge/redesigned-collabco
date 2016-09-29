@@ -519,9 +519,9 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<p>This is where you can view the current Challenges set by our Executive, which address specific issues in our Department.</p>
+<p>This is where you can view the current Challenges set by our Executive, which address specific issues in our Organisation.</p>
 
-<h3>Open Challenges</h3>';
+<h3>Featured Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -695,7 +695,7 @@ function collabco_views_feature_views_default_views() {
     t('<i class="icon-flag"></i>
 <p>This is where you can view the current Challenges set by the team, which address specific issues in our organisation.</p>
 
-<h3>Open Challenges</h3>'),
+<h3>Featured Challenges</h3>'),
     t('<a href="/open-challenges" class="btn-green" >View all</a>
 <br>
 <br>'),
@@ -2127,7 +2127,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Open Challenges</h3>';
+<h3>Featured Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: challenge_flag counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -2293,7 +2293,7 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-flag"></i>
-<h3>Open Challenges</h3>'),
+<h3>Featured Challenges</h3>'),
     t('Follow Challenge'),
     t('flag'),
     t('Support Challenge'),

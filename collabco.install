@@ -461,7 +461,7 @@ function _govims_default_challenges() {
     $term->description = $term_detailed_desc[$i];
     $start_date = array();
     $start_date[LANGUAGE_NONE][0][value]= $_SERVER['REQUEST_TIME']; 
-    $start_date[LANGUAGE_NONE][0][value2] = $_SERVER['REQUEST_TIME'] + 99000;
+    $start_date[LANGUAGE_NONE][0][value2] = $_SERVER['REQUEST_TIME'] + 999000;
     $term->field_start_date = $start_date;
     $term->vocabulary_machine_name = 'challenge';
 
