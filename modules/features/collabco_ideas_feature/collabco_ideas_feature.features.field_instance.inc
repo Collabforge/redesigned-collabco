@@ -88,16 +88,7 @@ function collabco_ideas_feature_field_default_field_instances() {
     'default_value' => array(
       0 => array(
         'summary' => '',
-        'value' => '<p>This is where you can elaborate on your idea and outline a business case.</p>
-
-<p>It\'s important to search past ideas first, both on the site and in the intranet to make sure that you\'re not reinventing the wheel. You may be able to build from someone\'s past idea and make yours even stronger.</p>
-
-<p>You can add links and references to other ideas or external websites and information here to really build out your case.</p>
-
-<p>Good luck!</p>
-
-<p>(Remember to delete all this text and add your own!)</p>
-',
+        'value' => '',
         'format' => 'filtered_html',
       ),
     ),
@@ -347,7 +338,7 @@ function collabco_ideas_feature_field_default_field_instances() {
     'bundle' => 'idea',
     'default_value' => array(
       0 => array(
-        'value' => 'This is key information about your idea which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your idea to read more.',
+        'value' => '',
       ),
     ),
     'deleted' => 0,
