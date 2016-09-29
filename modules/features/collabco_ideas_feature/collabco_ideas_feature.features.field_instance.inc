@@ -400,7 +400,7 @@ function collabco_ideas_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 3,
+        'rows' => 4,
       ),
       'type' => 'text_textarea',
       'weight' => 2,
