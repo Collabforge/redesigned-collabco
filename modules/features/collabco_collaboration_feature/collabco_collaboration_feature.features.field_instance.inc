@@ -505,7 +505,7 @@ function collabco_collaboration_feature_field_default_field_instances() {
     'bundle' => 'hub',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Try to keep this short, interesting and relevant - it\'s what will be shown on the Idea\'s listing page.',
+    'description' => 'Try to keep this short, interesting and relevant - it\'s what will be shown on the Collaboration\'s listing page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1007,7 +1007,7 @@ function collabco_collaboration_feature_field_default_field_instances() {
   t('Short description (max 50 words)');
   t('Tags');
   t('To add in a featured image, you may wish to use a free stock imagery website such as <a href="http://www.pexels.com">www.pexels.com</a>');
-  t('Try to keep this short, interesting and relevant - it\'s what will be shown on the Idea\'s listing page.');
+  t('Try to keep this short, interesting and relevant - it\'s what will be shown on the Collaboration\'s listing page.');
   t('Turn into Project');
   t('Upload files or media to share with one or more groups');
 

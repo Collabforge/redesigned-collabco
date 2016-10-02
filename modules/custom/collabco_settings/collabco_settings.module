@@ -56,3 +56,19 @@ function collabco_settings_help($path, $arg) {
       return '<p>' . t("Collabco Setting") . '</p>';
   }
 }
+
+
+/********CKEditor plugins********/
+function collabco_settings_ckeditor_plugin()
+{
+    $module_path = drupal_get_path('module', 'collabco_settings');
+    $plugins     = array();
+   
+    $plugins['confighelper'] = array(
+        'name'    => 'confighelper',
+        'desc'    => t(' CKEditor: Configuration helper plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/confighelper/',
+        'default' => 't'
+    );
+    return $plugins;
+}

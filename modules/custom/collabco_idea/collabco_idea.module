@@ -356,7 +356,7 @@ function theme_team_block($variables = array()) {
   $output = views_embed_view('team_belonging_to_idea', 'default', $variables['nid']);
   if (user_access('administer group') || og_user_access('node', $gid, 'add user')) {
      $add_member_url = "node/$gid/add/member";    
-    $link_output = "<div class='add-team-member'>" . l("Add a Team Member",$add_member_url,array('attributes' => array('class' => 'btn btn-default'))) . "</div>";
+     $link_output = "<div class='add-team-member'> <a class='btn btn-default' href=$add_member_url>Add a Team Member</a></div";
     $output = $output . $link_output;
   }
   
@@ -589,6 +589,7 @@ function theme_single_idea_actions_template(&$variables) {
  * Implements hook_form_FORM_ID_alter().
  */
 function collabco_idea_form_idea_node_form_alter(&$form, &$form_state) {
+  $form['field_tag_line'][LANGUAGE_NONE]['0']['value']['#attributes']['placeholder'] = t('This is key information about your idea which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your idea to read more.');
   $tid = intval(arg(3));
   if (!empty($tid)) {
     $lang = LANGUAGE_NONE;

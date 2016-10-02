@@ -519,9 +519,9 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<p>This is where you can view the current Challenges set by our Executive, which address specific issues in our Department.</p>
+<p>This is where you can view the current Challenges set by our Executive, which address specific issues in our Organisation.</p>
 
-<h3>Open Challenges</h3>';
+<h3>Featured Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -695,7 +695,7 @@ function collabco_views_feature_views_default_views() {
     t('<i class="icon-flag"></i>
 <p>This is where you can view the current Challenges set by the team, which address specific issues in our organisation.</p>
 
-<h3>Open Challenges</h3>'),
+<h3>Featured Challenges</h3>'),
     t('<a href="/open-challenges" class="btn-green" >View all</a>
 <br>
 <br>'),
@@ -2127,7 +2127,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Open Challenges</h3>';
+<h3>Featured Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: challenge_flag counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -2293,7 +2293,7 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-flag"></i>
-<h3>Open Challenges</h3>'),
+<h3>Featured Challenges</h3>'),
     t('Follow Challenge'),
     t('flag'),
     t('Support Challenge'),
@@ -5665,171 +5665,181 @@ if (!empty($gids_followed_by_user)){
   $export['solutions_main_view'] = $view;
 
   $view = new view();
-  $view->name = 'team_belonging_to_collaboration';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'users';
-  $view->human_name = 'Team (belonging to a collaboration)';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+$view->name = 'team_belonging_to_collaboration';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'users';
+$view->human_name = 'Team (belonging to a collaboration)';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['css_class'] = 'team';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access user profiles';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: OG membership: OG membership from User */
-  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
-  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
-  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  $handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: User: Name */
-  $handler->display->display_options['sorts']['name']['id'] = 'name';
-  $handler->display->display_options['sorts']['name']['table'] = 'users';
-  $handler->display->display_options['sorts']['name']['field'] = 'name';
-  /* Contextual filter: Content: gid (field_gid) */
-  $handler->display->display_options['arguments']['field_gid_target_id']['id'] = 'field_gid_target_id';
-  $handler->display->display_options['arguments']['field_gid_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['arguments']['field_gid_target_id']['field'] = 'field_gid_target_id';
-  $handler->display->display_options['arguments']['field_gid_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_gid_target_id']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_gid_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_gid_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_gid_target_id']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $translatables['team_belonging_to_collaboration'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('OG membership from user'),
-    t('All'),
-  );
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['css_class'] = 'team';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['access']['perm'] = 'access user profiles';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['distinct'] = TRUE;
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'mini';
+$handler->display->display_options['pager']['options']['items_per_page'] = '4';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['pager']['options']['id'] = '0';
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+/* Relationship: OG membership: OG membership from User */
+$handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+$handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
+$handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+$handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
+/* Field: User: Picture */
+$handler->display->display_options['fields']['picture']['id'] = 'picture';
+$handler->display->display_options['fields']['picture']['table'] = 'users';
+$handler->display->display_options['fields']['picture']['field'] = 'picture';
+$handler->display->display_options['fields']['picture']['label'] = '';
+$handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+/* Field: User: Name */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['label'] = '';
+$handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+/* Sort criterion: User: Name */
+$handler->display->display_options['sorts']['name']['id'] = 'name';
+$handler->display->display_options['sorts']['name']['table'] = 'users';
+$handler->display->display_options['sorts']['name']['field'] = 'name';
+/* Contextual filter: OG membership: Group ID */
+$handler->display->display_options['arguments']['gid']['id'] = 'gid';
+$handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+$handler->display->display_options['arguments']['gid']['field'] = 'gid';
+$handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['gid']['default_argument_type'] = 'node';
+$handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+/* Filter criterion: User: Active */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'users';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = '1';
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+$translatables['team_belonging_to_collaboration'] = array(
+  t('Master'),
+  t('more'),
+  t('Apply'),
+  t('Reset'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Items per page'),
+  t('- All -'),
+  t('Offset'),
+  t('« first'),
+  t('‹ previous'),
+  t('next ›'),
+  t('last »'),
+  t('OG membership from user'),
+  t('All'),
+);
+
   $export['team_belonging_to_collaboration'] = $view;
 
-  $view = new view();
-  $view->name = 'team_belonging_to_idea';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'users';
-  $view->human_name = 'Team (belonging to an Idea)';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+$view = new view();
+$view->name = 'team_belonging_to_idea';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'users';
+$view->human_name = 'Team (belonging to an Idea)';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access user profiles';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: OG membership: OG membership from User */
-  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
-  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
-  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  /* Sort criterion: User: Name */
-  $handler->display->display_options['sorts']['name']['id'] = 'name';
-  $handler->display->display_options['sorts']['name']['table'] = 'users';
-  $handler->display->display_options['sorts']['name']['field'] = 'name';
-  /* Contextual filter: Content: gid (field_gid) */
-  $handler->display->display_options['arguments']['field_gid_target_id']['id'] = 'field_gid_target_id';
-  $handler->display->display_options['arguments']['field_gid_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['arguments']['field_gid_target_id']['field'] = 'field_gid_target_id';
-  $handler->display->display_options['arguments']['field_gid_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_gid_target_id']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_gid_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_gid_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_gid_target_id']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $translatables['team_belonging_to_idea'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('OG membership from user'),
-    t('All'),
-  );
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['access']['perm'] = 'access user profiles';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['distinct'] = TRUE;
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'mini';
+$handler->display->display_options['pager']['options']['items_per_page'] = '4';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['pager']['options']['id'] = '0';
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+/* Relationship: OG membership: OG membership from User */
+$handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+$handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
+$handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+/* Field: User: Name */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['label'] = '';
+$handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+/* Field: User: Picture */
+$handler->display->display_options['fields']['picture']['id'] = 'picture';
+$handler->display->display_options['fields']['picture']['table'] = 'users';
+$handler->display->display_options['fields']['picture']['field'] = 'picture';
+$handler->display->display_options['fields']['picture']['label'] = '';
+$handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+/* Sort criterion: User: Name */
+$handler->display->display_options['sorts']['name']['id'] = 'name';
+$handler->display->display_options['sorts']['name']['table'] = 'users';
+$handler->display->display_options['sorts']['name']['field'] = 'name';
+/* Contextual filter: Broken/missing handler */
+$handler->display->display_options['arguments']['field_gid_target_id']['id'] = 'field_gid_target_id';
+$handler->display->display_options['arguments']['field_gid_target_id']['table'] = 'og_membership';
+$handler->display->display_options['arguments']['field_gid_target_id']['field'] = 'field_gid_target_id';
+$handler->display->display_options['arguments']['field_gid_target_id']['default_action'] = 'default';
+$handler->display->display_options['arguments']['field_gid_target_id']['default_argument_type'] = 'node';
+$handler->display->display_options['arguments']['field_gid_target_id']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['field_gid_target_id']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['field_gid_target_id']['summary_options']['items_per_page'] = '25';
+/* Contextual filter: OG membership: Group ID */
+$handler->display->display_options['arguments']['gid']['id'] = 'gid';
+$handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+$handler->display->display_options['arguments']['gid']['field'] = 'gid';
+$handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['gid']['default_argument_type'] = 'node';
+$handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+/* Filter criterion: User: Active */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'users';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = '1';
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+$translatables['team_belonging_to_idea'] = array(
+  t('Master'),
+  t('more'),
+  t('Apply'),
+  t('Reset'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Items per page'),
+  t('- All -'),
+  t('Offset'),
+  t('« first'),
+  t('‹ previous'),
+  t('next ›'),
+  t('last »'),
+  t('OG membership from user'),
+  t('All'),
+);
   $export['team_belonging_to_idea'] = $view;
 
   $view = new view();

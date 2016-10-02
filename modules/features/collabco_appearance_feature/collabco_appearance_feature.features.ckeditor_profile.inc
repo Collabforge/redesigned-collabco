@@ -64,9 +64,15 @@ function collabco_appearance_feature_ckeditor_profile_defaults() {
         'forcePasteAsPlainText' => 'f',
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
-        'theme_config_js' => 'f',
+        'theme_config_js' => 't',
         'js_conf' => '',
         'loadPlugins' => array(
+          'confighelper' => array(
+            'name' => 'confighelper',
+            'desc' => ' CKEditor: Configuration helper plugin',
+            'path' => '%base_path%profiles/collabco/modules/custom/collabco_settings/ckeditor-plugins/confighelper/',
+            'default' => 't',
+          ),
           'drupalbreaks' => array(
             'name' => 'drupalbreaks',
             'desc' => 'Plugin for inserting Drupal teaser and page breaks.',
