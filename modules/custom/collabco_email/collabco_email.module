@@ -50,7 +50,7 @@ function collabco_email_help($path, $arg) {
  */
 function _collabco_email_check_digest_to_run($user_id) {
   $now = $_SERVER['REQUEST_TIME'];
-  // Later change it to 4 or 5 check again for friday based on server timing.
+ // Later change it to 4 or 5 check again for friday based on server timing.
   if (date('w', $now) == '5') {
     global $conf;
     if (isset($conf['collabco_digest_per_user_cron_last'])) {
@@ -59,7 +59,7 @@ function _collabco_email_check_digest_to_run($user_id) {
         $last_run = $last_run_array[$user_id];
         $datediff = abs($now - $last_run);
         $days_in_between = floor($datediff / (60 * 60 * 24));
-        if ($days_in_between > 6) {
+        if ($days_in_between > 6) {   //6
           return TRUE;
         }
       }
@@ -89,12 +89,13 @@ function collabco_email_cron() {
     global $conf;
     $users = entity_load('user');
     foreach ($users as $user) {
+
       if (_collabco_email_settings_get($user) === 'collabco_weekly_digest') {
 
         if (!in_array($user->uid, array('0', '1'))) {
 
           if (_collabco_email_check_digest_to_run($user->uid)) {
-
+         
             $count++;
 
             $gids = 0;
@@ -144,7 +145,7 @@ function collabco_email_cron() {
             if (isset($conf['collabco_digest_per_user_cron_last'])) {
               $last_run_array = variable_get('collabco_digest_per_user_cron_last');
               if (is_array($last_run_array) && array_key_exists($user->uid, $last_run_array)) {
-                $params['cron_last_run'] = $last_run_array[$user_id];
+                $params['cron_last_run'] = $last_run_array[$user->uid];
               }
               else {
                 $params['cron_last_run'] = 1468821697;
@@ -183,7 +184,7 @@ function collabco_email_mail($key, &$message, $params) {
   require_once 'collabco_email_content.include';
   $language = $message['language'];
   $params['language'] = $language;
-  $message['from_name'] = variable_get('site_name', 'DoE');
+  $message['from_name'] = variable_get('site_name', 'govIMS');
 
   $output = collabco_email_get_digest($params);
 
@@ -192,11 +193,9 @@ function collabco_email_mail($key, &$message, $params) {
     $message['send'] = FALSE;
   }
   else {
-
-    $message['subject'] = "Weekly updates from Department of Employment";
+    $message['subject'] = "Weekly updates from " . $message['from_name'];
     $message['body'][] = $output;
   }
-
 }
 
 /**
@@ -238,7 +237,7 @@ function collabco_email_get_digest(&$params) {
             $params['is_content'] = TRUE;
           }
           else {
-            $output = $output . $separator . $text;
+            $output = $output . $text . $separator;
             $params['is_content'] = TRUE;
           }
         }

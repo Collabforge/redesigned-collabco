@@ -174,7 +174,8 @@ projects[maintenance_mode_permissions][version] = "1.0"
 
 projects[mandrill][type] = module
 projects[mandrill][subdir] = contrib
-projects[mandrill][version] = "1.6"
+projects[mandrill][version] = "2.3"
+projects[mandrill][patch][] = "https://www.drupal.org/files/issues/2450453-6-mandrill-allow-html-theming-1.patch"
 
 projects[media][type] = module
 projects[media][subdir] = contrib
@@ -345,3 +346,9 @@ libraries[colorbox][download][type] = "get"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
 libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][type] = "library"
+
+; mandrill
+libraries[mandrill][download][type] = "get"
+libraries[mandrill][download][url] = "https://bitbucket.org/mailchimp/mandrill-api-php/get/1.0.52.tar.gz"
+libraries[mandrill][directory_name] = "mandrill"
+libraries[mandrill][destination] = "libraries"

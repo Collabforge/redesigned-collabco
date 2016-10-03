@@ -14,87 +14,82 @@ function _collabco_email_message_text($key, $language = NULL, $t_vars = array())
   switch ($key) {
     case 'header':
 
-      $text = t("Hello !username,
+      $text = t("<p>Hello <span style='font-weight: bold;'>!username</span>,<span style='color: #4A827B; font-weight: bold;'> here are the updates from content you follow.</span><p>", 
 
-Here are the updates from content you follow.", $t_vars, array('langcode' => $langcode));
+        $t_vars, array('langcode' => $langcode));
       break;
 
     case 'separator':
-      $text = '
-
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-       ';
+      $text = "<hr style='margin: 15px auto; width: 60%;'>";
       break;
 
     case 'knowledge_object_created':
 
-      $text = t("A new document is created in !group_link.
+      $text = t("<p>A new document is created in !group_link.</p>
 
-Click here to view this document: !content_link", $t_vars, array('langcode' => $langcode));
+<p>Click here to view this document: !content_link</p>", $t_vars, array('langcode' => $langcode));
 
       break;
 
     case 'conversation_created':
 
-      $text = t("A new discussion is created in !group_link.
+      $text = t("<p>A new discussion is created in !group_link.</p>
 
-Click here to view this discussion: !content_link", $t_vars, array('langcode' => $langcode));
+<p>Click here to view this discussion: !content_link</p>", $t_vars, array('langcode' => $langcode));
 
       break;
 
     case 'idea_created':
 
-      $text = t("A new idea is created in !term_link.
+      $text = t("<p>A new idea is created in !term_link.</p>
 
-Click here to view this idea: !content_link", $t_vars, array('langcode' => $langcode));
+      <p>Click here to view this idea: !content_link</p>", 
+    
+      $t_vars, array('langcode' => $langcode));
 
       break;
 
     case 'collaboration_created':
 
-      $text = t("An idea has been promoted to a Co-Lab, in a Challenge you follow.
+      $text = t("<p>An idea has been promoted to a Collaboration, in a Challenge you follow.</p>
 
-Click here to view this Co-Lab: !content_link", $t_vars, array('langcode' => $langcode));
+<p>Click here to view this Collaboration: !content_link</p>", $t_vars, array('langcode' => $langcode));
 
       break;
 
     case 'winning_idea':
 
-      $text = t("!content_link is the winning idea in the challenge !term_link.", $t_vars, array('langcode' => $langcode));
+      $text = t("<p>!content_link is the winning idea in the challenge !term_link.</p>", $t_vars, array('langcode' => $langcode));
 
       break;
 
     case 'collaboration_project':
 
-      $text = t("!content_link has become a Project", $t_vars, array('langcode' => $langcode));
+      $text = t("<p>!content_link has become a Project</p>", $t_vars, array('langcode' => $langcode));
 
       break;
 
     case 'comment_created':
-      $text = t("!user_link added a comment to !content_link.
+      $text = t("<p>!user_link added a comment to !content_link.</p>
 
-Click here to view the comment: !comment_link",
+<p>Click here to view the comment: !comment_link</p>",
         $t_vars, array('langcode' => $langcode));
       break;
 
     case 'comment_reply_created':
-      $text = t("!user_link replied to a comment on !content_link.
+      $text = t("<p>!user_link replied to a comment on !content_link.</p>
 
-Click here to view the comment !comment_link",
+<p>Click here to view the comment !comment_link</p>",
         $t_vars, array('langcode' => $langcode));
       break;
 
     case 'term_ends_soon':
-      $text = t("!term_link is ending soon.",
+      $text = t("<p>!term_link is ending soon.</p>",
         $t_vars, array('langcode' => $langcode));
       break;
 
     case 'footer':
-      $text = t("\n\n\n-- The Innovation Team at [site:name]
-
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'.",
+      $text = t("",
         $t_vars, array('langcode' => $langcode));
       break;
 
