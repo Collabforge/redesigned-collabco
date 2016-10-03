@@ -589,9 +589,9 @@ function collabco_core_feature_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'mail_system';
   $strongarm->value = array(
-    'default-system' => 'MandrillMailSystem',
-    'mimemail' => 'MandrillMailSystem',
-    'mandrill_test' => 'MandrillMailSystem',
+    'default-system' => 'MandrillHtmlMailSystem',
+    'mimemail' => 'MandrillHtmlMailSystem',
+    'mandrill_test' => 'MandrillHtmlMailSystem',
   );
   $export['mail_system'] = $strongarm;
 
