@@ -22,13 +22,6 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <?php if ($css): ?>
-    <style type="text/css">
-      <!--
-      <?php print $css ?>
-      -->
-    </style>
-    <?php endif; ?>
   </head>
   <body id="message-body" <?php if ($module && $key): print 'class="'. $module .'-'. $key .'"'; endif; ?>>
       <div style="min-height:100%;margin:0;padding:0;width:100%;background-color:#f5f5f5">
@@ -57,7 +50,7 @@
                   <tr>
                    <td valign='top' style='padding-top:15px; margin-bottom: 15px; padding-right:18px;padding-bottom:9px;padding-left:18px;word-break:break-word;color:#656565;font-family:Verdana;font-size:12px;line-height:150%;text-align:center'>
                     <p>If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'.</p>
-                    <p style='font-style: italic;'>© Copyright 2016. Department of Employment.</p>
+                    <p style='font-style: italic;'>© Copyright 2016. govIMS.</p>
                   </td>
                 </tr>
 

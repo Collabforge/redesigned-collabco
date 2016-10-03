@@ -471,7 +471,7 @@ function collabco_msg_users_that_follow($entities) {
     $follow = new stdClass();
 
     // Check for Challenge term flag
-    if (isset($entity->vid) && $entity->vid == 2) { // 'challenge'
+    if (isset($entity->vid) && $entity->vid == 1) { // 'challenge'
       $follow->entity_type = 'taxonomy_term';
       $follow->entity_id = $entity->tid;
       $follow->flag_name = 'challenge_flag';
