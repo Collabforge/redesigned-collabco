@@ -8638,21 +8638,21 @@ nav.slider-mobile {
 .sidebar-2 .nav-tabs li {
   cursor: pointer; }
 
-.sidebar-2 .team .user-picture {
-  display: inline-block;
-  margin-bottom: 15px; }
-  .sidebar-2 .team .user-picture .img-responsive {
-    display: inline-block;
-    height: 48px;
-    width: 48px; }
-
-.sidebar-2 .team .username {
-  color: #00746a;
-  margin-left: 15px;
-  text-decoration: none;
-  text-transform: capitalize; }
-  .sidebar-2 .team .username:hover {
-    text-decoration: underline; }
+.sidebar-2 .team {
+  margin-bottom: 10px; }
+  .sidebar-2 .team .user-picture {
+    display: inline-block; }
+    .sidebar-2 .team .user-picture .img-responsive {
+      display: inline-block;
+      height: 48px;
+      width: 48px; }
+  .sidebar-2 .team .username {
+    color: #00746a;
+    margin-left: 15px;
+    text-decoration: none;
+    text-transform: capitalize; }
+    .sidebar-2 .team .username:hover {
+      text-decoration: underline; }
 
 .sidebar-2 .add-team-member a {
   display: inline-block;
@@ -9052,8 +9052,8 @@ nav.slider-mobile {
 .page-open-challenges .content-top,
 .page-closed-challenges .content-top,
 .page-archived-ideas .content-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("../assets/img/background/header-challenge-bg.jpg");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("../assets/img/background/header-challenge-bg.jpg");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
+  background: url(""), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -9126,8 +9126,8 @@ nav.slider-mobile {
   padding: 0; }
 
 .page-challenge .content-lower {
-  background: url("/sites/all/themes/img/background/triangle-middle-big.png"), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
-  background: url("/sites/all/themes/img/background/triangle-middle-big.png"), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
+  background: url(""), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;

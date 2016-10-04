@@ -4,7 +4,7 @@
 .page-archived-ideas {
     // First Block
   .content-top {
-    @include bg-gradient-blue-purple('/sites/all/themes/img/background/triangle-top-right-cut.png', '../assets/img/background/header-challenge-bg.jpg', .9);
+    @include bg-gradient-blue-purple('', '', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto , cover;
     background-repeat: no-repeat, no-repeat, no repeat;
@@ -42,7 +42,7 @@
   .main-container {  padding: 0; }
 
   .content-lower {
-    @include bg-gradient-blue-purple('/sites/all/themes/img/background/triangle-middle-big.png', '', .9);
+    @include bg-gradient-blue-purple('', '', .9);
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
     padding: 30px 0;

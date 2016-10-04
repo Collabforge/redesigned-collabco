@@ -72,48 +72,39 @@
 
   //Trigger support/follow event when click on icon
    $('.event a[class^="icon-"], .event a[class*=" icon-"]').click(function(event) {
-      event.preventDefault()
+      event.preventDefault();
       $(this).parent().find('.flag-wrapper a').trigger('click');
+      event.stopPropagation();
   });
 
-// Trigger to fire event on div on follow event
- $(".follow.event").click(function(){
-     event.preventDefault()
-    $(this).find('.flag-wrapper a').trigger('click');    
-}); 
-  $(".support.event").click(function(){
-     event.preventDefault()
-    $(this).find('.flag-wrapper a').trigger('click');    
-}); 
- $(".ideas-challenge").click(function(){
-     event.preventDefault();
-     var ideas_url = $(this).find('.ideas-link').attr('href');
-     window.location.href = ideas_url;
-}); 
-$('.comment').filter('.small-card-link,.card-large-link,.card-full-link').click(function(){    
-      event.preventDefault();
-      var comment_url = $(this).find('.icon-dialogue').attr('href');
-      window.location.href = comment_url;
+// Trigger to fire event on div on follow and support event
+ 
+ $('.follow .event, .follow.event, .support .event, .support.event').on('click', function(e) {
+    if(e.target == this) {
+      e.preventDefault();
+      $(this).find('.flag-wrapper a').trigger('click');
+    }
+  });
+
+
+ $('.follow .event, .follow.event, .support .event, .support.event').on('click', '.flag-wrapper a', function(event) {
+   event.stopPropagation();
  }); 
 
-//On individual challenge, idea and collaboration pages
-$(".stat-label.share-box").click(function(){
+ // Fire comment link on cards
+
+  $('.comment').filter('.small-card-link,.card-large-link,.card-full-link').click(function(){    
     event.preventDefault();
-    var share_link = $(this).find('.share-link').attr('href'); 
-    window.location.href = share_link;
- });
-$(".stat.clearfix.mail").click(function(){
+    var comment_url = $(this).find('.icon-dialogue').attr('href');
+    window.location.href = comment_url;
+  }); 
+
+//Links On individual challenge, idea and collaboration pages
+  $(".share .stat-label, .mail .stat-label, .sidebar-2 ul li").click(function(){
     event.preventDefault();
-    var request_link = $(this).find('.request-link').attr('href'); 
-    window.location.href = request_link;
- });
-$(".stat-label.event.sidebar-link").click(function(){
-    event.preventDefault()
-    $(this).find('.flag-wrapper a').trigger('click'); 
- }); 
-
-
-
+    var link = $(this).find('a').attr('href'); 
+    window.location.href = link;
+  });
 
 
   /* FLAG Support/Follow Response */
@@ -131,8 +122,7 @@ $(".stat-label.event.sidebar-link").click(function(){
         flagType = 'support';
         break;
 
-      case 'follow_collaboration': //Card on Collaboration page
-        console.log('follow_collaboration');  
+      case 'follow_collaboration': //Card on Collaboration page 
         flagClass = '.flag-follow-collaboration-' + data.contentId;
         flagType = 'follow';
         break;
