@@ -62,7 +62,7 @@ $total_items = count( $view->result );
         <span class='<?php echo $follow_count_classes ?>'><?php echo $fields['count']->content; ?></span>
          <?php echo flag_create_link('challenge_flag', $tid, $flag_vars); ?>
       </div>
-      <div class="ideas card-large-link">
+      <div class="ideas-challenge card-large-link">
        <a href='<?php echo $term_url ?>' class="icon-diamond"></a>
       <span class="value"><?php echo $fields['ideas_count_in_challenge']->content; ?></span>
       <span class="flag-wrapper"><?php echo $term_link ?></span>
