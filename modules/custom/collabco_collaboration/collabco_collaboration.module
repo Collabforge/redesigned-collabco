@@ -142,13 +142,14 @@ function _collabco_collabortaion_mail_text($key, $language = NULL, $t_vars = arr
       break;
 
     case 'collabco_inactivity_body':
-      $text = t("Hello !username,
+      $text = t("
+<p>Hello <span style='font-weight: bold;'>!username</span>,</p>
 
-The below Collaborations have had no activity for the last 30 days.
+<p>The below Collaborations have had no activity for the last 30 days.</p>
 
-!collab_text
+<p>!collab_text</p>
 
--- The Innovation Team at [site:name]
+<p>-- The Innovation Team at [site:name]</p>
 
 
 ",
@@ -160,14 +161,14 @@ The below Collaborations have had no activity for the last 30 days.
       break;
 
     case 'collabco_archived_body':
-      $text = t("Hello !username,
+      $text = t("
+<p>Hello <span style='font-weight: bold;'>!username</span>,</p>
 
-The below Collaborations are now archived due to no activity for the last 90 days.
+<p>The below Collaborations are now archived due to no activity for the last 90 days.</p>
 
-!collab_text
+<p>!collab_text</p>
 
--- The Innovation Team at [site:name]
-
+<p>-- The Innovation Team at [site:name]</p>
 
 ",
         $t_vars, array('langcode' => $langcode));
@@ -737,7 +738,6 @@ function theme_collaboration_team_block($variables = array()) {
   if (user_access('administer group') || og_user_access('node', $gid, 'add user')) {
     $add_member_url = "node/$gid/add/member";
     $link_output = "<div class='add-team-member'>" . l(t("Add a Team Member"), $add_member_url, array('attributes' => array('class' => 'btn btn-default'))) . "</div>";
-
     $output = $output . $link_output;
   }
   return $output;

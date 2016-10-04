@@ -30,7 +30,7 @@ projects[block_class][version] = "2.3"
 
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.9"
+projects[ctools][version] = "1.10"
 
 projects[captcha][type] = module
 projects[captcha][subdir] = contrib
@@ -46,7 +46,7 @@ projects[ckeditor_media][version] = "1.x-dev"
 
 projects[clamav][type] = module
 projects[clamav][subdir] = contrib
-projects[clamav][version] = "1.0-beta1"
+projects[clamav][version] = "1.0"
 
 projects[colorbox][type] = module
 projects[colorbox][subdir] = contrib
@@ -86,7 +86,7 @@ projects[download_file][version] = "1.1"
 
 projects[entity][type] = module
 projects[entity][subdir] = contrib
-projects[entity][version] = "1.7"
+projects[entity][version] = "1.8"
 
 projects[entity2text][type] = module
 projects[entity2text][subdir] = contrib
@@ -102,7 +102,7 @@ projects[entityform][version] = "2.0-rc1"
 
 projects[entityreference][type] = module
 projects[entityreference][subdir] = contrib
-projects[entityreference][version] = "1.1"
+projects[entityreference][version] = "1.2"
 
 projects[features_extra][type] = module
 projects[features_extra][subdir] = contrib
@@ -122,7 +122,7 @@ projects[file_entity][version] = "2.0-beta3"
 
 projects[flag][type] = module
 projects[flag][subdir] = contrib
-projects[flag][version] = "3.7"
+projects[flag][version] = "3.9"
 
 projects[flag_abuse][type] = module
 projects[flag_abuse][subdir] = contrib
@@ -138,7 +138,7 @@ projects[fpa][version] = "2.6"
 
 projects[google_analytics][type] = module
 projects[google_analytics][subdir] = contrib
-projects[google_analytics][version] = "2.2"
+projects[google_analytics][version] = "2.3"
 
 projects[image_url_formatter][type] = module
 projects[image_url_formatter][subdir] = contrib
@@ -174,7 +174,8 @@ projects[maintenance_mode_permissions][version] = "1.0"
 
 projects[mandrill][type] = module
 projects[mandrill][subdir] = contrib
-projects[mandrill][version] = "1.6"
+projects[mandrill][version] = "2.3"
+projects[mandrill][patch][] = "https://www.drupal.org/files/issues/2450453-6-mandrill-allow-html-theming-1.patch"
 
 projects[media][type] = module
 projects[media][subdir] = contrib
@@ -274,7 +275,7 @@ projects[views_contextual_filters_or][version] = "1.x-dev"
 
 projects[views_data_export][type] = module
 projects[views_data_export][subdir] = contrib
-projects[views_data_export][version] = "3.0-beta9"
+projects[views_data_export][version] = "3.1"
 
 projects[views_field_view][type] = module
 projects[views_field_view][subdir] = contrib
@@ -302,7 +303,7 @@ projects[vscc][version] = "1.1"
 
 projects[webform][type] = module
 projects[webform][subdir] = contrib
-projects[webform][version] = "4.13"
+projects[webform][version] = "4.14"
 
 projects[webform_rules][type] = module
 projects[webform_rules][subdir] = contrib
@@ -345,3 +346,9 @@ libraries[colorbox][download][type] = "get"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
 libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][type] = "library"
+
+; mandrill
+libraries[mandrill][download][type] = "get"
+libraries[mandrill][download][url] = "https://bitbucket.org/mailchimp/mandrill-api-php/get/1.0.52.tar.gz"
+libraries[mandrill][directory_name] = "mandrill"
+libraries[mandrill][destination] = "libraries"

@@ -368,7 +368,7 @@ Idea collaboration</li>
 
 <p><strong>Idea</strong></p>
 
-<p>An Idea is any document, material, content, text, diagram or illustration submitted to a Challenge or Brainstorm to solve one of the Department’s big issues.</p>
+<p>An Idea is any document, material, content, text, diagram or illustration submitted to a Challenge or Brainstorm to solve one of the organisation’s big issues.</p>
 
 <p><strong>Challenge </strong></p>
 
@@ -376,11 +376,11 @@ Idea collaboration</li>
 
 <p><strong>Implementation </strong></p>
 
-<p>Implementation is the confirmation by the Department that it will implement an idea as a project. This will occur outside of the IMS site.</p>
+<p>Implementation is the confirmation by the Organisation that it will implement an idea as a project. This will occur outside of the IMS site.</p>
 
 <p><strong>Innovation</strong></p>
 
-<p>Innovation refers to new ideas, approaches, business models, policy practices or technologies that are more effective than existing approaches.By more effective, innovation should deliver results at a lower cost, have broader impact or reach, or increase the quality or timeliness of departmental outcomes. For us, innovation means putting ideas into practice to add value for our people, stakeholders and clients.</p>
+<p>Innovation refers to new ideas, approaches, business models, policy practices or technologies that are more effective than existing approaches.By more effective, innovation should deliver results at a lower cost, have broader impact or reach, or increase the quality or timeliness of organisations outcomes. For us, innovation means putting ideas into practice to add value for our people, stakeholders and clients.</p>
 
 <p>&nbsp;</p>
 
@@ -395,7 +395,7 @@ Idea collaboration</li>
 <p><strong>How do I change my personal details?</strong></p>
 <p>You can change your details on your profile page. Here you can upload a biography, photo, job title and your key skills.</p>
 <p><strong>Who can see my profile?</strong></p>
-<p>Anyone who has access to an active Department of Employment IMS account can view your profile. It can help other users match you to Challenges or ideas you may have expertise or interest in.</p>
+<p>Anyone who has access to an active govIMS account can view your profile. It can help other users match you to Challenges or ideas you may have expertise or interest in.</p>
 <p>&nbsp;</p>
 <h4>Innovation Achievements</h4>
 <p><strong>What is an Innovation Achievement?</strong></p>
@@ -415,39 +415,39 @@ Idea collaboration</li>
 <p>&nbsp;</p>
 <h3>How it works</h3>
 <p><strong>What is an Ideas Management System (IMS)? </strong></p>
-<p>An IMS is a virtual, interactive, collaboration tool that allows staff to share and manage ideas across the Department— online or from a mobile phone or tablet. The IMS supports the Department’s strategic direction of delivery and forward looking. &nbsp;</p>
+<p>An IMS is a virtual, interactive, collaboration tool that allows staff to share and manage ideas across the Organisations— online or from a mobile phone or tablet. The IMS supports the Organisations strategic direction of delivery and forward looking. &nbsp;</p>
 <p><strong>What do ‘ideas’ mean? </strong></p>
 <p>Good things start with an idea. Though often, some ideas remain untapped. This site is your platform to get your idea out there and see what comes of it.</p>
 <p><strong>What does ‘Co-Labs’ mean?</strong></p>
 <p>Collaborations are ideas that have gained support and have potential to enter the Develop phase of the Innovation Process. Collaborations involve the input of the idea creator, and any other users who support the idea and would like to see it develop.</p>
 <p><strong>Why would I use the IMS?</strong></p>
-<p>The IMS is not just a fancy suggestion box. It’s a way for staff to take responsibility for their ideas and the strategic goals of the Department. Individuals or teams across our offices in Australia can submit new ideas they think have the potential to improve our agency and better achieve its objectives. Challenges are open to ideas about any of our work. You can comment on your colleagues ideas and ‘support’ the ones you like and have interest in.</p>
+<p>The IMS is not just a fancy suggestion box. It’s a way for staff to take responsibility for their ideas and the strategic goals of the Organisation. Individuals or teams across our offices in Australia can submit new ideas they think have the potential to improve our agency and better achieve its objectives. Challenges are open to ideas about any of our work. You can comment on your colleagues ideas and ‘support’ the ones you like and have interest in.</p>
 <p><strong>What can the IMS do for me? </strong></p>
-<p>The IMS allows you to share your ideas and collaborate with staff from across the Department with the aim of unlocking invaluable information and insights, and finding solutions for better ways for our Department to deliver its work. An IMS also enables you to explore, support, follow, or share ideas and innovation in the Department without actively participating in Challenges.</p>
+<p>The IMS allows you to share your ideas and collaborate with staff from across the Organisation with the aim of unlocking invaluable information and insights, and finding solutions for better ways for our Organisation to deliver its work. An IMS also enables you to explore, support, follow, or share ideas and innovation in the Organisation without actively participating in Challenges.</p>
 <p><strong>How does the IMS assist the innovation process? </strong></p>
 <p>Ideas are a key element in the innovation process, but without a mechanism for managing them, it can be difficult to prioritise innovative efforts and channel innovation activity into the areas it is needed most. The following identifies how the IMS can assist at each stage of the innovation process:</p>
 <ul>
-<li><strong>Challenge</strong>: Challenges are set and tap into the knowledge of Department staff to solve specific problems. They are sponsored and endorsed by Executive and are time-specific.</li>
+<li><strong>Challenge</strong>: Challenges are set and tap into the knowledge of Organisation staff to solve specific problems. They are sponsored and endorsed by Executive and are time-specific.</li>
 <li><strong>Generate</strong> (finding, adapting or creating ideas): The IMS encourages staff to put forward ideas &nbsp;to a Challenge or placed them in the Brainstorm space.</li>
-<li><strong>Select</strong> (choosing which ideas to use): Ideas are judged by the relevant Challenge sponsor (usually a member of the Department’s Executive team) and progressed for further collaboration. Not all ideas will be progressed to the Co-Lab. However, each will be considered in the development of a solution. In the collaboration space, the IMS can help to refine and iterate ideas by allowing others to share their perspectives, expertise and input.</li>
+<li><strong>Select</strong> (choosing which ideas to use): Ideas are judged by the relevant Challenge sponsor (usually a member of the Organisation’s Executive team) and progressed for further collaboration. Not all ideas will be progressed to the Co-Lab. However, each will be considered in the development of a solution. In the collaboration space, the IMS can help to refine and iterate ideas by allowing others to share their perspectives, expertise and input.</li>
 <li><strong>Decide</strong>: After user testing, refinement and rapid prototyping, it is decided whether the idea will become a project or implemented.</li>
 <li><strong>Implement</strong> (putting the ideas into practice): The IMS assists in implementation if it records the lessons learnt, identifies options that have and have not worked, and determines what made the implementation successful.</li>
 </ul>
 <p><strong>When would I use the IMS? </strong></p>
 <ul>
 <li>Whenever you have a lightbulb moment or are feeling inspired.</li>
-<li>When you want to read about what current challenges we have in the Department or what are the trending ideas in the Department.</li>
+<li>When you want to read about what current challenges we have in the Organisation or what are the trending ideas in the Organisation.</li>
 <li>When you have an idea but it needs some work or further development from someone with expertise in the area.</li>
 <li>When you want to see and support other ideas.</li>
 <li>When you think you have a solution to a challenge set by the Executive team.</li>
-<li>When you want to collaborate with others in the Department and build on ideas.</li>
+<li>When you want to collaborate with others in the Organisation and build on ideas.</li>
 </ul>
 <p><strong>Is there a how-to guide for IMS?</strong></p>
-<p>Yes. A how-to guide is available on the Department’s IMS intranet page.</p>
+<p>Yes. A how-to guide is available on the Organisation’s IMS intranet page.</p>
 <p><strong>How is this any different to other platforms I’m using?</strong></p>
 <p>The IMS is different. It is not a social media forum or a SharePoint site. &nbsp;The IMS has been designed to specifically focus on innovation and seeing how ideas move through the stages of assessment before becoming a project. This collaborative, supportive space provides visibility of our ideas and what happens to them. Promising ideas will be progressed as a possible solution and &nbsp;those chosen will have Executive sponsorship and be given time to develop.</p>
 <p><strong>Is the IMS accessible? </strong></p>
-<p>Yes. The IMS has been designed and developed using the Web Content Accessibility Guidelines and the Department’s Visual Identity Style Guide.</p>
+<p>Yes. The IMS has been designed and developed using the Web Content Accessibility Guidelines and the Organisation’s Visual Identity Style Guide.</p>
 <p>&nbsp;</p>
 <h3>Ideas</h3>
 <p><strong>Is it mandatory to submit an idea?</strong></p>
@@ -466,7 +466,7 @@ Idea collaboration</li>
 <p><strong>How much effort will it involve if I post an idea?</strong></p>
 <p>Your level of activity is completely up to you. Once you’ve submitted your idea, you have no obligations. You will be contacted if your idea wins a Challenge, and you will have the option to work in the Collaboration team to develop the idea further.</p>
 <p><strong>Who will see my ideas?</strong></p>
-<p>Anyone with active Department of Employment IMS account can view, support, share and comment on your idea. Challenges have a sponsor, who will follow the progress of the challenge and choose the winning idea(s).</p>
+<p>Anyone with active govIMS account can view, support, share and comment on your idea. Challenges have a sponsor, who will follow the progress of the challenge and choose the winning idea(s).</p>
 <p><strong>Can I remain anonymous when submitting an idea?</strong></p>
 <p>No, you cannot remain anonymous. The IMS encourages a transparent, collaborative environment.</p>
 <p><strong>What if someone is inappropriate to me or my idea?</strong></p>
@@ -487,7 +487,7 @@ Idea collaboration</li>
 <li>What will the early signals of success and failure be?</li>
 <li>What is the potential impact if the idea fails?</li>
 <li>What existing structures and processes need to change in order to implement the idea?</li>
-<li>Does success have dependencies outside of the Department?</li>
+<li>Does success have dependencies outside of the Organisation?</li>
 </ul>
 <p><strong>How long will an idea be published on the IMS for?</strong></p>
 <p>Ideas will remain on the IMS for the duration of the Challenge. Ideas that do not progress to the collaboration stage, or have no activity for three months will be ‘Parked’ and can be retrieved at a later time if the idea can support a new Challenge.</p>
@@ -511,7 +511,7 @@ Idea collaboration</li>
 <p>&nbsp;</p>
 <h3>Challenges</h3>
 <p><strong>What is a Challenge?</strong></p>
-<p>A Challenge is a problem that needs solving. It is a call to action addressing the big issues of the Department, sponsored by Executive and time limited.</p>
+<p>A Challenge is a problem that needs solving. It is a call to action addressing the big issues of the Organisation, sponsored by Executive and time limited.</p>
 <p><strong>Can anyone set a Challenge? </strong></p>
 <p>No, challenges can only be set by Executive or approved business areas.</p>
 <p><strong>How can my business area set a Challenge?</strong></p>
@@ -525,7 +525,7 @@ Idea collaboration</li>
 <p>&nbsp;</p>
 <h3>Building on ideas</h3>
 <p><strong>Why is building on ideas so important?</strong></p>
-<p>Constructive feedback&nbsp;allows staff to refine their thinking, challenge themselves and be challenged. By working with others in different areas of the Department, knowledge and skills can be shared in order to make a project more successful than it might otherwise be. This naturally inspires a sense of community and allows staff to learn from each other.</p>
+<p>Constructive feedback&nbsp;allows staff to refine their thinking, challenge themselves and be challenged. By working with others in different areas of the Organisation, knowledge and skills can be shared in order to make a project more successful than it might otherwise be. This naturally inspires a sense of community and allows staff to learn from each other.</p>
 <p>&nbsp;</p>
 <h3>Definitions</h3>
 <p><strong>Iteration</strong></p>
@@ -533,11 +533,11 @@ Idea collaboration</li>
 <p><strong>Prototyping </strong></p>
 <p>Prototyping in the IMS context means developing something quickly and cheaply that can be tested with users to gain feedback on what’s working and what isn’t.</p>
 <p><strong>Idea</strong></p>
-<p>An Idea is any document, material, content, text, diagram or illustration submitted to a Challenge or Brainstorm to solve one of the Department’s big issues.</p>
+<p>An Idea is any document, material, content, text, diagram or illustration submitted to a Challenge or Brainstorm to solve one of the Organisation’s big issues.</p>
 <p><strong>Challenge </strong></p>
 <p>A Challenge is a specific problem that needs solving, sponsored by Executive and time specific.</p>
 <p><strong>Implementation </strong></p>
-<p>Implementation is the confirmation by the Department that it will implement an idea as a project. This will occur outside of the IMS site.</p>
+<p>Implementation is the confirmation by the Organisation that it will implement an idea as a project. This will occur outside of the IMS site.</p>
 <p><strong>Innovation</strong></p>
 <p>Innovation refers to new ideas, approaches, business models, policy practices or technologies that are more effective than existing approaches.By more effective, innovation should deliver results at a lower cost, have broader impact or reach, or increase the quality or timeliness of departmental outcomes. For us, innovation means putting ideas into practice to add value for our people, stakeholders and clients.</p>
 <p>&nbsp;</p>

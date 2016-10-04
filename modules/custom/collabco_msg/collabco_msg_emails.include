@@ -17,163 +17,141 @@ function _collabco_msg_mail_text($key, $language = NULL, $t_vars = array()) {
     case 'knowledge_object_created_subject':
       $text = t('New document at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'knowledge_object_created_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
+        <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-!user_link created a new document in a Co-Lab you follow on [site:name].
+        <p>!user_link created a new document in a Collaboration you follow on [site:name].</p>
 
-Click here to view this discussion: !content_link
+        <p>Click here to view this discussion: !content_link</p>",
 
--- The Innovation Team at [site:name]
-
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
         $t_vars, array('langcode' => $langcode));
       break;
+
     case 'conversation_created_subject':
       $text = t('New discussion at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'conversation_created_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
+        <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-!user_link created a new discussion in a Co-Lab you follow on [site:name].
+        <p>!user_link created a new discussion in a Collaboration you follow on [site:name].</p>
 
-Click here to view this discussion: !content_link
+        <p>Click here to view this discussion: !content_link</p>",
 
--- The Innovation Team at [site:name]
-
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
         $t_vars, array('langcode' => $langcode));
       break;
 
     case 'idea_created_subject':
       $text = t('New idea at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'idea_created_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
 
-!user_link created a new Idea for a Challenge you follow on [site:name].
+        <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-Click here to view this Idea: !content_link
+        <p>!user_link created a new Idea for a Challenge you follow on [site:name].</p>
 
--- The Innovation Team at [site:name]
+        <p>Click here to view this Idea: !content_link</p>",
 
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
         $t_vars, array('langcode' => $langcode));
       break;
-
 
     case 'collaboration_created_subject':
-      $text = t('Idea promoted to Co-Lab at [site:name]', $t_vars, array('langcode' => $langcode));
+      $text = t('Idea promoted to Collaboration at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'collaboration_created_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
+        <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-An Idea has been promoted to a Co-Lab, in a Challenge you follow on [site:name].
+        <p>An Idea has been promoted to a Collaboration, in a Challenge you follow on [site:name].</p>
 
-Click here to view this Co-Lab: !content_link
+        <p>Click here to view this Collaboration: !content_link</p>",
 
--- The Innovation Team at [site:name]
-
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
         $t_vars, array('langcode' => $langcode));
       break;
-
 
     case 'comment_created_subject':
       $text = t('New comment at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'comment_created_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
+        <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-!user_link added a comment to content you follow on [site:name].
+        <p>!user_link added a comment to content you follow on [site:name].</p>
 
-Click here to view the comment: !comment_link
-Click here to view the content: !content_link
+        <p>Click here to view the comment: !comment_link</p>
 
--- The Innovation Team at [site:name]
+        <p>Click here to view the content: !content_link</p>",
 
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
         $t_vars, array('langcode' => $langcode));
       break;
-
 
     case 'comment_reply_created_subject':
       $text = t('New reply to comment at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'comment_reply_created_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
+        <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-!user_link replied to a comment on content you follow on [site:name].
+        <p>!user_link replied to a comment on content you follow on [site:name].</p>
 
-Click here to view the original comment and its reply: !comment_link
-Click here to view the content: !content_link
+        <p>Click here to view the original comment and its reply: !comment_link</p>
 
--- The Innovation Team at [site:name]
-
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
+        <p>Click here to view the content: !content_link</p>",
         $t_vars, array('langcode' => $langcode));
       break;
-
 
     case 'idea_state_updated_to_win_subject':
       $text = t('New reply to comment at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'idea_state_updated_to_win_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
+        <p>Hello <span style='font-weight: bold;'>!username</span>,</p>
 
-An Idea you follow has WON its Challenge on [site:name].
+        <p>An Idea you follow has WON its Challenge on [site:name].</p>
 
-Click here to view this Idea: !content_link
+        <p>Click here to view this Idea: !content_link</p>",
 
--- The Innovation Team at [site:name]
-
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
         $t_vars, array('langcode' => $langcode));
       break;
-
 
     case 'collaboration_converted_to_project_subject':
-      $text = t('Co-Lab convert to Project at [site:name]', $t_vars, array('langcode' => $langcode));
+      $text = t('Collaboration converted to Project at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'collaboration_converted_to_project_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
+        <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-A Co-Lab you follow has been converted to a Project on [site:name].
+        <p>A Collaboration you follow has been converted to a Project on [site:name].</p>
 
-Click here to view it: !content_link
+        <p>Click here to view it: !content_link</p>",
 
--- The Innovation Team at [site:name]
-
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
         $t_vars, array('langcode' => $langcode));
       break;
-
 
     case 'challenge_ends_soon_subject':
       $text = t('New idea at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
+
     case 'challenge_ends_soon_body':
-      $text = t(nl2br("Hello !username,
+      $text = t("
+        <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-A challenge that you follow  on [site:name] is ending soon. Login now to add your idea.
+        <p>A challenge that you follow  on [site:name] is ending soon. Login now to add your idea.</p>
 
-Click here to view this Challenge: !term_link
-
--- The Innovation Team at [site:name]
-
-
-If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'."),
+        <p>Click here to view this Challenge: !term_link</p>",
+        
         $t_vars, array('langcode' => $langcode));
       break;
-
 
     default:
       drupal_set_message(t('%key is not a valid email key. Message not sent.', array('%key' => $key)), 'error');
