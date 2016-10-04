@@ -20,19 +20,19 @@
 
   <div class="sidebar-stats">
 
-    <div class="support stat clearfix">
+    <div class="stat clearfix">
       <div class='<?php echo $support_count_classes ?>'>
       <?php echo $support; ?></div>
-      <div class="stat-label event sidebar-link">
+      <div class="stat-label support event sidebar-link">
         <?php echo flag_create_link('support_idea', $nid, $flag_vars); ?>
         <a href="#" class='<?php echo $support_classes ?>'></a>
       </div>
     </div>
 
-    <div class="follow stat clearfix">
+    <div class="stat clearfix">
       <div class='<?php echo $follow_count_classes ?>'>
       <?php echo $follow; ?></div>
-      <div class="stat-label event sidebar-link">
+      <div class="stat-label follow event sidebar-link">
         <?php echo flag_create_link('following_idea', $nid, $flag_vars); ?>
         <a href="#" class='<?php echo $follow_classes ?>'></a>
       </div>

@@ -2970,28 +2970,28 @@ fieldset[disabled] a.btn {
 
 .btn-info {
   color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da; }
+  background-color: #7bb8b2;
+  border-color: #6aafa8; }
   .btn-info:focus, .btn-info.focus {
     color: #fff;
-    background-color: #31b0d5;
-    border-color: #1b6d85; }
+    background-color: #5aa69f;
+    border-color: #366460; }
   .btn-info:hover {
     color: #fff;
-    background-color: #31b0d5;
-    border-color: #269abc; }
+    background-color: #5aa69f;
+    border-color: #4d8f89; }
   .btn-info:active, .btn-info.active,
   .open > .btn-info.dropdown-toggle {
     color: #fff;
-    background-color: #31b0d5;
-    border-color: #269abc; }
+    background-color: #5aa69f;
+    border-color: #4d8f89; }
     .btn-info:active:hover, .btn-info:active:focus, .btn-info:active.focus, .btn-info.active:hover, .btn-info.active:focus, .btn-info.active.focus,
     .open > .btn-info.dropdown-toggle:hover,
     .open > .btn-info.dropdown-toggle:focus,
     .open > .btn-info.dropdown-toggle.focus {
       color: #fff;
-      background-color: #269abc;
-      border-color: #1b6d85; }
+      background-color: #4d8f89;
+      border-color: #366460; }
   .btn-info:active, .btn-info.active,
   .open > .btn-info.dropdown-toggle {
     background-image: none; }
@@ -2999,10 +2999,10 @@ fieldset[disabled] a.btn {
   fieldset[disabled] .btn-info:hover,
   fieldset[disabled] .btn-info:focus,
   fieldset[disabled] .btn-info.focus {
-    background-color: #5bc0de;
-    border-color: #46b8da; }
+    background-color: #7bb8b2;
+    border-color: #6aafa8; }
   .btn-info .badge {
-    color: #5bc0de;
+    color: #7bb8b2;
     background-color: #fff; }
 
 .btn-warning {
@@ -4331,9 +4331,9 @@ a.label:hover, a.label:focus {
     background-color: #00413b; }
 
 .label-info {
-  background-color: #5bc0de; }
+  background-color: #7bb8b2; }
   .label-info[href]:hover, .label-info[href]:focus {
-    background-color: #31b0d5; }
+    background-color: #5aa69f; }
 
 .label-warning {
   background-color: #e2771b; }
@@ -4563,7 +4563,7 @@ a.thumbnail.active {
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-info {
-  background-color: #5bc0de; }
+  background-color: #7bb8b2; }
   .progress-striped .progress-bar-info {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
@@ -7237,7 +7237,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   display: inline-block; }
 
 .status .open {
-  background-color: #72bf44;
+  background-color: #00746a;
   color: #fff;
   padding: 4px; }
 
@@ -7633,7 +7633,7 @@ button .glyphicon {
       color: #333333;
       text-decoration: none; }
       .card footer a.flagged, .card footer a:active, .card footer a:hover {
-        color: #72bf44; }
+        color: #7bb8b2; }
     .card footer a[class^="icon-"] {
       font-size: 1.14286em;
       position: relative;
@@ -8028,7 +8028,7 @@ button .glyphicon {
   width: 100%; }
 
 .flagged, .unflag-action {
-  color: #72bf44 !important; }
+  color: #7bb8b2 !important; }
 
 .green-lime {
   color: #72bf44; }
@@ -8106,6 +8106,9 @@ a {
   .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
     background-color: #eeeeee;
     color: #f27e83; }
+
+.hover-color {
+  color: #72bf44 !important; }
 
 @media (min-width: 1200px) {
   .container {
@@ -8618,7 +8621,7 @@ nav.slider-mobile {
       margin: 0; }
     .sidebar-2 .stat .stat-label .flagged,
     .sidebar-2 .stat .stat-label .unflag-action {
-      color: #72bf44; }
+      color: #7bb8b2; }
     .sidebar-2 .stat .stat-label a[class^="icon-"],
     .sidebar-2 .stat .stat-label a[class*=" icon-"] {
       position: relative;

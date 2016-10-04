@@ -126,13 +126,14 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
               <a href="<?php echo $share_content;?>><?php echo t('Share') ?>" class="icon-share"></a>
             </div>
           </div>
-          <div class="follow stat clearfix">
-            <div class='<?php echo $follow_count_classes ?>'><?php print $follow ?></div>
-            <div class="stat-label event sidebar-link clearfix">
-              <?php print flag_create_link('challenge_flag', $term->tid); ?>
-             <a href="#" class='<?php echo $follow_classes ?>'></a>
+  
+            <div class="stat clearfix">
+              <div class='<?php echo $follow_count_classes ?>'><?php print $follow ?></div>
+              <div class="stat-label follow event sidebar-link clearfix">
+                <?php print flag_create_link('challenge_flag', $term->tid); ?>
+               <a href="#" class='<?php echo $follow_classes ?>'></a>
+              </div>
             </div>
-          </div>
       </div>
 
 

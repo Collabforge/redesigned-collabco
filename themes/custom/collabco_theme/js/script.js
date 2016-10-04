@@ -53,7 +53,7 @@
 
   //Add hover on card footer/aside
   $('.card-large-link, .card-full-link, .small-card-link, .sidebar-2 .stat-label, .sidebar-2 .nav li ').hover(function() {
-     $(this).find('a , .value').css('color', '#72bf44');
+    $(this).find('a , .value').css('color', '#7bb8b2');
   }, function() {
     $(this).find('a , .value').css('color', 'inherit');
   });
@@ -78,16 +78,17 @@
   });
 
 // Trigger to fire event on div on follow and support event
- 
- $('.follow .event, .follow.event, .support .event, .support.event').on('click', function(e) {
+  var elemToClick = '.follow.event, .follow.event .flag-wrapper, .support.event, .support.event .flag-wrapper ';
+
+  doc.on('click', elemToClick , function(e) {
     if(e.target == this) {
       e.preventDefault();
-      $(this).find('.flag-wrapper a').trigger('click');
+      $(this).find('a').trigger('click');
     }
   });
 
 
- $('.follow .event, .follow.event, .support .event, .support.event').on('click', '.flag-wrapper a', function(event) {
+ $('.follow.event, .support.event').on('click', '.flag-wrapper a', function(event) {
    event.stopPropagation();
  }); 
 
@@ -100,7 +101,8 @@
   }); 
 
 //Links On individual challenge, idea and collaboration pages
-  $(".share .stat-label, .mail .stat-label, .sidebar-2 ul li").click(function(){
+//Link Large card ideas
+  $(".ideas.card-large-link, .share .stat-label, .mail .stat-label, .sidebar-2 ul li").click(function(){
     event.preventDefault();
     var link = $(this).find('a').attr('href'); 
     window.location.href = link;
