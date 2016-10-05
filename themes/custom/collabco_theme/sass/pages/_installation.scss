@@ -1,0 +1,145 @@
+/////////////////////////
+// Installation Wizard //
+/////////////////////////
+
+.maintenance-page.body {
+  background-color: #efeee9; 
+
+  a { font-weight: bold; }
+
+  .col-sm-7.column { width: 66.66667%;  }
+
+  #page {
+    max-width: 960px;
+    margin: 50px auto 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    background: white;
+    padding: 20px;
+    border: 1px solid #d4dee7;
+    border-radius: 0 !important;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+  }
+
+
+  #header {
+    border: #4A3858 1px solid;
+    padding: 5px;
+    border-radius: 0 !important;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  #logo-title img {
+    width: 50px;
+    height: auto;
+    margin: 0 10px 10px 10px;
+  }
+
+  #name-and-slogan,
+  #site-name { display: inline-block;  }
+
+  .task-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .task-list li { 
+    height:40px;
+    color: #654278;
+    position:relative;
+    text-align:center;
+    line-height:40px;
+    margin: 5px 0;
+    text-transform: uppercase;
+    border: 2px solid #654278;
+    font-weight: bold;
+  }
+
+  .task-list li:first-child {
+    margin-top: 0;
+  }
+
+  .task-list .active {
+    background-color: #654278;
+    color: #fff;
+    border: 0;
+  }
+
+  .task-list .active:after {
+      content:"";
+      position:absolute;
+      height:0;
+      width:0;
+      left:100%;
+      top:0;
+      border:20px solid transparent;
+      border-left: 20px solid #654278;
+  }
+
+  .task-list .done {
+    background-color: #4A3858;
+    color: #fff;
+  }
+
+  .system-status-report { margin-bottom: 10px;  }
+
+  .system-status-report tbody tr{
+
+  }
+
+  .system-status-report tbody tr:nth-child(even){
+    background-color: #E7DDED;
+  }
+
+  .system-status-report tbody tr:nth-child(odd){
+    background-color: #F3EEF6;
+  }
+
+  #page-title {
+    margin: 0 0 10px;
+    color: #4A3858;
+    text-transform: uppercase;
+    font-weight: bold;
+
+  }
+
+  .messages {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+  }
+  .messages.error {
+      display: none;
+  }
+  .messages.warning {
+     display: none; 
+  }
+  .form-item-account-pass-pass2 {
+    margin-top: 0.8em;
+  }
+
+  .panel-default > .panel-heading {
+    color: #4A3858 !important;
+    border-color: transparent !important;
+    font-weight: bold;
+  }
+
+
+  //Button visit new site
+
+  a.button {
+    border:  1px solid #4A3858;
+    color: #4A3858 !important;
+    background-color: red;
+  }
+
+  a.button:hover {
+    background-color: #4A3858;
+    color: #fff !important;
+  }
+}
+
