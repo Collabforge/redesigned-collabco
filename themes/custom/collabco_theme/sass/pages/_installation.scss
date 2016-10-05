@@ -4,20 +4,20 @@
 
 .maintenance-page {
   background-color: #efeee9; 
+  
 
-  a { font-weight: bold; }
 
   .col-sm-7.column { width: 66.66667%;  }
 
   #page {
     max-width: 960px;
     margin: 50px auto 0;
-    font-family: 'Lato', sans-serif;
+    font-family: $lato;
     font-size: 14px;
     line-height: 1.4;
-    background: white;
+    background: $white;
     padding: 20px;
-    border: 1px solid #d4dee7;
+    border: 1px solid $purple;
     border-radius: 0 !important;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -25,7 +25,7 @@
 
 
   #header {
-    border: #4A3858 1px solid;
+    border: $purple 1px solid;
     padding: 5px;
     border-radius: 0 !important;
     -webkit-border-radius: 10px;
@@ -49,13 +49,13 @@
 
   .task-list li { 
     height:40px;
-    color: #654278;
+    color: $purple-light;
     position:relative;
     text-align:center;
     line-height:40px;
     margin: 5px 0;
     text-transform: uppercase;
-    border: 2px solid #654278;
+    border: 2px solid $purple-light;
     font-weight: bold;
   }
 
@@ -64,8 +64,8 @@
   }
 
   .task-list .active {
-    background-color: #654278;
-    color: #fff;
+    background-color: $purple-light;
+    color: $white;
     border: 0;
   }
 
@@ -77,12 +77,12 @@
       left:100%;
       top:0;
       border:20px solid transparent;
-      border-left: 20px solid #654278;
+      border-left: 20px solid $purple-light;
   }
 
   .task-list .done {
-    background-color: #4A3858;
-    color: #fff;
+    background-color: $purple;
+    color: $white;
   }
 
   .system-status-report { margin-bottom: 10px;  }
@@ -101,7 +101,7 @@
 
   #page-title {
     margin: 0 0 10px;
-    color: #4A3858;
+    color: $purple;
     text-transform: uppercase;
     font-weight: bold;
 
@@ -123,7 +123,7 @@
   }
 
   .panel-default > .panel-heading {
-    color: #4A3858 !important;
+    color: $purple !important;
     border-color: transparent !important;
     font-weight: bold;
   }
@@ -132,14 +132,12 @@
   //Button visit new site
 
   a.button {
-    border:  1px solid #4A3858;
-    color: #4A3858 !important;
-    background-color: red;
+    border:  1px solid $purple;
   }
 
   a.button:hover {
-    background-color: #4A3858;
-    color: #fff !important;
+    background-color: $purple;
+    color: $white;
   }
 }
 

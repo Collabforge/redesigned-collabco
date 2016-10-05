@@ -10192,24 +10192,22 @@ nav.slider-mobile {
 
 .maintenance-page {
   background-color: #efeee9; }
-  .maintenance-page a {
-    font-weight: bold; }
   .maintenance-page .col-sm-7.column {
     width: 66.66667%; }
   .maintenance-page #page {
     max-width: 960px;
     margin: 50px auto 0;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 14px;
     line-height: 1.4;
-    background: white;
+    background: #fff;
     padding: 20px;
-    border: 1px solid #d4dee7;
+    border: 1px solid #4a3858;
     border-radius: 0 !important;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px; }
   .maintenance-page #header {
-    border: #4A3858 1px solid;
+    border: #4a3858 1px solid;
     padding: 5px;
     border-radius: 0 !important;
     -webkit-border-radius: 10px;
@@ -10251,7 +10249,7 @@ nav.slider-mobile {
     border: 20px solid transparent;
     border-left: 20px solid #654278; }
   .maintenance-page .task-list .done {
-    background-color: #4A3858;
+    background-color: #4a3858;
     color: #fff; }
   .maintenance-page .system-status-report {
     margin-bottom: 10px; }
@@ -10261,7 +10259,7 @@ nav.slider-mobile {
     background-color: #F3EEF6; }
   .maintenance-page #page-title {
     margin: 0 0 10px;
-    color: #4A3858;
+    color: #4a3858;
     text-transform: uppercase;
     font-weight: bold; }
   .maintenance-page .messages {
@@ -10275,13 +10273,11 @@ nav.slider-mobile {
   .maintenance-page .form-item-account-pass-pass2 {
     margin-top: 0.8em; }
   .maintenance-page .panel-default > .panel-heading {
-    color: #4A3858 !important;
+    color: #4a3858 !important;
     border-color: transparent !important;
     font-weight: bold; }
   .maintenance-page a.button {
-    border: 1px solid #4A3858;
-    color: #4A3858 !important;
-    background-color: red; }
+    border: 1px solid #4a3858; }
   .maintenance-page a.button:hover {
-    background-color: #4A3858;
-    color: #fff !important; }
+    background-color: #4a3858;
+    color: #fff; }
