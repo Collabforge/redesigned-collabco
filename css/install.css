@@ -134,12 +134,13 @@ a { font-weight: bold; }
 
 //Button visit new site
 
-.button {
+a.button {
   border:  1px solid #4A3858;
   color: #4A3858 !important;
+  background-color: red;
 }
 
-.button:hover {
+a.button:hover {
   background-color: #4A3858;
   color: #fff !important;
 }
