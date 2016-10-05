@@ -10190,13 +10190,13 @@ nav.slider-mobile {
 .page-node-99 h4 {
   color: #1e3d6b; }
 
-.maintenance-page.body {
+.maintenance-page {
   background-color: #efeee9; }
-  .maintenance-page.body a {
+  .maintenance-page a {
     font-weight: bold; }
-  .maintenance-page.body .col-sm-7.column {
+  .maintenance-page .col-sm-7.column {
     width: 66.66667%; }
-  .maintenance-page.body #page {
+  .maintenance-page #page {
     max-width: 960px;
     margin: 50px auto 0;
     font-family: 'Lato', sans-serif;
@@ -10208,24 +10208,24 @@ nav.slider-mobile {
     border-radius: 0 !important;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px; }
-  .maintenance-page.body #header {
+  .maintenance-page #header {
     border: #4A3858 1px solid;
     padding: 5px;
     border-radius: 0 !important;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     margin-bottom: 10px; }
-  .maintenance-page.body #logo-title img {
+  .maintenance-page #logo-title img {
     width: 50px;
     height: auto;
     margin: 0 10px 10px 10px; }
-  .maintenance-page.body #name-and-slogan,
-  .maintenance-page.body #site-name {
+  .maintenance-page #name-and-slogan,
+  .maintenance-page #site-name {
     display: inline-block; }
-  .maintenance-page.body .task-list {
+  .maintenance-page .task-list {
     list-style: none;
     padding-left: 0; }
-  .maintenance-page.body .task-list li {
+  .maintenance-page .task-list li {
     height: 40px;
     color: #654278;
     position: relative;
@@ -10235,13 +10235,13 @@ nav.slider-mobile {
     text-transform: uppercase;
     border: 2px solid #654278;
     font-weight: bold; }
-  .maintenance-page.body .task-list li:first-child {
+  .maintenance-page .task-list li:first-child {
     margin-top: 0; }
-  .maintenance-page.body .task-list .active {
+  .maintenance-page .task-list .active {
     background-color: #654278;
     color: #fff;
     border: 0; }
-  .maintenance-page.body .task-list .active:after {
+  .maintenance-page .task-list .active:after {
     content: "";
     position: absolute;
     height: 0;
@@ -10250,38 +10250,38 @@ nav.slider-mobile {
     top: 0;
     border: 20px solid transparent;
     border-left: 20px solid #654278; }
-  .maintenance-page.body .task-list .done {
+  .maintenance-page .task-list .done {
     background-color: #4A3858;
     color: #fff; }
-  .maintenance-page.body .system-status-report {
+  .maintenance-page .system-status-report {
     margin-bottom: 10px; }
-  .maintenance-page.body .system-status-report tbody tr:nth-child(even) {
+  .maintenance-page .system-status-report tbody tr:nth-child(even) {
     background-color: #E7DDED; }
-  .maintenance-page.body .system-status-report tbody tr:nth-child(odd) {
+  .maintenance-page .system-status-report tbody tr:nth-child(odd) {
     background-color: #F3EEF6; }
-  .maintenance-page.body #page-title {
+  .maintenance-page #page-title {
     margin: 0 0 10px;
     color: #4A3858;
     text-transform: uppercase;
     font-weight: bold; }
-  .maintenance-page.body .messages {
+  .maintenance-page .messages {
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px; }
-  .maintenance-page.body .messages.error {
+  .maintenance-page .messages.error {
     display: none; }
-  .maintenance-page.body .messages.warning {
+  .maintenance-page .messages.warning {
     display: none; }
-  .maintenance-page.body .form-item-account-pass-pass2 {
+  .maintenance-page .form-item-account-pass-pass2 {
     margin-top: 0.8em; }
-  .maintenance-page.body .panel-default > .panel-heading {
+  .maintenance-page .panel-default > .panel-heading {
     color: #4A3858 !important;
     border-color: transparent !important;
     font-weight: bold; }
-  .maintenance-page.body a.button {
+  .maintenance-page a.button {
     border: 1px solid #4A3858;
     color: #4A3858 !important;
     background-color: red; }
-  .maintenance-page.body a.button:hover {
+  .maintenance-page a.button:hover {
     background-color: #4A3858;
     color: #fff !important; }
