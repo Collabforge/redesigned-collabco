@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="container" data-background="<?php echo $image?>" data-type="idea"></div>
+<div class="container" data-background="<?php echo $image?>" data-type="idea">
 
 <!-- Support, Follow and Comments icons in top-right -->
   <div class="stats clearfix">

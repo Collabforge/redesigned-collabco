@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="container" data-background="<?php echo $image; ?>" data-type="collaborate"></div>
+<div class="container" data-background="<?php echo $image; ?>" data-type="collaborate">
 
 <!-- Support, Follow and Comments icons in top-right -->
 <div class="stats clearfix">
@@ -21,3 +21,5 @@
 <i class="icon-beaker"></i>
   <h2><?php echo $collaborate ?></h2>
 <p><?php echo $short ?></p>
+
+</div>

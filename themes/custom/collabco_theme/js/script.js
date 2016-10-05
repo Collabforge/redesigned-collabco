@@ -88,9 +88,9 @@
   });
 
 
- $('.follow.event, .support.event').on('click', '.flag-wrapper a', function(event) {
-   event.stopPropagation();
- }); 
+  $('.follow.event, .support.event').on('click', '.flag-wrapper a', function(event) {
+    event.stopPropagation();
+  }); 
 
  // Fire comment link on cards
 
@@ -264,22 +264,22 @@ $.fn.updateBackgroundHeader = function () {
     var container = $(this);
     var dataBg = container.data('background');
     var dataType = container.data('type');
-    var colorBackground = ''
+    var closestFullWidthTop = container.closest('.full-width-top');
+    var colorBackground =  '';
 
     switch(dataType) {
       case 'challenge':
-        colorBackground = 'linear-gradient(135deg, rgba(37, 32, 90, .8) 0%, rgba(180, 115, 190, .8) 100%)';
-        break;
-      case 'collaborate':
-        colorBackground = 'linear-gradient(135deg, rgba(125, 23, 77, .8) 0%, rgba(192, 85, 210, .8) 100%)';
-        break;
       case 'idea':
-        colorBackground = 'linear-gradient(135deg, rgba(37, 32, 90, .8) 0%, rgba(180, 115, 190, .8) 100%)';
+        colorBackground = 'linear-gradient(135deg, rgba(74, 56, 88, .9) 0%, rgba(180, 115, 190, .9) 100%)';
+        break;
+        
+      case 'collaborate':
+        colorBackground = 'linear-gradient(135deg, rgba(125, 23, 77, .9) 0%, rgba(192, 85, 210, .9) 100%)';
         break;
     }
     
-    container.closest('.full-width-top').
-    css('background-image', 'url("/sites/all/themes/img/background/triangle-top-right-cut.png"),' + colorBackground + ', url("' + dataBg + '")');
+    closestFullWidthTop.
+    css('background-image', 'url(" "),' + colorBackground + ', url("' + dataBg + '")');
   }
 }
 
