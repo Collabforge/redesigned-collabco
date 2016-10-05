@@ -74,6 +74,14 @@
  */
  global $base_url;
 ?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1739665082950644";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <header id="navigation" role="banner">
   <div class="desktop-header hidden-xs <?php print $container_class; ?>">
     <div class="row">
@@ -105,7 +113,7 @@
       </div>
       <div id="brand" class="col-xs-6">
             <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-              <img src="<?php echo $base_url; ?>/sites/all/themes/img/logo.svg" alt="Collabco"/>
+              <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.svg" alt="Collabco"/>
             </a>
       </div>
         <div class="search col-xs-3">

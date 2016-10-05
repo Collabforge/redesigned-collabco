@@ -355,7 +355,7 @@ function theme_team_block($variables = array()) {
   $gid = $variables['nid'];
   $output = views_embed_view('team_belonging_to_idea', 'default', $variables['nid']);
   if (user_access('administer group') || og_user_access('node', $gid, 'add user')) {
-     $add_member_url = "node/$gid/add/member";    
+     $add_member_url = "/node/$gid/add/member";    
      $link_output = "<div class='add-team-member'> <a class='btn btn-default' href=$add_member_url>Add a Team Member</a></div";
     $output = $output . $link_output;
   }
