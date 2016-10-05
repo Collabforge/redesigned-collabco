@@ -10277,7 +10277,8 @@ nav.slider-mobile {
     border-color: transparent !important;
     font-weight: bold; }
   .maintenance-page a.button {
-    border: 1px solid #4a3858; }
+    border: 1px solid #4a3858;
+    text-transform: uppercase; }
   .maintenance-page a.button:hover {
     background-color: #4a3858;
     color: #fff; }
