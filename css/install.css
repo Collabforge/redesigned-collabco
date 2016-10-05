@@ -45,8 +45,6 @@ a { font-weight: bold; }
 #name-and-slogan,
 #site-name { display: inline-block;  }
 
-#page-title { display: none; }
-
 .task-list {
   list-style: none;
   padding-left: 0;
@@ -106,6 +104,10 @@ a { font-weight: bold; }
 
 #page-title {
   margin: 0 0 10px;
+  color: #4A3858;
+  text-transform: uppercase;
+  font-weight: bold;
+
 }
 
 .messages {
@@ -133,7 +135,7 @@ a { font-weight: bold; }
 //Button visit new site
 
 .button {
-  border-color: #4A3858;
+  border:  1px solid #4A3858;
   color: #4A3858 !important;
 }
 
