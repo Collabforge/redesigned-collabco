@@ -98,6 +98,7 @@ dependencies[] = quicktabs
 
 dependencies[] = register_preapproved
 dependencies[] = rules
+dependencies[] = rules_admin
 dependencies[] = stringoverrides
 dependencies[] = strongarm
 dependencies[] = term_queue

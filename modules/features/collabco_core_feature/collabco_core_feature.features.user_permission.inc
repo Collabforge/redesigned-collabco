@@ -1480,15 +1480,6 @@ function collabco_core_feature_user_default_permissions() {
     'module' => 'message_ui',
   );
 
-  // Exported permission: 'view all login histories'.
-  $permissions['view all login histories'] = array(
-    'name' => 'view all login histories',
-    'roles' => array(
-      'Moderator' => 'Moderator',
-    ),
-    'module' => 'login_history',
-  );
-
   // Exported permission: 'view any entityform'.
   $permissions['view any entityform'] = array(
     'name' => 'view any entityform',
@@ -1533,16 +1524,7 @@ function collabco_core_feature_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: 'view own login history'.
-  $permissions['view own login history'] = array(
-    'name' => 'view own login history',
-    'roles' => array(
-      'Moderator' => 'Moderator',
-    ),
-    'module' => 'login_history',
-  );
-
-  // Exported permission: 'view own private files'.
+   // Exported permission: 'view own private files'.
   $permissions['view own private files'] = array(
     'name' => 'view own private files',
     'roles' => array(
