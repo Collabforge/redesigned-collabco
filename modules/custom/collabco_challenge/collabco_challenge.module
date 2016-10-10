@@ -273,6 +273,7 @@ function collabco_challenge_views_api() {
 function collabco_challenge_form_alter(&$form, $form_state, $form_id) {
   switch ($form_id) {
     case 'taxonomy_form_term':
+      $form['field_tag_line'][LANGUAGE_NONE]['0']['value']['#attributes']['placeholder'] = t('This is key information about your challenge which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your challenge to read more.');
        $form['field_start_date']['#pre_render'] = array('collabco_challenge_date_label');
       break;
   }
