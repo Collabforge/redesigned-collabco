@@ -341,15 +341,6 @@ function collabco_core_feature_user_default_permissions() {
     'module' => 'mailsystem',
   );
 
-  // Exported permission: 'administer maintenance mode'.
-  $permissions['administer maintenance mode'] = array(
-    'name' => 'administer maintenance mode',
-    'roles' => array(
-      'Moderator' => 'Moderator',
-    ),
-    'module' => 'maintenance_mode_permissions',
-  );
-
   // Exported permission: 'administer mandrill'.
   $permissions['administer mandrill'] = array(
     'name' => 'administer mandrill',

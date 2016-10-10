@@ -140,6 +140,10 @@ projects[google_analytics][type] = module
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = "2.3"
 
+projects[hybridauth][type] = module
+projects[hybridauth][subdir] = contrib
+projects[hybridauth][version] = "2.15"
+
 projects[image_url_formatter][type] = module
 projects[image_url_formatter][subdir] = contrib
 projects[image_url_formatter][version] = "1.4"
@@ -352,3 +356,10 @@ libraries[mandrill][download][type] = "get"
 libraries[mandrill][download][url] = "https://bitbucket.org/mailchimp/mandrill-api-php/get/1.0.52.tar.gz"
 libraries[mandrill][directory_name] = "mandrill"
 libraries[mandrill][destination] = "libraries"
+
+; hybridauth
+libraries[hybridauth][download][type] = "git"
+libraries[hybridauth][download][url] = "https://github.com/hybridauth/hybridauth.git"
+libraries[hybridauth][directory_name] = "hybridauth"
+libraries[hybridauth][destination] = "libraries"
+

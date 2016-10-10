@@ -135,6 +135,7 @@ dependencies[] = collabco_ideas_feature
 dependencies[] = collabco_collaboration_feature
 dependencies[] = collabco_myhub_feature
 dependencies[] = collabco_message_feature
+dependencies[] = collabco_socialmedia_feature
 
 ; collabco
 
