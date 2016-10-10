@@ -115,14 +115,14 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm->name = 'hybridauth_providers';
   $strongarm->value = array(
     'Facebook' => 'Facebook',
+    'Google' => 'Google',
     'AOL' => 0,
     'Foursquare' => 0,
-    'Google' => 0,
     'LinkedIn' => 0,
     'Live' => 0,
     'MySpace' => 0,
     'OpenID' => 0,
-    'Twitter' => 0,
+    'Twitter' => 'Twitter',
     'Yahoo' => 0,
     'px500' => 0,
     'Disqus' => 0,
@@ -233,6 +233,83 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm->name = 'hybridauth_provider_Facebook_window_width';
   $strongarm->value = '800';
   $export['hybridauth_provider_Facebook_window_width'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Google_keys_id';
+  $strongarm->value = '674730055015-8otn5aecp3einghdesq0sng89l24924h.apps.googleusercontent.com';
+  $export['hybridauth_provider_Google_keys_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Google_keys_secret';
+  $strongarm->value = 'Clz3c7tCBbP_IhgdKEJ8ps3H';
+  $export['hybridauth_provider_Google_keys_secret'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Google_scope';
+  $strongarm->value = 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email';
+  $export['hybridauth_provider_Google_scope'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Google_window_height';
+  $strongarm->value = '500';
+  $export['hybridauth_provider_Google_window_height'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Google_window_type';
+  $strongarm->value = 'current';
+  $export['hybridauth_provider_Google_window_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Google_window_width';
+  $strongarm->value = '800';
+  $export['hybridauth_provider_Google_window_width'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Twitter_keys_key';
+  $strongarm->value = 'goRSVlax4OpNdhG4aRQgmahPo';
+  $export['hybridauth_provider_Twitter_keys_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Twitter_keys_secret';
+  $strongarm->value = '5RuQUdsLRMUrUXrMvzESFHWlPDPwYFl1pLzsvVQg1NbkTfgryJ';
+  $export['hybridauth_provider_Twitter_keys_secret'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Twitter_window_height';
+  $strongarm->value = '500';
+  $export['hybridauth_provider_Twitter_window_height'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Twitter_window_type';
+  $strongarm->value = 'current';
+  $export['hybridauth_provider_Twitter_window_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hybridauth_provider_Twitter_window_width';
+  $strongarm->value = '800';
+  $export['hybridauth_provider_Twitter_window_width'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
