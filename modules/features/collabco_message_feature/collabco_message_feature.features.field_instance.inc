@@ -707,7 +707,7 @@ function collabco_message_feature_field_default_field_instances() {
     'bundle' => 'challenge',
     'default_value' => array(
       0 => array(
-        'value' => 'This is key information about your challenge which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your challenge to read more.',
+        'value' => '',
       ),
     ),
     'deleted' => 0,
