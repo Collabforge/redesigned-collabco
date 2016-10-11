@@ -93,7 +93,7 @@ class collabco_challenge_handler_filter_is_open extends views_handler_filter_dat
       $field2 = str_replace('_value', '_value2', $field);
     }
     $now = time();
-    $challenges_with_winner = array();
+    /* $challenges_with_winner = array();
     $result = db_query("SELECT DISTINCT(field_challenge_value_tid) AS tid FROM
     field_data_field_challenge_value, field_data_field_idea_state WHERE
     field_data_field_challenge_value.entity_id = field_data_field_idea_state.entity_id
@@ -104,9 +104,9 @@ class collabco_challenge_handler_filter_is_open extends views_handler_filter_dat
         $challenges_with_winner[] = $row['tid'];
       }
     }
-    $challenges = implode(",", $challenges_with_winner);
+    $challenges = implode(",", $challenges_with_winner); */
     // Find closed terms that have NO associated Winning Ideas.
-    $this->query->add_where_expression($this->options['group'], "$field2 < $now AND taxonomy_term_data.tid IN ($challenges)");
+    $this->query->add_where_expression($this->options['group'], "$field2 < $now");
   }
 
 }
