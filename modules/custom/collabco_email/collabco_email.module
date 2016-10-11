@@ -19,7 +19,9 @@ function collabco_email_variable_info($options) {
  */
 function collabco_email_menu() {
   return array(
-    'admin/config/collabco-email' => array(
+    'admin/config/collabco-settings/email' => array(
+      'title' => 'Email settings',
+      'description' => 'Email settings for weekly batch',
       'page callback' => 'collabco_email_admin_settings',
       'access arguments' => array(TRUE),
       'type' => MENU_NORMAL_ITEM,
