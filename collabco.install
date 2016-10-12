@@ -496,6 +496,7 @@ function _govims_default_challenges() {
     $tids[] = $term->tid;
   }
   // Save the tids.
+  variable_set('collabco_ongoing_challenge','1'); // for Brainstorm as it will be tid 1 in install.
   variable_set('govims_challenges_saved', $tids);
 }
 
