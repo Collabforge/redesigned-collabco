@@ -57,8 +57,9 @@ class collabco_challenge_handler_filter_is_open extends views_handler_filter_dat
       $field1 = $field;
       $field2 = str_replace('_value', '_value2', $field);
     }
+    $on_going_challenge_tid = variable_get('collabco_ongoing_challenge','1');
     $now = time();
-    $this->query->add_where_expression($this->options['group'], "$field1 < $now AND $field2 > $now");
+    $this->query->add_where_expression($this->options['group'], "$field1 < $now AND $field2 > $now OR taxonomy_term_data.tid = $on_going_challenge_tid");
   }
 
   function op_is_judged($field) {
@@ -106,7 +107,9 @@ class collabco_challenge_handler_filter_is_open extends views_handler_filter_dat
     }
     $challenges = implode(",", $challenges_with_winner); */
     // Find closed terms that have NO associated Winning Ideas.
-    $this->query->add_where_expression($this->options['group'], "$field2 < $now");
+    $on_going_challenge_tid = variable_get('collabco_ongoing_challenge','1');
+    $this->query->add_where_expression($this->options['group'], "$field2 < $now 
+      AND taxonomy_term_data.tid != $on_going_challenge_tid");
   }
 
 }
