@@ -1,19 +1,22 @@
 <?php
 /**
  * @file
- * Collabco Settings module
+ * Collabco Settings module.
  */
 
+/**
+ * Implements hook_variable_group_info().
+ */
 function collabco_settings_variable_group_info() {
   $groups['collabco_challenge'] = array(
-    'title' => t('Collabco Challenge'), 
-    'description' => t('Collabco Challenge settings'), 
-    'access' => 'administer site configuration', 
+    'title' => t('Collabco Challenge'),
+    'description' => t('Collabco Challenge settings'),
+    'access' => 'administer site configuration',
     'path' => array('admin/config/collabco-settings/challenge'),
   );
   $groups['collabco_collaboration'] = array(
-    'title' => t('Collabco collaboration'), 
-    'description' => t('Collabco Collaboration settings'), 
+    'title' => t('Collabco collaboration'),
+    'description' => t('Collabco Collaboration settings'),
     'access' => 'administer site configuration',
     'path' => array('admin/config/collabco-settings/collaboration'),
   );
@@ -30,7 +33,10 @@ function collabco_settings_variable_info($options) {
     'type' => 'select_number',
     'default' => 30,
     'group' => 'collabco_collaboration',
-    'options' => array(1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 80, 90, 100, 150, 200, 250, 300, 350, 400, 500),
+    'options' => array(1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 80,
+      90, 100, 150, 200, 250, 300, 350, 400, 500,
+    )
+    ,
   );
   $variable['collabco_inactivity_archived_period_collab'] = array(
     'title' => t('Select the period to check for inactivity within Collaboration for archiving'),
@@ -38,16 +44,32 @@ function collabco_settings_variable_info($options) {
     'type' => 'select_number',
     'default' => 90,
     'group' => 'collabco_collaboration',
-    'options' => array(1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 80, 90, 100, 150, 200, 250, 300, 350, 400, 500),
+    'options' => array(1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 80,
+      90, 100, 150, 200, 250, 300, 350, 400, 500,
+    )
+    ,
   );
   $variable['collabco_ongoing_challenge'] = array(
-    'title' => t('Select the on-going Challenge'),
-    'type' => 'select_number',
-    'default' => 90,
+    'title' => t('Select the on-going or miscellaneous challenge'),
+    'type' => 'options',
+    'default' => 1,
     'group' => 'collabco_challenge',
-    'options' => array(1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 80, 90, 100, 150, 200, 250, 300, 350, 400, 500),
+    'options callback' => 'challenge_list',
   );
   return $variable;
+}
+
+/**
+ * Function to return the challenges list.
+ */
+function challenge_list() {
+  $options = array();
+  $vocabulary = taxonomy_vocabulary_machine_name_load('challenge');
+  $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+  foreach ($terms as $term) {
+    $options[$term->tid] = $term->name;
+  }
+  return $options;
 }
 
 /**
@@ -61,21 +83,21 @@ function collabco_settings_menu() {
     'page callback' => 'system_admin_menu_block_page',
     'access arguments' => array('access administration pages'),
     'file' => 'system.admin.inc',
-    'file path' => drupal_get_path('module','system'),
+    'file path' => drupal_get_path('module', 'system'),
   );
   $items['admin/config/collabco-settings/challenge'] = array(
     'title' => 'Challenge Settings',
     'description' => 'Challenge Settings for Collabco',
     'access arguments' => array(TRUE),
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('variable_group_form','collabco_challenge'),
+    'page arguments' => array('variable_group_form', 'collabco_challenge'),
   );
   $items['admin/config/collabco-settings/collaboration'] = array(
     'title' => 'Collaboration Settings',
     'description' => 'Collaboration Settings for Collabco',
     'access arguments' => array(TRUE),
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('variable_group_form','collabco_collaboration'),
+    'page arguments' => array('variable_group_form', 'collabco_collaboration'),
   );
   return $items;
 }
@@ -90,19 +112,17 @@ function collabco_settings_help($path, $arg) {
   }
 }
 
-
-/********CKEditor plugins********/
-function collabco_settings_ckeditor_plugin()
-{
-    $module_path = drupal_get_path('module', 'collabco_settings');
-    $plugins     = array();
-   
-    $plugins['confighelper'] = array(
-        'name'    => 'confighelper',
-        'desc'    => t(' CKEditor: Configuration helper plugin'),
-        'path'    => $module_path . '/ckeditor-plugins/confighelper/',
-        'default' => 't'
-    );
-    return $plugins;
+/**
+ * CKEditor plugins.
+ */
+function collabco_settings_ckeditor_plugin() {
+  $module_path = drupal_get_path('module', 'collabco_settings');
+  $plugins = array();
+  $plugins['confighelper'] = array(
+    'name'    => 'confighelper',
+    'desc'    => t('CKEditor: Configuration helper plugin'),
+    'path'    => $module_path . '/ckeditor-plugins/confighelper/',
+    'default' => 't',
+  );
+  return $plugins;
 }
-
