@@ -11,6 +11,6 @@
 <i class="icon-stormy"></i>
 <h2>Square peg, round hole?</h2>
 
-<p>Is your idea not fitting in a challenge? Add it to default Brainstorm challenge!</p>
+<p>Is your idea not fitting in a challenge? Add it to default <?php echo $on_going_challenge_name;?> challenge!</p>
 
-<a class="btn btn-default" href="/challenge/brainstorm" title="Add to Brainstorm">Add to Brainstorm</a>
+<a class="btn btn-default" href="<?php echo $on_going_challenge_url?>" title="Add to Brainstorm">Add to <?php echo $on_going_challenge_name;?></a>

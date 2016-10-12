@@ -105,6 +105,13 @@ function collabco_challenge_block_view($delta = '') {
       break;
 
     case 'add_to_brainstorm':
+      $on_going_challenge_tid = variable_get('collabco_ongoing_challenge','1');
+      $term = taxonomy_term_load($on_going_challenge_tid);
+      $term_uri = taxonomy_term_uri($term);
+      $term_title = taxonomy_term_title($term);
+      $term_path = $term_uri['path'];
+      $variables['on_going_challenge_url'] = drupal_get_path_alias($term_path);
+      $variables['on_going_challenge_name'] = $term_title;
       $content = theme('add_to_brainstorm_template', $variables);
       break;
   }
@@ -234,7 +241,8 @@ function collaboco_challenge_winning_ideas($term_or_tid) {
  */
 function collabco_challenge_is_brainstorm($term_or_tid) {
   $tid = is_numeric($term_or_tid) ? $term_or_tid : $term_or_tid->tid;
-  return $tid == 1;
+  $on_going_challenge = variable_get('collabco_ongoing_challenge','1');
+  return $tid == $on_going_challenge;
 }
 
 /**
