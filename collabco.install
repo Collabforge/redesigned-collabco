@@ -42,8 +42,6 @@ function collabco_install() {
 
   _collabco_setup_user();
 
-  // Clean up after install.
-  _collabco_cleanup();
 }
 
 /**
@@ -520,7 +518,7 @@ function collabco_example_content_install_finished($context) {
 /**
  * Run any cleanup or other functions required after install is finished.
  */
-function _collabco_cleanup() {
+function collabco_cleanup() {
   // Required by view_unpublished module.
   node_access_rebuild();
   cache_clear_all();
