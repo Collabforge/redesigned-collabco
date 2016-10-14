@@ -42,6 +42,7 @@ function collabco_install() {
 
   _collabco_setup_user();
 
+  collabco_cleanup();
 }
 
 /**
