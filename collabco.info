@@ -1,5 +1,4 @@
 name = Collabco
-project = govims
 description = A distribution for Ideas Management System
 package = govIMS Profile
 distribution_name = govIMS

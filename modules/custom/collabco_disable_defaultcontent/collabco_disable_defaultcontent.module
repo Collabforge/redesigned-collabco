@@ -30,13 +30,11 @@ function collabco_disable_defaultcontent_menu() {
  */
 function collabco_disable_defaultcontent_admin_form() {
   $form = array();
-
   $form['collabco_disable_defaultcontent_notice_enabled'] = array(
     '#type' => 'checkbox',
     '#title' => t('Display a notice about default content'),
     '#default_value' => variable_get('collabco_disable_defaultcontent_notice_enabled', 1),
   );
-
   return system_settings_form($form);
 }
 
@@ -65,7 +63,7 @@ function collabco_disable_defaultcontent_disable_modules_submit($form, &$form_st
     drupal_set_message(t('Default content has been turned off.'), 'status', FALSE);
 
     // Remove the tags.
-    $tids = variable_get('govims_challenges_saved', FALSE);
+    $tids = variable_get('collabco_challenges_saved', FALSE);
 
     // Ensure we have values to delete.
     if (!empty($tids)) {
@@ -73,10 +71,8 @@ function collabco_disable_defaultcontent_disable_modules_submit($form, &$form_st
       foreach ($tids as $tid) {
         taxonomy_term_delete($tid);
       }
-
       // Clean up the variables.
-      variable_del('govims_challenges_saved');
-
+      variable_del('collabco_challenges_saved');
      }
   }
 

@@ -1,5 +1,4 @@
-# govims
+#collabco
 
-Run the command drush make stub.make
+Run the command drush make stub.make to install
 
-vendor/bin/behat --tags @challenge

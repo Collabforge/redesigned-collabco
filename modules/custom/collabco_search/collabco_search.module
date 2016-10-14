@@ -1,8 +1,7 @@
 <?php
 
 /**
- * @file collabco_search.module
- *
+ * @file
  * User Search by Full Name and email fields.
  */
 
@@ -29,7 +28,7 @@ function collabco_search_search_execute($keys = NULL, $conditions = NULL) {
   $query->fields('users', array('uid'));
 
   // Need to join users.uid on field_data_field_full_name.entity_id
-  // and look for field_full_name_value, rather than users.name
+  // and look for field_full_name_value, rather than users.name.
   $query->join('field_data_field_full_name', 'ffn', 'users.uid = ffn.entity_id');
   $query->fields('ffn', array('field_full_name_value'));
 
@@ -39,10 +38,9 @@ function collabco_search_search_execute($keys = NULL, $conditions = NULL) {
     // Privileged users can also search in the otherwise private email field,
     // and they don't need to be restricted to only active users.
     $query->fields('users', array('mail'));
-
-    $query->condition(db_or()->
-      condition('field_full_name_value', '%' . $keys . '%', 'LIKE')->
-      condition('mail', '%' . $keys . '%', 'LIKE'));
+    $query->condition(db_or()
+          ->condition('field_full_name_value', '%' . $keys . '%', 'LIKE')
+          ->condition('mail', '%' . $keys . '%', 'LIKE'));
   }
   else {
     // Regular users can only search via usernames, and we do not show them
