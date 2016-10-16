@@ -229,12 +229,20 @@ function collaboco_challenge_winning_ideas($term_or_tid) {
   $count = 0;
   foreach ($ideas as $idea) {
     if (isset($idea->field_challenge_value[LANGUAGE_NONE][0]) && $idea->field_challenge_value[LANGUAGE_NONE][0]['tid'] == $tid &&
-      isset($idea->field_idea_state[LANGUAGE_NONE][0]) && $idea->field_idea_state[LANGUAGE_NONE][0]['value'] == 'win') {
-      $count++;
+      isset($idea->field_idea_state[LANGUAGE_NONE])) {
+      $idea_states = $idea->field_idea_state[LANGUAGE_NONE];
+      if (is_array($idea_states)){
+        foreach ($idea_states as $key => $value) {
+          if ($value['value'] == 'win'){ 
+            $count++;
+          } 
+        }
+      }
     }
   }
   return $count;
 }
+
 
 /**
  * Returns whether Challenge is Brainstorm.
