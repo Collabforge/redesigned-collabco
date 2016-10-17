@@ -12,6 +12,10 @@ projects[admin_menu][type] = module
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = "3.0-rc5"
 
+projects[admin_menu_source][type] = module
+projects[admin_menu_source][subdir] = contrib
+projects[admin_menu_source][version] = "1.1"
+
 projects[backup_migrate][type] = module
 projects[backup_migrate][subdir] = contrib
 projects[backup_migrate][version] = "3.1"

@@ -205,16 +205,16 @@ function collabco_msg_node_update($node) {
   // Check if the new Idea's State (win) were added. 
   $old_state = array();
   $new_state = array();
-  if (isset($node->original->field_idea_state)) {
-    $old_idea_state = $node->original->field_idea_state[LANGUAGE_NONE];
+  if (isset($node->original->field_idea_state[$langcode])) {
+    $old_idea_state = $node->original->field_idea_state[$langcode];
     if (is_array($old_idea_state)){
       foreach ($old_idea_state as $key => $value) {
         $old_state[]= $value['value'];
       }
     }
   }
-  if (isset($node->field_idea_state)) {
-    $new_idea_state = $node->field_idea_state[LANGUAGE_NONE];
+  if (isset($node->field_idea_state[$langcode])) {
+    $new_idea_state = $node->field_idea_state[$langcode];
     if (is_array($new_idea_state)){
       foreach ($new_idea_state as $key => $value) {
         $new_state[] = $value['value']; 
