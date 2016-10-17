@@ -1,15 +1,31 @@
 <?php
 /**
  * @file
- * colorboxsdfsdf.strongarm.inc
+ * Collabco_appearance_feature.strongarm.inc.
  */
 
 /**
  * Implements hook_strongarm().
  */
-function collabco_appearance_strongarm() {
+function collabco_appearance_feature_strongarm() {
   $export = array();
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_source_settings';
+  $strongarm->value = array(
+    1 => array(
+      'source' => '',
+    ),
+    2 => array(
+      'source' => '',
+    ),
+    3 => array(
+      'source' => 'menu-menu-for-moderators',
+    ),
+  );
+  $export['admin_menu_source_settings'] = $strongarm;
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
