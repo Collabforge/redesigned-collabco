@@ -8997,27 +8997,27 @@ nav.slider-mobile {
   background-size: auto, auto, auto;
   color: #fff; }
 
-.user-badges {
+.page-user .user-badges {
   text-align: center;
   margin-top: 20px; }
   @media only screen and (min-width: 992px) {
-    .user-badges {
+    .page-user .user-badges {
       text-align: left; } }
 
-.view-profile-badges {
+.page-user .view-profile-badges {
   text-align: center; }
-  .view-profile-badges .view-content {
+  .page-user .view-profile-badges .view-content {
     overflow: hidden; }
-  .view-profile-badges .views-row {
+  .page-user .view-profile-badges .views-row {
     display: inline-block;
     margin: 20px 0;
     padding: 10px; }
 
-#idea_badges,
-#collab_badges {
+.page-user #idea_badges,
+.page-user #collab_badges {
   display: inline-block; }
 
-.badge {
+.page-user .badge {
   position: relative;
   height: 164px;
   width: 165px;
@@ -9026,7 +9026,7 @@ nav.slider-mobile {
   background-repeat: no-repeat;
   background-color: transparent;
   background-position: center center; }
-  .badge a {
+  .page-user .badge a {
     position: absolute;
     right: 0;
     left: 0;
@@ -9039,16 +9039,16 @@ nav.slider-mobile {
     font-size: 18px;
     line-height: 21px;
     text-decoration: none; }
-    .badge a:hover {
+    .page-user .badge a:hover {
       text-decoration: underline; }
 
-.badge.winning-idea {
+.page-user .badge.winning-idea {
   background-image: url("../assets/img/background/achievement-badge-2.png"); }
 
-.badge.converted-idea {
+.page-user .badge.converted-idea {
   background-image: url("../assets/img/background/achievement-badge-1.png"); }
 
-.page-user.page-user-edit-account .content-top {
+.page-user .page-user.page-user-edit-account .content-top {
   padding: 0; }
 
 .page-challenge .content-top,
@@ -9981,6 +9981,12 @@ nav.slider-mobile {
 
 .page-node-add-member input[type="text"].form-control {
   width: 100%; }
+
+.page-node-add-idea .input-group-btn:last-child > .btn {
+  -webkit-border-top-left-radius: 40px;
+          border-top-left-radius: 40px;
+  -webkit-border-bottom-left-radius: 40px;
+          border-bottom-left-radius: 40px; }
 
 .page-node-discussions .sidebar-2 .host-discussion h2 {
   margin-top: 0; }

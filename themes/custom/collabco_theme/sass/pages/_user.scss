@@ -123,76 +123,77 @@
     color: $white;
   }
 
-}
 
 
-//User Badges
-.user-badges { 
-  text-align: center;
-  margin-top: 20px;
-  @media only screen and (min-width : $screen-md) { text-align: left; } 
-}
 
-.view-profile-badges {
-  text-align: center;
-  
-  // @media only screen and (min-width : $screen-md) { text-align: left; } 
-
-  .view-content { 
-    overflow: hidden;
+  //User Badges
+  .user-badges { 
+    text-align: center;
+    margin-top: 20px;
+    @media only screen and (min-width : $screen-md) { text-align: left; } 
   }
 
-  .views-row {
+  .view-profile-badges {
+    text-align: center;
+    
+    // @media only screen and (min-width : $screen-md) { text-align: left; } 
+
+    .view-content { 
+      overflow: hidden;
+    }
+
+    .views-row {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px;
+    }
+  }
+
+  #idea_badges,
+  #collab_badges {
     display: inline-block;
-    margin: 20px 0;
-    padding: 10px;
   }
-}
-
-#idea_badges,
-#collab_badges {
-  display: inline-block;
-}
 
 
-.badge {
-  position: relative;
-  height: 164px;
-  width: 165px;
-  color: $white;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-position: center center;
-
-  a {
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 85px;
+  .badge {
+    position: relative;
+    height: 164px;
+    width: 165px;
     color: $white;
-    text-transform: capitalize;
-    font-family: $lato;
-    font-size: 18px;
-    line-height: 21px;
-    text-decoration: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center center;
 
-    &:hover { text-decoration: underline; }
+    a {
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+      top: 85px;
+      color: $white;
+      text-transform: capitalize;
+      font-family: $lato;
+      font-size: 18px;
+      line-height: 21px;
+      text-decoration: none;
+
+      &:hover { text-decoration: underline; }
+    }
   }
-}
 
-.badge.winning-idea {
-  background-image: url('../assets/img/background/achievement-badge-2.png');
-}
+  .badge.winning-idea {
+    background-image: url('../assets/img/background/achievement-badge-2.png');
+  }
 
-.badge.converted-idea {
-  background-image: url('../assets/img/background/achievement-badge-1.png');
-}
+  .badge.converted-idea {
+    background-image: url('../assets/img/background/achievement-badge-1.png');
+  }
 
-.page-user.page-user-edit-account {
-  .content-top { padding: 0; }
+  .page-user.page-user-edit-account {
+    .content-top { padding: 0; }
+  }
 }
 
 
