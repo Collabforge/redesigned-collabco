@@ -129,6 +129,7 @@ function _collabco_default_blocks() {
   // Set home page blocks.
   collabco_core_update_block('collabco_home', 'header_home', $themes, 'content_top', 0);
   collabco_core_update_block('collabco_profile', 'header_user_profile_block', $themes, 'nav_actions', 0);
+  collabco_core_update_block('collabco_profile', 'header_mobile_user_block',$themes,'nav_actions_mobile',0)
   collabco_core_update_block('search', 'form', $themes, 'nav_search', 0);
   // Open challenges block on home page.
   collabco_core_update_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_upper', 14);
