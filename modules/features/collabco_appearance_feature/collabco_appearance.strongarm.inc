@@ -7,7 +7,7 @@
 /**
  * Implements hook_strongarm().
  */
-function colorboxsdfsdf_strongarm() {
+function collabco_appearance_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
