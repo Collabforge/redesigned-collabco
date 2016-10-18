@@ -386,11 +386,16 @@ function _collabco_default_challenges() {
   // List of terms for insert.
   $terms = array(
     t('Brainstorm'),
-    t('Name this site'),
+    t('How might we deliver our strategic priorities'),
+    t('How might we transition to 100% renewable energy?'),
   );
-  $term_images = array('challenge_one.jpg', 'challenge_two.jpg');
-  $term_short_desc = array("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor aliquam velit eu blandit. Suspendisse volutpat imperdiet tellus at pulvinar.", "Aliquam vel purus sapien. Ut interdum malesuada nisi elementum congue. Nunc et dui eros. Maecenas augue purus, sollicitudin tincidunt diam ac, vulputate rutrum ipsum.");
-  $term_detailed_desc = array("Sed tincidunt fermentum justo non sollicitudin. Cras eget sem vitae magna ultricies accumsan sollicitudin ut eros. Donec vehicula pharetra condimentum. Donec maximus, felis sed sodales tempor, ligula turpis pellentesque mi, eget suscipit sem purus sit amet purus. Suspendisse potenti. Etiam scelerisque convallis posuere. Aenean hendrerit ornare varius. Etiam nec enim in purus pretium condimentum ac et lacus. Maecenas ac tempor turpis. Nunc a ullamcorper metus. Duis tristique, nisi at tincidunt egestas, nisi mi condimentum erat, sed dapibus quam lectus non lorem.", "In eu placerat quam. Phasellus ultricies suscipit finibus. Sed convallis lobortis enim nec scelerisque. Fusce sit amet rhoncus nisl. Quisque ullamcorper bibendum mauris, sed aliquam enim sollicitudin non. Etiam vel tristique velit. Donec non volutpat tortor. In efficitur luctus tristique. Quisque consectetur massa libero, at laoreet ex pharetra ut. Sed eget tempus mauris, vel consectetur magna. Aenean nisi quam, consequat porta fringilla a, commodo ut erat. Aliquam porta dui quis risus gravida, non laoreet nibh vulputate.",
+  $term_images = array('challenge_one.jpg', 'challenge_two.jpg','challenge_three.jpg');
+  $term_short_desc = array("An always-open space to share ideas that are not connected to a specific challenge.",
+   "We know what our strategic priorities are, but we need your insight to deliver them.",
+   "Our organisation could end its reliance on energy generated from fossil fuels. What are the different ways in which we might make this transition?",);
+  $term_detailed_desc = array("Did a new idea come to you in the shower this morning? Got an out-of-the-blue insight that doesn't fit into a preconceived need in our organisation? The brainstorm is a home for those ideas that aren't connected to an already-identified challenge.",
+    "We've developed our new strategy and set our priorities, and our leadership team have some good ideas about how to make it real. Now we're looking to you for some fresh thinking about how to deliver on our priorities. Share your hidden knowledge and out-of-the-box thinking. The best ideas will receive time and support to develop them further as collaborations.",
+    "A transition to renewable energy could save our organisation money, and help save the planet at the same time. Making this transition is a combination of new technologies and new behaviours, and will likely result from many changes big and small. Submit your ideas for how we can become clean and green in our energy use! Your ideas will inform our 100% Renewable Transition Strategy, and a handful will be selected for practical trials.",
   );
   $vocabs = taxonomy_vocabulary_get_names();
   if (empty($vocabs['challenge'])) {
