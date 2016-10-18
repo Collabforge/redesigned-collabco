@@ -7293,6 +7293,9 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .btn.bg-white {
     background-color: #fff; }
 
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+  outline: 0; }
+
 .btn-default:hover {
   color: #fff;
   background-color: #00746a; }
