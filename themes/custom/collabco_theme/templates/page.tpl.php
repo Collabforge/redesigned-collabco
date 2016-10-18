@@ -111,10 +111,12 @@
       <div class="nav-mobile col-xs-3">
         <a href="#" id='nav-hamburger' class="icon-hamburguer"></a>
       </div>
-      <div id="brand" class="col-xs-6">
-            <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-              <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.svg" alt="Collabco"/>
-            </a>
+     <div id="brand" class="col-xs-6"> 
+         <!--     <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+              <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.png" alt="Collabco"/>
+            </a> -->
+          <h1>GOVIMS</h1>
+
       </div>
         <div class="search col-xs-3">
           <a href="/search" class="icon-magnifier"></a>
@@ -140,8 +142,9 @@
       <?php print render($primary_nav); ?>
     <?php endif; ?>
     <footer>
-      <div class="logo"><img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.svg" alt="Collabco"/>
-      </div>
+   <!--    <div class="logo"><img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.png" alt="Collabco"/>
+      </div> -->
+      <h2>GOVIMS</h2>
       <p class="copyright">© Copyright 2016. Collabco</p>
     </footer>
 </nav>

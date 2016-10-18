@@ -8270,6 +8270,9 @@ header#navigation {
       width: auto; }
     #brand img {
       display: inline-block; }
+    #brand h1 {
+      text-align: center;
+      color: #fff; }
   .nav-mobile {
     font-size: 20px;
     padding: 25px 20px;
@@ -8356,6 +8359,8 @@ nav.slider-mobile {
         width: 100%; }
   nav.slider-mobile footer {
     padding: 10px 20px; }
+    nav.slider-mobile footer h2 {
+      color: #4a3858; }
   nav.slider-mobile .copyright {
     font-size: 11px;
     margin: 22px 0 0; }

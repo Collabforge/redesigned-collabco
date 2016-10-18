@@ -14,6 +14,11 @@
     height: auto;
     a { width: auto; }
     img { display: inline-block; }
+
+    h1 { 
+      text-align: center;
+      color: $white;
+    }
   }  
   
   //Nav Hamburguer and Animation
@@ -146,6 +151,8 @@ nav.slider-mobile {
 
   footer { 
     padding: 10px 20px;
+    
+    h2 { color: $purple; }
   }
   
   .copyright { 
