@@ -32,7 +32,7 @@
 @import 'components/utilities';
 
 
-// Employment
+// Layout
 @import 'base/global';
 @import 'layout/header';
 @import 'layout/nav';
@@ -41,6 +41,8 @@
 @import 'layout/comments';
 @import 'layout/sidebar';
 @import 'layout/myhub-nav';
+
+//Pages
 @import 'pages/home';
 @import 'pages/user';
 @import 'pages/challenge';

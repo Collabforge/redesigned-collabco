@@ -2,7 +2,7 @@
 
 .page-node-99 {
   .content-top {
-    @include bg-gradient-pink-orange('/sites/all/themes/img/background/triangle-top-right-cut.png', '../assets/img/background/header-myhub-bg.jpg', .9);
+    @include bg-gradient-pink-orange('', '../assets/img/background/header-myhub-bg.jpg', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto ,cover;
     padding: 28px 0; 

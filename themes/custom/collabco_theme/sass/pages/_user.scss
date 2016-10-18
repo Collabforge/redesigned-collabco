@@ -11,7 +11,7 @@
 
   // Header
   .content-top {
-    @include bg-gradient-pink-orange('/sites/all/themes/img/background/triangle-top-right-cut.png', '', .9);
+    @include bg-gradient-pink-orange('', '', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto ,auto;
     padding: 60px 0; 

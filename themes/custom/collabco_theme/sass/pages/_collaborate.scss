@@ -4,7 +4,7 @@
 .page-collaborations-turned-projects {
   // First Block
   .content-top {
-    @include bg-gradient-purple-pink('/sites/all/themes/img/background/triangle-top-right-cut.png', '../assets/img/background/header-collaborate-bg.jpg', .9);
+    @include bg-gradient-purple-pink('', '../assets/img/background/header-collaborate-bg.jpg', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto , cover;
     padding: 25px;
@@ -75,7 +75,7 @@
   }
 
   .content-lower {
-    @include bg-gradient-purple-pink('/sites/all/themes/img/background/triangle-middle-big.png', '', .9);
+    @include bg-gradient-purple-pink('', '', .9);
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
     

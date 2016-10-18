@@ -8907,8 +8907,8 @@ nav.slider-mobile {
   max-width: 400px; }
 
 .page-user .content-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
+  background: url(""), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -9287,8 +9287,8 @@ nav.slider-mobile {
 .page-featured-collaborations .content-top,
 .page-parked-collaborations .content-top,
 .page-collaborations-turned-projects .content-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("../assets/img/background/header-collaborate-bg.jpg");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("../assets/img/background/header-collaborate-bg.jpg");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("../assets/img/background/header-collaborate-bg.jpg");
+  background: url(""), linear-gradient(135deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("../assets/img/background/header-collaborate-bg.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -9397,8 +9397,8 @@ nav.slider-mobile {
   margin: 60px 0 20px; }
 
 .page-collaborate .content-lower {
-  background: url("/sites/all/themes/img/background/triangle-middle-big.png"), -webkit-linear-gradient(315deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("");
-  background: url("/sites/all/themes/img/background/triangle-middle-big.png"), linear-gradient(135deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("");
+  background: url(""), linear-gradient(135deg, rgba(125, 23, 77, 0.9) 0%, rgba(192, 85, 210, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -10172,8 +10172,8 @@ nav.slider-mobile {
   margin-top: 0; }
 
 .page-node-98 .content-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("../assets/img/background/header-myhub-bg.jpg");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("../assets/img/background/header-myhub-bg.jpg");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("../assets/img/background/header-myhub-bg.jpg");
+  background: url(""), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("../assets/img/background/header-myhub-bg.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
@@ -10191,8 +10191,8 @@ nav.slider-mobile {
   border-bottom: 1px solid #ccc; }
 
 .page-node-99 .content-top {
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("../assets/img/background/header-myhub-bg.jpg");
-  background: url("/sites/all/themes/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("../assets/img/background/header-myhub-bg.jpg");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("../assets/img/background/header-myhub-bg.jpg");
+  background: url(""), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("../assets/img/background/header-myhub-bg.jpg");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
