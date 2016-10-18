@@ -63,22 +63,36 @@ nav.slider-mobile {
   overflow-y: scroll;
   
   .user-info {
-    @include bg-gradient-green-blue();
+    background-color: $purple;
     color: $white;
-    // height: 160px;
     padding: 10px;
 
     a { 
-      color: $purple; 
+      color: $white; 
       text-decoration: none;
     }
+
+    .row { margin: 0; }
 
     #nav-mobile-close,
     .logout {
       display: inline-block;
     }
 
-    .logout { font-size: 16px;}
+    #nav-mobile-close { 
+      padding-left: 0;
+
+      &:before { 
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    .logout { 
+      padding-right: 0;
+      font-size: 16px;
+      text-align: right;
+    }
   }
 
   .user-picture { 
@@ -157,7 +171,7 @@ nav.slider-mobile {
 
 
 .overlay {
-  @include bg-gradient-green-blue('','',.9);
+  @include bg-gradient-blue-purple('','',.9);
   display: none;
   position: fixed;
   top: 0;

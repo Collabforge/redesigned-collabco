@@ -8304,21 +8304,26 @@ nav.slider-mobile {
   top: 0;
   overflow-y: scroll; }
   nav.slider-mobile .user-info {
-    background-image: url(""), -webkit-linear-gradient(315deg, #359189 0%, #1e3d6b 100%), url("");
-    background-image: url(""), linear-gradient(135deg, #359189 0%, #1e3d6b 100%), url("");
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    background-color: #4a3858;
     color: #fff;
     padding: 10px; }
     nav.slider-mobile .user-info a {
-      color: #4a3858;
+      color: #fff;
       text-decoration: none; }
+    nav.slider-mobile .user-info .row {
+      margin: 0; }
     nav.slider-mobile .user-info #nav-mobile-close,
     nav.slider-mobile .user-info .logout {
       display: inline-block; }
+    nav.slider-mobile .user-info #nav-mobile-close {
+      padding-left: 0; }
+      nav.slider-mobile .user-info #nav-mobile-close:before {
+        position: relative;
+        top: -2px; }
     nav.slider-mobile .user-info .logout {
-      font-size: 16px; }
+      padding-right: 0;
+      font-size: 16px;
+      text-align: right; }
   nav.slider-mobile .user-picture {
     margin: 0;
     text-align: center;
@@ -8366,8 +8371,8 @@ nav.slider-mobile {
   background-color: #eeeeee; }
 
 .overlay {
-  background-image: url(""), -webkit-linear-gradient(315deg, rgba(53, 145, 137, 0.9) 0%, rgba(30, 61, 107, 0.9) 100%), url("");
-  background-image: url(""), linear-gradient(135deg, rgba(53, 145, 137, 0.9) 0%, rgba(30, 61, 107, 0.9) 100%), url("");
+  background: url(""), -webkit-linear-gradient(315deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
+  background: url(""), linear-gradient(135deg, rgba(74, 56, 88, 0.9) 0%, rgba(180, 115, 190, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto, auto;
