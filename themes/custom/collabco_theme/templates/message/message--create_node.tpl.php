@@ -45,9 +45,7 @@ if (!empty($nid)) {
   $node_link = l($node->title,$node_alias); 
   $icon_class  = ""; 
   $header_text ="";
-  $short_desc = truncate_utf8($node->body['und'][0]['value'], 200, TRUE, TRUE);	
-
-
+  $short_desc =  empty($node->body[$language]) ? '' : truncate_utf8($node->body[$language][0]['value'], 200, TRUE, TRUE);
   if ($node->type =='knowledge_object' || $node->type == 'conversation')
 	{
 	  if (!empty($node->og_group_ref)){
@@ -83,7 +81,7 @@ if (!empty($nid)) {
 
 	switch ($node->type) {
 		case 'idea':		
-			$short_desc = truncate_utf8($node->field_tag_line['und'][0]['value'], 200, TRUE, TRUE);	
+			$short_desc =  empty($node->field_tag_line[$language]) ? '' : truncate_utf8($node->field_tag_line[$language][0]['value'], 200, TRUE, TRUE);
 			if (!empty($node->field_featured_picture)) {
       	      $img_url = $node->field_featured_picture[$language][0]['uri'];
 	     	}
@@ -164,8 +162,8 @@ if (!empty($nid)) {
 		break;
 
 		case 'hub' : // for collaboration
-		 $short_desc = truncate_utf8($node->field_tag_line['und'][0]['value'], 200, TRUE, TRUE);	
-         $icon_class = "collaboration icon-compress";
+		 $short_desc =  empty($node->field_tag_line[$language]) ? '' : truncate_utf8($node->field_tag_line[$language][0]['value'], 200, TRUE, TRUE);
+		 $icon_class = "collaboration icon-compress";
 		 print "<div class='card-updates row' >";
          print "<div class='col-sm-1 icon'>";
          print "<i class='icon-star'></i>";
