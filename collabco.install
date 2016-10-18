@@ -132,7 +132,7 @@ function _collabco_default_blocks() {
   collabco_core_update_block('collabco_profile', 'header_mobile_user_block',$themes,'nav_actions_mobile',0);
     collabco_core_update_block('search', 'form', $themes, 'nav_search', 0);
   // Open challenges block on home page.
-  collabco_core_update_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_upper', 14);
+  collabco_core_update_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_lower', 14);
   // footer.
   collabco_core_update_block('collabco_home', 'footer', $themes, 'footer-1-col', 1);
   collabco_core_update_block('collabco_home', 'privacy', $themes, 'footer-2-col', 1);

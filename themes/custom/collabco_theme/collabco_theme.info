@@ -60,6 +60,10 @@ scripts[] = 'assets/javascripts/bootstrap/transition.js'
 ; Disable the CDN provider so compiled source files can be used.
 settings[bootstrap_cdn] = ''
 settings[bootstrap_breadcrumb] = 0
+settings[bootstrap_popover_trigger]['hover'] = 'hover'
+settings[bootstrap_popover_trigger]['focus'] = 'focus'
+settings[bootstrap_popover_trigger]['click'] = 0
+settings[bootstrap_popover_container] = 'span.pop'
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Custom Script
