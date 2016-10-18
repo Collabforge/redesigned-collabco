@@ -519,7 +519,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<p>This is where you can view the current Challenges set by our Executive, which address specific issues in our Organisation.</p>
+<p>This is where you can view current Challenges, which address specific issues in our organisation.</p>
 
 <h3>Open Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
@@ -691,7 +691,7 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-flag"></i>
-<p>This is where you can view the current Challenges set by our Executive, which address specific issues in our Organisation.</p>
+<p>This is where you can view current Challenges, which address specific issues in our organisation.</p>
 
 <h3>Open Challenges</h3>'),
     t('<a href="/open-challenges" class="btn-green" >View all</a>
