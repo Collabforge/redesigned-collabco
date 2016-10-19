@@ -1,0 +1,12 @@
+name = collabco_democontent_ideas
+description = Contents ideas demo content
+core = 7.x
+package = collabco content
+dependencies[] = defaultcontent
+features[content][] = cubicle_idea
+features[content][] = design_idea
+features[content][] = paper_clip_idea
+features[content][] = pedal_idea
+features[content][] = solar_idea
+features[features_api][] = api:2
+features_exclude[dependencies][defaultcontent] = defaultcontent
