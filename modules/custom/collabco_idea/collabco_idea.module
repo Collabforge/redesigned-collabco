@@ -24,68 +24,6 @@ function collabco_idea_init() {
 }
 
 /**
- * Implementation of hook_og_membership_update()
- * Just for backward compatibility.
- * @TODO should be removed for a fresh product.
- */
-function collabco_idea_og_membership_update(OgMembership $og_membership) {
-  // Group Type must be node and enity type must be user.
-  if ($og_membership->group_type != 'node' || $og_membership->entity_type != 'user') {
-    return;
-  }
-  $gid = $og_membership->gid;
-  $uid = $og_membership->etid;
-  _collabco_idea_og_membership_update($gid, $uid);
-}
-
-/**
- * Implementation of hook_og_membership_insert()
- */
-function collabco_idea_og_membership_insert(OgMembership $og_membership) {
-  // Group Type must be node and enity type must be user.
-  if ($og_membership->group_type != 'node' || $og_membership->entity_type != 'user') {
-    return;
-  }
-  $gid = $og_membership->gid;
-  $uid = $og_membership->etid;
-  _collabco_idea_og_membership_update($gid, $uid);
-
-}
-
-function _collabco_idea_og_membership_update($gid, $uid) {
-  $node = node_load($gid);
-  if ($node->uid == $uid) {
-    _collabco_idea_role_admin_grant($gid, $uid);
-  }
-}
-
-function _collabco_idea_role_admin_grant($gid, $uid) {
-  $rid = _collabco_idea_get_rid_by_role_name($gid, OG_ADMINISTRATOR_ROLE);
-  og_role_grant('node', $gid, $uid, $rid);
-}
-
-/**
- * @param $gid Gr
- *  Group id
- * @param $role_name
- * The role name; you could also use standard OG role names:
- * - OG_ADMINISTRATOR_ROLE
- * - OG_AUTHENTICATED_ROLE
- * - OG_ANONYMOUS_ROLE
- * * @return role id for a specified role
- */
-function _collabco_idea_get_rid_by_role_name($gid, $role_name) {
-  $node = node_load($gid);
-  $roles = og_roles('node', $node->type, $gid);
-  foreach ($roles as $_rid=>$_rname) {
-    if ($_rname == $role_name) {
-      return $_rid;
-    }
-  }
-  return;
-}
-
-/**
  * Implements hook_node_insert().
  */
 function collabco_idea_node_insert($node) {
@@ -166,12 +104,12 @@ function collabco_idea_block_info() {
     'weight' => 1,
   );
   $blocks['header_archived_ideas'] = array(
-  'info' => t('Archived Ideas page header'),
-  'region' => 'content_top',
-  'pages' => 'ideas_archived',
-  'visibility' => 1,
-  'status' => TRUE,
-  'weight' => 3,
+    'info' => t('Archived Ideas page header'),
+    'region' => 'content_top',
+    'pages' => 'ideas_archived',
+    'visibility' => 1,
+    'status' => TRUE,
+    'weight' => 3,
   );
   return $blocks;
 }
@@ -197,15 +135,15 @@ function collabco_idea_block_view($delta = '') {
       $counts = flag_get_counts('node', $nid);
       $uid = $node->uid;
       $node_author = user_load($uid);
-      $user_flags = flag_get_user_flags('node',$node->nid);
-        $follow_flag  = FALSE;
-        $support_flag = FALSE;
-        if (array_key_exists('following_idea', $user_flags)){
-          $follow_flag = TRUE;
-        }
-        if (array_key_exists('support_idea', $user_flags)){
-          $support_flag = TRUE;
-        }
+      $user_flags = flag_get_user_flags('node', $node->nid);
+      $follow_flag  = FALSE;
+      $support_flag = FALSE;
+      if (array_key_exists('following_idea', $user_flags)) {
+        $follow_flag = TRUE;
+      }
+      if (array_key_exists('support_idea', $user_flags)) {
+        $support_flag = TRUE;
+      }
       $variables = array(
         'nid' => $nid,
         'idea_title' => $node->title,
@@ -228,7 +166,6 @@ function collabco_idea_block_view($delta = '') {
 
       if (!empty($node->field_featured_picture[LANGUAGE_NONE])) {
         $image = reset($node->field_featured_picture[LANGUAGE_NONE]);
-      //$url = image_style_url('', $image['uri']);
         $wrapper = file_stream_wrapper_get_instance_by_uri($image['uri']);
         $url = $wrapper->getExternalUrl();
       }
@@ -275,7 +212,7 @@ function collabco_idea_block_view($delta = '') {
       $show_promote_link = TRUE;
       if (isset($node->field_idea_state[LANGUAGE_NONE])) {
         $idea_state = $node->field_idea_state[LANGUAGE_NONE];
-         if (is_array($idea_state)){
+        if (is_array($idea_state)) {
           foreach ($idea_state as $key => $value) {
             if ($value['value'] == 'promoted') {
               $show_promote_link = FALSE;
@@ -284,41 +221,41 @@ function collabco_idea_block_view($delta = '') {
         }
       }
       if (user_access('administer group') or og_user_access('node', $node->nid, 'administer group')) {
-          $links[] = array(
-            'href' => sprintf('node/%d/edit', $node->nid)
-            , 'title' => 'Edit this idea'
-           ,'attributes' => array('class' => array('btn btn-default icon-pencil'))
-           ,
-          );
+        $links[] = array(
+          'href' => sprintf('node/%d/edit', $node->nid)
+          , 'title' => 'Edit this idea'
+          , 'attributes' => array('class' => array('btn btn-default icon-pencil'))
+          ,
+        );
       }
       if ($show_promote_link) {
         global $user;
-        if(user_access('administer') || (is_array($user->roles) && in_array('Moderator', $user->roles))) {        
-            $links[] = array(
+        if (user_access('administer') || (is_array($user->roles) && in_array('Moderator', $user->roles))) {
+          $links[] = array(
             'href' => sprintf('node/%d/promote-to-collaboration', $node->nid)
             , 'title' => 'Promote to Co-lab'
-            ,'attributes' => array('class' => array('btn btn-default icon-beaker', 'promote-to-collaboration'))
+            , 'attributes' => array('class' => array('btn btn-default icon-beaker', 'promote-to-collaboration'))
             ,
           );
         }
       }
-       
-      
       $attributes = array('class' => array('btn', 'btn-actions'));
-      if (count($links)>0){
+      if (count($links) > 0) {
         $output = theme('links', array(
           'links' => $links,
           'attributes' => $attributes,
-          ));
-         $block['content'] = $output;
+        ));
+        $block['content'] = $output;
       }
       break;
-    case 'collaborations' : 
-        if (arg(2) == NULL) {
-          $variables['nid'] = $node->nid;
-          $block['content'] = theme('collaborations_block', $variables);
-        }
-    break; 
+
+    case 'collaborations':
+      if (arg(2) == NULL) {
+        $variables['nid'] = $node->nid;
+        $block['content'] = theme('collaborations_block', $variables);
+      }
+      break;
+
     case 'single_idea_actions':
       if (arg(2) == NULL) {
         $variables['nid'] = $node->nid;
@@ -326,8 +263,8 @@ function collabco_idea_block_view($delta = '') {
       }
       break;
 
-      case 'header_archived_ideas':
-        $block['content'] = theme('header_archived_ideas', $variables);
+    case 'header_archived_ideas':
+      $block['content'] = theme('header_archived_ideas', $variables);
       break;
   }
   return $block;
@@ -355,11 +292,10 @@ function theme_team_block($variables = array()) {
   $gid = $variables['nid'];
   $output = views_embed_view('team_belonging_to_idea', 'default', $variables['nid']);
   if (user_access('administer group') || og_user_access('node', $gid, 'add user')) {
-     $add_member_url = "/node/$gid/add/member";    
-     $link_output = "<div class='add-team-member'> <a class='btn btn-default' href=$add_member_url>Add a Team Member</a></div";
+    $add_member_url = "/node/$gid/add/member";
+    $link_output = "<div class='add-team-member'> <a class='btn btn-default' href=$add_member_url>Add a Team Member</a></div";
     $output = $output . $link_output;
   }
-  
   return $output;
 }
 
@@ -369,7 +305,7 @@ function theme_team_block($variables = array()) {
  * @ingroup themeable
  */
 function theme_collaborations_block($variables = array()) {
-  // Execute the View that returns title of all collaborations belonging to this idea.
+  // Embed view that returns title of all collaborations belonging to this idea.
   $output = views_embed_view('collaborations_of_an_idea', 'default', $variables['nid']);
   return $output;
 }
@@ -397,7 +333,7 @@ function collabco_idea_theme() {
     'single_idea_actions_template' => array(
       'variables' => array(),
     ),
-     'header_archived_ideas' => array(
+    'header_archived_ideas' => array(
       'variables' => array(),
       'template' => 'header_archived_ideas',
     ),
@@ -546,9 +482,9 @@ function collabco_idea_promote_to_collaboration($node) {
       drupal_set_message($e->getMessage());
     }
   }
-  // Update the Idea state to Promoted
+  // Update the Idea state to Promoted.
   if (isset($node->field_idea_state)) {
-    $promote_value = array('value' =>'promoted');
+    $promote_value = array('value' => 'promoted');
     $node->field_idea_state[LANGUAGE_NONE][] = $promote_value;
     node_save($node);
   }
@@ -569,13 +505,12 @@ function collabco_idea_promote_to_collaboration($node) {
 function theme_single_idea_actions_template(&$variables) {
   $gid = $variables['nid'];
   $links = array();
-  
   $links[] = array(
-      'href' => sprintf('idea-supporters/%d', $gid)
-      , 'title' => 'View Idea Supporters'
-      , 'classes' => array()
-      ,
-    );
+    'href' => sprintf('idea-supporters/%d', $gid)
+    , 'title' => 'View Idea Supporters'
+    , 'classes' => array()
+    ,
+  );
   $attributes = array('class' => array('nav', 'nav-tabs'));
   $variables['links'] = $links;
   $output = theme('links', array(
@@ -595,7 +530,6 @@ function collabco_idea_form_idea_node_form_alter(&$form, &$form_state) {
     $lang = LANGUAGE_NONE;
     $form['field_challenge_value'][$lang]['#default_value'][] = arg(3);
   }
- // $form['field_challenge_value']['#access'] = FALSE;
   array_unshift($form['#submit'], 'collabco_idea_form_idea_node_form_submit');
 }
 
