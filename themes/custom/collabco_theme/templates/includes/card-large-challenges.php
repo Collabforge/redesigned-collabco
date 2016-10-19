@@ -2,14 +2,12 @@
  $flag_vars = array(
    'after_flagging' => TRUE,
  ); 
-$status = collabco_challenge_status_string($tid);
-$label = $status;
-$challenge_class = "closed";
-if ($status == 'Open')
-  $challenge_class ="open";
-$create_idea_url = "/node/add/idea/$tid";
-$user_flags = flag_get_user_flags('taxonomy_term',$tid);
-$follow_flag  = FALSE;
+ $status = collabco_challenge_status_string($tid);
+ $label = $status;
+ $challenge_class = ($status == 'Open' || $status == 'Ongoing') ? 'open' : 'closed';
+ $create_idea_url = "/node/add/idea/$tid";
+ $user_flags = flag_get_user_flags('taxonomy_term',$tid);
+ $follow_flag  = FALSE;
 if (array_key_exists('challenge_flag', $user_flags)){
   $follow_flag = TRUE;
 }
@@ -69,7 +67,7 @@ $total_items = count( $view->result );
       <span class="value"><?php echo $fields['ideas_count_in_challenge']->content; ?></span>
       <span class='flag-wrapper'><?php echo $term_link ?></span>
       </div>
-      <?php if ($status == 'Open') { ?>
+      <?php if ($challenge_class == 'open') { ?>
       <div class="ideas-challenge card-large-link">
         <a href='<?php echo $create_idea_url ?>' class="icon-dialogue"></a>
         <span class='flag-wrapper'><a href='<?php echo $create_idea_url ?>' class="ideas-link">create idea</a></span>
