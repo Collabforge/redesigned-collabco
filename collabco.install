@@ -130,7 +130,7 @@ function _collabco_default_blocks() {
   collabco_core_update_block('collabco_home', 'header_home', $themes, 'content_top', 0);
   collabco_core_update_block('collabco_profile', 'header_user_profile_block', $themes, 'nav_actions', 0);
   collabco_core_update_block('collabco_profile', 'header_mobile_user_block',$themes,'nav_actions_mobile',0);
-    collabco_core_update_block('search', 'form', $themes, 'nav_search', 0);
+  collabco_core_update_block('search', 'form', $themes, 'nav_search', 0);
   // Open challenges block on home page.
   collabco_core_update_block('views', '3ae42aa206ab98b6a1a3d7b5e905e19d', $themes, 'content_lower', 14);
   // footer.
@@ -141,7 +141,9 @@ function _collabco_default_blocks() {
   collabco_core_update_block('collabco_challenge', 'add_to_brainstorm', $themes, 'content_middle', 0);
   collabco_core_update_block('views', 'closed_challenges-block', $themes, 'content_bottom', 0);
   collabco_core_update_block('views', 'archieved_ideas-block', $themes, 'content_bottom', 10);
-  // Individual Challenge page.
+  //latest ideas challenge block
+   collabco_core_update_block('views', '4c7e53542b2c60de5c995bef592abef4', $themes, 'content_lower', 14);
+   // Individual Challenge page.
   collabco_core_update_block('views', 'challenge_page_header-block', $themes, 'full_width_top', 0);
   collabco_core_update_block('views', 'latest_ideas-block', $themes, 'content_lower', 14);
   // Winning ideas belonging to a challenge.
@@ -151,7 +153,7 @@ function _collabco_default_blocks() {
   // Myhub page.
   collabco_core_update_block('collabco_myhubs', 'header_myhubs', $themes, 'content_top', -40);
   collabco_core_update_block('collabco_myhubs', 'myhub_links', $themes, 'content_upper', -41);
-  // Myhub updates.
+   // Myhub updates.
   collabco_core_update_block('views', '2b14d775fef07b47e68c4e559319dd47', $themes, 'content', 14);
   collabco_core_update_block('quicktabs', 'my_hub_ideas', $themes, 'content', 14);
   collabco_core_update_block('quicktabs', 'my_hub_collaborations', $themes, 'content', 14);
@@ -331,6 +333,11 @@ function collabco_default_content() {
       'title' => st('Default Basic pages'),
       'type' => 'module',
       'key' => 'collabco_content_basic_page',
+    ),
+    5 => array(
+      'title' => st('Demo Ideas'),
+      'type' => 'module',
+      'key' => 'collabco_democontent_ideas',
     ),
   );
 }

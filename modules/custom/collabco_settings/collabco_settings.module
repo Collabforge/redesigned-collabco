@@ -8,13 +8,13 @@
  * Implements hook_variable_group_info().
  */
 function collabco_settings_variable_group_info() {
-  $groups['collabco_challenge'] = array(
+  $groups['collabco_challenge_settings'] = array(
     'title' => t('Collabco Challenge'),
     'description' => t('Collabco Challenge settings'),
     'access' => 'administer site configuration',
     'path' => array('admin/config/collabco-settings/challenge'),
   );
-  $groups['collabco_collaboration'] = array(
+  $groups['collabco_collaboration_settings'] = array(
     'title' => t('Collabco collaboration'),
     'description' => t('Collabco Collaboration settings'),
     'access' => 'administer site configuration',
@@ -32,7 +32,7 @@ function collabco_settings_variable_info($options) {
     'description' => t('Select the period to check for inactivity within Collaboartion for notifying community moderators'),
     'type' => 'select_number',
     'default' => 30,
-    'group' => 'collabco_collaboration',
+    'group' => 'collabco_collaboration_settings',
     'options' => array(1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 80,
       90, 100, 150, 200, 250, 300, 350, 400, 500,
     )
@@ -43,7 +43,7 @@ function collabco_settings_variable_info($options) {
     'description' => t('Select the period to check for inactivity within Collaboration for archiving &  notification'),
     'type' => 'select_number',
     'default' => 90,
-    'group' => 'collabco_collaboration',
+    'group' => 'collabco_collaboration_settings',
     'options' => array(1, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 80,
       90, 100, 150, 200, 250, 300, 350, 400, 500,
     )
@@ -51,9 +51,9 @@ function collabco_settings_variable_info($options) {
   );
   $variable['collabco_ongoing_challenge'] = array(
     'title' => t('Select the on-going or miscellaneous challenge'),
-    'type' => 'options',
+    'type' => 'select',
     'default' => 1,
-    'group' => 'collabco_challenge',
+    'group' => 'collabco_challenge_settings',
     'options callback' => 'challenge_list',
   );
   return $variable;
@@ -90,14 +90,14 @@ function collabco_settings_menu() {
     'description' => 'Challenge Settings for Collabco',
     'access arguments' => array(TRUE),
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('variable_group_form', 'collabco_challenge'),
+    'page arguments' => array('variable_group_form', 'collabco_challenge_settings'),
   );
   $items['admin/config/collabco-settings/collaboration'] = array(
     'title' => 'Collaboration Settings',
     'description' => 'Collaboration Settings for Collabco',
     'access arguments' => array(TRUE),
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('variable_group_form', 'collabco_collaboration'),
+    'page arguments' => array('variable_group_form', 'collabco_collaboration_settings'),
   );
   return $items;
 }

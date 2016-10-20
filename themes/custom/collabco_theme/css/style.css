@@ -7660,7 +7660,7 @@ button .glyphicon {
   font-size: 25px;
   padding: 2px 6px 4px 5px; }
 
-.card.large.challenges footer > div {
+.card.large.challenges.closed footer > div {
   width: 50%; }
 
 .card.large.total-items-1 {

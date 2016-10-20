@@ -527,7 +527,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/open-challenges" class="btn-green" >View all</a>
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/open-challenges" class="btn btn-default" >View all</a>
 <br>
 <br>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
@@ -694,7 +694,7 @@ function collabco_views_feature_views_default_views() {
 <p>This is where you can view current Challenges, which address specific issues in our organisation.</p>
 
 <h3>Open Challenges</h3>'),
-    t('<a href="/open-challenges" class="btn-green" >View all</a>
+    t('<a href="/open-challenges" class="btn btn-default" >View all</a>
 <br>
 <br>'),
     t('Follow Challenge'),
@@ -1073,7 +1073,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<div class="more-link">
-  <a href="/featured-collaborations">
+  <a class="btn btn-default" href="/featured-collaborations">
     View All  </a>
 </div>';
   $handler->display->display_options['footer']['area']['format'] = 'php_code';
@@ -1308,7 +1308,7 @@ function collabco_views_feature_views_default_views() {
 <p>Have the skills and resources to develop these idea into projects? Share them here!</p>
 <h3>Featured Collaborations</h3>'),
     t('<div class="more-link">
-  <a href="/featured-collaborations">
+  <a class="btn btn-default" href="/featured-collaborations">
     View All  </a>
 </div>'),
     t('Follow Collaboration'),
