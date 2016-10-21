@@ -8262,13 +8262,13 @@ header#navigation {
 
 .alert-badge {
   position: absolute;
-  margin-top: -460px;
-  margin-left: 193px;
+  margin-top: -47px;
+  margin-left: -525px;
   background: -webkit-radial-gradient(center -9px, circle closest-side, white 0, red 26px);
   background: radial-gradient(center -9px, circle closest-side, white 0, red 26px);
   background: -webkit-radial-gradient(center -9px, circle, white 0, red 26px);
   background-color: red;
-  border: 2px solid white;
+  border: 1px solid white;
   -webkit-border-radius: 50%;
           border-radius: 50%;
   -webkit-box-shadow: 1px 1px 1px black;
