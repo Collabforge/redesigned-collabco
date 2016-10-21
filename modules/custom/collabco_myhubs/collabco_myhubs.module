@@ -104,7 +104,7 @@ function collabco_myhubs_block_info() {
   );
   $blocks['myhub_updates_alert'] = array(
     'info' => t('Collabco Myhub Updates Alert'),
-    'region' => 'content_top',
+    'region' => 'nav_actions',
     'visibility' => 0,
     'status' => TRUE,
   );
