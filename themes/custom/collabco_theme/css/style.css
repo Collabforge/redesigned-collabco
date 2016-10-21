@@ -8884,45 +8884,6 @@ nav.slider-mobile {
     #block-collabco-myhubs-myhub-links .nav {
       float: right; } }
 
-#admin-menu .control-label {
-  display: none; }
-
-#admin-menu a {
-  text-transform: capitalize;
-  font-family: "Lato", sans-serif;
-  font-weight: bold;
-  font-size: 12px; }
-
-#admin-menu .admin-menu-icon {
-  background-color: #fff; }
-
-#admin-menu .dropdown a {
-  padding: 10px 12px;
-  color: #fff; }
-  #admin-menu .dropdown a:hover {
-    background: rgba(255, 255, 255, 0.1); }
-
-#admin-menu .dropdown li li,
-#admin-menu .dropdown li li.expandable {
-  opacity: 1;
-  background-color: #3e454d; }
-
-#admin-menu .dropdown li > li.expandable {
-  background: url(../assets/img/background/arrow.png) no-repeat 145px 6px; }
-
-#admin-menu .dropdown li li a {
-  border-top: none; }
-
-#admin-menu #admin-menu-menu > li > ul {
-  margin-top: 10px; }
-
-#admin-menu .dropdown li li.expandable ul {
-  margin: -35px 0 0 165px; }
-
-#admin-menu-wrapper {
-  border-bottom: 1px solid #fff;
-  background-color: #3e454d; }
-
 .front.logged-in .content-top {
   background-color: #fff;
   color: #333333;
