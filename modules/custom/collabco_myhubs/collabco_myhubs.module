@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Core funcitons for the Collabco dashboard module.
+ * Core functions for the Collabco dashboard module.
  */
 
 /**
@@ -30,8 +30,6 @@ function collabco_myhubs_menu() {
     'access arguments' => array('access collabco dashboard'),
     'page callback' => 'collabco_myhubs_blank_page',
   );
-  
-
   return $items;
 }
 
@@ -104,6 +102,12 @@ function collabco_myhubs_block_info() {
     'visibility' => 1,
     'status' => TRUE,
   );
+  $blocks['myhub_updates_alert'] = array(
+    'info' => t('Collabco Myhub Updates Alert'),
+    'region' => 'content_top',
+    'visibility' => 0,
+    'status' => TRUE,
+  );
   return $blocks;
 }
 
@@ -132,6 +136,26 @@ function collabco_myhubs_block_view($delta = '') {
     case 'myhub_welcome':
       $data['user_name'] = $first_name;
       $content = theme('my_hubs_welcome_template', $data);
+      break;
+    case 'myhub_updates_alert':
+      global $user;
+      if (arg(0) == "myhub") {
+        $myhub_timestamp = variable_get('collabco_myhub_timestamp', array());
+        $myhub_timestamp[$user->uid] = REQUEST_TIME;
+        variable_set('collabco_myhub_timestamp', $myhub_timestamp);
+      }
+      $myhub_timestamp = variable_get('collabco_myhub_timestamp', array());
+      $uidtime = (isset($myhub_timestamp[$user->uid])) ? $myhub_timestamp[$user->uid] : 0;
+      $view = views_get_view('messages_of_content_followed_by_user');
+      $view->execute();
+      $objects = $view->result;
+      $count = 0;
+      foreach ($objects as $key=>$value) {
+        if ($value->message_timestamp > $uidtime) {
+          $count++;
+        }
+      }
+      $content = (isset($count) && $count > 0) ?  "<div class='alert-badge'>" . $count . "</div>" : "";
       break;
   }
   $block['content'] = $content;

@@ -200,4 +200,24 @@
   }
 }
 
+.alert-badge {
+    position: absolute;
+    margin-top: -460px;
+    margin-left: 193px;
+    background: radial-gradient( center -9px, circle closest-side, white 0, red 26px );
+    background: -moz-radial-gradient( center -9px, circle closest-side, white 0, red 26px );
+    background: -ms-radial-gradient( center -9px, circle closest-side, white 0, red 26px );
+    background: -o-radial-gradient( center -9px, circle closest-side, white 0, red 26px );
+    background: -webkit-radial-gradient( center -9px, circle, white 0, red 26px );
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px black;
+    color: white;
+    font: bold 13px Helvetica, Verdana, Tahoma;
+    height: 25px;
+    padding-top: 4px;
+    text-align: center;
+    width: 25px;
+}
 

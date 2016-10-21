@@ -8260,6 +8260,26 @@ header#navigation {
   .not-logged-in .nav-login a:hover {
     color: #fff; }
 
+.alert-badge {
+  position: absolute;
+  margin-top: -460px;
+  margin-left: 193px;
+  background: -webkit-radial-gradient(center -9px, circle closest-side, white 0, red 26px);
+  background: radial-gradient(center -9px, circle closest-side, white 0, red 26px);
+  background: -webkit-radial-gradient(center -9px, circle, white 0, red 26px);
+  background-color: red;
+  border: 2px solid white;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 1px black;
+          box-shadow: 1px 1px 1px black;
+  color: white;
+  font: bold 13px Helvetica, Verdana, Tahoma;
+  height: 25px;
+  padding-top: 4px;
+  text-align: center;
+  width: 25px; }
+
 @media only screen and (max-width: 768px) {
   header#navigation a {
     color: #fff;
