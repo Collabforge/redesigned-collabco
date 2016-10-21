@@ -209,3 +209,26 @@ function collabco_theme_preprocess_page(&$variables) {
     $variables['body_classes'] .= " teens" . arg(2);
   }
 }
+
+
+/**
+ * Implements template_process_html().
+ *
+ * Override or insert variables into the page template for HTML output.
+ */
+function collabco_theme_process_html(&$variables) {
+ // Hook into color.module.
+ if (module_exists('color')) {
+ _color_html_alter($variables);
+ }
+}
+
+/*
+ * Implements template_process_page().
+ */
+function collabco_theme_process_page(&$variables, $hook) {
+ // Hook into color.module.
+ if (module_exists('color')) {
+ _color_page_alter($variables);
+ }
+}
