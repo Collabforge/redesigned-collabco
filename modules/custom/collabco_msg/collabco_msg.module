@@ -333,7 +333,8 @@ function collabco_msg_cron() {
       foreach ($terms as $term) {
         // Pass in tid to force loading of complete term, not just base props.
         $days_left = collabco_challenge_days_left($term->tid);
-        if ($days_left > 0 && $days_left <= 2.0 && $term->tid!=3) {
+        $on_going_challenge_tid = variable_get('collabco_ongoing_challenge',0);
+        if ($days_left > 0 && $days_left <= 2.0 && $term->tid!=$on_going_challenge_tid) {
           $message = collabco_msg_get_message('term_ends_soon', $term->tid);
           if (!$message) {
             $message = message_create('term_ends_soon', array('uid' => 1));
