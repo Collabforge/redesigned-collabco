@@ -2,7 +2,8 @@
 ##Installation instructions
 
 ###For Site Installers
-1. Run this command in an empty folder: `drush make https://github.com/Collabforge/redesigned-collabco/raw/master/stub.make`
+1. Run this command in an empty folder:
+`drush make https://github.com/Collabforge/redesigned-collabco/raw/master/stub.make`
 
 ###For Developers
 1. Run this command in an empty folder: `drush make https://github.com/Collabforge/redesigned-collabco/raw/master/stub.make`
