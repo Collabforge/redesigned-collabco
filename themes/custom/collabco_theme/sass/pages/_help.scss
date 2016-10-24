@@ -1,8 +1,8 @@
 //Help page
 
-.page-node-99 {
+.help {
   .content-top {
-    @include bg-gradient-pink-orange('', '../assets/img/background/header-myhub-bg.jpg', .9);
+    @include bg-gradient-pink-orange('', '', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto ,cover;
     padding: 28px 0; 
