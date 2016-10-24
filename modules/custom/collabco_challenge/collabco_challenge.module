@@ -85,13 +85,14 @@ function collabco_challenge_block_view($delta = '') {
       elseif (arg(0) == 'node' && is_numeric(arg(1))) {
         $node_id = intval(arg(1));
         // For help page.
-        if ($node_id == '99') {
+        $path_alias =  drupal_get_path_alias('node/' . $node_id);
+        if ($path_alias == 'help') {
           $variables['title'] = 'Help';
           $variables['sub_title'] = '';
           $variables['icon_class'] = 'icon-squares';
         }
         // For About us page.
-        elseif ($node_id == '98') {
+        elseif ($path_alias == 'about') {
           $variables['title'] = 'About';
           $variables['sub_title'] = '';
           $variables['icon_class'] = 'icon-squares';

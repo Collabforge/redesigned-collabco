@@ -210,6 +210,18 @@ function collabco_theme_preprocess_page(&$variables) {
   }
 }
 
+/**
+ * Implements template_preprocess_html().
+ */
+function collabco_theme_preprocess_html(&$variables) {
+  $path = drupal_get_path_alias();
+  $aliases = explode('/', $path);
+  if (in_array('about', $aliases) || in_array('help', $aliases)) {
+    foreach($aliases as $alias) {
+      $variables['classes_array'][] = drupal_clean_css_identifier($alias);
+    } 
+  }
+}
 
 /**
  * Implements template_process_html().

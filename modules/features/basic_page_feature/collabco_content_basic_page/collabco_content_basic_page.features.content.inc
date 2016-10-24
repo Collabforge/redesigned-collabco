@@ -114,7 +114,7 @@ Idea collaboration</li>
 
 <p><strong>Who can see my profile?</strong></p>
 
-<p>Anyone who has access to an active Department of Employment IMS account can view your profile. It can help other users match you to Challenges or ideas you may have expertise or interest in.</p>
+<p>Anyone who has access to an active Collabco IMS account can view your profile. It can help other users match you to Challenges or ideas you may have expertise or interest in.</p>
 
 <p>&nbsp;</p>
 
@@ -243,7 +243,7 @@ Idea collaboration</li>
 
 <p><strong>Who will see my ideas?</strong></p>
 
-<p>Anyone with active Department of Employment IMS account can view, support, share and comment on your idea. Challenges have a sponsor, who will follow the progress of the challenge and choose the winning idea(s).</p>
+<p>Anyone with active Collabco IMS account can view, support, share and comment on your idea. Challenges have a sponsor, who will follow the progress of the challenge and choose the winning idea(s).</p>
 
 <p><strong>Can I remain anonymous when submitting an idea?</strong></p>
 
