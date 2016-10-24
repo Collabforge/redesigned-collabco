@@ -250,7 +250,7 @@ function collaboco_challenge_winning_ideas($term_or_tid) {
  */
 function collabco_challenge_is_brainstorm($term_or_tid) {
   $tid = is_numeric($term_or_tid) ? $term_or_tid : $term_or_tid->tid;
-  $on_going_challenge = variable_get('collabco_ongoing_challenge','1');
+  $on_going_challenge = variable_get('collabco_ongoing_challenge','0');
   return $tid == $on_going_challenge;
 }
 
