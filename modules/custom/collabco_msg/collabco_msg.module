@@ -432,7 +432,7 @@ function _collabco_msg_flesh_out_params($subject, &$params) {
   $node = isset($subject->cid) ? node_load($nid) : $subject;
   $params['!content_link'] = "<a href='$node_url'>$node->title</a>";
 
-  if (isset($subject->cid)) {
+  if (isset($subject->cid) && ($subject->cid !=0)) {
     // We're dealing with a comment
     $comment = $subject;
     $comment_url = "$base_url/comment/$comment->cid";
