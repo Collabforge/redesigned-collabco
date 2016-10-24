@@ -113,7 +113,7 @@ idea-supporters/*',
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['term_queue-0'] = array(

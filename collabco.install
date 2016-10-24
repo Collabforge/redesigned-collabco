@@ -172,6 +172,8 @@ function _collabco_default_blocks() {
   collabco_core_update_block('collabco_collaboration', 'single_collaboration_breadcrumb', $themes, 'content_upper', 0);
   collabco_core_update_block('collabco_collaboration', 'edit_collaboration', $themes, 'sidebar_second_top', 0);
   collabco_core_update_block('collabco_collaboration', 'challenge', $themes, 'sidebar_second', -10);
+  //Setting standard header for about, help and others
+  collabco_core_update_block('collabco_challenge', 'header_standard', $themes, 'content_top', -40);
 }
 
 /**
