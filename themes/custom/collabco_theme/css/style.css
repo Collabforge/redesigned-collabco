@@ -8247,6 +8247,9 @@ header#navigation {
 #navigation-profile-details {
   top: 3px; }
 
+.nav-actions .user-picture img {
+  margin-left: 8px; }
+
 .user-picture .img-responsive {
   -webkit-border-radius: 50%;
           border-radius: 50%;
