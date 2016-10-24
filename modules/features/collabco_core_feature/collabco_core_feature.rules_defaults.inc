@@ -48,9 +48,9 @@ function collabco_core_feature_default_rules_configuration() {
             "key" : "bug_report",
             "to" : "webmaster@collabcoapp.com",
             "bcc" : "webmaster@collabforge.com",
-            "subject" : "New bug report on govIMS",
-            "body" : "Hi,\\r\\n\\r\\nA new bug report has been filed on the govIMS.\\r\\n\\r\\nView here: [site:url]node\\/44\\/webform-results\\r\\n\\r\\nThank you,\\r\\nDoE IMS\\r\\n\\r\\n",
-            "plaintext" : "Hi,\\r\\n\\r\\nA new bug report has been filed on the govIMS.\\r\\n\\r\\nView here: [site:url]node\\/44\\/webform-results\\r\\n\\r\\nThank you,\\r\\nDoE IMS\\r\\n\\r\\n",
+            "subject" : "New bug report on Collabco IMS",
+            "body" : "Hi,\\r\\n\\r\\nA new bug report has been filed on the Collabco IMS.\\r\\n\\r\\nView here: [site:url]node\\/44\\/webform-results\\r\\n\\r\\nThank you,\\r\\nDoE IMS\\r\\n\\r\\n",
+            "plaintext" : "Hi,\\r\\n\\r\\nA new bug report has been filed on the Collabco IMS.\\r\\n\\r\\nView here: [site:url]node\\/44\\/webform-results\\r\\n\\r\\nThank you,\\r\\nDoE IMS\\r\\n\\r\\n",
             "language" : [ "" ]
           }
         }
