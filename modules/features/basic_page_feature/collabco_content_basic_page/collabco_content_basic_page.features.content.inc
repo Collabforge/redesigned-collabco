@@ -395,7 +395,7 @@ Idea collaboration</li>
 <p><strong>How do I change my personal details?</strong></p>
 <p>You can change your details on your profile page. Here you can upload a biography, photo, job title and your key skills.</p>
 <p><strong>Who can see my profile?</strong></p>
-<p>Anyone who has access to an active govIMS account can view your profile. It can help other users match you to Challenges or ideas you may have expertise or interest in.</p>
+<p>Anyone who has access to an active Collabco IMS account can view your profile. It can help other users match you to Challenges or ideas you may have expertise or interest in.</p>
 <p>&nbsp;</p>
 <h4>Innovation Achievements</h4>
 <p><strong>What is an Innovation Achievement?</strong></p>

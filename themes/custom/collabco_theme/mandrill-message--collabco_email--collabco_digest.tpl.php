@@ -50,7 +50,7 @@
                   <tr>
                    <td valign='top' style='padding-top:15px; margin-bottom: 15px; padding-right:18px;padding-bottom:9px;padding-left:18px;word-break:break-word;color:#656565;font-family:Verdana;font-size:12px;line-height:150%;text-align:center'>
                     <p>If you would like to change your email notification settings, please visit the website, click your name in the top-right and click 'Edit Your Profile'.</p>
-                    <p style='font-style: italic;'>© Copyright 2016. govIMS.</p>
+                    <p style='font-style: italic;'>© Copyright 2016. Collabco IMS.</p>
                   </td>
                 </tr>
 

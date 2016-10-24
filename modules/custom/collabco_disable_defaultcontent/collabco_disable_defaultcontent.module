@@ -46,7 +46,7 @@ function collabco_disable_defaultcontent_admin_form() {
 function collabco_disable_defaultcontent_disable_modules($form, &$form_state) {
   return confirm_form(
     $form,
-    'Disable govIMS default content?',
+    'Disable Collabco IMS default content?',
     '',
     'Once you disable default content it cannot be re-enabled.'
   );

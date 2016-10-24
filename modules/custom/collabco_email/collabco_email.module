@@ -186,7 +186,7 @@ function collabco_email_mail($key, &$message, $params) {
   require_once 'collabco_email_content.include';
   $language = $message['language'];
   $params['language'] = $language;
-  $message['from_name'] = variable_get('site_name', 'govIMS');
+  $message['from_name'] = variable_get('site_name', 'Collabco IMS');
 
   $output = collabco_email_get_digest($params);
 

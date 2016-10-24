@@ -1,7 +1,7 @@
 name = Collabco
 description = A distribution for Ideas Management System
-package = govIMS Profile
-distribution_name = govIMS
+package = Collabco Profile
+distribution_name = Collabco_IMS
 exclusive = TRUE
 core = 7.x
 api = 2
