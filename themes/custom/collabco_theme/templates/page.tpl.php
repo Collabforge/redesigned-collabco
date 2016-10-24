@@ -115,7 +115,7 @@
          <!--     <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
               <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.png" alt="Collabco"/>
             </a> -->
-          <h1>GOVIMS</h1>
+          <h1>Collabco IMS</h1>
 
       </div>
         <div class="search col-xs-3">
@@ -144,7 +144,7 @@
     <footer>
    <!--    <div class="logo"><img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.png" alt="Collabco"/>
       </div> -->
-      <h2>GOVIMS</h2>
+      <h2>Collabco IMS</h2>
       <p class="copyright">© Copyright 2016. Collabco</p>
     </footer>
 </nav>
