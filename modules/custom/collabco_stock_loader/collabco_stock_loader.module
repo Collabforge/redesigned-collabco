@@ -12,7 +12,7 @@ function collabco_stock_loader_form_alter(&$form, &$form_state, $form_id) {
     if(isset($form['field_featured_picture'])) {
       $form['field_featured_picture']['und'][0]['#title'] = "Featured Image";
       //$form['field_featured_picture']['und'][0]['#description'] = include('search.html');
-      $form['field_featured_picture']['#attached']['js'] = array(drupal_get_path('module', 'collabco_core') . '/inc/ajax.js',);
+      $form['field_featured_picture']['#attached']['js'] = array(drupal_get_path('module', 'collabco_stock_loader') . '/inc/ajax.js',);
       $form['field_featured_picture']['#suffix'] = '
       <input type="text" name="input_val" id="input_val" >
 
@@ -28,7 +28,7 @@ function collabco_stock_loader_form_alter(&$form, &$form_state, $form_id) {
     if(isset($form['field_featured_hub_image'])) {
             $form['field_featured_hub_image']['und'][0]['#title'] = "Featured Image";
       //$form['field_featured_picture']['und'][0]['#description'] = include('search.html');
-      $form['field_featured_hub_image']['#attached']['js'] = array(drupal_get_path('module', 'collabco_core') . '/inc/ajax.js',);
+      $form['field_featured_hub_image']['#attached']['js'] = array(drupal_get_path('module', 'collabco_stock_loader') . '/inc/ajax.js',);
       $form['field_featured_hub_image']['#suffix'] = '
       <input type="text" name="input_val" id="input_val" placeholder="Start typing a keyword..." >
 

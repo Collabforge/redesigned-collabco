@@ -8,19 +8,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                document.getElementById("created").innerHTML=xmlhttp.responseText;
-                    document.getElementById('pexels').onclick = function() {storeURL()};
-                    function storeURL() {
-                        document.getElementById("edit-field-featured-hub-image-und-0-filefield-remote-url").value = document.getElementById("pexels").src;
-                    }
+                  document.getElementById("created").innerHTML=xmlhttp.responseText;
+                    // document.getElementById('pexels').onclick = function() {
+                    //     alert("h");
+                    //     storeURL()};
+
+
+                    // function storeURL() {
+                    //     document.getElementById("edit-field-featured-hub-image-und-0-filefield-remote-url").value = document.getElementById("pexels").src;
+                    // }
             }
         }
-        xmlhttp.open("GET","profiles/collabco/modules/custom/collabco_core/inc/call.php?input_val="+str,true);
+        xmlhttp.open("GET","/profiles/collabco/modules/custom/collabco_stock_loader/inc/call.php?input_val="+str,true);
         xmlhttp.send();
     }
 
 
 });
+
+
+(function ($) {
+  var doc = $(document);
+  doc.ready(function() {
+
+  $(document).on('click', '.pexel_icon', function() { 
+    var imgSrc = $(this).attr('src');
+    $("#edit-field-featured-hub-image-und-0-filefield-remote-url").val(imgSrc);
+    //alert(imgSrc);
+  });
+
+});
+})(jQuery);
 
 
 

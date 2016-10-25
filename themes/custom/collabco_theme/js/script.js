@@ -10,7 +10,7 @@
 
   doc.ready(function() {
 
-
+  //$(document).on('click', '#pexel_1', function() { alert("hello"); });
   //Add class to discussion and documents
   if ($('*').find('.node-type-conversation').length >0){
     $( ".ui-menu-collaboration-discussion" ).addClass( "active" );  
@@ -91,6 +91,11 @@
   $('.follow.event, .support.event').on('click', '.flag-wrapper a', function(event) {
     event.stopPropagation();
   }); 
+
+
+$(".pexel_icon").click( function(){
+   console.log("hello");
+} );
 
  // Fire comment link on cards
 
