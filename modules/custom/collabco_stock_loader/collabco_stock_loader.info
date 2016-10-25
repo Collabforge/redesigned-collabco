@@ -1,0 +1,4 @@
+name = Collabco Stock loader
+description = Adds functionality to image fields to upload free images
+core = 7.x
+package = Collabco
