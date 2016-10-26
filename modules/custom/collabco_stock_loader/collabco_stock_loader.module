@@ -4,7 +4,9 @@
  * Collabco stock loader module.
  */
 
+include("inc/simple_html_dom.php");
 
+define('PEXELS_HINT_TEXT', 'Search...');
 /**
  * Return a list of available sources that FileField Sources can use.
  */
@@ -27,22 +29,9 @@ function collabco_stock_loader_filefield_sources_info() {
     // This optional setting will ensure that your code is included when needed
     // if your value, process, or other callbacks are located in a file other
     // than your .module file.
-    'file' => 'include/pexels_source.inc',
-  );
+    );
   return $sources;
 }
-
-/**
- * @file
- * A FileField extension to allow referencing of existing files.
- *
- * The "hooks" in this file are not true hooks, they're called individually
- * from the main filefield_sources.module in the corresponding hook by the
- * same name. Any of these hooks could be broken out into a separate module.
- */
-
-define('PEXELS_HINT_TEXT', 'Search...');
-
 /**
  * Implements hook_menu().
  */
@@ -105,7 +94,12 @@ function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
    
   $element['filefield_pexels']['search_box'] = array(
     '#type' => 'textfield',
-    '#suffix' => '<div id="created"><b>Stock images will be loaded here...</b></div>',
+    '#suffix' => '<div id="pexels_created"><b>Stock images will be loaded here...</b></div>',
+    '#ajax' => array(
+      'callback' => 'collabco_stock_loader_callback',
+      'keypress' => TRUE,
+      'wrapper' => 'pexels_created',
+    ),
   );
 
   $element['filefield_pexels']['url'] = array(
@@ -137,6 +131,34 @@ function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
 }
 
 /**
+*  TODO Find a way to find the image field with pexels and get the search box value.  field_type_image
+*/
+function collabco_stock_loader_callback($form, $form_state) {
+  $language = LANGUAGE_NONE;
+  $search_results = "";
+  $search_term = (!empty($form_state['values']['field_featured_hub_image'][$language][0]['filefield_pexels']['search_box'])) ? $form_state['values']['field_featured_hub_image'][$language][0]['filefield_pexels']['search_box'] : 'emptyvalue';
+
+  $html = file_get_html('https://www.pexels.com/search/'.$input_val);
+  foreach($html->find('h3') as $notfound) {
+    if ($notfound->plaintext == "Sorry, no pictures found! Here are some search tips:") {
+      $search_results = "No pictures found.";
+    }
+  }
+
+  $i=1;
+  foreach($html->find('article.photo-item') as $article) {
+
+      $item['title']   = $article->find('a', 0)->title;
+      $item['src']     = $article->find('img', 0)->src;
+      $image_id = "pexel_".$i;
+      $search_results = $search_results . "<img id=" . $image_id ." class='pexel_icon' width='100px' height='100px' src='".$article->find('img', 0)->src."'>";
+      $articles[] = $item;
+      $i++;
+   }
+  return $search_results;
+}
+
+/**
  * A #filefield_value_callback function.
  */
 function collabco_stock_loader_pexels_value($element, &$item) {
@@ -162,64 +184,3 @@ function collabco_stock_loader_progress($entity_type, $bundle_name, $field_name,
 
   drupal_json_output($progress);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Implements hook_form_alter().
- */
-/*function collabco_stock_loader_form_alter(&$form, &$form_state, $form_id) {
-  if ((arg(0) == "node") && (arg(1) == "add")) {
-    if(isset($form['field_featured_picture'])) {
-      $form['field_featured_picture']['und'][0]['#title'] = "Featured Image";
-      //$form['field_featured_picture']['und'][0]['#description'] = include('search.html');
-      $form['field_featured_picture']['#attached']['js'] = array(drupal_get_path('module', 'collabco_stock_loader') . '/inc/ajax.js',);
-      $form['field_featured_picture']['#suffix'] = '
-      <input type="text" name="input_val" id="input_val" >
-
-      <br>
-      <div id="created"><b>Stock images will be loaded here...</b></div>
-      <br><br>
-      ';
-     
-    }
-    if(isset($form['field_featured_hub_image'])) {
-            $form['field_featured_hub_image']['und'][0]['#title'] = "Featured Image";
-      //$form['field_featured_picture']['und'][0]['#description'] = include('search.html');
-      $form['field_featured_hub_image']['#attached']['js'] = array(drupal_get_path('module', 'collabco_stock_loader') . '/inc/ajax.js',);
-      $form['field_featured_hub_image']['#suffix'] = '
-      <input type="text" name="input_val" id="input_val" placeholder="Start typing a keyword..." >
-
-      <br>
-      <div id="created"><b>Stock images will be loaded here...</b></div>
-      <br><br>
-      ';
-      
-    }
-  }
-} */
