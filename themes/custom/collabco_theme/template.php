@@ -54,6 +54,24 @@ function collabco_theme_form_alter(&$form, &$form_state, $form_id) {
       $form['combine']['#attributes']['placeholder'] = t('Search challenges');
     }
   elseif ( in_array( $form_id, array( 'user_login', 'user_login_block') ) ) {
+
+    $welcome_desc ="<div class='welcome-demo'><center><h1>Welcome to the Collabco IMS Demo!</h1></center>
+
+We recommend creating an account to trial the full experience. If you are time-poor or simply want to jump straight in, please feel free to use the below credentials:<br><br>
+
+<b>Email:</b> test@collabco.com.au<br>
+<b>Pass:</b> test123
+<br><br>
+We have populated the website with some rich demonstration content. Please keep in mind that registrations are open to the public and so you may find content that was posted by other users - we are not responsible for this content. For this reason, all data/content is reset every 24 hours.
+
+If you have any questions, <a href='http://collabco.com.au/index.php/contact/''>please reach out to us here!</a>
+
+<br><br>&nbsp;&nbsp; <br></div>";
+   
+   $form['title'] = array(
+    '#markup' => $welcome_desc,
+    '#weight' => -10,
+  );
     $form['name']['#attributes']['placeholder'] = t( 'E-mail' );
     $form['pass']['#attributes']['placeholder'] = t( 'Password' );
     $form['name']['#title_display'] = "invisible";

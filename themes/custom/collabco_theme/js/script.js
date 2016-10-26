@@ -10,6 +10,7 @@
 
   doc.ready(function() {
 
+$('.welcome-demo').insertBefore('body > div.main-container > div > div > section');
 
   //Add class to discussion and documents
   if ($('*').find('.node-type-conversation').length >0){
