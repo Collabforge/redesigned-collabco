@@ -64,8 +64,8 @@ function collabco_stock_loader_theme() {
 function theme_collabco_stock_loader_pexels_element($variables) {
   $element = $variables['element'];
 
-  $element['search_box']['#field_suffix'] = drupal_render($element['transfer']);
-  return '<div class="filefield-source filefield-source-pexels clear-block">' . drupal_render($element['search_box']) . '</div>';
+  $element['url']['#field_suffix'] = drupal_render($element['transfer']);
+  return '<div class="filefield-source filefield-source-pexels clear-block">' . drupal_render($element['search_box']) . drupal_render($element['url']) . '</div>';
 }
 
 /**
@@ -99,13 +99,14 @@ function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
       'callback' => 'collabco_stock_loader_callback',
       'keypress' => TRUE,
       'wrapper' => 'pexels_created',
-    ),
+     ),
   );
 
   $element['filefield_pexels']['url'] = array(
     '#type' => 'textfield',
     '#description' => filefield_sources_element_validation_help($element['#upload_validators']),
     '#maxlength' => NULL,
+    '#attributes' =>array('placeholder' => t('Enter remote url of image')),
   );
 
   $element['filefield_pexels']['transfer'] = array(
@@ -126,6 +127,10 @@ function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
       ),
     ),
   );
+  $element['#attached']['js'][] = array(
+  'type' => 'file',
+  'data' => drupal_get_path('module', 'collabco_stock_loader') .'/inc/stock_loader.js',
+);
 
   return $element;
 }
@@ -146,8 +151,11 @@ function collabco_stock_loader_callback($form, $form_state) {
   }
 
   $i=1;
-  foreach($html->find('article.photo-item') as $article) {
 
+  foreach($html->find('article.photo-item') as $article) {
+  	if ($i==1) {
+  	   $search_results = "<div><b>Select an image and submit</b></div>";
+  	}
       $item['title']   = $article->find('a', 0)->title;
       $item['src']     = $article->find('img', 0)->src;
       $image_id = "pexel_".$i;
