@@ -4,10 +4,196 @@
  * Collabco stock loader module.
  */
 
+
+/**
+ * Return a list of available sources that FileField Sources can use.
+ */
+function collabco_stock_loader_filefield_sources_info() {
+  $sources = array();
+
+  // Provide a potential Flickr source to import Flickr photos.
+  $sources['pexels'] = array(
+    'name' => t('Select free image from www.pexels.com'),
+    'label' => t('Upload free image from www.pexels.com'),
+    'description' => t('Select free image from www.pexels.com.'),
+    // This callback function does all the heavy-work of creating a form element
+    // to choose a Flickr photo and populate a field. For an example, see
+    // filefield_source_remote_process().
+    'process' => 'collabco_stock_loader_pexels_process',
+    // This callback function then takes the value of that field and saves the
+    // file locally. For an example, see filefield_source_remote_value().
+    'value' => 'collabco_stock_loader_pexels_value',
+    'weight' => 3,
+    // This optional setting will ensure that your code is included when needed
+    // if your value, process, or other callbacks are located in a file other
+    // than your .module file.
+    'file' => 'include/pexels_source.inc',
+  );
+  return $sources;
+}
+
+/**
+ * @file
+ * A FileField extension to allow referencing of existing files.
+ *
+ * The "hooks" in this file are not true hooks, they're called individually
+ * from the main filefield_sources.module in the corresponding hook by the
+ * same name. Any of these hooks could be broken out into a separate module.
+ */
+
+define('PEXELS_HINT_TEXT', 'Search...');
+
+/**
+ * Implements hook_menu().
+ */
+function collabco_stock_loader_menu() {
+  $items = array();
+
+  $items['file/pexels/progress/%/%/%/%'] = array(
+    'page callback' => 'collabco_stock_loader_progress',
+    'page arguments' => array(3, 4, 5, 6),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function collabco_stock_loader_theme() {
+  return array(
+    'collabco_stock_loader_pexels_element' => array(
+      'render element' => 'element',
+    ),
+ );
+}
+
+/**
+ * Theme the output of the autocomplete field.
+ */
+function theme_collabco_stock_loader_pexels_element($variables) {
+  $element = $variables['element'];
+
+  $element['search_box']['#field_suffix'] = drupal_render($element['transfer']);
+  return '<div class="filefield-source filefield-source-pexels clear-block">' . drupal_render($element['search_box']) . '</div>';
+}
+
+/**
+ * Implements hook_filefield_source_settings().
+ */
+function collabco_stock_loader_settings($op, $instance) {
+  $return = array();
+
+  // Add settings to the FileField widget form.
+
+  return $return;
+
+}
+
+/**
+ * A #process callback to extend the filefield_widget element type.
+ */
+function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
+
+  $element['filefield_pexels'] = array(
+    '#weight' => 100.5,
+    '#theme' => 'collabco_stock_loader_pexels_element',
+    '#filefield_source' => TRUE, // Required for proper theming.
+    '#filefield_sources_hint_text' => PEXELS_HINT_TEXT,
+  );
+   
+  $element['filefield_pexels']['search_box'] = array(
+    '#type' => 'textfield',
+    '#suffix' => '<div id="created"><b>Stock images will be loaded here...</b></div>',
+  );
+
+  $element['filefield_pexels']['url'] = array(
+    '#type' => 'textfield',
+    '#description' => filefield_sources_element_validation_help($element['#upload_validators']),
+    '#maxlength' => NULL,
+  );
+
+  $element['filefield_pexels']['transfer'] = array(
+    '#name' => implode('_', $element['#array_parents']) . '_transfer',
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+    '#validate' => array(),
+    '#submit' => array('filefield_sources_field_submit'),
+    '#limit_validation_errors' => array($element['#parents']),
+    '#ajax' => array(
+      'path' => 'file/ajax/' . implode('/', $element['#array_parents']) . '/' . $form['form_build_id']['#value'],
+      'wrapper' => $element['upload_button']['#ajax']['wrapper'],
+      'effect' => 'fade',
+      'progress' => array(
+        'type' => 'bar',
+        'path' => 'file/pexels/progress/' . $element['#entity_type'] . '/' . $element['#bundle'] . '/' . $element['#field_name'] . '/' . $element['#delta'],
+        'message' => t('Starting transfer...'),
+      ),
+    ),
+  );
+
+  return $element;
+}
+
+/**
+ * A #filefield_value_callback function.
+ */
+function collabco_stock_loader_pexels_value($element, &$item) {
+  
+}
+
+/**
+ * Menu callback; progress.js callback to return upload progress.
+ */
+function collabco_stock_loader_progress($entity_type, $bundle_name, $field_name, $delta) {
+  $key = $entity_type . '_' . $bundle_name . '_' . $field_name . '_' . $delta;
+  $progress = array(
+    'message' => t('Starting transfer...'),
+    'percentage' => -1,
+  );
+
+  if ($cache = cache_get('filefield_transfer:'. session_id() . ':' . $key)) {
+    $current = $cache->data['current'];
+    $total = $cache->data['total'];
+    $progress['message'] = t('Transferring... (@current of @total)', array('@current' => format_size($current), '@total' => format_size($total)));
+    $progress['percentage'] = round(100 * $current / $total);
+  }
+
+  drupal_json_output($progress);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Implements hook_form_alter().
  */
-function collabco_stock_loader_form_alter(&$form, &$form_state, $form_id) {
+/*function collabco_stock_loader_form_alter(&$form, &$form_state, $form_id) {
   if ((arg(0) == "node") && (arg(1) == "add")) {
     if(isset($form['field_featured_picture'])) {
       $form['field_featured_picture']['und'][0]['#title'] = "Featured Image";
@@ -20,10 +206,7 @@ function collabco_stock_loader_form_alter(&$form, &$form_state, $form_id) {
       <div id="created"><b>Stock images will be loaded here...</b></div>
       <br><br>
       ';
-      // print "<pre>";
-      // print_r($form);
-      // print_r($form['field_featured_picture']);
-      //die();
+     
     }
     if(isset($form['field_featured_hub_image'])) {
             $form['field_featured_hub_image']['und'][0]['#title'] = "Featured Image";
@@ -36,10 +219,7 @@ function collabco_stock_loader_form_alter(&$form, &$form_state, $form_id) {
       <div id="created"><b>Stock images will be loaded here...</b></div>
       <br><br>
       ';
-      // print "<pre>";
-      // // print_r($form);
-      // print_r($form['field_featured_hub_image']);
-      // die();
+      
     }
   }
-}
+} */

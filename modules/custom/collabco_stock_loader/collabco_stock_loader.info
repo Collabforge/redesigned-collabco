@@ -1,4 +1,4 @@
 name = Collabco Stock loader
-description = Adds functionality to image fields to upload free images
+description = Adds functionality to upload free images from www.pexels.com
 core = 7.x
 package = Collabco
