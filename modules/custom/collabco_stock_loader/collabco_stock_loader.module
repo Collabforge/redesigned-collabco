@@ -141,32 +141,38 @@ function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
 *  TODO Find a way to find the image field with pexels and get the search box value.  field_type_image
 */
 function collabco_stock_loader_callback($form, $form_state) {
+  $triggered_element = $form_state['triggering_element']['#name'];
+  $image_field = NULL;
+  if (strpos($triggered_element,'[filefield_pexels][search_box]')) {
+     $position = strpos($triggered_element,'[');
+     $image_field = substr($triggered_element , 0, $position);
+  }
   $language = LANGUAGE_NONE;
   $search_results = "";
-  $search_term = (!empty($form_state['values']['field_featured_hub_image'][$language][0]['filefield_pexels']['search_box'])) ? $form_state['values']['field_featured_hub_image'][$language][0]['filefield_pexels']['search_box'] : 'emptyvalue';
 
-  $html = file_get_html('https://www.pexels.com/search/'.$search_term);
-  foreach($html->find('h3') as $notfound) {
-    if ($notfound->plaintext == "Sorry, no pictures found! Here are some search tips:") {
-      $search_results = "<div id='pexels_created'>No pictures found.";
+  if (isset($form_state['values'][$image_field][$language][0]['filefield_pexels']['search_box']) && strlen($form_state['values'][$image_field][$language][0]['filefield_pexels']['search_box']) > 0 && $form_state['values'][$image_field][$language][0]['filefield_pexels']['search_box'] != PEXELS_HINT_TEXT) {
+
+    $search_term = $form_state['values'][$image_field][$language][0]['filefield_pexels']['search_box'];
+    $html = file_get_html('https://www.pexels.com/search/'.$search_term);
+    foreach($html->find('h3') as $notfound) {
+      if ($notfound->plaintext == "Sorry, no pictures found! Here are some search tips:") {
+        $search_results = "<div id='pexels_created'><b>No pictures found.</b>";
+      }
     }
-  }
-
   $i=1;
-
   foreach($html->find('article.photo-item') as $article) {
-  	if ($i==1) {
-  	   $search_results = "<div id='pexels_created'><b>Select an image and submit</b><br>";
-  	}
-      $item['title']   = $article->find('a', 0)->title;
-      $item['src']     = $article->find('img', 0)->src;
-      $image_id = "pexel_".$i;
-      $search_results = $search_results . "<img id=" . $image_id ." class='pexel_icon' width='100px' height='100px' src='".$article->find('img', 0)->src."'>";
-      $articles[] = $item;
-      $i++;
-  
+   	if ($i==1) {
+      $search_results = "<div id='pexels_created'><b>Select an image and submit</b><br>";
+ 	  }
+    $item['title']   = $article->find('a', 0)->title;
+    $item['src']     = $article->find('img', 0)->src;
+    $image_id = "pexel_".$i;
+    $search_results = $search_results . "<img id=" . $image_id ." class='pexel_icon' width='100px' height='100px' src='".$article->find('img', 0)->src."'>";
+    $articles[] = $item;
+    $i++;
   }
   $search_results = $search_results . '</div>';
+ }
   return $search_results;
 }
 
