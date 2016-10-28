@@ -25,7 +25,7 @@ function collabco_stock_loader_filefield_sources_info() {
     // This callback function then takes the value of that field and saves the
     // file locally. For an example, see filefield_source_remote_value().
     'value' => 'collabco_stock_loader_pexels_value',
-    'weight' => 3,
+    'weight' => -1,
     // This optional setting will ensure that your code is included when needed
     // if your value, process, or other callbacks are located in a file other
     // than your .module file.
@@ -94,7 +94,7 @@ function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
    
   $element['filefield_pexels']['search_box'] = array(
     '#type' => 'textfield',
-    '#suffix' => '<div id="pexels_created"><b>Stock images will be loaded here...</b></div>',
+    '#suffix' => '<div id="pexels_created"></div>',
     '#ajax' => array(
       'callback' => 'collabco_stock_loader_callback',
       'keypress' => TRUE,
@@ -127,10 +127,12 @@ function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
       ),
     ),
   );
+  $path = drupal_get_path('module', 'collabco_stock_loader');
   $element['#attached']['js'][] = array(
   'type' => 'file',
-  'data' => drupal_get_path('module', 'collabco_stock_loader') .'/inc/stock_loader.js',
+  'data' => $path .'/inc/stock_loader.js',
 );
+  $element['#attached']['css'][] = $path . '/inc/stock_loader.css';
 
   return $element;
 }
@@ -146,7 +148,7 @@ function collabco_stock_loader_callback($form, $form_state) {
   $html = file_get_html('https://www.pexels.com/search/'.$search_term);
   foreach($html->find('h3') as $notfound) {
     if ($notfound->plaintext == "Sorry, no pictures found! Here are some search tips:") {
-      $search_results = "No pictures found.";
+      $search_results = "<div id='pexels_created'>No pictures found.";
     }
   }
 
@@ -154,7 +156,7 @@ function collabco_stock_loader_callback($form, $form_state) {
 
   foreach($html->find('article.photo-item') as $article) {
   	if ($i==1) {
-  	   $search_results = "<div><b>Select an image and submit</b></div>";
+  	   $search_results = "<div id='pexels_created'><b>Select an image and submit</b><br>";
   	}
       $item['title']   = $article->find('a', 0)->title;
       $item['src']     = $article->find('img', 0)->src;
@@ -164,11 +166,13 @@ function collabco_stock_loader_callback($form, $form_state) {
       $i++;
   
   }
+  $search_results = $search_results . '</div>';
   return $search_results;
 }
 
 /**
- * A #filefield_value_callback function.
+ * A #filefield_value_callback function. 
+ * Used the remote url functionality. 
  */
 function collabco_stock_loader_pexels_value($element, &$item) {
   if (isset($item['filefield_pexels']['url']) && strlen($item['filefield_pexels']['url']) > 0 && valid_url($item['filefield_pexels']['url']) && $item['filefield_pexels']['url'] != FILEFIELD_SOURCE_REMOTE_HINT_TEXT) {
