@@ -282,16 +282,26 @@ Go to <a href="myhub">Myhub</a> to continue.
   <h2>Breadcrumb</h2>
   <p></p>
 </li>
-<li data-class="sidebar-stats" data-button="Next">
-  <h2>Like this Co-lab</h2>
+<li data-class="like-this-collaboration" data-button="Next">
+  <h2>Like this Collaboration</h2>
   <p>describe it</p>
 </li>
+<li data-class="collab-info" data-button="Next">
+  <h2>Information</h2>
+  <p>describe it</p>
+</li>
+<li data-class="collab-discussion" data-button="Next">
+  <h2>Discussions within a collaboration</h2>
+  <p>describe it</p>
+</li>
+<li data-class="collab-documents" data-button="Next">
+  <h2>Documents within a collaboration</h2>
+  <p>describe it</p>
 </li>
 <li data-class="comment-form" data-button="Close" data-options="tip_location:top;tip_animation:fade">
   <p>Thank you for walk through</p>
   <p>See you soon</p>
-</li>
-',
+</li>',
     ),
   );
   $context->condition_mode = 0;
