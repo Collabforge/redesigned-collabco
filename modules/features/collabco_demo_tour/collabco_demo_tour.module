@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the collabco_demo_tour feature.
+ */
+
+include_once 'collabco_demo_tour.features.inc';

@@ -1,0 +1,15 @@
+name = collabco_demo_tour
+description = Demo tour with joyride library
+core = 7.x
+package = collabco
+dependencies[] = context
+dependencies[] = ctools
+features[context][] = brainstorm
+features[context][] = challenge
+features[context][] = collaborations
+features[context][] = demo_collabcoims
+features[context][] = individual_collaboration
+features[context][] = individual_idea
+features[context][] = myhub
+features[ctools][] = context:context:3
+features[features_api][] = api:2
