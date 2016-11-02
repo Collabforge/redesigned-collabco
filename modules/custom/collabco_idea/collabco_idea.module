@@ -185,7 +185,8 @@ function collabco_idea_block_view($delta = '') {
 
     case 'single_idea_breadcrumb':
       $termid = $node->field_challenge_value[LANGUAGE_NONE][0]['tid'];
-      $termname = $node->field_challenge_value[LANGUAGE_NONE][0]['taxonomy_term']->name;
+      $term = taxonomy_term_load($termid);
+      $termname = $term->name;
       $termlink = l($termname, 'taxonomy/term/' . $termid);
       $variables = array(
         'challenge' => $termlink,

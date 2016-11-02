@@ -116,7 +116,7 @@ function _collabco_check_to_run() {
 function collabco_collaboration_mail($key, &$message, $params) {
   $t_vars = $params;
   $language = $message['language'];
-  $message['from_name'] = variable_get('site_name', 'DoE');
+  $message['from_name'] = variable_get('site_name', 'Collabco IMS');
 
   if ($key == 'collabco_inactivity') {
     $message['subject'] .= _collabco_collabortaion_mail_text('collabco_inactivity_subject', $language, $t_vars);
@@ -561,7 +561,7 @@ function collabco_collaboration_block_view($delta = '') {
       if (arg(2) == NULL && $node->type == 'hub') {
         if (user_access('administer group') or og_user_access('node', $nid, 'administer group')) {
           $edit_collab_url = "/node/$nid/edit";
-          $output = "<div><ul class='btn btn-actions'><li>" . l(t("Edit the Co-lab"), $edit_collab_url, array('attributes' => array('class' => 'btn btn-default icon-pencil'))) . "</li></ul></div>";
+          $output = "<div><ul class='btn btn-actions'><li>" . l(t("Edit the Collaboration"), $edit_collab_url, array('attributes' => array('class' => 'btn btn-default icon-pencil'))) . "</li></ul></div>";
           $block['content'] = $output;
         }
       }
@@ -585,8 +585,8 @@ function collabco_collaboration_block_view($delta = '') {
           'nid'      => $nid,
           'collaboration_title' => $node->title,
           'top_bar1' => 'Cb',
-          'top_bar2' => t('Co-Lab'),
-          'title'   => t('Like this Co-Lab?'),
+          'top_bar2' => t('Collaboration'),
+          'title'   => t('Like this Collaboration?'),
           'support' => empty($counts['support_collaboration']) ? 0 : $counts['support_collaboration'],
           'follow'  => empty($counts['follow_collaboration']) ? 0 : $counts['follow_collaboration'],
           'share_link'   => url(drupal_get_path_alias('node/' . $node->nid), array('absolute' => TRUE)),
@@ -608,7 +608,7 @@ function collabco_collaboration_block_view($delta = '') {
       break;
 
     case 'ctags':
-      $block['subject'] = t('Co-Lab tags');
+      $block['subject'] = t('Collaboration tags');
       $display = array('label' => 'hidden');
       $block['content'] = field_view_field('node', $node, 'field_tags', $display);
       break;
@@ -712,7 +712,7 @@ function theme_single_collab_actions_template(&$variables) {
   $links = array();
   $links[] = array(
     'href' => sprintf('collaboration-supporters/%d', $gid)
-    , 'title' => 'View Co-Lab supporters'
+    , 'title' => 'View Collaboration supporters'
     , 'classes' => array()
     ,
   );
@@ -809,7 +809,22 @@ function template_preprocess_single_collaboration_breadcrumb_block(&$variables) 
     $gid = $current_node->og_group_ref['und'][0]['target_id'];
     $current_node = node_load($gid);
   }
+  /* Added extra classes on desktop links for guided tour */
   $links = array(
+    'ui-collaboration-menu ui-menu-collaboration-info collab-info' => array(
+      'title' => 'Information',
+      'href' => sprintf('node/%s', $current_node->nid),
+    ),
+    'ui-collaboration-menu ui-menu-collaboration-discussion collab-discussion' => array(
+      'title' => 'Discussion',
+      'href' => sprintf('node/%s/discussions', $current_node->nid),
+    ),
+    'ui-collaboration-menu ui-menu-collaboration-documents collab-documents' => array(
+      'title' => 'Documents',
+      'href' => sprintf('node/%s/documents', $current_node->nid),
+    ),
+  );
+  $mobile_links = array(
     'ui-collaboration-menu ui-menu-collaboration-info' => array(
       'title' => 'Information',
       'href' => sprintf('node/%s', $current_node->nid),
@@ -826,6 +841,10 @@ function template_preprocess_single_collaboration_breadcrumb_block(&$variables) 
   $attributes = array('class' => array('nav', 'nav-tabs'));
   $variables['links'] = theme('links', array(
     'links' => $links,
+    'attributes' => $attributes,
+  ));
+  $variables['mobile_links'] = theme('links', array(
+    'links' => $mobile_links,
     'attributes' => $attributes,
   ));
 }

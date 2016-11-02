@@ -13,4 +13,4 @@
 
 <p>Is your idea not fitting into a challenge? Add it to ongoing <?php echo $on_going_challenge_name;?> challenge!</p>
 
-<a class="btn btn-default" href="<?php echo $on_going_challenge_url?>" title="Add to Brainstorm">Add to <?php echo $on_going_challenge_name;?></a>
+<a class="btn btn-default add-to-brainstorm" href="<?php echo $on_going_challenge_url?>" title="Add to Brainstorm">Add to <?php echo $on_going_challenge_name;?></a>
