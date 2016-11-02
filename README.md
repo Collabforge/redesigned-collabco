@@ -1,5 +1,5 @@
 #Collabco IMS
-An IMS helps you work with large groups to brainstorm, select and develop the best ideas. Here’s how Collabco IMS is different:.
+An IMS helps you work with large groups to brainstorm, select and develop the best ideas. Here’s how Collabco IMS is different:
 
 * **We understand your context** - Collabco is an Australian, public sector focused Innovation Management System
 * **Embedded learnings from Australian Public Service innovation leaders** - The IMS comes ready to use with an in-built innovation process developed and tested by top government departments
