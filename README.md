@@ -7,6 +7,7 @@ An IMS helps you work with large groups to brainstorm, select and develop the be
 * **Keep control of your data** - Use our secure Australian-based hosting or self-host. There are no user subscription fees. The software and your data are yours to control, always.
 
 
+
 ##Installation instructions
 
 ###For Site Installers
