@@ -262,3 +262,19 @@ function collabco_theme_process_page(&$variables, $hook) {
  _color_page_alter($variables);
  }
 }
+
+/**
+ * Implements template_preprocess_block(). 
+ * Override or insert variables into the block template
+ */
+function collabco_theme_preprocess_block(&$vars) {
+
+  // var_dump($vars);
+
+  $block = $vars['block'];
+
+  if ($block->delta == 'likes') {
+    $vars['title_attributes_array']['class'][] = 'like-this-collaboration';
+  }
+
+}

@@ -15,9 +15,6 @@ if (!empty($group_content_title)) {
 <!-- Breadcrumbs -->
 
 <header class="clearfix top-view">
-  <div class="collaboration-tabs visible-xs-block">
-    <?php echo $links; ?>
-  </div>
 <div class="breadcrumb-container">
   <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
@@ -32,4 +29,7 @@ if (!empty($group_content_title)) {
 <div class="collaboration-tabs hidden-xs">
  <?php echo $links; ?>
 </div>
+<div class="collaboration-tabs visible-xs-block">
+    <?php echo $mobile_links; ?>
+  </div>
 </header>

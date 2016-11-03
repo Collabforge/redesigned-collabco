@@ -1,0 +1,345 @@
+<?php
+/**
+ * @file
+ * Collabco stock loader module.
+ */
+
+include("inc/simple_html_dom.php");
+
+define('PEXELS_HINT_TEXT', 'Search...');
+/**
+ * Return a list of available sources that FileField Sources can use.
+ */
+function collabco_stock_loader_filefield_sources_info() {
+  $sources = array();
+
+  // Provide a potential Flickr source to import Flickr photos.
+  $sources['pexels'] = array(
+    'name' => t('Select free image from www.pexels.com'),
+    'label' => t('Upload free image from www.pexels.com'),
+    'description' => t('Select free image from www.pexels.com.'),
+    // This callback function does all the heavy-work of creating a form element
+    // to choose a Flickr photo and populate a field. For an example, see
+    // filefield_source_remote_process().
+    'process' => 'collabco_stock_loader_pexels_process',
+    // This callback function then takes the value of that field and saves the
+    // file locally. For an example, see filefield_source_remote_value().
+    'value' => 'collabco_stock_loader_pexels_value',
+    'weight' => -1,
+    // This optional setting will ensure that your code is included when needed
+    // if your value, process, or other callbacks are located in a file other
+    // than your .module file.
+    );
+  return $sources;
+}
+/**
+ * Implements hook_menu().
+ */
+function collabco_stock_loader_menu() {
+  $items = array();
+
+  $items['file/pexels/progress/%/%/%/%'] = array(
+    'page callback' => 'collabco_stock_loader_progress',
+    'page arguments' => array(3, 4, 5, 6),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function collabco_stock_loader_theme() {
+  return array(
+    'collabco_stock_loader_pexels_element' => array(
+      'render element' => 'element',
+    ),
+ );
+}
+
+/**
+ * Theme the output of the autocomplete field.
+ */
+function theme_collabco_stock_loader_pexels_element($variables) {
+  $element = $variables['element'];
+
+  $element['url']['#field_suffix'] = drupal_render($element['transfer']);
+  return '<div class="filefield-source filefield-source-pexels clear-block">' . drupal_render($element['search_box']) . drupal_render($element['url']) . '</div>';
+}
+
+/**
+ * Implements hook_filefield_source_settings().
+ */
+function collabco_stock_loader_settings($op, $instance) {
+  $return = array();
+
+  // Add settings to the FileField widget form.
+
+  return $return;
+
+}
+
+/**
+ * A #process callback to extend the filefield_widget element type.
+ */
+function collabco_stock_loader_pexels_process($element, &$form_state, $form) {
+
+  $element['filefield_pexels'] = array(
+    '#weight' => 100.5,
+    '#theme' => 'collabco_stock_loader_pexels_element',
+    '#filefield_source' => TRUE, // Required for proper theming.
+    '#filefield_sources_hint_text' => PEXELS_HINT_TEXT,
+  );
+   
+  $element['filefield_pexels']['search_box'] = array(
+    '#type' => 'textfield',
+    '#suffix' => '<div id="pexels_created"></div>',
+    '#ajax' => array(
+      'callback' => 'collabco_stock_loader_callback',
+      'keypress' => TRUE,
+      'wrapper' => 'pexels_created',
+     ),
+  );
+
+  $element['filefield_pexels']['url'] = array(
+    '#type' => 'textfield',
+    '#description' => filefield_sources_element_validation_help($element['#upload_validators']),
+    '#maxlength' => NULL,
+    '#attributes' =>array('placeholder' => t('Enter remote url of image')),
+  );
+
+  $element['filefield_pexels']['transfer'] = array(
+    '#name' => implode('_', $element['#array_parents']) . '_transfer',
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+    '#validate' => array(),
+    '#submit' => array('filefield_sources_field_submit'),
+    '#limit_validation_errors' => array($element['#parents']),
+    '#ajax' => array(
+      'path' => 'file/ajax/' . implode('/', $element['#array_parents']) . '/' . $form['form_build_id']['#value'],
+      'wrapper' => $element['upload_button']['#ajax']['wrapper'],
+      'effect' => 'fade',
+      'progress' => array(
+        'type' => 'bar',
+        'path' => 'file/pexels/progress/' . $element['#entity_type'] . '/' . $element['#bundle'] . '/' . $element['#field_name'] . '/' . $element['#delta'],
+        'message' => t('Starting transfer...'),
+      ),
+    ),
+  );
+  $path = drupal_get_path('module', 'collabco_stock_loader');
+  $element['#attached']['js'][] = array(
+  'type' => 'file',
+  'data' => $path .'/inc/stock_loader.js',
+);
+  $element['#attached']['css'][] = $path . '/inc/stock_loader.css';
+
+  return $element;
+}
+
+/**
+*  TODO Find a way to find the image field with pexels and get the search box value.  field_type_image
+*/
+function collabco_stock_loader_callback($form, $form_state) {
+  $triggered_element = $form_state['triggering_element']['#name'];
+  $image_field = NULL;
+  if (strpos($triggered_element,'[filefield_pexels][search_box]')) {
+     $position = strpos($triggered_element,'[');
+     $image_field = substr($triggered_element , 0, $position);
+  }
+  $language = LANGUAGE_NONE;
+  $search_results = "";
+
+  if (isset($form_state['values'][$image_field][$language][0]['filefield_pexels']['search_box']) && strlen($form_state['values'][$image_field][$language][0]['filefield_pexels']['search_box']) > 0 && $form_state['values'][$image_field][$language][0]['filefield_pexels']['search_box'] != PEXELS_HINT_TEXT) {
+
+    $search_term = $form_state['values'][$image_field][$language][0]['filefield_pexels']['search_box'];
+    $html = file_get_html('https://www.pexels.com/search/'.$search_term);
+    foreach($html->find('h3') as $notfound) {
+      if ($notfound->plaintext == "Sorry, no pictures found! Here are some search tips:") {
+        $search_results = "<div id='pexels_created'><b>No pictures found.</b>";
+      }
+    }
+  $i=1;
+  foreach($html->find('article.photo-item') as $article) {
+   	if ($i==1) {
+      $search_results = "<div id='pexels_created'><b>Select an image and submit</b><br>";
+ 	  }
+    $item['title']   = $article->find('a', 0)->title;
+    $item['src']     = $article->find('img', 0)->src;
+    $image_id = "pexel_".$i;
+    $search_results = $search_results . "<img id=" . $image_id ." class='pexel_icon' width='100px' height='100px' src='".$article->find('img', 0)->src."'>";
+    $articles[] = $item;
+    $i++;
+  }
+  $search_results = $search_results . '</div>';
+ }
+  return $search_results;
+}
+
+/**
+ * A #filefield_value_callback function. 
+ * Used the remote url functionality. 
+ */
+function collabco_stock_loader_pexels_value($element, &$item) {
+  if (isset($item['filefield_pexels']['url']) && strlen($item['filefield_pexels']['url']) > 0 && valid_url($item['filefield_pexels']['url']) && $item['filefield_pexels']['url'] != FILEFIELD_SOURCE_REMOTE_HINT_TEXT) {
+    $field = field_info_instance($element['#entity_type'], $element['#field_name'], $element['#bundle']);
+    $url = $item['filefield_pexels']['url'];
+
+    // Check that the destination is writable.
+    $temporary_directory = 'temporary://';
+    if (!file_prepare_directory($temporary_directory, FILE_MODIFY_PERMISSIONS)) {
+      watchdog('file', 'The directory %directory is not writable, because it does not have the correct permissions set.', array('%directory' => drupal_realpath($temporary_directory)));
+      drupal_set_message(t('The file could not be transferred because the temporary directory is not writable.'), 'error');
+      return;
+    }
+
+    // Check that the destination is writable.
+    $directory = $element['#upload_location'];
+    $mode = variable_get('file_chmod_directory', 0775);
+
+    // This first chmod check is for other systems such as S3, which don't work
+    // with file_prepare_directory().
+    if (!drupal_chmod($directory, $mode) && !file_prepare_directory($directory, FILE_CREATE_DIRECTORY)) {
+      watchdog('file', 'File %file could not be copied, because the destination directory %destination is not configured correctly.', array('%file' => $url, '%destination' => drupal_realpath($directory)));
+      drupal_set_message(t('The specified file %file could not be copied, because the destination directory is not properly configured. This may be caused by a problem with file or directory permissions. More information is available in the system log.', array('%file' => $url)), 'error');
+      return;
+    }
+
+    // Check the headers to make sure it exists and is within the allowed size.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HEADER, TRUE);
+    curl_setopt($ch, CURLOPT_NOBODY, TRUE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_HEADERFUNCTION, '_filefield_source_remote_parse_header');
+    // Causes a warning if PHP safe mode is on.
+    @curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+    curl_exec($ch);
+    $info = curl_getinfo($ch);
+    if ($info['http_code'] != 200) {
+      curl_setopt($ch, CURLOPT_HTTPGET, TRUE);
+      $file_contents = curl_exec($ch);
+      $info = curl_getinfo($ch);
+    }
+    curl_close($ch);
+
+    if ($info['http_code'] != 200) {
+      switch ($info['http_code']) {
+        case 403:
+          form_error($element, t('The remote file could not be transferred because access to the file was denied.'));
+          break;
+        case 404:
+          form_error($element, t('The remote file could not be transferred because it was not found.'));
+          break;
+        default:
+          form_error($element, t('The remote file could not be transferred due to an HTTP error (@code).', array('@code' => $info['http_code'])));
+      }
+      return;
+    }
+
+    // Update the $url variable to reflect any redirects.
+    $url = $info['url'];
+    $url_info = parse_url($url);
+
+    // Determine the proper filename by reading the filename given in the
+    // Content-Disposition header. If the server fails to send this header,
+    // fall back on the basename of the URL.
+    //
+    // We prefer to use the Content-Disposition header, because we can then
+    // use URLs like http://example.com/get_file/23 which would otherwise be
+    // rejected because the URL basename lacks an extension.
+    $filename = _filefield_source_remote_filename();
+    if (empty($filename)) {
+      $filename = rawurldecode(basename($url_info['path']));
+    }
+
+    $pathinfo = pathinfo($filename);
+
+    // Create the file extension from the MIME header if all else has failed.
+    if (empty($pathinfo['extension']) && $extension = _filefield_source_remote_mime_extension()) {
+      $filename = $filename . '.' . $extension;
+      $pathinfo = pathinfo($filename);
+    }
+
+    $filename = filefield_sources_clean_filename($filename, $field['settings']['file_extensions']);
+    $filepath = file_create_filename($filename, $temporary_directory);
+
+    if (empty($pathinfo['extension'])) {
+      form_error($element, t('The remote URL must be a file and have an extension.'));
+      return;
+    }
+
+    // Perform basic extension check on the file before trying to transfer.
+    $extensions = $field['settings']['file_extensions'];
+    $regex = '/\.('. preg_replace('/[ +]/', '|', preg_quote($extensions)) .')$/i';
+    if (!empty($extensions) && !preg_match($regex, $filename)) {
+      form_error($element, t('Only files with the following extensions are allowed: %files-allowed.', array('%files-allowed' => $extensions)));
+      return;
+    }
+
+    // Check file size based off of header information.
+    if (!empty($element['#upload_validators']['file_validate_size'][0])) {
+      $max_size = $element['#upload_validators']['file_validate_size'][0];
+      $file_size = $info['download_content_length'];
+      if ($file_size > $max_size) {
+        form_error($element, t('The remote file is %filesize exceeding the maximum file size of %maxsize.', array('%filesize' => format_size($file_size), '%maxsize' => format_size($max_size))));
+        return;
+      }
+    }
+
+    // Set progress bar information.
+    $options = array(
+      'key' => $element['#entity_type'] . '_' . $element['#bundle'] . '_' . $element['#field_name'] . '_' . $element['#delta'],
+      'filepath' => $filepath,
+    );
+    filefield_source_remote_set_transfer_options($options);
+
+    $transfer_success = FALSE;
+    // If we've already downloaded the entire file because the header-retrieval
+    // failed, just ave the contents we have.
+    if (isset($file_contents)) {
+      if ($fp = @fopen($filepath, 'w')) {
+        fwrite($fp, $file_contents);
+        fclose($fp);
+        $transfer_success = TRUE;
+      }
+    }
+    // If we don't have the file contents, download the actual file.
+    else {
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_HEADER, FALSE);
+      curl_setopt($ch, CURLOPT_WRITEFUNCTION, 'filefield_source_remote_curl_write');
+      // Causes a warning if PHP safe mode is on.
+      @curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+      $transfer_success = curl_exec($ch);
+      curl_close($ch);
+    }
+    if ($transfer_success && $file = filefield_sources_save_file($filepath, $element['#upload_validators'], $element['#upload_location'])) {
+      $item = array_merge($item, (array) $file);
+    }
+
+    // Delete the temporary file.
+    @unlink($filepath);
+  }
+}
+
+/**
+ * Menu callback; progress.js callback to return upload progress.
+ */
+function collabco_stock_loader_progress($entity_type, $bundle_name, $field_name, $delta) {
+  $key = $entity_type . '_' . $bundle_name . '_' . $field_name . '_' . $delta;
+  $progress = array(
+    'message' => t('Starting transfer...'),
+    'percentage' => -1,
+  );
+
+  if ($cache = cache_get('filefield_transfer:'. session_id() . ':' . $key)) {
+    $current = $cache->data['current'];
+    $total = $cache->data['total'];
+    $progress['message'] = t('Transferring... (@current of @total)', array('@current' => format_size($current), '@total' => format_size($total)));
+    $progress['percentage'] = round(100 * $current / $total);
+  }
+
+  drupal_json_output($progress);
+}

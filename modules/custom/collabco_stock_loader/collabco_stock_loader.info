@@ -1,0 +1,5 @@
+name = Collabco Stock loader
+description = Adds functionality to upload free images from www.pexels.com
+core = 7.x
+package = Collabco
+files[] = inc/simple_html_dom.php
