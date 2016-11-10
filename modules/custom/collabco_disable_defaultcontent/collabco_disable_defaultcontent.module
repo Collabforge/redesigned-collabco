@@ -136,6 +136,7 @@ function collabco_disable_defaultcontent_modules() {
 function _collabco_disable_defaultcontent_list() {
   return array(
     'collabco_content_idea',
+    'collabco_democontent_ideas',
     'collabco_content_collaboration',    
   );
 }
