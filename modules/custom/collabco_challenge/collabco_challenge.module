@@ -63,7 +63,7 @@ function collabco_challenge_block_view($delta = '') {
   switch ($delta) {
     case 'header_standard':
       if (arg(0) == 'open-challenges') {
-        $variables['title'] = 'Open Challenges';
+        $variables['title'] = 'Open '.ucfirst(variable_get('csl_challenges')).'s';
         $variables['sub_title'] = 'Respond to the challenge';
         $variables['icon_class'] = 'icon-flag';
       }
@@ -234,9 +234,9 @@ function collaboco_challenge_winning_ideas($term_or_tid) {
       $idea_states = $idea->field_idea_state[LANGUAGE_NONE];
       if (is_array($idea_states)){
         foreach ($idea_states as $key => $value) {
-          if ($value['value'] == 'win'){ 
+          if ($value['value'] == 'win'){
             $count++;
-          } 
+          }
         }
       }
     }
@@ -290,7 +290,7 @@ function collabco_challenge_views_api() {
 function collabco_challenge_form_alter(&$form, $form_state, $form_id) {
   switch ($form_id) {
     case 'taxonomy_form_term':
-      $form['field_tag_line'][LANGUAGE_NONE]['0']['value']['#attributes']['placeholder'] = t('This is key information about your challenge which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your challenge to read more.');
+      $form['field_tag_line'][LANGUAGE_NONE]['0']['value']['#attributes']['placeholder'] = t('This is key information about your '.variable_get('csl_challenges').' which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your challenge to read more.');
        $form['field_start_date']['#pre_render'] = array('collabco_challenge_date_label');
       break;
   }

@@ -15,7 +15,7 @@ function collabco_challenge_feature_menu_default_menu_links() {
     'menu_name' => 'main-menu',
     'link_path' => 'challenge',
     'router_path' => 'challenge',
-    'link_title' => 'Challenges',
+    'link_title' => ucfirst(variable_get('csl_challenges')).'s',
     'options' => array(
       'identifier' => 'main-menu_challenges:challenge',
       'attributes' => array(
