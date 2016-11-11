@@ -5,9 +5,28 @@
  */
 
 /**
+ * Implements hook_boot().
+ */
+function collabco_settings_init() {
+  if(!variable_get('csl_challenges')) {variable_set('csl_challenges', 'challenge');}
+  if(!variable_get('csl_ideas')) {variable_set('csl_ideas', 'idea');}
+  if(!variable_get('csl_collaborations')) {variable_set('csl_collaborations', 'collaboration');}
+  if(!variable_get('csl_support')) {variable_set('csl_support', 'support');}
+  if(!variable_get('csl_follow')) {variable_set('csl_follow', 'follow');}
+  if(!variable_get('csl_share')) {variable_set('csl_share', 'share');}
+  if(!variable_get('csl_sponsor')) {variable_set('csl_sponsor', 'sponsor');}
+}
+
+/**
  * Implements hook_variable_group_info().
  */
 function collabco_settings_variable_group_info() {
+  $groups['collabco_labels_settings'] = array(
+    'title' => t('Labels'),
+    'description' => t('Collabco Labels settings'),
+    'access' => 'administer site configuration',
+    'path' => array('admin/config/collabco-settings/labels'),
+  );
   $groups['collabco_challenge_settings'] = array(
     'title' => t('Collabco Challenge'),
     'description' => t('Collabco Challenge settings'),
@@ -99,7 +118,97 @@ function collabco_settings_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('variable_group_form', 'collabco_collaboration_settings'),
   );
+  $items['admin/config/collabco-settings/labels'] = array(
+    'title' => 'Labels Settings',
+    'description' => 'Labels Settings for Collabco',
+    'access arguments' => array(TRUE),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('collabco_settings_labels_admin_form'),
+  );
   return $items;
+
+}
+
+/**
+ * Form builder for changing labels.
+ */
+function collabco_settings_labels_admin_form() {
+
+  $form = array();
+  // $form['collabco_disable_defaultcontent_notice_enabled'] = array(
+  //   '#type' => 'checkbox',
+  //   '#title' => t('Display a notice about default content'),
+  //   '#default_value' => variable_get('collabco_settings_labels_tick', 1),
+  // );
+
+  $form['csl_challenges'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for Challenges'),
+    '#default_value' => variable_get('csl_challenges', 'challenge'),
+    '#description' => t('Original: challenge'),
+    '#required' => TRUE,
+  );
+  $form['csl_ideas'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for Ideas'),
+    '#default_value' => variable_get('csl_ideas', 'idea'),
+    '#description' => t('Original: idea'),
+    '#required' => TRUE,
+  );
+  $form['csl_collaborations'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for Collaborations'),
+    '#default_value' => variable_get('csl_collaborations', 'collaboration'),
+    '#description' => t('Original: collaboration'),
+    '#required' => TRUE,
+  );
+  $form['csl_support'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for Support'),
+    '#default_value' => variable_get('csl_support', 'support'),
+    '#description' => t('Original: support'),
+    '#required' => TRUE,
+  );
+  $form['csl_follow'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for Follow'),
+    '#default_value' => variable_get('csl_follow', 'follow'),
+    '#description' => t('Original: follow'),
+    '#required' => TRUE,
+  );
+  $form['csl_share'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for Share'),
+    '#default_value' => variable_get('csl_share', 'share'),
+    '#description' => t('Original: share'),
+    '#required' => TRUE,
+  );
+  $form['csl_sponsor'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for Sponsor'),
+    '#default_value' => variable_get('csl_sponsor', 'sponsor'),
+    '#description' => t('Original: sponsor'),
+    '#required' => TRUE,
+  );
+  $form['#submit'][] = 'collabco_settings_labels_admin_form_submit';
+  return system_settings_form($form);
+}
+
+/**
+ * Handles changing labels
+ */
+function collabco_settings_labels_admin_form_submit($form, &$form_state) {
+
+  features_revert_module('collabco_appearance_feature');
+  features_revert_module('collabco_challenge_feature');
+  features_revert_module('collabco_collaboration_feature');
+  features_revert_module('collabco_core_feature');
+  features_revert_module('collabco_ideas_feature');
+  features_revert_module('collabco_message_feature');
+  features_revert_module('collabco_myhub_feature');
+  features_revert_module('collabco_views_feature');
+  drupal_flush_all_caches();
+  // drupal_goto();
 }
 
 /**
