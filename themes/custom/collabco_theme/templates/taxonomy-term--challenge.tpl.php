@@ -89,11 +89,11 @@
     <?php }
       if ($label == 'Closed') { ?>
     <div class="create-idea-btn">
-      <p>The <?=csl('challenge',0,1);?> has now ended and is not accepting new <?=csl('challenge',1,1);?>.</p>
+      <p>The <?=csl('challenges',0,1);?> has now ended and is not accepting new <?=csl('challenges',1,1);?>.</p>
     </div>
     <?php } if ($label == 'Judging') { ?>
     <div class="create-idea-btn">
-      <p>The <?=csl('challenge',0,1);?> is currently in the judging phase and is not accepting new <?=csl('ideas',1,0);?>.</p>
+      <p>The <?=csl('challenges',0,1);?> is currently in the judging phase and is not accepting new <?=csl('ideas',1,0);?>.</p>
     </div>
     <?php } ?>
     </div>
@@ -117,7 +117,7 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
 
 <div class="sidebar-2 col-sm-4">
   <div class="region-sidebar-second">
-    <h2 class="block-title">like this <?=csl('challenge',0,0);?>?</h2>
+    <h2 class="block-title">like this <?=csl('challenges',0,0);?>?</h2>
 
       <div class="sidebar-stats">
           <div class="share stat clearfix">
@@ -139,7 +139,7 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
 
         <?php if (!empty($term->field_sponser[LANGUAGE_NONE][0]['target_id'])) {
         $user = user_load($term->field_sponser[LANGUAGE_NONE][0]['target_id']); ?>
-        <h2><?=csl('challenge',0,0);?> sponsor</h2>
+        <h2><?=csl('challenges',0,0);?> sponsor</h2>
         <div class="team">
           <?php $picture = theme('user_picture', array('account' => $user));
           echo $picture; ?>

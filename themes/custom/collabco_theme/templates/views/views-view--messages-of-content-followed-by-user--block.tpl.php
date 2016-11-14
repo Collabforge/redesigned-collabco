@@ -75,11 +75,11 @@
           </div>
           <div class="col-sm-3">
             <i class="icon-flag"></i>
-            <p>Visit the <a href="/challenge"><?=csl('challenge',0,1);?> page</a> and support <?=csl('challenge',1);?> that you want to follow.</p>
+            <p>Visit the <a href="/challenge"><?=csl('challenges',0,1);?> page</a> and support <?=csl('challenges',1);?> that you want to follow.</p>
           </div>
            <div class="col-sm-3">
             <i class="icon-diamond"></i>
-            <p>Share a general <a href="/node/add/idea"><?=csl('ideas',0,0);?></a> or solve a specific <a href="/challenge"><?=csl('challenge',0,1);?></a></p>
+            <p>Share a general <a href="/node/add/idea"><?=csl('ideas',0,0);?></a> or solve a specific <a href="/challenge"><?=csl('challenges',0,1);?></a></p>
           </div>
           <div class="col-sm-3">
             <i class="icon-beaker"></i>
