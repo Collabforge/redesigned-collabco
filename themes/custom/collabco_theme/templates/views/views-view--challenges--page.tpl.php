@@ -39,12 +39,12 @@
     <div class="breadcrumb-container">
       <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
-        <li>Challenge</li>
+        <li><?php echo ucfirst(variable_get('csl_challenges'));?>s</li>
       </ol>
     </div>
-    <?php global $user; 
+    <?php global $user;
     if(user_access('administer') || (is_array($user->roles) && in_array('Moderator', $user->roles))) { ?>
-       <a class="create-challenge" href="/admin/structure/taxonomy/challenge/add">Create New Challenge </a> 
+       <a class="create-challenge" href="/admin/structure/taxonomy/challenge/add">Create New <?php echo ucfirst(variable_get('csl_challenges')); ?> </a>
     <?php } ?>
     <?php if ($exposed): ?>
       <div class="view-filters hidden-xs">

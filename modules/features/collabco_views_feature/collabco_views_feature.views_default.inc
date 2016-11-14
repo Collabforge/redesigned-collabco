@@ -855,7 +855,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Closed Challenges</h3>';
+<h3>Closed '.variable_get('csl_challenges').'</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: challenge_flag counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -978,7 +978,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Closed Challenges</h3>';
+<h3>Closed '.variable_get('csl_challenges').'</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
 
   /* Display: Page */
@@ -1013,7 +1013,7 @@ function collabco_views_feature_views_default_views() {
     t('next ›'),
     t('last »'),
     t('<i class="icon-flag"></i>
-<h3>Closed Challenges</h3>'),
+<h3>Closed '.variable_get('csl_challenges').'</h3>'),
     t('Follow Challenge'),
     t('flag'),
     t('.'),
@@ -2322,7 +2322,7 @@ function collabco_views_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Recent ideas';
+  $handler->display->display_options['title'] = 'Recent '.variable_get('csl_ideas');
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -4736,9 +4736,9 @@ if (!empty($gids_followed_by_user)){
 <div class="separator"></div>
 <br>
 <i class="icon-music-stop"></i>
-<h3>Parked Collaborations</h3>
-<p>While all Collaborations come from great ideas, unfortunately not all ideas are ripe to advance into Collaborations at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
-<p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>';
+<h3>Parked '.ucfirst(variable_get('csl_collaborations')).'s</h3>
+<p>While all '.ucfirst(variable_get('csl_collaborations')).'s come from great '.variable_get('csl_ideas').'s, unfortunately not all '.variable_get('csl_ideas').'s are ripe to advance into '.ucfirst(variable_get('csl_collaborations')).'s at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
+<p>Keen to see this '.variable_get('csl_ideas').' gain traction again? Contact our team and let\'s get it going. </p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Flags: follow_collaboration counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -4975,9 +4975,9 @@ if (!empty($gids_followed_by_user)){
 <div class="separator"></div>
 <br>
 <i class="icon-music-stop"></i>
-<h3>Parked Collaborations</h3>
-<p>While all Collaborations come from great ideas, unfortunately not all ideas are ripe to advance into Collaborations at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
-<p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>'),
+<h3>Parked '.ucfirst(variable_get('csl_collaborations')).'s</h3>
+<p>While all '.ucfirst(variable_get('csl_collaborations')).'s come from great '.variable_get('csl_ideas').'s, unfortunately not all '.variable_get('csl_ideas').'s are ripe to advance into '.ucfirst(variable_get('csl_collaborations')).'s at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
+<p>Keen to see this '.variable_get('csl_ideas').' gain traction again? Contact our team and let\'s get it going. </p>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
     t('<img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg">'),

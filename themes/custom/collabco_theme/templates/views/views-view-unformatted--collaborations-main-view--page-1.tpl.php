@@ -15,8 +15,8 @@
   <div class="breadcrumb-container">
     <ol class="breadcrumb">
       <li><a href="/">Home</a></li>
-      <li><a href="/collaborate">Collaborate</a></li>
-      <li>Featured Collaborations</li>
+      <li><a href="/collaborate"><?php echo ucfirst(variable_get('csl_collaborations'));?>s</a></li>
+      <li>Featured <?php echo ucfirst(variable_get('csl_collaborations'));?>s</li>
     </ol>
   </div>
 
