@@ -519,9 +519,9 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<p>This is where you can view current '.ucfirst(variable_get('csl_ideas')).'s, which address specific issues in our organisation.</p>
+<p>This is where you can view current Challenges, which address specific issues in our organisation.</p>
 
-<h3>Open '.ucfirst(variable_get('csl_challenges')).'s</h3>';
+<h3>Open Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -691,9 +691,9 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-flag"></i>
-<p>This is where you can view current '.ucfirst(variable_get('csl_challenges')).'s, which address specific issues in our organisation.</p>
+<p>This is where you can view current Challenges, which address specific issues in our organisation.</p>
 
-<h3>Open '.ucfirst(variable_get('csl_challenges')).'s</h3>'),
+<h3>Open Challenges</h3>'),
     t('<a href="/open-challenges" class="btn btn-default" >View all</a>
 <br>
 <br>'),
@@ -855,7 +855,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Closed '.variable_get('csl_challenges').'</h3>';
+<h3>Closed Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: challenge_flag counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -978,7 +978,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Closed '.variable_get('csl_challenges').'</h3>';
+<h3>Closed Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
 
   /* Display: Page */
@@ -1013,7 +1013,7 @@ function collabco_views_feature_views_default_views() {
     t('next ›'),
     t('last »'),
     t('<i class="icon-flag"></i>
-<h3>Closed '.variable_get('csl_challenges').'</h3>'),
+<h3>Closed Challenges</h3>'),
     t('Follow Challenge'),
     t('flag'),
     t('.'),
@@ -1839,7 +1839,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'No Discussions in this collaborations yet.
+  $handler->display->display_options['empty']['area']['content'] = 'No Discussions in this collaborations yet. 
 ';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   /* Relationship: Content: Author */
@@ -1946,7 +1946,7 @@ function collabco_views_feature_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('No Discussions in this collaborations yet.
+    t('No Discussions in this collaborations yet. 
 '),
     t('author'),
     t('All'),
@@ -1983,7 +1983,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'No documents in this collaborations yet.
+  $handler->display->display_options['empty']['area']['content'] = 'No documents in this collaborations yet. 
 ';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   /* Relationship: Content: Author */
@@ -2088,7 +2088,7 @@ function collabco_views_feature_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('No documents in this collaborations yet.
+    t('No documents in this collaborations yet. 
 '),
     t('author'),
     t('All'),
@@ -2125,7 +2125,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Open '.ucfirst(variable_get('csl_challenges')).'s</h3>';
+<h3>Open Challenges</h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: challenge_flag counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -2290,7 +2290,7 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-flag"></i>
-<h3>Open '.ucfirst(variable_get('csl_challenges')).'s</h3>'),
+<h3>Open Challenges</h3>'),
     t('Follow Challenge'),
     t('flag'),
     t('Support Challenge'),
@@ -2322,7 +2322,7 @@ function collabco_views_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Recent '.variable_get('csl_ideas');
+  $handler->display->display_options['title'] = 'Recent ideas';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -3450,14 +3450,14 @@ function collabco_views_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Latest '.ucfirst(variable_get('csl_ideas')).'s';
+  $view->human_name = 'Latest ideas';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Latest '.ucfirst(variable_get('csl_ideas')).'s';
+  $handler->display->display_options['title'] = 'Latest Ideas';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -3532,7 +3532,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-diamond"></i>
-<h3>Latest '.ucfirst(variable_get('csl_ideas')).'s</h3>';
+<h3>Latest ideas</h3>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Flags: following_idea counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -3717,7 +3717,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['latest_ideas'] = array(
     t('Master'),
-    t('Latest '.ucfirst(variable_get('csl_ideas')).'s'),
+    t('Latest Ideas'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -3725,7 +3725,7 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-diamond"></i>
-<h3>Latest '.ucfirst(variable_get('csl_ideas')).'s</h3>'),
+<h3>Latest ideas</h3>'),
     t('Follow Idea'),
     t('Support Idea'),
     t('.'),
@@ -4353,16 +4353,16 @@ print $count;
 $user_flags = flag_get_user_flags(\'node\',NULL,$user->uid);
 $following_ideas = array();
 $following_collaborations = array();
-if (isset($user_flags[\'following_idea\']) || array_key_exists(\'following_idea\', $user_flags)) {
+if (isset($user_flags[\'following_idea\']) || array_key_exists(\'following_idea\', $user_flags)) { 
     $following_ideas = array_keys($user_flags[\'following_idea\']);
 }
-if (isset($user_flags[\'follow_collaboration\']) || array_key_exists(\'follow_collaboration\', $user_flags)) {
+if (isset($user_flags[\'follow_collaboration\']) || array_key_exists(\'follow_collaboration\', $user_flags)) { 
     $following_collaborations = array_keys($user_flags[\'follow_collaboration\']);
 }
 $gids_followed_by_user = array_merge($following_ideas,$following_collaborations);
 if (!empty($gids_followed_by_user)){
   return implode("+",$gids_followed_by_user);
-}else
+}else 
 {
   return \'0\';
 }';
@@ -4379,12 +4379,12 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['arguments']['field_term_ref_tid']['default_argument_options']['code'] = 'global $user;
 $user_tid_flags = flag_get_user_flags(\'taxonomy_term\',NULL,$user->uid);
 $tids_followed_by_user = array();
-if (isset($user_tid_flags[\'challenge_flag\']) || array_key_exists(\'challenge_flag\', $user_tid_flags)) {
+if (isset($user_tid_flags[\'challenge_flag\']) || array_key_exists(\'challenge_flag\', $user_tid_flags)) { 
      $tids_followed_by_user = array_keys($user_tid_flags[\'challenge_flag\']);
 }
 if (!empty($tids_followed_by_user)){
   return implode("+",$tids_followed_by_user);
-}else
+}else 
 {
   return \'0\';
 }';
@@ -4402,16 +4402,16 @@ if (!empty($tids_followed_by_user)){
 $user_flags = flag_get_user_flags(\'node\',NULL,$user->uid);
 $following_ideas = array();
 $following_collaborations = array();
-if (isset($user_flags[\'following_idea\']) || array_key_exists(\'following_idea\', $user_flags)) {
+if (isset($user_flags[\'following_idea\']) || array_key_exists(\'following_idea\', $user_flags)) { 
     $following_ideas = array_keys($user_flags[\'following_idea\']);
 }
-if (isset($user_flags[\'follow_collaboration\']) || array_key_exists(\'follow_collaboration\', $user_flags)) {
+if (isset($user_flags[\'follow_collaboration\']) || array_key_exists(\'follow_collaboration\', $user_flags)) { 
     $following_collaborations = array_keys($user_flags[\'follow_collaboration\']);
 }
 $gids_followed_by_user = array_merge($following_ideas,$following_collaborations);
 if (!empty($gids_followed_by_user)){
   return implode("+",$gids_followed_by_user);
-}else
+}else 
 {
   return \'0\';
 }';
@@ -4585,16 +4585,16 @@ if (!empty($gids_followed_by_user)){
 $user_flags = flag_get_user_flags(\'node\',NULL,$user->uid);
 $following_ideas = array();
 $following_collaborations = array();
-if (isset($user_flags[\'following_idea\']) || array_key_exists(\'following_idea\', $user_flags)) {
+if (isset($user_flags[\'following_idea\']) || array_key_exists(\'following_idea\', $user_flags)) { 
     $following_ideas = array_keys($user_flags[\'following_idea\']);
 }
-if (isset($user_flags[\'follow_collaboration\']) || array_key_exists(\'follow_collaboration\', $user_flags)) {
+if (isset($user_flags[\'follow_collaboration\']) || array_key_exists(\'follow_collaboration\', $user_flags)) { 
     $following_collaborations = array_keys($user_flags[\'follow_collaboration\']);
 }
 $gids_followed_by_user = array_merge($following_ideas,$following_collaborations);
 if (!empty($gids_followed_by_user)){
   return implode("+",$gids_followed_by_user);
-}else
+}else 
 {
   return \'0\';
 }';
@@ -4611,12 +4611,12 @@ if (!empty($gids_followed_by_user)){
   $handler->display->display_options['arguments']['field_term_ref_tid']['default_argument_options']['code'] = 'global $user;
 $user_tid_flags = flag_get_user_flags(\'taxonomy_term\',NULL,$user->uid);
 $tids_followed_by_user = array();
-if (isset($user_tid_flags[\'challenge_flag\']) || array_key_exists(\'challenge_flag\', $user_tid_flags)) {
+if (isset($user_tid_flags[\'challenge_flag\']) || array_key_exists(\'challenge_flag\', $user_tid_flags)) { 
      $tids_followed_by_user = array_keys($user_tid_flags[\'challenge_flag\']);
 }
 if (!empty($tids_followed_by_user)){
   return implode("+",$tids_followed_by_user);
-}else
+}else 
 {
   return \'0\';
 }';
@@ -4634,16 +4634,16 @@ if (!empty($tids_followed_by_user)){
 $user_flags = flag_get_user_flags(\'node\',NULL,$user->uid);
 $following_ideas = array();
 $following_collaborations = array();
-if (isset($user_flags[\'following_idea\']) || array_key_exists(\'following_idea\', $user_flags)) {
+if (isset($user_flags[\'following_idea\']) || array_key_exists(\'following_idea\', $user_flags)) { 
     $following_ideas = array_keys($user_flags[\'following_idea\']);
 }
-if (isset($user_flags[\'follow_collaboration\']) || array_key_exists(\'follow_collaboration\', $user_flags)) {
+if (isset($user_flags[\'follow_collaboration\']) || array_key_exists(\'follow_collaboration\', $user_flags)) { 
     $following_collaborations = array_keys($user_flags[\'follow_collaboration\']);
 }
 $gids_followed_by_user = array_merge($following_ideas,$following_collaborations);
 if (!empty($gids_followed_by_user)){
   return implode("+",$gids_followed_by_user);
-}else
+}else 
 {
   return \'0\';
 }';
@@ -4736,9 +4736,9 @@ if (!empty($gids_followed_by_user)){
 <div class="separator"></div>
 <br>
 <i class="icon-music-stop"></i>
-<h3>Parked '.ucfirst(variable_get('csl_collaborations')).'s</h3>
-<p>While all '.ucfirst(variable_get('csl_collaborations')).'s come from great '.variable_get('csl_ideas').'s, unfortunately not all '.variable_get('csl_ideas').'s are ripe to advance into '.ucfirst(variable_get('csl_collaborations')).'s at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
-<p>Keen to see this '.variable_get('csl_ideas').' gain traction again? Contact our team and let\'s get it going. </p>';
+<h3>Parked Collaborations</h3>
+<p>While all Collaborations come from great ideas, unfortunately not all ideas are ripe to advance into Collaborations at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
+<p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Flags: follow_collaboration counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -4975,9 +4975,9 @@ if (!empty($gids_followed_by_user)){
 <div class="separator"></div>
 <br>
 <i class="icon-music-stop"></i>
-<h3>Parked '.ucfirst(variable_get('csl_collaborations')).'s</h3>
-<p>While all '.ucfirst(variable_get('csl_collaborations')).'s come from great '.variable_get('csl_ideas').'s, unfortunately not all '.variable_get('csl_ideas').'s are ripe to advance into '.ucfirst(variable_get('csl_collaborations')).'s at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
-<p>Keen to see this '.variable_get('csl_ideas').' gain traction again? Contact our team and let\'s get it going. </p>'),
+<h3>Parked Collaborations</h3>
+<p>While all Collaborations come from great ideas, unfortunately not all ideas are ripe to advance into Collaborations at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
+<p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
     t('<img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg">'),
