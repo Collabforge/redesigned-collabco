@@ -51,7 +51,7 @@ function collabco_theme_form_alter(&$form, &$form_state, $form_id) {
     }
   }
   elseif ( in_array( $form_id, array( 'views_exposed_form') ) ) {
-      $form['combine']['#attributes']['placeholder'] = 'Search '.variable_get('csl_challenges').'s';
+      $form['combine']['#attributes']['placeholder'] = 'Search '.csl('challenges',1);
     }
   elseif ( in_array( $form_id, array( 'user_login', 'user_login_block') ) ) {
 
