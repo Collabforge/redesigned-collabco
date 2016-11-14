@@ -273,7 +273,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'menu_name' => 'menu-menu-for-moderators',
     'link_path' => 'admin/structure/term_queue/open_challenges',
     'router_path' => 'admin/structure/term_queue/%',
-    'link_title' => 'Open '.ucfirst(variable_get('csl_challenges')).'s',
+    'link_title' => 'Open Challenges',
     'options' => array(
       'attributes' => array(),
       'item_attributes' => array(
@@ -358,7 +358,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
   t('Idea');
   t('Member report');
   t('On-going / miscellaneous challenge');
-  t('Open '.ucfirst(variable_get('csl_challenges')).'s');
+  t('Open Challenges');
   t('User');
   t('View');
 
