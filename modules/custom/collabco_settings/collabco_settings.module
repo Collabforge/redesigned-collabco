@@ -207,6 +207,7 @@ function collabco_settings_labels_admin_form_submit($form, &$form_state) {
   features_revert_module('collabco_message_feature');
   features_revert_module('collabco_myhub_feature');
   features_revert_module('collabco_views_feature');
+  menu_rebuild();
   drupal_flush_all_caches();
   // drupal_goto();
 }

@@ -11,7 +11,7 @@
 function collabco_theme_preprocess_maintenance_page(&$variables) {
   $t_function = get_t();
   if (drupal_installation_attempted()) {
-    $variables['site_name'] = $t_function('Collabco IMS');   
+    $variables['site_name'] = $t_function('Collabco IMS');
   }
 }
 
@@ -51,7 +51,7 @@ function collabco_theme_form_alter(&$form, &$form_state, $form_id) {
     }
   }
   elseif ( in_array( $form_id, array( 'views_exposed_form') ) ) {
-      $form['combine']['#attributes']['placeholder'] = t('Search challenges');
+      $form['combine']['#attributes']['placeholder'] = 'Search '.variable_get('csl_challenges').'s';
     }
   elseif ( in_array( $form_id, array( 'user_login', 'user_login_block') ) ) {
 
@@ -67,7 +67,7 @@ We have populated the website with some rich demonstration content. Please keep 
 If you have any questions, <a href='http://collabco.com.au/index.php/contact/''>please reach out to us here!</a>
 
 <br><br>&nbsp;&nbsp; <br></div>";
-   
+
    $form['title'] = array(
     '#markup' => $welcome_desc,
     '#weight' => -10,
@@ -237,7 +237,7 @@ function collabco_theme_preprocess_html(&$variables) {
   if (in_array('about', $aliases) || in_array('help', $aliases)) {
     foreach($aliases as $alias) {
       $variables['classes_array'][] = drupal_clean_css_identifier($alias);
-    } 
+    }
   }
 }
 
@@ -264,7 +264,7 @@ function collabco_theme_process_page(&$variables, $hook) {
 }
 
 /**
- * Implements template_preprocess_block(). 
+ * Implements template_preprocess_block().
  * Override or insert variables into the block template
  */
 function collabco_theme_preprocess_block(&$vars) {

@@ -48,7 +48,7 @@
     <div class="breadcrumb-container">
       <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
-        <li><a href="/challenge">Challenge</a></li>
+        <li><a href="/challenge"><?php echo ucfirst(variable_get('csl_challenges'));?>s</a></li>
         <li><?php echo $term_name ?></li>
       </ol>
     </div>
@@ -82,18 +82,18 @@
     $label  = collabco_challenge_status_string($term->tid);
       if ($label == 'Open' || $label == 'Ongoing') { ?>
     <div class="create-idea-btn">
-      <p>Have an idea? Create it now.</p>
+      <p>Have a good <?php echo variable_get('csl_ideas');?>? Create it now.</p>
 
-      <a class="colorbox-node btn btn-default" href="/node/add/idea/<?php print $term->tid; ?>?width=600&height=800&destination=<?php print $term_url; ?>">Create an idea</a>
+      <a class="colorbox-node btn btn-default" href="/node/add/idea/<?php print $term->tid; ?>?width=600&height=800&destination=<?php print $term_url; ?>">Create your <?php echo variable_get('csl_ideas');?></a>
     </div>
     <?php }
       if ($label == 'Closed') { ?>
     <div class="create-idea-btn">
-      <p>The Challenge has now ended and is not accepting new ideas.</p>
+      <p>The <?php echo ucfirst(variable_get('csl_challenges'));?> has now ended and is not accepting new <?php echo variable_get('csl_ideas');?>s.</p>
     </div>
     <?php } if ($label == 'Judging') { ?>
     <div class="create-idea-btn">
-      <p>The Challenge is currently in the judging phase and is not accepting new ideas.</p>
+      <p>The <?php echo ucfirst(variable_get('csl_challenges'));?> is currently in the judging phase and is not accepting new <?php echo variable_get('csl_ideas');?>s.</p>
     </div>
     <?php } ?>
     </div>
@@ -117,7 +117,7 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
 
 <div class="sidebar-2 col-sm-4">
   <div class="region-sidebar-second">
-    <h2 class="block-title">like this challenge?</h2>
+    <h2 class="block-title">like this <?php echo ucfirst(variable_get('csl_challenges'));?>?</h2>
 
       <div class="sidebar-stats">
           <div class="share stat clearfix">
@@ -126,7 +126,7 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
               <a href="<?php echo $share_content;?>><?php echo t('Share') ?>" class="icon-share"></a>
             </div>
           </div>
-  
+
             <div class="stat clearfix">
               <div class='<?php echo $follow_count_classes ?>'><?php print $follow ?></div>
               <div class="stat-label follow event sidebar-link clearfix">
@@ -139,7 +139,7 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
 
         <?php if (!empty($term->field_sponser[LANGUAGE_NONE][0]['target_id'])) {
         $user = user_load($term->field_sponser[LANGUAGE_NONE][0]['target_id']); ?>
-        <h2>challenge sponsor</h2>
+        <h2><?php echo ucfirst(variable_get('csl_challenges'));?> sponsor</h2>
         <div class="team">
           <?php $picture = theme('user_picture', array('account' => $user));
           echo $picture; ?>
