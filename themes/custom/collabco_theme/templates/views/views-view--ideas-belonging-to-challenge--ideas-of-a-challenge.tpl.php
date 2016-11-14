@@ -40,7 +40,7 @@
   <?php endif; ?>
  <?php if ($exposed): ?>
       <div class="recent-ideas row">
-      <h2 class="block-title col-sm-6">Recent Ideas</h2>
+      <h2 class="block-title col-sm-6">Recent <?=csl('ideas',1,1);?></h2>
          <div class="col-sm-6 view-filters">
             <?php print $exposed; ?>
           </div>

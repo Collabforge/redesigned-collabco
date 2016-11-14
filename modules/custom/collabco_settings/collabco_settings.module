@@ -18,6 +18,42 @@ function collabco_settings_init() {
 }
 
 /**
+ * Implements handy rendering tool.
+ * $value = the label in variable_get (see hook_init)
+ * $suffix = 0 for no change, 1 will add "s", anything else is custom suffix
+ * $uc = 0 for no change, 1 for uppercase_first, 2 for uppercase_all
+ */
+function csl($value, $suffix = 0, $uc = 0) {
+
+  $val = variable_get('csl_'.$value);
+
+  switch ($suffix) {
+    case '0':
+      break;
+
+    case '1':
+      $val = $val.'s';
+      break;
+
+    default:
+      $val = $val.$suffix;
+      break;
+  }
+
+  switch ($uc) {
+    case 1:
+      $val = ucfirst($val);
+      break;
+
+    case 2:
+      $val = strtoupper($val);
+      break;
+  }
+
+  return $val;
+}
+
+/**
  * Implements hook_variable_group_info().
  */
 function collabco_settings_variable_group_info() {
