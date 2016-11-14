@@ -11,6 +11,6 @@
 <i class="icon-stormy"></i>
 <h2>Square peg, round hole?</h2>
 
-<p>Is your <?=csl('ideas');?> not fitting into a <?=csl('challenges',1,1);?>? Add it to ongoing <?php echo $on_going_challenge_name;?> <?php echo variable_get('csl_challenges'); ?>!</p>
+<p>Is your <?=csl('ideas');?> not fitting into a <?=csl('challenges',1,1);?>? Add it to ongoing <?php echo $on_going_challenge_name;?> <?=csl('challenges',0,1);?>!</p>
 
 <a class="btn btn-default add-to-brainstorm" href="<?php echo $on_going_challenge_url?>" title="Add to Brainstorm">Add to <?php echo $on_going_challenge_name;?></a>

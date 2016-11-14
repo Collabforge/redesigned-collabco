@@ -519,9 +519,9 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<p>This is where you can view current Challenges, which address specific issues in our organisation.</p>
+<p>This is where you can view current <?=csl(\'challenges\',1,1);?>, which address specific issues in our organisation.</p>
 
-<h3>Open Challenges</h3>';
+<h3>Open <?=csl(\'challenges\',1,1);?></h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -691,9 +691,9 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-flag"></i>
-<p>This is where you can view current Challenges, which address specific issues in our organisation.</p>
+<p>This is where you can view current <?=csl(\'challenges\',1,1);?>, which address specific issues in our organisation.</p>
 
-<h3>Open Challenges</h3>'),
+<h3>Open <?=csl(\'challenges\',1,1);?></h3>'),
     t('<a href="/open-challenges" class="btn btn-default" >View all</a>
 <br>
 <br>'),
@@ -978,7 +978,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Closed Challenges</h3>';
+<h3>Closed <?=csl(\'challenges\',1,1);?></h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
 
   /* Display: Page */
@@ -1021,6 +1021,8 @@ function collabco_views_feature_views_default_views() {
     t('<a href=\'/taxonomy/term/[tid]\'><img alt=\'placeholder image\' src=\'/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg\' ></a>'),
     t('block'),
     t('more'),
+    t('<i class="icon-flag"></i>
+<h3>Closed <?=csl(\'challenges\',1,1);?></h3>'),
     t('Page'),
   );
   $export['closed_challenges'] = $view;
@@ -2125,7 +2127,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-flag"></i>
-<h3>Open Challenges</h3>';
+<h3>Open <?=csl(\'challenges\',1,1);?></h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: challenge_flag counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
@@ -2290,7 +2292,7 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-flag"></i>
-<h3>Open Challenges</h3>'),
+<h3>Open <?=csl(\'challenges\',1,1);?></h3>'),
     t('Follow Challenge'),
     t('flag'),
     t('Support Challenge'),
@@ -3532,8 +3534,8 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-diamond"></i>
-<h3>Latest ideas</h3>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+<h3>Latest <?=csl(\'ideas\',1,0);?></h3>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: following_idea counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
@@ -3725,7 +3727,7 @@ function collabco_views_feature_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<i class="icon-diamond"></i>
-<h3>Latest ideas</h3>'),
+<h3>Latest <?=csl(\'ideas\',1,0);?></h3>'),
     t('Follow Idea'),
     t('Support Idea'),
     t('.'),

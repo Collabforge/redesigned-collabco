@@ -63,22 +63,22 @@ function collabco_challenge_block_view($delta = '') {
   switch ($delta) {
     case 'header_standard':
       if (arg(0) == 'open-challenges') {
-        $variables['title'] = 'Open '.ucfirst(variable_get('csl_challenges')).'s';
+        $variables['title'] = 'Open '.csl('challenges',1,1);
         $variables['sub_title'] = 'Respond to the challenge';
         $variables['icon_class'] = 'icon-flag';
       }
       elseif (arg(0) == 'closed-challenges') {
-        $variables['title'] = 'Closed Challenges';
+        $variables['title'] = 'Closed '.csl('challenges',1,1);
         $variables['sub_title'] = 'Respond to the challenge';
         $variables['icon_class'] = 'icon-flag';
       }
       elseif (arg(0) == 'archived-ideas') {
-        $variables['title'] = 'Archived Ideas';
+        $variables['title'] = 'Archived '.csl('ideas',1,1);
         $variables['sub_title'] = '';
         $variables['icon_class'] = 'icon-diamond';
       }
       elseif (arg(0) == 'idea-supporters') {
-        $variables['title'] = 'Idea Supporters';
+        $variables['title'] = csl('ideas',0,1).' '.csl('support','ers',1);
         $variables['sub_title'] = '';
         $variables['icon_class'] = 'icon-diamond';
       }
@@ -290,7 +290,7 @@ function collabco_challenge_views_api() {
 function collabco_challenge_form_alter(&$form, $form_state, $form_id) {
   switch ($form_id) {
     case 'taxonomy_form_term':
-      $form['field_tag_line'][LANGUAGE_NONE]['0']['value']['#attributes']['placeholder'] = t('This is key information about your '.variable_get('csl_challenges').' which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your challenge to read more.');
+      $form['field_tag_line'][LANGUAGE_NONE]['0']['value']['#attributes']['placeholder'] = t('This is key information about your '.csl('challenges',0,1).' which will appear as the summary across the site. Try to have the most important information at the front for the maximum visibility and to encourage uses to support or click through to your challenge to read more.');
        $form['field_start_date']['#pre_render'] = array('collabco_challenge_date_label');
       break;
   }
@@ -300,7 +300,7 @@ function collabco_challenge_form_alter(&$form, $form_state, $form_id) {
  * Implements hook_date_label().
  */
 function collabco_challenge_date_label($element) {
-  $element[LANGUAGE_NONE][0]['show_todate']['#title'] = t('Fixed end date (untick for ongoing/unending Challenge)');
+  $element[LANGUAGE_NONE][0]['show_todate']['#title'] = t('Fixed end date (untick for ongoing/unending '.csl("challenges",1,1).')');
 
   return $element;
 }

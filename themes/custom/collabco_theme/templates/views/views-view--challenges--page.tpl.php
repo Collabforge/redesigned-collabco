@@ -39,12 +39,12 @@
     <div class="breadcrumb-container">
       <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
-        <li><?=csl('challenge',1,1);?></li>
+        <li><?=csl('challenges',1,1);?></li>
       </ol>
     </div>
     <?php global $user;
     if(user_access('administer') || (is_array($user->roles) && in_array('Moderator', $user->roles))) { ?>
-       <a class="create-challenge" href="/admin/structure/taxonomy/challenge/add">Create New <?=csl('challenge',0,1);?> </a>
+       <a class="create-challenge" href="/admin/structure/taxonomy/challenge/add">Create New <?=csl('challenges',0,1);?> </a>
     <?php } ?>
     <?php if ($exposed): ?>
       <div class="view-filters hidden-xs">
