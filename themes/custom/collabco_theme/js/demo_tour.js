@@ -17,8 +17,7 @@ var redirect_url ="";
   if (window.location.href.indexOf("myhub") > -1) {
     redirect_url = "/challenge";
   }	else if (window.location.href.indexOf("challenge/brainstorm") > -1) {
-  	//redirect_url = "/idea/create-design-thinking-toolkit";
-  	redirect_url = "/idea/test-idwerasdf";
+  	redirect_url = "/idea/create-design-thinking-toolkit";  	
   } else if (window.location.href.indexOf("collaborate") > -1) {
   	redirect_url = "/collaboration/test-collaboration";
   }
