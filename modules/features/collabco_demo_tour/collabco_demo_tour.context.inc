@@ -457,9 +457,8 @@ Go to <a href="myhub">Myhub</a>
   <h2>Profile</h2>
   <p>profile details</p>
 </li>
-<li data-class="icon-flag-menu" data-button="Close">
-  <h2>Go to <a href="/challenge">Challenges</h2>
-  <p>Challenge details</p>
+<li  data-button="Next">
+  <p>Going to challenges page</p>
 </li>',
     ),
   );
