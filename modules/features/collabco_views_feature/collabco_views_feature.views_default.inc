@@ -1063,12 +1063,12 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<div class="breadcrumb-container">
 <ol class="breadcrumb" style="background-color:#FCFCFC; float:left;">
   <li><a href="/">Home</a></li>
-  <li>Collaborations</li>
+  <li><?=csl(\'collaborations\',1,1);?></li>
 </ol>
 </div>
 <i class="icon-beaker"></i>
-<p>Have the skills and resources to develop these idea into projects? Share them here!</p>
-<h3>Featured Collaborations</h3>';
+<p>Have the skills and resources to develop these <?=csl(\'ideas\',1,0);?> into projects? Share them here!</p>
+<h3>Featured <?=csl(\'collaborations\',1,1);?></h3>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -1303,12 +1303,12 @@ function collabco_views_feature_views_default_views() {
     t('<div class="breadcrumb-container">
 <ol class="breadcrumb" style="background-color:#FCFCFC; float:left;">
   <li><a href="/">Home</a></li>
-  <li>Collaborations</li>
+  <li><?=csl(\'collaborations\',1,1);?></li>
 </ol>
 </div>
 <i class="icon-beaker"></i>
-<p>Have the skills and resources to develop these idea into projects? Share them here!</p>
-<h3>Featured Collaborations</h3>'),
+<p>Have the skills and resources to develop these <?=csl(\'ideas\',1,0);?> into projects? Share them here!</p>
+<h3>Featured <?=csl(\'collaborations\',1,1);?></h3>'),
     t('<div class="more-link">
   <a class="btn btn-default" href="/featured-collaborations">
     View All  </a>
@@ -1442,10 +1442,10 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<i class="icon-todolist-check"></i>
-<h3>Collaborations Turned Projects</h3>
-<p>These clever idea creators have made a real difference to our work environment. Their Collaborations have been approved to become projects! </p>
-<p>You can follow their progress on the intranet. You can also explore here to see how the idea grew over time.</p>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+<h3><?=csl(\'collaborations\',1,1);?> Turned Projects</h3>
+<p>These clever <?=csl(\'ideas\');?> creators have made a real difference to our work environment. Their <?=csl(\'collaborations\',1,1);?> have been approved to become projects! </p>
+<p>You can explore here to see how the <?=csl(\'ideas\');?> grew over time.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: follow_collaboration counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
@@ -1601,9 +1601,9 @@ function collabco_views_feature_views_default_views() {
     t('next ›'),
     t('last »'),
     t('<i class="icon-todolist-check"></i>
-<h3>Collaborations Turned Projects</h3>
-<p>These clever idea creators have made a real difference to our work environment. Their Collaborations have been approved to become projects! </p>
-<p>You can follow their progress on the intranet. You can also explore here to see how the idea grew over time.</p>'),
+<h3><?=csl(\'collaborations\',1,1);?> Turned Projects</h3>
+<p>These clever <?=csl(\'ideas\');?> creators have made a real difference to our work environment. Their <?=csl(\'collaborations\',1,1);?> have been approved to become projects! </p>
+<p>You can explore here to see how the <?=csl(\'ideas\');?> grew over time.</p>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
     t('<a href="/node/[nid]"><img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg"></a>'),
@@ -4738,10 +4738,10 @@ if (!empty($gids_followed_by_user)){
 <div class="separator"></div>
 <br>
 <i class="icon-music-stop"></i>
-<h3>Parked Collaborations</h3>
-<p>While all Collaborations come from great ideas, unfortunately not all ideas are ripe to advance into Collaborations at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
-<p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+<h3>Parked <?=csl(\'collaborations\',1,1);?> & <?=csl(\'ideas\',1,1);?></h3>
+<p>While all <?=csl(\'collaborations\',1,1);?> come from great <?=csl(\'ideas\',1,0);?>, unfortunately not all <?=csl(\'ideas\',1,0);?> are ripe to advance into <?=csl(\'collaborations\',1,1);?> at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
+<p>Keen to see this <?=csl(\'ideas\',0,0);?> gain traction again? Contact our team and let\'s get it going. </p>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Relationship: Flags: follow_collaboration counter */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
@@ -4977,9 +4977,9 @@ if (!empty($gids_followed_by_user)){
 <div class="separator"></div>
 <br>
 <i class="icon-music-stop"></i>
-<h3>Parked Collaborations</h3>
-<p>While all Collaborations come from great ideas, unfortunately not all ideas are ripe to advance into Collaborations at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
-<p>Keen to see this idea gain traction again? Contact our team and let\'s get it going. </p>'),
+<h3>Parked <?=csl(\'collaborations\',1,1);?> & <?=csl(\'ideas\',1,1);?></h3>
+<p>While all <?=csl(\'collaborations\',1,1);?> come from great <?=csl(\'ideas\',1,0);?>, unfortunately not all <?=csl(\'ideas\',1,0);?> are ripe to advance into <?=csl(\'collaborations\',1,1);?> at this time. So, we\'ve parked them in this archive so they can be found again if circumstances change.</p>
+<p>Keen to see this <?=csl(\'ideas\',0,0);?> gain traction again? Contact our team and let\'s get it going. </p>'),
     t('Follow Collaboration'),
     t('Support Collaboration'),
     t('<img src="/profiles/collabco/themes/custom/collabco_theme/assets/img/placeholder/placeholder-card-large.jpg">'),
