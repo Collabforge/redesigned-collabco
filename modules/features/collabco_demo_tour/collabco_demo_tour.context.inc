@@ -22,11 +22,18 @@ function collabco_demo_tour_context_default_contexts() {
         'challenge/brainstorm' => 'challenge/brainstorm',
       ),
     ),
+    'user' => array(
+      'values' => array(
+        'test role for demo' => 'test role for demo',
+      ),
+    ),
   );
   $context->reactions = array(
     'joyride_add' => array(
       'joyride_auto_start' => 1,
       'joyride_play_once' => 0,
+      'joyride_poststep_callback' => '',
+      'joyride_postride_callback' => 'post_ride_callback',
       'joyride_tour_content' => '<li data-class="icon-flag" data-text="Next" class="custom">
   <h2>Brainstorm</h2>
   <p>describe it</p>
@@ -82,6 +89,8 @@ function collabco_demo_tour_context_default_contexts() {
     'joyride_add' => array(
       'joyride_auto_start' => 1,
       'joyride_play_once' => 0,
+      'joyride_poststep_callback' => '',
+      'joyride_postride_callback' => 'challenge_ride_callback',
       'joyride_tour_content' => '<li data-class="icon-flag" data-text="Next" class="custom">
   <h2>Challenge</h2>
   <p>Describe challenge.</p>
@@ -154,6 +163,8 @@ function collabco_demo_tour_context_default_contexts() {
     'joyride_add' => array(
       'joyride_auto_start' => 1,
       'joyride_play_once' => 0,
+      'joyride_poststep_callback' => '',
+      'joyride_postride_callback' => 'post_ride_callback',
       'joyride_tour_content' => '<li data-class="icon-beaker" data-text="Next" class="custom">
   <h2>Collaborations</h2>
   <p>describe it</p>
@@ -198,11 +209,18 @@ function collabco_demo_tour_context_default_contexts() {
         '<front>' => '<front>',
       ),
     ),
+    'user' => array(
+      'values' => array(
+        'test role for demo' => 'test role for demo',
+      ),
+    ),
   );
   $context->reactions = array(
     'joyride_add' => array(
       'joyride_auto_start' => 1,
       'joyride_play_once' => 0,
+      'joyride_poststep_callback' => 'demo_tour_callback',
+      'joyride_postride_callback' => 'home_ride_callback',
       'joyride_tour_content' => '<li data-id="brainstorm_img" data-button="Yes" class="custom">
   <h2>Welcome to the guided tour for Collabco IMS.</h2>
   <p>Would you like to proceed with the tour?.</p>
@@ -241,15 +259,14 @@ function collabco_demo_tour_context_default_contexts() {
 Go to <a href="myhub">Myhub</a>
 </p>
  </li>
-<li data-class="icon-squares-menu" data-button="Next" >
-  <h2>My Hub</h2>
-Go to <a href="myhub">Myhub</a> to continue. 
+<li data-button="Continue" >
+  <p>We are going to myhub page</p> 
 </p>
  </li>
 ',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -274,6 +291,8 @@ Go to <a href="myhub">Myhub</a> to continue.
     'joyride_add' => array(
       'joyride_auto_start' => 1,
       'joyride_play_once' => 0,
+      'joyride_poststep_callback' => '',
+      'joyride_postride_callback' => 'post_ride_callback',
       'joyride_tour_content' => '<li data-class="icon-beaker" data-text="Next" class="custom">
   <h2>Collaboration</h2>
   <p>describe it</p>
@@ -283,7 +302,7 @@ Go to <a href="myhub">Myhub</a> to continue.
   <p></p>
 </li>
 <li data-class="like-this-collaboration" data-button="Next">
-  <h2>Like this Collaboration</h2>
+  <h2>Like this Co-lab</h2>
   <p>describe it</p>
 </li>
 <li data-class="collab-info" data-button="Next">
@@ -298,10 +317,11 @@ Go to <a href="myhub">Myhub</a> to continue.
   <h2>Documents within a collaboration</h2>
   <p>describe it</p>
 </li>
-<li data-class="comment-form" data-button="Close" data-options="tip_location:top;tip_animation:fade">
+<li data-button="Close" data-options="tip_location:top;tip_animation:fade">
   <p>Thank you for walk through</p>
   <p>See you soon</p>
-</li>',
+</li>
+',
     ),
   );
   $context->condition_mode = 0;
@@ -329,6 +349,8 @@ Go to <a href="myhub">Myhub</a> to continue.
     'joyride_add' => array(
       'joyride_auto_start' => 1,
       'joyride_play_once' => 0,
+      'joyride_poststep_callback' => '',
+      'joyride_postride_callback' => 'single_idea_ride_callback',
       'joyride_tour_content' => '<li data-class="icon-diamond" data-text="Next" class="custom">
   <h2>Idea</h2>
   <p>describe it</p>
@@ -387,6 +409,8 @@ Go to <a href="myhub">Myhub</a> to continue.
     'joyride_add' => array(
       'joyride_auto_start' => 1,
       'joyride_play_once' => 0,
+      'joyride_poststep_callback' => '',
+      'joyride_postride_callback' => 'post_ride_callback',
       'joyride_tour_content' => '<li data-class="icon-squares" data-text="Next" class="custom">
   <h2>My Hub</h2>
   <p>Describe myhub.</p>

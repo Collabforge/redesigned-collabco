@@ -73,5 +73,7 @@ settings[bootstrap_popover_container] = 'span.pop'
 ;;;;;;;;;;;;;;;;;;;;;
 
 scripts[] ='js/slidenav.js'
+scripts[] ='js/demo_tour.js'
+
 
 
