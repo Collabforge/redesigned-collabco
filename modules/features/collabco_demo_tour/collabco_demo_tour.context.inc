@@ -64,7 +64,7 @@ function collabco_demo_tour_context_default_contexts() {
 </li>',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -82,6 +82,12 @@ function collabco_demo_tour_context_default_contexts() {
     'path' => array(
       'values' => array(
         'challenge' => 'challenge',
+        '~challenge/*' => '~challenge/*',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'test role for demo' => 'test role for demo',
       ),
     ),
   );
@@ -138,7 +144,7 @@ function collabco_demo_tour_context_default_contexts() {
 ',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -156,6 +162,11 @@ function collabco_demo_tour_context_default_contexts() {
     'path' => array(
       'values' => array(
         'collaborate' => 'collaborate',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'test role for demo' => 'test role for demo',
       ),
     ),
   );
@@ -189,7 +200,7 @@ function collabco_demo_tour_context_default_contexts() {
 ',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -286,6 +297,11 @@ Go to <a href="myhub">Myhub</a>
         'collaboration/*' => 'collaboration/*',
       ),
     ),
+    'user' => array(
+      'values' => array(
+        'test role for demo' => 'test role for demo',
+      ),
+    ),
   );
   $context->reactions = array(
     'joyride_add' => array(
@@ -324,7 +340,7 @@ Go to <a href="myhub">Myhub</a>
 ',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -342,6 +358,11 @@ Go to <a href="myhub">Myhub</a>
     'path' => array(
       'values' => array(
         'idea/*' => 'idea/*',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'test role for demo' => 'test role for demo',
       ),
     ),
   );
@@ -384,7 +405,7 @@ Go to <a href="myhub">Myhub</a>
 </li>',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -402,6 +423,11 @@ Go to <a href="myhub">Myhub</a>
     'path' => array(
       'values' => array(
         'myhub' => 'myhub',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'test role for demo' => 'test role for demo',
       ),
     ),
   );
@@ -437,7 +463,7 @@ Go to <a href="myhub">Myhub</a>
 </li>',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
