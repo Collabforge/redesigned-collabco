@@ -224,7 +224,7 @@ function collabco_idea_block_view($delta = '') {
       if (user_access('administer group') or og_user_access('node', $node->nid, 'administer group')) {
         $links[] = array(
           'href' => sprintf('node/%d/edit', $node->nid)
-          , 'title' => 'Edit this idea'
+          , 'title' => 'Edit this '.csl('ideas')
           , 'attributes' => array('class' => array('btn btn-default icon-pencil'))
           ,
         );
@@ -234,7 +234,7 @@ function collabco_idea_block_view($delta = '') {
         if (user_access('administer') || (is_array($user->roles) && in_array('Moderator', $user->roles))) {
           $links[] = array(
             'href' => sprintf('node/%d/promote-to-collaboration', $node->nid)
-            , 'title' => 'Promote to Co-lab'
+            , 'title' => 'Promote to '.csl('collaborations')
             , 'attributes' => array('class' => array('btn btn-default icon-beaker', 'promote-to-collaboration'))
             ,
           );
@@ -508,7 +508,7 @@ function theme_single_idea_actions_template(&$variables) {
   $links = array();
   $links[] = array(
     'href' => sprintf('idea-supporters/%d', $gid)
-    , 'title' => 'View Idea Supporters'
+    , 'title' => 'View '.csl('ideas').' '.csl('support','ers')
     , 'classes' => array()
     ,
   );
