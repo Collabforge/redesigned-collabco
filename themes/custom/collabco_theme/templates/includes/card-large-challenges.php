@@ -1,7 +1,7 @@
 <?php $tid = $fields['tid']->raw;
  $flag_vars = array(
    'after_flagging' => TRUE,
- ); 
+ );
  $status = collabco_challenge_status_string($tid);
  $label = $status;
  $challenge_class = ($status == 'Open' || $status == 'Ongoing') ? 'open' : 'closed';
@@ -14,16 +14,16 @@ if (array_key_exists('challenge_flag', $user_flags)){
 $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye';
 $follow_count_classes = $follow_flag?'value flagged':'value';
 $term_url = url('/taxonomy/term/'.$tid, array('fragment' => 'ideas'));
-$term_link = l('ideas','/taxonomy/term/'.$tid,array('attributes' => array('id' => 'ideas-link-id', 'class' => 'ideas-link')),array('fragment' => 'ideas'));
+$term_link = l(csl('ideas','(s)',0),'/taxonomy/term/'.$tid,array('attributes' => array('id' => 'ideas-link-id', 'class' => 'ideas-link')),array('fragment' => 'ideas'));
 $total_items = count( $view->result );
 ?>
 
 <div class="col-xs-12 col-sm-6 col-md-4 card large challenges <?php echo $challenge_class; ?> total-items-<?php echo $total_items; ?>">
-  
+
   <article>
     <div class="feat-img">
       <div class="img-icon icon-flag"></div>
-       
+
        <?php
          echo $fields['field_challenge_image']->content;
 
@@ -41,20 +41,20 @@ $total_items = count( $view->result );
          }
        ?>
       <p class="icon-watch remaining-days"><span><?php echo $label; ?></span></p>
- 
+
     </div>
-    
+
     <div class="content">
       <span class="title"><?php echo $fields['name']->content;  ?></span>
       <p><?php echo $fields['field_tag_line']->content; ?></p>
       <?php $sponser=TRUE;
-       if (empty($fields['field_sponser']) || strpos($fields['field_sponser']->content,"no_sponser")!==FALSE) { 
+       if (empty($fields['field_sponser']) || strpos($fields['field_sponser']->content,"no_sponser")!==FALSE) {
         $sponser = FALSE;
-       } 
+       }
       if ($sponser) { ?>
-      <div class="cockade tick"></div>      
-      <div class="tag green">Sponsored</div>
-      <?php } ?>      
+      <div class="cockade tick"></div>
+      <div class="tag green"><?=csl('sponsor','ed',1);?></div>
+      <?php } ?>
     </div>
     <footer>
       <div class="follow event card-large-link">
@@ -70,9 +70,9 @@ $total_items = count( $view->result );
       <?php if ($challenge_class == 'open') { ?>
       <div class="ideas-challenge card-large-link">
         <a href='<?php echo $create_idea_url ?>' class="icon-dialogue"></a>
-        <span class='flag-wrapper'><a href='<?php echo $create_idea_url ?>' class="ideas-link">create idea</a></span>
+        <span class='flag-wrapper'><a href='<?php echo $create_idea_url ?>' class="ideas-link">create <?=csl('ideas');?></a></span>
       </div>
-  
+
      <?php } ?>
     </footer>
    </article>

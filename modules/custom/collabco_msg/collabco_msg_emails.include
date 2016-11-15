@@ -22,7 +22,7 @@ function _collabco_msg_mail_text($key, $language = NULL, $t_vars = array()) {
       $text = t("
         <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-        <p>!user_link created a new document in a Collaboration you follow on [site:name].</p>
+        <p>!user_link created a new document in a ".csl('collaboration',0,1)." you follow on [site:name].</p>
 
         <p>Click here to view this discussion: !content_link</p>",
 
@@ -37,7 +37,7 @@ function _collabco_msg_mail_text($key, $language = NULL, $t_vars = array()) {
       $text = t("
         <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-        <p>!user_link created a new discussion in a Collaboration you follow on [site:name].</p>
+        <p>!user_link created a new discussion in a ".csl('collaboration',0,1)." you follow on [site:name].</p>
 
         <p>Click here to view this discussion: !content_link</p>",
 
@@ -45,7 +45,7 @@ function _collabco_msg_mail_text($key, $language = NULL, $t_vars = array()) {
       break;
 
     case 'idea_created_subject':
-      $text = t('New idea at [site:name]', $t_vars, array('langcode' => $langcode));
+      $text = t('New '.csl('ideas').' at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
 
     case 'idea_created_body':
@@ -53,24 +53,24 @@ function _collabco_msg_mail_text($key, $language = NULL, $t_vars = array()) {
 
         <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-        <p>!user_link created a new Idea for a Challenge you follow on [site:name].</p>
+        <p>!user_link created a new ".csl('ideas')." for a ".csl('challenge',0,1)." you follow on [site:name].</p>
 
-        <p>Click here to view this Idea: !content_link</p>",
+        <p>Click here to view this ".csl('ideas').": !content_link</p>",
 
         $t_vars, array('langcode' => $langcode));
       break;
 
     case 'collaboration_created_subject':
-      $text = t('Idea promoted to Collaboration at [site:name]', $t_vars, array('langcode' => $langcode));
+      $text = t(csl('ideas').' promoted to '.csl('collaboration',0,1).' at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
 
     case 'collaboration_created_body':
       $text = t("
         <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-        <p>An Idea has been promoted to a Collaboration, in a Challenge you follow on [site:name].</p>
+        <p>A successful ".csl('ideas')." has been promoted to a ".csl('collaboration',0,1)." on [site:name].</p>
 
-        <p>Click here to view this Collaboration: !content_link</p>",
+        <p>Click here to view this ".csl('collaboration',0,1).": !content_link</p>",
 
         $t_vars, array('langcode' => $langcode));
       break;
@@ -116,22 +116,22 @@ function _collabco_msg_mail_text($key, $language = NULL, $t_vars = array()) {
       $text = t("
         <p>Hello <span style='font-weight: bold;'>!username</span>,</p>
 
-        <p>An Idea you follow has WON its Challenge on [site:name].</p>
+        <p>The ".csl('ideas')." you follow has WON its ".csl('challenge',0,1)." on [site:name].</p>
 
-        <p>Click here to view this Idea: !content_link</p>",
+        <p>Click here to view this ".csl('ideas').": !content_link</p>",
 
         $t_vars, array('langcode' => $langcode));
       break;
 
     case 'collaboration_converted_to_project_subject':
-      $text = t('Collaboration converted to Project at [site:name]', $t_vars, array('langcode' => $langcode));
+      $text = t(csl('collaboration',0,1).' converted to Project at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
 
     case 'collaboration_converted_to_project_body':
       $text = t("
         <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-        <p>A Collaboration you follow has been converted to a Project on [site:name].</p>
+        <p>A ".csl('collaboration',0,1)." you follow has been converted to a Project on [site:name].</p>
 
         <p>Click here to view it: !content_link</p>",
 
@@ -139,17 +139,17 @@ function _collabco_msg_mail_text($key, $language = NULL, $t_vars = array()) {
       break;
 
     case 'challenge_ends_soon_subject':
-      $text = t('New idea at [site:name]', $t_vars, array('langcode' => $langcode));
+      $text = t('New '.csl('ideas').' at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
 
     case 'challenge_ends_soon_body':
       $text = t("
         <p>Hello <span style='font-weight: bold;'>!username</span>,<p>
 
-        <p>A challenge that you follow  on [site:name] is ending soon. Login now to add your idea.</p>
+        <p>A ".csl('challenge',0,1)." that you follow  on [site:name] is ending soon. Login now to add your idea.</p>
 
-        <p>Click here to view this Challenge: !term_link</p>",
-        
+        <p>Click here to view this ".csl('challenge',0,1).": !term_link</p>",
+
         $t_vars, array('langcode' => $langcode));
       break;
 

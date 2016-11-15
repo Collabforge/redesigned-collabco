@@ -25,6 +25,11 @@ function collabco_settings_init() {
  */
 function csl($value, $suffix = 0, $uc = 0) {
 
+  // Fix for accidental singular-usage instead of plural usage of terms
+  if ($value == "idea" || $value == "collaboration" || $value == "challenge") {
+    $value = $value.'s';
+  }
+
   $val = variable_get('csl_'.$value);
 
   switch ($suffix) {
@@ -161,6 +166,17 @@ function collabco_settings_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('collabco_settings_labels_admin_form'),
   );
+
+
+    $items['examples/token_test'] = array(
+    'title' => 'Token example',
+    'description' => 'Test replacement tokens in real time.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('collabco_settings_example_form'),
+    'access callback' => TRUE,
+  );
+
+
   return $items;
 
 }
@@ -235,17 +251,16 @@ function collabco_settings_labels_admin_form() {
  */
 function collabco_settings_labels_admin_form_submit($form, &$form_state) {
 
-  features_revert_module('collabco_appearance_feature');
-  features_revert_module('collabco_challenge_feature');
-  features_revert_module('collabco_collaboration_feature');
-  features_revert_module('collabco_core_feature');
-  features_revert_module('collabco_ideas_feature');
-  features_revert_module('collabco_message_feature');
-  features_revert_module('collabco_myhub_feature');
-  features_revert_module('collabco_views_feature');
-  menu_rebuild();
-  drupal_flush_all_caches();
-  // drupal_goto();
+  // features_revert_module('collabco_appearance_feature');
+  // features_revert_module('collabco_challenge_feature');
+  // features_revert_module('collabco_collaboration_feature');
+  // features_revert_module('collabco_core_feature');
+  // features_revert_module('collabco_ideas_feature');
+  // features_revert_module('collabco_message_feature');
+  // features_revert_module('collabco_myhub_feature');
+  // features_revert_module('collabco_views_feature');
+  // menu_rebuild();
+  // drupal_flush_all_caches();
 }
 
 /**
@@ -272,3 +287,85 @@ function collabco_settings_ckeditor_plugin() {
   );
   return $plugins;
 }
+
+
+
+
+
+/**
+* Implements hook_token_info().
+* You first of all have to define your token in the hook_token_info(): -
+  See more at: http://www.whenwhowhere.com/tech-blog/create-custom-token-drupal-7#sthash.6IQaG7A5.dpuf
+If you define your token in ['tokens']['user'] like I did it will appear in the available tokens under user
+but you can change it to another option, in my case this is what made most sense.
+This will apply for all token lists which can retrieve user information,
+
+
+*
+*/
+function collabco_settings_token_info() {
+  $info['tokens']['variable']['follow'] = array(
+    'name' => t('variable follow'),
+    'description' => t('Returns the changed label for Follow'),
+  );
+  $info['tokens']['variable']['support'] = array(
+    'name' => t('variable support'),
+    'description' => t('Returns the changed label for Support'),
+  );
+  $info['tokens']['variable']['idea'] = array(
+    'name' => t('variable idea'),
+    'description' => t('Returns the changed label for Ideas'),
+  );
+  $info['tokens']['variable']['challenge'] = array(
+    'name' => t('variable challenge'),
+    'description' => t('Returns the changed label for Challenges'),
+  );
+  $info['tokens']['variable']['collaboration'] = array(
+    'name' => t('variable collaboration'),
+    'description' => t('Returns the changed label for Collaborations'),
+  );
+  return $info;
+}
+
+
+/* Now we need to actually return the contents (or replacement value) of this token and
+ * this is done in the hook_tokens():
+*/
+
+/**
+* Implements hook_tokens().
+*/
+function collabco_settings_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+    if ($type == 'variable') {
+      foreach ($tokens as $name => $original) {
+        switch ($name) {
+          case 'follow':
+            $name = csl('follow');
+            $replacements[$original] = $name;
+            break;
+          case 'support':
+            $name = csl('support');
+            $replacements[$original] = $name;
+            break;
+          case 'idea':
+            $name = csl('ideas');
+            $replacements[$original] = $name;
+            break;
+          case 'challenge':
+            $name = csl('challenges');
+            $replacements[$original] = $name;
+            break;
+          case 'collaboration':
+            $name = csl('collaborations');
+            $replacements[$original] = $name;
+            break;
+
+      }
+    }
+  }
+
+  return $replacements;
+}
+
+

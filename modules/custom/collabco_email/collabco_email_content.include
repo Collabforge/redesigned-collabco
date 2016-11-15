@@ -14,7 +14,7 @@ function _collabco_email_message_text($key, $language = NULL, $t_vars = array())
   switch ($key) {
     case 'header':
 
-      $text = t("<p>Hello <span style='font-weight: bold;'>!username</span>,<span style='color: #4A827B; font-weight: bold;'> here are the updates from content you follow.</span><p>", 
+      $text = t("<p>Hello <span style='font-weight: bold;'>!username</span>,<span style='color: #4A827B; font-weight: bold;'> here are the updates from content you follow.</span><p>",
 
         $t_vars, array('langcode' => $langcode));
       break;
@@ -25,7 +25,7 @@ function _collabco_email_message_text($key, $language = NULL, $t_vars = array())
 
     case 'knowledge_object_created':
 
-      $text = t("<p>A new document is created in !group_link.</p>
+      $text = t("<p>A new document was created in !group_link.</p>
 
 <p>Click here to view this document: !content_link</p>", $t_vars, array('langcode' => $langcode));
 
@@ -33,7 +33,7 @@ function _collabco_email_message_text($key, $language = NULL, $t_vars = array())
 
     case 'conversation_created':
 
-      $text = t("<p>A new discussion is created in !group_link.</p>
+      $text = t("<p>A new discussion was created in !group_link.</p>
 
 <p>Click here to view this discussion: !content_link</p>", $t_vars, array('langcode' => $langcode));
 
@@ -41,25 +41,25 @@ function _collabco_email_message_text($key, $language = NULL, $t_vars = array())
 
     case 'idea_created':
 
-      $text = t("<p>A new idea is created in !term_link.</p>
+      $text = t("<p>A new ".csl('idea')." was created in !term_link.</p>
 
-      <p>Click here to view this idea: !content_link</p>", 
-    
+      <p>Click here to view this ".csl('idea').": !content_link</p>",
+
       $t_vars, array('langcode' => $langcode));
 
       break;
 
     case 'collaboration_created':
 
-      $text = t("<p>An idea has been promoted to a Collaboration, in a Challenge you follow.</p>
+      $text = t("<p>A successful ".csl('idea')." has been promoted to a ".csl('collaboration',0,1)."</p>
 
-<p>Click here to view this Collaboration: !content_link</p>", $t_vars, array('langcode' => $langcode));
+<p>Click here to view this ".csl('collaboration',0,1).": !content_link</p>", $t_vars, array('langcode' => $langcode));
 
       break;
 
     case 'winning_idea':
 
-      $text = t("<p>!content_link is the winning idea in the challenge !term_link.</p>", $t_vars, array('langcode' => $langcode));
+      $text = t("<p>!content_link is the winning ".csl('ideas')." in the ".csl('challenge',1,1)." !term_link.</p>", $t_vars, array('langcode' => $langcode));
 
       break;
 
