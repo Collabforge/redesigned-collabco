@@ -138,14 +138,14 @@ function _collabco_collabortaion_mail_text($key, $language = NULL, $t_vars = arr
 
   switch ($key) {
     case 'collabco_inactivity_subject':
-       $text = t('Collaborations with no activity for last 30 days at [site:name]', $t_vars, array('langcode' => $langcode));
+       $text = t(csl('collaborations',1,1).' with no activity for last 30 days at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
 
     case 'collabco_inactivity_body':
       $text = t("
 <p>Hello <span style='font-weight: bold;'>!username</span>,</p>
 
-<p>The below Collaborations have had no activity for the last 30 days.</p>
+<p>The below ".csl('collaborations',1,1)." have had no activity for the last 30 days.</p>
 
 <p>!collab_text</p>
 
@@ -157,14 +157,14 @@ function _collabco_collabortaion_mail_text($key, $language = NULL, $t_vars = arr
       break;
 
     case 'collabco_archived_subject':
-      $text = t('Collaborations archived with no activity for last 90 days at [site:name]', $t_vars, array('langcode' => $langcode));
+      $text = t(csl('collaborations',1,1).' archived with no activity for last 90 days at [site:name]', $t_vars, array('langcode' => $langcode));
       break;
 
     case 'collabco_archived_body':
       $text = t("
 <p>Hello <span style='font-weight: bold;'>!username</span>,</p>
 
-<p>The below Collaborations are now archived due to no activity for the last 90 days.</p>
+<p>The below ".csl('collaborations',1,1)." are now archived due to no activity for the last 90 days.</p>
 
 <p>!collab_text</p>
 
@@ -561,7 +561,7 @@ function collabco_collaboration_block_view($delta = '') {
       if (arg(2) == NULL && $node->type == 'hub') {
         if (user_access('administer group') or og_user_access('node', $nid, 'administer group')) {
           $edit_collab_url = "/node/$nid/edit";
-          $output = "<div><ul class='btn btn-actions'><li>" . l(t("Edit the Collaboration"), $edit_collab_url, array('attributes' => array('class' => 'btn btn-default icon-pencil'))) . "</li></ul></div>";
+          $output = "<div><ul class='btn btn-actions'><li>" . l(t("Edit the ".csl('collaborations',0,1)), $edit_collab_url, array('attributes' => array('class' => 'btn btn-default icon-pencil'))) . "</li></ul></div>";
           $block['content'] = $output;
         }
       }
@@ -585,8 +585,8 @@ function collabco_collaboration_block_view($delta = '') {
           'nid'      => $nid,
           'collaboration_title' => $node->title,
           'top_bar1' => 'Cb',
-          'top_bar2' => t('Collaboration'),
-          'title'   => t('Like this Collaboration?'),
+          'top_bar2' => t(csl('collaborations',0,1)),
+          'title'   => t('Like this '.csl('collaboration',0,1).'?'),
           'support' => empty($counts['support_collaboration']) ? 0 : $counts['support_collaboration'],
           'follow'  => empty($counts['follow_collaboration']) ? 0 : $counts['follow_collaboration'],
           'share_link'   => url(drupal_get_path_alias('node/' . $node->nid), array('absolute' => TRUE)),
@@ -712,7 +712,7 @@ function theme_single_collab_actions_template(&$variables) {
   $links = array();
   $links[] = array(
     'href' => sprintf('collaboration-supporters/%d', $gid)
-    , 'title' => 'View Collaboration supporters'
+    , 'title' => 'View '.csl("collaboration",0,1).' supporters'
     , 'classes' => array()
     ,
   );
