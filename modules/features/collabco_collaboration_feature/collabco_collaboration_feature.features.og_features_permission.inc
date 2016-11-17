@@ -39,14 +39,6 @@ function collabco_collaboration_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:hub:create ia_comment content'
-  $permissions['node:hub:create ia_comment content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:hub:create knowledge_object content'
   $permissions['node:hub:create knowledge_object content'] = array(
     'roles' => array(
@@ -63,11 +55,6 @@ function collabco_collaboration_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:hub:delete any ia_comment content'
-  $permissions['node:hub:delete any ia_comment content'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:hub:delete any knowledge_object content'
   $permissions['node:hub:delete any knowledge_object content'] = array(
     'roles' => array(
@@ -82,11 +69,6 @@ function collabco_collaboration_feature_og_features_default_permissions() {
       'administrator member' => 'administrator member',
       'member' => 'member',
     ),
-  );
-
-  // Exported og permission: 'node:hub:delete own ia_comment content'
-  $permissions['node:hub:delete own ia_comment content'] = array(
-    'roles' => array(),
   );
 
   // Exported og permission: 'node:hub:delete own knowledge_object content'
@@ -150,14 +132,6 @@ function collabco_collaboration_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:hub:update any ia_comment content'
-  $permissions['node:hub:update any ia_comment content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:hub:update any knowledge_object content'
   $permissions['node:hub:update any knowledge_object content'] = array(
     'roles' => array(
@@ -175,14 +149,6 @@ function collabco_collaboration_feature_og_features_default_permissions() {
 
   // Exported og permission: 'node:hub:update own conversation content'
   $permissions['node:hub:update own conversation content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:hub:update own ia_comment content'
-  $permissions['node:hub:update own ia_comment content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',

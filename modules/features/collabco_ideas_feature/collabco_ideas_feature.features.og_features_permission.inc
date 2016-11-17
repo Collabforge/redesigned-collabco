@@ -38,13 +38,6 @@ function collabco_ideas_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:idea:create ia_comment content'
-  $permissions['node:idea:create ia_comment content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:idea:create knowledge_object content'
   $permissions['node:idea:create knowledge_object content'] = array(
     'roles' => array(
@@ -59,13 +52,6 @@ function collabco_ideas_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:idea:delete any ia_comment content'
-  $permissions['node:idea:delete any ia_comment content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:idea:delete any knowledge_object content'
   $permissions['node:idea:delete any knowledge_object content'] = array(
     'roles' => array(
@@ -75,13 +61,6 @@ function collabco_ideas_feature_og_features_default_permissions() {
 
   // Exported og permission: 'node:idea:delete own conversation content'
   $permissions['node:idea:delete own conversation content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:idea:delete own ia_comment content'
-  $permissions['node:idea:delete own ia_comment content'] = array(
     'roles' => array(
       'member' => 'member',
     ),
@@ -148,13 +127,6 @@ function collabco_ideas_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:idea:update any ia_comment content'
-  $permissions['node:idea:update any ia_comment content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:idea:update any knowledge_object content'
   $permissions['node:idea:update any knowledge_object content'] = array(
     'roles' => array(
@@ -171,13 +143,6 @@ function collabco_ideas_feature_og_features_default_permissions() {
 
   // Exported og permission: 'node:idea:update own conversation content'
   $permissions['node:idea:update own conversation content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:idea:update own ia_comment content'
-  $permissions['node:idea:update own ia_comment content'] = array(
     'roles' => array(
       'member' => 'member',
     ),

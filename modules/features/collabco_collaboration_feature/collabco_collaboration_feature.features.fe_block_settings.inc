@@ -22,12 +22,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -55,12 +49,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 10,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -88,12 +76,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second_top',
         'status' => 1,
@@ -121,12 +103,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'collaborate',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_top',
         'status' => 1,
@@ -154,12 +130,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'featured-collaborations',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'content_top',
         'status' => 1,
@@ -187,12 +157,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'parked-collaborations',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'content_top',
         'status' => 1,
@@ -220,12 +184,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'collaborations-turned-projects',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'content_top',
         'status' => 1,
@@ -253,12 +211,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'collaborate',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_lower',
         'status' => 1,
@@ -286,12 +238,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -319,12 +265,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -352,12 +292,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*/discussions',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -385,12 +319,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*/documents',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -418,12 +346,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'content_upper',
         'status' => 1,
@@ -451,12 +373,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'full_width_top',
         'status' => 1,
@@ -484,12 +400,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 5,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -517,12 +427,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'collaborate',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_bottom',
         'status' => 1,
@@ -550,12 +454,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => '',
         'status' => 0,
@@ -583,12 +481,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => '',
         'status' => 0,
@@ -616,12 +508,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => 'collaborate',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_bottom',
         'status' => 1,
@@ -649,12 +535,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content',
         'status' => 1,
@@ -682,12 +562,6 @@ function collabco_collaboration_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => '',
         'status' => 0,

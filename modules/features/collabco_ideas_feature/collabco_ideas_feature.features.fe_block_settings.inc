@@ -22,12 +22,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 2,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -55,12 +49,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'ideas_archived',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 3,
-      ),
       'collabco_theme' => array(
         'region' => 'content_top',
         'status' => 1,
@@ -88,12 +76,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -126,12 +108,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
       'Moderator' => 3,
     ),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 15,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -159,12 +135,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -192,12 +162,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'idea/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'content_upper',
         'status' => 1,
@@ -225,12 +189,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'idea/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 1,
-      ),
       'collabco_theme' => array(
         'region' => 'full_width_top',
         'status' => 1,
@@ -258,12 +216,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 10,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -291,12 +243,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'node/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'bootstrap',
-        'weight' => 5,
-      ),
       'collabco_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -324,12 +270,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'myhub/developing',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content',
         'status' => 1,
@@ -359,12 +299,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
       'authenticated user' => 2,
     ),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_lower',
         'status' => 1,
@@ -392,12 +326,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => '',
         'status' => 0,
@@ -425,12 +353,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => '',
         'status' => 0,
@@ -460,12 +382,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
       'authenticated user' => 2,
     ),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_middle',
         'status' => 1,
@@ -495,12 +411,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
       'authenticated user' => 2,
     ),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_middle',
         'status' => 1,
@@ -528,12 +438,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'challenge',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_bottom',
         'status' => 1,
@@ -561,12 +465,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => '',
         'status' => 0,
@@ -594,12 +492,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => 'challenge',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_lower',
         'status' => 1,
@@ -627,12 +519,6 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => '',
         'status' => 0,
