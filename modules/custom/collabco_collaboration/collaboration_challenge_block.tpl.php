@@ -9,7 +9,7 @@
     <?php echo $challenge_link; ?>
 </div>
 
-<h2 class="related-ideas">Related Idea</h2>
+<h2 class="related-ideas">Related <?=csl('ideas',1,0);?></h2>
 <div class="item stat">
     <?php echo $idea_link; ?>
 </div>
