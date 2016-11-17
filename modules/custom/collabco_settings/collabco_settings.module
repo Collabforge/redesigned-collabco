@@ -24,7 +24,6 @@ function collabco_settings_init() {
  * $uc = 0 for no change, 1 for uppercase_first, 2 for uppercase_all
  */
 function csl($value, $suffix = 0, $uc = 0) {
-
   // Fix for accidental singular-usage instead of plural usage of terms
   if ($value == "idea" || $value == "collaboration" || $value == "challenge") {
     $value = $value.'s';
@@ -167,16 +166,6 @@ function collabco_settings_menu() {
     'page arguments' => array('collabco_settings_labels_admin_form'),
   );
 
-
-    $items['examples/token_test'] = array(
-    'title' => 'Token example',
-    'description' => 'Test replacement tokens in real time.',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('collabco_settings_example_form'),
-    'access callback' => TRUE,
-  );
-
-
   return $items;
 
 }
@@ -185,7 +174,6 @@ function collabco_settings_menu() {
  * Form builder for changing labels.
  */
 function collabco_settings_labels_admin_form() {
-
   $form = array();
   // $form['collabco_disable_defaultcontent_notice_enabled'] = array(
   //   '#type' => 'checkbox',
@@ -243,6 +231,7 @@ function collabco_settings_labels_admin_form() {
     '#required' => TRUE,
   );
   $form['#submit'][] = 'collabco_settings_labels_admin_form_submit';
+  $form['#reset'][] = 'collabco_settings_labels_admin_form_submit';
   return system_settings_form($form);
 }
 
@@ -250,17 +239,8 @@ function collabco_settings_labels_admin_form() {
  * Handles changing labels
  */
 function collabco_settings_labels_admin_form_submit($form, &$form_state) {
-
-  // features_revert_module('collabco_appearance_feature');
-  // features_revert_module('collabco_challenge_feature');
-  // features_revert_module('collabco_collaboration_feature');
-  // features_revert_module('collabco_core_feature');
-  // features_revert_module('collabco_ideas_feature');
-  // features_revert_module('collabco_message_feature');
-  // features_revert_module('collabco_myhub_feature');
-  // features_revert_module('collabco_views_feature');
-  // menu_rebuild();
-  // drupal_flush_all_caches();
+  menu_rebuild();
+  drupal_flush_all_caches();
 }
 
 /**

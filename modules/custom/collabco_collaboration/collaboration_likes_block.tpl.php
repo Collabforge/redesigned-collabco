@@ -13,7 +13,7 @@
  $support_count_classes = $support_flag ? 'value flagged' : 'value';
 
  $collaboration_title = str_replace(' ', '&nbsp;', $collaboration_title);
- $share_content = "mailto:?subject=Sharing&nbsp;an&nbsp;Collaboration&body=Hi,%0DI&nbsp;found&nbsp;this&nbsp;co-lab&nbsp;and&nbsp;thought&nbsp;you&nbsp;might&nbsp;like&nbsp;it&nbsp;%0D" . $share_link;
+ $share_content = "mailto:?subject=Sharing&nbsp;an&nbsp;".csl('collaboration',1,1)."&body=Hi,%0DI&nbsp;found&nbsp;this&nbsp;".csl('collaboration',1,1)."&nbsp;and&nbsp;thought&nbsp;you&nbsp;might&nbsp;like&nbsp;it&nbsp;%0D" . $share_link;
  $request_to_join_content = "mailto:" . $mail . "?subject=Request&nbsp;to&nbsp;join:&nbsp;" . $collaboration_title;
 ?>
 
