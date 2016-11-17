@@ -14,7 +14,7 @@
  $support_count_classes = $support_flag?'value flagged':'value';
 
  $idea_title = str_replace(' ', '&nbsp;', $idea_title);
- $share_content = "mailto:?subject=Sharing&nbsp;an&nbsp;idea&body=Hi,%0DI&nbsp;found&nbsp;this&nbsp;idea&nbsp;and&nbsp;thought&nbsp;you&nbsp;might&nbsp;like&nbsp;it&nbsp;%0D" . $share_link;
+ $share_content = "mailto:?subject=Sharing&nbsp;&nbsp;".csl('ideas',1,0)."&body=Hi,%0DI&nbsp;found&nbsp;this&nbsp;".csl('ideas',1,0)."&nbsp;and&nbsp;thought&nbsp;you&nbsp;might&nbsp;like&nbsp;it&nbsp;%0D" . $share_link;
  $request_to_join_content = "mailto:" . $mail ."?subject=Request&nbsp;to&nbsp;join:&nbsp;" . $idea_title;
 ?>
 
@@ -37,7 +37,7 @@
         <a href="#" class='<?php echo $follow_classes ?>'></a>
       </div>
     </div>
-    
+
     <div class="share stat clearfix">
       <div class="stat-label sidebar-link clearfix">
         <a href=<?php echo $share_content;?>><?php echo t('Share') ?></a>
@@ -49,7 +49,7 @@
       <div class="stat-label sidebar-link clearfix">
         <a href="<?php echo $request_to_join_content; ?>">Request to join / contact </a>
         <a href="<?php echo $request_to_join_content; ?>" class='icon-mail'></a>
-      </div>  
+      </div>
     </div>
 
   </div>
