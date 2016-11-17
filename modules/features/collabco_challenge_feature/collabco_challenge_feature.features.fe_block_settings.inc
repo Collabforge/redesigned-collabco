@@ -22,12 +22,6 @@ function collabco_challenge_feature_default_fe_block_settings() {
     'pages' => 'challenge',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_middle',
         'status' => 1,
@@ -55,12 +49,6 @@ function collabco_challenge_feature_default_fe_block_settings() {
     'pages' => 'challenge',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_top',
         'status' => 1,
@@ -93,12 +81,6 @@ about
 idea-supporters/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_top',
         'status' => 1,
@@ -116,39 +98,6 @@ idea-supporters/*',
     'visibility' => 1,
   );
 
-  $export['term_queue-0'] = array(
-    'cache' => 1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 0,
-    'module' => 'term_queue',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'collabco_theme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'collabco_theme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['views-3ae42aa206ab98b6a1a3d7b5e905e19d'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -161,12 +110,6 @@ idea-supporters/*',
       'authenticated user' => 2,
     ),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_upper',
         'status' => 1,
@@ -194,12 +137,6 @@ idea-supporters/*',
     'pages' => 'challenge/*',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'full_width_top',
         'status' => 1,
@@ -227,12 +164,6 @@ idea-supporters/*',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => '',
         'status' => 0,
@@ -262,12 +193,6 @@ idea-supporters/*',
       'authenticated user' => 2,
     ),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_bottom',
         'status' => 1,

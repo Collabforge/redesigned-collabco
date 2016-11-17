@@ -29,10 +29,10 @@ function collabco_challenge_feature_flag_default_flags() {
     'types' => array(
       0 => 'challenge',
     ),
-    'flag_short' => 'Follow',
+    'flag_short' => '[variable:follow]',
     'flag_long' => '',
     'flag_message' => '',
-    'unflag_short' => 'Unfollow',
+    'unflag_short' => 'Un[variable:follow]',
     'unflag_long' => '',
     'unflag_message' => '',
     'unflag_denied_text' => '',
@@ -46,11 +46,11 @@ function collabco_challenge_feature_flag_default_flags() {
     'show_on_form' => 0,
     'access_author' => '',
     'show_contextual_link' => 0,
-    'api_version' => 3,
     'module' => 'collabco_challenge_feature',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Support Challenge".
   $flags['support_challenge'] = array(
@@ -60,10 +60,10 @@ function collabco_challenge_feature_flag_default_flags() {
     'types' => array(
       0 => 'challenge',
     ),
-    'flag_short' => 'Support',
+    'flag_short' => '[variable:support]',
     'flag_long' => '',
     'flag_message' => '',
-    'unflag_short' => 'Unsupport',
+    'unflag_short' => 'Un[variable:support]',
     'unflag_long' => '',
     'unflag_message' => '',
     'unflag_denied_text' => '',
@@ -77,11 +77,11 @@ function collabco_challenge_feature_flag_default_flags() {
     'show_on_form' => 0,
     'access_author' => '',
     'show_contextual_link' => 0,
-    'api_version' => 3,
     'module' => 'collabco_challenge_feature',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 
