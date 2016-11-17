@@ -239,8 +239,25 @@ function collabco_settings_labels_admin_form() {
  * Handles changing labels
  */
 function collabco_settings_labels_admin_form_submit($form, &$form_state) {
-  menu_rebuild();
-  drupal_flush_all_caches();
+  $menu_paths = array('challenge','collaborate');
+  foreach ($menu_paths as $menu_item) {
+    $mlids = db_query("SELECT mlid FROM {menu_links} WHERE link_path = :menu_item AND menu_name = 'main-menu'", array(':menu_item' => $menu_item))->fetchCol();
+    if ($mlids) {
+      foreach ($mlids as $mlid) {
+        if ($menu_link = menu_link_load($mlid)) {  
+          if ($menu_link['link_path'] == 'challenge' && !empty($form_state['values']['csl_challenges'])) {
+            $menu_link['link_title'] = $form_state['values']['csl_challenges'];
+          } 
+          if ($menu_link['link_path'] == 'collaborate' && !empty($form_state['values']['csl_collaborations'])){
+            $menu_link['link_title'] = $form_state['values']['csl_collaborations'];
+          } 
+        menu_link_save($menu_link);
+      }    
+    }
+  }
+}
+menu_rebuild();
+drupal_flush_all_caches();
 }
 
 /**
@@ -275,12 +292,10 @@ function collabco_settings_ckeditor_plugin() {
 /**
 * Implements hook_token_info().
 * You first of all have to define your token in the hook_token_info(): -
-  See more at: http://www.whenwhowhere.com/tech-blog/create-custom-token-drupal-7#sthash.6IQaG7A5.dpuf
-If you define your token in ['tokens']['user'] like I did it will appear in the available tokens under user
-but you can change it to another option, in my case this is what made most sense.
-This will apply for all token lists which can retrieve user information,
-
-
+*  See more at: http://www.whenwhowhere.com/tech-blog/create-custom-token-drupal-7#sthash.6IQaG7A5.dpuf
+* If you define your token in ['tokens']['user'] like I did it will appear in the available tokens under user
+* but you can change it to another option, in my case this is what made most sense.
+* This will apply for all token lists which can retrieve user information,
 *
 */
 function collabco_settings_token_info() {
