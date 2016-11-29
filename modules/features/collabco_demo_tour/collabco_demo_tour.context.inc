@@ -233,8 +233,7 @@ function collabco_demo_tour_context_default_contexts() {
       'joyride_poststep_callback' => 'demo_tour_callback',
       'joyride_postride_callback' => 'home_ride_callback',
       'joyride_tour_content' => '<li data-id="brainstorm_img" data-button="Yes" class="custom">
-  <h2>Welcome to the guided tour for Collabco IMS.</h2>
-  <p>Would you like to proceed with the tour?.</p>
+  <p>Welcome to the home screen. This is your landing page to everything else. It has some key information like current challenges. Now we’ll walk you through some of the site’s key features..</p>
 </li>
 <li data-class="icon-home-menu" data-button="Next" >
   <h2>Home</h2>
