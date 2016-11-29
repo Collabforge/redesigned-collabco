@@ -169,12 +169,14 @@ function collabco_idea_block_view($delta = '') {
         $wrapper = file_stream_wrapper_get_instance_by_uri($image['uri']);
         $url = $wrapper->getExternalUrl();
       }
+      $short_desc = isset($node->field_tag_line[LANGUAGE_NONE][0]['value']) ? $node->field_tag_line[LANGUAGE_NONE][0]['value'] : "";
+      
       $variables = array(
         'nid' => $nid,
         'title' => '<none>',
         'image' => empty($url) ? '' : $url,
         'idea' => $node->title,
-        'short' => truncate_utf8($node->field_tag_line[LANGUAGE_NONE][0]['value'], 400, TRUE, TRUE),
+        'short' => truncate_utf8($short_desc, 400, TRUE, TRUE),
         'support' => empty($counts['support_idea']) ? 0 : $counts['support_idea'],
         'comments' => $node->comment_count,
         'follow' => empty($counts['following_idea']) ? 0 : $counts['following_idea'],

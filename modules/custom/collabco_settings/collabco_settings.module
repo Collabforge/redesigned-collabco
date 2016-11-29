@@ -12,9 +12,12 @@ function collabco_settings_init() {
   if(!variable_get('csl_ideas')) {variable_set('csl_ideas', 'idea');}
   if(!variable_get('csl_collaborations')) {variable_set('csl_collaborations', 'collaboration');}
   if(!variable_get('csl_support')) {variable_set('csl_support', 'support');}
+  if(!variable_get('csl_unsupport')) {variable_set('csl_unsupport', 'unsupport');}
   if(!variable_get('csl_follow')) {variable_set('csl_follow', 'follow');}
+  if(!variable_get('csl_unfollow')) {variable_set('csl_unfollow', 'unfollow');}
   if(!variable_get('csl_share')) {variable_set('csl_share', 'share');}
   if(!variable_get('csl_sponsor')) {variable_set('csl_sponsor', 'sponsor');}
+
 }
 
 /**
@@ -209,11 +212,25 @@ function collabco_settings_labels_admin_form() {
     '#description' => t('Original: support'),
     '#required' => TRUE,
   );
+  $form['csl_unsupport'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for unsupport'),
+    '#default_value' => variable_get('csl_unsupport', 'unsupport'),
+    '#description' => t('Original: unsupport'),
+    '#required' => TRUE,
+  );
   $form['csl_follow'] = array(
     '#type' => 'textfield',
     '#title' => t('Label for Follow'),
     '#default_value' => variable_get('csl_follow', 'follow'),
     '#description' => t('Original: follow'),
+    '#required' => TRUE,
+  );
+  $form['csl_unfollow'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label for unfollow'),
+    '#default_value' => variable_get('csl_unfollow', 'unfollow'),
+    '#description' => t('Original: unfollow'),
     '#required' => TRUE,
   );
   $form['csl_share'] = array(
@@ -291,21 +308,23 @@ function collabco_settings_ckeditor_plugin() {
 
 /**
 * Implements hook_token_info().
-* You first of all have to define your token in the hook_token_info(): -
-*  See more at: http://www.whenwhowhere.com/tech-blog/create-custom-token-drupal-7#sthash.6IQaG7A5.dpuf
-* If you define your token in ['tokens']['user'] like I did it will appear in the available tokens under user
-* but you can change it to another option, in my case this is what made most sense.
-* This will apply for all token lists which can retrieve user information,
-*
 */
 function collabco_settings_token_info() {
   $info['tokens']['variable']['follow'] = array(
     'name' => t('variable follow'),
     'description' => t('Returns the changed label for Follow'),
   );
+  $info['tokens']['variable']['unfollow'] = array(
+    'name' => t('variable unfollow'),
+    'description' => t('Returns the changed label for unfollow'),
+  );
   $info['tokens']['variable']['support'] = array(
     'name' => t('variable support'),
     'description' => t('Returns the changed label for Support'),
+  );
+  $info['tokens']['variable']['unsupport'] = array(
+    'name' => t('variable unsupport'),
+    'description' => t('Returns the changed label for unsupport'),
   );
   $info['tokens']['variable']['idea'] = array(
     'name' => t('variable idea'),
@@ -318,7 +337,7 @@ function collabco_settings_token_info() {
   $info['tokens']['variable']['collaboration'] = array(
     'name' => t('variable collaboration'),
     'description' => t('Returns the changed label for Collaborations'),
-  );
+  );  
   return $info;
 }
 
@@ -339,10 +358,18 @@ function collabco_settings_tokens($type, $tokens, array $data = array(), array $
             $name = csl('follow');
             $replacements[$original] = $name;
             break;
+          case 'unfollow':
+            $name = csl('unfollow');
+            $replacements[$original] = $name;
+            break;  
           case 'support':
             $name = csl('support');
             $replacements[$original] = $name;
             break;
+          case 'unsupport':
+            $name = csl('unsupport');
+            $replacements[$original] = $name;
+            break;  
           case 'idea':
             $name = csl('ideas');
             $replacements[$original] = $name;

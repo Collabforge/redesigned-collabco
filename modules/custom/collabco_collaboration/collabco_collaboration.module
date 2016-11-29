@@ -712,7 +712,7 @@ function theme_single_collab_actions_template(&$variables) {
   $links = array();
   $links[] = array(
     'href' => sprintf('collaboration-supporters/%d', $gid)
-    , 'title' => 'View '.csl("collaboration",0,1).' supporters'
+    , 'title' => 'View '.csl("collaboration",0,1) . ' ' . csl('support','ers')
     , 'classes' => array()
     ,
   );
