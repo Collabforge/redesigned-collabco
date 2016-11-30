@@ -8,18 +8,89 @@
 
     span { font-weight: bold; }
 
-    #header-home-title { margin-bottom: 55px; }
+    #header-home-title { 
+      margin-bottom: 55px;
 
-    p { 
-      font-size: pxtoem(36px); 
-      line-height: 1; 
-      margin: 10px 0; 
-      padding: 0 110px;
-      word-break: break-word;
+      p { 
+        font-size: pxtoem(36px); 
+        line-height: 1; 
+        margin: 10px 0; 
+        word-break: break-word;
+        color: #5B5B5B;
+      }
+    }  
+
+    .intro-blocks > div {
+      margin-bottom: 20px;
+
+      i:before{ 
+        font-size: 40px;
+        width: 42px;
+        height: 42px;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+      }
+
+
+
+      a { 
+        display: block;
+        border: 2px solid $black;
+        padding: 10px 0;
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 10px;
+        
+        p { text-transform: lowercase; }
+        p.title { text-transform: uppercase; font-style: italic; }
+
+        &:hover { background-color: $hover-bg-color;}
+
+      }
+
+      p { 
+        padding: 0;
+        line-height: 1;
+      }
+
+      &.challenges { 
+        color: $primary-challenge;
+        a { 
+          color: $primary-challenge;
+          border-color: $primary-challenge;
+        }
+      }
+
+      &.ideas{
+        color: $primary-idea;
+
+        a { 
+          color: $primary-idea;
+          border-color: $primary-idea;
+        }
+      }
+
+      &.learn-more { 
+        color: $secondary-color;  
+
+        i:before { 
+          font-size: 50px;
+          position: relative;
+          top: -12px;
+          overflow: visible;
+        }       
+
+        a { 
+          border-color: $secondary-color;
+          color: $secondary-color;
+        }
+      }
+
     }
 
+
   }  // </logged-in .content-top>
-  
   .main-container { 
     padding: 0;
     min-height: 0;

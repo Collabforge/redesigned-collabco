@@ -8895,12 +8895,58 @@ nav.slider-mobile {
     font-weight: bold; }
   .front.logged-in .content-top #header-home-title {
     margin-bottom: 55px; }
-  .front.logged-in .content-top p {
-    font-size: 2.57143em;
-    line-height: 1;
-    margin: 10px 0;
-    padding: 0 110px;
-    word-break: break-word; }
+    .front.logged-in .content-top #header-home-title p {
+      font-size: 2.57143em;
+      line-height: 1;
+      margin: 10px 0;
+      word-break: break-word;
+      color: #5B5B5B; }
+  .front.logged-in .content-top .intro-blocks > div {
+    margin-bottom: 20px; }
+    .front.logged-in .content-top .intro-blocks > div i:before {
+      font-size: 40px;
+      width: 42px;
+      height: 42px;
+      overflow: hidden;
+      display: block;
+      margin: 0 auto; }
+    .front.logged-in .content-top .intro-blocks > div a {
+      display: block;
+      border: 2px solid #000;
+      padding: 10px 0;
+      text-decoration: none;
+      font-size: 20px;
+      margin-top: 10px; }
+      .front.logged-in .content-top .intro-blocks > div a p {
+        text-transform: lowercase; }
+      .front.logged-in .content-top .intro-blocks > div a p.title {
+        text-transform: uppercase;
+        font-style: italic; }
+      .front.logged-in .content-top .intro-blocks > div a:hover {
+        background-color: #f3f3f3; }
+    .front.logged-in .content-top .intro-blocks > div p {
+      padding: 0;
+      line-height: 1; }
+    .front.logged-in .content-top .intro-blocks > div.challenges {
+      color: #4a3858; }
+      .front.logged-in .content-top .intro-blocks > div.challenges a {
+        color: #4a3858;
+        border-color: #4a3858; }
+    .front.logged-in .content-top .intro-blocks > div.ideas {
+      color: #3B53A4; }
+      .front.logged-in .content-top .intro-blocks > div.ideas a {
+        color: #3B53A4;
+        border-color: #3B53A4; }
+    .front.logged-in .content-top .intro-blocks > div.learn-more {
+      color: #654278; }
+      .front.logged-in .content-top .intro-blocks > div.learn-more i:before {
+        font-size: 50px;
+        position: relative;
+        top: -12px;
+        overflow: visible; }
+      .front.logged-in .content-top .intro-blocks > div.learn-more a {
+        border-color: #654278;
+        color: #654278; }
 
 .front .main-container {
   padding: 0;
