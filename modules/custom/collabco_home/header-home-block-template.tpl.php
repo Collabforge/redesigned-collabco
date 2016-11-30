@@ -9,10 +9,31 @@
 ?>
 
 <div id="header-home-title">
-  <p style="color: #5B5B5B; padding: 0 10px;"> <span>Hi <?php echo $user_name; ?></span>, ready to get started?</p>
+  <p> <span>Hi <?php echo $user_name; ?></span>, ready to get started?</p>
 </div>
-<center>
-<a href="/challenge"><img width="250" src="/profiles/collabco/themes/custom/collabco_theme/assets/img/collabco_theme/explore.png"></a>
-<a href="/challenge/brainstorm"><img id="brainstorm_img" width="250" src="/profiles/collabco/themes/custom/collabco_theme/assets/img/collabco_theme/brainstorm.png"></a>
-<a href="/about"><img width="250" src="/profiles/collabco/themes/custom/collabco_theme/assets/img/collabco_theme/learn.png"></a>
-</center>
+
+<div class="intro-blocks row ">
+  
+  <div class="col-sm-4 challenges">
+    <i class="icon-flag"></i>
+    <a href="/challenge">     
+      <p>Explore</p>
+      <p class="title"><?=csl('challenges',1,1);?></p>
+    </a>
+  </div>
+  <div class="col-sm-4 ideas">
+    <i class="icon-diamond"></i>
+    <a href="/challenge/brainstorm">
+      <p>Brainstorm</p>
+      <p class="title"><?=csl('ideas',1,1); ?></p>
+    </a>
+  </div>
+  <div class="col-sm-4 learn-more">
+    <i class="icon-question-mark"></i>
+    <a href="/about">
+      <p>confused?</p>
+      <p class="title">Learn More</p>
+    </a>
+  </div>
+  
+</div>
