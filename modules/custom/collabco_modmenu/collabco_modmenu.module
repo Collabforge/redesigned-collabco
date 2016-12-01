@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function collabco_modmenu_menu() {
+
+  $items['moderator/dashboard'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Title'),
+    'description' => 'My custom and very special page',
+    'page callback' => 'collabco_modmenu_mod_dashboard',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback.
+ */
+function collabco_modmenu_mod_dashboard() {
+  $content = 'Hello World';
+  // ... do something and add to $content;
+  return $content;
+}
