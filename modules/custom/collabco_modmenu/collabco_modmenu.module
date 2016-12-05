@@ -1,19 +1,106 @@
 <?php
 
 /**
+ * Implements hook_theme().
+ */
+function collabco_modmenu_theme($existing, $type, $theme, $path) {
+  return array(
+    'header_mm_standard_template' => array(
+      'template' => 'header-mm-standard-block-template',
+      'variables' => array(),
+    ),
+    'dashboard_template' => array(
+      'template' => 'dashboard-template',
+      'variables' => array(),
+    ),
+    'create_template' => array(
+      'template' => 'create-template',
+      'variables' => array(),
+    ),
+    'edit_template' => array(
+      'template' => 'edit-template',
+      'variables' => array(),
+    ),
+    'view_template' => array(
+      'template' => 'view-template',
+      'variables' => array(),
+    ),
+    'settings_template' => array(
+      'template' => 'settings-template',
+      'variables' => array(),
+    ),
+  );
+}
+
+function collabco_modmenu_block_info() {
+  $blocks = array();
+  $blocks['header_mm_standard'] = array(
+    'info' => t('Collabco Moderator Menu Header block'),
+    'region' => 'content_top',
+    'pages' => 'moderator/dashboard',
+    'visibility' => 1,
+    'status' => TRUE,
+  );
+  return $blocks;
+}
+
+function collabco_modmenu_block_view($delta = '') {
+  $block = array();
+  $variables = array();
+  switch ($delta) {
+    case 'header_mm_standard':
+      $content = theme('header_mm_standard_template', $variables);
+      break;
+  }
+  $block['content'] = $content;
+  return $block;
+}
+
+/**
  * Implements hook_menu().
  */
 function collabco_modmenu_menu() {
 
   $items['moderator/dashboard'] = array(
     'type' => MENU_NORMAL_ITEM,
-    'title' => t('Title'),
-    'description' => 'My custom and very special page',
+    'title' => t('Moderator Dashboard'),
+    'description' => 'Moderator Dashboard',
     'page callback' => 'collabco_modmenu_mod_dashboard',
     'access callback' => 'user_access',
     'access arguments' => array('access content'),
   );
-
+  $items['moderator/create'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Moderator Create'),
+    'description' => 'Moderator Create',
+    'page callback' => 'collabco_modmenu_mod_create',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+  $items['moderator/edit'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Moderator Edit'),
+    'description' => 'Moderator Edit',
+    'page callback' => 'collabco_modmenu_mod_edit',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+  $items['moderator/view'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Moderator View'),
+    'description' => 'Moderator View',
+    'page callback' => 'collabco_modmenu_mod_view',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+  $items['moderator/settings'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Moderator Settings'),
+    'description' => 'Moderator Settings',
+    'page callback' => 'collabco_modmenu_mod_settings',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
   return $items;
 }
 
@@ -21,7 +108,52 @@ function collabco_modmenu_menu() {
  * Page callback.
  */
 function collabco_modmenu_mod_dashboard() {
-  $content = 'Hello World';
+	$variables = array();
+  $content = theme('dashboard_template', $variables);
+  // ... do something and add to $content;
+  return $content;
+}
+
+/**
+ * Page callback.
+ */
+function collabco_modmenu_mod_create() {
+  $content = '
+  hello
+  ';
+  // ... do something and add to $content;
+  return $content;
+}
+
+/**
+ * Page callback.
+ */
+function collabco_modmenu_mod_edit() {
+  $content = '
+  hello
+  ';
+  // ... do something and add to $content;
+  return $content;
+}
+
+/**
+ * Page callback.
+ */
+function collabco_modmenu_mod_view() {
+  $content = '
+  hello
+  ';
+  // ... do something and add to $content;
+  return $content;
+}
+
+/**
+ * Page callback.
+ */
+function collabco_modmenu_mod_settings() {
+  $content = '
+  hello
+  ';
   // ... do something and add to $content;
   return $content;
 }
