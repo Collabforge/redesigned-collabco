@@ -19,7 +19,7 @@ function collabco_email_variable_info($options) {
  */
 function collabco_email_menu() {
   return array(
-    'admin/config/collabco-settings/email' => array(
+    'moderator/settings/emails' => array(
       'title' => 'Email settings',
       'description' => 'Email settings for weekly batch',
       'page callback' => 'collabco_email_admin_settings',
@@ -97,7 +97,7 @@ function collabco_email_cron() {
         if (!in_array($user->uid, array('0', '1'))) {
 
           if (_collabco_email_check_digest_to_run($user->uid)) {
-         
+
             $count++;
 
             $gids = 0;

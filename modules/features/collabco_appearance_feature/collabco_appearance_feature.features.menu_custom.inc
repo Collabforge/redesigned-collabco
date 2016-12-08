@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * collabco_appearance.features.menu_custom.inc
+ * collabco_appearance_feature.features.menu_custom.inc
  */
 
 /**

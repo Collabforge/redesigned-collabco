@@ -108,7 +108,7 @@ function collabco_modmenu_menu() {
  * Page callback.
  */
 function collabco_modmenu_mod_dashboard() {
-	$variables = array();
+  $variables = array();
   $content = theme('dashboard_template', $variables);
   // ... do something and add to $content;
   return $content;
@@ -119,7 +119,7 @@ function collabco_modmenu_mod_dashboard() {
  */
 function collabco_modmenu_mod_create() {
   $content = '
-  hello
+
   ';
   // ... do something and add to $content;
   return $content;
@@ -130,7 +130,7 @@ function collabco_modmenu_mod_create() {
  */
 function collabco_modmenu_mod_edit() {
   $content = '
-  hello
+
   ';
   // ... do something and add to $content;
   return $content;
@@ -141,7 +141,7 @@ function collabco_modmenu_mod_edit() {
  */
 function collabco_modmenu_mod_view() {
   $content = '
-  hello
+
   ';
   // ... do something and add to $content;
   return $content;
@@ -152,7 +152,7 @@ function collabco_modmenu_mod_view() {
  */
 function collabco_modmenu_mod_settings() {
   $content = '
-  hello
+
   ';
   // ... do something and add to $content;
   return $content;

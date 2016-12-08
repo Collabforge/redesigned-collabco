@@ -5,4 +5,4 @@
  */
 ?>
 
-hello
+Welcome to your dashboard!

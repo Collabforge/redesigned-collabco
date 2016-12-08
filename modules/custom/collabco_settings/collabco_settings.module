@@ -68,19 +68,19 @@ function collabco_settings_variable_group_info() {
     'title' => t('Labels'),
     'description' => t('Collabco Labels settings'),
     'access' => 'administer site configuration',
-    'path' => array('admin/config/collabco-settings/labels'),
+    'path' => array('moderator/settings/labels'),
   );
   $groups['collabco_challenge_settings'] = array(
     'title' => t('Collabco Challenge'),
     'description' => t('Collabco Challenge settings'),
     'access' => 'administer site configuration',
-    'path' => array('admin/config/collabco-settings/challenge'),
+    'path' => array('moderator/settings/challenges'),
   );
   $groups['collabco_collaboration_settings'] = array(
     'title' => t('Collabco collaboration'),
     'description' => t('Collabco Collaboration settings'),
     'access' => 'administer site configuration',
-    'path' => array('admin/config/collabco-settings/collaboration'),
+    'path' => array('moderator/settings/collaborations'),
   );
   return $groups;
 }
@@ -138,7 +138,7 @@ function challenge_list() {
  * Implements hook_menu().
  */
 function collabco_settings_menu() {
-  $items['admin/config/collabco-settings'] = array(
+  $items['moderator/settings'] = array(
     'title' => 'Collabco Settings',
     'description' => 'Collabco Custom Settings',
     'type' => MENU_NORMAL_ITEM,
@@ -147,21 +147,21 @@ function collabco_settings_menu() {
     'file' => 'system.admin.inc',
     'file path' => drupal_get_path('module', 'system'),
   );
-  $items['admin/config/collabco-settings/challenge'] = array(
+  $items['moderator/settings/challenges'] = array(
     'title' => 'Challenge Settings',
     'description' => 'Challenge Settings for Collabco',
     'access arguments' => array(TRUE),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('variable_group_form', 'collabco_challenge_settings'),
   );
-  $items['admin/config/collabco-settings/collaboration'] = array(
+  $items['moderator/settings/collaborations'] = array(
     'title' => 'Collaboration Settings',
     'description' => 'Collaboration Settings for Collabco',
     'access arguments' => array(TRUE),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('variable_group_form', 'collabco_collaboration_settings'),
   );
-  $items['admin/config/collabco-settings/labels'] = array(
+  $items['moderator/settings/labels'] = array(
     'title' => 'Labels Settings',
     'description' => 'Labels Settings for Collabco',
     'access arguments' => array(TRUE),
@@ -261,15 +261,15 @@ function collabco_settings_labels_admin_form_submit($form, &$form_state) {
     $mlids = db_query("SELECT mlid FROM {menu_links} WHERE link_path = :menu_item AND menu_name = 'main-menu'", array(':menu_item' => $menu_item))->fetchCol();
     if ($mlids) {
       foreach ($mlids as $mlid) {
-        if ($menu_link = menu_link_load($mlid)) {  
+        if ($menu_link = menu_link_load($mlid)) {
           if ($menu_link['link_path'] == 'challenge' && !empty($form_state['values']['csl_challenges'])) {
             $menu_link['link_title'] = $form_state['values']['csl_challenges'];
-          } 
+          }
           if ($menu_link['link_path'] == 'collaborate' && !empty($form_state['values']['csl_collaborations'])){
             $menu_link['link_title'] = $form_state['values']['csl_collaborations'];
-          } 
+          }
         menu_link_save($menu_link);
-      }    
+      }
     }
   }
 }
@@ -337,7 +337,7 @@ function collabco_settings_token_info() {
   $info['tokens']['variable']['collaboration'] = array(
     'name' => t('variable collaboration'),
     'description' => t('Returns the changed label for Collaborations'),
-  );  
+  );
   return $info;
 }
 
@@ -361,7 +361,7 @@ function collabco_settings_tokens($type, $tokens, array $data = array(), array $
           case 'unfollow':
             $name = csl('unfollow');
             $replacements[$original] = $name;
-            break;  
+            break;
           case 'support':
             $name = csl('support');
             $replacements[$original] = $name;
@@ -369,7 +369,7 @@ function collabco_settings_tokens($type, $tokens, array $data = array(), array $
           case 'unsupport':
             $name = csl('unsupport');
             $replacements[$original] = $name;
-            break;  
+            break;
           case 'idea':
             $name = csl('ideas');
             $replacements[$original] = $name;

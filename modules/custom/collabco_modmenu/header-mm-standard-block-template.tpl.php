@@ -4,13 +4,32 @@
  * Default theme implementation for Collabco Standard Moderator Header block.
  */
 global $base_url;
+  $variables = array(
+    'dashboard' => array('name'=>'Dashboard', 'path'=>url('moderator/dashboard'), 'submenu'=>array(),),
+    'create' => array('name'=>'Create...', 'path'=>url('moderator/create'), 'submenu'=>array(
+      'idea' => array('name'=>'...an idea', 'path'=> url('node/add/idea'),),
+      'thing' => array('name'=>'...a challenge', 'path'=>url('admin/structure/taxonomy/challenge/add'),),),),
+    'edit' => array('name'=>'Edit...', 'path'=>url('moderator/edit'), 'submenu'=>array(
+      'idea' => array('name'=>'New idea', 'path'=>url('/node/edit/idea'),),
+      'thing' => array('name'=>'New Thing', 'path'=>url('/node/edit/thing'),),),),
+    'view' => array('name'=>'View', 'path'=>url('moderator/view'), 'submenu'=>array(
+      'member-report' => array('name'=>'Member Report', 'path'=>url('moderator/view/member-report'),),
+      'challenge-report' => array('name'=>'Challenge Report', 'path'=>url('moderator/view/challenge-report'),),),),
+    'settings' => array('name'=>'Settings', 'path'=>url('moderator/settings'), 'submenu'=>array(
+      'challenges' => array('name'=>'Challenges', 'path'=>url('moderator/settings/challenges'),),
+      'collaborations' => array('name'=>'Collaborations', 'path'=>url('moderator/settings/collaborations'),),
+      'emails' => array('name'=>'Emails', 'path'=>url('moderator/settings/emails'),),
+      'labels' => array('name'=>'Labels', 'path'=>url('moderator/settings/labels'),),
+      ),
+    ),
+    );
 ?>
 
 <style>
   #modmenu_title {
     color: white;
     background-color: #474747;
-    margin: 0 -999rem;
+    margin: 0 -100%;
     text-align: center;
     height: 65px;
     line-height: 65px;
@@ -19,13 +38,13 @@ global $base_url;
 	    list-style-type: none;
 	    margin: 0;
 	    padding: 0;
-	    overflow: hidden;
+	    /*overflow: hidden;*/
 	    width: 970px;
 	    position: absolute;
-	    background-color: #f3f3f3;
 	}
 	li.modmenu_menu {
 	    float: left;
+      background-color: #f3f3f3;
 	}
 
 	li.modmenu_menu a  {
@@ -44,7 +63,7 @@ global $base_url;
 	li.modmenu_menu a.active {
 	    color: white;
 	    background-color: #4CAF50;
-	    border: 1px solid #4CAF50;
+
 	}
 	.square_left {
 	    width: 75px;
@@ -66,18 +85,52 @@ global $base_url;
 	    z-index: -1;
 	    position: absolute;
 	}
-    </style>
+	ul li .dropdown-content {
+		display:none;
+    position: relative !important;
+    background-color: #f3f3f3;
+    margin-left: -40px;
+    z-index: 1;
+  }
+  .dropdown-content a{
+  	color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .reset_space {
+  	padding-bottom: 50px;
+  }
+
+
+.dc-create:hover .sdc-create {display: block;}
+.dc-edit:hover .sdc-edit {display: block;}
+.dc-view:hover .sdc-view {display: block;}
+.dc-settings:hover .sdc-settings {display: block;}
+
+  </style>
   <h1 id="modmenu_title">Moderator Panel</h1>
 <div class="square_left"></div><div class="square_right"></div>
 
 	<?php
-	$menu_items = array('dashboard','create','edit','view','settings',);
+	$menu_items = $variables;
 	$menu_display = "";
+	$subtitle = "";
 	foreach ($menu_items as $key=>$value) {
 		$active_class = "";
 
-		if(arg(1)==$value){$active_class .= 'active';}
-		$menu_display .= "<li class='modmenu_menu'><a href='$value' class='$active_class'>$value</a></li>";
+		if(arg(1) == $key){$active_class .= 'active'; $title = $value['name'];}
+		$menu_display .= "<li class='modmenu_menu dc-".$key."'><a href='".$value['path']."' class='$active_class '>".$value['name']."</a>";
+		$menu_display .= "<ul>";
+		foreach ($value['submenu'] as $sub_key=>$sub_value) {
+			$active_class_sdc = "";
+			if(arg(2)==$sub_key){$active_class_sdc .= 'active'; $subtitle = ' - '.$sub_value['name'];}
+			$menu_display .= "<li class='dropdown-content sdc-".$key."'	><a href='".$sub_value['path']."' class='$active_class_sdc'>".$sub_value['name']."</a>";
+		}
+		$menu_display .= "</ul>";
+    $menu_display .= "</li>";
+		$val2 = "";
 	}
 	?>
 
@@ -85,3 +138,5 @@ global $base_url;
   <ul class="modmenu_menu">
 	<?php print $menu_display; ?>
   </ul>
+  <div class="reset_space"></div>
+  <h1 style="color:black;"><?php print $title.$subtitle; ?></h1>

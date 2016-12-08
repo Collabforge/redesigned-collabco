@@ -459,7 +459,7 @@ function collabco_views_feature_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/reports/challenge-report';
+  $handler->display->display_options['path'] = 'moderator/view/challenge-report';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Challenge Report';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -4178,7 +4178,7 @@ print $count;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/reports/member-report';
+  $handler->display->display_options['path'] = 'moderator/view/member-report';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Member Report';
   $handler->display->display_options['menu']['weight'] = '0';

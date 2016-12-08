@@ -7,7 +7,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function colorboxsdfsdf_ctools_plugin_api($module = NULL, $api = NULL) {
+function collabco_appearance_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }

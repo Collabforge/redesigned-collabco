@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * collabco_appearance.features.menu_links.inc
+ * collabco_appearance_feature.features.menu_links.inc
  */
 
 /**
@@ -34,13 +34,13 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -50,
     'customized' => 1,
-    'parent_identifier' => 'menu-menu-for-moderators_create:admin/content',
+    'parent_identifier' => 'menu-menu-for-moderators_content:admin/content',
   );
   // Exported menu link: menu-menu-for-moderators_challenge-report:admin/reports/challenge-report.
   $menu_links['menu-menu-for-moderators_challenge-report:admin/reports/challenge-report'] = array(
     'menu_name' => 'menu-menu-for-moderators',
     'link_path' => 'admin/reports/challenge-report',
-    'router_path' => 'admin/reports/challenge-report',
+    'router_path' => 'admin/reports',
     'link_title' => 'Challenge Report',
     'options' => array(
       'attributes' => array(),
@@ -86,7 +86,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -49,
     'customized' => 1,
-    'parent_identifier' => 'menu-menu-for-moderators_create:admin/content',
+    'parent_identifier' => 'menu-menu-for-moderators_content:admin/content',
   );
   // Exported menu link: menu-menu-for-moderators_collaboration:node/add/hub.
   $menu_links['menu-menu-for-moderators_collaboration:node/add/hub'] = array(
@@ -112,7 +112,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -47,
     'customized' => 1,
-    'parent_identifier' => 'menu-menu-for-moderators_create:admin/content',
+    'parent_identifier' => 'menu-menu-for-moderators_content:admin/content',
   );
   // Exported menu link: menu-menu-for-moderators_comment:admin/content/comment.
   $menu_links['menu-menu-for-moderators_comment:admin/content/comment'] = array(
@@ -138,7 +138,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -50,
     'customized' => 1,
-    'parent_identifier' => 'menu-menu-for-moderators_edit:admin/content/comment',
+    'parent_identifier' => 'menu-menu-for-moderators_comments:admin/content/comment',
   );
   // Exported menu link: menu-menu-for-moderators_create:admin/content.
   $menu_links['menu-menu-for-moderators_create:admin/content'] = array(
@@ -214,13 +214,13 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -48,
     'customized' => 1,
-    'parent_identifier' => 'menu-menu-for-moderators_create:admin/content',
+    'parent_identifier' => 'menu-menu-for-moderators_content:admin/content',
   );
   // Exported menu link: menu-menu-for-moderators_member-report:admin/reports/member-report.
   $menu_links['menu-menu-for-moderators_member-report:admin/reports/member-report'] = array(
     'menu_name' => 'menu-menu-for-moderators',
     'link_path' => 'admin/reports/member-report',
-    'router_path' => 'admin/reports/member-report',
+    'router_path' => 'admin/reports',
     'link_title' => 'Member report',
     'options' => array(
       'attributes' => array(),
@@ -246,7 +246,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
   $menu_links['menu-menu-for-moderators_on-going--miscellaneous-challenge:admin/config/collabco-settings/challenge'] = array(
     'menu_name' => 'menu-menu-for-moderators',
     'link_path' => 'admin/config/collabco-settings/challenge',
-    'router_path' => 'admin/config/collabco-settings/challenge',
+    'router_path' => 'admin/config',
     'link_title' => 'On-going / miscellaneous challenge',
     'options' => array(
       'attributes' => array(),
@@ -266,7 +266,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -48,
     'customized' => 1,
-    'parent_identifier' => 'menu-menu-for-moderators_edit:admin/content/comment',
+    'parent_identifier' => 'menu-menu-for-moderators_comments:admin/content/comment',
   );
   // Exported menu link: menu-menu-for-moderators_open-challenges:admin/structure/term_queue/open_challenges.
   $menu_links['menu-menu-for-moderators_open-challenges:admin/structure/term_queue/open_challenges'] = array(
@@ -292,7 +292,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -49,
     'customized' => 1,
-    'parent_identifier' => 'menu-menu-for-moderators_edit:admin/content/comment',
+    'parent_identifier' => 'menu-menu-for-moderators_comments:admin/content/comment',
   );
   // Exported menu link: menu-menu-for-moderators_user:admin/people/create.
   $menu_links['menu-menu-for-moderators_user:admin/people/create'] = array(
@@ -318,7 +318,7 @@ function collabco_appearance_feature_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -46,
     'customized' => 1,
-    'parent_identifier' => 'menu-menu-for-moderators_create:admin/content',
+    'parent_identifier' => 'menu-menu-for-moderators_content:admin/content',
   );
   // Exported menu link: menu-menu-for-moderators_view:<front>.
   $menu_links['menu-menu-for-moderators_view:<front>'] = array(

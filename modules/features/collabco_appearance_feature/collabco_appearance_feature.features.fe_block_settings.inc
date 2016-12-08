@@ -24,17 +24,11 @@ function collabco_appearance_feature_default_fe_block_settings() {
       'authenticated user' => 2,
     ),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'content_top',
         'status' => 1,
         'theme' => 'collabco_theme',
-        'weight' => -41,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -57,17 +51,11 @@ function collabco_appearance_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'footer-2-col',
         'status' => 1,
         'theme' => 'collabco_theme',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'seven' => array(
         'region' => '',
@@ -90,12 +78,6 @@ function collabco_appearance_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'nav_actions_mobile',
         'status' => 1,
@@ -123,12 +105,6 @@ function collabco_appearance_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
       'collabco_theme' => array(
         'region' => 'nav_actions',
         'status' => 1,
