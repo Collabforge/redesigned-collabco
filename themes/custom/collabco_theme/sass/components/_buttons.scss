@@ -184,3 +184,20 @@
   color: $white;
   background-color: $brand-success;
 }
+
+.more-link { text-align: center; }
+
+.more-link a {
+  @include button-default();
+  display: inline-block;
+  color: $brand-success;
+  border-color: $secondary-color;
+  background-color: $white;
+  text-transform: uppercase;
+  transition: .5s all ease;
+
+  &:hover {
+  color: $white;
+  background-color: $brand-success;
+}
+}

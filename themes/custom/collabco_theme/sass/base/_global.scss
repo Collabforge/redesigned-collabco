@@ -55,7 +55,7 @@ a {
 
   li a { 
     border: 0;
-    color: $purple;
+    color: $primary-color;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
@@ -63,13 +63,13 @@ a {
   }
 
   li.active a {
-    color: $pink;
+    color: $secondary-color;
     background-color: $gray-lighter;
 
     &:hover,
     &:focus {
       background-color: $gray-lighter;
-      color: $pink;
+      color: $secondary-color;
 
     }
   }

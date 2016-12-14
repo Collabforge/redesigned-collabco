@@ -23,10 +23,10 @@
 
     a { 
       border: $border-dark;
-      border-bottom-color: $purple;
+      border-bottom-color: $primary-color;
       border-radius: 0;
       border-width: 1px 0 3px 1px;
-      color: $purple;
+      color: $primary-color;
       font-size: 12px;
       height: 100%;
       margin-right: 0;
@@ -64,8 +64,8 @@
   li a:hover,
   li a.active {
     border-width: 1px 0 3px 1px;
-    border-bottom-color: $pink;
-    color: $pink;
+    border-bottom-color: $secondary-hub-color;
+    color: $secondary-hub-color;
   }
 }
 
@@ -126,18 +126,18 @@
   li a {
     border: 0;
     display: inline-block;
-    color: $purple;
+    color: $primary-hub-color;
     font-size: 12px;
     padding: 30px 10px 4px;
   }
 
   a:hover, 
   li.active a {
-    color: $pink;   
+    color: $secondary-hub-color;   
   }
 
   li.active a {
-    border-bottom: 3px solid $pink;
+    border-bottom: 3px solid $secondary-hub-color;
   }   
 
   li a:before {

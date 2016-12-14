@@ -4,7 +4,7 @@
 .page-collaborations-turned-projects {
   // First Block
   .content-top {
-    @include bg-gradient-purple-pink('', '../assets/img/background/header-collaborate-bg.jpg', .9);
+    @include bg-gradient-collaboration('../assets/img/background/triangle-top-right-cut.png', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto , cover;
     padding: 25px;
@@ -24,13 +24,13 @@
       }
     }
 
-    .popover i {  color: $purple-pink; }
+    .popover i {  color: $primary-colab; }
     .popover p { font-size: 15px; }
   }
 
-  .card .taxonomy-tags { @include bg-gradient-purple-pink();  } 
+  .card .taxonomy-tags { @include bg-gradient-collaboration;  } 
 
-  .card article .img-icon { @include bg-gradient-purple-pink(); color: $white; }
+  .card article .img-icon { @include bg-gradient-collaboration; color: $white; }
 
   .main-container {
     @include bg-gradient-white-gray();
@@ -61,7 +61,7 @@
     padding-top: 0;
 
     h3, 
-    i { color: $purple-pink; }
+    i { color: $primary-colab; }
     i { font-size: 25px; }
 
     p { 
@@ -75,7 +75,7 @@
   }
 
   .content-lower {
-    @include bg-gradient-purple-pink('', '', .9);
+    @include bg-gradient-collaboration('../assets/img/background/triangle-middle-big.png', .9);;
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
     
@@ -88,7 +88,7 @@
     @include bg-gradient-white-gray();
     padding: 40px 0;
 
-    h3 { color: $purple-pink; }
+    h3 { color: $primary-colab; }
 
     .view-header {
       padding-top: 0;
@@ -112,7 +112,7 @@
   }
 
   .separator {
-    border-color: $purple-pink;
+    border-color: $primary-colab;
     margin: 10px 0;
   }
 

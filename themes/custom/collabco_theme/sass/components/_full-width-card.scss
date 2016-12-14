@@ -93,6 +93,8 @@
         &:hover { text-decoration: none; }
       }
 
+      a.icon-ignition-flame:before { top: -1px; }  
+
     }
 
     .support a { right: 0; }
@@ -107,12 +109,25 @@
     }
   }
   
-  &.idea .feat-img i,
+ 
   &.challenge .feat-img i {
     @include bg-gradient-blue-purple();
+  }
+
+  &.idea .feat-img i {
+    @include bg-gradient-ideas();
   }
 
   &.collaboration .feat-img i {
     @include bg-gradient-purple-pink();
   }
 }  
+
+.no-idea-image {
+  background-image: url("../assets/img/placeholder/placeholder-card-large.jpg"); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center; 
+  height: 150px; width: 100%; 
+  display: inline-block;
+}

@@ -84,7 +84,7 @@
     <div class="create-idea-btn">
       <p>Have a good <?=csl('ideas');?>? Create it now.</p>
 
-      <a class="colorbox-node btn btn-default" href="/node/add/idea/<?php print $term->tid; ?>?width=600&height=800&destination=<?php print $term_url; ?>">Create your <?=csl('ideas');?></a>
+      <a class="btn btn-default" href="/node/add/idea/<?php print $term->tid; ?>">Create your <?=csl('ideas');?></a>
     </div>
     <?php }
       if ($label == 'Closed') { ?>
@@ -139,7 +139,7 @@ $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye'; ?>
 
         <?php if (!empty($term->field_sponser[LANGUAGE_NONE][0]['target_id'])) {
         $user = user_load($term->field_sponser[LANGUAGE_NONE][0]['target_id']); ?>
-        <h2><?=csl('challenges',0,0);?> sponsor</h2>
+        <h2><?=csl('challenges',0,0);?> <?=csl('sponsor');?> </h2>
         <div class="team">
           <?php $picture = theme('user_picture', array('account' => $user));
           echo $picture; ?>

@@ -90,11 +90,11 @@ $btn-danger-border:              darken($btn-danger-bg, 5%) !default;
 $btn-link-disabled-color:        $gray-light !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius-base:  40px;
-$btn-border-radius-large: 40px;
-$btn-border-radius-small: 40px;
+$btn-border-radius-base:  0;
+$btn-border-radius-large: 0;
+$btn-border-radius-small: 0;
 
-$input-border-focus: $purple;
+$input-border-focus: $primary-color;
 
 
 

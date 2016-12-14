@@ -3,7 +3,12 @@
 
 .page-node-discussions {
 
-  .sidebar-2 .host-discussion h2 { margin-top: 0; }
+  .sidebar-2 .host-discussion{
+
+    h2 { margin-top: 0; color: $primary-colab;  }
+
+    a { color: $secondary-color;}
+  }
 
   .discussion { 
     border: $border-dark;
@@ -17,7 +22,7 @@
   }
 
   .content a { 
-     color: $purple-pink; 
+     color: $primary-colab; 
      font-size: 22px;
      text-decoration: none;
 
@@ -27,13 +32,13 @@
   }
   
   .icon { 
-    color: $purple-pink;
+    color: $primary-colab;
     font-size: 35px;
     text-align: center;
   }
 
   .file a { 
-    color: $green-dark;
+    color: $secondary-color;
     text-decoration: none;
     font-size: 15px;
 
@@ -61,7 +66,7 @@
 
   .main-container { padding: 0 0 30px; }
   
-  .comment-wrapper .title  { color: $purple-pink; }
+  .comment-wrapper .title  { color: $primary-colab; }
 
   .user-picture { 
     display: inline-block;

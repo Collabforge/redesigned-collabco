@@ -7,6 +7,7 @@
 .primary-nav, 
 .secondary-nav { 
   height: 100%; 
+  padding: 0;
 }
 
 .primary-nav > ul {
@@ -18,9 +19,10 @@
   height: 100%;
   text-align: center;
   width: 25%;
+  border-left: 1px solid $primary-color;
 
   a {
-    color: $white;
+    color: $primary-color;
     display: block;
     height: 100%;
     padding: 60px 0 20px;
@@ -29,12 +31,14 @@
 
     &:hover,
     &.active,
-    &:focus {
-      background-color: $white-op-1;
+    &:focus,
+    {
+      background-color: $nav-hover-color;
     }
-
+    
+    &:hover,
     &.active {
-      border-bottom: $white;
+      border-bottom: $primary-color;
       border-bottom-width: 3px;
       border-bottom-style: solid;
     }
@@ -83,9 +87,12 @@
   height: 100%;
   text-align: center;
   background-color: $white-op-1;
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: $primary-color;
 
   a { 
-    color: $white;
+    color: $primary-color;
     text-decoration: none;
 
     &:hover { 
@@ -113,17 +120,17 @@
   }
   
   #edit-search-block-form--2 { 
-    border: 1px solid $white;
+    border-bottom: 1px solid $primary-color;
     background-position: 44px 18px;
     background-repeat: no-repeat;
     background-size: 18px 18px;
-    color: $white;
+    color: $primary-color;
     height: 50%; 
 
     @media #{$scrn-md-min} { background-position: 70px 18px; }
 
     &::placeholder {
-      color: $white;
+      color: $primary-color;
       text-align: center;
     }
 
@@ -147,15 +154,15 @@
 //User profile Dropdown
   .user-nav {
     padding: 0;
-    background: $purple;
+    background: $white;
 
     a {
-      color: $white;
+      color: $primary-color;
     }  
     
     a:hover {
-      background-color: $white-op-1;
-      color: $white;
+      background-color: $nav-hover-color;
+      color: $primary-color;
     }
 
     a::before {

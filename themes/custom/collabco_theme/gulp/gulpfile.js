@@ -58,11 +58,10 @@ gulp.task('reload', ['clearcache'], function () {
 */
 
 gulp.task('browser-sync', function() {
-        //browserSync.init(null, { proxy: "drupalresearch.dev" });
       browserSync.init({
       	open: 'external',
-      	host: 'govims.dev',
-      	proxy: 'govims.dev',
+      	host: 'edu.dev',
+      	proxy: 'edu.dev',
       	port: 8080 // for work mamp
       });
 });

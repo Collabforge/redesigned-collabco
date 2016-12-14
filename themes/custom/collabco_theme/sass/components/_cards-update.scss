@@ -15,7 +15,7 @@
   i { font-size: 40px; }
   
   a { 
-    color: $pink;
+    color: $secondary-color;
     text-decoration: none;
 
     &:hover { text-decoration: underline; }
@@ -40,7 +40,7 @@
       font-size: 18px;
       
       a { 
-        color: $light-blue;
+        color: $tertiary-color;
         text-decoration: none;
 
         &:hover { text-decoration: underline; }

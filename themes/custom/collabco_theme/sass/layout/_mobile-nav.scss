@@ -2,7 +2,7 @@
 @media #{$scrn-sm-max} {
   header#navigation {
     a { 
-      color: $white;
+      color: $primary-color;
       text-decoration: none;
     }
   
@@ -12,12 +12,15 @@
   #brand {  
     border: 0;
     height: auto;
+    text-align: center;
+    padding: 20px 0 0 0;
+    
     a { width: auto; }
-    img { display: inline-block; }
+    img { display: inline-block; max-width: 100%; }
 
     h1 { 
       text-align: center;
-      color: $white;
+      color: $primary-color;
     }
   }  
   
@@ -68,7 +71,7 @@ nav.slider-mobile {
   overflow-y: scroll;
   
   .user-info {
-    background-color: $purple;
+    @include bg-gradient-challenge();
     color: $white;
     padding: 10px;
 
@@ -155,9 +158,11 @@ nav.slider-mobile {
     h2 { color: $purple; }
   }
   
+  .mobile-logo { width: 100%; }
+
   .copyright { 
     font-size: 11px; 
-    margin: 22px 0 0;
+    margin: 0;
   }
 
   .block-collabco-profile { padding: 0; }
@@ -178,7 +183,7 @@ nav.slider-mobile {
 
 
 .overlay {
-  @include bg-gradient-blue-purple('','',.9);
+  @include bg-gradient-challenge('',.9);
   display: none;
   position: fixed;
   top: 0;

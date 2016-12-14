@@ -1,14 +1,14 @@
 // Breadcrumbs
 
 .breadcrumb-container {
-  color: $purple;
+  color: $primary-color;
   overflow: hidden;
 
   a {
-    color: $pink;
+    color: $secondary-color;
     text-decoration: none;
     
-    &:hover { color: $purple; }
+    &:hover { color: $primary-color; }
   }
 
   .breadcrumb {
@@ -20,7 +20,7 @@
   }
 
   .breadcrumb > li + li:before {
-    color: $purple;
+    color: $primary-color;
   }
 }
 

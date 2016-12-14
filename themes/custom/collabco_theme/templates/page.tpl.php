@@ -85,14 +85,19 @@
 <header id="navigation" role="banner">
   <div class="desktop-header hidden-xs <?php print $container_class; ?>">
     <div class="row">
+      <div id="brand" class="col-sm-2 hidden-xs"> 
+        <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+             <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.jpg" alt="Ignition logo"/>
+           </a>
+      </div>
       
     <?php if (!empty($primary_nav) || !empty($page['nav_actions'])): ?>
-      <nav role="navigation-primary" class="col-sm-9 col-md-7 primary-nav">
+      <nav role="navigation-primary" class="col-sm-7 col-md-7 primary-nav">
           <?php if (!empty($primary_nav)): ?>
               <?php print render($primary_nav); ?>
           <?php endif; ?>
       </nav>
-      <nav role="navigation-secondary" class="col-sm-3 col-md-offset-2 secondary-nav">
+      <nav role="navigation-secondary" class="col-sm-3 secondary-nav">
         <?php if (!empty($page['nav_search'])): ?> 
           <div class="search">
             <?php print render($page['nav_search']);?>
@@ -112,10 +117,9 @@
         <a href="#" id='nav-hamburger' class="icon-hamburguer"></a>
       </div>
      <div id="brand" class="col-xs-6"> 
-         <!--     <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-              <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.png" alt="Collabco"/>
-            </a> -->
-          <h1>Collabco IMS</h1>
+        <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+          <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo-banner.png" alt="Ignition Logo"/>
+        </a>
 
       </div>
         <div class="search col-xs-3">
@@ -142,10 +146,9 @@
       <?php print render($primary_nav); ?>
     <?php endif; ?>
     <footer>
-   <!--    <div class="logo"><img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.png" alt="Collabco"/>
-      </div> -->
-      <h2>Collabco IMS</h2>
-      <p class="copyright">© Copyright 2016. Collabco</p>
+      <div class="logo"><img class="mobile-logo" src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/education-logo.png" alt="Departmet of Education and Training"/>
+      </div>
+      <p class="copyright">© Copyright 2016. <br/>Department of Education and Training</p>
     </footer>
 </nav>
 
@@ -285,6 +288,4 @@
   </div>
 </footer>    
 <?php endif; ?>
-
-
 <?php drupal_add_js($base_url.'/profiles/collabco/themes/custom/collabco_theme/js/script.js', array('type' => 'file', 'scope' => 'footer')); ?>

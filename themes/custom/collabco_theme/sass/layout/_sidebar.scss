@@ -39,7 +39,7 @@
 
       &:hover {
         background: none;
-        color: $green-lime;
+        color: $secondary-color;
       }
     }
   }
@@ -52,7 +52,7 @@
 
     &:hover {
       text-decoration: underline;
-      color: $green-lime;
+      color: $secondary-color;
     }
   }  
 
@@ -73,7 +73,7 @@
     background-color: $white;
     border: 1px solid $gray-plank;
     color: $gray-dark;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
   }
 
@@ -101,7 +101,7 @@
       text-decoration: none;
       
       &:hover { 
-        color: $green-lime;
+        color: $secondary-color;
         text-decoration: underline;
       } 
     }
@@ -123,13 +123,13 @@
 
       .flagged,
       .unflag-action {
-        color: $green-light;
+        color: $secondary-color;
       }
 
       a[class^="icon-"],
       a[class*=" icon-"] { 
         position: relative;
-        top: 1px;
+        top: 0px;
         float: right;
         font-size: 18px;
         padding: 0;
@@ -139,9 +139,11 @@
         }
 
         &.icon-full {
-          color: $green-lime;
+          color: $secondary-color;
         }
       } 
+
+      a[class^="icon-ignition-"] { top: -1px; }
     }
 
   } // </.stat>

@@ -20,8 +20,9 @@
       $picture = theme('user_picture', array('account' => $account));
       echo "<div class='sponsor clearfix'>";
         echo $picture;
-        echo "<div class='sponsor-name'>";
-          echo "<span>Challenge Sponsor</span><br>";
+        echo "<div class='sponsor-name'><span>";
+          echo csl('challenges',0,0) . " ". csl('sponsor');
+          echo "</span><br>";
           echo theme('username', array('account' => $account));
         echo "</div>";
       echo "</div>";

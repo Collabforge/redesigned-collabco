@@ -2,7 +2,7 @@
 .page-user {
   // Header
   .content-top {
-    @include bg-gradient-pink-orange('', '', .9);
+    @include bg-gradient-hub('', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto ,cover;
     padding: 28px 0; 

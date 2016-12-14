@@ -3,6 +3,14 @@
 
 @import 'https://fonts.googleapis.com/css?family=Oswald:300,400,700';
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+$open-sans: 'OpenSans',Arial,'Helvetica Neue',Helvetica,sans-serif;
+
 $oswald: 'Oswald', sans-serif;
 
-$lato: 'Lato', sans-serif;
+$lato-old: 'Lato', sans-serif;
+
+$lato: $lato-old;
+
+$primary-font: $lato;

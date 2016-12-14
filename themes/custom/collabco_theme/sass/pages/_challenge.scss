@@ -4,7 +4,7 @@
 .page-archived-ideas {
     // First Block
   .content-top {
-    @include bg-gradient-blue-purple('', '', .9);
+    @include bg-gradient-challenge('../assets/img/background/triangle-bottom-right-cut.png', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto , cover;
     background-repeat: no-repeat, no-repeat, no repeat;
@@ -27,9 +27,11 @@
     .popover p { font-size: 15px; }
   }
 
-  .card .taxonomy-tags { @include bg-gradient-blue-purple();  } 
+  .card .taxonomy-tags { @include bg-gradient-challenge();  } 
 
-  .card article .img-icon { @include bg-gradient-blue-purple(); color: $white; }
+  .card article .img-icon { @include bg-gradient-challenge(); color: $white; }
+
+  .view-latest-ideas .card article .img-icon { @include bg-gradient-ideas(); }
 
   .main-container {
     @include bg-gradient-white-gray();
@@ -42,7 +44,7 @@
   .main-container {  padding: 0; }
 
   .content-lower {
-    @include bg-gradient-blue-purple('', '', .9);
+    @include bg-gradient-challenge('../assets/img/background/triangle-middle-big-down.png', .9);
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
     padding: 30px 0;

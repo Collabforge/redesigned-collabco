@@ -91,15 +91,17 @@
 
 
   }  // </logged-in .content-top>
+  
   .main-container { 
     padding: 0;
     min-height: 0;
   }
 
+
   // Content upper - open challenges
   .content-lower {
-    @include bg-gradient-blue-purple('', '', .9);
-    background-position: top right,  0 0 , 0 0;
+    @include bg-gradient-challenge('/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-middle-left.png', .8);
+    background-position: top left,  0 0 , 0 0;
     background-size: contain, auto, auto;
     color: $white;
     padding: 50px 0;

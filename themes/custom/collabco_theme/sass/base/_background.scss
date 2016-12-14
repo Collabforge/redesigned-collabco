@@ -1,0 +1,56 @@
+
+@mixin bg-gradient-default() {
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, 0 0;
+  background-size: auto, auto, auto;
+}
+
+@mixin bg-gradient-green-blue($img-pattern: '' , $img-bg: '', $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(53, 145, 137, $op) 0%, rgba(30, 61, 107, $op) 100%), url($img-bg);
+  @include bg-gradient-default();
+}
+
+@mixin bg-gradient-white-gray($img-pattern: '' , $img-bg: '', $op: 1) {
+  background-image: url($img-pattern), linear-gradient(to bottom, rgba(255, 255, 255, $op) 0%,rgba(255, 255, 255, $op) 25%, rgba(232, 232, 232, $op) 100%), url($img-bg);
+  @include bg-gradient-default();
+}
+
+@mixin bg-gradient-purple-pink($img-pattern: '' , $img-bg: '', $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(125, 23, 77, $op) 0%, rgba(192, 85, 210, $op) 100%) , url($img-bg);
+  @include bg-gradient-default();
+}
+
+@mixin bg-gradient-blue-purple($img-pattern: '' , $img-bg: '', $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(129, 61, 153, $op) 0%, rgba(117, 82, 129, $op) 100%), url($img-bg);
+  @include bg-gradient-default();
+}
+
+@mixin bg-gradient-pink-orange($img-pattern: '' , $img-bg: '', $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(242, 126, 131, $op) 0%, rgba(226, 119, 27, $op) 100%), url($img-bg);
+  @include bg-gradient-default();
+}
+
+@mixin bg-gradient-challenge($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(83, 39, 98, $op) 0%, rgba(77, 49, 155, $op) 100%);
+  @include bg-gradient-default();
+}
+
+@mixin bg-gradient-collaboration($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(206, 45, 37, $op) 0%, rgba(178, 31, 79, $op) 100%);
+  @include bg-gradient-default();
+}
+
+@mixin bg-gradient-ideas($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(59, 83, 164, $op) 0%, rgba(29, 121, 171, $op) 100%);
+  @include bg-gradient-default();
+}
+
+@mixin bg-gradient-hub($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(206, 45, 37, $op) 0%, rgba(183, 134, 45, $op) 100%);
+  @include bg-gradient-default();
+}
+
+
+
+
+

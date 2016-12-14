@@ -1,5 +1,10 @@
 
-.sidebar-2 .host-document h2 { margin-top: 0; }
+.sidebar-2 .host-document {
+
+    h2 { margin-top: 0; color: $primary-colab;  }
+
+    a { color: $secondary-color;}
+}
 
 .documents {
   border: $border-dark;
@@ -19,12 +24,12 @@
       width: 100%;
     }
 
-    a:hover { color: $purple-pink; }
+    a:hover { color: $primary-colab; }
   }
   
   .description {
     a { 
-      color: $purple-pink;
+      color: $primary-colab;
       font-size: 22px; 
       text-decoration: none; 
     }
@@ -33,11 +38,10 @@
 
     a:hover { text-decoration: underline; }
   }
+
 }
 
-.sidebar-2 {
-  h2 { color: $purple-pink; }
-}
+
 
 
 //Document Page View

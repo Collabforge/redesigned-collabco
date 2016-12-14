@@ -33,7 +33,9 @@
       top: 3px;
       right: 5px;
       width: 16px;
-    }  
+    }
+
+    &.icon-ignition-flame:before { top: 1px; }  
   }  
 
   @media #{$scrn-sm-min} {  

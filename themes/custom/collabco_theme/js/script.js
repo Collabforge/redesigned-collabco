@@ -10,8 +10,6 @@
 
   doc.ready(function() {
 
-$('.welcome-demo').insertBefore('body > div.main-container > div > div > section');
-
   //Add class to discussion and documents
   if ($('*').find('.node-type-conversation').length >0){
     $( ".ui-menu-collaboration-discussion" ).addClass( "active" );  
@@ -54,7 +52,7 @@ $('.welcome-demo').insertBefore('body > div.main-container > div > div > section
 
   //Add hover on card footer/aside
   $('.card-large-link, .card-full-link, .small-card-link, .sidebar-2 .stat-label, .sidebar-2 .nav li ').hover(function() {
-    $(this).find('a , .value').css('color', '#7bb8b2');
+    $(this).find('a , .value').css('color', '#00746A');
   }, function() {
     $(this).find('a , .value').css('color', 'inherit');
   });
@@ -171,8 +169,8 @@ function iconSupportAndFollowInteraction(flagType, flagClass, flagStatus, cardTy
     classFull = 'icon-eye-full flagged';
 
   } else if ( flagType === 'support'  ) {
-    classSimple = 'icon-heart';
-    classFull = 'icon-heart-full flagged';
+    classSimple = 'icon-ignition-thumbs-o-up';
+    classFull = 'icon-ignition-thumbs-up flagged';
   }
 
   if(cardType == 'sidebar') {
@@ -180,8 +178,6 @@ function iconSupportAndFollowInteraction(flagType, flagClass, flagStatus, cardTy
   } else {
     valueClass = $(flagClass).siblings('.value');
   }
-
-  console.log(valueClass);
 
   var counter =  parseInt( valueClass.first().text() );
 
@@ -224,7 +220,6 @@ function centerLargeCards() {
   $('.view').each(function(index, el) {
     var largeCard = '.card.large';
     var nCards = $(this).find(largeCard).length;
-    console.log('nCards' + nCards);
     
     if( nCards == 1) {
       $(largeCard).css({
@@ -261,26 +256,17 @@ function setCardsHeight(){
 
 //Update backgorund headers on challenge/collaborate/ideas
 $.fn.updateBackgroundHeader = function () {
-  if( $(this).data('background') ){
-    var container = $(this);
-    var dataBg = container.data('background');
+
+  var container = $(this);
+  var dataBg = container.data('background');
+
+  if( dataBg ){   
     var dataType = container.data('type');
     var closestFullWidthTop = container.closest('.full-width-top');
-    var colorBackground =  '';
+    var colorBackground =  closestFullWidthTop.css('background-image');
 
-    switch(dataType) {
-      case 'challenge':
-      case 'idea':
-        colorBackground = 'linear-gradient(135deg, rgba(74, 56, 88, .9) 0%, rgba(180, 115, 190, .9) 100%)';
-        break;
-        
-      case 'collaborate':
-        colorBackground = 'linear-gradient(135deg, rgba(125, 23, 77, .9) 0%, rgba(192, 85, 210, .9) 100%)';
-        break;
-    }
-    
     closestFullWidthTop.
-    css('background-image', 'url(" "),' + colorBackground + ', url("' + dataBg + '")');
+    css('background-image', colorBackground + ', url("' + dataBg + '")');
   }
 }
 

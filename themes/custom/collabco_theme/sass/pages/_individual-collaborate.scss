@@ -8,11 +8,11 @@
     p { line-height: 21px; }
   }
   //Comments
-  h2.comment-form { color:$purple-pink; }
+  h2.comment-form { color:$primary-colab; }
   
   //Sidebar
   .sidebar-2 {
-    h2 { color: $purple-pink; }
+    h2 { color: $primary-colab; }
     h2.related-ideas { margin-top: 25px; }
 
 
@@ -30,7 +30,7 @@
 .node-type-conversation,
 .node-type-knowledge-object {
   .full-width-top{
-    @include bg-gradient-purple-pink('', '', .9);
+    @include bg-gradient-collaboration('../assets/img/background/triangle-top-right-cut.png', .9);
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
@@ -42,6 +42,8 @@
 
     #block-collabco-collaboration-single-collaboration-header { position: static; }
   }
+
+  .content-upper { padding-top: 10px;}
 }
 
 

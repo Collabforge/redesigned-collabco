@@ -57,81 +57,13 @@
     .title a { 
       color: $gray-darker;
       display: inline-block;
-      font-family: $lato;
+      font-family: $primary-font;
       font-size: 30px;
       line-height: 1;
       margin-bottom: 20px;
       text-decoration: none;
       &:hover { text-decoration: underline; }
     }
-
-    // Cockade and Tag
-    .cockade {
-      background-position: 0 0;
-      background-repeat: no-repeat;
-      background-size: auto;
-      height: 60px;
-      left: 5px;
-      position: absolute;
-      top: -25px;
-      width: 52px;
-      z-index: 999;
-    }
-
-    .tick {
-      background-image: url('/sites/all/themes/img/card/cockade-green.png');
-      &:hover {
-        background-image: url('/sites/all/themes/img/card/cockade-green-hover.png');
-      }  
-    }
-
-    .todolist {
-      background-image: url('/sites/all/themes/img/card/cockade-todolist.png');
-      &:hover { background-image: url('/sites/all/themes/img/card/cockade-todolist-hover.png'); }  
-    }
-
-    .tool {
-      background-image: url('/sites/all/themes/img/card/cockade-tool.png');
-      &:hover { background-image: url('/sites/all/themes/img/card/cockade-tool-hover.png'); }  
-    }
-
-    .sinth {
-      background-image: url('/sites/all/themes/img/card/cockade-sinth.png');
-      &:hover { background-image: url('/sites/all/themes/img/card/cockade-sinth-hover.png'); }  
-    }
-    
-    .paper-pencil {
-      background-image: url('/sites/all/themes/img/card/cockade-paper-pencil.png');
-      &:hover { background-image: url('/sites/all/themes/img/card/cockade-paper-pencil-hover.png'); }  
-    }
-
-    .parked {
-      background-image: url('/sites/all/themes/img/card/cockade-parked.png');
-      &:hover { background-image: url('/sites/all/themes/img/card/cockade-parked-hover.png'); }  
-    }
-
-    .tag {
-      color: $white;
-      display: inline-block;
-      font-family: $lato;
-      font-size: 12px;
-      padding: 5px 0;
-      position: absolute;
-      
-      top: -14px;
-      
-      text-transform: uppercase;
-      transition: all ease 1s;
-      max-width: 0;
-      max-height: 30px;
-      overflow: hidden;
-    }
-    
-    .green { background-color: $green-lime; }
-    .green-dark { background-color: $green-dark; }
-    .orange { background-color: $orange; }
-    .blue { background-color: $blue; }
-    .purple { background-color: $blue; }
   } // </article>
 
 
@@ -164,7 +96,7 @@
       &.flagged,
       &:active,
       &:hover {
-        color: $green-light;
+        color: $secondary-color;
       }
     }
 
@@ -174,6 +106,8 @@
       right: 4px;
       top: 3px;
     }
+    
+    a[class^="icon-ignition-"] { top: 2px; }
 
     .flag-wrapper { display: block; }
   } // End of footer
@@ -270,6 +204,7 @@
       right: -3px;
       top: 2px;
     }
+    a[class^="icon-ignition-"] { top: 1px; }
   }
 
   //Hide footer text and throbber
@@ -279,6 +214,6 @@
 
 } // </.small.card>  
 
-
+.hover-card { color: $secondary-color; }
 
 

@@ -1,9 +1,8 @@
 .page-taxonomy-term {
   
-
 // Header Block  
   .full-width-top{
-    @include bg-gradient-blue-purple('', '', .9);
+    @include bg-gradient-challenge('/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-bottom-right-cut.png', .9);
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
