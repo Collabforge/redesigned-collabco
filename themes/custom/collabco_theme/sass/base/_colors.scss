@@ -2,6 +2,29 @@
 
 // Base colors are defined on bootstrap's variables.
 
+/*** GLOBAL ***/
+
+$primary-color: #532762;
+$secondary-color: #00746A;
+$tertiary-color: #3B53A4;
+$ribbon-color: #cf0058;
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary:         $primary-color;
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #E78540;
+$brand-danger:          #cf0058;
 
 /*** COLLABORATION ***/
 
@@ -13,8 +36,6 @@ $collab-secondary-color: #fff;
   @include bg-gradient-default();
 }
 
-
-
 /*** CHALLENGE ***/
 
 $challenge-primary-color: #4a3858;
@@ -25,12 +46,22 @@ $challenge-secondary-color: #fff;
   @include bg-gradient-default();
 }
 
+/*** IDEAS ***/
+
+$idea-primary-color: #3B53A4;
+$idea-secondary-color: #fff;
+
+@mixin bg-gradient-ideas($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(59, 83, 164, $op) 0%, rgba(29, 121, 171, $op) 100%);
+  @include bg-gradient-default();
+}
+
+/*** MY HUB ***/
+
+
 
 //Default Colors
 
-$primary-color: #532762;
-$secondary-color: #00746A;
-$tertiary-color: #3B53A4;
 
 
 
@@ -107,22 +138,7 @@ $gray-comment: #f5f4f7;
 // $green-dark-op-9: rgba(53, 145, 137, .9);
 
 
-//== Colors
-//
-//## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #000;
-$gray-darker:            lighten($gray-base, 13.5%); // #222
-$gray-dark:              lighten($gray-base, 20%);   // #333
-$gray:                   lighten($gray-base, 33.5%); // #555
-$gray-light:             lighten($gray-base, 46.7%); // #777
-$gray-lighter:           lighten($gray-base, 93.5%); // #eee
-
-$brand-primary:         $primary-color;
-$brand-success:         #5cb85c;
-$brand-info:            #5bc0de;
-$brand-warning:         #E78540;
-$brand-danger:          #cf0058;
 
 
 

@@ -34,12 +34,6 @@
   @include bg-gradient-default();
 }
 
-
-@mixin bg-gradient-ideas($img-pattern: '' , $op: 1) {
-  background-image: url($img-pattern), linear-gradient(135deg, rgba(59, 83, 164, $op) 0%, rgba(29, 121, 171, $op) 100%);
-  @include bg-gradient-default();
-}
-
 @mixin bg-gradient-hub($img-pattern: '' , $op: 1) {
   background-image: url($img-pattern), linear-gradient(135deg, rgba(206, 45, 37, $op) 0%, rgba(183, 134, 45, $op) 100%);
   @include bg-gradient-default();

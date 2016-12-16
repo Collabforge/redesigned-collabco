@@ -1,7 +1,13 @@
+/* === INDIVIDUAL IDEA (node-type-idea) PAGE === */
+
 .node-type-idea{
+
+  /*** Main Container ***/
+
   .main-container { padding: 37px 0; }
 
-  //Full width Top HEADER
+/*** Header Full Width Top Block ***/
+
   .full-width-top{
     @include bg-gradient-ideas('../assets/img/background/triangle-bottom-right-cut.png', .9);
     @include content-top();
@@ -14,27 +20,44 @@
 
   #block-collabco-idea-single-idea-header { position: static; }
 
-  section {
-    p { line-height: 21px; }
-    .field-name-body { margin-bottom: 85px; }
-  }
+
+/*** Breadcrumbs ***/
 
   .breadcrumb-container {
     border-bottom: $border-dark;
     padding-top: 30px;
     margin-bottom: 30px;
-  }  
+  } 
+
+/*** Main Container ***/
+
+  section {
+    p { line-height: 21px; }
+    .field-name-body { margin-bottom: 85px; }
+  }
+
   
+/*** Sidebar ***/
+
   .sidebar-2 .nav-tabs {
     margin-bottom: 0;
   }
 
   .sidebar-2 h2 { 
-    color: $primary-idea; 
+    color: $idea-primary-color; 
     margin-top: 20px;
   }
 	
+/*** Comments ***/
+
+.comment-wrapper .title { color: $idea-primary-color; }
+
 }
+
+
+
+/* === VIEW IDEAS SUPPORTES PAGE === */
+
 .page-idea-supporters{
   .content-top {
     @include bg-gradient-ideas('../assets/img/background/triangle-bottom-right-cut.png', .9);
@@ -44,8 +67,10 @@
   }
 }
 
-// Edit node Idea
+/* === EDIT IDEA PAGE === */
+
 .page-node-edit.node-type-hub {
+
   .tabs-left .nav {
     li a[href="#edit-options"]{
       border-width: 1px 0 1px 1px;

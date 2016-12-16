@@ -101,7 +101,11 @@
   .views-exposed-form {
     display: inline-block;
     float: right;
-    .views-exposed-widget { float: right; padding-right: 0; }   
+    
+    .views-exposed-widget { 
+      float: right; 
+      padding-right: 0;
+    }   
     .views-exposed-widgets { margin-bottom: .8em; }
 
     input[type="text"].form-control {
@@ -115,7 +119,11 @@
   /*** Create New Challenge Button ***/
 
   a.create-challenge { 
-    @include btn-purple();
+    border: 1px solid $challenge-primary-color;
+    color: $challenge-primary-color;
+    background-color: transparent;
+    text-transform: uppercase;
+    transition: all ease .3s;
     text-decoration: none;
     font-size: 12px;
     bottom: 12px;
@@ -123,6 +131,11 @@
     position: absolute;
     display: inline-block;
     right: 0;
+
+    &:hover {
+      background-color: $challenge-primary-color;
+      color: $white;
+    }
 
     @media #{$scrn-sm-min} {
       right: 190px;
@@ -165,14 +178,11 @@
     i { color: $white; } 
   }
 
-  /** more link button **/
+  /*** More link button ***/
 
   .more-link { margin-bottom: 30px; }
 
-  .separator {
-    border-bottom: 1px solid $challenge-primary-color;
-    margin-bottom: 30px;
-  }
+  /*** Add to Brainstorm Block ***/
 
   #block-collabco-challenge-add-to-brainstorm {
     @include title-1-block();
@@ -181,6 +191,13 @@
   }
 
   #block-system-main { padding-top: 0; }
+
+  /*** Views Separator Line ***/
+  
+  .separator {
+    border-bottom: 1px solid $challenge-primary-color;
+    margin-bottom: 30px;
+  }
 
 } 
 
@@ -199,7 +216,3 @@
   .view-header { color: $challenge-primary-color; }
 
 }
-
-
-
-

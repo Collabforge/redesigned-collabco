@@ -7,6 +7,7 @@
 .node-type-knowledge-object {
   
   /*** Header Full Width Top Block ***/
+  
   .full-width-top{
     @include bg-gradient-collaboration('../assets/img/background/triangle-top-right-cut.png', .9);
     @include content-top();
