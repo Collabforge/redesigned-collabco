@@ -1,8 +1,12 @@
+/* === CHALLENGES INDEX PAGES === */
+
 .page-challenge,
 .page-open-challenges,
 .page-closed-challenges,
 .page-archived-ideas {
-    // First Block
+
+  /*** Header Content Top ***/
+
   .content-top {
     @include bg-gradient-challenge('../assets/img/background/triangle-bottom-right-cut.png', .9);
     background-position: top right, 0 0 , 0 0;
@@ -23,25 +27,36 @@
       }
     }
     
-    .popover i { color: $purple; }
+    .popover i { color: $challenge-primary-color; }
     .popover p { font-size: 15px; }
   }
 
+  /*** Cards ***/
+
   .card .taxonomy-tags { @include bg-gradient-challenge();  } 
 
-  .card article .img-icon { @include bg-gradient-challenge(); color: $white; }
+  .card article .img-icon { 
+    @include bg-gradient-challenge(); 
+    color: $white; 
+  }
+
+  /*** Slideshow Ideas small cards ***/
 
   .view-latest-ideas .card article .img-icon { @include bg-gradient-ideas(); }
 
-  .main-container {
-    @include bg-gradient-white-gray();
-  }
+  /*** Main Container ***/
+
+  .main-container { @include bg-white-gray(); }
 
 }
+
+/* === CHALLENGE MAIN PAGE === */
 
 .page-challenge {
 
   .main-container {  padding: 0; }
+
+  /*** Content Lower Block ***/
 
   .content-lower {
     @include bg-gradient-challenge('../assets/img/background/triangle-middle-big-down.png', .9);
@@ -54,16 +69,71 @@
     }
   }
 
+  /*** Content Bottom Block ***/
+
   .content-bottom {
     @include bg-gradient-white-gray();
     .view-header {
-      color: $purple;
+      color: $challenge-primary-color;
+    }
+  }
+  
+/* === Main Content Header === */
+
+  .view-challenges {
+
+    header {
+      border-bottom: $border-dark;
+      position: relative;
+      height: 56px;
+    }
+  }
+  
+  /*** Breadcrumbs ***/
+
+  .breadcrumb-container {
+    bottom: 0;
+    position: absolute;
+  }
+
+ /*** Search Input ***/
+
+  .views-exposed-form {
+    display: inline-block;
+    float: right;
+    .views-exposed-widget { float: right; padding-right: 0; }   
+    .views-exposed-widgets { margin-bottom: .8em; }
+
+    input[type="text"].form-control {
+      background-color: $gray-lighter;
+      color: $challenge-primary-color;
+      height: 35px;
+      width: 180px;
+    }
+  }
+  
+  /*** Create New Challenge Button ***/
+
+  a.create-challenge { 
+    @include btn-purple();
+    text-decoration: none;
+    font-size: 12px;
+    bottom: 12px;
+    padding: 6px 7px 7px;
+    position: absolute;
+    display: inline-block;
+    right: 0;
+
+    @media #{$scrn-sm-min} {
+      right: 190px;
     }
   }
 
-  .more-link {
-    margin-bottom: 30px;
-  }
+  /* === End of Main Content Header === */
+
+  /*=== Views ===*/
+
+  /*** Headers ***/
 
   .view-archieved-ideas,
   .view-closed-challenges {
@@ -83,7 +153,7 @@
       }
       
       h3, 
-      i { color: $purple; }
+      i { color: $challenge-primary-color; }
 
       h3 { margin: 60px 0 20px; }
     }
@@ -95,77 +165,38 @@
     i { color: $white; } 
   }
 
-  // Brainstorm block
+  /** more link button **/
+
+  .more-link { margin-bottom: 30px; }
+
+  .separator {
+    border-bottom: 1px solid $challenge-primary-color;
+    margin-bottom: 30px;
+  }
+
   #block-collabco-challenge-add-to-brainstorm {
     @include title-1-block();
-    color: $purple;
+    color: $challenge-primary-color;
     text-align: center;
   }
 
   #block-system-main { padding-top: 0; }
 
-  //Breadcrumbs
-  .view-challenges {
+} 
 
-    header {
-      border-bottom: $border-dark;
-      position: relative;
-      height: 56px;
-    }
-  }
+/* === END OF CHALLENGE MAIN PAGE === */
 
-  .breadcrumb-container {
-    bottom: 0;
-    position: absolute;
-  }
+/* === IDEAS ARCHIVED AND CLOSED CHALLENGES PAGES === */
 
- //Search input
-  .views-exposed-form {
-    display: inline-block;
-    float: right;
-    .views-exposed-widget { float: right; padding-right: 0; }   
-    .views-exposed-widgets { margin-bottom: .8em; }
-
-    input[type="text"].form-control {
-      background-color: $gray-lighter;
-      color: $purple;
-      height: 35px;
-      width: 180px;
-    }
-  }
-  
-  //CREATE CHALLENGE BUTTON
-  a.create-challenge { 
-    @include btn-purple();
-    text-decoration: none;
-    font-size: 12px;
-    bottom: 12px;
-    padding: 6px 7px 7px;
-    position: absolute;
-    display: inline-block;
-    right: 0;
-
-    @media #{$scrn-sm-min} {
-      right: 190px;
-    }
-  }
-
-  .separator {
-    border-bottom: 1px solid $purple;
-    margin-bottom: 30px;
-  }
-
-} // </page-challenge>
-
-//Archived IDEAS 
 .page-ideas-archived,
 .page-closed-challenges {
   
-  .card article .img-icon { @include bg-gradient-blue-purple(); color: $white; }
-
-  .main-container { @include bg-gradient-white-gray(); }
+  .card article .img-icon { 
+    @include bg-gradient-challenge(); 
+    color: $white;
+  }
   
-  .view-header { color: $purple; }
+  .view-header { color: $challenge-primary-color; }
 
 }
 

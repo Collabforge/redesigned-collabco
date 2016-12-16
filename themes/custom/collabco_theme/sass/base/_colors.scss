@@ -1,5 +1,30 @@
+/* === CUSTOM COLORS === */
+
 // Base colors are defined on bootstrap's variables.
-// Here are custom colors
+
+
+/*** COLLABORATION ***/
+
+$collab-primary-color: #882263;
+$collab-secondary-color: #fff;
+
+@mixin bg-gradient-collaboration($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(206, 45, 37, $op) 0%, rgba(178, 31, 79, $op) 100%);
+  @include bg-gradient-default();
+}
+
+
+
+/*** CHALLENGE ***/
+
+$challenge-primary-color: #4a3858;
+$challenge-secondary-color: #fff;
+
+@mixin bg-gradient-challenge($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(83, 39, 98, $op) 0%, rgba(77, 49, 155, $op) 100%);
+  @include bg-gradient-default();
+}
+
 
 //Default Colors
 
