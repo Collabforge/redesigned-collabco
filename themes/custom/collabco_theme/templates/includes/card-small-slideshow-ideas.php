@@ -14,7 +14,7 @@ if (array_key_exists('support_idea', $user_flags)){
   $support_flag = TRUE;
 }  
 $follow_classes = $follow_flag?'icon-eye-full flagged':'icon-eye';
-$support_classes = $support_flag?'icon-ignition-thumbs-up flagged':'icon-ignition-thumbs-o-up';
+$support_classes = $support_flag?'icon-heart-full flagged':'icon-heart';
 
 $follow_count_classes = $follow_flag?'value flagged':'value';
 $support_count_classes = $support_flag?'value flagged':'value';

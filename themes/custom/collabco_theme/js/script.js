@@ -169,8 +169,8 @@ function iconSupportAndFollowInteraction(flagType, flagClass, flagStatus, cardTy
     classFull = 'icon-eye-full flagged';
 
   } else if ( flagType === 'support'  ) {
-    classSimple = 'icon-ignition-thumbs-o-up';
-    classFull = 'icon-ignition-thumbs-up flagged';
+    classSimple = 'icon-heart';
+    classFull = 'icon-heart-full flagged';
   }
 
   if(cardType == 'sidebar') {

@@ -2,7 +2,7 @@ header#navigation {
   background-color: transparent;
   border-top: 10px solid $primary-color;
   border-bottom: 1px solid $primary-color;
-  background-image: url('../assets/img/background/shaping-our-future-l.png'), url('../assets/img/background/shaping-our-future-r.png');
+  background-image: url(''), url('');
   background-position: -120px 0, top right;
   background-repeat: no-repeat no-repeat;
   background-size: auto, contain;
@@ -10,7 +10,7 @@ header#navigation {
   .row { height: 110px; }
 
   @media #{$scrn-md-max} {
-     background-image: url(''), url('../assets/img/background/shaping-our-future-r.png');
+     background-image: url(''), url('');
   }
   
   @media #{$scrn-sm-max} {
