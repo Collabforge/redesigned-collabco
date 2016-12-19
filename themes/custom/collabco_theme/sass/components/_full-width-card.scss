@@ -1,4 +1,5 @@
-// Full Width Card
+/* === MY HUB --> CREATING/FOLLOWING TAB - FULL WIDTH CARDS === */
+
 .full-width-card {
   margin-bottom: 20px;
 
@@ -18,6 +19,7 @@
     }
   }
 
+  /*** CARD IMAGE ***/
   .feat-img {
     position: relative;
     padding: 0;
@@ -40,6 +42,8 @@
     padding: 2px 6px 0 5px;
   }
 
+  /*** Content ***/
+
   .content {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -52,7 +56,6 @@
       color: $gray-darker;
       display: block;
       margin-bottom: 15px;
-      font-family: $lato;
       line-height: .98;
 
       &:hover { text-decoration: underline; }
@@ -60,6 +63,7 @@
 
   }
 
+  /*** ICONS FOLLOW/SUPPORT/COMMENT LINKS ***/
   aside {
     border: $border-dark;
     border-width: 1px 0 0;
@@ -107,9 +111,9 @@
     }
   }
   
- 
+ /*** ICON bg color ***/
   &.challenge .feat-img i {
-    @include bg-gradient-blue-purple();
+    @include bg-gradient-challenge();
   }
 
   &.idea .feat-img i {
@@ -117,10 +121,11 @@
   }
 
   &.collaboration .feat-img i {
-    @include bg-gradient-purple-pink();
+    @include bg-gradient-collaboration();
   }
 }  
 
+/*** Card without image ***/
 .no-idea-image {
   background-image: url("../assets/img/placeholder/placeholder-card-large.jpg"); 
   background-size: cover; 

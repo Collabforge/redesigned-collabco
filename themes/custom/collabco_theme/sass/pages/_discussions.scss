@@ -1,14 +1,8 @@
-// MyHUB -> Discussions page
-
+/* === INDVIDUAL COLLABORATION - INDEX DISCUSSION PAGE === */
 
 .page-node-discussions {
 
-  .sidebar-2 .host-discussion{
-
-    h2 { margin-top: 0; color: $primary-colab;  }
-
-    a { color: $secondary-color;}
-  }
+/*** Discussion Box ***/
 
   .discussion { 
     border: $border-dark;
@@ -16,13 +10,13 @@
     margin-bottom: 20px;
 
     &:hover {
-      background-color: $gray-light;
+      background-color: $gray-lighter;
     }
 
   }
 
   .content a { 
-     color: $primary-colab; 
+     color: $collab-primary-color; 
      font-size: 22px;
      text-decoration: none;
 
@@ -32,13 +26,13 @@
   }
   
   .icon { 
-    color: $primary-colab;
+    color: $collab-primary-color;
     font-size: 35px;
     text-align: center;
   }
 
   .file a { 
-    color: $secondary-color;
+    color: $collab-secondary-color;
     text-decoration: none;
     font-size: 15px;
 
@@ -54,10 +48,35 @@
     top: 2px;
     right: 3px;
   }
+
+}
+
+/*** SIDEBAR ***/
+
+.sidebar-2 .host-discussion{
+
+  h2 { margin-top: 0; color: $collab-primary-color;  }
+
+  a { color: $collab-secondary-color; }
+
+  /* === Sidebar Button === */
+
+  .add-resource {
+    font-size: 14px; 
+    text-decoration: none;
+
+    &:before {
+      font-size: 14px;
+      position: relative;
+      right: 4px;
+      top: 2px;
+    }
+  }
 }
 
 
-//Document Page View
+/* === INDVIDUAL DISCUSSION PAGE === */
+
 .node-type-conversation { 
   
   .full-width-top {
@@ -66,7 +85,7 @@
 
   .main-container { padding: 0 0 30px; }
   
-  .comment-wrapper .title  { color: $primary-colab; }
+  .comment-wrapper .title  { color: $collab-primary-color; }
 
   .user-picture { 
     display: inline-block;

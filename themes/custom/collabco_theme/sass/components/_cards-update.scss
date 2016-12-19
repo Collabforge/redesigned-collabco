@@ -1,21 +1,12 @@
-// MY HUB --> UPDATES
-.separator-updates {
-  background-color: $gray-dark;
-  height: 1px;
-  margin: 0 auto;
-  width: 50%;
-}
+/* === MY HUB --> UPDATES TAB CARDS === */
 
-
-//CARD UPDATES on My Hub
 .card-updates {
   margin: 40px 0;
-  font-family: $lato;
 
   i { font-size: 40px; }
   
   a { 
-    color: $secondary-color;
+    color: $card-updates-primary-color;
     text-decoration: none;
 
     &:hover { text-decoration: underline; }
@@ -34,24 +25,25 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
+  /*** Title/Resume text ***/
+
     .title {
       margin: 5px 0 0;
-      font-family: $lato;
       font-size: 18px;
       
       a { 
-        color: $tertiary-color;
+        color: $card-updates-tertiary-color;
         text-decoration: none;
 
         &:hover { text-decoration: underline; }
       }
     }
-  }
 
-  .resume {
-    color: $purple;
-    margin: 0;
-    font-size: 18px;
+    .resume {
+      color: $card-updates-secondary-color;
+      margin: 0;
+      font-size: 18px;
+    }
   }
   
   .desc { 
@@ -60,6 +52,8 @@
   }
   
   .time-elapsed { font-weight: bold; }
+
+  /*** Author name and image ***/
   
   .author {
     padding: 12px 0;
@@ -78,7 +72,8 @@
       text-decoration: none;
     }
   }
-  
+ 
+  /*** Update with image ***/ 
   .picture, 
   .info {
     margin-top: 10px;
@@ -106,11 +101,11 @@
       font-size: 20px; 
       padding: 6px 8px 2px;
 
-      &.idea { @include bg-gradient-blue-purple(); }
+      &.idea { @include bg-gradient-ideas(); }
 
       &.project,
       &.collaboration { 
-        @include bg-gradient-purple-pink();
+        @include bg-gradient-collaboration();
       }
     }
   }
@@ -121,7 +116,8 @@
     @media #{$scrn-sm-min} {
       margin-left: 200px;
     }
-  
+    
+    /*** Update without image ***/
     &.no-image {
       padding: 0;
       margin-top: 0;
@@ -138,3 +134,13 @@
   }  
   
 }
+
+/*** UPDATES CARD SEPARATOR ***/
+
+.separator-updates {
+  background-color: $gray-dark;
+  height: 1px;
+  margin: 0 auto;
+  width: 50%;
+}
+

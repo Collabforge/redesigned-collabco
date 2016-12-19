@@ -1,6 +1,4 @@
-//
-// Large Card, Small Card, Full Width and Update Card classes
-// --------------------------------------------------
+/* === LARGE AND SMALL CARDS (CHALLENGE, COLLABORATION AND IDEAS) === */
 
 .card {
   margin-bottom: 30px;
@@ -10,7 +8,6 @@
     width: 100%;
   }
 
-// Article
   article {
     background-color: $white;
     position: relative;
@@ -26,12 +23,14 @@
       font-size: pxtoem(20px);
     }
 
+    /*** Remaining Days Ribbon ***/
+
     .remaining-days {
-      background-color: $red;
+      background-color: $ribbon-color;
       bottom: 0;
       color: $white;
       display: inline-block;
-      font-size: pxtoem(12px);
+      font-size: 12px;
       padding: 8px;
       position: absolute;
       right: 0;
@@ -46,6 +45,19 @@
       top: 3px;
     }
 
+    /*** Content ***/
+
+    .title a { 
+      color: $gray-darker;
+      display: inline-block;
+      font-size: 30px;
+      line-height: 1;
+      margin-bottom: 20px;
+      text-decoration: none;
+
+      &:hover { text-decoration: underline; }
+    }
+
     .content { 
       height: auto;
       padding: 45px 20px 25px; 
@@ -54,18 +66,9 @@
       p { color: $gray-dark; }
     }
 
-    .title a { 
-      color: $gray-darker;
-      display: inline-block;
-      font-family: $primary-font;
-      font-size: 30px;
-      line-height: 1;
-      margin-bottom: 20px;
-      text-decoration: none;
-      &:hover { text-decoration: underline; }
-    }
-  } // </article>
+  } 
 
+  /*** Footer Links ***/
 
   footer {
     border-top: 1px solid $gray-chromium;
@@ -101,26 +104,20 @@
     }
 
     a[class^="icon-"] {
-      font-size: pxtoem(16px);
+      font-size: 16px;
       position: relative;
       right: 4px;
       top: 3px;
     }
 
     .flag-wrapper { display: block; }
-  } // End of footer
-  
-  // Open challenges card
-  &.challenges .img-icon { 
-    @include bg-gradient-blue-purple(); 
-    color: $white;
-  }
+  } 
 
 
-} // </card>
+} 
 
+/* === LARGE CARDS === */
 
-//Large Card
 .card.large {
   
   .img-icon { 
@@ -128,6 +125,7 @@
     position: absolute;
   }
 
+  /*** BEAKER ICON POSITION ***/
   &.collaborations .img-icon {
     font-size: 25px;
     padding: 2px 6px 4px 5px;
@@ -139,22 +137,23 @@
     } 
   }
 
-  //Only one card center element
+  /*** Center element when there is only one card **/
+
   &.total-items-1 {
     margin-left: auto;
     margin-right: auto;
     float: none;
   }
 
-  //Center 2 cards elements
+   /*** Center element when there is two cards **/
+
   &.total-items-2:first-child {
     @media #{$scrn-md-min} { margin-left: 16.66667%; }
   }
 
-}  //</.large.card>
+} 
 
-
-//SMALL CARD
+/* === SMALL CARDS === */
 
 .card.small {
   padding-right: 1px;
@@ -195,7 +194,7 @@
   
    > div { padding: 10px; }
 
-   //Icon position
+   /*** ICON POSITION ***/
    a:before {
       font-size: 16px;
       position: relative;
@@ -205,13 +204,11 @@
     
   }
 
-  //Hide footer text and throbber
+  /*** Hide footer text and throbber ***/
   .flag-throbber, .flag { display: none; }
   
   @media (min-width: $screen-sm-min) {  width: 217px; }
 
-} // </.small.card>  
-
-.hover-card { color: $secondary-color; }
+}
 
 

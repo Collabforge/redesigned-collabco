@@ -8,6 +8,7 @@
 /*** CHALLENGE ***/
 /*** IDEAS ***/
 /*** MY HUB ***/
+/*** CARDS UPDATES ***/
 /**
  * Default Variables.
  *
@@ -7565,15 +7566,19 @@ button .glyphicon {
   -webkit-border-radius: 0;
           border-radius: 0; }
 
+/* === LARGE AND SMALL CARDS (CHALLENGE, COLLABORATION AND IDEAS) === */
 .card {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  /*** Footer Links ***/ }
   .card img {
     height: auto;
     width: 100%; }
   .card article {
     background-color: #fff;
     position: relative;
-    border: 1px solid #ccc; }
+    border: 1px solid #ccc;
+    /*** Remaining Days Ribbon ***/
+    /*** Content ***/ }
     .card article .feat-img {
       position: relative;
       height: 165px;
@@ -7585,7 +7590,7 @@ button .glyphicon {
       bottom: 0;
       color: #fff;
       display: inline-block;
-      font-size: 0.85714em;
+      font-size: 12px;
       padding: 8px;
       position: absolute;
       right: 0;
@@ -7596,22 +7601,21 @@ button .glyphicon {
       font-size: 16px;
       position: relative;
       top: 3px; }
-    .card article .content {
-      height: auto;
-      padding: 45px 20px 25px;
-      position: relative; }
-      .card article .content p {
-        color: #333333; }
     .card article .title a {
       color: #222222;
       display: inline-block;
-      font-family: "Lato", sans-serif;
       font-size: 30px;
       line-height: 1;
       margin-bottom: 20px;
       text-decoration: none; }
       .card article .title a:hover {
         text-decoration: underline; }
+    .card article .content {
+      height: auto;
+      padding: 45px 20px 25px;
+      position: relative; }
+      .card article .content p {
+        color: #333333; }
   .card footer {
     border-top: 1px solid #ccc;
     overflow: hidden;
@@ -7635,42 +7639,38 @@ button .glyphicon {
       .card footer a.flagged, .card footer a:active, .card footer a:hover {
         color: #00746A; }
     .card footer a[class^="icon-"] {
-      font-size: 1.14286em;
+      font-size: 16px;
       position: relative;
       right: 4px;
       top: 3px; }
     .card footer .flag-wrapper {
       display: block; }
-  .card.challenges .img-icon {
-    background-image: url(""), -webkit-linear-gradient(315deg, #813d99 0%, #755281 100%), url("");
-    background-image: url(""), linear-gradient(135deg, #813d99 0%, #755281 100%), url("");
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
-    color: #fff; }
 
-.card.large .img-icon {
-  padding: 6px 8px 4px;
-  position: absolute; }
+/* === LARGE CARDS === */
+.card.large {
+  /*** BEAKER ICON POSITION ***/
+  /*** Center element when there is only one card **/
+  /*** Center element when there is two cards **/ }
+  .card.large .img-icon {
+    padding: 6px 8px 4px;
+    position: absolute; }
+  .card.large.collaborations .img-icon {
+    font-size: 25px;
+    padding: 2px 6px 4px 5px; }
+  .card.large.challenges.closed footer > div {
+    width: 50%; }
+  .card.large.total-items-1 {
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+  @media only screen and (min-width: 992px) {
+    .card.large.total-items-2:first-child {
+      margin-left: 16.66667%; } }
 
-.card.large.collaborations .img-icon {
-  font-size: 25px;
-  padding: 2px 6px 4px 5px; }
-
-.card.large.challenges.closed footer > div {
-  width: 50%; }
-
-.card.large.total-items-1 {
-  margin-left: auto;
-  margin-right: auto;
-  float: none; }
-
-@media only screen and (min-width: 992px) {
-  .card.large.total-items-2:first-child {
-    margin-left: 16.66667%; } }
-
+/* === SMALL CARDS === */
 .card.small {
-  padding-right: 1px; }
+  padding-right: 1px;
+  /*** Hide footer text and throbber ***/ }
   .card.small .feat-img {
     background-repeat: no-repeat;
     background-size: cover;
@@ -7693,24 +7693,28 @@ button .glyphicon {
       font-size: 13px;
       line-height: 16px;
       padding-top: 4px; }
-  .card.small footer > div {
-    padding: 10px; }
-  .card.small footer a:before {
-    font-size: 16px;
-    position: relative;
-    right: -3px;
-    top: 2px; }
+  .card.small footer {
+    /*** ICON POSITION ***/ }
+    .card.small footer > div {
+      padding: 10px; }
+    .card.small footer a:before {
+      font-size: 16px;
+      position: relative;
+      right: -3px;
+      top: 2px; }
   .card.small .flag-throbber, .card.small .flag {
     display: none; }
   @media (min-width: 768px) {
     .card.small {
       width: 217px; } }
 
-.hover-card {
-  color: #00746A; }
-
+/* === MY HUB --> CREATING/FOLLOWING TAB - FULL WIDTH CARDS === */
 .full-width-card {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  /*** CARD IMAGE ***/
+  /*** Content ***/
+  /*** ICONS FOLLOW/SUPPORT/COMMENT LINKS ***/
+  /*** ICON bg color ***/ }
   @media only screen and (min-width: 768px) {
     .full-width-card {
       margin-bottom: 40px; } }
@@ -7751,7 +7755,6 @@ button .glyphicon {
       color: #222222;
       display: block;
       margin-bottom: 15px;
-      font-family: "Lato", sans-serif;
       line-height: .98; }
       .full-width-card .content a:hover {
         text-decoration: underline; }
@@ -7792,8 +7795,8 @@ button .glyphicon {
     height: 50%;
     padding: 28px 0; }
   .full-width-card.challenge .feat-img i {
-    background-image: url(""), -webkit-linear-gradient(315deg, #813d99 0%, #755281 100%), url("");
-    background-image: url(""), linear-gradient(135deg, #813d99 0%, #755281 100%), url("");
+    background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+    background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
     background-size: auto, auto, auto; }
@@ -7804,12 +7807,13 @@ button .glyphicon {
     background-position: 0 0, 0 0, 0 0;
     background-size: auto, auto, auto; }
   .full-width-card.collaboration .feat-img i {
-    background-image: url(""), -webkit-linear-gradient(315deg, #7d174d 0%, #c055d2 100%), url("");
-    background-image: url(""), linear-gradient(135deg, #7d174d 0%, #c055d2 100%), url("");
+    background-image: url(""), -webkit-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
+    background-image: url(""), linear-gradient(135deg, #ce2d25 0%, #b21f4f 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
     background-size: auto, auto, auto; }
 
+/*** Card without image ***/
 .no-idea-image {
   background-image: url("../assets/img/placeholder/placeholder-card-large.jpg");
   background-size: cover;
@@ -7819,15 +7823,11 @@ button .glyphicon {
   width: 100%;
   display: inline-block; }
 
-.separator-updates {
-  background-color: #333333;
-  height: 1px;
-  margin: 0 auto;
-  width: 50%; }
-
+/* === MY HUB --> UPDATES TAB CARDS === */
 .card-updates {
   margin: 40px 0;
-  font-family: "Lato", sans-serif; }
+  /*** Author name and image ***/
+  /*** Update with image ***/ }
   .card-updates i {
     font-size: 40px; }
   .card-updates a {
@@ -7843,20 +7843,20 @@ button .glyphicon {
         text-align: right; } }
   .card-updates .content {
     padding-top: 10px;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    /*** Title/Resume text ***/ }
     .card-updates .content .title {
       margin: 5px 0 0;
-      font-family: "Lato", sans-serif;
       font-size: 18px; }
       .card-updates .content .title a {
         color: #3B53A4;
         text-decoration: none; }
         .card-updates .content .title a:hover {
           text-decoration: underline; }
-  .card-updates .resume {
-    color: #532762;
-    margin: 0;
-    font-size: 18px; }
+    .card-updates .content .resume {
+      color: #532762;
+      margin: 0;
+      font-size: 18px; }
   .card-updates .desc {
     padding: 10px 5px 0 0;
     display: inline-block; }
@@ -7897,19 +7897,20 @@ button .glyphicon {
       font-size: 20px;
       padding: 6px 8px 2px; }
       .card-updates .picture i.idea {
-        background-image: url(""), -webkit-linear-gradient(315deg, #813d99 0%, #755281 100%), url("");
-        background-image: url(""), linear-gradient(135deg, #813d99 0%, #755281 100%), url("");
+        background-image: url(""), -webkit-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
+        background-image: url(""), linear-gradient(135deg, #3b53a4 0%, #1d79ab 100%);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: 0 0, 0 0, 0 0;
         background-size: auto, auto, auto; }
       .card-updates .picture i.project, .card-updates .picture i.collaboration {
-        background-image: url(""), -webkit-linear-gradient(315deg, #7d174d 0%, #c055d2 100%), url("");
-        background-image: url(""), linear-gradient(135deg, #7d174d 0%, #c055d2 100%), url("");
+        background-image: url(""), -webkit-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
+        background-image: url(""), linear-gradient(135deg, #ce2d25 0%, #b21f4f 100%);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: 0 0, 0 0, 0 0;
         background-size: auto, auto, auto; }
   .card-updates .info {
-    width: auto; }
+    width: auto;
+    /*** Update without image ***/ }
     @media only screen and (min-width: 768px) {
       .card-updates .info {
         margin-left: 200px; } }
@@ -7923,6 +7924,13 @@ button .glyphicon {
       padding: 0;
       line-height: 1.2;
       margin: 5px 0; }
+
+/*** UPDATES CARD SEPARATOR ***/
+.separator-updates {
+  background-color: #333333;
+  height: 1px;
+  margin: 0 auto;
+  width: 50%; }
 
 .view-header {
   padding: 10px 0 45px;
@@ -9402,6 +9410,15 @@ nav.slider-mobile {
 .page-closed-challenges .view-header {
   color: #4a3858; }
 
+/* === LARGE CARDS === */
+.card .challenges .img-icon {
+  background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+  background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, 0 0;
+  background-size: auto, auto, auto;
+  color: #fff; }
+
 /* === COLLABORATION INDEX PAGES === */
 .page-collaborate,
 .page-featured-collaborations,
@@ -9576,48 +9593,49 @@ nav.slider-mobile {
 .page-parked-collaborations .content-top h2 {
   padding: 0; }
 
-.page-myhub .content-top,
-.page-user .content-top {
-  background-image: url(""), -webkit-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(183, 134, 45, 0.9) 100%);
-  background-image: url(""), linear-gradient(135deg, rgba(206, 45, 37, 0.9) 0%, rgba(183, 134, 45, 0.9) 100%);
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
-  background-position: top right, 0 0 , 0 0;
-  background-size: contain, auto ,cover;
-  padding: 28px 0; }
-  .page-myhub .content-top h2 a,
-  .page-user .content-top h2 a {
-    color: #fff;
-    text-decoration: none; }
-  .page-myhub .content-top #block-collabco-myhubs-header-myhubs,
-  .page-user .content-top #block-collabco-myhubs-header-myhubs {
-    position: relative; }
-  .page-myhub .content-top .user-picture,
-  .page-user .content-top .user-picture {
-    display: inline-block;
-    position: absolute;
-    margin: 0 auto;
-    bottom: -58px;
-    left: 0;
-    text-align: center;
-    right: 0; }
-  .page-myhub .content-top .user-picture .img-responsive,
-  .page-user .content-top .user-picture .img-responsive {
-    border: 2px solid #fff;
-    display: inline-block;
-    height: 64px;
-    width: 64px; }
+/* === MY HUB PAGES  === */
+.page-myhub,
+.page-user {
+  /*** Header Full Width Top Block ***/ }
+  .page-myhub .content-top,
+  .page-user .content-top {
+    background-image: url(""), -webkit-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(183, 134, 45, 0.9) 100%);
+    background-image: url(""), linear-gradient(135deg, rgba(206, 45, 37, 0.9) 0%, rgba(183, 134, 45, 0.9) 100%);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 0 0, 0 0, 0 0;
+    background-size: auto, auto, auto;
+    background-position: top right, 0 0 , 0 0;
+    background-size: contain, auto ,cover;
+    padding: 28px 0; }
+    .page-myhub .content-top h2 a,
+    .page-user .content-top h2 a {
+      color: #fff;
+      text-decoration: none; }
+    .page-myhub .content-top #block-collabco-myhubs-header-myhubs,
+    .page-user .content-top #block-collabco-myhubs-header-myhubs {
+      position: relative; }
+    .page-myhub .content-top .user-picture,
+    .page-user .content-top .user-picture {
+      display: inline-block;
+      position: absolute;
+      margin: 0 auto;
+      bottom: -58px;
+      left: 0;
+      text-align: center;
+      right: 0; }
+    .page-myhub .content-top .user-picture .img-responsive,
+    .page-user .content-top .user-picture .img-responsive {
+      border: 2px solid #fff;
+      display: inline-block;
+      height: 64px;
+      width: 64px; }
+  .page-myhub .main-container,
+  .page-user .main-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8));
+    background-image: -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
+    background-image: linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%); }
 
-.page-myhub .main-container,
-.page-user .main-container {
-  background-image: url(""), -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8)), url("");
-  background-image: url(""), -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%), url("");
-  background-image: url(""), linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%), url("");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto; }
-
+/*** View Header  ***/
 .page-myhub .view-header {
   padding: 0;
   text-align: center; }
@@ -9628,12 +9646,12 @@ nav.slider-mobile {
     font-size: 20px;
     text-transform: uppercase; }
 
+/* === MY HUB - NO RESULTS  === */
 .view-empty-myhub .no-results {
   padding: 35px 0;
   text-align: center; }
   .view-empty-myhub .no-results h2 {
     margin-top: 0;
-    font-family: "Lato", sans-serif;
     text-transform: uppercase; }
   .view-empty-myhub .no-results h2,
   .view-empty-myhub .no-results i {
@@ -9641,7 +9659,7 @@ nav.slider-mobile {
   .view-empty-myhub .no-results i {
     font-size: 35px; }
   .view-empty-myhub .no-results a {
-    color: #00746a; }
+    color: #00746A; }
   .view-empty-myhub .no-results p {
     margin-bottom: 0;
     padding: 20px 34px 0; }
@@ -9650,6 +9668,7 @@ nav.slider-mobile {
   .view-empty-myhub .no-results .row > div {
     margin-top: 20px; }
 
+/* === MY HUB - CREATING TAB  === */
 .page-myhub-developing .create-new-idea-block {
   text-align: left;
   margin-bottom: 20px; }
@@ -9930,7 +9949,7 @@ nav.slider-mobile {
 .page-node-edit.node-type-hub .tabs-left .nav li .tooltip {
   width: 200px; }
 
-/* === INDVIDUAL COLLABORATION (node-type-hub) PAGE === */
+/* === INDVIDUAL COLLABORATION PAGES === */
 .node-type-hub,
 .page-node-discussions,
 .page-node-documents,
@@ -10117,70 +10136,70 @@ nav.slider-mobile {
   .node-type-hub .sidebar-2 .view-team-belonging-to-collaboration .view-header {
     padding: 12px 0; }
 
-/* === Discussion and Documents Sidebar Button === */
-.add-resource {
-  font-size: 12px;
-  text-decoration: none; }
-  .add-resource:before {
-    font-size: 14px;
-    position: relative;
-    right: 4px;
-    top: 2px; }
-
 .page-node-add-idea .input-group-btn:last-child > .btn {
   -webkit-border-top-left-radius: 0;
           border-top-left-radius: 0;
   -webkit-border-bottom-left-radius: 0;
           border-bottom-left-radius: 0; }
 
-.page-node-discussions .sidebar-2 .host-discussion h2 {
-  margin-top: 0;
-  color: #ce2d25; }
+/* === INDVIDUAL COLLABORATION - INDEX DISCUSSION PAGE === */
+.page-node-discussions {
+  /*** Discussion Box ***/ }
+  .page-node-discussions .discussion {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px; }
+    .page-node-discussions .discussion:hover {
+      background-color: #eeeeee; }
+  .page-node-discussions .content a {
+    color: #882263;
+    font-size: 22px;
+    text-decoration: none; }
+    .page-node-discussions .content a:hover {
+      text-decoration: underline; }
+  .page-node-discussions .icon {
+    color: #882263;
+    font-size: 35px;
+    text-align: center; }
+  .page-node-discussions .file a {
+    color: #00746A;
+    text-decoration: none;
+    font-size: 15px; }
+    .page-node-discussions .file a:hover {
+      text-decoration: underline; }
+  .page-node-discussions .file a:before {
+    font-family: 'outlined-iconset' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    content: '\e01c';
+    top: 2px;
+    right: 3px; }
 
-.page-node-discussions .sidebar-2 .host-discussion a {
-  color: #00746A; }
+/*** SIDEBAR ***/
+.sidebar-2 .host-discussion {
+  /* === Sidebar Button === */ }
+  .sidebar-2 .host-discussion h2 {
+    margin-top: 0;
+    color: #882263; }
+  .sidebar-2 .host-discussion a {
+    color: #00746A; }
+  .sidebar-2 .host-discussion .add-resource {
+    font-size: 14px;
+    text-decoration: none; }
+    .sidebar-2 .host-discussion .add-resource:before {
+      font-size: 14px;
+      position: relative;
+      right: 4px;
+      top: 2px; }
 
-.page-node-discussions .discussion {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px; }
-  .page-node-discussions .discussion:hover {
-    background-color: #777777; }
-
-.page-node-discussions .content a {
-  color: #ce2d25;
-  font-size: 22px;
-  text-decoration: none; }
-  .page-node-discussions .content a:hover {
-    text-decoration: underline; }
-
-.page-node-discussions .icon {
-  color: #ce2d25;
-  font-size: 35px;
-  text-align: center; }
-
-.page-node-discussions .file a {
-  color: #00746A;
-  text-decoration: none;
-  font-size: 15px; }
-  .page-node-discussions .file a:hover {
-    text-decoration: underline; }
-
-.page-node-discussions .file a:before {
-  font-family: 'outlined-iconset' !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  content: '\e01c';
-  top: 2px;
-  right: 3px; }
-
+/* === INDVIDUAL DISCUSSION PAGE === */
 @media only screen and (min-width: 768px) {
   .node-type-conversation .full-width-top {
     padding: 60px; } }
@@ -10189,19 +10208,13 @@ nav.slider-mobile {
   padding: 0 0 30px; }
 
 .node-type-conversation .comment-wrapper .title {
-  color: #ce2d25; }
+  color: #882263; }
 
 .node-type-conversation .user-picture {
   display: inline-block;
   margin: 0; }
 
-.sidebar-2 .host-document h2 {
-  margin-top: 0;
-  color: #ce2d25; }
-
-.sidebar-2 .host-document a {
-  color: #00746A; }
-
+/* === INDVIDUAL COLLABORATION - INDEX DOCUMENTS PAGE === */
 .documents {
   border: 1px solid #ccc;
   margin-bottom: 20px;
@@ -10209,18 +10222,18 @@ nav.slider-mobile {
   -webkit-transition: all ease .15s;
   transition: all ease .15s; }
   .documents:hover {
-    background-color: #777777; }
+    background-color: #eeeeee; }
   .documents .download a {
-    color: #333333;
+    color: #882263;
     display: block;
     font-size: 35px;
     height: 100%;
     text-decoration: none;
     width: 100%; }
   .documents .download a:hover {
-    color: #ce2d25; }
+    color: #882263; }
   .documents .description a {
-    color: #ce2d25;
+    color: #882263;
     font-size: 22px;
     text-decoration: none; }
   .documents .description p {
@@ -10228,6 +10241,24 @@ nav.slider-mobile {
   .documents .description a:hover {
     text-decoration: underline; }
 
+/* === Sidebar Button === */
+.sidebar-2 .host-document h2 {
+  margin-top: 0;
+  color: #882263; }
+
+.sidebar-2 .host-document a {
+  color: #00746A; }
+
+.sidebar-2 .host-document .add-resource {
+  font-size: 14px;
+  text-decoration: none; }
+  .sidebar-2 .host-document .add-resource:before {
+    font-size: 14px;
+    position: relative;
+    right: 4px;
+    top: 2px; }
+
+/* === INDVIDUAL DOCUMENTS PAGE === */
 .page-node-add-knowledge-object .main-container {
   padding: 30px 0; }
 

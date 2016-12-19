@@ -19,6 +19,7 @@ $gray-dark:              lighten($gray-base, 20%);   // #333
 $gray:                   lighten($gray-base, 33.5%); // #555
 $gray-light:             lighten($gray-base, 46.7%); // #777
 $gray-lighter:           lighten($gray-base, 93.5%); // #eee
+$gray-chromium: #ccc;
 
 $brand-primary:         $primary-color;
 $brand-success:         #5cb85c;
@@ -29,7 +30,7 @@ $brand-danger:          #cf0058;
 /*** COLLABORATION ***/
 
 $collab-primary-color: #882263;
-$collab-secondary-color: #fff;
+$collab-secondary-color: #00746A;
 
 @mixin bg-gradient-collaboration($img-pattern: '' , $op: 1) {
   background-image: url($img-pattern), linear-gradient(135deg, rgba(206, 45, 37, $op) 0%, rgba(178, 31, 79, $op) 100%);
@@ -58,12 +59,23 @@ $idea-secondary-color: #fff;
 
 /*** MY HUB ***/
 
+$hub-primary-color: #e2771b;
+$hub-secondary-color: #00746A;
+
+@mixin bg-gradient-hub($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(206, 45, 37, $op) 0%, rgba(183, 134, 45, $op) 100%);
+  @include bg-gradient-default();
+}
+
+/*** CARDS UPDATES ***/
+$card-updates-primary-color: #00746A;
+$card-updates-secondary-color: #532762;
+$card-updates-tertiary-color: #3B53A4;
+
+
 
 
 //Default Colors
-
-
-
 
 $primary-color-light: rgba(83, 39, 98, .8);
 
@@ -119,23 +131,6 @@ $red: #cf0058;
 $gray-plank: #a3a3a3;
 $gray-chromium: #ccc;
 $gray-comment: #f5f4f7;
-
-
-
-
-
-
-
-// $gray-base: #000;
-// $gray-darker: #4a4a4a;
-// $gray-dark: #757575;
-
-// $gray: #d7d7d7;
-// $gray-light: #f3f3f3;
-
-// $gray-lighter: lighten($gray-base, 93.5%); 
-
-// $green-dark-op-9: rgba(53, 145, 137, .9);
 
 
 

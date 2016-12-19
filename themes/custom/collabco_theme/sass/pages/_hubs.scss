@@ -1,6 +1,10 @@
+/* === MY HUB PAGES  === */
+
 .page-myhub, 
 .page-user {
-  // Header
+  
+  /*** Header Full Width Top Block ***/
+
   .content-top {
     @include bg-gradient-hub('', .9);
     background-position: top right, 0 0 , 0 0;
@@ -30,13 +34,14 @@
       height: 64px;
       width: 64px;
     }
-  } // </content-top>
+  } 
   
-  .main-container { 
-    @include bg-gradient-white-gray();
-  }
 
-} // </.page-myhub >
+  .main-container { @include bg-white-gray(); }
+
+} 
+
+/*** View Header  ***/
 
 .page-myhub {
   .view-header {
@@ -53,6 +58,7 @@
 }
 
 
+/* === MY HUB - NO RESULTS  === */
 
 .view-empty-myhub .no-results {
   padding: 35px 0;
@@ -60,15 +66,14 @@
 
   h2 { 
     margin-top: 0;
-    font-family: $lato;
     text-transform: uppercase;
   }
 
   h2,
-  i { color: $orange; }
+  i { color: $hub-primary-color; }
 
   i { font-size: 35px; }
-  a { color: $green-dark; }
+  a { color: $hub-secondary-color; }
   
   p { 
     margin-bottom: 0;
@@ -79,6 +84,8 @@
   .row > div { margin-top: 20px; }
 
 }
+
+/* === MY HUB - CREATING TAB  === */
 
 .page-myhub-developing {
   .create-new-idea-block {

@@ -216,3 +216,10 @@
   .view-header { color: $challenge-primary-color; }
 
 }
+
+/* === LARGE CARDS === */
+
+.card .challenges .img-icon { 
+  @include bg-gradient-challenge(); 
+  color: $white;
+}
