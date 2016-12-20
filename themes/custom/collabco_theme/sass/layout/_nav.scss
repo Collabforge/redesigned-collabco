@@ -1,14 +1,12 @@
-//
-//MAIN HEADER & NAV
-//
-
-//Navigation
+/* === TOP MAIN NAVIGATION === */
 
 .primary-nav, 
 .secondary-nav { 
   height: 100%; 
   padding: 0;
 }
+
+/*** Primary Navigation ***/
 
 .primary-nav > ul {
   height: 100%;
@@ -19,10 +17,10 @@
   height: 100%;
   text-align: center;
   width: 25%;
-  border-left: 1px solid $primary-color;
+  border-left: 1px solid $nav-primary-color;
 
   a {
-    color: $primary-color;
+    color: $nav-primary-color;
     display: block;
     height: 100%;
     padding: 60px 0 20px;
@@ -38,32 +36,17 @@
     
     &:hover,
     &.active {
-      border-bottom: $primary-color;
+      border-bottom: $nav-primary-color;
       border-bottom-width: 3px;
       border-bottom-style: solid;
     }
   }
 }
 
-.page-myhub .primary-nav li a[href="/myhub"],
-.page-node-documents .primary-nav li a[href="/collaborate"],
-.page-node-discussions .primary-nav li a[href="/collaborate"],
-.node-type-conversation .primary-nav li a[href="/collaborate"],
-.node-type-knowledge-object .primary-nav li a[href="/collaborate"],
-.node-type-hub .primary-nav li a[href="/collaborate"]
-{
-  // background-color: $gray-light;
-  // color: $blue;
-  // border-bottom: $border-dark;
-  // border-bottom-width: 3px;
-}
-
-
 .primary-nav li a:hover:after {
   bottom: 0;
 }
 
-//Arrow color
 .front {
   .primary-nav li a.active:after,
   .primary-nav li a:hover:after {
@@ -79,8 +62,20 @@
   width: 30%;
 }
 
+.page-myhub .primary-nav li a[href="/myhub"],
+.page-node-documents .primary-nav li a[href="/collaborate"],
+.page-node-discussions .primary-nav li a[href="/collaborate"],
+.node-type-conversation .primary-nav li a[href="/collaborate"],
+.node-type-knowledge-object .primary-nav li a[href="/collaborate"],
+.node-type-hub .primary-nav li a[href="/collaborate"]
+{
+  background-color: $nav-hover-color;
+  border-bottom: $nav-primary-color;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+}
 
-//Secondary Navigation
+/*** Secondary Navigation ***/
 
 .secondary-nav {
   
@@ -89,10 +84,10 @@
   background-color: $white-op-1;
   border-width: 0 1px 0 1px;
   border-style: solid;
-  border-color: $primary-color;
+  border-color: $nav-primary-color;
 
   a { 
-    color: $primary-color;
+    color: $nav-primary-color;
     text-decoration: none;
 
     &:hover { 
@@ -100,8 +95,15 @@
     }
   }
   
+  .nav-actions { 
+    height: 50%; 
+    text-transform: capitalize;
+    a { cursor: pointer; }
+  }
 
-  //Search form
+
+  /*** Search input ***/
+
   .search {
     height: 50%;
     overflow: hidden;
@@ -120,17 +122,17 @@
   }
   
   #edit-search-block-form--2 { 
-    border-bottom: 1px solid $primary-color;
+    border-bottom: 1px solid $nav-primary-color;
     background-position: 44px 18px;
     background-repeat: no-repeat;
     background-size: 18px 18px;
-    color: $primary-color;
+    color: $nav-primary-color;
     height: 50%; 
 
     @media #{$scrn-md-min} { background-position: 70px 18px; }
 
     &::placeholder {
-      color: $primary-color;
+      color: $nav-primary-color;
       text-align: center;
     }
 
@@ -144,25 +146,20 @@
       background-image: none;
     }
   }
+  
+  /*** User Profile Dropdown ***/
 
-  .nav-actions { 
-    height: 50%; 
-    text-transform: capitalize;
-    a { cursor: pointer; }
-  }
-
-//User profile Dropdown
   .user-nav {
     padding: 0;
     background: $white;
 
     a {
-      color: $primary-color;
+      color: $nav-primary-color;
     }  
     
     a:hover {
       background-color: $nav-hover-color;
-      color: $primary-color;
+      color: $nav-primary-color;
     }
 
     a::before {
@@ -171,8 +168,8 @@
       position: relative;
       top: 2px;
     }
-  } // </.user-nav>
-} // </.secondary-nav>
+  } 
+} 
 
 
 .region-nav-actions { height: 100%; }
@@ -202,13 +199,7 @@
   }  
 }
 
-.not-logged-in {
-  .secondary-nav { background-color: transparent; }
-  .nav-login {
-    margin-top: 40px;
-    a:hover { color: $white; }
-  }
-}
+/*** Alert badge shown in My Hub Nav element ***/
 
 .alert-badge {
     position: absolute;
@@ -219,8 +210,8 @@
     background: -ms-radial-gradient( center -9px, circle closest-side, white 0, red 26px );
     background: -o-radial-gradient( center -9px, circle closest-side, white 0, red 26px );
     background: -webkit-radial-gradient( center -9px, circle, white 0, red 26px );
-    background-color: red;
-    border: 1px solid white;
+    background-color: $nav-badge-color;
+    border: 1px solid $white;
     border-radius: 50%;
     box-shadow: 1px 1px 1px black;
     color: white;
@@ -231,3 +222,12 @@
     width: 25px;
 }
 
+ /*** Not logged in user Menu ***/
+
+.not-logged-in {
+  .secondary-nav { background-color: transparent; }
+  .nav-login {
+    margin-top: 40px;
+    a:hover { color: $white; }
+  }
+}

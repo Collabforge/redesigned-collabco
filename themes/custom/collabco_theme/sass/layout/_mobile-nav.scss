@@ -1,8 +1,11 @@
-// Mobile Nav
+/* === MOBILE NAVIGATION AND HEADER=== */
+
+/*** Site header ***/
+
 @media #{$scrn-sm-max} {
   header#navigation {
     a { 
-      color: $primary-color;
+      color: $nav-mobile-primary-color;
       text-decoration: none;
     }
   
@@ -20,11 +23,12 @@
 
     h1 { 
       text-align: center;
-      color: $primary-color;
+      color: $nav-mobile-primary-color;
     }
   }  
   
-  //Nav Hamburguer and Animation
+  /** Nav Hamburguer Icon **/
+
   .nav-mobile {
     font-size: 20px; 
     padding: 25px 20px;
@@ -51,15 +55,9 @@
   #slider { background-color: $white; }
 }
 
-/**
-* NAV MOBILE
-*
-*
-*
-**/
+/*** Nav Mobile ***/
 
-
-//User Info
+/** Top User Info **/
 nav.slider-mobile {
   position: fixed;
   background-color: $white;
@@ -71,7 +69,7 @@ nav.slider-mobile {
   overflow-y: scroll;
   
   .user-info {
-    @include bg-gradient-challenge();
+    @include bg-gradient-nav-mobile();
     color: $white;
     padding: 10px;
 
@@ -129,6 +127,7 @@ nav.slider-mobile {
     }
   }
   
+  /** Nav Item List **/
 
   ul.nav { 
     margin: 0;
@@ -136,10 +135,10 @@ nav.slider-mobile {
     li { 
       display: block;
       border-bottom: $border-dark;
-      &.active { background-color: $gray-lighter; }
+      &.active { background-color: $nav-mobile-hover-color; }
 
       a { 
-        color: $purple;
+        color: $nav-mobile-primary-color;
         display: inline-block;
         padding: 27px 21px 21px;
         text-transform: uppercase;
@@ -149,13 +148,13 @@ nav.slider-mobile {
         }
     }
   
-  } // </.nav>
+  }
 
-
+  /** Nav Footer **/
   footer { 
     padding: 10px 20px;
     
-    h2 { color: $purple; }
+    h2 { color: $nav-mobile-primary-color; }
   }
   
   .mobile-logo { width: 100%; }
@@ -169,7 +168,7 @@ nav.slider-mobile {
 
 }
 
-//Add background to missing links
+/** Add Background to missing links **/
 
 .page-myhub nav.slider-mobile li a[href="/myhub"],
 .page-node-documents nav.slider-mobile li a[href="/collaborate"],
@@ -178,12 +177,13 @@ nav.slider-mobile {
 .node-type-knowledge-object nav.slider-mobile li a[href="/collaborate"],
 .node-type-hub nav.slider-mobile li a[href="/collaborate"] {
   
-  background-color: $gray-lighter;
+  background-color: $nav-mobile-hover-color;
 }
 
+/** Background Overlay activate when nav mobile is active **/
 
 .overlay {
-  @include bg-gradient-challenge('',.9);
+  @include bg-gradient-nav-mobile('',.9);
   display: none;
   position: fixed;
   top: 0;

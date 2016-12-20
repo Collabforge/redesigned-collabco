@@ -114,6 +114,11 @@
       height: 35px;
       width: 180px;
     }
+
+    input[type="text"].form-control:hover,
+    input[type="text"].form-control:focus {
+      border-color: $challenge-primary-color;
+    }
   }
   
   /*** Create New Challenge Button ***/

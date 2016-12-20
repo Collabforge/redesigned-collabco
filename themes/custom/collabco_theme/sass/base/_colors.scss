@@ -27,6 +27,25 @@ $brand-info:            #5bc0de;
 $brand-warning:         #E78540;
 $brand-danger:          #cf0058;
 
+
+/*** MAIN NAVIGATION ***/
+
+$nav-primary-color: #532762;
+$nav-secondary-color: #fff;
+$nav-hover-color: #f3f3f3;
+$nav-badge-color: #cf0058;
+
+
+/*** MAIN NAVIGATION MOBILE ***/
+
+$nav-mobile-primary-color: #532762;
+$nav-mobile-hover-color: #f3f3f3;
+
+@mixin bg-gradient-nav-mobile($img-pattern: '' , $op: 1) {
+  background-image: url($img-pattern), linear-gradient(135deg, rgba(83, 39, 98, $op) 0%, rgba(77, 49, 155, $op) 100%);
+  @include bg-gradient-default();
+}
+
 /*** COLLABORATION ***/
 
 $collab-primary-color: #882263;
@@ -71,8 +90,6 @@ $hub-secondary-color: #00746A;
 $card-updates-primary-color: #00746A;
 $card-updates-secondary-color: #532762;
 $card-updates-tertiary-color: #3B53A4;
-
-
 
 
 //Default Colors

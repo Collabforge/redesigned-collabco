@@ -4,6 +4,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 /* === CUSTOM COLORS === */
 /*** GLOBAL ***/
+/*** MAIN NAVIGATION ***/
+/*** MAIN NAVIGATION MOBILE ***/
 /*** COLLABORATION ***/
 /*** CHALLENGE ***/
 /*** IDEAS ***/
@@ -8161,11 +8163,13 @@ header#navigation {
       padding-top: 15px;
       text-align: center; } }
 
+/* === TOP MAIN NAVIGATION === */
 .primary-nav,
 .secondary-nav {
   height: 100%;
   padding: 0; }
 
+/*** Primary Navigation ***/
 .primary-nav > ul {
   height: 100%;
   width: 100%; }
@@ -8202,18 +8206,37 @@ header#navigation {
 .primary-nav li:last-child {
   width: 30%; }
 
+.page-myhub .primary-nav li a[href="/myhub"],
+.page-node-documents .primary-nav li a[href="/collaborate"],
+.page-node-discussions .primary-nav li a[href="/collaborate"],
+.node-type-conversation .primary-nav li a[href="/collaborate"],
+.node-type-knowledge-object .primary-nav li a[href="/collaborate"],
+.node-type-hub .primary-nav li a[href="/collaborate"] {
+  background-color: #f3f3f3;
+  border-bottom: #532762;
+  border-bottom-width: 3px;
+  border-bottom-style: solid; }
+
+/*** Secondary Navigation ***/
 .secondary-nav {
   height: 100%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
   border-width: 0 1px 0 1px;
   border-style: solid;
-  border-color: #532762; }
+  border-color: #532762;
+  /*** Search input ***/
+  /*** User Profile Dropdown ***/ }
   .secondary-nav a {
     color: #532762;
     text-decoration: none; }
     .secondary-nav a:hover {
       text-decoration: underline; }
+  .secondary-nav .nav-actions {
+    height: 50%;
+    text-transform: capitalize; }
+    .secondary-nav .nav-actions a {
+      cursor: pointer; }
   .secondary-nav .search {
     height: 50%;
     overflow: hidden; }
@@ -8256,11 +8279,6 @@ header#navigation {
       color: transparent; }
     .secondary-nav #edit-search-block-form--2:hover, .secondary-nav #edit-search-block-form--2:focus {
       background-image: none; }
-  .secondary-nav .nav-actions {
-    height: 50%;
-    text-transform: capitalize; }
-    .secondary-nav .nav-actions a {
-      cursor: pointer; }
   .secondary-nav .user-nav {
     padding: 0;
     background: #fff; }
@@ -8298,14 +8316,7 @@ header#navigation {
           border-radius: 50%;
   width: 25px; }
 
-.not-logged-in .secondary-nav {
-  background-color: transparent; }
-
-.not-logged-in .nav-login {
-  margin-top: 40px; }
-  .not-logged-in .nav-login a:hover {
-    color: #fff; }
-
+/*** Alert badge shown in My Hub Nav element ***/
 .alert-badge {
   position: absolute;
   margin-top: -47px;
@@ -8313,8 +8324,8 @@ header#navigation {
   background: -webkit-radial-gradient(center -9px, circle closest-side, white 0, red 26px);
   background: radial-gradient(center -9px, circle closest-side, white 0, red 26px);
   background: -webkit-radial-gradient(center -9px, circle, white 0, red 26px);
-  background-color: red;
-  border: 1px solid white;
+  background-color: #cf0058;
+  border: 1px solid #fff;
   -webkit-border-radius: 50%;
           border-radius: 50%;
   -webkit-box-shadow: 1px 1px 1px black;
@@ -8326,6 +8337,17 @@ header#navigation {
   text-align: center;
   width: 25px; }
 
+/*** Not logged in user Menu ***/
+.not-logged-in .secondary-nav {
+  background-color: transparent; }
+
+.not-logged-in .nav-login {
+  margin-top: 40px; }
+  .not-logged-in .nav-login a:hover {
+    color: #fff; }
+
+/* === MOBILE NAVIGATION AND HEADER=== */
+/*** Site header ***/
 @media only screen and (max-width: 768px) {
   header#navigation a {
     color: #532762;
@@ -8345,6 +8367,7 @@ header#navigation {
     #brand h1 {
       text-align: center;
       color: #532762; }
+  /** Nav Hamburguer Icon **/
   .nav-mobile {
     font-size: 20px;
     padding: 25px 20px;
@@ -8363,12 +8386,8 @@ header#navigation {
   #slider {
     background-color: #fff; } }
 
-/**
-* NAV MOBILE
-*
-*
-*
-**/
+/*** Nav Mobile ***/
+/** Top User Info **/
 nav.slider-mobile {
   position: fixed;
   background-color: #fff;
@@ -8377,7 +8396,9 @@ nav.slider-mobile {
   z-index: 9999;
   left: -250px;
   top: 0;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  /** Nav Item List **/
+  /** Nav Footer **/ }
   nav.slider-mobile .user-info {
     background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
     background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
@@ -8425,7 +8446,7 @@ nav.slider-mobile {
       display: block;
       border-bottom: 1px solid #ccc; }
       nav.slider-mobile ul.nav li.active {
-        background-color: #eeeeee; }
+        background-color: #f3f3f3; }
       nav.slider-mobile ul.nav li a {
         color: #532762;
         display: inline-block;
@@ -8445,14 +8466,16 @@ nav.slider-mobile {
   nav.slider-mobile .block-collabco-profile {
     padding: 0; }
 
+/** Add Background to missing links **/
 .page-myhub nav.slider-mobile li a[href="/myhub"],
 .page-node-documents nav.slider-mobile li a[href="/collaborate"],
 .page-node-discussions nav.slider-mobile li a[href="/collaborate"],
 .node-type-conversation nav.slider-mobile li a[href="/collaborate"],
 .node-type-knowledge-object nav.slider-mobile li a[href="/collaborate"],
 .node-type-hub nav.slider-mobile li a[href="/collaborate"] {
-  background-color: #eeeeee; }
+  background-color: #f3f3f3; }
 
+/** Background Overlay activate when nav mobile is active **/
 .overlay {
   background-image: url(""), -webkit-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
   background-image: url(""), linear-gradient(135deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
@@ -9325,6 +9348,9 @@ nav.slider-mobile {
       color: #4a3858;
       height: 35px;
       width: 180px; }
+    .page-challenge .views-exposed-form input[type="text"].form-control:hover,
+    .page-challenge .views-exposed-form input[type="text"].form-control:focus {
+      border-color: #4a3858; }
   .page-challenge a.create-challenge {
     border: 1px solid #4a3858;
     color: #4a3858;
