@@ -10,6 +10,7 @@
 /*** CHALLENGE ***/
 /*** IDEAS ***/
 /*** MY HUB ***/
+/*** MY HUB SECONDARY NAV ***/
 /*** CARDS UPDATES ***/
 /**
  * Default Variables.
@@ -8799,6 +8800,8 @@ nav.slider-mobile {
     right: 2px;
     top: 2px; }
 
+/* === MY HUB, PROFILE, AND COLLABORATE SECONDARY NAV=== */
+/*** MY HUB AND COLLABORATE SECONDARY NAV  ***/
 #block-collabco-myhubs-myhub-links .nav,
 #quicktabs-my_hub_collaborations .quicktabs-tabs,
 #block-quicktabs-my-hub-ideas .quicktabs-tabs,
@@ -8872,6 +8875,9 @@ nav.slider-mobile {
       speak: none;
       text-transform: none !important; }
 
+.block-collabco-myhubs {
+  border-bottom: 1px solid #ccc; }
+
 #block-collabco-myhubs-myhub-links .nav li a:hover,
 #block-collabco-myhubs-myhub-links .nav li a.active,
 .collaboration-tabs .nav li a:hover,
@@ -8886,6 +8892,7 @@ nav.slider-mobile {
     .collaboration-tabs .nav li {
       width: auto; } }
 
+/*** My Hub Icons ***/
 #block-collabco-myhubs-myhub-links .nav li.ui-menu-myhub-updates a:before,
 #block-quicktabs-my-hub-ideas .quicktabs-tabs li.ui-menu-myhub-updates a:before {
   content: '\e07c'; }
@@ -8902,6 +8909,7 @@ nav.slider-mobile {
 #block-quicktabs-my-hub-ideas .quicktabs-tabs li.ui-menu-myhub-profile a:before {
   content: '\e06c'; }
 
+/** Collaboration Icons ***/
 .collaboration-tabs li.ui-menu-collaboration-info a:before {
   content: '\e064'; }
 
@@ -8911,6 +8919,7 @@ nav.slider-mobile {
 .collaboration-tabs li.ui-menu-collaboration-documents a:before {
   content: '\e036'; }
 
+/***  ***/
 #quicktabs-my_hub_collaborations .quicktabs-tabs,
 #block-quicktabs-my-hub-ideas .quicktabs-tabs {
   display: inline-block;

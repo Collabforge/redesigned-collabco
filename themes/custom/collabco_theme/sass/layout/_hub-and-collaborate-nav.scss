@@ -1,8 +1,6 @@
-//
-//My Hubs, Profile and Collaborate secondary Nav
-//
+/* === MY HUB, PROFILE, AND COLLABORATE SECONDARY NAV=== */
 
-// Links on My Hub Page
+/*** MY HUB AND COLLABORATE SECONDARY NAV  ***/
 #block-collabco-myhubs-myhub-links .nav,
 #quicktabs-my_hub_collaborations .quicktabs-tabs, 
 #block-quicktabs-my-hub-ideas .quicktabs-tabs,
@@ -23,10 +21,10 @@
 
     a { 
       border: $border-dark;
-      border-bottom-color: $primary-color;
+      border-bottom-color: $hub-nav-primary-color;
       border-radius: 0;
       border-width: 1px 0 3px 1px;
-      color: $primary-color;
+      color: $hub-nav-primary-color;
       font-size: 12px;
       height: 100%;
       margin-right: 0;
@@ -58,6 +56,10 @@
 }  
 
 
+.block-collabco-myhubs {
+  border-bottom: 1px solid $gray-chromium;
+}
+
 #block-collabco-myhubs-myhub-links .nav,
 .collaboration-tabs .nav {
 
@@ -75,19 +77,8 @@
 }
 
 
-#block-collabco-myhubs-myhub-links .nav,
-.collaboration-tabs .nav {
-  li.active a,
-  li a.active:hover,
-  li a:active {
-    // border-width: 1px 0 0 1px;
-    // border-bottom: $border-blue;
-    // border-bottom-width: 3px;
-    // color: $pink;
-  }
-}
+/*** My Hub Icons ***/
 
-// My hub icons
 #block-collabco-myhubs-myhub-links .nav, 
 #block-quicktabs-my-hub-ideas .quicktabs-tabs { 
 
@@ -97,25 +88,17 @@
   li.ui-menu-myhub-profile a:before { content: '\e06c'; }
 }
 
-// Collaborate icons
+/** Collaboration Icons ***/
+
 .collaboration-tabs {
 
   li.ui-menu-collaboration-info a:before{ content: '\e064';  }
   li.ui-menu-collaboration-discussion a:before{ content: '\e029';  }
   li.ui-menu-collaboration-documents a:before{ content: '\e036';  }
 }
-   
 
-// TWEAKS for PROFILE page
-.page-user #block-collabco-myhubs-myhub-links.profile-menu {
-  li.ui-menu-myhub-profile a {
-    // border-bottom: $border-blue;
-    // border-bottom-width: 3px;
-    // color: $blue;
-  }
-}  
+/***  ***/
 
-//Secondary links
 #quicktabs-my_hub_collaborations .quicktabs-tabs,
 #block-quicktabs-my-hub-ideas .quicktabs-tabs {
   display: inline-block;
@@ -126,18 +109,18 @@
   li a {
     border: 0;
     display: inline-block;
-    color: $primary-hub-color;
+    color: $hub-nav-primary-color;
     font-size: 12px;
     padding: 30px 10px 4px;
   }
 
   a:hover, 
   li.active a {
-    color: $secondary-hub-color;   
+    color: $hub-nav-secondary-color;   
   }
 
   li.active a {
-    border-bottom: 3px solid $secondary-hub-color;
+    border-bottom: 3px solid $hub-nav-secondary-color;
   }   
 
   li a:before {

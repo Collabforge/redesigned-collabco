@@ -1,6 +1,6 @@
 .DS_Store
 
-themes/custom/collabco_theme/gulp/node_modules
+themes/custom/collabco_theme/gulp/
 modules/contrib
 themes/bootstrap
 libraries
