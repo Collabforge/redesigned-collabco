@@ -7876,35 +7876,35 @@ button .glyphicon {
       margin: 10px 5px;
       font-weight: bold;
       text-decoration: none; }
-  .card-updates .picture,
+  .card-updates .feat-img,
   .card-updates .info {
     margin-top: 10px; }
-  .card-updates .picture {
+  .card-updates .feat-img {
     height: 100px;
     padding: 0;
     position: relative;
     overflow: hidden;
     width: 185px; }
     @media only screen and (min-width: 768px) {
-      .card-updates .picture {
+      .card-updates .feat-img {
         float: left; } }
-    .card-updates .picture img {
+    .card-updates .feat-img img {
       min-height: 100%;
       width: 100%; }
-    .card-updates .picture i {
+    .card-updates .feat-img i {
       color: #fff;
       position: absolute;
       bottom: 0;
       left: 0;
       font-size: 20px;
       padding: 6px 8px 2px; }
-      .card-updates .picture i.idea {
+      .card-updates .feat-img i.idea {
         background-image: url(""), -webkit-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
         background-image: url(""), linear-gradient(135deg, #3b53a4 0%, #1d79ab 100%);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: 0 0, 0 0, 0 0;
         background-size: auto, auto, auto; }
-      .card-updates .picture i.project, .card-updates .picture i.collaboration {
+      .card-updates .feat-img i.project, .card-updates .feat-img i.collaboration {
         background-image: url(""), -webkit-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
         background-image: url(""), linear-gradient(135deg, #ce2d25 0%, #b21f4f 100%);
         background-repeat: no-repeat, no-repeat, no-repeat;
