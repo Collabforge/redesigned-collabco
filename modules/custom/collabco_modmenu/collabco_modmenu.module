@@ -37,9 +37,9 @@ function collabco_modmenu_block_info() {
   $blocks['header_mm_standard'] = array(
     'info' => t('Collabco Moderator Menu Header block'),
     'region' => 'content_top',
-    'pages' => 'moderator/dashboard',
-    'visibility' => 1,
+    'pages' => "moderator/*\nnode/add/*\nadmin/*",
     'status' => TRUE,
+    'visibility' => BLOCK_VISIBILITY_LISTED
   );
   return $blocks;
 }
@@ -49,7 +49,11 @@ function collabco_modmenu_block_view($delta = '') {
   $variables = array();
   switch ($delta) {
     case 'header_mm_standard':
-      $content = theme('header_mm_standard_template', $variables);
+      // Ensure moderator menu doesn't show for role 1 (anon) or 2 (auth) users.
+    global $user;
+      if(user_has_role(3) XOR $user->uid == 1) {
+        $content = theme('header_mm_standard_template', $variables);
+      } else {$content = "";}
       break;
   }
   $block['content'] = $content;

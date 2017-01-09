@@ -8,7 +8,10 @@ global $base_url;
     'dashboard' => array('name'=>'Dashboard', 'path'=>url('moderator/dashboard'), 'submenu'=>array(),),
     'create' => array('name'=>'Create...', 'path'=>url('moderator/create'), 'submenu'=>array(
       'idea' => array('name'=>'...an idea', 'path'=> url('node/add/idea'),),
-      'thing' => array('name'=>'...a challenge', 'path'=>url('admin/structure/taxonomy/challenge/add'),),),),
+      'challenge' => array('name'=>'...a Challenge', 'path'=>url('admin/structure/taxonomy/challenge/add'),),
+      'collaboration' => array('name'=>'...a Collaboration', 'path'=> url('node/add/hub'),),
+      'user' => array('name'=>'...a user', 'path'=> url('admin/people/create'),),
+      'page' => array('name'=>'...a page', 'path'=> url('node/add/basic-page'),),),),
     'edit' => array('name'=>'Edit...', 'path'=>url('moderator/edit'), 'submenu'=>array(
       'idea' => array('name'=>'New idea', 'path'=>url('/node/edit/idea'),),
       'thing' => array('name'=>'New Thing', 'path'=>url('/node/edit/thing'),),),),
@@ -119,13 +122,15 @@ global $base_url;
 	$subtitle = "";
 	foreach ($menu_items as $key=>$value) {
 		$active_class = "";
-
-		if(arg(1) == $key){$active_class .= 'active'; $title = $value['name'];}
-		$menu_display .= "<li class='modmenu_menu dc-".$key."'><a href='".$value['path']."' class='$active_class '>".$value['name']."</a>";
+    foreach ($value['submenu'] as $sub_key=>$sub_value) {
+      if(url(current_path()) == $sub_value['path']){$active_class .= 'active'; $title = $value['name'];}
+    }
+		if(url(current_path()) == $value['path']){$active_class .= 'active'; $title = $value['name'];}
+		$menu_display .= "<li class='modmenu_menu dc-".$key."'><a href='".$value['path']."' class='$active_class'>".$value['name']."</a>";
 		$menu_display .= "<ul>";
 		foreach ($value['submenu'] as $sub_key=>$sub_value) {
 			$active_class_sdc = "";
-			if(arg(2)==$sub_key){$active_class_sdc .= 'active'; $subtitle = ' - '.$sub_value['name'];}
+			if(url(current_path()) == $sub_value['path']){$active_class_sdc .= 'active'; $subtitle = $sub_value['name'];}
 			$menu_display .= "<li class='dropdown-content sdc-".$key."'	><a href='".$sub_value['path']."' class='$active_class_sdc'>".$sub_value['name']."</a>";
 		}
 		$menu_display .= "</ul>";
@@ -139,4 +144,5 @@ global $base_url;
 	<?php print $menu_display; ?>
   </ul>
   <div class="reset_space"></div>
-  <h1 style="color:black;"><?php print $title.$subtitle; ?></h1>
+  <h1 style="color:black;"><?php print $title; ?></h1>
+  <h1 style="color:black; font-size: 20px;"><?php print $subtitle; ?></h1>
