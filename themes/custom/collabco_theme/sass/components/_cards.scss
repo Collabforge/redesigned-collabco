@@ -148,7 +148,7 @@
    /*** Center element when there is two cards **/
 
   &.total-items-2:first-child {
-    @media #{$scrn-md-min} { margin-left: 16.66667%; }
+    @media only screen and (min-width : $screen-md) { margin-left: 16.66667%; }
   }
 
 } 

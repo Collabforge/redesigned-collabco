@@ -1,6 +1,6 @@
 .sidebar-2 {
 
-  @media #{$scrn-sm-min} {
+  @media only screen and (min-width : $screen-sm) {
     margin-bottom: 30px;
     margin-top: 0;
   }

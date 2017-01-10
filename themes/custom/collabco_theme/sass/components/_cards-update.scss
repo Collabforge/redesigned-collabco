@@ -15,7 +15,7 @@
   .icon { 
     text-align: left;
 
-    @media #{$scrn-sm-min} { 
+    @media only screen and (min-width : $screen-sm) { 
       padding: 0;
       text-align: right;
     }
@@ -86,7 +86,7 @@
     overflow: hidden;
     width: 185px;
 
-    @media #{$scrn-sm-min} { float: left; }
+    @media only screen and (min-width : $screen-sm) { float: left; }
 
     img { 
       min-height: 100%;
@@ -113,7 +113,7 @@
   .info { 
     width: auto;
     
-    @media #{$scrn-sm-min} {
+    @media only screen and (min-width : $screen-sm) {
       margin-left: 200px;
     }
     

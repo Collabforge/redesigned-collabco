@@ -84,7 +84,7 @@
 
     p { 
       margin: 15px 0;
-      @media #{$scrn-sm-min} { padding: 0 80px; }
+      @media only screen and (min-width : $screen-sm) { padding: 0 80px; }
     }
   }
 
@@ -99,7 +99,7 @@
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
     
-    @media #{$scrn-sm-min} {
+    @media only screen and (min-width : $screen-sm) {
       background-size: contain, auto , auto;
     }
   }

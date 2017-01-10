@@ -64,7 +64,7 @@
     background-size: cover, auto , auto;
     padding: 30px 0;
 
-    @media #{$scrn-sm-min} {
+    @media only screen and (min-width : $screen-sm) {
       background-size: contain, auto , auto;
     }
   }
@@ -142,7 +142,7 @@
       color: $white;
     }
 
-    @media #{$scrn-sm-min} {
+    @media only screen and (min-width : $screen-sm) {
       right: 190px;
     }
   }
@@ -167,7 +167,7 @@
 
       p { 
         margin: 15px 0;
-        @media #{$scrn-sm-min} { padding: 0 80px; }
+        @media only screen and (min-width : $screen-sm) { padding: 0 80px; }
       }
       
       h3, 

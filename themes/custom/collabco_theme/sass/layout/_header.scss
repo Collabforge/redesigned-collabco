@@ -9,15 +9,15 @@ header#navigation {
 
   .row { height: 110px; }
 
-  @media #{$scrn-md-max} {
+  @media only screen and (max-width : $screen-md) {
      background-image: url(''), url('');
   }
   
-  @media #{$scrn-sm-max} {
+  @media only screen and (max-width : $screen-sm) {
     background-image: none;
   }
 
-  @media #{$scrn-sm-min} {
+  @media only screen and (min-width : $screen-sm) {
     #brand {
       padding-top: 15px;
       text-align: center;

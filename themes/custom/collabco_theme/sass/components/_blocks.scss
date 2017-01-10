@@ -37,7 +37,7 @@
 
   }  
 
-  @media #{$scrn-sm-min} {  
+  @media only screen and (min-width : $screen-sm) {  
     h2 { padding: 0 120px; }
     p { padding: 0 135px; }
   } 
@@ -46,7 +46,7 @@
 .content-top { @include content-top(); }
 
 .full-width-top {
-  @media #{$scrn-sm-min} {  
+  @media only screen and (min-width : $screen-sm) {  
     h2 { padding: 0 120px; }
     p { padding: 0 135px; }
   } 

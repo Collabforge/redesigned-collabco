@@ -11,7 +11,7 @@
 function collabco_theme_preprocess_maintenance_page(&$variables) {
   $t_function = get_t();
   if (drupal_installation_attempted()) {
-    $variables['site_name'] = $t_function('Ignition');
+    $variables['site_name'] = $t_function('Collabco');
   }
 }
 

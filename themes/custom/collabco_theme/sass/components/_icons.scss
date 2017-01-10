@@ -588,7 +588,7 @@
 
 /* Menu Nav Icons */
 
-@media #{$scrn-sm-min} {
+@media only screen and (min-width : $screen-sm) {
   .icon-menu-pos {
     position: absolute;
     left: 0;

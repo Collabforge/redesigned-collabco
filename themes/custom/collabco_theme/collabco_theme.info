@@ -39,8 +39,10 @@ regions[full_width_bottom] = 'Full Width Bottom'
 
 stylesheets[all][] = css/style.css
 
+stylesheets[all][] = css/libsass-compatibility.css
+
 ; Add our stylesheet for the Color module to override. 
-stylesheets[all][] = css/colors.css
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;

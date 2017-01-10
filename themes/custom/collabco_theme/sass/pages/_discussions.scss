@@ -80,7 +80,7 @@
 .node-type-conversation { 
   
   .full-width-top {
-    @media #{$scrn-sm-min} { padding: 60px; }
+    @media only screen and (min-width : $screen-sm) { padding: 60px; }
   }
 
   .main-container { padding: 0 0 30px; }

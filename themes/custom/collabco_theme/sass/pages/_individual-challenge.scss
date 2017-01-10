@@ -8,11 +8,11 @@ header.challenge-status {
   .breadcrumb-container {
     display: inline-block;
 
-    @media #{$scrn-sm-min} { float: left; }
+    @media only screen and (min-width : $screen-sm) { float: left; }
 
   }
   .status { 
-    @media #{$scrn-sm-min} { float: right; }
+    @media only screen and (min-width : $screen-sm) { float: right; }
   }
 }
 
@@ -167,7 +167,7 @@ header.challenge-status {
       margin: 0 15px;
       padding: 16px 0;
       
-      @media #{$scrn-sm-min} { 
+      @media only screen and (min-width : $screen-sm) { 
         border: 0;
         margin: 0;
         padding: 46px 15px 0;
@@ -178,7 +178,7 @@ header.challenge-status {
 
   .view-filters {
     text-align: left;
-    @media #{$scrn-sm-min} { 
+    @media only screen and (min-width : $screen-sm) { 
       text-align: right;
     }
   }
@@ -190,7 +190,7 @@ header.challenge-status {
 #views-exposed-form-ideas-belonging-to-challenge-ideas-of-a-challenge {
   display: inline-block;
 
-  @media #{$scrn-sm-min} {
+  @media only screen and (min-width : $screen-sm) {
     bottom: 16px;
   }  
 

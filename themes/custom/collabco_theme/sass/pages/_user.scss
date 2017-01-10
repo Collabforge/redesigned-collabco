@@ -3,7 +3,7 @@
   &.not-logged-in {
     .nav-tabs > li{
       float: none;
-      @media #{$scrn-sm-min} { float: left; }
+      @media only screen and (min-width : $screen-sm) { float: left; }
     }
 
     input { max-width: 400px; }
@@ -83,7 +83,7 @@
     .info > div  { height: auto; }
     .bio > div { min-height: 147px; }
 
-    @media #{$scrn-sm-min} {
+    @media only screen and (min-width : $screen-sm) {
       .info, .bio { 
         padding-right: 0;
         padding-left: 0;

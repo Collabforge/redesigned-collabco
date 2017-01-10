@@ -32,7 +32,7 @@
     display: inline-block;
     bottom: 0;
     
-    @media #{$scrn-sm-min} {
+    @media only screen and (min-width : $screen-sm) {
       position: absolute;
     }
   }  
@@ -50,10 +50,10 @@
       margin-top: 0;
       margin-bottom: 15px;
 
-      @media #{$scrn-sm-min} { margin-bottom: 0; }
+      @media only screen and (min-width : $screen-sm) { margin-bottom: 0; }
     }  
     
-    @media #{$scrn-sm-min} {
+    @media only screen and (min-width : $screen-sm) {
       float: right;
       display: inline-block;
     }  

@@ -2,7 +2,7 @@
 
 /*** Site header ***/
 
-@media #{$scrn-sm-max} {
+@media only screen and (max-width : $screen-sm) {
   header#navigation {
     a { 
       color: $nav-mobile-primary-color;

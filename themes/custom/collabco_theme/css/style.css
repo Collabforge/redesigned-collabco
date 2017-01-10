@@ -8258,26 +8258,6 @@ header#navigation {
     @media only screen and (min-width: 992px) {
       .secondary-nav #edit-search-block-form--2 {
         background-position: 70px 18px; } }
-    .secondary-nav #edit-search-block-form--2::-webkit-input-placeholder {
-      color: #532762;
-      text-align: center; }
-    .secondary-nav #edit-search-block-form--2::-moz-placeholder {
-      color: #532762;
-      text-align: center; }
-    .secondary-nav #edit-search-block-form--2:-ms-input-placeholder {
-      color: #532762;
-      text-align: center; }
-    .secondary-nav #edit-search-block-form--2::placeholder {
-      color: #532762;
-      text-align: center; }
-    .secondary-nav #edit-search-block-form--2:hover::-webkit-input-placeholder, .secondary-nav #edit-search-block-form--2:focus::-webkit-input-placeholder {
-      color: transparent; }
-    .secondary-nav #edit-search-block-form--2:hover::-moz-placeholder, .secondary-nav #edit-search-block-form--2:focus::-moz-placeholder {
-      color: transparent; }
-    .secondary-nav #edit-search-block-form--2:hover:-ms-input-placeholder, .secondary-nav #edit-search-block-form--2:focus:-ms-input-placeholder {
-      color: transparent; }
-    .secondary-nav #edit-search-block-form--2:hover::placeholder, .secondary-nav #edit-search-block-form--2:focus::placeholder {
-      color: transparent; }
     .secondary-nav #edit-search-block-form--2:hover, .secondary-nav #edit-search-block-form--2:focus {
       background-image: none; }
   .secondary-nav .user-nav {
@@ -8875,7 +8855,7 @@ nav.slider-mobile {
       speak: none;
       text-transform: none !important; }
 
-.block-collabco-myhubs {
+.block-collabco-myhubs.profile-menu {
   border-bottom: 1px solid #ccc; }
 
 #block-collabco-myhubs-myhub-links .nav li a:hover,

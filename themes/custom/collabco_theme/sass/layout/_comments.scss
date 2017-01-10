@@ -64,7 +64,7 @@
   }
 
 
-  @media #{$scrn-sm-min} { 
+  @media only screen and (min-width : $screen-sm) { 
     margin-left: 63px;
     max-width: 472px;
   }
@@ -122,7 +122,7 @@
 
   .comment-form,
   .comment-by-node-author {
-    @media #{$scrn-sm-min} {
+    @media only screen and (min-width : $screen-sm) {
       margin: 0 auto; 
       max-width: 536px; 
     }
@@ -130,7 +130,7 @@
 
   .main-container {
     padding: 20px 0;
-    @media #{$scrn-sm-min} { padding: 30px; }
+    @media only screen and (min-width : $screen-sm) { padding: 30px; }
   }
 }
 

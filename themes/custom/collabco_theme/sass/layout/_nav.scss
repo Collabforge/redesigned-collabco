@@ -129,17 +129,17 @@
     color: $nav-primary-color;
     height: 50%; 
 
-    @media #{$scrn-md-min} { background-position: 70px 18px; }
+    @media only screen and (min-width : $screen-md) { background-position: 70px 18px; }
 
-    &::placeholder {
-      color: $nav-primary-color;
-      text-align: center;
-    }
+    // &::placeholder {
+    //   color: $nav-primary-color;
+    //   text-align: center;
+    // }
 
-    &:hover::placeholder,
-    &:focus::placeholder {
-      color: transparent;
-    }
+    // &:hover::placeholder,
+    // &:focus::placeholder {
+    //   color: transparent;
+    // }
     
     &:hover,
     &:focus {
