@@ -1061,7 +1061,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="breadcrumb-container">
-<ol class="breadcrumb" style="background-color:#FCFCFC; float:left;">
+<ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   <li><?=csl(\'collaborations\',1,1);?></li>
 </ol>
@@ -1301,7 +1301,7 @@ function collabco_views_feature_views_default_views() {
     t('next ›'),
     t('last »'),
     t('<div class="breadcrumb-container">
-<ol class="breadcrumb" style="background-color:#FCFCFC; float:left;">
+<ol class="breadcrumb" >
   <li><a href="/">Home</a></li>
   <li><?=csl(\'collaborations\',1,1);?></li>
 </ol>

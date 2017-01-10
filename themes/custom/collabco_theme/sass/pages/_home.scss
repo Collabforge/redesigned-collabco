@@ -97,6 +97,13 @@
     min-height: 0;
   }
 
+  //Open Challenges Card
+
+  .challenges.card article .img-icon { 
+    @include bg-gradient-challenge(); 
+    color: $white; 
+  }
+
 
   // Content upper - open challenges
   .content-lower {

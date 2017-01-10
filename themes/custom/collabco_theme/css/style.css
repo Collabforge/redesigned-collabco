@@ -7958,7 +7958,7 @@ button .glyphicon {
     .breadcrumb-container a:hover {
       color: #532762; }
   .breadcrumb-container .breadcrumb {
-    background: transparent;
+    background: #fff !important;
     display: inline-block;
     font-size: 13px;
     margin-bottom: .8em;
@@ -9012,6 +9012,14 @@ nav.slider-mobile {
 .front .main-container {
   padding: 0;
   min-height: 0; }
+
+.front .challenges.card article .img-icon {
+  background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+  background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, 0 0;
+  background-size: auto, auto, auto;
+  color: #fff; }
 
 .front .content-lower {
   background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-middle-left.png"), -webkit-linear-gradient(315deg, rgba(83, 39, 98, 0.8) 0%, rgba(77, 49, 155, 0.8) 100%);
