@@ -6,24 +6,24 @@
 global $base_url;
   $variables = array(
     'dashboard' => array('name'=>'<i class="icon-home">&nbsp;</i> Dashboard', 'path'=>url('moderator/dashboard'), 'submenu'=>array(),),
-    'create' => array('name'=>'<i class="icon-plus">&nbsp;</i> Create', 'path'=>url('moderator/create'), 'submenu'=>array(
+    'create' => array('name'=>'<i class="icon-plus">&nbsp;</i> Create', 'path'=>'#', 'submenu'=>array(
       'idea' => array('name'=>'Idea', 'path'=> url('node/add/idea'),),
       'challenge' => array('name'=>'Challenge', 'path'=>url('admin/structure/taxonomy/challenge/add'),),
       'collaboration' => array('name'=>'Collaboration', 'path'=> url('node/add/hub'),),
       'user' => array('name'=>'User', 'path'=> url('admin/people/create'),),
       'page' => array('name'=>'Page', 'path'=> url('node/add/basic-page'),),
     ),),
-    'edit' => array('name'=>'<i class="icon-setting-1">&nbsp;</i> Edit', 'path'=>url('moderator/edit'), 'submenu'=>array(
+    'edit' => array('name'=>'<i class="icon-setting-1">&nbsp;</i> Edit', 'path'=>'#', 'submenu'=>array(
       'content' => array('name'=>'Content', 'path'=>url('/admin/content'),),
       'files' => array('name'=>'Files', 'path'=>url('/admin/content/file'),),
       'comments' => array('name'=>'Comments', 'path'=>url('/admin/content/comment'),),
       'featured-collaborations' => array('name'=>'Featured Collaborations', 'path'=>url('/admin/structure/nodequeue/1/view/1'),),
     ),),
-    'view' => array('name'=>'<i class="icon-eye">&nbsp;</i> View', 'path'=>url('moderator/view'), 'submenu'=>array(
+    'view' => array('name'=>'<i class="icon-eye">&nbsp;</i> View', 'path'=>'#', 'submenu'=>array(
       'member-report' => array('name'=>'Member Report', 'path'=>url('moderator/view/member-report'),),
       'challenge-report' => array('name'=>'Challenge Report', 'path'=>url('moderator/view/challenge-report'),),
     ),),
-    'settings' => array('name'=>'<i class="icon-setting-2">&nbsp;</i> Settings', 'path'=>url('moderator/settings'), 'submenu'=>array(
+    'settings' => array('name'=>'<i class="icon-setting-2">&nbsp;</i> Settings', 'path'=>'#', 'submenu'=>array(
       'challenges' => array('name'=>'Challenges', 'path'=>url('moderator/settings/challenges'),),
       'collaborations' => array('name'=>'Collaborations', 'path'=>url('moderator/settings/collaborations'),),
       'emails' => array('name'=>'Emails', 'path'=>url('moderator/settings/emails'),),
