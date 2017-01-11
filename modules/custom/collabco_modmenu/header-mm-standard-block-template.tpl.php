@@ -59,9 +59,10 @@ global $base_url;
 	    display: block;
 	    color: #666;
 	    text-align: center;
-	    padding: 14px 16px;
+	    padding: 12px 16px 16px;
 	    text-decoration: none;
 	    width: 194px;
+      text-transform: uppercase;
 	}
 	li.modmenu_menu a:hover:not(.active){
    		background-color: #ddd;
@@ -73,6 +74,12 @@ global $base_url;
 	    background-color: #4CAF50;
 
 	}
+
+  li.modmenu_menu a i {
+    position: relative;
+    top: 4px;
+  }
+
 	.square_left {
 	    width: 75px;
 	    height: 75px;
@@ -160,5 +167,4 @@ if(!isset($title)){
 <?php print $menu_display; ?>
 </ul>
 <div class="reset_space"></div>
-<h1 style="color:black;"><?php print $title; ?></h1>
-<h1 style="color:black; font-size: 20px;"><?php print $subtitle; ?></h1>
+<h1 style="color:black; font-size: 20px; text-transform:uppercase;"><?php print $subtitle; ?></h1>
