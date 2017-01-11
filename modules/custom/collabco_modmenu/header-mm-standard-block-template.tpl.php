@@ -20,14 +20,14 @@ global $base_url;
       'featured-collaborations' => array('name'=>'Featured Collaborations', 'path'=>url('/admin/structure/nodequeue/1/view/1'),),
     ),),
     'view' => array('name'=>'<i class="icon-eye">&nbsp;</i> View', 'path'=>'#', 'submenu'=>array(
-      'member-report' => array('name'=>'Member Report', 'path'=>url('moderator/view/member-report'),),
-      'challenge-report' => array('name'=>'Challenge Report', 'path'=>url('moderator/view/challenge-report'),),
+      'member-report' => array('name'=>'Member Report', 'path'=>url('admin/reports/member-report'),),
+      'challenge-report' => array('name'=>'Challenge Report', 'path'=>url('admin/reports/challenge-report'),),
     ),),
     'settings' => array('name'=>'<i class="icon-setting-2">&nbsp;</i> Settings', 'path'=>'#', 'submenu'=>array(
-      'challenges' => array('name'=>'Challenges', 'path'=>url('moderator/settings/challenges'),),
-      'collaborations' => array('name'=>'Collaborations', 'path'=>url('moderator/settings/collaborations'),),
-      'emails' => array('name'=>'Emails', 'path'=>url('moderator/settings/emails'),),
-      'labels' => array('name'=>'Labels', 'path'=>url('moderator/settings/labels'),),
+      'challenges' => array('name'=>'Challenges', 'path'=>url('admin/config/collabco-settings/challenge'),),
+      'collaborations' => array('name'=>'Collaborations', 'path'=>url('admin/config/collabco-settings/collaboration'),),
+      'emails' => array('name'=>'Emails', 'path'=>url('admin/config/collabco-settings/email'),),
+      'labels' => array('name'=>'Labels', 'path'=>url('admin/config/collabco-settings/labels'),),
       ),
     ),
     );
