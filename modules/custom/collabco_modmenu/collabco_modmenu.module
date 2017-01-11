@@ -1,6 +1,31 @@
 <?php
 
 /**
+ * Implements hook_enable().
+ */
+function collabco_modmenu_enable() {
+  variable_set('admin_theme','collabco_theme');
+  user_role_change_permissions(3,
+    array(
+      'access administration menu' => FALSE,
+    )
+  );
+}
+
+/**
+ * Implements hook_enable().
+ */
+function collabco_modmenu_disable() {
+  variable_set('admin_theme','seven');
+  user_role_change_permissions(3,
+    array(
+      'access administration menu' => TRUE,
+    )
+ );
+}
+
+
+/**
  * Implements hook_theme().
  */
 function collabco_modmenu_theme($existing, $type, $theme, $path) {
@@ -41,6 +66,12 @@ function collabco_modmenu_block_info() {
     'status' => TRUE,
     'visibility' => BLOCK_VISIBILITY_LISTED
   );
+  $blocks['modmenu_user_link'] = array(
+    'info' => t('Moderator menu user link block'),
+    'region' => 'nav_actions',
+    'status' => TRUE,
+    'weight' => 10,
+  );
   return $blocks;
 }
 
@@ -49,11 +80,19 @@ function collabco_modmenu_block_view($delta = '') {
   $variables = array();
   switch ($delta) {
     case 'header_mm_standard':
-      // Ensure moderator menu doesn't show for role 1 (anon) or 2 (auth) users.
-    global $user;
-      if(user_has_role(3) XOR $user->uid == 1) {
-        $content = theme('header_mm_standard_template', $variables);
-      } else {$content = "";}
+        // Ensure moderator menu doesn't show for role 1 (anon) or 2 (auth) users.
+        global $user;
+        if(user_has_role(3) XOR $user->uid == 1) {
+          $content = theme('header_mm_standard_template', $variables);
+        } else {$content = "";}
+      break;
+
+      case 'modmenu_user_link':
+        // Ensure moderator menu doesn't show for role 1 (anon) or 2 (auth) users.
+        global $user;
+        if(user_has_role(3) XOR $user->uid == 1) {
+          $content = "<a href='".url('moderator/dashboard')."'><i class='icon-setting-1'>&nbsp;</i> <b>Moderator Dashboard</b></a>";
+        } else {$content = "";}
       break;
   }
   $block['content'] = $content;

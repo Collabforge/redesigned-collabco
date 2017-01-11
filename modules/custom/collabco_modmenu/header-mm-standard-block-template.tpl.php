@@ -5,20 +5,25 @@
  */
 global $base_url;
   $variables = array(
-    'dashboard' => array('name'=>'Dashboard', 'path'=>url('moderator/dashboard'), 'submenu'=>array(),),
-    'create' => array('name'=>'Create...', 'path'=>url('moderator/create'), 'submenu'=>array(
-      'idea' => array('name'=>'...an idea', 'path'=> url('node/add/idea'),),
-      'challenge' => array('name'=>'...a Challenge', 'path'=>url('admin/structure/taxonomy/challenge/add'),),
-      'collaboration' => array('name'=>'...a Collaboration', 'path'=> url('node/add/hub'),),
-      'user' => array('name'=>'...a user', 'path'=> url('admin/people/create'),),
-      'page' => array('name'=>'...a page', 'path'=> url('node/add/basic-page'),),),),
-    'edit' => array('name'=>'Edit...', 'path'=>url('moderator/edit'), 'submenu'=>array(
-      'idea' => array('name'=>'New idea', 'path'=>url('/node/edit/idea'),),
-      'thing' => array('name'=>'New Thing', 'path'=>url('/node/edit/thing'),),),),
-    'view' => array('name'=>'View', 'path'=>url('moderator/view'), 'submenu'=>array(
+    'dashboard' => array('name'=>'<i class="icon-home">&nbsp;</i> Dashboard', 'path'=>url('moderator/dashboard'), 'submenu'=>array(),),
+    'create' => array('name'=>'<i class="icon-plus">&nbsp;</i> Create', 'path'=>url('moderator/create'), 'submenu'=>array(
+      'idea' => array('name'=>'Idea', 'path'=> url('node/add/idea'),),
+      'challenge' => array('name'=>'Challenge', 'path'=>url('admin/structure/taxonomy/challenge/add'),),
+      'collaboration' => array('name'=>'Collaboration', 'path'=> url('node/add/hub'),),
+      'user' => array('name'=>'User', 'path'=> url('admin/people/create'),),
+      'page' => array('name'=>'Page', 'path'=> url('node/add/basic-page'),),
+    ),),
+    'edit' => array('name'=>'<i class="icon-setting-1">&nbsp;</i> Edit', 'path'=>url('moderator/edit'), 'submenu'=>array(
+      'content' => array('name'=>'Content', 'path'=>url('/admin/content'),),
+      'files' => array('name'=>'Files', 'path'=>url('/admin/content/file'),),
+      'comments' => array('name'=>'Comments', 'path'=>url('/admin/content/comment'),),
+      'featured-collaborations' => array('name'=>'Featured Collaborations', 'path'=>url('/admin/structure/nodequeue/1/view/1'),),
+    ),),
+    'view' => array('name'=>'<i class="icon-eye">&nbsp;</i> View', 'path'=>url('moderator/view'), 'submenu'=>array(
       'member-report' => array('name'=>'Member Report', 'path'=>url('moderator/view/member-report'),),
-      'challenge-report' => array('name'=>'Challenge Report', 'path'=>url('moderator/view/challenge-report'),),),),
-    'settings' => array('name'=>'Settings', 'path'=>url('moderator/settings'), 'submenu'=>array(
+      'challenge-report' => array('name'=>'Challenge Report', 'path'=>url('moderator/view/challenge-report'),),
+    ),),
+    'settings' => array('name'=>'<i class="icon-setting-2">&nbsp;</i> Settings', 'path'=>url('moderator/settings'), 'submenu'=>array(
       'challenges' => array('name'=>'Challenges', 'path'=>url('moderator/settings/challenges'),),
       'collaborations' => array('name'=>'Collaborations', 'path'=>url('moderator/settings/collaborations'),),
       'emails' => array('name'=>'Emails', 'path'=>url('moderator/settings/emails'),),
@@ -74,7 +79,7 @@ global $base_url;
 	    background-color: #474747;
 	    float: left;
 	    transform: rotate(45deg);
-	    margin-top: -42px;
+	    margin-top: -40px;
 	    margin-left: -38px;
 	}
 	.square_right {
@@ -83,7 +88,7 @@ global $base_url;
 	    background-color: #474747;
 	    float: right;
 	    transform: rotate(45deg);
-	    margin-top: -42px;
+	    margin-top: -40px;
 	    margin-left: 933px;
 	    z-index: -1;
 	    position: absolute;
@@ -111,38 +116,49 @@ global $base_url;
 .dc-edit:hover .sdc-edit {display: block;}
 .dc-view:hover .sdc-view {display: block;}
 .dc-settings:hover .sdc-settings {display: block;}
+</style>
 
-  </style>
-  <h1 id="modmenu_title">Moderator Panel</h1>
+<h1 id="modmenu_title">Moderator Panel</h1>
 <div class="square_left"></div><div class="square_right"></div>
 
-	<?php
-	$menu_items = $variables;
-	$menu_display = "";
-	$subtitle = "";
-	foreach ($menu_items as $key=>$value) {
-		$active_class = "";
-    foreach ($value['submenu'] as $sub_key=>$sub_value) {
-      if(url(current_path()) == $sub_value['path']){$active_class .= 'active'; $title = $value['name'];}
-    }
-		if(url(current_path()) == $value['path']){$active_class .= 'active'; $title = $value['name'];}
-		$menu_display .= "<li class='modmenu_menu dc-".$key."'><a href='".$value['path']."' class='$active_class'>".$value['name']."</a>";
-		$menu_display .= "<ul>";
-		foreach ($value['submenu'] as $sub_key=>$sub_value) {
-			$active_class_sdc = "";
-			if(url(current_path()) == $sub_value['path']){$active_class_sdc .= 'active'; $subtitle = $sub_value['name'];}
-			$menu_display .= "<li class='dropdown-content sdc-".$key."'	><a href='".$sub_value['path']."' class='$active_class_sdc'>".$sub_value['name']."</a>";
-		}
-		$menu_display .= "</ul>";
-    $menu_display .= "</li>";
-		$val2 = "";
+<?php
+$menu_items = $variables;
+$menu_display = "";
+$subtitle = "";
+foreach ($menu_items as $key=>$value) {
+	$active_class = "";
+  foreach ($value['submenu'] as $sub_key=>$sub_value) {
+    if(url(current_path()) == $sub_value['path']){$active_class .= 'active'; $title = $value['name'];}
+  }
+	if(url(current_path()) == $value['path']){$active_class .= 'active'; $title = $value['name'];}
+	$menu_display .= "<li class='modmenu_menu dc-".$key."'><a href='".$value['path']."' class='$active_class'>".$value['name']."</a>";
+	$menu_display .= "<ul>";
+	foreach ($value['submenu'] as $sub_key=>$sub_value) {
+		$active_class_sdc = "";
+		if(url(current_path()) == $sub_value['path']){$active_class_sdc .= 'active'; $subtitle = $sub_value['name'];}
+		$menu_display .= "<li class='dropdown-content sdc-".$key."'	><a href='".$sub_value['path']."' class='$active_class_sdc'>".$sub_value['name']."</a>";
 	}
-	?>
+	$menu_display .= "</ul>";
+  $menu_display .= "</li>";
+	$val2 = "";
+}
+?>
 
+<?php
 
-  <ul class="modmenu_menu">
-	<?php print $menu_display; ?>
-  </ul>
-  <div class="reset_space"></div>
-  <h1 style="color:black;"><?php print $title; ?></h1>
-  <h1 style="color:black; font-size: 20px;"><?php print $subtitle; ?></h1>
+if(!isset($title)){
+  if(drupal_get_title() == FALSE || drupal_get_title() == "Content") {
+    $i = 0; while(arg($i)){$i++;} $i--;
+    $title = ucfirst(arg($i));
+  } else {
+    $title = drupal_get_title();
+  }
+}
+?>
+
+<ul class="modmenu_menu">
+<?php print $menu_display; ?>
+</ul>
+<div class="reset_space"></div>
+<h1 style="color:black;"><?php print $title; ?></h1>
+<h1 style="color:black; font-size: 20px;"><?php print $subtitle; ?></h1>
