@@ -1,0 +1,4 @@
+name = Collabco Moderator Menu
+description = Generates a moderator menu and associated content
+core = 7.x
+package = Collabco
