@@ -1,0 +1,33 @@
+<?php
+/**
+ * @file
+ * Demo to use any (custom) theme setting or Drupal variable in any of your
+ * theme or module style sheets (see https://drupal.org/project/style_settings).
+ */
+
+/**
+ * Implements hook_page_build().
+ */
+// function collabco_color_page_build(&$page) {
+//   drupal_add_css(drupal_get_path('module', 'collabco_color') . '/css/style.css', array(
+//     'group' => CSS_DEFAULT,
+//     'every_page' => TRUE,
+//   ));
+// }
+
+/**
+ * Implements hook_menu().
+ */
+function collabco_color_menu() {
+  // Here placed in the 'config/SYSTEM' section. Put it in the appropriate
+  // section.
+  $items['admin/config/system/collabco_color'] = array(
+    'title' => 'Collabco Color',
+    'description' => 'Collabco Color Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('collabco_color_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'collabco_color.admin.inc',
+  );
+  return $items;
+}

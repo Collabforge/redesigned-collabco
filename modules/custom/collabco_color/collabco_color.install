@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Sets post-install messages and deletes variables when uninstalled.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function collabco_color_install() {
+  $t = get_t();
+  $text = $t('Go and checkout the !config_link.', array(
+    '!config_link' => l($t('Style Settings demo page'), 'admin/config/system/collabco_color'),
+  ));
+  drupal_set_message($text);
+  _drupal_flush_css_js();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function collabco_color_uninstall() {
+  // Delete all variables set in variable table.
+  variable_del('nav_primary_color');
+
+  _drupal_flush_css_js();
+}

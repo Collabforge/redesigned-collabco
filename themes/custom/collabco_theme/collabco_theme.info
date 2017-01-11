@@ -41,8 +41,11 @@ stylesheets[all][] = css/style.css
 
 stylesheets[all][] = css/libsass-compatibility.css
 
-; Add our stylesheet for the Color module to override. 
-
+;;;;;;;;;;;;;;;;;;;;;
+;; Soft Dependencies
+;;;;;;;;;;;;;;;;;;;;;
+; Module to add css customizable 
+soft_dependencies[] = style_settings
 
 
 ;;;;;;;;;;;;;;;;;;;;;

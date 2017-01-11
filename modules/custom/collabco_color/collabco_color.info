@@ -1,0 +1,9 @@
+name = Collabco Color
+description = Enable color edition on collabco theme
+core = 7.x
+package = Collabco
+
+dependencies[] = style_settings
+dependencies[] = image
+
+
