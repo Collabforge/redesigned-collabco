@@ -70,7 +70,7 @@ function collabco_modmenu_block_info() {
     'info' => t('Moderator menu user link block'),
     'region' => 'nav_actions',
     'status' => TRUE,
-    'weight' => 10,
+    'weight' => -1,
   );
   return $blocks;
 }
