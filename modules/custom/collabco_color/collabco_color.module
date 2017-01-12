@@ -31,3 +31,71 @@ function collabco_color_menu() {
   );
   return $items;
 }
+
+
+/**
+ * Implements hook_element_info().
+ */
+function collabco_color_element_info() {
+  $colornames = l(t('valid color names'), 'https://en.wikipedia.org/wiki/Web_colors#X11_color_names', array(
+    'attributes' => array(
+      'title' => t('Web colors - Wikipedia, the free encyclopedia'),
+      'target' => '_blank',
+    ),
+  ));
+
+  $types['collabco_color_colorpicker'] = array(
+    '#input' => TRUE,
+    '#type' => 'textfield',
+    '#theme' => array('textfield'),
+    '#theme_wrappers' => array('form_element'),
+    '#autocomplete_path' => FALSE,
+    '#element_validate' => array('collabco_color_color_validate'),
+    '#size' => 12,
+    '#maxlength' => 20,
+    '#description' => t('Also shorthand (like #fff) and !colornames are accepted.', array('!colornames' => $colornames)),
+    '#prefix' => '<div class="form-item form-type-collabco-color-colorpicker">',
+    '#suffix' => '<div class="collabco_color-picker"></div></div>',
+    '#default_value' => '',
+    '#attributes' => array('class' => array('collabco_color-colorpicker')),
+    '#attached' => array(
+      'library' => array(array('system', 'farbtastic')),
+      'js' => array(drupal_get_path('module', 'collabco_color') . '/js/style_settings-farbtastic.js'),
+    ),
+  );
+
+/*
+  $types['collabco_color_gradientpicker'] = array(
+    '#input' => TRUE,
+    '#type' => 'textfield',
+    '#theme' => array('textfield'),
+    '#theme_wrappers' => array('form_element'),
+    '#autocomplete_path' => FALSE,
+    '#element_validate' => array('collabco_color_color_validate'),
+    '#size' => 12,
+    '#maxlength' => 20,
+    '#description' => t('Also shorthand (like #fff) and !colornames are accepted.', array('!colornames' => $colornames)),
+    '#prefix' => '<div class="form-item form-type-collabco-color-gradientpicker">',
+    '#suffix' => '<div class="collabco_color-gradient-picker" style="display:none;"></div>
+</div></div>',
+    '#default_value' => '',
+    '#attributes' => array('class' => array('collabco_color-gradientpicker')),
+    '#attached' => array(
+      'library' => array(array('system', 'farbtastic')),
+      'js' => array(drupal_get_path('module', 'style_settings') . '/js/style_settings-farbtastic.js'),
+      // 'js' => array(drupal_get_path('module', 'collabco_color') . '/js/collabco-color-gradientpicker.js',
+                    // drupal_get_path('module', 'collabco_color') . '/js/jquery-gradient-picker/vendor/jqueryUI-custom.js',
+                    // drupal_get_path('module', 'collabco_color') . '/js/jquery-gradient-picker/vendor/jqPlugins/colorpicker/js/colorpicker.js',
+                    // drupal_get_path('module', 'collabco_color') . '/js/jquery-gradient-picker//plugin/jquery.gradientPicker.js'),
+    ),
+  );*/
+
+
+  return $types;
+}
+
+ /* Validates that the input value matches a hexadecimal color.
+ */
+function collabco_color_color_validate($element, &$form_state) {
+
+}

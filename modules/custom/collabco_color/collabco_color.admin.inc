@@ -28,13 +28,44 @@ function collabco_color_admin_settings() {
   // The condition below only exists for when code is copy/pasted to elsewhere.
   if (module_exists('style_settings')) {
    
-    // COLOR PICKER example.
-    $form['css_variables']['collabco_color_nav_primary_color'] = array(
-      '#type' => 'style_settings_colorpicker',
+    // Navigation Primary Color
+    // $form['css_variables']['nav_primary_color'] = array(
+    //   '#type' => 'style_settings_colorpicker',
+    //   '#title' => t('Navigation Primary Color'),
+    //   // Besides hex color value also color names are accepted.
+    //   '#default_value' => variable_get('nav_primary_color', '#000'),
+    // );
+
+    $form['css_variables']['nav_primary_color'] = array(
+      '#type' => 'collabco_color_colorpicker',
       '#title' => t('Navigation Primary Color'),
       // Besides hex color value also color names are accepted.
-      '#default_value' => variable_get('collabco_color_nav_primary_color', 'IndianRed'),
+      '#default_value' => variable_get('nav_primary_color', '#000'),
     );
+
+
+    // Challenge Primary Color
+    $form['css_variables']['challenge_primary_color'] = array(
+      '#type' => 'style_settings_colorpicker',
+      '#title' => t('Challenge Primary Color'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('challenge_primary_color', '#000'),
+    );
+
+    // Test
+/*    $form['css_variables']['test_text'] = array(
+      '#type' => 'collabco_color_gradientpicker',
+      '#title' => t('Gradient challenge'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('test_text', 'linear-gradient(135deg, rgba(59, 83, 164, 1) 0%, rgba(29, 121, 171, 1) 100%)')
+    );*/
+
+    // $form['css_variables']['test_text'] = array(
+    //   '#type' => 'textfield',
+    //   '#title' => t('Caption text align'),
+    //   '#default_value' => variable_get('test_text', 'linear-gradient(135deg, rgba(59, 83, 164, 1) 0%, rgba(29, 121, 171, 1) 100%)'),
+    //   '#size' => 500,
+    // );
   }
 
   // If the Style Settings module is not enabled, provide some instructions.
@@ -44,7 +75,7 @@ function collabco_color_admin_settings() {
           <li> A caption font-size.</li>
           <li> ... </li>
           <li> ... </li>
-        </ul>", array('!style_settings_module' => $style_settings_module)),
+        </ul>"),
     );
   }
 

@@ -8187,7 +8187,7 @@ header#navigation {
   border-left: 1px solid #532762; }
   .primary-nav li a {
     color: #532762;
-    /*variable:collabco_color_nav_primary_color*/
+    /*variable:nav_primary_color*/
     display: block;
     height: 100%;
     padding: 60px 0 20px;
@@ -9252,7 +9252,8 @@ nav.slider-mobile {
     .page-open-challenges .content-top .popover i,
     .page-closed-challenges .content-top .popover i,
     .page-archived-ideas .content-top .popover i {
-      color: #4a3858; }
+      color: #4a3858;
+      /*variable:challenge_primary_color*/ }
     .page-challenge .content-top .popover p,
     .page-open-challenges .content-top .popover p,
     .page-closed-challenges .content-top .popover p,
@@ -9316,6 +9317,9 @@ nav.slider-mobile {
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
     background-size: auto, auto, auto;
+    background-image: -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+    background-image: linear-gradient(135deg, #532762 0%, #4d319b 100%);
+    /*variable:test_text*/
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
     padding: 30px 0; }
@@ -9330,7 +9334,8 @@ nav.slider-mobile {
     background-position: 0 0, 0 0, 0 0;
     background-size: auto, auto, auto; }
     .page-challenge .content-bottom .view-header {
-      color: #4a3858; }
+      color: #4a3858;
+      /*variable:challenge_primary_color*/ }
   .page-challenge .view-challenges header {
     border-bottom: 1px solid #ccc;
     position: relative;
@@ -9349,14 +9354,20 @@ nav.slider-mobile {
     .page-challenge .views-exposed-form input[type="text"].form-control {
       background-color: #eeeeee;
       color: #4a3858;
+      /*variable:challenge_primary_color*/
       height: 35px;
       width: 180px; }
     .page-challenge .views-exposed-form input[type="text"].form-control:hover,
     .page-challenge .views-exposed-form input[type="text"].form-control:focus {
-      border-color: #4a3858; }
+      border-color: #4a3858;
+      /*variable:challenge_primary_color*/ }
   .page-challenge a.create-challenge {
-    border: 1px solid #4a3858;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4a3858;
+    /*variable:challenge_primary_color*/
     color: #4a3858;
+    /*variable:challenge_primary_color*/
     background-color: transparent;
     text-transform: uppercase;
     -webkit-transition: all ease .3s;
@@ -9370,6 +9381,7 @@ nav.slider-mobile {
     right: 0; }
     .page-challenge a.create-challenge:hover {
       background-color: #4a3858;
+      /*variable:challenge_primary_color*/
       color: #fff; }
     @media only screen and (min-width: 768px) {
       .page-challenge a.create-challenge {
@@ -9405,6 +9417,7 @@ nav.slider-mobile {
   .page-challenge #block-collabco-challenge-add-to-brainstorm {
     padding: 80px 0;
     color: #4a3858;
+    /*variable:challenge_primary_color*/
     text-align: center; }
     .page-challenge #block-collabco-challenge-add-to-brainstorm i {
       font-size: 40px; }
@@ -9422,6 +9435,7 @@ nav.slider-mobile {
     padding-top: 0; }
   .page-challenge .separator {
     border-bottom: 1px solid #4a3858;
+    /*variable:challenge_primary_color*/
     margin-bottom: 30px; }
 
 /* === END OF CHALLENGE MAIN PAGE === */
@@ -9437,7 +9451,8 @@ nav.slider-mobile {
 
 .page-ideas-archived .view-header,
 .page-closed-challenges .view-header {
-  color: #4a3858; }
+  color: #4a3858;
+  /*variable:challenge_primary_color*/ }
 
 /* === LARGE CARDS === */
 .card .challenges .img-icon {

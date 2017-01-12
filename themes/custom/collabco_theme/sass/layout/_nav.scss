@@ -8,7 +8,7 @@
 
 .primary-nav, 
 .secondary-nav { 
-  height: 100%; 
+  height: 100%;
   padding: 0;
 }
 
@@ -26,7 +26,7 @@
   border-left: 1px solid $nav-primary-color;
 
   a {
-    color: $nav-primary-color; /*variable:collabco_color_nav_primary_color*/
+    color: $nav-primary-color; /*variable:nav_primary_color*/
     display: block;
     height: 100%;
     padding: 60px 0 20px;

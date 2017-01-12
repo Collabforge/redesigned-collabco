@@ -3,8 +3,6 @@
 @import 'base/typography';
 @import 'base/colors';
 @import 'base/background';
-@import 'base/colors-generated.scss';
-
 
 // Default variables.
 @import 'default-variables';
@@ -60,3 +58,5 @@
 @import 'pages/about';
 @import 'pages/help';
 @import 'pages/installation';
+
+@import "../css/colors";

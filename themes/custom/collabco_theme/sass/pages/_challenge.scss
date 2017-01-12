@@ -27,7 +27,7 @@
       }
     }
     
-    .popover i { color: $challenge-primary-color; }
+    .popover i { color: $challenge-primary-color; /*variable:challenge_primary_color*/ }
     .popover p { font-size: 15px; }
   }
 
@@ -60,6 +60,7 @@
 
   .content-lower {
     @include bg-gradient-challenge('../assets/img/background/triangle-middle-big-down.png', .9);
+    background-image: linear-gradient(135deg, rgba(83, 39, 98, 1) 0%, rgba(77, 49, 155, 1) 100%); /*variable:test_text*/
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
     padding: 30px 0;
@@ -74,8 +75,7 @@
   .content-bottom {
     @include bg-gradient-white-gray();
     .view-header {
-      color: $challenge-primary-color;
-    }
+      color: $challenge-primary-color; /*variable:challenge_primary_color*/    }
   }
   
 /* === Main Content Header === */
@@ -110,22 +110,24 @@
 
     input[type="text"].form-control {
       background-color: $gray-lighter;
-      color: $challenge-primary-color;
+      color: $challenge-primary-color; /*variable:challenge_primary_color*/
       height: 35px;
       width: 180px;
     }
 
     input[type="text"].form-control:hover,
     input[type="text"].form-control:focus {
-      border-color: $challenge-primary-color;
+      border-color: $challenge-primary-color; /*variable:challenge_primary_color*/ 
     }
   }
   
   /*** Create New Challenge Button ***/
 
   a.create-challenge { 
-    border: 1px solid $challenge-primary-color;
-    color: $challenge-primary-color;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $challenge-primary-color; /*variable:challenge_primary_color*/ 
+    color: $challenge-primary-color; /*variable:challenge_primary_color*/    
     background-color: transparent;
     text-transform: uppercase;
     transition: all ease .3s;
@@ -138,7 +140,7 @@
     right: 0;
 
     &:hover {
-      background-color: $challenge-primary-color;
+      background-color: $challenge-primary-color; /*variable:challenge_primary_color*/
       color: $white;
     }
 
@@ -191,7 +193,7 @@
 
   #block-collabco-challenge-add-to-brainstorm {
     @include title-1-block();
-    color: $challenge-primary-color;
+    color: $challenge-primary-color; /*variable:challenge_primary_color*/
     text-align: center;
   }
 
@@ -200,7 +202,7 @@
   /*** Views Separator Line ***/
   
   .separator {
-    border-bottom: 1px solid $challenge-primary-color;
+    border-bottom: 1px solid $challenge-primary-color; /*variable:challenge_primary_color*/
     margin-bottom: 30px;
   }
 
@@ -218,7 +220,7 @@
     color: $white;
   }
   
-  .view-header { color: $challenge-primary-color; }
+  .view-header { color: $challenge-primary-color; /*variable:challenge_primary_color*/ }
 
 }
 
