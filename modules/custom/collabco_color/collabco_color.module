@@ -64,7 +64,7 @@ function collabco_color_element_info() {
     ),
   );
 
-/*
+
   $types['collabco_color_gradientpicker'] = array(
     '#input' => TRUE,
     '#type' => 'textfield',
@@ -81,14 +81,15 @@ function collabco_color_element_info() {
     '#default_value' => '',
     '#attributes' => array('class' => array('collabco_color-gradientpicker')),
     '#attached' => array(
-      'library' => array(array('system', 'farbtastic')),
-      'js' => array(drupal_get_path('module', 'style_settings') . '/js/style_settings-farbtastic.js'),
+      'library' => array(array('system', 'jquery')),
+      'js' => array(drupal_get_path('module', 'collabco_color') . '/js/collabco-color-gradientpicker.js'),
+      // 'js' => array(drupal_get_path('module', 'collabco_color') . '/js/style_settings-farbtastic.js'),
       // 'js' => array(drupal_get_path('module', 'collabco_color') . '/js/collabco-color-gradientpicker.js',
                     // drupal_get_path('module', 'collabco_color') . '/js/jquery-gradient-picker/vendor/jqueryUI-custom.js',
                     // drupal_get_path('module', 'collabco_color') . '/js/jquery-gradient-picker/vendor/jqPlugins/colorpicker/js/colorpicker.js',
                     // drupal_get_path('module', 'collabco_color') . '/js/jquery-gradient-picker//plugin/jquery.gradientPicker.js'),
     ),
-  );*/
+  );
 
 
   return $types;

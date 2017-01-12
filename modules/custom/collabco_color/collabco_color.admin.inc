@@ -53,12 +53,12 @@ function collabco_color_admin_settings() {
     );
 
     // Test
-/*    $form['css_variables']['test_text'] = array(
+    $form['css_variables']['test_text'] = array(
       '#type' => 'collabco_color_gradientpicker',
       '#title' => t('Gradient challenge'),
       // Besides hex color value also color names are accepted.
-      '#default_value' => variable_get('test_text', 'linear-gradient(135deg, rgba(59, 83, 164, 1) 0%, rgba(29, 121, 171, 1) 100%)')
-    );*/
+      '#default_value' => variable_get('test_text', 'linear-gradient(135deg, rgba(59, 83, 164, 1) 0%, rgba(29, 121, 171, 1) 100%)'),
+    );
 
     // $form['css_variables']['test_text'] = array(
     //   '#type' => 'textfield',

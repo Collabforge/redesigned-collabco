@@ -7,7 +7,7 @@
  * Provides a farbtastic colorpicker for the widget.
  */
 (function ($) {
-  Drupal.behaviors.collabco_color = {
+  Drupal.behaviors.collabco_color1 = {
     attach: function (context) {
      
 
