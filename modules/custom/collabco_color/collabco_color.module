@@ -75,11 +75,11 @@ function collabco_color_element_info() {
     '#size' => 12,
     '#maxlength' => 20,
     '#description' => t('Also shorthand (like #fff) and !colornames are accepted.', array('!colornames' => $colornames)),
-    '#prefix' => '<div class="form-item form-type-collabco-color-gradientpicker">',
-    '#suffix' => '<div class="collabco_color-gradient-picker" style="display:none;"></div>
+    '#prefix' => '<div class="form-item form-type-collabco-color-gradient-picker">',
+    '#suffix' => '<div class="collabco-gradient-picker" style="display:none; height: 50px; background-color: #ccc;"></div>
 </div></div>',
     '#default_value' => '',
-    '#attributes' => array('class' => array('collabco_color-gradientpicker')),
+    '#attributes' => array('class' => array('collabco-gradient-picker-input')),
     '#attached' => array(
       'library' => array(array('system', 'jquery')),
       'js' => array(drupal_get_path('module', 'collabco_color') . '/js/collabco-color-gradientpicker.js'),

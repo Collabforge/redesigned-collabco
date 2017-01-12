@@ -1,23 +1,18 @@
 /**
- * @file
- * Javascript for Farbtastic collabco_color widget.
- */
-
-/**
- * Provides a farbtastic colorpicker for the widget.
+ * Provides a gradient picker for the widget.
  */
 (function ($) {
-  Drupal.behaviors.collabco_color1 = {
+  Drupal.behaviors.collabco_color_gradient = {
     attach: function (context) {
      
 
-      $('.form-type-collabco-color-gradientpicker input').focusin(function(event) {
-        $(this).parent().siblings('.collabco_color-gradient-picker').show();
+      $('.form-type-collabco-color-gradient-picker input').focusin(function(event) {
+        $(this).parent().siblings('.collabco-gradient-picker').show();
         console.log('focus in');
       });
 
-      $('.form-type-collabco-color-gradientpicker input').focusout(function(event) {
-        $(this).parent().siblings('.collabco_color-gradient-picker').hide();
+      $('.form-type-collabco-color-gradient-picker input').focusout(function(event) {
+        $(this).parent().siblings('.collabco-gradient-picker').hide();
         console.log('focus out');
       });
 
