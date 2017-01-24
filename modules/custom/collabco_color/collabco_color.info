@@ -6,4 +6,6 @@ package = Collabco
 dependencies[] = style_settings
 dependencies[] = image
 
+stylesheets[all][] = js/jquery-gradient/jquery.gradientPicker.css
+
 

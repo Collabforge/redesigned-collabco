@@ -23,7 +23,13 @@ function collabco_color_uninstall() {
   // Delete all variables set in variable table.
   variable_del('nav_primary_color');
   variable_del('challenge_primary_color');
-  variable_del('test_text');
+  variable_del('challenge_gradient');
+  variable_del('challenge_webkit_gradient');
+  variable_del('challenge_background_color');
+  variable_del('collaboration_gradient');
+  variable_del('collaboration_webkit_gradient');
+  variable_del('collaboration_background_color');
+
 
   _drupal_flush_css_js();
 }
