@@ -37,12 +37,12 @@
     &.active,
     &:focus,
     {
-      background-color: $nav-hover-color;
+      background-color: $nav-hover-color; /*variable:nav_hover_color*/
     }
     
     &:hover,
     &.active {
-      border-bottom: $nav-primary-color;
+      border-bottom: $nav-primary-color; /*variable:nav_primary_color*/
       border-bottom-width: 3px;
       border-bottom-style: solid;
     }
@@ -75,8 +75,8 @@
 .node-type-knowledge-object .primary-nav li a[href="/collaborate"],
 .node-type-hub .primary-nav li a[href="/collaborate"]
 {
-  background-color: $nav-hover-color;
-  border-bottom: $nav-primary-color;
+  background-color: $nav-hover-color; /*variable:nav_hover_color*/
+  border-bottom: $nav-primary-color; /*variable:nav_primary_color*/
   border-bottom-width: 3px;
   border-bottom-style: solid;
 }
@@ -93,7 +93,7 @@
   border-color: $nav-primary-color;
 
   a { 
-    color: $nav-primary-color;
+    color: $nav-primary-color; /*variable:nav_primary_color*/
     text-decoration: none;
 
     &:hover { 
@@ -132,7 +132,7 @@
     background-position: 44px 18px;
     background-repeat: no-repeat;
     background-size: 18px 18px;
-    color: $nav-primary-color;
+    color: $nav-primary-color; /*variable:nav_primary_color*/
     height: 50%; 
 
     @media only screen and (min-width : $screen-md) { background-position: 70px 18px; }
@@ -160,12 +160,12 @@
     background: $white;
 
     a {
-      color: $nav-primary-color;
+      color: $nav-primary-color; /*variable:nav_primary_color*/
     }  
     
     a:hover {
-      background-color: $nav-hover-color;
-      color: $nav-primary-color;
+      background-color: $nav-hover-color; /*variable:nav_hover_color*/
+      color: $nav-primary-color; /*variable:nav_primary_color*/
     }
 
     a::before {

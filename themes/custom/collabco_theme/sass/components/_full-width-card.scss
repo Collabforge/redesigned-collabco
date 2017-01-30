@@ -113,15 +113,21 @@
   
  /*** ICON bg color ***/
   &.challenge .feat-img i {
-    @include bg-gradient-challenge();
+    background: rgba(83, 39, 98, 1); /*variable:challenge_background_color*/
+    background-image: linear-gradient(135deg, rgba(83, 39, 98, 1) 0%, rgba(77, 49, 155, 1) 100%); /*variable:challenge_gradient*/
+    background-image: -webkit-linear-gradient(135deg, rgba(83, 39, 98, 1) 0%, rgba(77, 49, 155, 1) 100%); /*variable:challenge_webkit_gradient*/
   }
 
   &.idea .feat-img i {
-    @include bg-gradient-ideas();
+    background: rgba(59, 83, 164, .9); /*variable:ideas_background_color*/
+    background-image: linear-gradient(135deg, rgba(59, 83, 164, .9) 0%, rgba(29, 121, 171, .9) 100%); /*variable:ideas_gradient*/
+    background-image: -webkit-linear-gradient(135deg, rgba(59, 83, 164, .9) 0%, rgba(29, 121, 171, .9) 100%); /*variable:ideas_webkit_gradient*/
   }
 
   &.collaboration .feat-img i {
-    @include bg-gradient-collaboration();
+    background: rgba(206, 45, 37, .9); /*variable:collaboration_background_color*/
+    background-image: linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%); /*variable:collaboration_gradient*/
+    background-image: -webkit-linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%); /*variable:collaboration_webkit_gradient*/
   }
 }  
 

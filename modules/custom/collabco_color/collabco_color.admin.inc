@@ -28,22 +28,67 @@ function collabco_color_admin_settings() {
   // The condition below only exists for when code is copy/pasted to elsewhere.
   if (module_exists('style_settings')) {
    
+    //////////Navigation Variables/////////
 
+    //Nav Primary Color
     $form['css_variables']['nav_primary_color'] = array(
       '#type' => 'style_settings_colorpicker',
       '#title' => t('Navigation Primary Color'),
       // Besides hex color value also color names are accepted.
-      '#default_value' => variable_get('nav_primary_color', '#fff'),
+      '#default_value' => variable_get('nav_primary_color', '#532762'),
     );
 
+    //Nav Hover Color
+    $form['css_variables']['nav_hover_color'] = array(
+      '#type' => 'style_settings_colorpicker',
+      '#title' => t('Navigation Hover Color'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('nav_hover_color', '#f3f3f3'),
+    );
+
+    // Nav Mobile Gradient
+    $form['css_variables']['nav_mobile_gradient'] = array(
+      '#type' => 'collabco_color_gradientpicker',
+      '#title' => t('Gradient Nav Mobile'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('nav_mobile_gradient', 'linear-gradient(135deg,rgba(83, 39, 98, .9) 0%, rgba(77, 49, 155, .9) 100%)'),
+    );
+
+    //WebKit Challenge Gradient (Hidden input)
+    $form['css_variables']['nav_mobile_webkit_gradient'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Webkit Gradient Nav Mobile'),
+      '#default_value' => variable_get('challenge_webkit_gradient', '-webkit-linear-gradient(135deg,rgba(83, 39, 98, .9) 0%, rgba(77, 49, 155, .9) 100%)'),
+      '#description' => t('A Hidden input to add css cross-browser compatibility'),
+      '#size' => 12,
+    );
+
+    //Background Challenge Gradient (Hidden input)
+    $form['css_variables']['nav_mobile_background_color'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Background Nav Mobile'),
+      '#default_value' => variable_get('nav_mobile_background_color', 'rgba(59, 83, 164, .9)'),
+      '#description' => t('A Hidden input to add css cross-browser compatibility'),
+      '#size' => 12,
+    );
+
+    //////////Challenge Variables/////////
 
     // Challenge Primary Color
     $form['css_variables']['challenge_primary_color'] = array(
       '#type' => 'style_settings_colorpicker',
       '#title' => t('Challenge Primary Color'),
       // Besides hex color value also color names are accepted.
-      '#default_value' => variable_get('challenge_primary_color', '#000'),
+      '#default_value' => variable_get('challenge_primary_color', '#4a3858'),
     );
+
+    // // Challenge Secondary Color
+    // $form['css_variables']['challenge_secondary_color'] = array(
+    //   '#type' => 'style_settings_colorpicker',
+    //   '#title' => t('Challenge Secondary Color'),
+    //   // Besides hex color value also color names are accepted.
+    //   '#default_value' => variable_get('challenge_secondary_color', '#fff'),
+    // );
 
     // Challenge Gradient
     $form['css_variables']['challenge_gradient'] = array(
@@ -71,19 +116,37 @@ function collabco_color_admin_settings() {
       '#size' => 12,
     );
 
+    /////////Collaboration  Variables////////
+
+    // Collaboration Primary Color
+    $form['css_variables']['collaboration_primary_color'] = array(
+      '#type' => 'style_settings_colorpicker',
+      '#title' => t('Collaboration Primary Color'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('collaboration_primary_color', '#882263'),
+    );
+
+    // Collaboration Secondary Color
+    $form['css_variables']['collaboration_secondary_color'] = array(
+      '#type' => 'style_settings_colorpicker',
+      '#title' => t('Collaboration Secondary Color'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('collaboration_secondary_color', '#00746A'),
+    );
+
     // Collaboration Gradient
     $form['css_variables']['collaboration_gradient'] = array(
       '#type' => 'collabco_color_gradientpicker',
       '#title' => t('Gradient collaboration'),
       // Besides hex color value also color names are accepted.
-      '#default_value' => variable_get('collaboration_gradient', 'linear-gradient(135deg, rgba(59, 83, 164, 1) 0%, rgba(29, 121, 171, 1) 100%)'),
+      '#default_value' => variable_get('collaboration_gradient', 'linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%)'),
     );
 
     //WebKit Collaboration Gradient (Hidden input)
     $form['css_variables']['collaboration_webkit_gradient'] = array(
       '#type' => 'textfield',
       '#title' => t('Webkit Gradient collaboration'),
-      '#default_value' => variable_get('collaboration_webkit_gradient', '-webkit-linear-gradient(135deg, rgba(59, 83, 164, 1) 0%, rgba(29, 121, 171, 1) 100%)'),
+      '#default_value' => variable_get('collaboration_webkit_gradient', '-webkit-linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%)'),
       '#description' => t('A Hidden input to add css cross-browser compatibility'),
       '#size' => 12,
     );
@@ -97,13 +160,88 @@ function collabco_color_admin_settings() {
       '#size' => 12,
     );
 
-    // // Collaboration
-    // $form['css_variables']['collaboration_gradient'] = array(
-    //   '#type' => 'collabco_color_gradientpicker',
-    //   '#title' => t('Gradient collaboration'),
-    //   // Besides hex color value also color names are accepted.
-    //   '#default_value' => variable_get('collaboration_gradient', 'linear-gradient(135deg, rgba(59, 83, 164, 1) 0%, rgba(29, 121, 171, 1) 100%)'),
-    // );
+
+    /////////Ideas Variables////////
+    
+    // ideas Primary Color
+    $form['css_variables']['ideas_primary_color'] = array(
+      '#type' => 'style_settings_colorpicker',
+      '#title' => t('Ideas Primary Color'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('ideas_primary_color', '#3B53A4'),
+    );
+
+    // Ideas Gradient
+    $form['css_variables']['ideas_gradient'] = array(
+      '#type' => 'collabco_color_gradientpicker',
+      '#title' => t('Gradient Ideas'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('ideas_gradient', 'linear-gradient(135deg, rgba(59, 83, 164, .9) 0%, rgba(29, 121, 171, .9) 100%)'),
+    );
+
+    //WebKit ideas Gradient (Hidden input)
+    $form['css_variables']['ideas_webkit_gradient'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Webkit Gradient Ideas'),
+      '#default_value' => variable_get('ideas_webkit_gradient', '-webkit-llinear-gradient(135deg, rgba(59, 83, 164, .9) 0%, rgba(29, 121, 171, .9) 100%)'),
+      '#description' => t('A Hidden input to add css cross-browser compatibility'),
+      '#size' => 12,
+    );
+
+    //Background ideas Gradient (Hidden input)
+    $form['css_variables']['ideas_background_color'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Background Ideas'),
+      '#default_value' => variable_get('ideas_background_color', 'rgba(59, 83, 164, .9)'),
+      '#description' => t('A Hidden input to add css cross-browser compatibility'),
+      '#size' => 12,
+    );
+
+    /////////My Hub Variables////////
+
+    // My Hub Primary Color
+    $form['css_variables']['my_hub_primary_color'] = array(
+      '#type' => 'style_settings_colorpicker',
+      '#title' => t('My Hub Primary Color'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('my_hub_primary_color', '#e2771b'),
+    );
+
+    // My Hub Secondary Color
+    $form['css_variables']['my_hub_secondary_color'] = array(
+      '#type' => 'style_settings_colorpicker',
+      '#title' => t('My Hub Secondary Color'),
+      // Besides hex color value also color names are accepted.
+      '#default_value' => variable_get('my_hub_secondary_color', '#00746A'),
+    );
+
+    // My Hub Gradient
+    $form['css_variables']['my_hub_gradient'] = array(
+      '#type' => 'collabco_color_gradientpicker',
+      '#title' => t('Gradient My Hub'),
+      // Besides hex color value also color names are accepted.
+
+      '#default_value' => variable_get('my_hub_gradient', 'linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(183, 134, 45, .9) 100%)'),
+    );
+
+    //WebKit My Hub Gradient (Hidden input)
+    $form['css_variables']['my_hub_webkit_gradient'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Webkit Gradient My Hub'),
+      '#default_value' => variable_get('my_hub_webkit_gradient', '-webkit-linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(183, 134, 45, .9) 100%)'),
+      '#description' => t('A Hidden input to add css cross-browser compatibility'),
+      '#size' => 12,
+    );
+
+    //Background My Hub Gradient (Hidden input)
+    $form['css_variables']['my_hub_background_color'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Background My Hub'),
+      '#default_value' => variable_get('my_hub_background_color', 'rgba(206, 45, 37, .9)'),
+      '#description' => t('A Hidden input to add css cross-browser compatibility'),
+      '#size' => 12,
+    );
+
 
   }
 

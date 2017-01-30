@@ -10,18 +10,26 @@
 
       var gradientInput = $('.form-type-collabco-color-gradient-picker input');
       // gradientInput.attr('readonly', true);
-
+      var navMobile = 'nav-mobile';
       var pageChallenge = 'challenge';
       var pageCollaboration = 'collaboration';
+      var pageIdeas = 'ideas';
+      var myHub = 'my-hub';
 
+      gradientPicker(navMobile);
       gradientPicker(pageChallenge);
       gradientPicker(pageCollaboration);
+      gradientPicker(pageIdeas);
+      gradientPicker(myHub);
+
+      //Hide input used only for cross-browser compatiblity
+      $("[class*=-webkit-gradient]").css('display', 'none');
+      $("[class*=background-color]").css('display', 'none');
 
     }
-
   }
 
-    function gradientPicker(pageType) {
+   function gradientPicker(pageType) {
 
         // Init Gradient Picker
         var formItemGradient = $(".form-item-" + pageType + "-gradient");
@@ -31,13 +39,12 @@
         var formItemGradientBackground = $("#edit-" + pageType + "-background-color");
         
         try {
+          //Parse gradient from 
           var gradientParsed = GradientParser.parse(formItemGradientInputValue);
         } catch (e) {
           console.error(e);
         }
 
-
-        
         var linearGradientParsed  = getParsedLinearGradient(JSON.stringify(gradientParsed, null, 4));
 
         formItemGradient.siblings('.grad_ex').gradientPicker({

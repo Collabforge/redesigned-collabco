@@ -60,8 +60,8 @@ gulp.task('reload', ['clearcache'], function () {
 gulp.task('browser-sync', function() {
       browserSync.init({
       	open: 'external',
-      	host: 'govims.dev',
-      	proxy: 'govims.dev',
+      	host: 'collabco.dev',
+      	proxy: 'collabco.dev',
       	port: 8080 // for work mamp
       });
 });

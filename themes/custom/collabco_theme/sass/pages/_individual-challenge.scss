@@ -34,6 +34,9 @@ header.challenge-status {
 
   .full-width-top{
     @include bg-gradient-challenge('/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-bottom-right-cut.png', .9);
+    background: rgba(83, 39, 98, 1); /*variable:challenge_background_color*/
+    background-image: linear-gradient(135deg, rgba(83, 39, 98, 1) 0%, rgba(77, 49, 155, 1) 100%); /*variable:challenge_gradient*/
+    background-image: -webkit-linear-gradient(135deg, rgba(83, 39, 98, 1) 0%, rgba(77, 49, 155, 1) 100%); /*variable:challenge_webkit_gradient*/
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
@@ -116,7 +119,7 @@ header.challenge-status {
     margin-bottom: 10px;
 
     p { 
-      color: $challenge-primary-color; 
+      color: $challenge-primary-color; /*variable:challenge_primary_color*/
       margin-bottom: 10px;
     }
   }
@@ -130,7 +133,7 @@ header.challenge-status {
 
 /*** Sidebar ***/
 
-.sidebar-2 h2 {  color: $challenge-primary-color; }
+.sidebar-2 h2 {  color: $challenge-primary-color; /*variable:challenge_primary_color*/ }
 
 }
 
@@ -140,7 +143,7 @@ header.challenge-status {
     @include bg-white-gray();
     
     h2.block-title {
-      color: $challenge-primary-color;
+      color: $challenge-primary-color; /*variable:challenge_primary_color*/
       font-size: 18px;
       text-transform: uppercase;
       border-bottom: $border-dark;
@@ -195,7 +198,7 @@ header.challenge-status {
   }  
 
   label { 
-    color: $challenge-primary-color;
+    color: $challenge-primary-color; /*variable:challenge_primary_color*/
     font-weight: normal;
   }
 

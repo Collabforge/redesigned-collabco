@@ -21,14 +21,45 @@
  */
 function collabco_color_uninstall() {
   // Delete all variables set in variable table.
+
+  //General Variables
+
+
+  //Navigation Variables
   variable_del('nav_primary_color');
+  variable_del('nav_hover_color');
+  variable_del('nav_mobile_gradient');
+  variable_del('nav_mobile_webkit_gradient');
+  variable_del('nav_mobile_background_color');
+
+  //Challenge Variables
   variable_del('challenge_primary_color');
   variable_del('challenge_gradient');
   variable_del('challenge_webkit_gradient');
   variable_del('challenge_background_color');
+
+  //Collaboration Variables
+  variable_del('collaboration_primary_color');
+  variable_del('collaboration_secondary_color');
   variable_del('collaboration_gradient');
   variable_del('collaboration_webkit_gradient');
   variable_del('collaboration_background_color');
+
+  //Ideas Variables
+  variable_del('ideas_primary_color');
+  variable_del('ideas_gradient');
+  variable_del('ideas_webkit_gradient');
+  variable_del('ideas_background_color');
+
+
+  //My Hub Variables
+  variable_del('my_hub_primary_color');
+  variable_del('my_hub_secondary_color');
+  variable_del('my_hub_gradient');
+  variable_del('my_hub_webkit_gradient');
+  variable_del('my_hub_background_color');
+
+
 
 
   _drupal_flush_css_js();

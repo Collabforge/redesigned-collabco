@@ -12,7 +12,7 @@
       margin-bottom: 55px;
 
       p { 
-        font-size: pxtoem(36px); 
+        font-size: 36px; 
         line-height: 1; 
         margin: 10px 0; 
         word-break: break-word;
@@ -99,18 +99,17 @@
 
   //Open Challenges Card
 
-  .challenges.card article .img-icon { 
-    @include bg-gradient-challenge(); 
+  .challenges.card article .img-icon,
+  .content-lower { 
+    background: rgba(83, 39, 98, 1); /*variable:challenge_background_color*/
+    background-image: linear-gradient(135deg, rgba(83, 39, 98, 1) 0%, rgba(77, 49, 155, 1) 100%); /*variable:challenge_gradient*/
+    background-image: -webkit-linear-gradient(135deg, rgba(83, 39, 98, 1) 0%, rgba(77, 49, 155, 1) 100%); /*variable:challenge_webkit_gradient*/
     color: $white; 
   }
 
 
   // Content upper - open challenges
   .content-lower {
-    @include bg-gradient-challenge('/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-middle-left.png', .8);
-    background-position: top left,  0 0 , 0 0;
-    background-size: contain, auto, auto;
-    color: $white;
     padding: 50px 0;
     
     .view-header { 

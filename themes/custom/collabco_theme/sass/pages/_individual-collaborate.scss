@@ -10,6 +10,9 @@
 
   .full-width-top{
     @include bg-gradient-collaboration('../assets/img/background/triangle-top-right-cut.png', .9);
+    background: rgba(206, 45, 37, .9); /*variable:collaboration_background_color*/
+    background-image: linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%); /*variable:collaboration_gradient*/
+    background-image: -webkit-linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%); /*variable:collaboration_webkit_gradient*/
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
@@ -79,17 +82,17 @@
 
   /*** Comments ***/
 
-  h2.comment-form { color: $collab-primary-color; }
+  h2.comment-form { color: $collab-primary-color; /*variable:collaboration_primary_color*/  }
 
-  .comment-wrapper .title { color: $collab-primary-color; }
+  .comment-wrapper .title { color: $collab-primary-color; /*variable:collaboration_primary_color*/  }
 
-  .comment-body { color: $collab-primary-color; }
+  .comment-body { color: $collab-primary-color; /*variable:collaboration_primary_color*/  }
   
   /*** Sidebar ***/ 
 
   .sidebar-2 {
   
-    h2 { color: $collab-primary-color; }
+    h2 { color: $collab-primary-color; /*variable:collaboration_primary_color*/  }
   
     h2.related-ideas { margin-top: 25px; }
 
