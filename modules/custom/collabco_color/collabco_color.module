@@ -78,7 +78,7 @@ function collabco_color_element_info() {
     '#maxlength' => 500,
     '#description' => t('Also shorthand (like #fff) and !colornames are accepted.', array('!colornames' => $colornames)),
     '#prefix' => '<div class="form-item form-type-collabco-color-gradient-picker">',
-    '#suffix' => '<div class="grad_ex"></div><div class="prev"></div></div>',
+    '#suffix' => '<div class="grad_ex"></div></div>',
     '#default_value' => '',
     '#attributes' => array('class' => array('collabco-gradient-picker-input')),
     '#attached' => array(

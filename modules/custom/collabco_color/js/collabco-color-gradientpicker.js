@@ -23,8 +23,8 @@
       gradientPicker(myHub);
 
       //Hide input used only for cross-browser compatiblity
-      $("[class*=-webkit-gradient]").css('display', 'none');
-      $("[class*=background-color]").css('display', 'none');
+      // $("[class*=-webkit-gradient]").css('display', 'none');
+      // $("[class*=background-color]").css('display', 'none');
 
     }
   }
@@ -54,9 +54,9 @@
             formItemGradientBackground.val(getFirstColor(styles[0]));
             console.log('webkit ejemplo: ' + styles[1]);
 
-            for (var i = 0; i < styles.length; ++i) {
-              formItemGradient.siblings('.prev').css("background-image", styles[i]);
-            }
+           // for (var i = 0; i < styles.length; ++i) {
+              //formItemGradient.siblings('.prev').css("background-image", styles[0]);
+            //}
           },
           fillDirection: linearGradientParsed.fillDirection,
           controlPoints: linearGradientParsed.controlPoints
