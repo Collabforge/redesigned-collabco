@@ -9,7 +9,7 @@
     attach: function (context) {
 
       var gradientInput = $('.form-type-collabco-color-gradient-picker input');
-      // gradientInput.attr('readonly', true);
+      gradientInput.attr('readonly', true);
       var navMobile = 'nav-mobile';
       var pageChallenge = 'challenge';
       var pageCollaboration = 'collaboration';

@@ -11,7 +11,9 @@
 
   // Header
   .content-top {
-    @include bg-gradient-pink-orange('', '', .9);
+    background: rgba(206, 45, 37, .9); /*variable:my_hub_background_color*/
+    background-image: linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%); /*variable:my_hub_gradient*/
+    background-image: -webkit-linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%); /*variable:my_hub_webkit_gradient*/
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto ,auto;
     padding: 60px 0; 
