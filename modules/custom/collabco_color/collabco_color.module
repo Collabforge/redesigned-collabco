@@ -8,12 +8,13 @@
 /**
  * Implements hook_page_build().
  */
-// function collabco_color_page_build(&$page) {
-//   drupal_add_css(drupal_get_path('module', 'collabco_color') . '/css/style.css', array(
-//     'group' => CSS_DEFAULT,
-//     'every_page' => TRUE,
-//   ));
-// }
+function collabco_color_page_build(&$page) {
+ 
+  drupal_add_css(drupal_get_path('module', 'collabco_color') . '/css/jquery.gradientPicker.css', array(
+    'group' => CSS_DEFAULT,
+    'every_page' => TRUE,
+  ));
+}
 
 
 
