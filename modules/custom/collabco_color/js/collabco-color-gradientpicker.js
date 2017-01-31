@@ -23,8 +23,8 @@
       gradientPicker(myHub);
 
       //Hide input used only for cross-browser compatiblity
-      // $("[class*=-webkit-gradient]").css('display', 'none');
-      // $("[class*=background-color]").css('display', 'none');
+      $("[class*=-webkit-gradient]").css('display', 'none');
+      $("[class*=background-color]").css('display', 'none');
 
     }
   }

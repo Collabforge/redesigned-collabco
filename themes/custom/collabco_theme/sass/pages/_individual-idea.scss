@@ -98,5 +98,12 @@
 }
 
 
+/* === LARGE CARDS === */
 
+.card.ideas .img-icon { 
+  background: rgba(59, 83, 164, .9); /*variable:ideas_background_color*/
+  background-image: linear-gradient(135deg, rgba(59, 83, 164, .9) 0%, rgba(29, 121, 171, .9) 100%); /*variable:ideas_gradient*/
+  background-image: -webkit-linear-gradient(135deg, rgba(59, 83, 164, .9) 0%, rgba(29, 121, 171, .9) 100%); /*variable:ideas_webkit_gradient*/
+  color: $white;
+}
 
