@@ -17,7 +17,7 @@ function collabco_color_admin_settings() {
     '#title' => t('CSS variables'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
-    '#description' => t("<h2>Welcome to<strong>Collabco Style Settings.</strong></h2>"),
+    '#description' => t("<h2><u>Welcome to <strong>Collabco Style Settings.</strong></u></h2>"),
   );
   // The condition below only exists for when code is copy/pasted to elsewhere.
   if (module_exists('style_settings')) {
@@ -27,7 +27,7 @@ function collabco_color_admin_settings() {
     //Nav Primary Color
     $form['css_variables']['nav_primary_color'] = array(
       '#type' => 'style_settings_colorpicker',
-      '#title' => t('Navigation Primary Color'),
+      '#title' => t('Navigation - Primary Color'),
       // Besides hex color value also color names are accepted.
       '#default_value' => variable_get('nav_primary_color', '#532762'),
     );
@@ -35,7 +35,7 @@ function collabco_color_admin_settings() {
     //Nav Hover Color
     $form['css_variables']['nav_hover_color'] = array(
       '#type' => 'style_settings_colorpicker',
-      '#title' => t('Navigation Hover Color'),
+      '#title' => t('Navigation - Hover Color'),
       // Besides hex color value also color names are accepted.
       '#default_value' => variable_get('nav_hover_color', '#f3f3f3'),
     );
@@ -43,7 +43,7 @@ function collabco_color_admin_settings() {
     // Nav Mobile Gradient
     $form['css_variables']['nav_mobile_gradient'] = array(
       '#type' => 'collabco_color_gradientpicker',
-      '#title' => t('Navigation Mobile Gradient'),
+      '#title' => t('Navigation - Mobile Gradient'),
       '#default_value' => variable_get('nav_mobile_gradient', 'linear-gradient(135deg,rgba(83, 39, 98, .9) 0%, rgba(77, 49, 155, .9) 100%)'),
     );
 
@@ -70,7 +70,7 @@ function collabco_color_admin_settings() {
     // Challenge Primary Color
     $form['css_variables']['challenge_primary_color'] = array(
       '#type' => 'style_settings_colorpicker',
-      '#title' => t('Challenge Primary Color'),
+      '#title' => t('Challenge - Primary Color'),
       // Besides hex color value also color names are accepted.
       '#default_value' => variable_get('challenge_primary_color', '#4a3858'),
     );
@@ -78,7 +78,7 @@ function collabco_color_admin_settings() {
     // Challenge Gradient
     $form['css_variables']['challenge_gradient'] = array(
       '#type' => 'collabco_color_gradientpicker',
-      '#title' => t('Challenge Gradient'),
+      '#title' => t('Challenge - Gradient'),
       '#default_value' => variable_get('challenge_gradient', 'linear-gradient(135deg,rgba(83, 39, 98, .9) 0%, rgba(77, 49, 155, .9) 100%)'),
     );
 
@@ -105,7 +105,7 @@ function collabco_color_admin_settings() {
     // Collaboration Primary Color
     $form['css_variables']['collaboration_primary_color'] = array(
       '#type' => 'style_settings_colorpicker',
-      '#title' => t('Collaboration Primary Color'),
+      '#title' => t('Collaboration - Primary Color'),
       // Besides hex color value also color names are accepted.
       '#default_value' => variable_get('collaboration_primary_color', '#882263'),
     );
@@ -113,7 +113,7 @@ function collabco_color_admin_settings() {
     // Collaboration Secondary Color
     $form['css_variables']['collaboration_secondary_color'] = array(
       '#type' => 'style_settings_colorpicker',
-      '#title' => t('Collaboration Secondary Color'),
+      '#title' => t('Collaboration - Secondary Color'),
       // Besides hex color value also color names are accepted.
       '#default_value' => variable_get('collaboration_secondary_color', '#00746A'),
     );
@@ -121,7 +121,7 @@ function collabco_color_admin_settings() {
     // Collaboration Gradient
     $form['css_variables']['collaboration_gradient'] = array(
       '#type' => 'collabco_color_gradientpicker',
-      '#title' => t('Collaboration Gradient'),
+      '#title' => t('Collaboration - Gradient'),
       '#default_value' => variable_get('collaboration_gradient', 'linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(178, 31, 79, .9) 100%)'),
     );
 
@@ -149,7 +149,7 @@ function collabco_color_admin_settings() {
     // ideas Primary Color
     $form['css_variables']['ideas_primary_color'] = array(
       '#type' => 'style_settings_colorpicker',
-      '#title' => t('Idea Primary Color'),
+      '#title' => t('Idea - Primary Color'),
       // Besides hex color value also color names are accepted.
       '#default_value' => variable_get('ideas_primary_color', '#3B53A4'),
     );
@@ -157,7 +157,7 @@ function collabco_color_admin_settings() {
     // Ideas Gradient
     $form['css_variables']['ideas_gradient'] = array(
       '#type' => 'collabco_color_gradientpicker',
-      '#title' => t('Idea Gradient'),
+      '#title' => t('Idea - Gradient'),
       '#default_value' => variable_get('ideas_gradient', 'linear-gradient(135deg, rgba(59, 83, 164, .9) 0%, rgba(29, 121, 171, .9) 100%)'),
     );
 
@@ -184,7 +184,7 @@ function collabco_color_admin_settings() {
     // My Hub Primary Color
     $form['css_variables']['my_hub_primary_color'] = array(
       '#type' => 'style_settings_colorpicker',
-      '#title' => t('My Hub Primary Color'),
+      '#title' => t('My Hub - Primary Color'),
       // Besides hex color value also color names are accepted.
       '#default_value' => variable_get('my_hub_primary_color', '#e2771b'),
     );
@@ -192,7 +192,7 @@ function collabco_color_admin_settings() {
     // My Hub Secondary Color
     $form['css_variables']['my_hub_secondary_color'] = array(
       '#type' => 'style_settings_colorpicker',
-      '#title' => t('My Hub Secondary Color'),
+      '#title' => t('My Hub - Secondary Color'),
       // Besides hex color value also color names are accepted.
       '#default_value' => variable_get('my_hub_secondary_color', '#00746A'),
     );
@@ -200,7 +200,7 @@ function collabco_color_admin_settings() {
     // My Hub Gradient
     $form['css_variables']['my_hub_gradient'] = array(
       '#type' => 'collabco_color_gradientpicker',
-      '#title' => t('My Hub Gradient'),
+      '#title' => t('My Hub - Gradient'),
       '#default_value' => variable_get('my_hub_gradient', 'linear-gradient(135deg, rgba(206, 45, 37, .9) 0%, rgba(183, 134, 45, .9) 100%)'),
     );
 
