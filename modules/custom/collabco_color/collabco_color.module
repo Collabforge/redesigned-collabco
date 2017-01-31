@@ -59,10 +59,10 @@ function collabco_color_menu() {
  * Implements hook_element_info().
  */
 function collabco_color_element_info() {
-  $colornames = l(t('valid color names'), 'https://en.wikipedia.org/wiki/Web_colors#X11_color_names', array(
+  //Dummy link to add description
+  $gradientpicker_desc = l(t(''), '', array(
     'attributes' => array(
-      'title' => t('Web colors - Wikipedia, the free encyclopedia'),
-      'target' => '_blank',
+      'title' => t('')
     ),
   ));
 
@@ -76,7 +76,7 @@ function collabco_color_element_info() {
     '#element_validate' => array('collabco_color_gradient_validate'),
     '#size' => 500,
     '#maxlength' => 500,
-    '#description' => t('Also shorthand (like #fff) and !colornames are accepted.', array('!colornames' => $colornames)),
+    '#description' => t('Click on square to change/remove colors. Click on colorbar to add more colors. Minimum 2 colors. !gradientpicker_desc ', array('!gradientpicker_desc' => $gradientpicker_desc)),
     '#prefix' => '<div class="form-item form-type-collabco-color-gradient-picker">',
     '#suffix' => '<div class="grad_ex"></div></div>',
     '#default_value' => '',

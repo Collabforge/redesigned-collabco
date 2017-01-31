@@ -10037,7 +10037,7 @@ nav.slider-mobile {
     position: relative;
     text-align: center;
     background-position: top right, 0 0 , 0 40%;
-    background-size: contain, auto, cover;
+    background-size: auto, cover;
     padding: 50px;
     position: relative;
     overflow: hidden; }
@@ -10207,7 +10207,7 @@ nav.slider-mobile {
     position: relative;
     text-align: center;
     background-position: top right, 0 0 , 0 40%;
-    background-size: contain, auto, cover;
+    background-size: auto, cover;
     padding: 50px;
     position: relative;
     overflow: hidden; }
@@ -10333,7 +10333,7 @@ nav.slider-mobile {
     position: relative;
     text-align: center;
     background-position: top right, 0 0 , 0 40%;
-    background-size: contain, auto, cover;
+    background-size: auto, cover;
     padding: 50px;
     position: relative;
     overflow: hidden; }
