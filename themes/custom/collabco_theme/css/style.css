@@ -9972,6 +9972,15 @@ nav.slider-mobile {
 .page-node-edit.node-type-hub .tabs-left .nav li .tooltip {
   width: 200px; }
 
+/* === LARGE CARDS === */
+.card.ideas.large .img-icon {
+  background-image: url(""), -webkit-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
+  background-image: url(""), linear-gradient(135deg, #3b53a4 0%, #1d79ab 100%);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, 0 0;
+  background-size: auto, auto, auto;
+  color: #fff; }
+
 /* === INDVIDUAL COLLABORATION PAGES === */
 .node-type-hub,
 .page-node-discussions,

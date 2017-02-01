@@ -91,6 +91,11 @@
   }  
 }
 
+/* === LARGE CARDS === */
 
+.card.ideas.large .img-icon { 
+  @include bg-gradient-ideas(); 
+  color: $white;
+}
 
 
