@@ -104,7 +104,7 @@ if (!empty($nid)) {
 					echo "<p class='resume'>A new ".csl('idea')." has been added to the ".csl('challenge',1,1)." ". $term_link ."</p>";
 
 				if ( !empty($img_url) )	{
-					echo "<div class='picture'>";
+					echo "<div class='feat-img'>";
 						echo "<a href='".$node_alias . "'> <img class='img-responsive' src='" . image_style_url('medium', $img_url) . "' /></a>";
 						echo "<i class='idea icon-diamond'></i>";
 					echo "</div>";
