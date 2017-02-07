@@ -244,7 +244,6 @@
 		this.colorChanged = bind(this.colorChanged, this);
 		this.removeClicked = bind(this.removeClicked, this);
 
-		// console.log('colorChanged: ', this.colorChanged);
 		$cpicker.ColorPicker({
 			onChange: this.colorChanged
 		});
@@ -282,11 +281,7 @@
 		},
 
 		colorChanged: function(hsb, hex, rgb) {
-			console.log('color rgb ' + rgb);
-			console.log(JSON.stringify(rgb));
 			rgb = 'rgb(' + rgb.r  + ',' + rgb.g + ',' + rgb.b +')';
-			console.log('rgb parsed: ' + rgb);
-			console.log('color hex: ' + hex);
 			hex = "#" + hex;
 			this.listener.colorChanged(rgb);
 			this.$cpicker.css("background-color", rgb);
