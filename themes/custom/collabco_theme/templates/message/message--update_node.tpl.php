@@ -89,7 +89,7 @@ if (!empty($header_text)) {
 
 
         if ( !empty($img_url) ) {
-          echo "<div class='picture'>";
+          echo "<div class='feat-img'>";
             echo "<a href='".$node_alias . "'> <img class='img-responsive' src='" . image_style_url('medium', $img_url) . "' /></a>";
             echo "<i class='" . $icon_class . "'></i>";
           echo "</div>";
