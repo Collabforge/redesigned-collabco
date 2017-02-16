@@ -6,6 +6,8 @@
       @media only screen and (min-width : $screen-sm) { float: left; }
     }
 
+    .main-container { background-image: none; }
+
     input { max-width: 400px; }
   }
 
@@ -22,9 +24,7 @@
     }
   } // </content-top>
 
-  .main-container {  @include bg-gradient-white-gray(); };
-
-
+  .main-container { @include bg-white-gray(); }
 
   //User profile picture
   .profile-picture {

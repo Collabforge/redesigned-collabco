@@ -1,16 +1,25 @@
 html {
   font-size: $font-size-base;
+  height: 100%;
 }
 
 
 body {
-  font-size: pxtoem($font-size-base);
+  font-size: $font-size-base;
   color: $gray;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  line-height: pxtoem(20px);
+  line-height: 20px;
   text-rendering: optimizeLegibility;
+  height: 100%;
 }
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 90px;
+}
+
 
 a {
   text-decoration: underline;

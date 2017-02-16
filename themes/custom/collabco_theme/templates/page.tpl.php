@@ -289,3 +289,5 @@
 </footer>    
 <?php endif; ?>
 <?php drupal_add_js($base_url.'/profiles/collabco/themes/custom/collabco_theme/js/script.js', array('type' => 'file', 'scope' => 'footer')); ?>
+</div> <!-- End of .wrapper div, the beggining of this div can be found on html.tpl.php -->
+
