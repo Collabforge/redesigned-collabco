@@ -57,6 +57,9 @@
     $(this).find('a , .value').css('color', 'inherit');
   });
 
+   //Challenge and Collaboration Popover
+  $('[data-toggle="popover"]').popover();
+
   //Move secondary tab page on search below advanced search.
   $('.page-search .nav-tabs').insertAfter('#search-form');
 
