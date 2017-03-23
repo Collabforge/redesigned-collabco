@@ -38,9 +38,8 @@
       width: 64px;
     }
   } 
-  
 
-  .main-container { @include bg-white-gray(); }
+.page-myhub .main-container { @include bg-white-gray(); }
 
 } 
 
