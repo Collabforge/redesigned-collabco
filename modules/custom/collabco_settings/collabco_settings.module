@@ -90,8 +90,8 @@ function collabco_settings_variable_group_info() {
  */
 function collabco_settings_variable_info($options) {
   $variable['collabco_inactivity_period_collab'] = array(
-    'title' => t('Select the period to check for inactivity within Collaboartion'),
-    'description' => t('Select the period to check for inactivity within Collaboartion for notifying community moderators'),
+    'title' => t('Select the period to check for inactivity within ') . csl('collaboration',1,1) ,
+    'description' => t('Select the period to check for inactivity within ') . csl('collaboration',1,1) .' for notifying community moderators',
     'type' => 'select_number',
     'default' => 30,
     'group' => 'collabco_collaboration_settings',
@@ -101,8 +101,8 @@ function collabco_settings_variable_info($options) {
     ,
   );
   $variable['collabco_inactivity_archived_period_collab'] = array(
-    'title' => t('Select the period to check for inactivity within Collaboration for archiving'),
-    'description' => t('Select the period to check for inactivity within Collaboration for archiving &  notification'),
+    'title' => t('Select the period to check for inactivity within ') . csl('collaboration',1,1) . ' for archiving',
+    'description' => t('Select the period to check for inactivity within '). csl('collaboration',1,1) .' for archiving &  notification',
     'type' => 'select_number',
     'default' => 90,
     'group' => 'collabco_collaboration_settings',
@@ -112,7 +112,7 @@ function collabco_settings_variable_info($options) {
     ,
   );
   $variable['collabco_ongoing_challenge'] = array(
-    'title' => t('Select the on-going or miscellaneous challenge'),
+    'title' => 'Select the on-going or miscellaneous ' . csl('challenge',0,1),
     'type' => 'select',
     'default' => 1,
     'group' => 'collabco_challenge_settings',
@@ -389,5 +389,4 @@ function collabco_settings_tokens($type, $tokens, array $data = array(), array $
 
   return $replacements;
 }
-
 
