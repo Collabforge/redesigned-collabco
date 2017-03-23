@@ -7958,7 +7958,7 @@ button .glyphicon {
     .breadcrumb-container a:hover {
       color: #532762; }
   .breadcrumb-container .breadcrumb {
-    background: #fff !important;
+    background: transparent !important;
     display: inline-block;
     font-size: 13px;
     margin-bottom: .8em;
