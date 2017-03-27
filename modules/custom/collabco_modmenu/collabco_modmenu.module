@@ -200,3 +200,19 @@ function collabco_modmenu_mod_settings() {
   // ... do something and add to $content;
   return $content;
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function collabco_modmenu_form_alter(&$form, $form_state, $form_id) {
+   switch ($form_id) {
+    case 'views_form_sending_mass_mail_page':
+      $form['recipient']['#default_value'] = '[user:mail]';
+      $form['recipient']['#access'] = FALSE;
+      $form['message']['#description'] ='The message that should be sent. You may include placeholders like [user:field_full_name], to represent data that will be different each time message is sent.';
+        
+      $form['#submit'][] = 'collabco_modmenu_redirect_handler';
+      break;
+  }
+}
+

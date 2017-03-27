@@ -12,6 +12,7 @@ global $base_url;
       'collaboration' => array('name'=>csl('collaboration',0,1), 'path'=> url('node/add/hub'),),
       'user' => array('name'=>'User', 'path'=> url('admin/people/create'),),
       'page' => array('name'=>'Page', 'path'=> url('node/add/basic-page'),),
+      'mail' => array('name'=>'Mail', 'path'=> url('/sending-mass-mail'),),
     ),),
     'edit' => array('name'=>'<i class="icon-setting-1">&nbsp;</i> Edit', 'path'=>'#', 'submenu'=>array(
       'content' => array('name'=>'Content', 'path'=>url('/admin/content'),),
@@ -24,6 +25,7 @@ global $base_url;
     'view' => array('name'=>'<i class="icon-eye">&nbsp;</i> View', 'path'=>'#', 'submenu'=>array(
       'member-report' => array('name'=>'Member Report', 'path'=>url('admin/reports/member-report'),),
       'challenge-report' => array('name'=>csl('challenge',0,1).' Report', 'path'=>url('admin/reports/challenge-report'),),
+      'ideas-report' => array('name'=>'Ideas Report', 'path'=>url('admin/reports/ideas-report'),),
     ),),
     'settings' => array('name'=>'<i class="icon-setting-2">&nbsp;</i> Settings', 'path'=>'#', 'submenu'=>array(
       'challenges' => array('name'=>csl('challenges',1,1), 'path'=>url('admin/config/collabco-settings/challenge'),),
