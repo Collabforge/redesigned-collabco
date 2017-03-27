@@ -2558,6 +2558,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['filters']['field_idea_state_value']['operator'] = 'not';
   $handler->display->display_options['filters']['field_idea_state_value']['value'] = array(
     'win' => 'win',
+    'shortlisted' => 'shortlisted',
   );
 
   /* Display: Page */
@@ -2658,6 +2659,50 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['filters']['field_idea_state_value']['value'] = array(
     'win' => 'win',
   );
+
+  /* Display: Shortlisted ideas of a challenge */
+  $handler = $view->new_display('block', 'Shortlisted ideas of a challenge', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Shortlisted ideas';
+  $handler->display->display_options['display_description'] = 'Winning ideas of a Challenge';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'challenge' => 'challenge',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'idea' => 'idea',
+  );
+  /* Filter criterion: Content: Idea State (field_idea_state) */
+  $handler->display->display_options['filters']['field_idea_state_value']['id'] = 'field_idea_state_value';
+  $handler->display->display_options['filters']['field_idea_state_value']['table'] = 'field_data_field_idea_state';
+  $handler->display->display_options['filters']['field_idea_state_value']['field'] = 'field_idea_state_value';
+  $handler->display->display_options['filters']['field_idea_state_value']['value'] = array(
+    'shortlisted' => 'shortlisted',
+  );
   $translatables['ideas_belonging_to_challenge'] = array(
     t('Master'),
     t('Recent ideas'),
@@ -2690,6 +2735,8 @@ function collabco_views_feature_views_default_views() {
     t('Winning ideas of a challenge'),
     t('Winning ideas'),
     t('Winning ideas of a Challenge'),
+    t('Shortlisted ideas of a challenge'),
+    t('Shortlisted ideas'),
   );
   $export['ideas_belonging_to_challenge'] = $view;
 

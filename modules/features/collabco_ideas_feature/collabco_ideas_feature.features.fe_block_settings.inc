@@ -427,6 +427,34 @@ function collabco_ideas_feature_default_fe_block_settings() {
     'title' => '',
     'visibility' => 1,
   );
+  $export['views-e1336984c67067bc0bcad5a256362ef7'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'e1336984c67067bc0bcad5a256362ef7',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'challenge/*',
+    'roles' => array(
+      'authenticated user' => 2,
+    ),
+    'themes' => array(
+      'collabco_theme' => array(
+        'region' => 'content_middle',
+        'status' => 1,
+        'theme' => 'collabco_theme',
+        'weight' => -50,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
 
   $export['views-archieved_ideas-block'] = array(
     'cache' => -1,

@@ -148,6 +148,7 @@ function _collabco_default_blocks() {
   collabco_core_update_block('views', 'latest_ideas-block', $themes, 'content_lower', 14);
   // Winning ideas belonging to a challenge.
   collabco_core_update_block('views', 'af1a856ad23ecaccfd1929ab5b2d5c15', $themes, 'content_middle', 0);
+  collabco_core_update_block('views', 'e1336984c67067bc0bcad5a256362ef7', $themes, 'content_middle',-10);
   // Ideas belonging to a challenge.
   collabco_core_update_block('views', '8057de6ae37fa6fb676e14c306088c3f', $themes, 'content_middle', 10);
   // Myhub page.

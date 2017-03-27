@@ -173,6 +173,7 @@ function collabco_ideas_feature_field_default_field_bases() {
         'archived' => 'Archived',
         'promoted' => 'Promoted',
         'win' => 'Win',
+        'shortlisted' => 'Shortlisted',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,

@@ -36,6 +36,7 @@ features[fe_block_settings][] = views-58d3927b971796abc69e11439f33772c
 features[fe_block_settings][] = views-677c72a6794e6179ffa2946914e89964
 features[fe_block_settings][] = views-8057de6ae37fa6fb676e14c306088c3f
 features[fe_block_settings][] = views-af1a856ad23ecaccfd1929ab5b2d5c15
+features[fe_block_settings][] = views-e1336984c67067bc0bcad5a256362ef7
 features[fe_block_settings][] = views-archieved_ideas-block
 features[fe_block_settings][] = views-collaborations_of_an_idea-block
 features[fe_block_settings][] = views-latest_ideas-block
