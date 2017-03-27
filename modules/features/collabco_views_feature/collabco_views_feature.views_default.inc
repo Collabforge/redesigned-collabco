@@ -500,7 +500,7 @@ function collabco_views_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Testkkk';
+  $handler->display->display_options['title'] = 'Challenges';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'View All';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -683,7 +683,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['path'] = 'challenge';
   $translatables['challenges'] = array(
     t('Master'),
-    t('Testkkk'),
+    t('Challenges'),
     t('View All'),
     t('Apply'),
     t('Reset'),
@@ -834,7 +834,7 @@ function collabco_views_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Testkkk';
+  $handler->display->display_options['title'] = 'Challenges';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'View All';
@@ -998,7 +998,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['path'] = 'closed-challenges';
   $translatables['closed_challenges'] = array(
     t('Master'),
-    t('Testkkk'),
+    t('Challenges'),
     t('View All'),
     t('Apply'),
     t('Reset'),
@@ -2110,7 +2110,7 @@ function collabco_views_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Testkkk';
+  $handler->display->display_options['title'] = 'Challenges';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access collabco dashboard';
@@ -2284,7 +2284,7 @@ function collabco_views_feature_views_default_views() {
   $handler->display->display_options['path'] = 'open-challenges';
   $translatables['featured_challenges_for_home'] = array(
     t('Master'),
-    t('Testkkk'),
+    t('Challenges'),
     t('more'),
     t('Apply'),
     t('Reset'),
