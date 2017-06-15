@@ -1128,6 +1128,7 @@ img {
   -webkit-border-radius: 0;
           border-radius: 0;
   -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -1415,7 +1416,8 @@ dd {
     clear: left;
     text-align: right;
     overflow: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     white-space: nowrap; }
   .dl-horizontal dd {
     margin-left: 180px; } }
@@ -2350,6 +2352,7 @@ output {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -3148,6 +3151,7 @@ input[type="button"].btn-block {
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear; }
   .fade.in {
     opacity: 1; }
@@ -3168,11 +3172,14 @@ tbody.collapse.in {
   height: 0;
   overflow: hidden;
   -webkit-transition-property: height, visibility;
+  -o-transition-property: height, visibility;
   transition-property: height, visibility;
   -webkit-transition-duration: 0.35s;
-  transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+     transition-duration: 0.35s;
   -webkit-transition-timing-function: ease;
-  transition-timing-function: ease; }
+  -o-transition-timing-function: ease;
+     transition-timing-function: ease; }
 
 .caret {
   display: inline-block;
@@ -3212,7 +3219,8 @@ tbody.collapse.in {
           border-radius: 0;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box; }
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box; }
   .dropdown-menu.pull-right {
     right: 0;
     left: auto; }
@@ -4440,6 +4448,7 @@ a.badge:hover, a.badge:focus {
   -webkit-border-radius: 0;
           border-radius: 0;
   -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out; }
   .thumbnail > img,
   .thumbnail a > img {
@@ -4554,13 +4563,16 @@ a.thumbnail.active {
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
   transition: width 0.6s ease; }
 
 .progress-striped .progress-bar,
 .progress-bar-striped {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-size: 40px 40px; }
+  -webkit-background-size: 40px 40px;
+          background-size: 40px 40px; }
 
 .progress.active .progress-bar,
 .progress-bar.active {
@@ -4571,24 +4583,28 @@ a.thumbnail.active {
   background-color: #00746a; }
   .progress-striped .progress-bar-success {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-info {
   background-color: #7bb8b2; }
   .progress-striped .progress-bar-info {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-warning {
   background-color: #E78540; }
   .progress-striped .progress-bar-warning {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-danger {
   background-color: #cf0058; }
   .progress-striped .progress-bar-danger {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .media {
@@ -5220,7 +5236,9 @@ button.close {
     -ms-transform: translate(0, -25%);
     transform: translate(0, -25%);
     -webkit-transition: -webkit-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
     transition: -webkit-transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
   .modal.in .modal-dialog {
@@ -5246,7 +5264,8 @@ button.close {
           border-radius: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
   outline: 0; }
 
 .modal-backdrop {
@@ -5457,7 +5476,8 @@ button.close {
   word-wrap: normal;
   font-size: 14px;
   background-color: #fff;
-  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 0;
@@ -5567,6 +5587,7 @@ button.close {
     display: none;
     position: relative;
     -webkit-transition: 0.6s ease-in-out left;
+    -o-transition: 0.6s ease-in-out left;
     transition: 0.6s ease-in-out left; }
     .carousel-inner > .item > img,
     .carousel-inner > .item > a > img {
@@ -5577,7 +5598,9 @@ button.close {
     @media all and (transform-3d), (-webkit-transform-3d) {
       .carousel-inner > .item {
         -webkit-transition: -webkit-transform 0.6s ease-in-out;
+        -o-transition: -o-transform 0.6s ease-in-out;
         transition: -webkit-transform 0.6s ease-in-out;
+        -o-transition: transform 0.6s ease-in-out;
         transition: transform 0.6s ease-in-out;
         transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
         -webkit-backface-visibility: hidden;
@@ -5634,6 +5657,7 @@ button.close {
   background-color: transparent; }
   .carousel-control.left {
     background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-repeat: repeat-x;
@@ -5642,6 +5666,7 @@ button.close {
     left: auto;
     right: 0;
     background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
     background-repeat: repeat-x;
@@ -7164,11 +7189,13 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 
 .icon-svg, .icon-svg-heart, .icon-svg-heart-white:before, .icon-svg-eye:before, .icon-svg-eye-white:before, .icon-svg-dialogue-white:before, .icon-svg-star, .icon-svg-share, .icon-svg-mail {
   display: inline-block;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   background-repeat: no-repeat;
   width: 20px;
   height: 20px;
   -webkit-transition: all ease .3s;
+  -o-transition: all ease .3s;
   transition: all ease .3s; }
 
 .icon-svg-heart {
@@ -7291,6 +7318,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-transform: uppercase;
   text-decoration: none;
   -webkit-transition: background-color .3s ease-in, color .4s ease-in;
+  -o-transition: background-color .3s ease-in, color .4s ease-in;
   transition: background-color .3s ease-in, color .4s ease-in; }
   .btn.active {
     background-color: #00746a;
@@ -7336,6 +7364,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   background-color: #fff;
   text-transform: uppercase;
   -webkit-transition: .5s all ease;
+  -o-transition: .5s all ease;
   transition: .5s all ease; }
   .more-link a:focus, .more-link a.focus, .more-link a:active:focus, .more-link a:active.focus, .more-link a.active:focus, .more-link a.active.focus {
     outline: 5px auto -webkit-focus-ring-color;
@@ -7365,6 +7394,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   border-width: 1px;
   color: #333333;
   -webkit-transition: border-color ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s;
   transition: border-color ease-in-out .15s; }
   .form-control::-webkit-input-placeholder {
     color: #333333;
@@ -7402,6 +7432,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 input[type="text"].form-control,
 input[type="password"].form-control {
   -webkit-transition: border-color ease .3s, border-width .1s ease;
+  -o-transition: border-color ease .3s, border-width .1s ease;
   transition: border-color ease .3s, border-width .1s ease; }
   @media only screen and (max-width: 768px) {
     input[type="text"].form-control,
@@ -7546,10 +7577,12 @@ button .glyphicon {
   .page-media-browser .pagination > .active > span,
   .page-media-browser .pagination > .active > span:hover {
     background-image: url(""), -webkit-linear-gradient(315deg, #359189 0%, #1e3d6b 100%), url("");
+    background-image: url(""), -o-linear-gradient(315deg, #359189 0%, #1e3d6b 100%), url("");
     background-image: url(""), linear-gradient(135deg, #359189 0%, #1e3d6b 100%), url("");
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto; }
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto; }
   .page-media-browser .page-search .pagination > li.active > span {
     color: #fff; }
   .page-media-browser .pagination > li > a,
@@ -7676,7 +7709,8 @@ button .glyphicon {
   /*** Hide footer text and throbber ***/ }
   .card.small .feat-img {
     background-repeat: no-repeat;
-    background-size: cover;
+    -webkit-background-size: cover;
+            background-size: cover;
     height: 97px; }
   .card.small .img-icon {
     color: #fff;
@@ -7799,27 +7833,34 @@ button .glyphicon {
     padding: 28px 0; }
   .full-width-card.challenge .feat-img i {
     background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #532762 0%, #4d319b 100%);
     background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto; }
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto; }
   .full-width-card.idea .feat-img i {
     background-image: url(""), -webkit-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
     background-image: url(""), linear-gradient(135deg, #3b53a4 0%, #1d79ab 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto; }
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto; }
   .full-width-card.collaboration .feat-img i {
     background-image: url(""), -webkit-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
     background-image: url(""), linear-gradient(135deg, #ce2d25 0%, #b21f4f 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto; }
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto; }
 
 /*** Card without image ***/
 .no-idea-image {
   background-image: url("../assets/img/placeholder/placeholder-card-large.jpg");
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 150px;
@@ -7901,16 +7942,20 @@ button .glyphicon {
       padding: 6px 8px 2px; }
       .card-updates .feat-img i.idea {
         background-image: url(""), -webkit-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
+        background-image: url(""), -o-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
         background-image: url(""), linear-gradient(135deg, #3b53a4 0%, #1d79ab 100%);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: 0 0, 0 0, 0 0;
-        background-size: auto, auto, auto; }
+        -webkit-background-size: auto, auto, auto;
+                background-size: auto, auto, auto; }
       .card-updates .feat-img i.project, .card-updates .feat-img i.collaboration {
         background-image: url(""), -webkit-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
+        background-image: url(""), -o-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
         background-image: url(""), linear-gradient(135deg, #ce2d25 0%, #b21f4f 100%);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: 0 0, 0 0, 0 0;
-        background-size: auto, auto, auto; }
+        -webkit-background-size: auto, auto, auto;
+                background-size: auto, auto, auto; }
   .card-updates .info {
     width: auto;
     /*** Update without image ***/ }
@@ -7968,10 +8013,9 @@ button .glyphicon {
 
 .views_slideshow_slide,
 .views_slideshow_cycle_main .views_slideshow_slide,
-#views_slideshow_cycle_teaser_section_latest_ideas-block {
-  min-width: 100% !important; }
-
-#views_slideshow_cycle_teaser_section_your_contrib-your_contrib {
+#views_slideshow_cycle_teaser_section_latest_ideas-block,
+#views_slideshow_cycle_teaser_section_your_contrib-your_contrib,
+.views-slideshow-cycle-main-frame {
   min-width: 100% !important; }
 
 .vscc-controls .vscc_controls_previous a,
@@ -7982,7 +8026,8 @@ button .glyphicon {
   display: inline-block;
   height: 24px;
   width: 14px;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   background-repeat: no-repeat; }
 
 .vscc-controls .vscc_controls_previous img,
@@ -8157,7 +8202,8 @@ header#navigation {
   background-image: url(""), url("");
   background-position: -120px 0, top right;
   background-repeat: no-repeat no-repeat;
-  background-size: auto, contain; }
+  -webkit-background-size: auto, contain;
+          background-size: auto, contain; }
   header#navigation .row {
     height: 110px; }
   @media only screen and (max-width: 992px) {
@@ -8259,7 +8305,8 @@ header#navigation {
     border-bottom: 1px solid #532762;
     background-position: 44px 18px;
     background-repeat: no-repeat;
-    background-size: 18px 18px;
+    -webkit-background-size: 18px 18px;
+            background-size: 18px 18px;
     color: #532762;
     height: 50%; }
     @media only screen and (min-width: 992px) {
@@ -8311,6 +8358,7 @@ header#navigation {
   margin-left: -525px;
   background: -webkit-radial-gradient(center -9px, circle closest-side, white 0, red 26px);
   background: radial-gradient(center -9px, circle closest-side, white 0, red 26px);
+  background: -o-radial-gradient(center -9px, circle closest-side, white 0, red 26px);
   background: -webkit-radial-gradient(center -9px, circle, white 0, red 26px);
   background-color: #cf0058;
   border: 1px solid #fff;
@@ -8389,10 +8437,12 @@ nav.slider-mobile {
   /** Nav Footer **/ }
   nav.slider-mobile .user-info {
     background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #532762 0%, #4d319b 100%);
     background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     color: #fff;
     padding: 10px; }
     nav.slider-mobile .user-info a {
@@ -8466,10 +8516,12 @@ nav.slider-mobile {
 /** Background Overlay activate when nav mobile is active **/
 .overlay {
   background-image: url(""), -webkit-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
+  background-image: url(""), -o-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
   background-image: url(""), linear-gradient(135deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   display: none;
   position: fixed;
   top: 0;
@@ -8844,6 +8896,7 @@ nav.slider-mobile {
       text-decoration: none;
       text-transform: uppercase;
       -webkit-transition: all ease .3s;
+      -o-transition: all ease .3s;
       transition: all ease .3s;
       padding: 41px 0 12px; }
       @media only screen and (min-width: 768px) {
@@ -9030,20 +9083,25 @@ nav.slider-mobile {
 
 .front .challenges.card article .img-icon {
   background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+  background-image: url(""), -o-linear-gradient(315deg, #532762 0%, #4d319b 100%);
   background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   color: #fff; }
 
 .front .content-lower {
   background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-middle-left.png"), -webkit-linear-gradient(315deg, rgba(83, 39, 98, 0.8) 0%, rgba(77, 49, 155, 0.8) 100%);
+  background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-middle-left.png"), -o-linear-gradient(315deg, rgba(83, 39, 98, 0.8) 0%, rgba(77, 49, 155, 0.8) 100%);
   background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-middle-left.png"), linear-gradient(135deg, rgba(83, 39, 98, 0.8) 0%, rgba(77, 49, 155, 0.8) 100%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   background-position: top left,  0 0 , 0 0;
-  background-size: contain, auto, auto;
+  -webkit-background-size: contain, auto, auto;
+          background-size: contain, auto, auto;
   color: #fff;
   padding: 50px 0; }
   .front .content-lower .view-header {
@@ -9064,12 +9122,15 @@ nav.slider-mobile {
 
 .page-user .content-top {
   background-image: url(""), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
+  background-image: url(""), -o-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
   background-image: url(""), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   background-position: top right, 0 0 , 0 0;
-  background-size: contain, auto ,auto;
+  -webkit-background-size: contain, auto ,auto;
+          background-size: contain, auto ,auto;
   padding: 60px 0; }
   .page-user .content-top .user-picture .img-responsive {
     height: 64px;
@@ -9078,6 +9139,7 @@ nav.slider-mobile {
 .page-user .main-container {
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8));
   background-image: -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
+  background-image: -o-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
   background-image: linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%); }
 
 .page-user .profile-picture {
@@ -9157,10 +9219,12 @@ nav.slider-mobile {
 
 .page-user .view-your-contrib .card .img-icon {
   background-image: url(""), -webkit-linear-gradient(315deg, #813d99 0%, #755281 100%), url("");
+  background-image: url(""), -o-linear-gradient(315deg, #813d99 0%, #755281 100%), url("");
   background-image: url(""), linear-gradient(135deg, #813d99 0%, #755281 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   color: #fff; }
 
 .page-user .user-badges {
@@ -9188,7 +9252,8 @@ nav.slider-mobile {
   height: 164px;
   width: 165px;
   color: #fff;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
   background-position: center center; }
@@ -9231,12 +9296,15 @@ nav.slider-mobile {
   .page-closed-challenges .content-top,
   .page-archived-ideas .content-top {
     background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), -webkit-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
+    background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), -o-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
     background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), linear-gradient(135deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     background-position: top right, 0 0 , 0 0;
-    background-size: contain, auto , cover;
+    -webkit-background-size: contain, auto , cover;
+            background-size: contain, auto , cover;
     background-repeat: no-repeat, no-repeat, no repeat;
     padding: 25px; }
     .page-challenge .content-top p,
@@ -9272,35 +9340,42 @@ nav.slider-mobile {
   .page-closed-challenges .card .taxonomy-tags,
   .page-archived-ideas .card .taxonomy-tags {
     background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #532762 0%, #4d319b 100%);
     background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto; }
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto; }
   .page-challenge .card article .img-icon,
   .page-open-challenges .card article .img-icon,
   .page-closed-challenges .card article .img-icon,
   .page-archived-ideas .card article .img-icon {
     background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #532762 0%, #4d319b 100%);
     background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     color: #fff; }
   .page-challenge .view-latest-ideas .card article .img-icon,
   .page-open-challenges .view-latest-ideas .card article .img-icon,
   .page-closed-challenges .view-latest-ideas .card article .img-icon,
   .page-archived-ideas .view-latest-ideas .card article .img-icon {
     background-image: url(""), -webkit-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
     background-image: url(""), linear-gradient(135deg, #3b53a4 0%, #1d79ab 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto; }
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto; }
   .page-challenge .main-container,
   .page-open-challenges .main-container,
   .page-closed-challenges .main-container,
   .page-archived-ideas .main-container {
     background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8));
     background-image: -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
+    background-image: -o-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
     background-image: linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%); }
 
 /* === CHALLENGE MAIN PAGE === */
@@ -9321,23 +9396,29 @@ nav.slider-mobile {
     padding: 0; }
   .page-challenge .content-lower {
     background-image: url("../assets/img/background/triangle-middle-big-down.png"), -webkit-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
+    background-image: url("../assets/img/background/triangle-middle-big-down.png"), -o-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
     background-image: url("../assets/img/background/triangle-middle-big-down.png"), linear-gradient(135deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     background-position: top center, 0 0 , 0 0;
-    background-size: cover, auto , auto;
+    -webkit-background-size: cover, auto , auto;
+            background-size: cover, auto , auto;
     padding: 30px 0; }
     @media only screen and (min-width: 768px) {
       .page-challenge .content-lower {
-        background-size: contain, auto , auto; } }
+        -webkit-background-size: contain, auto , auto;
+                background-size: contain, auto , auto; } }
   .page-challenge .content-bottom {
     background-image: url(""), -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8)), url("");
     background-image: url(""), -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%), url("");
+    background-image: url(""), -o-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%), url("");
     background-image: url(""), linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%), url("");
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto; }
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto; }
     .page-challenge .content-bottom .view-header {
       color: #4a3858; }
   .page-challenge .view-challenges header {
@@ -9369,6 +9450,7 @@ nav.slider-mobile {
     background-color: transparent;
     text-transform: uppercase;
     -webkit-transition: all ease .3s;
+    -o-transition: all ease .3s;
     transition: all ease .3s;
     text-decoration: none;
     font-size: 12px;
@@ -9438,10 +9520,12 @@ nav.slider-mobile {
 .page-ideas-archived .card article .img-icon,
 .page-closed-challenges .card article .img-icon {
   background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+  background-image: url(""), -o-linear-gradient(315deg, #532762 0%, #4d319b 100%);
   background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   color: #fff; }
 
 .page-ideas-archived .view-header,
@@ -9451,10 +9535,12 @@ nav.slider-mobile {
 /* === LARGE CARDS === */
 .card .challenges .img-icon {
   background-image: url(""), -webkit-linear-gradient(315deg, #532762 0%, #4d319b 100%);
+  background-image: url(""), -o-linear-gradient(315deg, #532762 0%, #4d319b 100%);
   background-image: url(""), linear-gradient(135deg, #532762 0%, #4d319b 100%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   color: #fff; }
 
 /* === COLLABORATION INDEX PAGES === */
@@ -9471,12 +9557,15 @@ nav.slider-mobile {
   .page-parked-collaborations .content-top,
   .page-collaborations-turned-projects .content-top {
     background-image: url("../assets/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
+    background-image: url("../assets/img/background/triangle-top-right-cut.png"), -o-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
     background-image: url("../assets/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     background-position: top right, 0 0 , 0 0;
-    background-size: contain, auto , cover;
+    -webkit-background-size: contain, auto , cover;
+            background-size: contain, auto , cover;
     padding: 25px; }
     .page-collaborate .content-top h2,
     .page-featured-collaborations .content-top h2,
@@ -9515,19 +9604,23 @@ nav.slider-mobile {
   .page-parked-collaborations .card .taxonomy-tags,
   .page-collaborations-turned-projects .card .taxonomy-tags {
     background-image: url(""), -webkit-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
     background-image: url(""), linear-gradient(135deg, #ce2d25 0%, #b21f4f 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto; }
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto; }
   .page-collaborate .card article .img-icon,
   .page-featured-collaborations .card article .img-icon,
   .page-parked-collaborations .card article .img-icon,
   .page-collaborations-turned-projects .card article .img-icon {
     background-image: url(""), -webkit-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
+    background-image: url(""), -o-linear-gradient(315deg, #ce2d25 0%, #b21f4f 100%);
     background-image: url(""), linear-gradient(135deg, #ce2d25 0%, #b21f4f 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     color: #fff; }
   .page-collaborate .main-container,
   .page-featured-collaborations .main-container,
@@ -9535,6 +9628,7 @@ nav.slider-mobile {
   .page-collaborations-turned-projects .main-container {
     background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8));
     background-image: -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
+    background-image: -o-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
     background-image: linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%); }
   .page-collaborate .breadcrumb-container,
   .page-featured-collaborations .breadcrumb-container,
@@ -9578,15 +9672,19 @@ nav.slider-mobile {
     margin: 60px 0 20px; }
   .page-collaborate .content-lower {
     background-image: url("../assets/img/background/triangle-middle-big.png"), -webkit-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
+    background-image: url("../assets/img/background/triangle-middle-big.png"), -o-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
     background-image: url("../assets/img/background/triangle-middle-big.png"), linear-gradient(135deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     background-position: top center, 0 0 , 0 0;
-    background-size: cover, auto , auto; }
+    -webkit-background-size: cover, auto , auto;
+            background-size: cover, auto , auto; }
     @media only screen and (min-width: 768px) {
       .page-collaborate .content-lower {
-        background-size: contain, auto , auto; } }
+        -webkit-background-size: contain, auto , auto;
+                background-size: contain, auto , auto; } }
   .page-collaborate #block-collabco-collaboration-how-to-start-collaborate {
     padding: 80px 0;
     color: #fff;
@@ -9613,10 +9711,12 @@ nav.slider-mobile {
   .page-collaborate .content-bottom {
     background-image: url(""), -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8)), url("");
     background-image: url(""), -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%), url("");
+    background-image: url(""), -o-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%), url("");
     background-image: url(""), linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%), url("");
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     padding: 40px 0; }
     .page-collaborate .content-bottom h3 {
       color: #882263; }
@@ -9638,12 +9738,15 @@ nav.slider-mobile {
   .page-myhub .content-top,
   .page-user .content-top {
     background-image: url(""), -webkit-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(183, 134, 45, 0.9) 100%);
+    background-image: url(""), -o-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(183, 134, 45, 0.9) 100%);
     background-image: url(""), linear-gradient(135deg, rgba(206, 45, 37, 0.9) 0%, rgba(183, 134, 45, 0.9) 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     background-position: top right, 0 0 , 0 0;
-    background-size: contain, auto ,cover;
+    -webkit-background-size: contain, auto ,cover;
+            background-size: contain, auto ,cover;
     padding: 28px 0; }
     .page-myhub .content-top h2 a,
     .page-user .content-top h2 a {
@@ -9671,6 +9774,7 @@ nav.slider-mobile {
   .page-user .page-myhub .main-container {
     background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8));
     background-image: -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
+    background-image: -o-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
     background-image: linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%); }
 
 /*** View Header  ***/
@@ -9744,15 +9848,18 @@ nav.slider-mobile {
       text-transform: capitalize; }
   .page-taxonomy-term .full-width-top {
     background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-bottom-right-cut.png"), -webkit-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
+    background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-bottom-right-cut.png"), -o-linear-gradient(315deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
     background-image: url("/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-bottom-right-cut.png"), linear-gradient(135deg, rgba(83, 39, 98, 0.9) 0%, rgba(77, 49, 155, 0.9) 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     color: #fff;
     position: relative;
     text-align: center;
     background-position: top right, 0 0 , 0 40%;
-    background-size: contain, auto, cover;
+    -webkit-background-size: contain, auto, cover;
+            background-size: contain, auto, cover;
     padding: 50px;
     position: relative;
     overflow: hidden; }
@@ -9845,6 +9952,7 @@ nav.slider-mobile {
 .content-middle {
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(25%, white), to(#e8e8e8));
   background-image: -webkit-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
+  background-image: -o-linear-gradient(top, white 0%, white 25%, #e8e8e8 100%);
   background-image: linear-gradient(to bottom, white 0%, white 25%, #e8e8e8 100%); }
   .content-middle h2.block-title {
     color: #4a3858;
@@ -9903,15 +10011,18 @@ nav.slider-mobile {
     padding: 37px 0; }
   .node-type-idea .full-width-top {
     background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), -webkit-linear-gradient(315deg, rgba(59, 83, 164, 0.9) 0%, rgba(29, 121, 171, 0.9) 100%);
+    background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), -o-linear-gradient(315deg, rgba(59, 83, 164, 0.9) 0%, rgba(29, 121, 171, 0.9) 100%);
     background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), linear-gradient(135deg, rgba(59, 83, 164, 0.9) 0%, rgba(29, 121, 171, 0.9) 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     color: #fff;
     position: relative;
     text-align: center;
     background-position: top right, 0 0 , 0 40%;
-    background-size: contain, auto, cover;
+    -webkit-background-size: contain, auto, cover;
+            background-size: contain, auto, cover;
     padding: 50px;
     position: relative;
     overflow: hidden; }
@@ -9964,11 +10075,14 @@ nav.slider-mobile {
 /* === VIEW IDEAS SUPPORTES PAGE === */
 .page-idea-supporters .content-top {
   background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), -webkit-linear-gradient(315deg, rgba(59, 83, 164, 0.9) 0%, rgba(29, 121, 171, 0.9) 100%);
+  background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), -o-linear-gradient(315deg, rgba(59, 83, 164, 0.9) 0%, rgba(29, 121, 171, 0.9) 100%);
   background-image: url("../assets/img/background/triangle-bottom-right-cut.png"), linear-gradient(135deg, rgba(59, 83, 164, 0.9) 0%, rgba(29, 121, 171, 0.9) 100%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
-  background-size: contain, auto, cover;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
+  -webkit-background-size: contain, auto, cover;
+          background-size: contain, auto, cover;
   background-position: top right, 0 0, 0 0;
   padding: 15px 0; }
 
@@ -9990,10 +10104,12 @@ nav.slider-mobile {
 /* === LARGE CARDS === */
 .card.ideas.large .img-icon {
   background-image: url(""), -webkit-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
+  background-image: url(""), -o-linear-gradient(315deg, #3b53a4 0%, #1d79ab 100%);
   background-image: url(""), linear-gradient(135deg, #3b53a4 0%, #1d79ab 100%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   color: #fff; }
 
 /* === INDVIDUAL COLLABORATION PAGES === */
@@ -10011,15 +10127,18 @@ nav.slider-mobile {
   .node-type-conversation .full-width-top,
   .node-type-knowledge-object .full-width-top {
     background-image: url("../assets/img/background/triangle-top-right-cut.png"), -webkit-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
+    background-image: url("../assets/img/background/triangle-top-right-cut.png"), -o-linear-gradient(315deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
     background-image: url("../assets/img/background/triangle-top-right-cut.png"), linear-gradient(135deg, rgba(206, 45, 37, 0.9) 0%, rgba(178, 31, 79, 0.9) 100%);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 0, 0 0;
-    background-size: auto, auto, auto;
+    -webkit-background-size: auto, auto, auto;
+            background-size: auto, auto, auto;
     color: #fff;
     position: relative;
     text-align: center;
     background-position: top right, 0 0 , 0 40%;
-    background-size: contain, auto, cover;
+    -webkit-background-size: contain, auto, cover;
+            background-size: contain, auto, cover;
     padding: 50px;
     position: relative;
     overflow: hidden; }
@@ -10267,6 +10386,7 @@ nav.slider-mobile {
   margin-bottom: 20px;
   padding: 20px;
   -webkit-transition: all ease .15s;
+  -o-transition: all ease .15s;
   transition: all ease .15s; }
   .documents:hover {
     background-color: #eeeeee; }
@@ -10367,10 +10487,12 @@ nav.slider-mobile {
 .page-search .pagination > .active > span,
 .page-search .pagination > .active > span:hover {
   background-image: url(""), -webkit-linear-gradient(315deg, #359189 0%, #1e3d6b 100%), url("");
+  background-image: url(""), -o-linear-gradient(315deg, #359189 0%, #1e3d6b 100%), url("");
   background-image: url(""), linear-gradient(135deg, #359189 0%, #1e3d6b 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto; }
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto; }
 
 .page-search .page-search .pagination > li.active > span {
   color: #fff; }
@@ -10388,12 +10510,15 @@ nav.slider-mobile {
 
 .about .content-top {
   background-image: url(""), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
+  background-image: url(""), -o-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
   background-image: url(""), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   background-position: top right, 0 0 , 0 0;
-  background-size: contain, auto ,cover;
+  -webkit-background-size: contain, auto ,cover;
+          background-size: contain, auto ,cover;
   padding: 28px 0; }
 
 .about .features td {
@@ -10407,12 +10532,15 @@ nav.slider-mobile {
 
 .help .content-top {
   background-image: url(""), -webkit-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
+  background-image: url(""), -o-linear-gradient(315deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
   background-image: url(""), linear-gradient(135deg, rgba(242, 126, 131, 0.9) 0%, rgba(226, 119, 27, 0.9) 100%), url("");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 0 0, 0 0, 0 0;
-  background-size: auto, auto, auto;
+  -webkit-background-size: auto, auto, auto;
+          background-size: auto, auto, auto;
   background-position: top right, 0 0 , 0 0;
-  background-size: contain, auto ,cover;
+  -webkit-background-size: contain, auto ,cover;
+          background-size: contain, auto ,cover;
   padding: 28px 0; }
 
 .help h3 {

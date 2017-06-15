@@ -3,10 +3,9 @@
 //FULLWIDTH FIX
 .views_slideshow_slide,
 .views_slideshow_cycle_main .views_slideshow_slide,
-#views_slideshow_cycle_teaser_section_latest_ideas-block {
-  min-width: 100% !important;
-}
-#views_slideshow_cycle_teaser_section_your_contrib-your_contrib {
+#views_slideshow_cycle_teaser_section_latest_ideas-block,
+#views_slideshow_cycle_teaser_section_your_contrib-your_contrib,
+.views-slideshow-cycle-main-frame {
   min-width: 100% !important;
 }
 
