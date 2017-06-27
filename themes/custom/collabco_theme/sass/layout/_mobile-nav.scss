@@ -2,14 +2,12 @@
 
 /*** Site header ***/
 
-@media only screen and (max-width : $screen-sm) {
+@media only screen and (max-width : $screen-sm - 1) {
   header#navigation {
     a { 
       color: $nav-mobile-primary-color;
       text-decoration: none;
     }
-  
-    .row { height: 85px; }
   }
   
   #brand {  

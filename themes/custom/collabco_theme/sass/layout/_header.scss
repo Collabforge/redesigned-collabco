@@ -9,11 +9,11 @@ header#navigation {
 
   .row { height: 110px; }
 
-  @media only screen and (max-width : $screen-md) {
+  @media only screen and (min-width : $screen-md) {
      background-image: url(''), url('');
   }
   
-  @media only screen and (max-width : $screen-sm) {
+  @media only screen and (min-width : $screen-sm) {
     background-image: none;
   }
 
