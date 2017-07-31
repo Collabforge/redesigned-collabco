@@ -6,7 +6,7 @@ projects[drupal][version] = "7.56"
 
 projects[views_bulk_operations][type] = module
 projects[views_bulk_operations][subdir] = contrib
-projects[views_bulk_operations][version] = "3.3"
+projects[views_bulk_operations][version] = "3.4"
 
 projects[admin_menu][type] = module
 projects[admin_menu][subdir] = contrib
@@ -22,7 +22,7 @@ projects[backup_migrate][version] = "3.1"
 
 projects[better_exposed_filters][type] = module
 projects[better_exposed_filters][subdir] = contrib
-projects[better_exposed_filters][version] = "3.2"
+projects[better_exposed_filters][version] = "3.4"
 
 projects[better_formats][type] = module
 projects[better_formats][subdir] = contrib
@@ -34,15 +34,15 @@ projects[block_class][version] = "2.3"
 
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.10"
+projects[ctools][version] = "1.12"
 
 projects[captcha][type] = module
 projects[captcha][subdir] = contrib
-projects[captcha][version] = "1.3"
+projects[captcha][version] = "1.4"
 
 projects[ckeditor][type] = module
 projects[ckeditor][subdir] = contrib
-projects[ckeditor][version] = "1.17"
+projects[ckeditor][version] = "1.18"
 
 projects[ckeditor_media][type] = module
 projects[ckeditor_media][subdir] = contrib
@@ -54,7 +54,7 @@ projects[clamav][version] = "1.0"
 
 projects[colorbox][type] = module
 projects[colorbox][subdir] = contrib
-projects[colorbox][version] = "2.12"
+projects[colorbox][version] = "2.13"
 
 projects[colorbox_node][type] = module
 projects[colorbox_node][subdir] = contrib
@@ -70,7 +70,7 @@ projects[comment_delete][version] = "1.3"
 
 projects[date][type] = module
 projects[date][subdir] = contrib
-projects[date][version] = "2.9"
+projects[date][version] = "2.10"
 
 projects[datepicker][type] = module
 projects[datepicker][subdir] = contrib
@@ -86,7 +86,7 @@ projects[devel][version] = "1.5"
 
 projects[download_file][type] = module
 projects[download_file][subdir] = contrib
-projects[download_file][version] = "1.1"
+projects[download_file][version] = "2.1"
 
 projects[entity][type] = module
 projects[entity][subdir] = contrib
@@ -102,11 +102,11 @@ projects[entity_rules][version] = "1.0-alpha4"
 
 projects[entityform][type] = module
 projects[entityform][subdir] = contrib
-projects[entityform][version] = "2.0-rc1"
+projects[entityform][version] = "2.0-rc4"
 
 projects[entityreference][type] = module
 projects[entityreference][subdir] = contrib
-projects[entityreference][version] = "1.2"
+projects[entityreference][version] = "1.4"
 
 projects[features_extra][type] = module
 projects[features_extra][subdir] = contrib
@@ -118,11 +118,11 @@ projects[features][version] = "2.10"
 
 projects[field_permissions][type] = module
 projects[field_permissions][subdir] = contrib
-projects[field_permissions][version] = "1.0-beta2"
+projects[field_permissions][version] = "1.0"
 
 projects[file_entity][type] = module
 projects[file_entity][subdir] = contrib
-projects[file_entity][version] = "2.0-beta3"
+projects[file_entity][version] = "2.3"
 
 projects[flag][type] = module
 projects[flag][subdir] = contrib
@@ -170,7 +170,7 @@ projects[link][version] = "1.4"
 
 projects[login_history][type] = module
 projects[login_history][subdir] = contrib
-projects[login_history][version] = "1.0-beta3"
+projects[login_history][version] = "1.0"
 
 projects[mailsystem][type] = module
 projects[mailsystem][subdir] = contrib
@@ -187,7 +187,7 @@ projects[mandrill][patch][] = "https://www.drupal.org/files/issues/2450453-6-man
 
 projects[media][type] = module
 projects[media][subdir] = contrib
-projects[media][version] = "2.0-beta2"
+projects[media][version] = "2.9"
 
 projects[menu_attributes][type] = module
 projects[menu_attributes][subdir] = contrib
@@ -203,11 +203,11 @@ projects[message_ui][version] = "1.4"
 
 projects[mimemail][type] = module
 projects[mimemail][subdir] = contrib
-projects[mimemail][version] = "1.0-beta4"
+projects[mimemail][version] = "1.0"
 
 projects[module_filter][type] = module
 projects[module_filter][subdir] = contrib
-projects[module_filter][version] = "2.0"
+projects[module_filter][version] = "2.1"
 
 projects[nodequeue][type] = module
 projects[nodequeue][subdir] = contrib
@@ -235,7 +235,7 @@ projects[register_preapproved][version] = "1.0"
 
 projects[rules][type] = module
 projects[rules][subdir] = contrib
-projects[rules][version] = "2.9"
+projects[rules][version] = "2.10"
 
 projects[stringoverrides][type] = module
 projects[stringoverrides][subdir] = contrib
@@ -251,7 +251,7 @@ projects[term_queue][version] = "1.0-rc1"
 
 projects[token][type] = module
 projects[token][subdir] = contrib
-projects[token][version] = "1.6"
+projects[token][version] = "1.7"
 
 projects[translation_helpers][type] = module
 projects[translation_helpers][subdir] = contrib
@@ -267,7 +267,7 @@ projects[variable][version] = "2.5"
 
 projects[views][type] = module
 projects[views][subdir] = contrib
-projects[views][version] = "3.14"
+projects[views][version] = "3.16"
 
 projects[views_autocomplete_filters][type] = module
 projects[views_autocomplete_filters][subdir] = contrib
@@ -283,7 +283,7 @@ projects[views_contextual_filters_or][version] = "1.x-dev"
 
 projects[views_data_export][type] = module
 projects[views_data_export][subdir] = contrib
-projects[views_data_export][version] = "3.1"
+projects[views_data_export][version] = "3.2"
 
 projects[views_field_view][type] = module
 projects[views_field_view][subdir] = contrib
@@ -299,11 +299,11 @@ projects[views_responsive_grid][version] = "1.3"
 
 projects[views_send][type] = module
 projects[views_send][subdir] = contrib
-projects[views_send][version] = "1.2"
+projects[views_send][version] = "1.6"
 
 projects[views_slideshow][type] = module
 projects[views_slideshow][subdir] = contrib
-projects[views_slideshow][version] = "3.1"
+projects[views_slideshow][version] = "3.9"
 
 projects[vscc][type] = module
 projects[vscc][subdir] = contrib
@@ -311,7 +311,7 @@ projects[vscc][version] = "1.1"
 
 projects[webform][type] = module
 projects[webform][subdir] = contrib
-projects[webform][version] = "4.14"
+projects[webform][version] = "4.15"
 
 projects[webform_rules][type] = module
 projects[webform_rules][subdir] = contrib
@@ -319,7 +319,7 @@ projects[webform_rules][version] = "1.6"
 
 ; Themes
 projects[bootstrap][type] = theme
-projects[bootstrap][version] = "3.6"
+projects[bootstrap][version] = "3.14"
 
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
@@ -366,3 +366,4 @@ libraries[hybridauth][download][type] = "git"
 libraries[hybridauth][download][url] = "https://github.com/hybridauth/hybridauth.git"
 libraries[hybridauth][directory_name] = "hybridauth"
 libraries[hybridauth][destination] = "libraries"
+
