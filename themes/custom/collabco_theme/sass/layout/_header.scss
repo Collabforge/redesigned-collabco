@@ -12,7 +12,7 @@ header#navigation {
   @media only screen and (min-width : $screen-md) {
      background-image: url(''), url('');
   }
-  
+
   @media only screen and (min-width : $screen-sm) {
     background-image: none;
   }
@@ -22,7 +22,7 @@ header#navigation {
       padding-top: 15px;
       text-align: center;
     }
-  }   
+  }
 }
 
 

@@ -5,12 +5,12 @@
 
   i { font-size: pxtoem(20px); }
 
-  h2 { 
+  h2 {
     font-size: pxtoem(48px);
   }
 
-  p { 
-    font-size: pxtoem(18px); 
+  p {
+    font-size: pxtoem(18px);
     line-height: pxtoem(25px);
   }
 
@@ -21,12 +21,12 @@
     top: 20px;
   }
 
-  .stat { 
-    float: left; 
+  .stat {
+    float: left;
     margin-right: 23px;
-    
+
     &:last-child { margin: 0; }
-    
+
     &:before {
       position: relative;
       height: 16px;
@@ -35,21 +35,21 @@
       width: 16px;
     }
 
-  }  
+  }
 
-  @media only screen and (min-width : $screen-sm) {  
+  @media only screen and (min-width : $screen-sm) {
     h2 { padding: 0 120px; }
     p { padding: 0 135px; }
-  } 
+  }
 }
 
 .content-top { @include content-top(); }
 
 .full-width-top {
-  @media only screen and (min-width : $screen-sm) {  
+  @media only screen and (min-width : $screen-sm) {
     h2 { padding: 0 120px; }
     p { padding: 0 135px; }
-  } 
+  }
 }
 
 
@@ -57,18 +57,18 @@
   padding: 80px 0;
 
   i { font-size: 40px; }
-  
+
   h2 {
-    font-family: $lato;
+    font-family: $primary-font;
     font-size: 36px;
     font-weight: normal;
-    margin: 10px 0 20px; 
+    margin: 10px 0 20px;
     text-transform: uppercase;
   }
 
   p {
-    font-family: $lato; 
-    font-size: 18px; 
+    font-family: $primary-font;
+    font-size: 18px;
     margin-bottom: 50px;
   }
 }

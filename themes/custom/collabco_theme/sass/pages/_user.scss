@@ -16,7 +16,7 @@
     @include bg-gradient-pink-orange('', '', .9);
     background-position: top right, 0 0 , 0 0;
     background-size: contain, auto ,auto;
-    padding: 60px 0; 
+    padding: 60px 0;
 
     .user-picture .img-responsive {
       height: 64px;
@@ -41,8 +41,8 @@
       color: $green-dark;
       font-size: 13px;
       display: inline-block;
-    }  
-      
+    }
+
     a:hover { text-decoration: underline; }
     a:before {
       position: relative;
@@ -51,7 +51,7 @@
       font-size: 18px;
     }
   }
-  
+
   h2.block-title {
     color: $orange;
     font-size: 18px;
@@ -64,12 +64,12 @@
 
   .profile-other {
 
-    h3 { 
-      color: $orange; 
+    h3 {
+      color: $orange;
       font-size: 18px;
       padding: 18px 0;
       text-transform: uppercase;
-      font-family: $lato;
+      font-family: $primary-font;
       border-bottom: $border-dark;
     }
 
@@ -79,17 +79,17 @@
       border-bottom: 3px solid $green-dark;
       margin: 17px;
     }
-      
+
     .info > div  { height: auto; }
     .bio > div { min-height: 147px; }
 
     @media only screen and (min-width : $screen-sm) {
-      .info, .bio { 
+      .info, .bio {
         padding-right: 0;
         padding-left: 0;
       }
     }
-    
+
     .field-label {
       color: $gray;
       padding: 10px 0 0 24px;
@@ -105,13 +105,13 @@
     }
 
     //Key skills
-    .field-name-field-key-skills { 
-      .field-item { 
+    .field-name-field-key-skills {
+      .field-item {
         display: inline-block;
         padding-right: 2px;
       }
-      
-      a { 
+
+      a {
         text-decoration: none;
         color: $gray-dark;
       }
@@ -127,18 +127,18 @@
 
 
   //User Badges
-  .user-badges { 
+  .user-badges {
     text-align: center;
     margin-top: 20px;
-    @media only screen and (min-width : $screen-md) { text-align: left; } 
+    @media only screen and (min-width : $screen-md) { text-align: left; }
   }
 
   .view-profile-badges {
     text-align: center;
-    
-    // @media only screen and (min-width : $screen-md) { text-align: left; } 
 
-    .view-content { 
+    // @media only screen and (min-width : $screen-md) { text-align: left; }
+
+    .view-content {
       overflow: hidden;
     }
 
@@ -174,7 +174,7 @@
       top: 85px;
       color: $white;
       text-transform: capitalize;
-      font-family: $lato;
+      font-family: $primary-font;
       font-size: 18px;
       line-height: 21px;
       text-decoration: none;

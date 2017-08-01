@@ -3,8 +3,8 @@
 /////////////////////////
 
 .maintenance-page {
-  background-color: #efeee9; 
-  
+  background-color: #efeee9;
+
 
 
   .col-sm-7.column { width: 66.66667%;  }
@@ -12,7 +12,7 @@
   #page {
     max-width: 960px;
     margin: 50px auto 0;
-    font-family: $lato;
+    font-family: $primary-font;
     font-size: 14px;
     line-height: 1.4;
     background: $white;
@@ -47,7 +47,7 @@
     padding-left: 0;
   }
 
-  .task-list li { 
+  .task-list li {
     height:40px;
     color: $purple-light;
     position:relative;
@@ -116,7 +116,7 @@
       display: none;
   }
   .messages.warning {
-     display: none; 
+     display: none;
   }
   .form-item-account-pass-pass2 {
     margin-top: 0.8em;

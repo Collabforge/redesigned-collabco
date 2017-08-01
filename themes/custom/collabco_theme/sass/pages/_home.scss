@@ -8,22 +8,22 @@
 
     span { font-weight: bold; }
 
-    #header-home-title { 
+    #header-home-title {
       margin-bottom: 55px;
 
-      p { 
-        font-size: pxtoem(36px); 
-        line-height: 1; 
-        margin: 10px 0; 
+      p {
+        font-size: pxtoem(36px);
+        line-height: 1;
+        margin: 10px 0;
         word-break: break-word;
         color: #5B5B5B;
       }
-    }  
+    }
 
     .intro-blocks > div {
       margin-bottom: 20px;
 
-      i:before{ 
+      i:before{
         font-size: 40px;
         width: 42px;
         height: 42px;
@@ -34,14 +34,14 @@
 
 
 
-      a { 
+      a {
         display: block;
         border: 2px solid $black;
         padding: 10px 0;
         text-decoration: none;
         font-size: 20px;
         margin-top: 10px;
-        
+
         p { text-transform: lowercase; }
         p.title { text-transform: uppercase; font-style: italic; }
 
@@ -49,14 +49,14 @@
 
       }
 
-      p { 
+      p {
         padding: 0;
         line-height: 1;
       }
 
-      &.challenges { 
+      &.challenges {
         color: $primary-challenge;
-        a { 
+        a {
           color: $primary-challenge;
           border-color: $primary-challenge;
         }
@@ -65,23 +65,23 @@
       &.ideas{
         color: $primary-idea;
 
-        a { 
+        a {
           color: $primary-idea;
           border-color: $primary-idea;
         }
       }
 
-      &.learn-more { 
-        color: $secondary-color;  
+      &.learn-more {
+        color: $secondary-color;
 
-        i:before { 
+        i:before {
           font-size: 50px;
           position: relative;
           top: -12px;
           overflow: visible;
-        }       
+        }
 
-        a { 
+        a {
           border-color: $secondary-color;
           color: $secondary-color;
         }
@@ -91,17 +91,17 @@
 
 
   }  // </logged-in .content-top>
-  
-  .main-container { 
+
+  .main-container {
     padding: 0;
     min-height: 0;
   }
 
   //Open Challenges Card
 
-  .challenges.card article .img-icon { 
-    @include bg-gradient-challenge(); 
-    color: $white; 
+  .challenges.card article .img-icon {
+    @include bg-gradient-challenge();
+    color: $white;
   }
 
 
@@ -112,13 +112,13 @@
     background-size: contain, auto, auto;
     color: $white;
     padding: 50px 0;
-    
-    .view-header { 
-      padding-bottom: 10px; 
+
+    .view-header {
+      padding-bottom: 10px;
       padding-top: 0;
     }
 
-  }  
+  }
 
 }
 

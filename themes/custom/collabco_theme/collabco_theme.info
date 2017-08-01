@@ -39,9 +39,7 @@ regions[full_width_bottom] = 'Full Width Bottom'
 
 stylesheets[all][] = css/style.css
 
-stylesheets[all][] = css/libsass-compatibility.css
-
-; Add our stylesheet for the Color module to override. 
+; Add our stylesheet for the Color module to override.
 
 
 
@@ -50,17 +48,19 @@ stylesheets[all][] = css/libsass-compatibility.css
 ;;;;;;;;;;;;;;;;;;;;;
 
 ; scripts[] = 'assets/javascripts/bootstrap/affix.js'
-scripts[] = 'assets/javascripts/bootstrap/alert.js'
-scripts[] = 'assets/javascripts/bootstrap/button.js'
+; scripts[] = 'assets/javascripts/bootstrap/alert.js'
+; scripts[] = 'assets/javascripts/bootstrap/button.js'
 ; scripts[] = 'assets/javascripts/bootstrap/carousel.js'
-scripts[] = 'assets/javascripts/bootstrap/collapse.js'
-scripts[] = 'assets/javascripts/bootstrap/dropdown.js'
-scripts[] = 'assets/javascripts/bootstrap/modal.js'
-scripts[] = 'assets/javascripts/bootstrap/tooltip.js'
-scripts[] = 'assets/javascripts/bootstrap/popover.js'
+; scripts[] = 'assets/javascripts/bootstrap/collapse.js'
+; scripts[] = 'assets/javascripts/bootstrap/dropdown.js'
+; scripts[] = 'assets/javascripts/bootstrap/modal.js'
+; scripts[] = 'assets/javascripts/bootstrap/tooltip.js'
+; scripts[] = 'assets/javascripts/bootstrap/popover.js'
 ; scripts[] = 'assets/javascripts/bootstrap/scrollspy.js'
-scripts[] = 'assets/javascripts/bootstrap/tab.js'
-scripts[] = 'assets/javascripts/bootstrap/transition.js'
+;scripts[] = 'assets/javascripts/bootstrap/tab.js'
+; scripts[] = 'assets/javascripts/bootstrap/transition.js'
+
+scripts[] = 'assets/javascripts/bootstrap.min.js'
 
 ; Disable the CDN provider so compiled source files can be used.
 settings[bootstrap_cdn] = ''
@@ -74,6 +74,5 @@ settings[bootstrap_popover_container] = 'span.pop'
 ;; Custom Script
 ;;;;;;;;;;;;;;;;;;;;;
 
-scripts[] ='js/slidenav.js'
 
 

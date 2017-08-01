@@ -16,9 +16,9 @@ $icon-font-path: '../assets/fonts/bootstrap/';
 //** Global text color on `<body>`.
 $text-color: $gray-dark;
 
-// Typography 
-$font-family-sans-serif:  $lato;
-$font-size-base: 14px;
+// Typography
+$font-family-sans-serif:  $primary-font;
+$font-size-base: 16px;
 
 //Branding
 $brand-success: $green-dark;
@@ -95,6 +95,9 @@ $btn-border-radius-large: 0;
 $btn-border-radius-small: 0;
 
 $input-border-focus: $primary-color;
+
+// Breadcrumbs
+$breadcrumb-bg: transparent;
 
 
 
