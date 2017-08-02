@@ -11,26 +11,11 @@
 // Bootstrap Framework.
 @import '../assets/stylesheets/bootstrap';
 
-//Theme functions
-@import 'components/functions';
+//Components
+@import 'components/components';
 
 // Base-theme overrides.
 @import 'overrides';
-
-
-@import 'components/mixins';
-@import 'components/icons';
-@import 'components/blocks';
-@import 'components/buttons';
-@import 'components/forms';
-@import 'components/cards';
-@import 'components/full-width-card';
-@import 'components/cards-update';
-@import 'components/views';
-@import 'components/breadcrumbs';
-@import 'components/slideshow';
-@import 'components/utilities';
-
 
 // Layout
 @import 'base/global';

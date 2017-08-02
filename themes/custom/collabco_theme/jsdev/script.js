@@ -6,7 +6,7 @@
 
   doc.ready(function() {
 
-  resizeCard();
+  // resizeCard();
 
   //Add class to discussion and documents
   if ($('*').find('.node-type-conversation').length >0){
@@ -153,7 +153,7 @@
   });
 
   // resize breakpoints
-  win.on('resize', resizeCard);
+  //win.on('resize', resizeCard);
 
 });
 

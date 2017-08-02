@@ -18,7 +18,7 @@ $term_link = l(csl('ideas','(s)',0),'/taxonomy/term/'.$tid,array('attributes' =>
 $total_items = count( $view->result );
 ?>
 
-<div class="col-xs-12 col-sm-6 col-md-4 card large challenges <?php echo $challenge_class; ?> total-items-<?php echo $total_items; ?>">
+<div class="card large challenges <?php echo $challenge_class; ?>">
 
   <article>
     <div class="feat-img">
@@ -56,6 +56,7 @@ $total_items = count( $view->result );
       <div class="tag green"><?=csl('sponsor','ed',1);?></div>
       <?php } ?>
     </div>
+
     <footer>
       <div class="follow event card-large-link">
         <a href="#" class='<?php echo $follow_classes ?>'></a>

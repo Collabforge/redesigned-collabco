@@ -1,17 +1,35 @@
 /* === LARGE AND SMALL CARDS (CHALLENGE, COLLABORATION AND IDEAS) === */
 
-.card {
-  margin-bottom: 30px;
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-  img {
-    height: auto;
-    width: 100%;
+  .card {
+    flex: 1;
+    padding: 0 15px;
+    min-width: 320px;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media only screen and (min-width : 640px) {
+      max-width: 320px;
+    }
+
   }
+}
+
+
+.card {
 
   article {
     background-color: $white;
     position: relative;
     border: $border-dark;
+    height: 100%;
 
     .feat-img {
       position: relative;
@@ -59,9 +77,9 @@
     }
 
     .content {
-      height: auto;
       padding: 45px 20px 25px;
       position: relative;
+      margin-bottom: 74px;
 
       p { color: $gray-dark; }
     }
@@ -74,6 +92,9 @@
     border-top: 1px solid $gray-chromium;
     overflow: hidden;
     color: $gray-dark;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 
     > div {
       border-right: 1px solid $gray-chromium;
@@ -147,9 +168,9 @@
 
    /*** Center element when there is two cards **/
 
-  &.total-items-2:first-child {
-    @media only screen and (min-width : $screen-md) { margin-left: 16.66667%; }
-  }
+  // &.total-items-2:first-child {
+  //   @media only screen and (min-width : $screen-md) { margin-left: 16.66667%; }
+  // }
 
 }
 
@@ -207,7 +228,7 @@
   /*** Hide footer text and throbber ***/
   .flag-throbber, .flag { display: none; }
 
-  @media (min-width: $screen-sm-min) {  width: 217px; }
+  // @media (min-width: $screen-sm-min) {  width: 217px; }
 
 }
 
