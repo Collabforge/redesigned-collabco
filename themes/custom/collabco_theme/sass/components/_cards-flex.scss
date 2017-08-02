@@ -1,99 +1,37 @@
 /* === LARGE AND SMALL CARDS (CHALLENGE, COLLABORATION AND IDEAS) === */
 
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+//Common between info card-large and card-small
 
-  .card {
-    flex: 1;
-    padding: 0 15px;
-    min-width: 320px;
-    margin-bottom: 30px;
+.card.large,
+.card.small {
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+  .feat-img img { display: none; }
 
-    @media only screen and (min-width : 640px) {
-      max-width: 320px;
-    }
+  /*** Content ***/
+  .title a {
+    color: $gray-darker;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-decoration: none;
 
+    &:hover { text-decoration: underline; }
   }
-}
 
+  .img-icon { font-size: 20px; }
 
-.card {
-
-  article {
-    background-color: $white;
+  .content {
     position: relative;
-    border: $border-dark;
-    height: 100%;
+    overflow: hidden;
 
-    .feat-img {
-      position: relative;
-      height: 165px;
-      overflow: hidden;
-    }
-
-    .img-icon {
-      font-size: pxtoem(20px);
-    }
-
-    /*** Remaining Days Ribbon ***/
-
-    .remaining-days {
-      background-color: $ribbon-color;
-      bottom: 0;
-      color: $white;
-      display: inline-block;
-      font-size: 12px;
-      padding: 8px;
-      position: absolute;
-      right: 0;
-      text-transform: uppercase;
-    }
-
-    span.remaining-days { font-weight: bold; }
-
-    .remaining-days:before {
-      font-size: 16px;
-      position: relative;
-      top: 3px;
-    }
-
-    /*** Content ***/
-
-    .title a {
-      color: $gray-darker;
-      display: inline-block;
-      font-size: 30px;
-      line-height: 1;
-      margin-bottom: 20px;
-      text-decoration: none;
-
-      &:hover { text-decoration: underline; }
-    }
-
-    .content {
-      padding: 45px 20px 25px;
-      position: relative;
-      margin-bottom: 74px;
-
-      p { color: $gray-dark; }
-    }
-
+    p { color: $gray-dark; }
   }
 
   /*** Footer Links ***/
-
   footer {
     border-top: 1px solid $gray-chromium;
     overflow: hidden;
     color: $gray-dark;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 
     > div {
@@ -101,7 +39,7 @@
       float: left;
       padding: 15px 0;
       text-align: center;
-      width: 33%;
+      width: 33.33333%;
       cursor: pointer;
     }
 
@@ -132,104 +70,159 @@
     }
 
     .flag-wrapper { display: block; }
-  }
-
+  } // </footer>
 
 }
 
 /* === LARGE CARDS === */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-.card.large {
+  .card.large {
+    flex: 1;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    position: relative;
+    background-color: $white;
+    border: $border-dark;
+    min-width: 290px;
 
-  .img-icon {
-    padding: 6px 8px 4px;
-    position: absolute;
-  }
-
-  /*** BEAKER ICON POSITION ***/
-  &.collaborations .img-icon {
-    font-size: 25px;
-    padding: 2px 6px 4px 5px;
-  }
-
-  &.challenges.closed {
-    footer > div {
-      width: 50%;
+    @media only screen and (min-width : 640px) {
+      max-width: 320px;
     }
-  }
 
-  /*** Center element when there is only one card **/
+    article {
 
-  &.total-items-1 {
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
-  }
+      /** Header Featured Image **/
+      .feat-img {
+        position: relative;
+        height: 165px;
 
-   /*** Center element when there is two cards **/
+        a {
+          height: 100%;
+          background-size: cover;
+          width: 100%;
+          display: block;
+        }
+      }
 
-  // &.total-items-2:first-child {
-  //   @media only screen and (min-width : $screen-md) { margin-left: 16.66667%; }
-  // }
+      .img-icon {
+        padding: 6px 8px 4px;
+        position: absolute;
+      }
 
-}
+      /*** BEAKER ICON POSITION ***/
+      &.collaborations .img-icon {
+        font-size: 25px;
+        padding: 2px 6px 4px 5px;
+      }
+
+      &.challenges.closed {
+        footer > div {
+          width: 50%;
+        }
+      }
+
+      /*** Remaining Days Ribbon ***/
+      .remaining-days {
+        background-color: $ribbon-color;
+        bottom: 0;
+        color: $white;
+        display: inline-block;
+        font-size: 12px;
+        padding: 8px;
+        position: absolute;
+        right: 0;
+        text-transform: uppercase;
+
+        &.icon-watch:before {
+          font-size: 16px;
+          position: relative;
+          top: 3px;
+        }
+      }
+
+      /*** Content ***/
+      .content {
+        padding: 45px 20px 25px;
+        margin-bottom: 74px;
+      }
+
+      .title a { font-size: 30px; }
+
+      /*** Footer Links ***/
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      } // </footer>
+
+    }// </.article>
+
+  }// </.card.large>
+}// </.cards>
+
+
+
+
 
 /* === SMALL CARDS === */
 
+.slideshow {
+  &.card {
+    float: left;
+    width: 20%;
+    padding-right: 1px;
+  }
+}
+
 .card.small {
-  padding-right: 1px;
+
+  article {
+    background-color: $white;
+  }
 
  .feat-img {
    background-repeat: no-repeat;
    background-size: cover;
    height: 97px;
+   position: relative;
+   overflow: hidden;
  }
 
   .img-icon {
-    color: $white;
-    font-size: 20px;
     padding: 6px 8px;
     position: absolute;
     bottom: 0;
   }
 
   .content {
-    overflow: hidden;
     padding: 22px 13px 12px 15px;
     height: 106px;
-
-    .title a {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    p {
-      font-size: 13px;
-      line-height: 16px;
-      padding-top: 4px;
-    }
+    max-height: 106px;
   }
 
- footer {
-
-   > div { padding: 10px; }
-
-   /*** ICON POSITION ***/
-   a:before {
-      font-size: 16px;
-      position: relative;
-      right: -3px;
-      top: 2px;
-    }
-
+  .title a {
+    font-size: 18px;
+    margin-bottom: 4px;
   }
 
-  /*** Hide footer text and throbber ***/
-  .flag-throbber, .flag { display: none; }
+  footer {
 
-  // @media (min-width: $screen-sm-min) {  width: 217px; }
+    > div { padding: 10px; }
 
+     /*** ICON POSITION ***/
+    a:before {
+        font-size: 16px;
+        position: relative;
+        right: -3px;
+        top: 2px;
+      }
+
+    /*** Hide footer text and throbber ***/
+    .flag-throbber, .flag { display: none; }
+  }
 }
-
-

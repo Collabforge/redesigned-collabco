@@ -90,7 +90,7 @@ gulp.task('reload', ['clearcache'], function () {
 gulp.task('browser-sync', function() {
       browserSync.init({
         open: 'external',
-        host: URL,
+        // host: URL,
         proxy: URL,
         port: URLPort // for work mamp
       });

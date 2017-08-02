@@ -7,8 +7,5 @@
  * @ingroup views_templates
  */
 ?>
-<div class="row">
-  <?php foreach ($rows as $id => $row): ?>
-      <?php print $row; ?>
-  <?php endforeach; ?>
-</div>
+
+<?php  include ($directory."/templates/includes/row-card.php"); ?>

@@ -14,9 +14,9 @@
 .vscc-controls .vscc_controls_previous,
 .vscc-controls .vscc_controls_next {
   a {
-    line-height: 0; 
+    line-height: 0;
     font-size: 0;
-    color: transparent; 
+    color: transparent;
     display: inline-block;
     height: 24px;
     width: 14px;
@@ -28,7 +28,7 @@
   img { display: none; }
 }
 
-.views-slideshow-cycle-main-frame-row { 
+.views-slideshow-cycle-main-frame-row {
 
 }
 
@@ -59,7 +59,7 @@
   margin: 0 10px;
 }
 
-.vscc-controls .vscc_controls_previous {  
+.vscc-controls .vscc_controls_previous {
 
   @media only screen and (min-width : $screen-sm) {
     position: absolute;
@@ -78,20 +78,12 @@
     right: -26px;
     margin: 0;
   }
-}   
-
-.slideshow {
-  &.card { 
-    float: left;
-    width: 20%;
-  }
 }
-
 
 //Challenge slideshow latest ideas
 .views-slideshow-cycle-main-frame {
   display: inline-block;
-}  
+}
 
 .view-latest-ideas.view-display-id-block,
 .view-your-contrib.view-display-id-your_contrib {
@@ -100,7 +92,7 @@
 }
 
 
-  
+
 .view-latest-ideas.view-display-id-latest_ideas_mobile_block,
 .view-your-contrib.view-display-id-mobile_block  {
     display: block;

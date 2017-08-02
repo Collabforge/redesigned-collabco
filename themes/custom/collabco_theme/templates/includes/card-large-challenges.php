@@ -25,6 +25,7 @@ $total_items = count( $view->result );
       <div class="img-icon icon-flag"></div>
 
        <?php
+
          echo $fields['field_challenge_image']->content;
 
          $tid = $fields['tid']->raw;

@@ -30,7 +30,7 @@
   });
 
   // Set card imgs as a background on the link to help responsiveness
-  $('.card .feat-img img, .full-width-card .feat-img img').each(function(index, el) {
+  $('.card.small .feat-img img, .full-width-card .feat-img img').each(function(index, el) {
     var imgSrc = $(this).attr('src');
     var imgHeight = $(this).closest('.feat-img').css('height');
 
@@ -47,6 +47,20 @@
     $(this).remove();
 
   });
+
+    // Set card imgs as a background on the link to help responsiveness
+  $('.card.large .feat-img img, .card.small .feat-img img').each(function(index, el) {
+    var imgSrc = $(this).attr('src');
+    var imgHeight = $(this).closest('.feat-img').css('height');
+
+    $(this).parent('a').css({
+      'background-image': 'url("' + imgSrc + '")'
+    });
+
+    $(this).remove();
+
+  });
+
 
   //Add hover on card footer/aside
   $('.card-large-link, .card-full-link, .small-card-link, .sidebar-2 .stat-label, .sidebar-2 .nav li ').hover(function() {

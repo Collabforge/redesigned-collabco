@@ -23,8 +23,7 @@
       <li>Parked <?php echo ucfirst(variable_get('csl_collaborations'));?>s</li>
     </ol>
   </div>
-
-  <?php foreach ($rows as $id => $row): ?>
-      <?php print $row; ?>
-  <?php endforeach; ?>
 </div>
+
+<?php  include ($directory."/templates/includes/row-card.php"); ?>
+
