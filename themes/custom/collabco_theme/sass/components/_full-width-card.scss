@@ -8,11 +8,11 @@
   }
 
   .border-box { border: $border-dark; }
-  
+
   .feat-img,
-  .content, 
-  aside { 
-    background-color: $white; 
+  .content,
+  aside {
+    background-color: $white;
 
     @media only screen and (min-width : $screen-sm) {
        height: 150px;
@@ -31,11 +31,13 @@
       position: absolute;
       top: 0;
       left: 0;
-      font-size: 20px; 
+      font-size: 20px;
       padding: 6px 8px 2px;
     }
 
-  }  
+    img { display: none; }
+
+  }
 
   &.collaboration .picture i {
     font-size: 25px;
@@ -69,12 +71,12 @@
     border-width: 1px 0 0;
     padding: 0;
 
-    @media only screen and (min-width : $screen-sm) { 
+    @media only screen and (min-width : $screen-sm) {
       padding: 0;
       border-width: 0 0 0 1px;
     }
 
-    a { 
+    a {
       color: $gray-dark;
       text-decoration: none;
     }
@@ -95,7 +97,7 @@
         top: 2px;
 
         &:hover { text-decoration: none; }
-      } 
+      }
 
     }
 
@@ -105,12 +107,12 @@
   }
 
   &.challenge {
-    aside > div { 
-      height: 50%; 
+    aside > div {
+      height: 50%;
       padding: 28px 0;
     }
   }
-  
+
  /*** ICON bg color ***/
   &.challenge .feat-img i {
     @include bg-gradient-challenge();
@@ -123,14 +125,14 @@
   &.collaboration .feat-img i {
     @include bg-gradient-collaboration();
   }
-}  
+}
 
 /*** Card without image ***/
 .no-idea-image {
-  background-image: url("../assets/img/placeholder/placeholder-card-large.jpg"); 
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center center; 
-  height: 150px; width: 100%; 
+  background-image: url("../assets/img/placeholder/placeholder-card-large.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 150px; width: 100%;
   display: inline-block;
 }
