@@ -198,6 +198,15 @@
     padding: 6px 8px;
     position: absolute;
     bottom: 0;
+    color: $white;
+  }
+
+  &.collaboration .img-icon {
+    @include bg-gradient-collaboration();
+  }
+
+  &.idea .img-icon {
+    @include bg-gradient-ideas();
   }
 
   .content {

@@ -24,7 +24,7 @@ $support_count_classes = $support_flag?'value flagged':'value';
 
  ?>
 
- <div class="card small slideshow">
+ <div class="card small slideshow <?php echo strtolower($node_type); ?>">
   <article>
 
     <div class="feat-img">
