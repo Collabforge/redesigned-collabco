@@ -11,7 +11,9 @@
     text-transform: uppercase;
   }
 
+  //Indentation on Reply
   .indented { margin-left: 25px; }
+  .indented .indented { margin-left: 0; }
 
 }
 
@@ -123,7 +125,6 @@
   .comment-form,
   .comment-by-node-author {
     @media only screen and (min-width : $screen-sm) {
-      margin: 0 auto;
       max-width: 536px;
     }
   }
