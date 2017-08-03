@@ -111,7 +111,7 @@ gulp.task('watch', function () {
  * Default task, running just `gulp` will
  * compile Sass files, launch BrowserSync & watch files.
  */
-gulp.task('dev', ['browser-sync','scripts','sass','watch']);
+gulp.task('default', ['browser-sync','scripts','sass','watch']);
 
 gulp.task('dist', ['scripts-dist', 'sass-dist']);
 
