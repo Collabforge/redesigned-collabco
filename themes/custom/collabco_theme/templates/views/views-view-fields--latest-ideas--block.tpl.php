@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 *  SMALL CARDS SLIDESHOW of LATEST IDEAS
@@ -8,6 +8,9 @@
 
 ?>
 
+<?php
 
-<?php include($directory."/templates/includes/card-small-slideshow-ideas.php");
+$node_type = 'idea';
+
+include($directory."/templates/includes/card-small-slideshow-ideas.php");
 

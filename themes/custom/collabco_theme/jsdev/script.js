@@ -60,9 +60,6 @@
     title: 'Please review the publishing options before finalising the promotion of this idea. By default, it will be unpublished and thus not visible on the website.'
   })
 
-  //Change Background and add image to Header on invidual collaborate, challenge and ideas
-  // $('.full-width-top .container').updateBackgroundHeader();
-
   //Trigger support/follow event when click on icon
    $('.event a[class^="icon-"], .event a[class*=" icon-"]').click(function(event) {
       event.preventDefault();
@@ -206,57 +203,9 @@ function getCardType(flagClass){
 }
 
 
-//Center large cards
-function centerLargeCards() {
-  $('.view').each(function(index, el) {
-    var largeCard = '.card.large';
-    var nCards = $(this).find(largeCard).length;
-
-    if( nCards == 1) {
-      $(largeCard).css({
-        'margin-left': 'auto',
-        'margin-right': 'auto',
-        'float': 'none'
-      });
-    } else if ( nCards == 2 ) {
-      $(largeCard).first().addClass('col-sm-offset-2');
-    }
-
-  });
-}
-
-//Update backgorund headers on challenge/collaborate/ideas
-$.fn.updateBackgroundHeader = function () {
-
-  var container = $(this);
-  var dataBg = container.data('background');
-
-  if( dataBg ){
-    var dataType = container.data('type');
-    var closestFullWidthTop = container.closest('.full-width-top');
-    var colorBackground =  closestFullWidthTop.css('background-image');
-
-    closestFullWidthTop.
-    css('background-image', colorBackground + ', url("' + dataBg + '")');
-  }
-}
-
 //Stop body scrolling
 $.fn.stopBodyScroll =  function() {
   $(this).closest('body').toggleClass('stop-scrolling');
 }
-
-//Calculate and assign the same height to the card based on the highest card on the page
-$.fn.equalHeights = function() {
-  var tallestHeight = 0;
-  $(this).each(function(index, el) {
-    var height = $(this).outerHeight(true);
-    if( height > tallestHeight ){
-      tallestHeight = height;
-    }
-  });
-
-  return tallestHeight;
-};
 
 })(jQuery);

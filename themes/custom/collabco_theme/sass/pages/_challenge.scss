@@ -57,7 +57,7 @@
     @include bg-gradient-challenge('../assets/img/background/triangle-middle-big-down.png', .9);
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
-    padding: 30px 0;
+    padding: 40px 0;
 
     @media only screen and (min-width : $screen-sm) {
       background-size: contain, auto , auto;
@@ -155,10 +155,12 @@
     }
   }
 
+  .view-challenges .view-header { padding: 30px 0 0; }
+  .view-latest-ideas .view-header { padding: 0; }
+
   .view-challenges,
   .view-latest-ideas {
     .view-header {
-      padding: 30px 0 0;
 
       p {
         margin: 15px 0;
