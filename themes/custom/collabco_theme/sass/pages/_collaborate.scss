@@ -4,17 +4,15 @@
 .page-featured-collaborations,
 .page-parked-collaborations,
 .page-collaborations-turned-projects {
- 
+
 
  /*** Header Content Top ***/
 
   .content-top {
-    @include bg-gradient-collaboration('../assets/img/background/triangle-top-right-cut.png', .9);
-    background-position: top right, 0 0 , 0 0;
-    background-size: contain, auto , cover;
-    padding: 25px;
+    @include bg-gradient-collaboration('', .9);
+    padding: 40px 25px;
 
-    h2 { 
+    h2 {
       display: inline-block;
       font-size: 22px;
 
@@ -26,7 +24,7 @@
     }
 
     i,
-    p { 
+    p {
       font-size: 25px;
     }
 
@@ -38,16 +36,18 @@
 
   /*** Cards ***/
 
-  .card .taxonomy-tags { @include bg-gradient-collaboration;  } 
+  .card .taxonomy-tags { @include bg-gradient-collaboration;  }
 
-  .card article .img-icon { 
-    @include bg-gradient-collaboration(); 
-    color: $white; 
+  .card article .img-icon {
+    @include bg-gradient-collaboration();
+    color: $white;
   }
 
   /*** Main Container ***/
 
-  .main-container { @include bg-white-gray(); }
+  .main-container {
+    @include bg-white-gray();
+  }
 
   /*** Breadcrumbs ***/
 
@@ -76,20 +76,20 @@
 
   .view-header {
     padding-top: 0;
+    padding-bottom: 0;
 
-    h3, 
+    h3,
     i { color: $collab-primary-color; }
 
     i { font-size: 25px; }
 
-    p { 
+    p {
       margin: 15px 0;
-      @media only screen and (min-width : $screen-sm) { padding: 0 80px; }
     }
   }
 
-  .view-collaborations-main-view { 
-    h3 { margin: 60px 0 20px; }
+  .view-collaborations-main-view {
+    h3 { margin: 30px; }
   }
 
   /*** Content Lower Block ***/
@@ -98,28 +98,28 @@
     @include bg-gradient-collaboration('../assets/img/background/triangle-middle-big.png', .9);
     background-position: top center, 0 0 , 0 0;
     background-size: cover, auto , auto;
-    
+
     @media only screen and (min-width : $screen-sm) {
       background-size: contain, auto , auto;
     }
   }
-  
+
   /*** HOW CAN I START A COLLABORATION? Block ***/
 
   #block-collabco-collaboration-how-to-start-collaborate {
     @include title-1-block();
     color: $white;
     text-align: center;
-    
-    h2, 
-    i, 
+
+    h2,
+    i,
     p { margin: 25px 0; }
 
-    i { 
+    i {
       display: block;
       font-size: 50px;
     }
-    
+
   }
 
   /*** Content Bottom Block ***/
@@ -136,7 +136,7 @@
   }
 
   /*** Views Separator Line ***/
-  
+
   .separator {
     border-color: $collab-primary-color;
     margin: 10px 0;
@@ -149,5 +149,5 @@
 .page-featured-collaborations,
 .page-parked-collaborations {
 
-  .content-top h2 { padding: 0; } 
+  .content-top h2 { padding: 0; }
 }
