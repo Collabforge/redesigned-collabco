@@ -9,7 +9,7 @@
 /*** Header Full Width Top Block ***/
 
   .full-width-top{
-    @include bg-gradient-ideas('../assets/img/background/triangle-bottom-right-cut.png', .9);
+    @include bg-gradient-ideas('', .9);
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
@@ -27,7 +27,7 @@
     border-bottom: $border-dark;
     padding-top: 30px;
     margin-bottom: 30px;
-  } 
+  }
 
 /*** Main Container ***/
 
@@ -36,18 +36,18 @@
     .field-name-body { margin-bottom: 85px; }
   }
 
-  
+
 /*** Sidebar ***/
 
   .sidebar-2 .nav-tabs {
     margin-bottom: 0;
   }
 
-  .sidebar-2 h2 { 
-    color: $idea-primary-color; 
+  .sidebar-2 h2 {
+    color: $idea-primary-color;
     margin-top: 20px;
   }
-	
+
 /*** Comments ***/
 
 .comment-wrapper .title { color: $idea-primary-color; }
@@ -79,7 +79,7 @@
       border-radius: 0;
       color: $orange;
       cursor: pointer;
-      
+
       .summary { color: $orange; }
 
     }
@@ -88,13 +88,13 @@
       width: 200px;
     }
 
-  }  
+  }
 }
 
 /* === LARGE CARDS === */
 
-.card.ideas.large .img-icon { 
-  @include bg-gradient-ideas(); 
+.card.ideas.large .img-icon {
+  @include bg-gradient-ideas();
   color: $white;
 }
 

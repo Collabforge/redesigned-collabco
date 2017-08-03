@@ -2,9 +2,9 @@
 
 .comment-wrapper {
 
-  .title { 
+  .title {
     border-bottom: 1px solid $gray-lighter;
-    font-size: pxtoem(18px);
+    font-size: 18px;
     line-height: 1;
     margin-bottom: 20px;
     padding-bottom: 16px;
@@ -16,13 +16,13 @@
 }
 
 .comment-user-picture,
-.comment-user-name { 
+.comment-user-name {
   float: left;
 }
 
-.comment-user-submitted { 
+.comment-user-submitted {
   color: $gray-darker;
-  float: right; 
+  float: right;
   font-size: 13px;
   padding-top: 13px;
 }
@@ -51,20 +51,20 @@
   position: relative;
   border: $border-dark;
 
-  .links { 
+  .links {
     padding: 10px 10px 0;
-    text-align: right; 
+    text-align: right;
 
     a {
       color: $blue;
       text-decoration: none;
-    }  
+    }
 
     a:hover { text-decoration: underline; }
   }
 
 
-  @media only screen and (min-width : $screen-sm) { 
+  @media only screen and (min-width : $screen-sm) {
     margin-left: 63px;
     max-width: 472px;
   }
@@ -76,18 +76,18 @@
   border-right: 7px solid transparent;
   border-top: 7px solid transparent;
   content: '';
-  display: block; 
+  display: block;
   height: 0;
   left: 15px;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
   position: absolute;
   top: -13px;
   width: 0;
 }
 
-.comment-user-name { 
-  padding-top: 14px; 
+.comment-user-name {
+  padding-top: 14px;
 }
 
 .comment-user-name,
@@ -108,7 +108,7 @@
   .control-label {
     font-weight: normal;
   }
-  
+
   .panel-body {
     border: $border-dark;
     border-radius: 0;
@@ -123,8 +123,8 @@
   .comment-form,
   .comment-by-node-author {
     @media only screen and (min-width : $screen-sm) {
-      margin: 0 auto; 
-      max-width: 536px; 
+      margin: 0 auto;
+      max-width: 536px;
     }
   }
 

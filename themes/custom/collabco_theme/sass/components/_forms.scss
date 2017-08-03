@@ -28,7 +28,7 @@
 }
 
 
-.comment-form #edit-author, 
+.comment-form #edit-author,
 .field-widget-text-textarea {
   @media only screen and (min-width : $screen-sm) {
     max-width: 536px;
@@ -38,12 +38,12 @@
 input[type="text"].form-control ,
 input[type="password"].form-control {
   transition: border-color ease .3s, border-width .1s ease;
- 
+
   @media only screen and (max-width : $screen-sm) { width: 100%; }
 }
 
 
-button .glyphicon { font-size: pxtoem(12px); }    
+button .glyphicon { font-size: 12px; }
 
 .help-block { color: $gray-dark; }
 
@@ -52,7 +52,7 @@ button .glyphicon { font-size: pxtoem(12px); }
 
   li a,
   li.active a,
-  li.active a:focus { 
+  li.active a:focus {
     color: $green-dark;
     text-decoration: none;
 
@@ -69,17 +69,17 @@ button .glyphicon { font-size: pxtoem(12px); }
 //File input
 
 .form-managed-file {
-  .form-file { 
+  .form-file {
     display: inline-block;
     width: auto;
   }
 
-  .input-group-btn { 
+  .input-group-btn {
     display: inline-block;
     margin-left: 10px;
   }
 
-  button { 
+  button {
     font-size: 12px;
     padding: 8px;
   }
@@ -87,18 +87,18 @@ button .glyphicon { font-size: pxtoem(12px); }
 
 //Media browser
 
-.page-media-browser:after { 
+.page-media-browser:after {
   display: none;
 }
 
-.media-wrapper { 
+.media-wrapper {
   max-width: 100%;
   .ui-widget-header {
     background: $purple;
     border-radius: 0;
     color: $white;
   }
-  
+
   .ui-dialog-titlebar-close {
     background-color: transparent;
     border: 0;
@@ -117,7 +117,7 @@ button .glyphicon { font-size: pxtoem(12px); }
   max-width: 100%;
 
   #media-tabs-wrapper { float: left; }
-  
+
   .help-block { display: none; }
 
   .nav {
@@ -128,7 +128,7 @@ button .glyphicon { font-size: pxtoem(12px); }
     border: 0;
     padding: 0;
 
-    li { 
+    li {
       border: 0;
       background: transparent;
       margin: 0;
@@ -137,7 +137,7 @@ button .glyphicon { font-size: pxtoem(12px); }
       &:first-child { margin-left: 0; }
     }
 
-    li a { 
+    li a {
       padding: 10px 0;
       color: $green-dark;
       text-transform: uppercase;
@@ -167,7 +167,7 @@ button .glyphicon { font-size: pxtoem(12px); }
   #edit-upload-upload .form-file {
     padding: 0;
 
-    @media only screen and (min-width : $screen-sm) {  
+    @media only screen and (min-width : $screen-sm) {
       padding: 2px;
     }
 
@@ -177,20 +177,20 @@ button .glyphicon { font-size: pxtoem(12px); }
     padding: 10px 10px 0;
   }
 
-  #edit-upload-upload-button { 
+  #edit-upload-upload-button {
     display: inline-block;
     margin-bottom: 10px;
 
-    @media only screen and (min-width : $screen-sm) {  
+    @media only screen and (min-width : $screen-sm) {
       margin-left: 10px;
       margin-bottom: 0;
     }
   }
 
-  .views-exposed-form .views-exposed-widget { 
+  .views-exposed-form .views-exposed-widget {
     float: none;
   }
-  
+
   .form-file, .form-file .error  {
     margin-bottom: 10px;
     display: block;
@@ -201,7 +201,7 @@ button .glyphicon { font-size: pxtoem(12px); }
 
     @media only screen and (min-width : $screen-sm) {  width: 70%; }
   }
-  
+
   .input-group-btn {
     margin: 0;
   }
@@ -210,7 +210,7 @@ button .glyphicon { font-size: pxtoem(12px); }
   #edit-previous,
   #edit-submit,
   #edit-submit-media-default,
-  .button-yes { 
+  .button-yes {
     margin: 10px 0;
     padding: 8px;
     font-size: 12px;
@@ -240,7 +240,7 @@ button .glyphicon { font-size: pxtoem(12px); }
   }
 
   .pagination > .active > span,
-  .pagination > .active > span:hover  { 
+  .pagination > .active > span:hover  {
     @include bg-gradient-green-blue();
   }
 
@@ -248,7 +248,7 @@ button .glyphicon { font-size: pxtoem(12px); }
     color: $white;
   }
 
-  .pagination > li > a, 
+  .pagination > li > a,
   .pagination > li > a:focus,
   .pagination > li > a {
     color: $green-dark;

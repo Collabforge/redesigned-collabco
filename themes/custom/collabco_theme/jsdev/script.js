@@ -61,7 +61,7 @@
   })
 
   //Change Background and add image to Header on invidual collaborate, challenge and ideas
-  $('.full-width-top .container').updateBackgroundHeader();
+  // $('.full-width-top .container').updateBackgroundHeader();
 
   //Trigger support/follow event when click on icon
    $('.event a[class^="icon-"], .event a[class*=" icon-"]').click(function(event) {

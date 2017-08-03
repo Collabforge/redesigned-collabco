@@ -3,15 +3,16 @@
   position: relative;
   text-align: center;
 
-  i { font-size: pxtoem(20px); }
+  i { font-size: 20px; }
 
   h2 {
-    font-size: pxtoem(48px);
+    font-size: 48px;
+    margin-top: 0;
   }
 
   p {
-    font-size: pxtoem(18px);
-    line-height: pxtoem(25px);
+    font-size: 18px;
+    line-height: 25px;
   }
 
   .stats {
@@ -46,9 +47,21 @@
 .content-top { @include content-top(); }
 
 .full-width-top {
+
   @media only screen and (min-width : $screen-sm) {
     h2 { padding: 0 120px; }
     p { padding: 0 135px; }
+  }
+
+  .header-image-bg {
+    position: absolute;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: -999;
   }
 }
 

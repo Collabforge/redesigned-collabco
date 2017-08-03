@@ -5,7 +5,7 @@
     margin-top: 0;
   }
 
-  .region-sidebar-second {  
+  .region-sidebar-second {
     background-color: $gray-lighter;
     border: $border-dark;
     padding: 35px 25px;
@@ -14,7 +14,7 @@
   h2 {
     border-bottom: 1px solid $gray-chromium;
     display: block;
-    font-size: pxtoem(18px);
+    font-size: 18px;
     margin-top: 15px;
     padding-bottom: 7px;
     text-transform: uppercase;
@@ -27,11 +27,11 @@
 
   .nav-tabs li {
     margin:  0 0 10px;
-    width: 100%; 
+    width: 100%;
 
    &.last {
       margin-bottom: 0;
-    } 
+    }
 
     a {
       color: $gray-dark;
@@ -46,7 +46,7 @@
 
   // Promote to collaboration block on idae single page and co-lab links
   #block-collabco-idea-promote a,
-  #block-collabco-idea-collaborations a { 
+  #block-collabco-idea-collaborations a {
     display: block;
     text-decoration: none;
 
@@ -54,17 +54,17 @@
       text-decoration: underline;
       color: $secondary-color;
     }
-  }  
+  }
 
   .nav > li > a:focus { background-color: transparent; }
 
   .nav-tabs li,
   #block-collabco-idea-promote a,
   #block-collabco-idea-collaborations a,
-  .item { 
+  .item {
     padding: 13px 12px 9px;
   }
-    
+
   .stat,
   .nav-tabs li,
   #block-collabco-idea-promote a,
@@ -85,25 +85,25 @@
       float: left;
       height: 100%;
     }
-    
+
     .value {
       border-right: 1px solid $gray-plank;
       padding: 12px 0;
-      text-align: center;    
+      text-align: center;
       width: 20%;
     }
 
     &.share .stat-label,
     &.mail .stat-label { width: 100%; }
 
-    a { 
+    a {
       color: $gray-dark;
       text-decoration: none;
-      
-      &:hover { 
+
+      &:hover {
         color: $secondary-color;
         text-decoration: underline;
-      } 
+      }
     }
 
     .stat-label > a,
@@ -115,9 +115,9 @@
       padding: 12px 12px 8px;
       width: 80%;
 
-      .flag-wrapper, p { 
-        display: inline; 
-        float: left; 
+      .flag-wrapper, p {
+        display: inline;
+        float: left;
         margin: 0;
       }
 
@@ -127,7 +127,7 @@
       }
 
       a[class^="icon-"],
-      a[class*=" icon-"] { 
+      a[class*=" icon-"] {
         position: relative;
         top: 0px;
         float: right;
@@ -141,7 +141,7 @@
         &.icon-full {
           color: $secondary-color;
         }
-      } 
+      }
     }
 
   } // </.stat>
@@ -155,7 +155,7 @@
 
   .team {
     margin-bottom: 10px;
-  
+
     .user-picture {
       display: inline-block;
 
@@ -174,16 +174,16 @@
       &:hover {
         text-decoration: underline;
       }
-    }  
+    }
   } // </.team>
-  
-  .add-team-member a { 
+
+  .add-team-member a {
     display: inline-block;
     width: 100%;
   }
 
   #block-collabco-idea-collaborations {
-    .view-header { 
+    .view-header {
       text-align: left;
       padding: 0;
     }
@@ -200,8 +200,8 @@
     list-style-type: none;
     display: block;
 
-    li { 
-      margin-top: 10px; 
+    li {
+      margin-top: 10px;
       text-align: left;
     }
 
@@ -209,13 +209,13 @@
 
     a { width: 100%; }
 
-    a:before { 
+    a:before {
      position: relative;
      margin-right: 10px;
      top: 2px;
-    }  
+    }
 
-    a.icon-beaker:before { 
+    a.icon-beaker:before {
       font-size: 18px;
       margin-right: 6px;
       right: 2px;
@@ -223,6 +223,6 @@
     }
 
   }
-  
+
 }
 

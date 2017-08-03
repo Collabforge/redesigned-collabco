@@ -11,7 +11,7 @@ header.challenge-status {
     @media only screen and (min-width : $screen-sm) { float: left; }
 
   }
-  .status { 
+  .status {
     @media only screen and (min-width : $screen-sm) { float: right; }
   }
 }
@@ -21,10 +21,10 @@ header.challenge-status {
 .challenge-status {
   border-bottom: $border-dark;
   font-size: 13px;
-  
+
   color: $gray-darker;
-  span { 
-    margin-right: 16px;  
+  span {
+    margin-right: 16px;
     text-transform: capitalize;
   }
   margin-bottom: 37px;
@@ -33,7 +33,7 @@ header.challenge-status {
 /*** Header Full Width Top Block ***/
 
   .full-width-top{
-    @include bg-gradient-challenge('/profiles/collabco/themes/custom/collabco_theme/assets/img/background/triangle-bottom-right-cut.png', .9);
+    @include bg-gradient-challenge('',.9);
     @include content-top();
     background-position: top right, 0 0 , 0 40%;
     background-size: contain, auto, cover;
@@ -63,13 +63,13 @@ header.challenge-status {
   }
 
   /*** Header Top Sponsor ***/
-  
+
   .sponsor {
     bottom: 20px;
     left: 28px;
     position: absolute;
 
-    .user-picture { 
+    .user-picture {
       display: inline-block;
       float: left;
       margin: 0;
@@ -86,15 +86,15 @@ header.challenge-status {
       padding-left: 10px;
       text-align: left;
 
-      span { 
-        font-size: 10px; 
+      span {
+        font-size: 10px;
         text-transform: uppercase;
       }
 
       a {
         color: $white;
         text-decoration: none;
-        
+
         &:hover { text-decoration: underline; }
 
       }
@@ -115,8 +115,8 @@ header.challenge-status {
   .create-idea-btn {
     margin-bottom: 10px;
 
-    p { 
-      color: $challenge-primary-color; 
+    p {
+      color: $challenge-primary-color;
       margin-bottom: 10px;
     }
   }
@@ -124,8 +124,8 @@ header.challenge-status {
   /*** Hide Node Idea ***/
 
   .node-idea,
-  .node-idea + div { 
-    display: none; 
+  .node-idea + div {
+    display: none;
   }
 
 /*** Sidebar ***/
@@ -136,9 +136,9 @@ header.challenge-status {
 
 /*** Content Middle - Winning/Recent Ideas Block ***/
 
-  .content-middle { 
+  .content-middle {
     @include bg-white-gray();
-    
+
     h2.block-title {
       color: $challenge-primary-color;
       font-size: 18px;
@@ -162,12 +162,12 @@ header.challenge-status {
 .view-id-ideas_belonging_to_challenge {
   .recent-ideas {
 
-    h2.block-title { 
+    h2.block-title {
       border-bottom: $border-dark;
       margin: 0 15px;
       padding: 16px 0;
-      
-      @media only screen and (min-width : $screen-sm) { 
+
+      @media only screen and (min-width : $screen-sm) {
         border: 0;
         margin: 0;
         padding: 46px 15px 0;
@@ -178,7 +178,7 @@ header.challenge-status {
 
   .view-filters {
     text-align: left;
-    @media only screen and (min-width : $screen-sm) { 
+    @media only screen and (min-width : $screen-sm) {
       text-align: right;
     }
   }
@@ -192,9 +192,9 @@ header.challenge-status {
 
   @media only screen and (min-width : $screen-sm) {
     bottom: 16px;
-  }  
+  }
 
-  label { 
+  label {
     color: $challenge-primary-color;
     font-weight: normal;
   }
