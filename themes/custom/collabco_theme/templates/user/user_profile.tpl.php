@@ -84,14 +84,19 @@ if(arg(1) != $user->uid) {
     <div class="details row">
       <div class="info col-sm-6">
         <div><?php print render($user_profile['field_full_name']); ?></div>
-        <div><div class="field field-name-field-key-skills field-type-taxonomy-term-reference field-label-above"><div class="field-label">Key skills:&nbsp;</div><div class="field-items"><?php echo $key_skills; ?></div></div></div>
+
+        <?php if(!empty($key_skills)) { ?>
+
+          <div><div class="field field-name-field-key-skills field-type-taxonomy-term-reference field-label-above"><div class="field-label">Key skills:&nbsp;</div><div class="field-items"><?php echo $key_skills; ?></div></div></div>
+
+        <?php } ?>
       </div>
       <div class="bio col-sm-6">
         <?php print render($user_profile['field_bio']); ?>
       </div>
     </div> <!-- /details -->
   </div>  <!-- /profile-other -->
-  
+
 </div>  <!-- /profile -->
 <div id="contributions">
 <?php print views_embed_view('your_contrib', 'your_contrib', arg(1)); ?>
@@ -99,7 +104,7 @@ if(arg(1) != $user->uid) {
 <div id="contributions_mobile">
 <?php print views_embed_view('your_contrib', 'mobile_block', arg(1)); ?>
 </div>
-<?php  
+<?php
   $idea_badges = 0;
   $collab_badges = 0;
   $args = array(arg(1));

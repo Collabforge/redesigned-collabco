@@ -5,7 +5,10 @@
  */
 ?>
 
-<div class="container" data-background="<?php echo $image?>" data-type="idea">
+
+<div class="header-image-bg" style="background-image: url(<?php echo $image; ?>);"></div>
+
+<div class="container" data-type="idea">
 
 <!-- Support, Follow and Comments icons in top-right -->
   <div class="stats clearfix">

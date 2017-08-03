@@ -13,14 +13,14 @@
     position: relative;
     border: $border-dark;
 
-    .feat-img { 
+    .feat-img {
       position: relative;
       height: 165px;
       overflow: hidden;
     }
 
     .img-icon {
-      font-size: pxtoem(20px);
+      font-size: 20px;
     }
 
     /*** Remaining Days Ribbon ***/
@@ -47,7 +47,7 @@
 
     /*** Content ***/
 
-    .title a { 
+    .title a {
       color: $gray-darker;
       display: inline-block;
       font-size: 30px;
@@ -58,22 +58,22 @@
       &:hover { text-decoration: underline; }
     }
 
-    .content { 
+    .content {
       height: auto;
-      padding: 45px 20px 25px; 
+      padding: 45px 20px 25px;
       position: relative;
-      
+
       p { color: $gray-dark; }
     }
 
-  } 
+  }
 
   /*** Footer Links ***/
 
   footer {
     border-top: 1px solid $gray-chromium;
     overflow: hidden;
-    color: $gray-dark; 
+    color: $gray-dark;
 
     > div {
       border-right: 1px solid $gray-chromium;
@@ -87,12 +87,12 @@
     > div:last-child { border: 0; }
 
     p,
-    a { 
+    a {
       font-size: 12px;
       text-transform: uppercase;
     }
-    
-    a {  
+
+    a {
       color: $gray-dark;
       text-decoration: none;
 
@@ -111,17 +111,17 @@
     }
 
     .flag-wrapper { display: block; }
-  } 
+  }
 
 
-} 
+}
 
 /* === LARGE CARDS === */
 
 .card.large {
-  
-  .img-icon { 
-    padding: 6px 8px 4px;  
+
+  .img-icon {
+    padding: 6px 8px 4px;
     position: absolute;
   }
 
@@ -132,9 +132,9 @@
   }
 
   &.challenges.closed {
-    footer > div { 
+    footer > div {
       width: 50%;
-    } 
+    }
   }
 
   /*** Center element when there is only one card **/
@@ -151,14 +151,14 @@
     @media only screen and (min-width : $screen-md) { margin-left: 16.66667%; }
   }
 
-} 
+}
 
 /* === SMALL CARDS === */
 
 .card.small {
   padding-right: 1px;
-  
- .feat-img { 
+
+ .feat-img {
    background-repeat: no-repeat;
    background-size: cover;
    height: 97px;
@@ -166,32 +166,32 @@
 
   .img-icon {
     color: $white;
-    font-size: 20px; 
+    font-size: 20px;
     padding: 6px 8px;
     position: absolute;
     bottom: 0;
   }
-  
+
   .content {
     overflow: hidden;
     padding: 22px 13px 12px 15px;
     height: 106px;
 
-    .title a { 
+    .title a {
       display: block;
       font-size: 18px;
       margin-bottom: 4px;
     }
 
-    p { 
-      font-size: 13px; 
+    p {
+      font-size: 13px;
       line-height: 16px;
       padding-top: 4px;
     }
   }
-  
+
  footer {
-  
+
    > div { padding: 10px; }
 
    /*** ICON POSITION ***/
@@ -201,12 +201,12 @@
       right: -3px;
       top: 2px;
     }
-    
+
   }
 
   /*** Hide footer text and throbber ***/
   .flag-throbber, .flag { display: none; }
-  
+
   @media (min-width: $screen-sm-min) {  width: 217px; }
 
 }

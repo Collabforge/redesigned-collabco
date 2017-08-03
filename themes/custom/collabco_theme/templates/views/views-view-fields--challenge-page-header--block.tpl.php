@@ -1,7 +1,7 @@
 
+<div class="header-image-bg" style="background-image: url(<?php echo $fields['field_challenge_image']->content; ?>);"></div>
 
-<div class="container" data-type="challenge" data-background="<?php echo $fields['field_challenge_image']->content; ?>">
-
+<div class="container" data-type="challenge">
 
   <div class="stats clearfix">
       <!-- Ideas Count -->
