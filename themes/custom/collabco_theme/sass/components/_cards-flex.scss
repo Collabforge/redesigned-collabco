@@ -5,7 +5,21 @@
 .card.large,
 .card.small {
 
-  .feat-img img { display: none; }
+  .feat-img {
+    a,
+    .field-content {
+      height: 100%;
+    }
+
+    a {
+      background-size: cover;
+      background-position: center center;
+      width: 100%;
+      display: block;
+    }
+
+    img { display: none;}
+  }
 
   /*** Content ***/
   .title a {
@@ -83,16 +97,14 @@
 
   .card.large {
     flex: 1;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-bottom: 30px;
+    margin: 0 15px 30px;
     position: relative;
     background-color: $white;
     border: $border-dark;
     min-width: 290px;
 
     @media only screen and (min-width : 640px) {
-      max-width: 320px;
+      max-width: 290px;
     }
 
     article {
@@ -101,13 +113,6 @@
       .feat-img {
         position: relative;
         height: 165px;
-
-        a {
-          height: 100%;
-          background-size: cover;
-          width: 100%;
-          display: block;
-        }
       }
 
       .img-icon {
@@ -184,8 +189,6 @@
   }
 
  .feat-img {
-   background-repeat: no-repeat;
-   background-size: cover;
    height: 97px;
    position: relative;
    overflow: hidden;

@@ -30,7 +30,7 @@
   });
 
   // Set card imgs as a background on the link to help responsiveness
-  $('.card.small .feat-img img, .full-width-card .feat-img img').each(function(index, el) {
+  $('.full-width-card .feat-img img').each(function(index, el) {
     var imgSrc = $(this).attr('src');
     var imgHeight = $(this).closest('.feat-img').css('height');
 
@@ -48,10 +48,9 @@
 
   });
 
-    // Set card imgs as a background on the link to help responsiveness
+  // Set card imgs as a background on the link to help responsiveness
   $('.card.large .feat-img img, .card.small .feat-img img').each(function(index, el) {
     var imgSrc = $(this).attr('src');
-    var imgHeight = $(this).closest('.feat-img').css('height');
 
     $(this).parent('a').css({
       'background-image': 'url("' + imgSrc + '")'
