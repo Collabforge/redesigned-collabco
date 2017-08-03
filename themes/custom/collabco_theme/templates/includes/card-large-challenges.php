@@ -77,5 +77,6 @@ $total_items = count( $view->result );
 
      <?php } ?>
     </footer>
+
    </article>
 </div>

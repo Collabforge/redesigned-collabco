@@ -6,8 +6,6 @@
 
   doc.ready(function() {
 
-  // resizeCard();
-
   //Add class to discussion and documents
   if ($('*').find('.node-type-conversation').length >0){
     $( ".ui-menu-collaboration-discussion" ).addClass( "active" );
@@ -29,27 +27,9 @@
         ,'fast');
   });
 
-  // Set card imgs as a background on the link to help responsiveness
-  $('.full-width-card .feat-img img').each(function(index, el) {
-    var imgSrc = $(this).attr('src');
-    var imgHeight = $(this).closest('.feat-img').css('height');
-
-    $(this).parent('a').css({
-      'background-image': 'url("' + imgSrc + '")',
-      'background-size': 'cover',
-      'background-repeat': 'no-repeat',
-      'background-position': 'center center' ,
-      'height': imgHeight,
-      'width': '100%',
-      'display': 'inline-block'
-    });
-
-    $(this).remove();
-
-  });
 
   // Set card imgs as a background on the link to help responsiveness
-  $('.card.large .feat-img img, .card.small .feat-img img').each(function(index, el) {
+  $('.card img, .full-width-card img').each(function(index, el) {
     var imgSrc = $(this).attr('src');
 
     $(this).parent('a').css({
@@ -165,9 +145,6 @@
 
   });
 
-  // resize breakpoints
-  //win.on('resize', resizeCard);
-
 });
 
 //Changes flag icons on support/unsupport and follow/unfollow
@@ -246,26 +223,6 @@ function centerLargeCards() {
     }
 
   });
-}
-
-// Resize card on winresize and under 768px for tablet/phones
-function resizeCard() {
-  var winWidth = win.width();
-  $('.card.large .content').outerHeight('auto');
-
-  if( winWidth > 768 ) {
-    setCardsHeight();
-  }
-
-}
-
-//For Each view, set the highest height to all cards.
-function setCardsHeight(){
-  $('.view').each(function(index, el) {
-    $(this).find('.card.large .content').outerHeight(
-      $(this).find('.card.large .content').equalHeights()  );
-  });
-
 }
 
 //Update backgorund headers on challenge/collaborate/ideas

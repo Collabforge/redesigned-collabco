@@ -9,12 +9,16 @@
 
   .border-box { border: $border-dark; }
 
-  .feat-img,
+  .border-box .feat-img,
   .content,
   aside {
     background-color: $white;
 
-    @media only screen and (min-width : $screen-sm) {
+    @media (min-width : $screen-sm) {
+       height: 180px;
+    }
+
+    @media only screen and (min-width : $screen-md) {
        height: 150px;
     }
   }
@@ -24,7 +28,7 @@
     position: relative;
     padding: 0;
     overflow: hidden;
-    height: 150px;
+    height: 180px;
 
     i {
       color: $white;
@@ -37,7 +41,18 @@
 
     img { display: none; }
 
-  }
+    div,
+    a {
+      height: 100%;
+    }
+
+    a {
+      background-size: cover;
+      background-position: center center;
+      display: block;
+    }
+
+  } // </.feat-img>
 
   &.collaboration .picture i {
     font-size: 25px;
@@ -63,7 +78,7 @@
       &:hover { text-decoration: underline; }
     }
 
-  }
+  } // </.content>
 
   /*** ICONS FOLLOW/SUPPORT/COMMENT LINKS ***/
   aside {
@@ -84,11 +99,16 @@
     > div {
       border-bottom: $border-dark;
       cursor: pointer;
-      height: 33%;
+      height: 33.33333%;
       height: calc(100% / 3);
       padding: 15px 0;
       text-align: center;
       text-transform: uppercase;
+
+      @media (min-width : $screen-sm) and (max-width: $screen-md) {
+        padding: 20px 0;
+        font-size: 14px;
+      }
 
       &:last-child { border-bottom: 0; }
 
@@ -104,12 +124,16 @@
     .support a { right: 0; }
     .follow a { right: 1px; }
     .comment a { right: 2px;  }
-  }
+  }// </aside>
 
   &.challenge {
     aside > div {
       height: 50%;
       padding: 28px 0;
+
+      @media (min-width : $screen-sm) and (max-width: $screen-md) {
+        padding: 35px 0;
+      }
     }
   }
 
@@ -128,11 +152,11 @@
 }
 
 /*** Card without image ***/
-.no-idea-image {
-  background-image: url("../assets/img/placeholder/placeholder-card-large.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 150px; width: 100%;
-  display: inline-block;
-}
+// .no-idea-image {
+//   background-image: url("../assets/img/placeholder/placeholder-card-large.jpg");
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   height: 150px; width: 100%;
+//   display: inline-block;
+// }

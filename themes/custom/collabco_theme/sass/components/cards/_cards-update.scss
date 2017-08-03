@@ -4,18 +4,18 @@
   margin: 40px 0;
 
   i { font-size: 40px; }
-  
-  a { 
+
+  a {
     color: $card-updates-primary-color;
     text-decoration: none;
 
     &:hover { text-decoration: underline; }
   }
 
-  .icon { 
+  .icon {
     text-align: left;
 
-    @media only screen and (min-width : $screen-sm) { 
+    @media only screen and (min-width : $screen-sm) {
       padding: 0;
       text-align: right;
     }
@@ -30,8 +30,8 @@
     .title {
       margin: 5px 0 0;
       font-size: 18px;
-      
-      a { 
+
+      a {
         color: $card-updates-tertiary-color;
         text-decoration: none;
 
@@ -45,36 +45,36 @@
       font-size: 18px;
     }
   }
-  
-  .desc { 
+
+  .desc {
     padding: 10px 5px 0 0;
     display: inline-block;
   }
-  
+
   .time-elapsed { font-weight: bold; }
 
   /*** Author name and image ***/
-  
+
   .author {
     padding: 12px 0;
 
     .user-picture { float: left; }
 
-    .img-responsive { 
+    .img-responsive {
       height: 48px;
       width: 48px;
     }
 
-    a { 
+    a {
       display: inline-block;
       margin: 10px 5px;
       font-weight: bold;
       text-decoration: none;
     }
   }
- 
-  /*** Update with image ***/ 
-  .feat-img, 
+
+  /*** Update with image ***/
+  .feat-img,
   .info {
     margin-top: 10px;
   }
@@ -88,7 +88,7 @@
 
     @media only screen and (min-width : $screen-sm) { float: left; }
 
-    img { 
+    img {
       min-height: 100%;
       width: 100%;
     }
@@ -98,25 +98,25 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      font-size: 20px; 
+      font-size: 20px;
       padding: 6px 8px 2px;
 
       &.idea { @include bg-gradient-ideas(); }
 
       &.project,
-      &.collaboration { 
+      &.collaboration {
         @include bg-gradient-collaboration();
       }
     }
   }
 
-  .info { 
+  .info {
     width: auto;
-    
+
     @media only screen and (min-width : $screen-sm) {
       margin-left: 200px;
     }
-    
+
     /*** Update without image ***/
     &.no-image {
       padding: 0;
@@ -124,18 +124,18 @@
       margin-left: 0;
       width: 100%;
     }
-    
+
     .desc {
       font-size: 16px;
       padding: 0;
       line-height: 1.2;
       margin: 5px 0;
     }
-  }  
-  
+  }
+
 }
 
-/*** UPDATES CARD SEPARATOR ***/
+/*** UPDATES CARD SEPARATOR LINE ***/
 
 .separator-updates {
   background-color: $gray-dark;

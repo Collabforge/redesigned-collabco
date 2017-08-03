@@ -1,10 +1,11 @@
 @import 'blocks';
 @import 'breadcrumbs';
 @import 'buttons';
-@import 'cards-flex';
-// @import 'cards';
 @import 'forms';
-@import 'full-width-card';
+@import 'cards/cards-flex';
+// @import 'cards/cards';
+@import 'cards/full-width-card';
+@import 'cards/cards-update';
 @import 'functions';
 @import 'icons';
 @import 'mixins';
