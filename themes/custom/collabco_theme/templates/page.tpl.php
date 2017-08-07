@@ -85,12 +85,12 @@
 <header id="navigation" role="banner">
   <div class="desktop-header hidden-xs <?php print $container_class; ?>">
     <div class="row">
-      <div id="brand" class="col-sm-2 hidden-xs"> 
+      <div id="brand" class="col-sm-2 hidden-xs">
         <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
              <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo-collabco.jpg" alt="Logo Collabco"/>
            </a>
       </div>
-      
+
     <?php if (!empty($primary_nav) || !empty($page['nav_actions'])): ?>
       <nav role="navigation-primary" class="col-sm-7 col-md-7 primary-nav">
           <?php if (!empty($primary_nav)): ?>
@@ -98,25 +98,25 @@
           <?php endif; ?>
       </nav>
       <nav role="navigation-secondary" class="col-sm-3 secondary-nav">
-        <?php if (!empty($page['nav_search'])): ?> 
+        <?php if (!empty($page['nav_search'])): ?>
           <div class="search">
             <?php print render($page['nav_search']);?>
-          </div>    
+          </div>
          <?php endif; ?>
-         <?php if (!empty($page['nav_actions'])): ?> 
+         <?php if (!empty($page['nav_actions'])): ?>
             <div class="nav-actions"><?php print render($page['nav_actions']);?></div>
           <?php endif; ?>
-      </nav>    
+      </nav>
 
     <?php endif; ?>
     </div>
-  </div>  
+  </div>
   <div class="mobile-header container-fluid visible-xs-block">
     <div class="row ">
       <div class="nav-mobile col-xs-3">
         <a href="#" id='nav-hamburger' class="icon-hamburguer"></a>
       </div>
-     <div id="brand" class="col-xs-6"> 
+     <div id="brand" class="col-xs-6">
         <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
           <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.jpg" alt="Logo"/>
         </a>
@@ -124,7 +124,7 @@
       </div>
         <div class="search col-xs-3">
           <a href="/search" class="icon-magnifier"></a>
-        </div>     
+        </div>
     </div>
   </div>
 
@@ -141,7 +141,7 @@
       <?php print render($page['nav_actions_mobile']); ?>
     </div>
   <?php endif; ?>
-  
+
     <?php if (!empty($primary_nav)): ?>
       <?php print render($primary_nav); ?>
     <?php endif; ?>
@@ -173,7 +173,7 @@
   <div class="content-upper">
     <div class="<?php print $container_class; ?>">
       <?php print render($page['content_upper']); ?>
-    </div>  
+    </div>
   </div>
 <?php endif; ?>
 
@@ -222,18 +222,18 @@
                 }?>
         </section>
       <?php if (!empty($page['sidebar_second_top'])): ?>
-        <aside class="col-sm-4 col-sm-offset-1 sidebar-1" role="complementary">
+        <aside class="col-sm-5 col-md-4 sidebar-1" role="complementary">
           <?php print render($page['sidebar_second_top']); ?>
         </aside>  <!-- /#sidebar-second-top -->
       <?php endif; ?>
       <?php if (!empty($page['sidebar_second'])): ?>
-        <aside class="col-sm-4 col-sm-offset-1 sidebar-2" role="complementary">
+        <aside class="col-sm-5 col-md-4 sidebar-2" role="complementary">
           <?php print render($page['sidebar_second']); ?>
         </aside>  <!-- /#sidebar-second -->
       <?php endif; ?>
 
     </div>
-  </div>  
+  </div>
 
 </div>
 
@@ -241,7 +241,7 @@
   <div class="content-middle">
     <div class="<?php print $container_class; ?>">
       <?php print render($page['content_middle']); ?>
-    </div> 
+    </div>
   </div>
 <?php endif; ?>
 
@@ -250,7 +250,7 @@
   <div class="content-lower">
     <div class=" <?php print $container_class; ?>">
       <?php print render($page['content_lower']); ?>
-    </div>  
+    </div>
   </div>
 <?php endif; ?>
 
@@ -258,7 +258,7 @@
   <div class="content-bottom">
     <div class=" <?php print $container_class; ?>">
       <?php print render($page['content_bottom']); ?>
-    </div>  
+    </div>
   </div>
 <?php endif; ?>
 
@@ -286,7 +286,7 @@
       <?php endif; ?>
     </div>
   </div>
-</footer>    
+</footer>
 <?php endif; ?>
 <?php drupal_add_js($base_url.'/profiles/collabco/themes/custom/collabco_theme/js/script.js', array('type' => 'file', 'scope' => 'footer')); ?>
 </div> <!-- End of .wrapper div, the beggining of this div can be found on html.tpl.php -->
