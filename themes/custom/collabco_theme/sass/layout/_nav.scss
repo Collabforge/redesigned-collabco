@@ -1,8 +1,8 @@
 /* === TOP MAIN NAVIGATION === */
 
-.primary-nav, 
-.secondary-nav { 
-  height: 100%; 
+.primary-nav,
+.secondary-nav {
+  height: 100%;
   padding: 0;
 }
 
@@ -33,7 +33,7 @@
     {
       background-color: $nav-hover-color;
     }
-    
+
     &:hover,
     &.active {
       border-bottom: $nav-primary-color;
@@ -78,7 +78,7 @@
 /*** Secondary Navigation ***/
 
 .secondary-nav {
-  
+
   height: 100%;
   text-align: center;
   background-color: $white-op-1;
@@ -86,17 +86,17 @@
   border-style: solid;
   border-color: $nav-primary-color;
 
-  a { 
+  a {
     color: $nav-primary-color;
     text-decoration: none;
 
-    &:hover { 
+    &:hover {
       text-decoration: underline;
     }
   }
-  
-  .nav-actions { 
-    height: 50%; 
+
+  .nav-actions {
+    height: 50%;
     text-transform: capitalize;
     a { cursor: pointer; }
   }
@@ -108,45 +108,45 @@
     height: 50%;
     overflow: hidden;
 
-    .input-group { 
-      display: block; 
+    .input-group {
+      display: block;
       position: relative;
     }
 
-    .form-control { 
+    .form-control {
       background-color: transparent;
-      
+
     }
 
     .input-group-btn { display: none; }
   }
-  
-  #edit-search-block-form--2 { 
+
+  #edit-search-block-form--2 {
     border-bottom: 1px solid $nav-primary-color;
     background-position: 44px 18px;
     background-repeat: no-repeat;
     background-size: 18px 18px;
     color: $nav-primary-color;
-    height: 50%; 
+    height: 50%;
 
     @media only screen and (min-width : $screen-md) { background-position: 70px 18px; }
 
-    // &::placeholder {
-    //   color: $nav-primary-color;
-    //   text-align: center;
-    // }
+    &::placeholder {
+      color: $nav-primary-color;
+      text-align: center;
+    }
 
-    // &:hover::placeholder,
-    // &:focus::placeholder {
-    //   color: transparent;
-    // }
-    
+    &:hover::placeholder,
+    &:focus::placeholder {
+      color: transparent;
+    }
+
     &:hover,
     &:focus {
       background-image: none;
     }
   }
-  
+
   /*** User Profile Dropdown ***/
 
   .user-nav {
@@ -155,8 +155,8 @@
 
     a {
       color: $nav-primary-color;
-    }  
-    
+    }
+
     a:hover {
       background-color: $nav-hover-color;
       color: $nav-primary-color;
@@ -168,8 +168,8 @@
       position: relative;
       top: 2px;
     }
-  } 
-} 
+  }
+}
 
 
 .region-nav-actions { height: 100%; }
@@ -191,12 +191,12 @@
 
 .nav-actions .user-picture img { margin-left: 8px; }
 
-.user-picture { 
-  
+.user-picture {
+
   .img-responsive {
     border-radius: 50%;
     width: 25px;
-  }  
+  }
 }
 
 /*** Alert badge shown in My Hub Nav element ***/
@@ -225,7 +225,16 @@
  /*** Not logged in user Menu ***/
 
 .not-logged-in {
-  .secondary-nav { background-color: transparent; }
+
+  .primary-nav li:last-child {
+    border-right: 1px solid $nav-primary-color;
+  }
+
+  .secondary-nav {
+    background-color: transparent;
+    border: 0;
+  }
+
   .nav-login {
     margin-top: 40px;
     a:hover { color: $white; }
