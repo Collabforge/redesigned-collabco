@@ -7,21 +7,33 @@ header#navigation {
   background-repeat: no-repeat no-repeat;
   background-size: auto, contain;
 
-  .row { height: 110px; }
+  .row {
+    height: auto;
+
+    @media (min-width : $screen-sm) {
+      height: 110px;
+    }
+  }
 
   @media only screen and (min-width : $screen-md) {
      background-image: url(''), url('');
   }
 
-  @media only screen and (min-width : $screen-sm) {
+  @media (min-width : $screen-sm) {
     background-image: none;
   }
 
   @media only screen and (min-width : $screen-sm) {
     #brand {
-      padding-top: 15px;
       text-align: center;
+
+      img {
+        margin: 30px 5px 0;
+        max-width: 100%;
+        height: auto;
+      }
     }
+
   }
 }
 

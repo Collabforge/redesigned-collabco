@@ -4,31 +4,31 @@
 
 @media only screen and (max-width : $screen-sm - 1) {
   header#navigation {
-    a { 
+    a {
       color: $nav-mobile-primary-color;
       text-decoration: none;
     }
   }
-  
-  #brand {  
+
+  #brand {
     border: 0;
     height: auto;
     text-align: center;
     padding: 20px 0 0 0;
-    
+
     a { width: auto; }
     img { display: inline-block; max-width: 100%; }
 
-    h1 { 
+    h1 {
       text-align: center;
       color: $nav-mobile-primary-color;
     }
-  }  
-  
+  }
+
   /** Nav Hamburguer Icon **/
 
   .nav-mobile {
-    font-size: 20px; 
+    font-size: 20px;
     padding: 25px 20px;
     text-align: left;
   }
@@ -40,15 +40,15 @@
     text-transform: uppercase;
 
     a {
-      color: $white; 
-      text-decoration: none; 
-      
+      color: $white;
+      text-decoration: none;
+
       &:before {
         font-size: 20px;
         position: relative;
       }
     }
-  }  
+  }
 
   #slider { background-color: $white; }
 }
@@ -65,14 +65,14 @@ nav.slider-mobile {
   left: -250px;
   top: 0;
   overflow-y: scroll;
-  
+
   .user-info {
     @include bg-gradient-nav-mobile();
     color: $white;
     padding: 10px;
 
-    a { 
-      color: $white; 
+    a {
+      color: $white;
       text-decoration: none;
     }
 
@@ -83,28 +83,28 @@ nav.slider-mobile {
       display: inline-block;
     }
 
-    #nav-mobile-close { 
+    #nav-mobile-close {
       padding-left: 0;
 
-      &:before { 
+      &:before {
         position: relative;
         top: -2px;
       }
     }
 
-    .logout { 
+    .logout {
       padding-right: 0;
       font-size: 16px;
       text-align: right;
     }
   }
 
-  .user-picture { 
+  .user-picture {
     margin: 0;
     text-align: center;
     margin-bottom: 12px;
 
-    img { 
+    img {
       border: 2px solid $white;
       display: inline-block;
       width: 64px;
@@ -114,7 +114,7 @@ nav.slider-mobile {
 
   .username {
     text-align: center;
-    a { 
+    a {
       font-size: 18px;
 
       &:before {
@@ -124,18 +124,18 @@ nav.slider-mobile {
       }
     }
   }
-  
+
   /** Nav Item List **/
 
-  ul.nav { 
+  ul.nav {
     margin: 0;
 
-    li { 
+    li {
       display: block;
       border-bottom: $border-dark;
       &.active { background-color: $nav-mobile-hover-color; }
 
-      a { 
+      a {
         color: $nav-mobile-primary-color;
         display: inline-block;
         padding: 27px 21px 21px;
@@ -145,20 +145,23 @@ nav.slider-mobile {
 
         }
     }
-  
+
   }
 
   /** Nav Footer **/
-  footer { 
+  footer {
     padding: 10px 20px;
-    
+
     h2 { color: $nav-mobile-primary-color; }
   }
-  
-  .mobile-logo { width: 100%; }
 
-  .copyright { 
-    font-size: 11px; 
+  .mobile-logo {
+    margin: 10px 0;
+    max-width: 100%;
+  }
+
+  .copyright {
+    font-size: 11px;
     margin: 0;
   }
 
@@ -174,7 +177,7 @@ nav.slider-mobile {
 .node-type-conversation nav.slider-mobile li a[href="/collaborate"],
 .node-type-knowledge-object nav.slider-mobile li a[href="/collaborate"],
 .node-type-hub nav.slider-mobile li a[href="/collaborate"] {
-  
+
   background-color: $nav-mobile-hover-color;
 }
 

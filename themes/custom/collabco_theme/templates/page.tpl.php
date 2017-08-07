@@ -87,7 +87,7 @@
     <div class="row">
       <div id="brand" class="col-sm-2 hidden-xs">
         <a class="logo" text="Logo" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-             <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo-collabco.jpg" alt="Logo Collabco"/>
+             <img src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.jpg" alt="Logo Collabco"/>
            </a>
       </div>
 
@@ -146,7 +146,7 @@
       <?php print render($primary_nav); ?>
     <?php endif; ?>
     <footer>
-      <div class="logo"><img class="mobile-logo" src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.png" alt="Logo"/>
+      <div class="logo"><img class="mobile-logo" src="<?php echo $base_url; ?>/profiles/collabco/themes/custom/collabco_theme/assets/img/logo.jpg" alt="Logo"/>
       </div>
       <p class="copyright">© Copyright 2016. <br/></p>
     </footer>
